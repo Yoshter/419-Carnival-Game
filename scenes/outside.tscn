@@ -160,5 +160,5 @@ transform = Transform3D(0.717863, 0.120951, -0.685597, -0.0874685, 0.992658, 0.0
 signNum = 3
 
 [node name="portal" parent="." instance=ExtResource("5_40moq")]
-transform = Transform3D(0.999112, -0.0421372, 0, 0.0421372, 0.999112, 0, 0, 0, 1, 96.894, 1.48121, -71.2626)
+transform = Transform3D(0.999112, -0.0421372, 0, 0.0421372, 0.999112, 0, 0, 0, 1, 87.2642, 1.48121, -68.5088)
 nextScene = "res://scenes/gamestent.tscn"
