@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dm64f4kpr4iqe"]
 
-[ext_resource type="Texture2D" uid="uid://c0r00gimbo455" path="res://assets/Arcade_Machine_Base.png" id="1_g5p62"]
+[ext_resource type="Texture2D" uid="uid://csbeutjafrtco" path="res://assets/Arcade_texture_test.png" id="1_vvncp"]
 
 [node name="arcadecabinet" type="Node3D"]
 
@@ -15,5 +15,6 @@ transform = Transform3D(1, 0, 0, 0, 0.808401, -0.588632, 0, 0.588632, 0.808401, 
 size = Vector3(1, 1.18945, 1)
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.42794, 0.998287)
-texture = ExtResource("1_g5p62")
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0184718, 1.77124, 0.321766)
+pixel_size = 0.005
+texture = ExtResource("1_vvncp")
