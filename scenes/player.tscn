@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://u4hm8no0vylh"]
+
+[ext_resource type="Texture2D" uid="uid://codpttbohfsav" path="res://assets/maincharconcept.png" id="1_17ric"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_63kxg"]
+[ext_resource type="PackedScene" uid="uid://c6qm0k7kc53a1" path="res://scenes/ui.tscn" id="4_0equ1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1dgxa"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999973, -0.00731286, 0, 0.00731286, 0.999973, 0, 0, 0)
+script = ExtResource("1_63kxg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_1dgxa")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17706, 0.187868, 0)
+pixel_size = 0.02
+alpha_cut = 2
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("1_17ric")
+
+[node name="body" type="Node3D" parent="."]
+
+[node name="Control" parent="body" instance=ExtResource("4_0equ1")]
+
+[node name="RayCast3D" type="RayCast3D" parent="body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09187, 1.11273, -2.63846)
+target_position = Vector3(0, 0, 4)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="Camera3D" type="Camera3D" parent="body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08778, 1.15329, 2.41591)
+
+[node name="cameraDefPos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.088, 1.153, 2.416)

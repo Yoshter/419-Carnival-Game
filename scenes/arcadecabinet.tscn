@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm64f4kpr4iqe"]
+
+[ext_resource type="Texture2D" uid="uid://c0r00gimbo455" path="res://assets/Arcade_Machine_Base.png" id="1_g5p62"]
+
+[node name="arcadecabinet" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28152, -0.179669)
+use_collision = true
+collision_mask = 3
+size = Vector3(1, 2.56305, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 0.808401, -0.588632, 0, 0.588632, 0.808401, 0, -0.486964, 0.418226)
+size = Vector3(1, 1.18945, 1)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 1.42794, 0.998287)
+texture = ExtResource("1_g5p62")

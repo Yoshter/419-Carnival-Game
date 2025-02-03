@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwqm2stqsp6y4"]
+
+[ext_resource type="Script" path="res://scripts/sign.gd" id="1_awcpc"]
+[ext_resource type="Texture2D" uid="uid://c5frk1oxohokw" path="res://assets/sign12.png" id="2_6bf27"]
+[ext_resource type="Texture2D" uid="uid://u3c5wfyl0hwa" path="res://assets/sign2.png" id="3_4phth"]
+[ext_resource type="Texture2D" uid="uid://chijjk2jiaojo" path="res://assets/sign3.png" id="4_a1dta"]
+
+[node name="sign" type="Node3D"]
+script = ExtResource("1_awcpc")
+
+[node name="thisway" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+visible = false
+texture = ExtResource("2_6bf27")
+
+[node name="hurry" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.809566, 0)
+visible = false
+texture = ExtResource("3_4phth")
+
+[node name="almostat" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.908397, 0)
+visible = false
+texture = ExtResource("4_a1dta")

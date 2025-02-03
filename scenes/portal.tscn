@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhr4dtuwreu5a"]
+
+[ext_resource type="Script" path="res://scripts/portal.gd" id="1_uy220"]
+[ext_resource type="Texture2D" uid="uid://dx1t8govdsdbo" path="res://assets/portal.png" id="2_2glm5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_834qp"]
+size = Vector3(1.5, 1, 1.5)
+
+[node name="portal" type="Node3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+script = ExtResource("1_uy220")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_834qp")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00291973, -0.0772361, 0.588662)
+pixel_size = 0.02
+texture_filter = 0
+texture = ExtResource("2_2glm5")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.636158, -0.0772361, -0.0510518)
+pixel_size = 0.02
+texture_filter = 0
+texture = ExtResource("2_2glm5")
+
+[node name="Sprite3D3" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00291973, -0.0772361, -0.689631)
+pixel_size = 0.02
+texture_filter = 0
+texture = ExtResource("2_2glm5")
+
+[node name="Sprite3D4" type="Sprite3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.63591, -0.0772361, -0.0511021)
+pixel_size = 0.02
+texture_filter = 0
+texture = ExtResource("2_2glm5")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_shape_entered" from="Area3D" to="." method="_on_area_3d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area3D" to="." method="_on_area_3d_body_shape_exited"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6qxis5s8yusb"]
+
+[ext_resource type="Texture2D" uid="uid://bwtd3hy61nygd" path="res://assets/fence.png" id="1_ksjbb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7b7nr"]
+size = Vector3(15.8976, 8.84546, 5.65668)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0moir"]
+transparency = 1
+cull_mode = 2
+albedo_texture = ExtResource("1_ksjbb")
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ngo6w"]
+lightmap_size_hint = Vector2i(12, 12)
+material = SubResource("StandardMaterial3D_0moir")
+size = Vector2(8, 2)
+
+[node name="fence" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311218, 1.63881, -1.30448)
+shape = SubResource("BoxShape3D_7b7nr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 1.67037e-22, -7.30144e-30, 0, -8.74228e-08, -2, -1.67037e-22, 2, -8.74228e-08, -0.339014, -0.00741661, 0.0237749)
+mesh = SubResource("PlaneMesh_ngo6w")
