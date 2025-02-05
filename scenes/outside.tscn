@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
-[ext_resource type="PackedScene" uid="uid://u4hm8no0vylh" path="res://scenes/player.tscn" id="2_2bgjn"]
 [ext_resource type="PackedScene" uid="uid://dahmluncw00so" path="res://scenes/carnsign.tscn" id="3_w4g2w"]
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="5_40moq"]
 [ext_resource type="PackedScene" uid="uid://bx5eu1e27mf8t" path="res://assets/ArcadeCabTest.blend" id="6_42qh2"]
 [ext_resource type="Texture2D" uid="uid://csbeutjafrtco" path="res://assets/Arcade_texture_test.png" id="7_ch2cf"]
+[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/player_2.tscn" id="7_vdkxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -30,9 +30,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_1lf6f")
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_2bgjn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.244, 5.03113, 27.1038)
 
 [node name="ground" type="Node3D" parent="."]
 
@@ -182,5 +179,8 @@ visible = false
 transform = Transform3D(-2.18557e-08, 0, -0.548934, 0, 0.5, 0, -0.5, 0, 2.39947e-08, 1.10399, -0.124908, -0.172951)
 pixel_size = 0.015
 texture = ExtResource("7_ch2cf")
+
+[node name="player2" parent="." instance=ExtResource("7_vdkxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 24)
 
 [editable path="ArcadeCabTest"]

@@ -27,12 +27,18 @@ texture = ExtResource("1_17ric")
 
 [node name="RayCast3D" type="RayCast3D" parent="body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09187, 1.11273, -2.63846)
+visible = false
 target_position = Vector3(0, 0, 4)
 collision_mask = 2
 collide_with_areas = true
 
 [node name="Camera3D" type="Camera3D" parent="body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08778, 1.15329, 2.41591)
+visible = false
 
 [node name="cameraDefPos" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.088, 1.153, 2.416)
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.939447, -0.105208)

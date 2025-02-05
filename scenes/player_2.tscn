@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ec2iu4a6f3mf"]
+
+[ext_resource type="Script" path="res://scripts/player_2.gd" id="1_xuxxf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pssrb"]
+height = 2.87251
+
+[node name="player2" type="CharacterBody3D"]
+script = ExtResource("1_xuxxf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966512, 0)
+shape = SubResource("CapsuleShape3D_pssrb")
+
+[node name="body" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14201, 0)
+
+[node name="Camera3D" type="Camera3D" parent="body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.739211, 0)
+current = true
