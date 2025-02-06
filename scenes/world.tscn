@@ -22,27 +22,14 @@ glow_enabled = true
 environment = SubResource("Environment_kq6ix")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.30542)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -1.21471)
 use_collision = true
-size = Vector3(17.8455, 7.74316, 29.3892)
+size = Vector3(17.8455, 7.74316, 31.2078)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302673, 0, -7.2638)
 operation = 2
 size = Vector3(15.4053, 5.85132, 14.2576)
-
-[node name="arcadecabinet" parent="." instance=ExtResource("2_u6xsm")]
-transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -9.30815)
-pluggedIn = true
-
-[node name="arcadecabinet2" parent="." instance=ExtResource("2_u6xsm")]
-transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -7.78749)
-gameScene = "res://scenes/flyingsaucergame.tscn"
-bust = false
-
-[node name="arcadecabinet3" parent="." instance=ExtResource("2_u6xsm")]
-transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -6.17289)
-pluggedIn = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314456, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)
@@ -57,3 +44,54 @@ light_energy = 2.0
 
 [node name="player2" parent="." instance=ExtResource("2_f43c0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91865, 0.482794, -8.90367)
+
+[node name="cabinets" type="Node3D" parent="."]
+
+[node name="arcadecabinet" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -9.30815)
+pluggedIn = true
+
+[node name="arcadecabinet2" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -7.78749)
+gameScene = "res://scenes/flyingsaucergame.tscn"
+bust = false
+
+[node name="arcadecabinet3" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -6.17289)
+pluggedIn = true
+
+[node name="arcadecabinet4" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -2.66098)
+pluggedIn = true
+
+[node name="arcadecabinet5" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -10.9689)
+pluggedIn = true
+
+[node name="arcadecabinet6" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, 2.46074, -0.920323, -12.4727)
+pluggedIn = true
+
+[node name="arcadecabinet7" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, 0.945062, -0.920323, -12.4727)
+pluggedIn = true
+
+[node name="arcadecabinet8" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -0.547526, -0.920323, -12.4727)
+pluggedIn = true
+
+[node name="arcadecabinet9" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -2.0632, -0.920323, -12.4727)
+pluggedIn = true
+
+[node name="arcadecabinet10" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -3.61612, -0.920323, -12.4727)
+pluggedIn = true
+
+[node name="arcadecabinet11" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -5.10871, -0.920323, -12.4727)
+pluggedIn = true
+
+[node name="arcadecabinet12" parent="cabinets" instance=ExtResource("2_u6xsm")]
+transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -6.62439, -0.920323, -12.4727)
+pluggedIn = true
