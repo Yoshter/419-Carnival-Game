@@ -97,7 +97,7 @@ use_collision = true
 size = Vector3(39.1895, 1, 49.1059)
 
 [node name="Git test box" type="CSGBox3D" parent="ground"]
-transform = Transform3D(9.67187, 0, 0, 0, 1, 0, 0, 0, 1, -9.66554, 1.02139, 37.5864)
+transform = Transform3D(9.67187, 0, 0, 0, 1, 0, 0, 0, 1, -9.66554, 1.96072, 37.5864)
 
 [node name="fences" type="Node3D" parent="."]
 
