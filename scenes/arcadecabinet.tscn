@@ -105,6 +105,7 @@ size = Vector3(1, 2.56305, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 0.808401, -0.588632, 0, 0.588632, 0.808401, 0, -0.486964, 0.418226)
+visible = false
 size = Vector3(1, 1.18945, 1)
 
 [node name="bodySprites" type="Node3D" parent="."]

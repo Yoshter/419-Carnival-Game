@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=9 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="PackedScene" uid="uid://dahmluncw00so" path="res://scenes/carnsign.tscn" id="3_w4g2w"]
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="5_40moq"]
-[ext_resource type="PackedScene" uid="uid://bx5eu1e27mf8t" path="res://assets/ArcadeCabTest.blend" id="6_42qh2"]
-[ext_resource type="Texture2D" uid="uid://csbeutjafrtco" path="res://assets/Arcade_texture_test.png" id="7_ch2cf"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/player_2.tscn" id="7_vdkxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
@@ -165,22 +163,7 @@ signNum = 3
 transform = Transform3D(0.999112, -0.0421372, 0, 0.0421372, 0.999112, 0, 0, 0, 1, 87.2642, 1.48121, -68.5088)
 nextScene = "res://scenes/gamestent.tscn"
 
-[node name="ArcadeCabTest" parent="." instance=ExtResource("6_42qh2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 100.722, 4.96432, -70.1465)
-
-[node name="Light" parent="ArcadeCabTest" index="1"]
-visible = false
-
-[node name="Camera" parent="ArcadeCabTest" index="2"]
-transform = Transform3D(0.685921, -0.324013, 0.651558, -1.49012e-08, 0.895396, 0.445271, -0.727676, -0.305421, 0.61417, 7.35807, 4.95994, 6.92504)
-visible = false
-
-[node name="Sprite3D" type="Sprite3D" parent="ArcadeCabTest"]
-transform = Transform3D(-2.18557e-08, 0, -0.548934, 0, 0.5, 0, -0.5, 0, 2.39947e-08, 1.10399, -0.124908, -0.172951)
-pixel_size = 0.015
-texture = ExtResource("7_ch2cf")
-
 [node name="player2" parent="." instance=ExtResource("7_vdkxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 24)
 
-[editable path="ArcadeCabTest"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
