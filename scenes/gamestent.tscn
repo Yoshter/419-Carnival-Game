@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=9 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://u4hm8no0vylh" path="res://scenes/player.tscn" id="2_u3h1h"]
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="3_5docn"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
+[ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/Carnival main tent theme Take two.wav" id="5_e7yqm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvf4p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -106,3 +107,7 @@ transform = Transform3D(0.375189, 0, 0.926948, 0, 1, 0, -0.926948, 0, 0.375189, 
 
 [node name="fence2" parent="obstacles" instance=ExtResource("3_5docn")]
 transform = Transform3D(0.616102, 0, -0.787667, 0, 1, 0, 0.787667, 0, 0.616102, -21.3943, -0.360602, -13.0283)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3839, 6.78375, -21.8442)
+stream = ExtResource("5_e7yqm")
