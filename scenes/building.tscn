@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://duxrh0oc2gdr"]
+
+[ext_resource type="Texture2D" uid="uid://dywbrd7vkml87" path="res://assets/art/building.png" id="1_2ed7c"]
+[ext_resource type="Script" path="res://scenes/building.gd" id="1_b4mm2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gb76"]
+size = Vector2(31, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kjou0"]
+size = Vector2(31, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_orm35"]
+size = Vector2(62, 219.5)
+
+[node name="building" type="Node2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_b4mm2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -30.0
+offset_top = 27.0
+offset_right = 37.0
+offset_bottom = 37.0
+color = Color(0, 0, 0, 1)
+
+[node name="Building" type="Sprite2D" parent="."]
+position = Vector2(5, 1)
+texture = ExtResource("1_2ed7c")
+
+[node name="deathbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="deathbox"]
+position = Vector2(-10.5, 3)
+shape = SubResource("RectangleShape2D_6gb76")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="deathbox"]
+position = Vector2(21.5, 17.5)
+shape = SubResource("RectangleShape2D_kjou0")
+
+[node name="scoreArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scoreArea"]
+position = Vector2(5, -145.25)
+shape = SubResource("RectangleShape2D_orm35")
+
+[connection signal="body_entered" from="deathbox" to="." method="_on_deathbox_body_entered"]
+[connection signal="body_entered" from="scoreArea" to="." method="_on_score_area_body_entered"]

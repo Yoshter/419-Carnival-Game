@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dahmluncw00so"]
 
-[ext_resource type="Texture2D" uid="uid://3wf6pgkdp84b" path="res://assets/carnsign.png" id="1_a3jf7"]
+[ext_resource type="Texture2D" uid="uid://3wf6pgkdp84b" path="res://assets/art/carnsign.png" id="1_a3jf7"]
 
 [node name="carnsign" type="Node3D"]
 
