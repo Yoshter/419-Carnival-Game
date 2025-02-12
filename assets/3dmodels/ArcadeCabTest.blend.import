@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bx5eu1e27mf8t"
-path="res://.godot/imported/ArcadeCabTest.blend-311c053c535e5f4f50a689ad35e8c44f.scn"
+path="res://.godot/imported/ArcadeCabTest.blend-db5df00d3f431dec7de1ec42653dd22b.scn"
 
 [deps]
 
-source_file="res://assets/ArcadeCabTest.blend"
-dest_files=["res://.godot/imported/ArcadeCabTest.blend-311c053c535e5f4f50a689ad35e8c44f.scn"]
+source_file="res://assets/3dmodels/ArcadeCabTest.blend"
+dest_files=["res://.godot/imported/ArcadeCabTest.blend-db5df00d3f431dec7de1ec42653dd22b.scn"]
 
 [params]
 

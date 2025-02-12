@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dx1t8govdsdbo"
-path.s3tc="res://.godot/imported/portal.png-aead05909ff805293aa08d3705b32f3c.s3tc.ctex"
+uid="uid://ddqv8h67ls8b"
+path.s3tc="res://.godot/imported/sign1.png-ce03ded5f1bfb5850a81849a0d356cb2.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/portal.png"
-dest_files=["res://.godot/imported/portal.png-aead05909ff805293aa08d3705b32f3c.s3tc.ctex"]
+source_file="res://assets/art/sign1.png"
+dest_files=["res://.godot/imported/sign1.png-ce03ded5f1bfb5850a81849a0d356cb2.s3tc.ctex"]
 
 [params]
 

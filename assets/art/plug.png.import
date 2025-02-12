@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0r00gimbo455"
-path.s3tc="res://.godot/imported/Arcade_Machine_Base.png-750b1cf5cb4862560a8a0eaa5fbc4243.s3tc.ctex"
+uid="uid://xgs3mamwx6i5"
+path.s3tc="res://.godot/imported/plug.png-25e85fa332223afc072ebe9f549ad79a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Arcade_Machine_Base.png"
-dest_files=["res://.godot/imported/Arcade_Machine_Base.png-750b1cf5cb4862560a8a0eaa5fbc4243.s3tc.ctex"]
+source_file="res://assets/art/plug.png"
+dest_files=["res://.godot/imported/plug.png-25e85fa332223afc072ebe9f549ad79a.s3tc.ctex"]
 
 [params]
 

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chijjk2jiaojo"
-path.s3tc="res://.godot/imported/sign3.png-73d8a7fa50c8fb9bcf8b4f522692d51b.s3tc.ctex"
+uid="uid://bqyisb76l70ap"
+path.s3tc="res://.godot/imported/carnie.png-de74e604ca3502ce69f223a6dc0e1302.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/sign3.png"
-dest_files=["res://.godot/imported/sign3.png-73d8a7fa50c8fb9bcf8b4f522692d51b.s3tc.ctex"]
+source_file="res://assets/art/carnie.png"
+dest_files=["res://.godot/imported/carnie.png-de74e604ca3502ce69f223a6dc0e1302.s3tc.ctex"]
 
 [params]
 

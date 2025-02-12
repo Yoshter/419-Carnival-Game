@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="3_5docn"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/player_2.tscn" id="5_453l1"]
-[ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/Carnival main tent theme Take two.wav" id="5_e7yqm"]
+[ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Carnival main tent theme Take two.wav" id="5_e7yqm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvf4p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)

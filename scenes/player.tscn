@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://u4hm8no0vylh"]
 
-[ext_resource type="Texture2D" uid="uid://codpttbohfsav" path="res://assets/maincharconcept.png" id="1_17ric"]
+[ext_resource type="Texture2D" uid="uid://codpttbohfsav" path="res://assets/art/maincharconcept.png" id="1_17ric"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_63kxg"]
 [ext_resource type="PackedScene" uid="uid://c6qm0k7kc53a1" path="res://scenes/ui.tscn" id="4_0equ1"]
 

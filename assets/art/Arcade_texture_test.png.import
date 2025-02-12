@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://csbeutjafrtco"
-path.s3tc="res://.godot/imported/Arcade_texture_test.png-def45dbbd81a6bcab60cc21099ef30df.s3tc.ctex"
+path.s3tc="res://.godot/imported/Arcade_texture_test.png-8a17922881885403860cdb3e02bd7d4b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Arcade_texture_test.png"
-dest_files=["res://.godot/imported/Arcade_texture_test.png-def45dbbd81a6bcab60cc21099ef30df.s3tc.ctex"]
+source_file="res://assets/art/Arcade_texture_test.png"
+dest_files=["res://.godot/imported/Arcade_texture_test.png-8a17922881885403860cdb3e02bd7d4b.s3tc.ctex"]
 
 [params]
 
