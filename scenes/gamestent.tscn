@@ -138,8 +138,10 @@ nextScene = "res://scenes/world.tscn"
 [node name="audioSpeakers" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="audioSpeakers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3839, 6.78375, -21.8442)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3839, 10.7838, 0.1558)
 stream = ExtResource("5_e7yqm")
+autoplay = true
+max_distance = 300.0
 
 [node name="player2" parent="." instance=ExtResource("5_453l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)

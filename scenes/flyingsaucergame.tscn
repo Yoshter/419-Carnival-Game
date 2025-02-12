@@ -1,4 +1,9 @@
-[gd_scene format=3 uid="uid://bir814prxcdts"]
+[gd_scene load_steps=3 format=3 uid="uid://bir814prxcdts"]
+
+[ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pfjs"]
+size = Vector2(523, 196)
 
 [node name="flyingsaucergame" type="Node2D"]
 
@@ -6,3 +11,12 @@
 offset_right = 40.0
 offset_bottom = 23.0
 text = "YOU DID IT"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(257, 284)
+shape = SubResource("RectangleShape2D_8pfjs")
+
+[node name="CharacterBody2D" parent="StaticBody2D" instance=ExtResource("1_v4fjw")]
+position = Vector2(76, 105)
