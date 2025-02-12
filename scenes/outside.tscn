@@ -97,9 +97,6 @@ transform = Transform3D(-0.0245175, 0.0154231, 0.999582, -0.0403935, 0.999051, -
 use_collision = true
 size = Vector3(39.1895, 1, 49.1059)
 
-[node name="Git test box" type="CSGBox3D" parent="ground"]
-transform = Transform3D(9.67187, 0, 0, 0, 1, 0, 0, 0, 1, -9.66554, 1.96072, 37.5864)
-
 [node name="fences" type="Node3D" parent="."]
 
 [node name="fence" parent="fences" instance=ExtResource("1_evbs2")]
@@ -169,5 +166,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 24)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1waf8")
-volume_db = -25.0
+volume_db = -2.0
 autoplay = true
