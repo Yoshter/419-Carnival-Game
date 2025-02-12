@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=10 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
-[ext_resource type="PackedScene" uid="uid://u4hm8no0vylh" path="res://scenes/player.tscn" id="2_u3h1h"]
+[ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="2_0120r"]
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="3_5docn"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
+[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/player_2.tscn" id="5_453l1"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/Carnival main tent theme Take two.wav" id="5_e7yqm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvf4p"]
@@ -26,9 +27,6 @@ environment = SubResource("Environment_de4k0")
 
 [node name="carnie" parent="." instance=ExtResource("1_svhta")]
 transform = Transform3D(-0.82085, 0, 0.571143, 0, 1, 0, -0.571143, 0, -0.82085, -0.59408, 2.24726, 4.50156)
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_u3h1h")]
-transform = Transform3D(-0.0487627, 0.00730416, 0.998784, -9.14697e-12, 0.999973, -0.00731286, -0.998811, -0.000356594, -0.0487613, 8.52187, 1.88921, 1.33177)
 
 [node name="ground" type="Node3D" parent="."]
 
@@ -98,7 +96,32 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1816, 0)
 operation = 2
 size = Vector3(17.8389, 8.51656, 17.4238)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2548, 2.11719, -0.716921)
+size = Vector3(1, 5.23438, 34.353)
+
+[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
+use_collision = true
+radius = 27.3136
+height = 14.4892
+sides = 16
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea/CSGCylinder3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.221481, -1.52907, -0.265364)
+operation = 2
+use_collision = true
+radius = 24.7083
+height = 12.8748
+sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D6"]
+transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, -4.6542, -3.23495, -25.5845)
+operation = 2
+size = Vector3(5.60522, 6.55986, 4.49072)
+
 [node name="hallway" parent="ground" instance=ExtResource("3_pcqcv")]
+transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.58389, -28.0353)
 
 [node name="obstacles" type="Node3D" parent="."]
 
@@ -108,6 +131,15 @@ transform = Transform3D(0.375189, 0, 0.926948, 0, 1, 0, -0.926948, 0, 0.375189, 
 [node name="fence2" parent="obstacles" instance=ExtResource("3_5docn")]
 transform = Transform3D(0.616102, 0, -0.787667, 0, 1, 0, 0.787667, 0, 0.616102, -21.3943, -0.360602, -13.0283)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="portal" parent="." instance=ExtResource("2_0120r")]
+transform = Transform3D(1.97686, 0, 0.30335, 0, 2, 0, -0.30335, 0, 1.97686, -101.933, 1.1184, -139.002)
+nextScene = "res://scenes/world.tscn"
+
+[node name="audioSpeakers" type="Node3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="audioSpeakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.3839, 6.78375, -21.8442)
 stream = ExtResource("5_e7yqm")
+
+[node name="player2" parent="." instance=ExtResource("5_453l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)
