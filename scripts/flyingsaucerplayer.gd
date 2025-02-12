@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 
 @onready var beam: Node2D = $beam
@@ -29,4 +29,5 @@ func _physics_process(delta: float) -> void:
 #Custom Functions
 #die function, game over that puts player at start menu
 func die():
+	GamesGlobal.ufoScoreReset()
 	get_tree().change_scene_to_file("res://scenes/flyingsaucergame.tscn")
