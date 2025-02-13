@@ -1,8 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://dm64f4kpr4iqe"]
+[gd_scene load_steps=24 format=3 uid="uid://dm64f4kpr4iqe"]
 
 [ext_resource type="Script" path="res://scenes/arcadecabinet.gd" id="1_smnev"]
-[ext_resource type="Texture2D" uid="uid://csbeutjafrtco" path="res://assets/art/Arcade_texture_test.png" id="1_vvncp"]
+[ext_resource type="Texture2D" uid="uid://dtbhqr0fajxjg" path="res://assets/Space/Space Art/Cab Base Back.png" id="2_3akc8"]
+[ext_resource type="PackedScene" uid="uid://bsxg2ik27fwkt" path="res://assets/Space/ArcadeCabSpace.blend" id="3_4l3gq"]
+[ext_resource type="Texture2D" uid="uid://mgceickd6q01" path="res://assets/Space/Space Art/Arcade Machine side Saucer No Stick.png" id="3_7njlu"]
 [ext_resource type="Texture2D" uid="uid://xgs3mamwx6i5" path="res://assets/art/plug.png" id="3_kf8qd"]
+[ext_resource type="Texture2D" uid="uid://bg0brpuk1csdu" path="res://assets/Space/Space Art/Arcade Machine Stick.png" id="4_ia3io"]
+[ext_resource type="Texture2D" uid="uid://b3vppvawtlqwc" path="res://assets/Space/Space Art/Cab Base Bottom.png" id="5_33fjs"]
+[ext_resource type="Texture2D" uid="uid://dldqxdaecu6do" path="res://assets/Space/Space Art/Cab Base Screen.png" id="6_6g64g"]
+[ext_resource type="Texture2D" uid="uid://by023jh8afqoi" path="res://assets/Space/Space Art/Cab Base Underish.png" id="7_7t5x5"]
+[ext_resource type="Texture2D" uid="uid://c7dp2cv1aco6" path="res://assets/Space/Space Art/Cab Space Top.png" id="8_wiumi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3u2v"]
 atlas = ExtResource("3_kf8qd")
@@ -98,10 +105,11 @@ script = ExtResource("1_smnev")
 bust = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.28152, -0.179669)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170554, 1.84628, 0.42843)
+visible = false
 use_collision = true
 collision_mask = 3
-size = Vector3(1, 2.56305, 1)
+size = Vector3(2.495, 3.518, 2.675)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 0.808401, -0.588632, 0, 0.588632, 0.808401, 0, -0.486964, 0.418226)
@@ -110,13 +118,44 @@ size = Vector3(1, 1.18945, 1)
 
 [node name="bodySprites" type="Node3D" parent="."]
 
-[node name="face" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.0184718, 1.69706, 0.321766)
-pixel_size = 0.005
-texture = ExtResource("1_vvncp")
+[node name="Sprite3D" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.54982, 0, -0.0140711, 0, 0.55, 0, 0.0140711, 0, 0.54982, -0.151961, 1.83344, -0.879884)
+texture = ExtResource("2_3akc8")
+
+[node name="Sprite3D2" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.00208264, -1.40633, 1.81725, 0.381332)
+texture = ExtResource("3_7njlu")
+
+[node name="Sprite3D3" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.54982, 0, -0.0140711, -0.00347649, 0.532949, -0.135842, 0.0136348, 0.135887, 0.532775, -0.151961, 1.83344, 1.41767)
+texture = ExtResource("4_ia3io")
+
+[node name="Sprite3D4" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.549979, 0, 0.0047804, 0, 0.55, 0, -0.0047804, 0, 0.549979, -0.178811, 0.577765, 1.6868)
+texture = ExtResource("5_33fjs")
+
+[node name="Sprite3D5" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.539823, 0, -0.0138152, 0, 0.54, 0, 0.0138152, 0, 0.539823, -0.175218, 2.3162, 1.10767)
+texture = ExtResource("6_6g64g")
+
+[node name="Sprite3D6" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.54982, 0, -0.0140711, -0.0138219, 0.103041, -0.540085, 0.00263617, 0.540262, 0.103007, -0.151961, 2.96646, 1.29315)
+texture = ExtResource("7_7t5x5")
+
+[node name="Sprite3D7" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.54982, 0, -0.0140711, 0, 0.55, 0, 0.0140711, 0, 0.54982, -0.151961, 3.38034, 1.68246)
+texture = ExtResource("8_wiumi")
+
+[node name="Sprite3D8" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.549993, -0.00272985, -0.000511457, 0.00193169, 0.303214, 0.458866, -0.00199555, -0.458862, 0.30322, -0.169821, 1.5052, 1.30358)
+texture = ExtResource("7_7t5x5")
+
+[node name="Sprite3D9" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.00208264, 1.07219, 1.81725, 0.419821)
+texture = ExtResource("3_7njlu")
 
 [node name="plugSprite" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(-0.0481698, 0, -0.998839, 0, 1, 0, 0.998839, 0, -0.0481698, 0, 0.757961, -1.89857)
+transform = Transform3D(-0.0481698, 0, -0.998839, 0, 1, 0, 0.998839, 0, -0.0481698, 0.69858, 0.757961, -1.89857)
 pixel_size = 0.04
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_8kwk5")
@@ -124,7 +163,7 @@ animation = &"unplugged"
 autoplay = "unplugged"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0521617, 0.998639, 0, -0.998639, 0.0521617, 0, 2.44133, -1.9872)
+transform = Transform3D(1, 0, 0, 0, 0.0521617, 0.998639, 0, -0.998639, 0.0521617, 0.655028, 2.44133, -1.9872)
 visible = false
 light_energy = 7.272
 spot_range = 5.171
@@ -150,6 +189,9 @@ visible = false
 light_energy = 7.272
 spot_range = 5.171
 spot_angle = 14.0625
+
+[node name="ArcadeCabSpace" parent="." instance=ExtResource("3_4l3gq")]
+transform = Transform3D(-0.000963464, 0, -0.799999, 0, 0.8, 0, 0.799999, 0, -0.000963464, -0.167963, 1.7911, 0.778172)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
