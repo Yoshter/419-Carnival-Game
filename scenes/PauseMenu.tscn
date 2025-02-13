@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://gw27gms06jj0"]
+
+[ext_resource type="Script" path="res://player_ui.gd" id="1_pd1e3"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pd1e3")
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.341176)
+
+[node name="Button2" type="Button" parent="PauseMenu"]
+texture_filter = 2
+offset_left = 22.0
+offset_top = 369.0
+offset_right = 261.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 49
+text = "QUIT"
+
+[node name="Button" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 22.0
+offset_top = 216.0
+offset_right = 261.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 49
+text = "SETTINGS"

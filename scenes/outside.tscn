@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=11 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="PackedScene" uid="uid://dahmluncw00so" path="res://scenes/carnsign.tscn" id="3_w4g2w"]
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="5_40moq"]
 [ext_resource type="AudioStream" uid="uid://chafqkssb64xn" path="res://assets/allsound/Carnival game intro sequence track.wav" id="6_1waf8"]
+[ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/PauseMenu.tscn" id="6_skt0m"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/player_2.tscn" id="7_vdkxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
@@ -163,6 +164,8 @@ nextScene = "res://scenes/gamestent.tscn"
 
 [node name="player2" parent="." instance=ExtResource("7_vdkxn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 24)
+
+[node name="PlayerUI" parent="player2" instance=ExtResource("6_skt0m")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_1waf8")
