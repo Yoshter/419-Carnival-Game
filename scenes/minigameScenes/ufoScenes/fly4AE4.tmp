@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpc04ng0fn85u"]
+
+[ext_resource type="PackedScene" uid="uid://hmnwjbqslhkw" path="res://scenes/button.tscn" id="1_31kig"]
+[ext_resource type="Script" path="res://scripts/minigameScripts/ufoScripts/flyingsaucer_main_menu.gd" id="1_tfthn"]
+
+[node name="flyingsaucerMainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tfthn")
+
+[node name="Button" parent="." instance=ExtResource("1_31kig")]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 311.0
+offset_right = 683.0
+offset_bottom = 372.0
+nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
+
+[node name="deathMenu" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 106.0
+offset_right = 742.0
+offset_bottom = 517.0
+color = Color(0.236997, 0.433879, 0.652528, 1)
+
+[node name="Button3" parent="deathMenu" instance=ExtResource("1_31kig")]
+offset_left = 31.0
+offset_top = 220.0
+offset_right = 254.0
+offset_bottom = 281.0
+text = "START OVER"
+nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
+
+[node name="Button2" parent="deathMenu" instance=ExtResource("1_31kig")]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 310.0
+offset_right = 256.0
+offset_bottom = 371.0
+text = "QUIT"
+nextScene = "res://scenes/world.tscn"
+
+[node name="Label" type="Label" parent="deathMenu"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 25.0
+offset_right = 182.0
+offset_bottom = 113.0
+
+[node name="ColorRect" type="ColorRect" parent="deathMenu"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 34.0
+offset_right = 242.0
+offset_bottom = 177.0
+color = Color(0, 0.347584, 0.208124, 1)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="deathMenu/Button3" to="deathMenu/Button3" method="_on_pressed"]

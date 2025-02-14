@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=3 uid="uid://bir814prxcdts"]
+
+[ext_resource type="Script" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
+[ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/minigameScenes/ufoScenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
+[ext_resource type="PackedScene" uid="uid://duxrh0oc2gdr" path="res://scenes/building.tscn" id="2_huc4y"]
+[ext_resource type="PackedScene" uid="uid://c6qm0k7kc53a1" path="res://scenes/ufoui.tscn" id="3_l7gnf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pfjs"]
+size = Vector2(3671, 196)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tcbn"]
+size = Vector2(1170.41, 103)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqmbl"]
+size = Vector2(1057.53, 83)
+
+[node name="flyingsaucergame" type="Node2D"]
+script = ExtResource("1_faf8u")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -234.0
+offset_top = -634.0
+offset_right = 5154.0
+offset_bottom = 187.0
+color = Color(0, 0.376471, 0.94902, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1606.5, 284)
+shape = SubResource("RectangleShape2D_8pfjs")
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -231.0
+offset_top = 183.0
+offset_right = 3445.0
+offset_bottom = 483.0
+color = Color(0.278431, 0.894118, 0.356863, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1605, -170)
+shape = SubResource("RectangleShape2D_8pfjs")
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+offset_left = -231.0
+offset_top = -369.0
+offset_right = 3440.0
+offset_bottom = -69.0
+color = Color(0.930984, 0.940073, 0.947288, 1)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3752, 100)
+rotation = -0.445071
+shape = SubResource("RectangleShape2D_7tcbn")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(3959, -329)
+rotation = -0.369451
+shape = SubResource("RectangleShape2D_7tcbn")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4440, 306)
+rotation = 1.15076
+shape = SubResource("RectangleShape2D_jqmbl")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4696.84, -153.932)
+rotation = 1.04254
+shape = SubResource("RectangleShape2D_jqmbl")
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 3347.0
+offset_top = -282.0
+offset_right = 4559.0
+offset_bottom = -50.0001
+rotation = -0.380868
+color = Color(0.641934, 0.641934, 0.641934, 1)
+
+[node name="obstacles" type="Node2D" parent="."]
+position = Vector2(0, -12)
+
+[node name="building" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(417, 177)
+
+[node name="building2" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(715, 158)
+
+[node name="building3" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(1009, 175)
+
+[node name="building4" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(1330, 159)
+
+[node name="building5" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(1689, 171)
+
+[node name="building6" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(1917, 154)
+
+[node name="building7" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(2200, 161)
+
+[node name="building8" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(2530, 153)
+
+[node name="building9" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(2876, 183)
+
+[node name="building10" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(3206, 175)
+
+[node name="building11" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(3534, 111)
+rotation = -0.414865
+
+[node name="building12" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(3766, -8.00012)
+rotation = -0.414865
+
+[node name="building13" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(4023, -122)
+rotation = -0.414865
+
+[node name="building14" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(4329, -164)
+rotation = 1.14022
+
+[node name="building15" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(3597, -69.0002)
+rotation = -3.55136
+
+[node name="building16" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(3830, -171)
+rotation = -3.55136
+
+[node name="building17" parent="obstacles" instance=ExtResource("2_huc4y")]
+position = Vector2(4138, -284)
+rotation = -3.58145
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 3231.0
+offset_top = 285.0
+offset_right = 4368.0
+offset_bottom = 1384.0
+rotation = -0.437797
+color = Color(0.304926, 0.107029, 7.21961e-08, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -230.0
+offset_top = 284.0
+offset_right = 3445.0
+offset_bottom = 602.0
+color = Color(0.278431, 0.894118, 0.356863, 1)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_v4fjw")]
+position = Vector2(76, 105)
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(2, 2)
+
+[node name="Control" parent="CharacterBody2D" instance=ExtResource("3_l7gnf")]
+offset_top = -166.0
+offset_bottom = -166.0

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ci06h665vgkgm"]
 
-[ext_resource type="Script" path="res://scripts/flyingsaucerplayer.gd" id="1_2lje1"]
+[ext_resource type="Script" path="res://scripts/minigameScripts/flyingsaucerplayer.gd" id="1_2lje1"]
 [ext_resource type="Texture2D" uid="uid://fsicn7nul6i7" path="res://assets/art/ufo.png" id="2_y7qrm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_je1pn"]

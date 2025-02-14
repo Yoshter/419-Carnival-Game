@@ -127,7 +127,7 @@ transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.
 texture = ExtResource("3_7njlu")
 
 [node name="Sprite3D3" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.54982, 0, -0.0140711, -0.00347649, 0.532949, -0.135842, 0.0136348, 0.135887, 0.532775, -0.151961, 1.83344, 1.41767)
+transform = Transform3D(-0.536642, 0.0262992, -0.117575, 0.0130435, 0.546264, 0.0626551, 0.119772, 0.0583443, -0.53362, -0.198596, 1.73915, 1.41767)
 texture = ExtResource("4_ia3io")
 
 [node name="Sprite3D4" type="Sprite3D" parent="bodySprites"]

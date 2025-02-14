@@ -31,6 +31,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302673, 0, -7.2638)
 operation = 2
 size = Vector3(15.4053, 5.85132, 14.2576)
 
+[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGBox3D"]
+transform = Transform3D(-0.0993198, -0.995055, 0, 0.992751, -0.0990898, 0.0680153, -0.067679, 0.00675526, 0.997684, -8.03509, -0.587448, -4.74959)
+inner_radius = 1.17306
+outer_radius = 1.78067
+
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314456, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)
 light_energy = 75.0
@@ -43,13 +48,13 @@ light_color = Color(1, 0.129412, 1, 1)
 light_energy = 2.0
 
 [node name="player2" parent="." instance=ExtResource("2_f43c0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.91865, 0.482794, -8.90367)
+transform = Transform3D(0.10708, 0, -0.99425, 0, 1, 0, 0.99425, 0, 0.10708, -5.34868, -0.449093, -7.6449)
 
 [node name="cabinets" type="Node3D" parent="."]
 
 [node name="arcadecabinet2" parent="cabinets" instance=ExtResource("2_u6xsm")]
 transform = Transform3D(0.000383929, 0, -1, 0, 1, 0, 1, 0, 0.000383929, 4.29792, -0.920323, -7.49569)
-gameScene = "res://scenes/flyingsaucergame.tscn"
+gameScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucer_main_menu.tscn"
 bust = false
 
 [node name="arcadecabinet3" parent="cabinets" instance=ExtResource("2_u6xsm")]

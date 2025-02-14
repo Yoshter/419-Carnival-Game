@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gw27gms06jj0"]
 
-[ext_resource type="Script" path="res://player_ui.gd" id="1_pd1e3"]
+[ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_pd1e3"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -25,6 +25,7 @@ color = Color(0, 0, 0, 0.341176)
 
 [node name="Button2" type="Button" parent="PauseMenu"]
 texture_filter = 2
+layout_mode = 0
 offset_left = 22.0
 offset_top = 369.0
 offset_right = 261.0
@@ -41,3 +42,16 @@ offset_right = 261.0
 offset_bottom = 298.0
 theme_override_font_sizes/font_size = 49
 text = "SETTINGS"
+
+[node name="GetItemMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 420.0
+offset_top = 225.0
+offset_right = 723.0
+offset_bottom = 405.0
+
+[node name="ColorRect" type="ColorRect" parent="GetItemMenu"]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 164.0

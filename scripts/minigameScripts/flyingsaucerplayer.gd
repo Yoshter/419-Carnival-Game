@@ -29,5 +29,5 @@ func _physics_process(delta: float) -> void:
 #Custom Functions
 #die function, game over that puts player at start menu
 func die():
-	GamesGlobal.ufoScoreReset()
-	get_tree().change_scene_to_file("res://scenes/flyingsaucergame.tscn")
+	GamesGlobal.dead = true
+	get_tree().change_scene_to_file("res://scenes/minigameScenes/ufoScenes/flyingsaucer_main_menu.tscn")

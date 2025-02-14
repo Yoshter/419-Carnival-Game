@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 			fix()
 	
 	if canPlay:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") and ItemsGlobal.checkItem("ufoToken"):
 			play()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

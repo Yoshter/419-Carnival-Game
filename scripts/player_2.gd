@@ -20,8 +20,9 @@ func _input(event: InputEvent) -> void:
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-60), deg_to_rad(50))
 
-#func _process(delta: float) -> void:
-	#pass
+func _process(delta: float) -> void:
+	if GamesGlobal.checkBeatGame("ufo"):
+		ItemsGlobal.itemUpdateSet(true)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
