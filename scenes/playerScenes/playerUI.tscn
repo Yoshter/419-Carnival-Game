@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://gw27gms06jj0"]
+
+[ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_4pjyk"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4pjyk")
+
+[node name="PauseMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="colorRects" type="Control" parent="PauseMenu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="PauseMenu/colorRects"]
+layout_mode = 0
+offset_left = 307.0
+offset_top = 68.0
+offset_right = 1062.0
+offset_bottom = 519.0
+color = Color(0.336374, 0.223497, 0.137891, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="PauseMenu/colorRects"]
+offset_left = 380.0
+offset_top = 91.0
+offset_right = 993.0
+offset_bottom = 498.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/colorRects"]
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0.341176)
+
+[node name="ColorRect4" type="ColorRect" parent="PauseMenu/colorRects"]
+offset_left = 992.0
+offset_top = 125.0
+offset_right = 1184.0
+offset_bottom = 195.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="PauseMenu/colorRects"]
+offset_left = 992.0
+offset_top = 222.0
+offset_right = 1184.0
+offset_bottom = 292.0
+color = Color(0, 0, 1, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="PauseMenu/colorRects"]
+offset_left = 993.0
+offset_top = 309.0
+offset_right = 1185.0
+offset_bottom = 379.0
+color = Color(0, 1, 0, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="PauseMenu/colorRects"]
+offset_left = 993.0
+offset_top = 408.0
+offset_right = 1185.0
+offset_bottom = 478.0
+color = Color(1, 1, 0, 1)
+
+[node name="quit2" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 22.0
+offset_top = 369.0
+offset_right = 261.0
+offset_bottom = 451.0
+theme_override_font_sizes/font_size = 49
+text = "QUIT"
+
+[node name="settings" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 22.0
+offset_top = 216.0
+offset_right = 261.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 49
+text = "SETTINGS"
+
+[node name="map" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 982.0
+offset_top = 114.0
+offset_right = 1187.0
+offset_bottom = 209.0
+text = "MAP"
+
+[node name="GetItemMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 420.0
+offset_top = 225.0
+offset_right = 723.0
+offset_bottom = 405.0
+
+[node name="ColorRect" type="ColorRect" parent="GetItemMenu"]
+layout_mode = 0
+offset_right = 273.0
+offset_bottom = 164.0

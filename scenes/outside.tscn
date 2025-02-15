@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="5_40moq"]
 [ext_resource type="AudioStream" uid="uid://chafqkssb64xn" path="res://assets/allsound/Music/Carnival game intro sequence track.wav" id="6_1waf8"]
-[ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/PauseMenu.tscn" id="6_skt0m"]
-[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/player_2.tscn" id="7_vdkxn"]
+[ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="6_skt0m"]
+[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="7_vdkxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,10 +19,10 @@ sky_material = SubResource("ProceduralSkyMaterial_o0dts")
 background_mode = 2
 sky = SubResource("Sky_0yl32")
 tonemap_mode = 2
-glow_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1045
 volumetric_fog_emission = Color(0.57, 0.57, 0.57, 1)
+volumetric_fog_emission_energy = 0.3
 
 [node name="outside" type="Node3D"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://dm64f4kpr4iqe"]
 
-[ext_resource type="Script" path="res://scenes/arcadecabinet.gd" id="1_smnev"]
+[ext_resource type="Script" path="res://scripts/arcadecabinet.gd" id="1_smnev"]
 [ext_resource type="Texture2D" uid="uid://dtbhqr0fajxjg" path="res://assets/Space/Space Art/Cab Base Back.png" id="2_3akc8"]
 [ext_resource type="PackedScene" uid="uid://bsxg2ik27fwkt" path="res://assets/Space/ArcadeCabSpace.blend" id="3_4l3gq"]
 [ext_resource type="Texture2D" uid="uid://mgceickd6q01" path="res://assets/Space/Space Art/Arcade Machine side Saucer No Stick.png" id="3_7njlu"]

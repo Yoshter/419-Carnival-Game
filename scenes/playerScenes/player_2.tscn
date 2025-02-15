@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ec2iu4a6f3mf"]
 
 [ext_resource type="Script" path="res://scripts/player_2.gd" id="1_xuxxf"]
-[ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/PauseMenu.tscn" id="2_8dcr5"]
+[ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="2_8dcr5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pssrb"]
 height = 2.87251
