@@ -24,9 +24,10 @@ func _input(event: InputEvent) -> void:
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-60), deg_to_rad(50))
 
 func _process(delta: float) -> void:
-	if GamesGlobal.checkBeatGame("ufo"):
+	if GamesGlobal.checkBeatGame("ufo") and !GamesGlobal.ufoChecked:
 		ItemsGlobal.itemUpdateSet(true)
-	if canTalk and Input.is_action_just_pressed("ui_accept"):
+		GamesGlobal.ufoChecked = true
+	if canTalk and Input.is_action_just_pressed("ui_accept") and !PlayerGlobal.inUI:
 		PlayerGlobal.setIsTalking(true)
 
 func _physics_process(delta: float) -> void:

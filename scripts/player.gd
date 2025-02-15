@@ -14,10 +14,13 @@ var mouseSens : float = 0.05
 @onready var cameraDefPos: Node3D = $cameraDefPos
 
 func _ready() -> void:
+	#add to Player group
 	add_to_group("player")
+	#set mouse input
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
+	#capture mouse inpute
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouseSens))
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))

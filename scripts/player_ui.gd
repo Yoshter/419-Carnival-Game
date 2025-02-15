@@ -26,9 +26,9 @@ func _process(delta: float) -> void:
 		pauseMenu.set_visible(false)
 		isVisible = false
 		delay = 0.0
-	
-	if ItemsGlobal.showItemUI:
-		getItemMenu.set_visible(true)
+		
+	#print(ItemsGlobal.showItemUI)
+	#print(PlayerGlobal.inUI)
 	
 	if PlayerGlobal.isTalking:
 		if !dialogueCount > maxDialogueCount:
@@ -43,8 +43,17 @@ func _process(delta: float) -> void:
 			if DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2):
 				ItemsGlobal.giveItem(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2))
 			PlayerGlobal.setIsTalking(false)
-			DialogueGlobal.addToEncCount(PlayerGlobal.checkIsTalkingTo())
+			PlayerGlobal.inUI = true
+			#DialogueGlobal.addToEncCount(PlayerGlobal.checkIsTalkingTo())
 	
+	if PlayerGlobal.inUI and Input.is_action_pressed("interact"):
+		PlayerGlobal.inUI = false
+		getItemMenu.set_visible(false)
+		ItemsGlobal.showItemUI = false
+	#print(ItemsGlobal.showItemUI)
+	if ItemsGlobal.showItemUI:
+		getItemMenu.set_visible(true)
+		PlayerGlobal.inUI = true
 
 func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1

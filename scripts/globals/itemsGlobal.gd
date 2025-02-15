@@ -5,8 +5,10 @@ var needsItemUpdate : bool = false
 var showItemUI : bool = false
 
 #don't want to write 'has' a million times so if false, you do NOT have the item
-var ufoTokenBool : bool = true
+var ufoTokenBool : bool = false
 var ufoTicketBool : bool = false
+
+var funPassLevel2 : bool = false
 
 var speedPitchTokenBool : bool = false
 var speedPitchTicketBool : bool = false
@@ -22,36 +24,40 @@ func _process(delta: float) -> void:
 
 #Custom Functions
 func updateItems() -> void:
-	if GamesGlobal.checkBeatGame("ufo"):
-		giveItem("ufoToken")
+	var itemString = "ufoTicket"
+	print(ufoTicketBool)
+	print(GamesGlobal.checkBeatGame("ufo"))
+	if !ufoTicketBool and GamesGlobal.checkBeatGame("ufo"):
+			giveItem(itemString)
 
 func giveItem(itemName) -> void:
-	match itemName:
-		"ufoToken":
-			ufoTokenBool = true
-		"ufoTicket":
-			ufoTicketBool = true
-		"speedPitchToken":
-			speedPitchTokenBool = true
-		"speedPitchTicket":
-			speedPitchTicketBool = true
-	showItemUI = true
+	if !checkItem(itemName):
+		match itemName:
+			"ufoToken":
+				ufoTokenBool = true
+			"ufoTicket":
+				ufoTicketBool = true
+			"funPass2":
+				funPassLevel2 = true
+			"speedPitchToken":
+				speedPitchTokenBool = true
+			"speedPitchTicket":
+				speedPitchTicketBool = true
+		showItemUI = true
 
 func checkItem(itemName) -> bool:
 	var hasItem : bool = false
 	match itemName:
 		"ufoToken":
-			if ufoTokenBool:
-				hasItem = true
+			hasItem = ufoTokenBool
 		"ufoTicket":
-			if ufoTicketBool:
-				hasItem = true
+			hasItem = ufoTicketBool
 		"speedPitchToken":
-			if speedPitchTokenBool:
-				hasItem = true
+			hasItem = speedPitchTokenBool
 		"speedPitchTicket":
-			if speedPitchTicketBool:
-				hasItem = true
+			hasItem = speedPitchTicketBool
+		_:
+			hasItem = false
 	return hasItem
 
 func itemUpdateSet(needsUpdate) -> void:
