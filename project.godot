@@ -19,6 +19,8 @@ config/icon="res://assets/art/icon.svg"
 
 GamesGlobal="*res://scripts/globals/gamesGlobal.gd"
 ItemsGlobal="*res://scripts/globals/itemsGlobal.gd"
+PlayerGlobal="*res://scripts/globals/playerGlobal.gd"
+DialogueGlobal="*res://scripts/globals/DialogueGlobal.gd"
 
 [editor]
 

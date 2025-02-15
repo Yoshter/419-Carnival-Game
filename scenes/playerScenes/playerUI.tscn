@@ -12,6 +12,7 @@ grow_vertical = 2
 script = ExtResource("1_4pjyk")
 
 [node name="PauseMenu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -109,3 +110,35 @@ offset_bottom = 405.0
 layout_mode = 0
 offset_right = 273.0
 offset_bottom = 164.0
+
+[node name="DialogueMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1150.0
+offset_bottom = 150.0
+
+[node name="ColorRect" type="ColorRect" parent="DialogueMenu"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 150.0
+color = Color(0.073069, 0.0232537, 0.0698616, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="DialogueMenu"]
+offset_left = 27.0
+offset_top = 19.0
+offset_right = 1125.0
+offset_bottom = 131.0
+color = Color(0.137461, 0.0590339, 0.132642, 1)
+
+[node name="Label" type="Label" parent="DialogueMenu"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 32.0
+offset_right = 1121.0
+offset_bottom = 126.0
+text = "nothing"
+
+[node name="dialogueTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]

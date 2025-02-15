@@ -6,6 +6,9 @@ const RUN_SPEED = 6.0
 
 var mouseSens : float = 0.05
 
+var canTalk : bool = false
+var isTalking : bool = false
+
 @onready var player: CharacterBody3D = $"."
 @onready var body: Node3D = $body
 @onready var camera: Camera3D = $body/Camera3D
@@ -23,6 +26,8 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if GamesGlobal.checkBeatGame("ufo"):
 		ItemsGlobal.itemUpdateSet(true)
+	if canTalk and Input.is_action_just_pressed("ui_accept"):
+		PlayerGlobal.setIsTalking(true)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -46,4 +51,5 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, currSpeed)
 		velocity.z = move_toward(velocity.z, 0, currSpeed)
 
-	move_and_slide()
+	if !PlayerGlobal.isTalking:
+		move_and_slide()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfrvinb5rmhlm"]
+[gd_scene load_steps=6 format=3 uid="uid://cfrvinb5rmhlm"]
 
 [ext_resource type="Texture2D" uid="uid://bqyisb76l70ap" path="res://assets/art/carnie.png" id="1_a7ifa"]
+[ext_resource type="Script" path="res://scripts/NPCscripts/carnie.gd" id="1_l17di"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqvl1"]
 atlas = ExtResource("1_a7ifa")
@@ -17,8 +18,29 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ckbgb"]
+size = Vector3(2.37671, 2.24438, 2.18848)
+
 [node name="carnie" type="Node3D"]
+script = ExtResource("1_l17di")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_8nexf")
+
+[node name="talkBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="talkBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.452261, -0.460978, 1.97211)
+shape = SubResource("BoxShape3D_ckbgb")
+
+[node name="talkLight" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0243624, 0.999703, 0, -0.999703, 0.0243624, 0, 1.15206, 1.86914)
+visible = false
+light_energy = 9.192
+spot_range = 4.19489
+spot_attenuation = 1.46
+spot_angle = 25.8382
+
+[connection signal="body_entered" from="talkBox" to="." method="_on_talk_box_body_entered"]
+[connection signal="body_exited" from="talkBox" to="." method="_on_talk_box_body_exited"]
