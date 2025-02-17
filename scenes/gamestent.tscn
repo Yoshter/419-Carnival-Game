@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=11 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="2_0120r"]
+[ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="3_5docn"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
@@ -119,6 +120,12 @@ sides = 16
 transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, -4.6542, -3.23495, -25.5845)
 operation = 2
 size = Vector3(5.60522, 6.55986, 4.49072)
+
+[node name="Carnival Speaker" parent="ground/mainarea" instance=ExtResource("2_lqw58")]
+transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -25.6081, 5.31891, 0.438267)
+
+[node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(0.786086, 0, 0, 0, 3.1128, 0, 0, 0, 0.773173, -25.6063, 2.21968, 0.447486)
 
 [node name="hallway" parent="ground" instance=ExtResource("3_pcqcv")]
 transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.58389, -28.0353)
