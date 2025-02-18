@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c6bhmp3l030lr"
+path="res://.godot/imported/Arcade Light Buzzing.wav-d11f1fd2c2bc42c280620d3caffb07ad.sample"
+
+[deps]
+
+source_file="res://assets/allsound/SFX/Arcade Light Buzzing.wav"
+dest_files=["res://.godot/imported/Arcade Light Buzzing.wav-d11f1fd2c2bc42c280620d3caffb07ad.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

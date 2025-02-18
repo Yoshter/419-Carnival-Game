@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=12 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="2_0120r"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
+[ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="7_07068"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvf4p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -149,6 +150,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3839, 10.7838, 0.1558)
 stream = ExtResource("5_e7yqm")
 autoplay = true
 max_distance = 300.0
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="audioSpeakers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.435, 2.97877, -141.08)
+stream = ExtResource("7_07068")
+volume_db = 3.664
+autoplay = true
+max_distance = 10.0
 
 [node name="player2" parent="." instance=ExtResource("5_453l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)
