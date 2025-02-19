@@ -28,7 +28,7 @@ func updateItems() -> void:
 	print(ufoTicketBool)
 	print(GamesGlobal.checkBeatGame("ufo"))
 	if !ufoTicketBool and GamesGlobal.checkBeatGame("ufo"):
-			giveItem(itemString)
+		giveItem(itemString)
 
 func giveItem(itemName) -> void:
 	if !checkItem(itemName):
