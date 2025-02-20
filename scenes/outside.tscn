@@ -166,7 +166,7 @@ transform = Transform3D(0.999112, -0.0421372, 0, 0.0421372, 0.999112, 0, 0, 0, 1
 nextScene = "res://scenes/gamestent.tscn"
 
 [node name="player2" parent="." instance=ExtResource("7_vdkxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 5, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.74686, 24)
 
 [node name="PlayerUI2" parent="player2" instance=ExtResource("6_skt0m")]
 
