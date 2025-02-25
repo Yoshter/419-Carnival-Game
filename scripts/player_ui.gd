@@ -19,10 +19,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	delay += delta
 	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
 		isVisible = true
 		delay = 0.0
 	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
 		isVisible = false
 		delay = 0.0
@@ -58,3 +60,5 @@ func _process(delta: float) -> void:
 func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1
 	
+func _on_quit_2_pressed() -> void:
+	get_tree().quit()

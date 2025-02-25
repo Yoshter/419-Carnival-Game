@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=3 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_4pjyk"]
+[ext_resource type="Script" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -84,6 +85,7 @@ offset_right = 261.0
 offset_bottom = 451.0
 theme_override_font_sizes/font_size = 49
 text = "QUIT"
+script = ExtResource("2_t4dtg")
 
 [node name="settings" type="Button" parent="PauseMenu"]
 texture_filter = 2
@@ -115,6 +117,14 @@ offset_bottom = 405.0
 layout_mode = 0
 offset_right = 273.0
 offset_bottom = 164.0
+color = Color(0.27451, 0.27451, 0.27451, 0.760784)
+
+[node name="Label" type="Label" parent="GetItemMenu"]
+layout_mode = 0
+offset_right = 215.0
+offset_bottom = 137.0
+text = "YOU GOT AN ITEM
+PRESS E TO CLOSE"
 
 [node name="DialogueMenu" type="Control" parent="."]
 visible = false
@@ -147,4 +157,5 @@ text = "nothing"
 [node name="dialogueTimer" type="Timer" parent="."]
 wait_time = 3.0
 
+[connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
