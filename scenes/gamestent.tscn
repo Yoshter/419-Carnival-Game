@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="2_0120r"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
-[ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="3_5docn"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="7_07068"]
+[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="8_35jog"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvf4p"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -128,16 +128,51 @@ transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -25.6081
 [node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(0.786086, 0, 0, 0, 3.1128, 0, 0, 0, 0.773173, -25.6063, 2.21968, 0.447486)
 
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
+radius = 8.7772
+height = 7.59151
+sides = 16
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21039, 0, -0.10696)
+operation = 2
+radius = 7.49456
+height = 7.59151
+sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -0.5)
+operation = 2
+size = Vector3(3, 5, 6)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53907, 2, -0.5)
+operation = 2
+size = Vector3(3, 5, 6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.356434, 2, 7.26852)
+operation = 2
+size = Vector3(3, 5, 6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.104492, 2, -8.26852)
+operation = 2
+size = Vector3(3, 5, 6)
+
 [node name="hallway" parent="ground" instance=ExtResource("3_pcqcv")]
 transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.58389, -28.0353)
 
 [node name="obstacles" type="Node3D" parent="."]
 
-[node name="fence" parent="obstacles" instance=ExtResource("3_5docn")]
-transform = Transform3D(0.375189, 0, 0.926948, 0, 1, 0, -0.926948, 0, 0.375189, -17.0241, -0.360602, 16.8183)
+[node name="CSGBox3D" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(0.702662, 0, 0.711523, 0, 1, 0, -0.711523, 0, 0.702662, -23.0985, 1.87776, 12.9711)
+size = Vector3(19.1089, 2.42468, 1)
 
-[node name="fence2" parent="obstacles" instance=ExtResource("3_5docn")]
-transform = Transform3D(0.616102, 0, -0.787667, 0, 1, 0, 0.787667, 0, 0.616102, -21.3943, -0.360602, -13.0283)
+[node name="CSGBox3D2" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -24.2603, 1.87776, -10.9677)
+size = Vector3(19.1089, 2.42468, 1)
 
 [node name="portal" parent="." instance=ExtResource("2_0120r")]
 transform = Transform3D(1.97686, 0, 0.30335, 0, 2, 0, -0.30335, 0, 1.97686, -101.933, 1.1184, -139.002)
@@ -160,3 +195,17 @@ max_distance = 10.0
 
 [node name="player2" parent="." instance=ExtResource("5_453l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)
+
+[node name="gates" type="Node3D" parent="."]
+
+[node name="fungate" parent="gates" instance=ExtResource("8_35jog")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -9.78479, 2.16585, 8.24885)
+itemToCheck = "funPassLevel3"
+
+[node name="fungate2" parent="gates" instance=ExtResource("8_35jog")]
+transform = Transform3D(0.0900515, 0, -3.99899, 0, 4, 0, 3.99899, 0, 0.0900515, -17.9615, 2.16585, -0.479893)
+itemToCheck = "funPassLevel2"
+
+[node name="portal2" parent="." instance=ExtResource("2_0120r")]
+transform = Transform3D(1.97686, 0, 0.30335, 0, 2, 0, -0.30335, 0, 1.97686, -9.82403, 2.86877, -13.958)
+nextScene = "res://scenes/world.tscn"

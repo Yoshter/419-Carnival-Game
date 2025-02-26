@@ -37,7 +37,7 @@ func giveItem(itemName) -> void:
 				ufoTokenBool = true
 			"ufoTicket":
 				ufoTicketBool = true
-			"funPass2":
+			"funPassLevel2":
 				funPassLevel2 = true
 			"speedPitchToken":
 				speedPitchTokenBool = true
@@ -52,6 +52,8 @@ func checkItem(itemName) -> bool:
 			hasItem = ufoTokenBool
 		"ufoTicket":
 			hasItem = ufoTicketBool
+		"funPassLevel2":
+			hasItem = funPassLevel2
 		"speedPitchToken":
 			hasItem = speedPitchTokenBool
 		"speedPitchTicket":

@@ -1,31 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://dxi413p71bf7s"]
+[gd_scene load_steps=6 format=3 uid="uid://dxi413p71bf7s"]
 
+[ext_resource type="Script" path="res://scenes/fungate.gd" id="1_5cohp"]
 [ext_resource type="Texture2D" uid="uid://b7xs14133yoos" path="res://assets/art/fungate.png" id="1_lynqm"]
 [ext_resource type="Texture2D" uid="uid://0bg8h3jhei8v" path="res://assets/art/gatetop.png" id="2_qgrv6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2se1t"]
 size = Vector3(1.32446, 1, 0.187012)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_snkpy"]
+size = Vector3(1, 0.615723, 0.615723)
+
 [node name="fungate" type="Node3D"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+script = ExtResource("1_5cohp")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.114131)
+texture_filter = 0
 texture = ExtResource("1_lynqm")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0541788)
+texture_filter = 0
 texture = ExtResource("1_lynqm")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(1.28994, -2.03272e-10, 0.00930292, -0.0120008, -4.36574e-08, 0.999957, 2.62221e-10, -1, -4.36574e-08, -0.00192359, 0.144945, 0.0307291)
+texture_filter = 0
 texture = ExtResource("2_qgrv6")
 
 [node name="Sprite3D4" type="Sprite3D" parent="."]
 transform = Transform3D(0.0418645, 0.0223562, 0.995857, -0.473132, 0.0110568, 0.0879061, -0.00429674, -0.999689, 0.0232428, 0.615395, -0.0697774, 0.0250087)
+texture_filter = 0
 texture = ExtResource("2_qgrv6")
 
 [node name="Sprite3D5" type="Sprite3D" parent="."]
 transform = Transform3D(-0.0418645, -0.0223563, -0.995857, -0.473132, 0.0110568, 0.0879061, 0.00429674, 0.999689, -0.0232428, -0.592777, -0.0697774, 0.0250087)
+texture_filter = 0
 texture = ExtResource("2_qgrv6")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -33,3 +44,15 @@ texture = ExtResource("2_qgrv6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.024146)
 shape = SubResource("BoxShape3D_2se1t")
+
+[node name="passCheckArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="passCheckArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192139, -0.429932)
+shape = SubResource("BoxShape3D_snkpy")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="passCheckArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192139, 0.517865)
+shape = SubResource("BoxShape3D_snkpy")
+
+[connection signal="body_entered" from="passCheckArea" to="." method="_on_pass_check_area_body_entered"]

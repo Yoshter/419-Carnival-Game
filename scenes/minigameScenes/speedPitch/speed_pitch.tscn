@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dru35xfbqhlnf"]
+
+[ext_resource type="PackedScene" uid="uid://c5n7t3651pny5" path="res://scenes/minigameScenes/speedPitch/speed_pitch_ui.tscn" id="1_uefp1"]
+
+[node name="speedPitch" type="Node2D"]
+
+[node name="speedPitchUI" parent="." instance=ExtResource("1_uefp1")]
+offset_left = 6.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 2.0

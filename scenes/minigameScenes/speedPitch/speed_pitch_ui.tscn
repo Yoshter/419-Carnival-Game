@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5n7t3651pny5"]
+
+[ext_resource type="Script" path="res://speed_pitch_ui.gd" id="1_ct00x"]
+
+[node name="speedPitchUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ct00x")
+
+[node name="vertBar" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 540.0
+offset_top = 172.0
+offset_right = 636.0
+offset_bottom = 532.0
+fill_mode = 3
+
+[node name="horBar" type="ProgressBar" parent="."]
+visible = false
+offset_left = 384.0
+offset_top = 304.0
+offset_right = 815.0
+offset_bottom = 378.0
+step = 1.0
