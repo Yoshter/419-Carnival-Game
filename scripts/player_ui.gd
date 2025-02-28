@@ -1,6 +1,6 @@
 extends Control
 
-
+@onready var confirm_quit_2: Control = $PauseMenu/ConfirmQuit2
 @onready var label : Label = $DialogueMenu/Label
 @onready var dialogueTimer: Timer = $dialogueTimer
 
@@ -70,7 +70,8 @@ func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1
 	
 func _on_quit_2_pressed() -> void:
-	get_tree().quit()
+	confirm_quit_2.set_visible(true)
+
 
 func _on_inventory_pressed() -> void:
 	updateItemIcons()
@@ -83,3 +84,13 @@ func _on_quit_inv_pressed() -> void:
 func updateItemIcons() -> void:
 	if ItemsGlobal.checkItem("funPassLevel2"):
 		funPassIcon.set_visible(true)
+
+
+func _on_no_pressed() -> void:
+	confirm_quit_2.set_visible (false)
+
+
+
+
+func _on_yes_pressed() -> void:
+	get_tree().quit()

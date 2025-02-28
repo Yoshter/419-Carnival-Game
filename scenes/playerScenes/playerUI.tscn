@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=10 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Script" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 [ext_resource type="Texture2D" uid="uid://7cg1vs42bmbb" path="res://assets/art/funpass.png" id="3_wstr5"]
 [ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="4_acwhg"]
+[ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="5_mnosj"]
 [ext_resource type="AudioStream" uid="uid://w66dwwgi4id0" path="res://assets/allsound/SFX/Inventory Open.wav" id="5_psxp3"]
+[ext_resource type="Texture2D" uid="uid://dpn3vnjec682r" path="res://assets/UI/Checkmark.png" id="6_3odoy"]
 [ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="6_4kfvc"]
 [ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="7_luwil"]
 
@@ -254,6 +256,68 @@ position = Vector2(740, 154)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("4_acwhg")
 
+[node name="ConfirmQuit2" type="Control" parent="PauseMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1113.0
+offset_bottom = 606.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/ConfirmQuit2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.43012, 0.195204, 0.483767, 1)
+
+[node name="No" type="Button" parent="PauseMenu/ConfirmQuit2/ColorRect"]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 335.0
+offset_right = 506.0
+offset_bottom = 591.0
+icon = ExtResource("5_mnosj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Yes" type="Button" parent="PauseMenu/ConfirmQuit2/ColorRect"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -507.0
+offset_top = -314.0
+offset_right = -251.0
+offset_bottom = -58.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("6_3odoy")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="PauseMenu/ConfirmQuit2/ColorRect"]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Are you sure you want to quit?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
 [node name="GetItemMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -318,4 +382,6 @@ stream = ExtResource("7_luwil")
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
