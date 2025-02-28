@@ -10,6 +10,9 @@ extends Control
 @onready var dialogueMenu : Control = $DialogueMenu
 @onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
 
+#item icons
+@onready var funPassIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPass
+
 var dialogueCount : int = 0
 var maxDialogueCount : int = 0
 var isVisible : bool = false
@@ -68,7 +71,12 @@ func _on_quit_2_pressed() -> void:
 	get_tree().quit()
 
 func _on_inventory_pressed() -> void:
+	updateItemIcons()
 	inventoryMenu.set_visible(true)
 
 func _on_quit_inv_pressed() -> void:
 	inventoryMenu.set_visible(false)
+
+func updateItemIcons() -> void:
+	if ItemsGlobal.checkItem("funPassLevel2"):
+		funPassIcon.set_visible(true)

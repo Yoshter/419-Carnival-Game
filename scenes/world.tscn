@@ -1,9 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcg3ygwtwkmsr"]
+[gd_scene load_steps=6 format=3 uid="uid://dcg3ygwtwkmsr"]
 
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="1_3s7w3"]
-[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="2_f43c0"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/arcadecabinet.tscn" id="2_u6xsm"]
-[ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="3_t6v6x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_no5us"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -61,9 +59,6 @@ volume_db = 2.443
 autoplay = true
 max_distance = 15.0
 
-[node name="player2" parent="." instance=ExtResource("2_f43c0")]
-transform = Transform3D(0.10708, 0, -0.99425, 0, 1, 0, 0.99425, 0, 0.10708, -5.34868, -0.449093, -7.6449)
-
 [node name="cabinets" type="Node3D" parent="."]
 
 [node name="arcadecabinet2" parent="cabinets" instance=ExtResource("2_u6xsm")]
@@ -90,8 +85,3 @@ pluggedIn = true
 [node name="arcadecabinet12" parent="cabinets" instance=ExtResource("2_u6xsm")]
 transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -5.90274, -0.920323, -13.5922)
 pluggedIn = true
-
-[node name="portal" parent="." instance=ExtResource("3_t6v6x")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.53803, 0.441826, -3.3414)
-visible = false
-nextScene = "res://scenes/gamestent.tscn"
