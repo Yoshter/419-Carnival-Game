@@ -34,9 +34,14 @@ operation = 2
 size = Vector3(15.4053, 5.85132, 14.2576)
 
 [node name="CSGTorus3D" type="CSGTorus3D" parent="CSGBox3D"]
-transform = Transform3D(-0.0993198, -0.995055, 0, 0.992751, -0.0990898, 0.0680153, -0.067679, 0.00675526, 0.997684, -8.03509, -0.587448, -2.24167)
-inner_radius = 1.17306
-outer_radius = 1.78067
+transform = Transform3D(-0.0993198, -0.995055, 0, 0.992751, -0.0990898, 0.0680153, -0.067679, 0.00675526, 0.997684, -8.03509, -1.28629, -1.89621)
+inner_radius = 2.00052
+outer_radius = 2.95591
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58303, -1.25294, -2.299)
+operation = 2
+size = Vector3(4.42676, 3.37204, 2.06396)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314456, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)
@@ -88,4 +93,5 @@ pluggedIn = true
 
 [node name="portal" parent="." instance=ExtResource("3_t6v6x")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -5.53803, 0.441826, -3.3414)
+visible = false
 nextScene = "res://scenes/gamestent.tscn"
