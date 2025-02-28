@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=8 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Script" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 [ext_resource type="Texture2D" uid="uid://7cg1vs42bmbb" path="res://assets/art/funpass.png" id="3_wstr5"]
 [ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="4_acwhg"]
+[ext_resource type="AudioStream" uid="uid://w66dwwgi4id0" path="res://assets/allsound/SFX/Inventory Open.wav" id="5_psxp3"]
+[ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="6_4kfvc"]
+[ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="7_luwil"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -15,6 +18,7 @@ grow_vertical = 2
 script = ExtResource("1_4pjyk")
 
 [node name="PauseMenu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -152,6 +156,7 @@ offset_bottom = 194.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 706.0
 offset_top = 212.0
 offset_right = 775.0
@@ -159,6 +164,7 @@ offset_bottom = 285.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 809.0
 offset_top = 212.0
 offset_right = 878.0
@@ -166,6 +172,7 @@ offset_bottom = 285.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect7" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 903.0
 offset_top = 214.0
 offset_right = 972.0
@@ -173,6 +180,7 @@ offset_bottom = 287.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect8" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 707.0
 offset_top = 303.0
 offset_right = 776.0
@@ -180,6 +188,7 @@ offset_bottom = 376.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect9" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 810.0
 offset_top = 303.0
 offset_right = 879.0
@@ -187,6 +196,7 @@ offset_bottom = 376.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect10" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 904.0
 offset_top = 305.0
 offset_right = 973.0
@@ -194,6 +204,7 @@ offset_bottom = 378.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect11" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 706.0
 offset_top = 396.0
 offset_right = 775.0
@@ -201,6 +212,7 @@ offset_bottom = 469.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect12" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 809.0
 offset_top = 396.0
 offset_right = 878.0
@@ -208,6 +220,7 @@ offset_bottom = 469.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect13" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 903.0
 offset_top = 398.0
 offset_right = 972.0
@@ -292,6 +305,15 @@ text = "nothing"
 
 [node name="dialogueTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="OpenSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_psxp3")
+
+[node name="Close SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4kfvc")
+
+[node name="TabSwitch SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_luwil")
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
