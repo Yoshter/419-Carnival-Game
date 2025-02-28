@@ -10,6 +10,9 @@ extends Control
 @onready var dialogueMenu : Control = $DialogueMenu
 @onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
 
+#item icons
+@onready var funPassIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPass
+
 var dialogueCount : int = 0
 var maxDialogueCount : int = 0
 var isVisible : bool = false
@@ -27,11 +30,13 @@ func _process(delta: float) -> void:
 		pauseMenu.set_visible(true)
 		isVisible = true
 		delay = 0.0
+		$OpenSFX.play()
 	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
 		isVisible = false
 		delay = 0.0
+		$"Close SFX".play()
 		
 	#print(ItemsGlobal.showItemUI)
 	#print(PlayerGlobal.inUI)
@@ -68,7 +73,13 @@ func _on_quit_2_pressed() -> void:
 	get_tree().quit()
 
 func _on_inventory_pressed() -> void:
+	updateItemIcons()
+	$"TabSwitch SFX".play()
 	inventoryMenu.set_visible(true)
 
 func _on_quit_inv_pressed() -> void:
 	inventoryMenu.set_visible(false)
+
+func updateItemIcons() -> void:
+	if ItemsGlobal.checkItem("funPassLevel2"):
+		funPassIcon.set_visible(true)

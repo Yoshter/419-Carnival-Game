@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d36cuq3e6js5d"]
 
-[ext_resource type="Script" path="res://fun_pass.gd" id="1_jttuy"]
+[ext_resource type="Script" path="res://scripts/fun_pass.gd" id="1_jttuy"]
 [ext_resource type="Texture2D" uid="uid://7cg1vs42bmbb" path="res://assets/art/funpass.png" id="2_e2e7t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_wbasf"]

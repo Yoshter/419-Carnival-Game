@@ -1,7 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
-[ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="2_0120r"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="4_8a371"]
@@ -9,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="7_07068"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="8_35jog"]
+[ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="8_o68hd"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
 
 [node name="gamestent" type="Node3D"]
@@ -170,10 +170,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.683355, -10.6543)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.683355, -11.7532)
 isFlickering = true
 
-[node name="portal" parent="." instance=ExtResource("2_0120r")]
-transform = Transform3D(1.97686, 0, 0.30335, 0, 2, 0, -0.30335, 0, 1.97686, -101.933, 1.1184, -139.002)
-nextScene = "res://scenes/world.tscn"
-
 [node name="audioSpeakers" type="Node3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="audioSpeakers"]
@@ -188,6 +184,9 @@ stream = ExtResource("7_07068")
 volume_db = 3.664
 autoplay = true
 max_distance = 10.0
+
+[node name="world" parent="audioSpeakers" instance=ExtResource("8_o68hd")]
+transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.515, 1.11752, -152.534)
 
 [node name="player2" parent="." instance=ExtResource("5_453l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)

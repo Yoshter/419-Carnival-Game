@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c5n7t3651pny5"]
 
-[ext_resource type="Script" path="res://speed_pitch_ui.gd" id="1_ct00x"]
+[ext_resource type="Script" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
 
 [node name="speedPitchUI" type="Control"]
 layout_mode = 3
