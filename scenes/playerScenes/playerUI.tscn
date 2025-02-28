@@ -107,6 +107,7 @@ offset_bottom = 209.0
 text = "MAP"
 
 [node name="inventory" type="Button" parent="PauseMenu"]
+layout_mode = 0
 offset_left = 982.0
 offset_top = 211.0
 offset_right = 1187.0
@@ -128,6 +129,7 @@ offset_bottom = 478.0
 color = Color(1, 1, 0.745098, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 707.0
 offset_top = 119.0
 offset_right = 776.0
@@ -135,6 +137,7 @@ offset_bottom = 192.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 810.0
 offset_top = 119.0
 offset_right = 879.0
@@ -142,6 +145,7 @@ offset_bottom = 192.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+layout_mode = 0
 offset_left = 904.0
 offset_top = 121.0
 offset_right = 973.0
