@@ -54,6 +54,12 @@ theme_override_font_sizes/font_size = 115
 text = "START"
 flat = true
 
+[node name="Credits" type="Button" parent="."]
+layout_mode = 0
+offset_top = 481.0
+offset_right = 167.0
+offset_bottom = 648.0
+
 [node name="ConfirmQuit" type="Control" parent="."]
 visible = false
 layout_mode = 1
@@ -112,6 +118,44 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="CreditsScreen" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 650.0
+
+[node name="ColorRect" type="ColorRect" parent="CreditsScreen"]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 653.0
+color = Color(0.646981, 0.00169882, 0.823183, 1)
+
+[node name="closeCredits" type="Button" parent="CreditsScreen/ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -128.0
+offset_bottom = 128.0
+grow_horizontal = 0
+icon = ExtResource("2_cvts0")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="CreditsScreen/ColorRect"]
+layout_mode = 0
+offset_left = 34.0
+offset_right = 1019.0
+offset_bottom = 652.0
+theme_override_font_sizes/font_size = 75
+text = "Bren Murphy - 
+Cole Faker - 
+Cole Genevick -
+Gabe Cazzolla - "
+vertical_alignment = 1
+
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ConfirmQuit/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="ConfirmQuit/ColorRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="CreditsScreen/ColorRect/closeCredits" to="." method="_on_close_credits_pressed"]

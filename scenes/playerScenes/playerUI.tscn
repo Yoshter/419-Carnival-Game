@@ -20,7 +20,6 @@ grow_vertical = 2
 script = ExtResource("1_4pjyk")
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -237,8 +236,10 @@ offset_right = 983.0
 offset_bottom = 137.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
-text = "X"
+icon = ExtResource("5_mnosj")
 flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="itemIcons" type="Control" parent="PauseMenu/inventoryMenu"]
 texture_filter = 1
