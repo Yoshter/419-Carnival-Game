@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=15 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
@@ -13,11 +13,17 @@
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="8_o68hd"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhfba"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
+albedo_texture = ExtResource("3_r8wb4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7i6m"]
 albedo_texture = ExtResource("3_r8wb4")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
-texture_filter = 4
+uv1_triplanar_sharpness = 127.999
+uv1_world_triplanar = true
+uv2_triplanar = true
+texture_filter = 0
 
 [node name="gamestent" type="Node3D"]
 
@@ -78,6 +84,7 @@ cone = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06494, 0)
+material_override = SubResource("StandardMaterial3D_2oind")
 operation = 2
 size = Vector3(17.8389, 8.27246, 17.4238)
 
@@ -100,7 +107,7 @@ size = Vector3(1, 5.23438, 34.353)
 
 [node name="CSGCylinder3D6" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
-material_override = SubResource("StandardMaterial3D_mhfba")
+material_override = SubResource("StandardMaterial3D_n7i6m")
 use_collision = true
 radius = 27.3136
 height = 14.4892
