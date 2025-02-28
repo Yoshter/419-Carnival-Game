@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4a58tg3s4j0l"]
+[gd_scene load_steps=6 format=3 uid="uid://d4a58tg3s4j0l"]
 
 [ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_3ycmb"]
 [ext_resource type="Texture2D" uid="uid://om5bnndmcy6t" path="res://assets/UI/Settings.png" id="1_877hs"]
 [ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="2_cvts0"]
 [ext_resource type="Texture2D" uid="uid://dpn3vnjec682r" path="res://assets/UI/Checkmark.png" id="4_3qgl3"]
+[ext_resource type="Texture2D" uid="uid://cjjw22r27mebd" path="res://assets/Logos/Toast Games Final.png" id="4_6ck4q"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -56,9 +57,13 @@ flat = true
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
-offset_top = 481.0
-offset_right = 167.0
+offset_top = 371.0
+offset_right = 319.0
 offset_bottom = 648.0
+icon = ExtResource("4_6ck4q")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ConfirmQuit" type="Control" parent="."]
 visible = false
