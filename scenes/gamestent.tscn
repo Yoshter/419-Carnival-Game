@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=14 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
+[ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_p43t0"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
+[ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="3_r8wb4"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="4_8a371"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
@@ -10,6 +12,12 @@
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="8_35jog"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="8_o68hd"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhfba"]
+albedo_texture = ExtResource("3_r8wb4")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+texture_filter = 4
 
 [node name="gamestent" type="Node3D"]
 
@@ -22,6 +30,7 @@ transform = Transform3D(-0.82085, 0, 0.571143, 0, 1, 0, -0.571143, 0, -0.82085, 
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60156, 0, 0)
+visible = false
 use_collision = true
 size = Vector3(12.7969, 1, 8.22095)
 
@@ -32,6 +41,7 @@ size = Vector3(12.7969, 0.817871, 1.26282)
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, -0.5, 0.679)
+material_override = ExtResource("2_p43t0")
 use_collision = true
 radius = 27.3136
 sides = 16
@@ -90,6 +100,7 @@ size = Vector3(1, 5.23438, 34.353)
 
 [node name="CSGCylinder3D6" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
+material_override = SubResource("StandardMaterial3D_mhfba")
 use_collision = true
 radius = 27.3136
 height = 14.4892
@@ -116,6 +127,7 @@ transform = Transform3D(0.786086, 0, 0, 0, 3.1128, 0, 0, 0, 0.773173, -25.6063, 
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
+use_collision = true
 radius = 8.7772
 height = 7.59151
 sides = 16
@@ -198,7 +210,7 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -9.78479, 2.16585, 8.24885)
 itemToCheck = "funPassLevel3"
 
 [node name="fungate2" parent="gates" instance=ExtResource("8_35jog")]
-transform = Transform3D(0.0900515, 0, -3.99899, 0, 4, 0, 3.99899, 0, 0.0900515, -17.9615, 2.16585, -0.479893)
+transform = Transform3D(0.0900515, 0, -3.99899, 0, 4, 0, 3.99899, 0, 0.0900515, -17.9615, 2.16585, -0.104642)
 itemToCheck = "funPassLevel2"
 
 [node name="Lights" type="Node3D" parent="."]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxi413p71bf7s"]
 
 [ext_resource type="Script" path="res://scenes/fungate.gd" id="1_5cohp"]
-[ext_resource type="Texture2D" uid="uid://b7xs14133yoos" path="res://assets/art/fungate.png" id="1_lynqm"]
+[ext_resource type="Texture2D" uid="uid://v8bvtcp75o4s" path="res://assets/Tent/Gate.png" id="2_cx8a8"]
 [ext_resource type="Texture2D" uid="uid://0bg8h3jhei8v" path="res://assets/art/gatetop.png" id="2_qgrv6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2se1t"]
@@ -15,14 +15,14 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_5cohp")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.114131)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0.114131)
 texture_filter = 0
-texture = ExtResource("1_lynqm")
+texture = ExtResource("2_cx8a8")
 
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0541788)
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.17427)
 texture_filter = 0
-texture = ExtResource("1_lynqm")
+texture = ExtResource("2_cx8a8")
 
 [node name="Sprite3D3" type="Sprite3D" parent="."]
 transform = Transform3D(1.28994, -2.03272e-10, 0.00930292, -0.0120008, -4.36574e-08, 0.999957, 2.62221e-10, -1, -4.36574e-08, -0.00192359, 0.144945, 0.0307291)

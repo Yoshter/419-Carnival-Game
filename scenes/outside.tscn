@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=15 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
+[ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
 [ext_resource type="Texture2D" uid="uid://cbtih5l8jnyvr" path="res://assets/art/pole.png" id="2_iifnn"]
 [ext_resource type="PackedScene" uid="uid://dahmluncw00so" path="res://scenes/carnsign.tscn" id="3_w4g2w"]
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
@@ -43,56 +44,67 @@ environment = SubResource("Environment_1lf6f")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4743, 0, 28.5693)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(24.293, 1, 19.1815)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 0.988084, -0.153917, 0, 0.153917, 0.988084, -17.3871, 1.28211, 10.7611)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(48.9761, 1, 16.7292)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 0.996703, -0.0811383, 0, 0.0811383, 0.996703, -18.5002, 3.1714, -5.41279)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(51.3516, 1, 16.3186)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.954057, 0.024311, 0.298636, 0, 0.996703, -0.0811383, -0.299624, 0.0774106, 0.950912, -14.2435, 4.19647, -15.8308)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(36.2307, 1, 16.3186)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.961099, -0.000833984, 0.276202, -0.00303838, 0.999903, 0.0135918, -0.276187, -0.0139023, 0.961004, -17.8669, 4.74217, -31.6464)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(34.6896, 1, 16.3186)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.982365, 0.00044354, 0.186973, -0.00303838, 0.999903, 0.0135918, -0.186949, -0.0139202, 0.982271, -25.0612, 4.30112, -66.8238)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(40.0963, 1, 54.7608)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.982365, 0.00044354, 0.186973, -0.00303838, 0.999903, 0.0135918, -0.186949, -0.0139202, 0.982271, 6.29101, 4.43394, -67.0381)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(30.4621, 1, 18.7839)
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.99989, 0.00284069, 0.0145401, -0.00297508, 0.999953, 0.00922923, -0.0145133, -0.00927147, 0.999852, 34.9147, 4.35359, -69.8261)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(30.4621, 1, 18.7839)
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.98969, 0.133872, 0.0509182, -0.134175, 0.990955, 0.00256122, -0.0501148, -0.00936676, 0.9987, 65.714, 2.33688, -51.4387)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(30.4621, 1, 57.394)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.998527, -0.0212775, 0.0499065, 0.0207824, 0.99973, 0.0104193, -0.0501148, -0.00936676, 0.9987, 135.588, 1.62254, -55.216)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(117.5, 1, 64.7432)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 0.993976, -0.109596, 0, 0.109596, 0.993977, 41.848, 3.05246, -5.19222)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(69.4268, 1, 49.1059)
 
@@ -103,6 +115,7 @@ size = Vector3(25.2188, 1, 49.1059)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="ground"]
 transform = Transform3D(-0.0245175, 0.0154231, 0.999582, -0.0403935, 0.999051, -0.0164057, -0.998883, -0.0407788, -0.0238716, 42.241, 3.87668, -43.049)
+material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(39.1895, 1, 49.1059)
 
