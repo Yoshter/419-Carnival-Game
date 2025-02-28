@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=5 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Script" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 [ext_resource type="Texture2D" uid="uid://7cg1vs42bmbb" path="res://assets/art/funpass.png" id="3_wstr5"]
+[ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="4_acwhg"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -14,7 +15,6 @@ grow_vertical = 2
 script = ExtResource("1_4pjyk")
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -115,7 +115,6 @@ offset_bottom = 306.0
 text = "INVENTORY"
 
 [node name="inventoryMenu" type="Control" parent="PauseMenu"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -125,7 +124,7 @@ layout_mode = 0
 offset_left = 692.0
 offset_top = 102.0
 offset_right = 976.0
-offset_bottom = 478.0
+offset_bottom = 487.0
 color = Color(1, 1, 0.745098, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="PauseMenu/inventoryMenu"]
@@ -152,6 +151,69 @@ offset_right = 973.0
 offset_bottom = 194.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
+[node name="ColorRect5" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 706.0
+offset_top = 212.0
+offset_right = 775.0
+offset_bottom = 285.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 809.0
+offset_top = 212.0
+offset_right = 878.0
+offset_bottom = 285.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect7" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 903.0
+offset_top = 214.0
+offset_right = 972.0
+offset_bottom = 287.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect8" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 707.0
+offset_top = 303.0
+offset_right = 776.0
+offset_bottom = 376.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect9" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 810.0
+offset_top = 303.0
+offset_right = 879.0
+offset_bottom = 376.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect10" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 904.0
+offset_top = 305.0
+offset_right = 973.0
+offset_bottom = 378.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect11" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 706.0
+offset_top = 396.0
+offset_right = 775.0
+offset_bottom = 469.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect12" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 809.0
+offset_top = 396.0
+offset_right = 878.0
+offset_bottom = 469.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
+[node name="ColorRect13" type="ColorRect" parent="PauseMenu/inventoryMenu"]
+offset_left = 903.0
+offset_top = 398.0
+offset_right = 972.0
+offset_bottom = 471.0
+color = Color(0.278044, 0.270093, 4.81308e-08, 1)
+
 [node name="quitInv" type="Button" parent="PauseMenu/inventoryMenu"]
 layout_mode = 0
 offset_left = 928.0
@@ -170,9 +232,14 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="funPass" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
-visible = false
-position = Vector2(939, 159)
+position = Vector2(940, 157)
+scale = Vector2(1.475, 1.475)
 texture = ExtResource("3_wstr5")
+
+[node name="ufoToken" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+position = Vector2(740, 154)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("4_acwhg")
 
 [node name="GetItemMenu" type="Control" parent="."]
 visible = false
