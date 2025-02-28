@@ -8,7 +8,7 @@ var danEncCount = 1
 #Naming conventions for array go "character" + "Enc(ounter)" + "(Encounter) #"
 #Array STRUCTURE [Dialogue Strings, giving item after dialogue bool, if so the item, maxDialogueArrayCount]
 var danEnc1 = ["Welcome", "You must be new here.", "Have a token!", "There's an arcade right down that hallway.", true, "ufoToken", 3]
-var danEnc2 = ["Well done!!!", "You've earned a fun pass to the carnival games section.", true, "funPassLevel2", 1]
+var danEnc2 = ["Well done!!!", "You've earned another token!", "Go try the Speed Pitch game in the Carnival Games section.", true, "speedPitchToken", 2]
 
 func returnDialogueText(npc, dialogueCount) -> String:
 	match npc:

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1ygngepfcasq"]
+
+[ext_resource type="Texture2D" uid="uid://dbkx0lrfjptr6" path="res://assets/art/table1.png" id="1_rwm3s"]
+[ext_resource type="Script" path="res://scenes/table.gd" id="1_vxesm"]
+[ext_resource type="Texture2D" uid="uid://dddkq25qgk6cb" path="res://assets/art/tableleg.png" id="2_c1kva"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_35ghw"]
+radius = 0.484929
+
+[node name="table" type="Node3D"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_vxesm")
+
+[node name="tableSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.624975, 0)
+pixel_size = 0.015
+texture_filter = 0
+texture = ExtResource("1_rwm3s")
+
+[node name="legSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.305048, 0)
+texture_filter = 0
+texture = ExtResource("2_c1kva")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.615819, 0)
+shape = SubResource("SphereShape3D_35ghw")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.333333, 0, 0, 0, -1.45705e-08, 0.333333, 0, -0.333333, -1.45705e-08, 0, 2.21488, 0)
+light_energy = 7.0
+spot_range = 8.78078
+spot_angle = 18.4894
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

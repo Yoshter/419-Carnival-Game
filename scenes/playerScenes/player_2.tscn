@@ -7,6 +7,7 @@
 height = 2.87251
 
 [node name="player2" type="CharacterBody3D"]
+collision_layer = 3
 script = ExtResource("1_xuxxf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

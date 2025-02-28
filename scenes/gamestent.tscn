@@ -1,31 +1,17 @@
-[gd_scene load_steps=12 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=11 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="2_0120r"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
+[ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="4_8a371"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="7_07068"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="8_35jog"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_hvf4p"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_hiyqy"]
-sky_material = SubResource("ProceduralSkyMaterial_hvf4p")
-
-[sub_resource type="Environment" id="Environment_de4k0"]
-background_mode = 2
-sky = SubResource("Sky_hiyqy")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
 
 [node name="gamestent" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_de4k0")
 
 [node name="carnie" parent="." instance=ExtResource("1_svhta")]
 transform = Transform3D(-0.82085, 0, 0.571143, 0, 1, 0, -0.571143, 0, -0.82085, -0.59408, 2.24726, 4.50156)
@@ -174,6 +160,16 @@ size = Vector3(19.1089, 2.42468, 1)
 transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -24.2603, 1.87776, -10.9677)
 size = Vector3(19.1089, 2.42468, 1)
 
+[node name="table" parent="obstacles" instance=ExtResource("4_8a371")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.683355, -17.5478)
+
+[node name="table2" parent="obstacles" instance=ExtResource("4_8a371")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.683355, -10.6543)
+
+[node name="table3" parent="obstacles" instance=ExtResource("4_8a371")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.683355, -11.7532)
+isFlickering = true
+
 [node name="portal" parent="." instance=ExtResource("2_0120r")]
 transform = Transform3D(1.97686, 0, 0.30335, 0, 2, 0, -0.30335, 0, 1.97686, -101.933, 1.1184, -139.002)
 nextScene = "res://scenes/world.tscn"
@@ -206,6 +202,29 @@ itemToCheck = "funPassLevel3"
 transform = Transform3D(0.0900515, 0, -3.99899, 0, 4, 0, 3.99899, 0, 0.0900515, -17.9615, 2.16585, -0.479893)
 itemToCheck = "funPassLevel2"
 
-[node name="portal2" parent="." instance=ExtResource("2_0120r")]
-transform = Transform3D(1.97686, 0, 0.30335, 0, 2, 0, -0.30335, 0, 1.97686, -9.82403, 2.86877, -13.958)
-nextScene = "res://scenes/world.tscn"
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5577, 7.6444, 0)
+light_color = Color(1, 0.425788, 0.357085, 1)
+omni_range = 29.2478
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5153, 7.6444, 0)
+light_color = Color(1, 0.425788, 0.357085, 1)
+omni_range = 29.2478
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02933, 7.6444, -20.7243)
+light_color = Color(1, 0.425788, 0.357085, 1)
+omni_range = 29.2478
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4088, 7.6444, 21.6412)
+light_color = Color(1, 0.425788, 0.357085, 1)
+omni_range = 29.2478
+
+[node name="items" type="Node3D" parent="."]
+
+[node name="funPass" parent="." instance=ExtResource("10_kksxs")]
+transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.7019, -11.4181)

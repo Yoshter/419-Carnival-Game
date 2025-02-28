@@ -1,10 +1,14 @@
 extends Control
 
+
+@onready var label : Label = $DialogueMenu/Label
+@onready var dialogueTimer: Timer = $dialogueTimer
+
+#menus
 @onready var pauseMenu : Control = $PauseMenu
 @onready var getItemMenu : Control = $GetItemMenu
 @onready var dialogueMenu : Control = $DialogueMenu
-@onready var label : Label = $DialogueMenu/Label
-@onready var dialogueTimer: Timer = $dialogueTimer
+@onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
 
 var dialogueCount : int = 0
 var maxDialogueCount : int = 0
@@ -62,3 +66,9 @@ func _on_dialogue_timer_timeout() -> void:
 	
 func _on_quit_2_pressed() -> void:
 	get_tree().quit()
+
+func _on_inventory_pressed() -> void:
+	inventoryMenu.set_visible(true)
+
+func _on_quit_inv_pressed() -> void:
+	inventoryMenu.set_visible(false)

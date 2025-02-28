@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwtd3hy61nygd" path="res://assets/art/fence.png" id="1_ksjbb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7b7nr"]
-size = Vector3(15.8976, 8.84546, 5.65668)
+size = Vector3(15.8976, 8.84546, 2.0752)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0moir"]
 transparency = 1
@@ -23,7 +23,7 @@ size = Vector2(8, 2)
 collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311218, 1.63881, -1.30448)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311218, 1.63881, -0.500769)
 shape = SubResource("BoxShape3D_7b7nr")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
