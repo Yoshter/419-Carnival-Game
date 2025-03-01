@@ -73,7 +73,7 @@ func checkItem(itemName) -> bool:
 		"speedPitchTicket":
 			hasItem = speedPitchTicketBool
 		"skeebleToken":
-			skeebleTokenBool = true
+			hasItem = skeebleTokenBool
 		"skeebleTicket":
 			hasItem = skeebleTicketBool
 		"towerToken":

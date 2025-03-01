@@ -1,33 +1,29 @@
-<<<<<<< HEAD
-[gd_scene load_steps=15 format=3 uid="uid://calufsomygbn7"]
-=======
-[gd_scene load_steps=18 format=3 uid="uid://calufsomygbn7"]
->>>>>>> 789f0dbabbf1113097e4d452d0d046f62deb4a73
+[gd_scene load_steps=19 format=3 uid="uid://calufsomygbn7"]
 
-[ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
-[ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
-[ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_p43t0"]
-[ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
-[ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="3_r8wb4"]
-[ext_resource type="Material" uid="uid://cm8x7kqg25onx" path="res://assets/materials/clearcoatchrome.tres" id="3_wes11"]
-[ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="4_8a371"]
-[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
-[ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
-[ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="7_07068"]
-[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="8_35jog"]
-[ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="8_o68hd"]
-[ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
-[ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="13_tro7e"]
+[ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_7ovt0"]
+[ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_vq8fw"]
+[ext_resource type="Material" uid="uid://cm8x7kqg25onx" path="res://assets/materials/clearcoatchrome.tres" id="3_u6un1"]
+[ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="4_5ix5a"]
+[ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="5_woyub"]
+[ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="6_m4csp"]
+[ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
+[ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
+[ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="9_hb0km"]
+[ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
+[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
+[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="12_8gcbl"]
+[ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="13_4vgoj"]
+[ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
-albedo_texture = ExtResource("3_r8wb4")
+albedo_texture = ExtResource("4_5ix5a")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7i6m"]
-albedo_texture = ExtResource("3_r8wb4")
+albedo_texture = ExtResource("4_5ix5a")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 127.999
@@ -36,7 +32,7 @@ uv2_triplanar = true
 texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwju3"]
-albedo_texture = ExtResource("3_r8wb4")
+albedo_texture = ExtResource("4_5ix5a")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 17.1484
@@ -44,7 +40,7 @@ uv2_scale = Vector3(0.5, 0.5, 0.5)
 
 [node name="gamestent" type="Node3D"]
 
-[node name="carnie" parent="." instance=ExtResource("1_svhta")]
+[node name="carnie" parent="." instance=ExtResource("1_7ovt0")]
 transform = Transform3D(-0.82085, 0, 0.571143, 0, 1, 0, -0.571143, 0, -0.82085, -0.59408, 2.24726, 4.50156)
 
 [node name="ground" type="Node3D" parent="."]
@@ -64,7 +60,7 @@ size = Vector3(12.7969, 0.817871, 1.26282)
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, -0.5, 0.679)
-material_override = ExtResource("2_p43t0")
+material_override = ExtResource("2_vq8fw")
 use_collision = true
 radius = 27.3136
 sides = 16
@@ -93,7 +89,7 @@ sides = 16
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 3.93235, 0.678884)
-material_override = ExtResource("3_wes11")
+material_override = ExtResource("3_u6un1")
 use_collision = true
 radius = 9.15803
 height = 6.84955
@@ -145,7 +141,7 @@ transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, 
 operation = 2
 size = Vector3(5.60522, 6.55986, 4.49072)
 
-[node name="Carnival Speaker" parent="ground/mainarea" instance=ExtResource("2_lqw58")]
+[node name="Carnival Speaker" parent="ground/mainarea" instance=ExtResource("5_woyub")]
 transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -25.6081, 5.31891, 0.438267)
 
 [node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea"]
@@ -186,7 +182,7 @@ transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134
 operation = 2
 size = Vector3(3, 5, 6)
 
-[node name="hallway" parent="ground" instance=ExtResource("3_pcqcv")]
+[node name="hallway" parent="ground" instance=ExtResource("6_m4csp")]
 transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.58389, -28.0353)
 
 [node name="obstacles" type="Node3D" parent="."]
@@ -199,13 +195,13 @@ size = Vector3(19.1089, 2.42468, 1)
 transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -24.2603, 1.87776, -10.9677)
 size = Vector3(19.1089, 2.42468, 1)
 
-[node name="table" parent="obstacles" instance=ExtResource("4_8a371")]
+[node name="table" parent="obstacles" instance=ExtResource("7_7gm3j")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.683355, -17.5478)
 
-[node name="table2" parent="obstacles" instance=ExtResource("4_8a371")]
+[node name="table2" parent="obstacles" instance=ExtResource("7_7gm3j")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.683355, -10.6543)
 
-[node name="table3" parent="obstacles" instance=ExtResource("4_8a371")]
+[node name="table3" parent="obstacles" instance=ExtResource("7_7gm3j")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.683355, -11.7532)
 isFlickering = true
 
@@ -213,30 +209,30 @@ isFlickering = true
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="audioSpeakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3839, 10.7838, 0.1558)
-stream = ExtResource("5_e7yqm")
+stream = ExtResource("8_56qu4")
 autoplay = true
 max_distance = 300.0
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="audioSpeakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.435, 2.97877, -141.08)
-stream = ExtResource("7_07068")
+stream = ExtResource("9_hb0km")
 volume_db = 3.664
 autoplay = true
 max_distance = 10.0
 
-[node name="world" parent="audioSpeakers" instance=ExtResource("8_o68hd")]
+[node name="world" parent="audioSpeakers" instance=ExtResource("10_86om8")]
 transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.515, 1.11752, -152.534)
 
-[node name="player2" parent="." instance=ExtResource("5_453l1")]
-transform = Transform3D(-0.776574, 0, 0.630025, 0, 1, 0, -0.630025, 0, -0.776574, 6.22102, 1.62468, -0.844785)
+[node name="player2" parent="." instance=ExtResource("11_j2o88")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)
 
 [node name="gates" type="Node3D" parent="."]
 
-[node name="fungate" parent="gates" instance=ExtResource("8_35jog")]
+[node name="fungate" parent="gates" instance=ExtResource("12_8gcbl")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -9.78479, 2.16585, 8.24885)
 itemToCheck = "funPassLevel3"
 
-[node name="fungate2" parent="gates" instance=ExtResource("8_35jog")]
+[node name="fungate2" parent="gates" instance=ExtResource("12_8gcbl")]
 transform = Transform3D(0.0900515, 0, -3.99899, 0, 4, 0, 3.99899, 0, 0.0900515, -17.9615, 2.16585, -0.104642)
 itemToCheck = "funPassLevel2"
 
@@ -264,10 +260,10 @@ omni_range = 29.2478
 
 [node name="items" type="Node3D" parent="."]
 
-[node name="funPass" parent="." instance=ExtResource("10_kksxs")]
+[node name="funPass" parent="." instance=ExtResource("13_4vgoj")]
 transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.7019, -11.4181)
 
-[node name="cabinets" type="Node3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
 
-[node name="speedPitchCabinet" parent="." instance=ExtResource("13_tro7e")]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -29, 1, 10.2531)
+[node name="speedPitchCabinet" parent="." instance=ExtResource("14_vg1bg")]
+transform = Transform3D(-0.638163, 0, 0.769901, 0, 1, 0, -0.769901, 0, -0.638163, -28.9504, 0.5, 10.6087)
