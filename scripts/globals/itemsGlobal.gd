@@ -7,11 +7,16 @@ var showItemUI : bool = false
 #don't want to write 'has' a million times so if false, you do NOT have the item
 var ufoTokenBool : bool = false
 var ufoTicketBool : bool = false
-
-var funPassLevel2 : bool = false
-
 var speedPitchTokenBool : bool = false
 var speedPitchTicketBool : bool = false
+var skeebleTokenBool : bool = false
+var skeebleTicketBool : bool = false
+var towerTokenBool : bool = false
+var towerTicketBool : bool = false
+var rangeTokenBool : bool = false
+var rangeTicketBool : bool = false
+
+var funPassLevel2 : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,11 +29,10 @@ func _process(delta: float) -> void:
 
 #Custom Functions
 func updateItems() -> void:
-	var itemString = "ufoTicket"
-	print(ufoTicketBool)
-	print(GamesGlobal.checkBeatGame("ufo"))
 	if !ufoTicketBool and GamesGlobal.checkBeatGame("ufo"):
-		giveItem(itemString)
+		giveItem("ufoTicket")
+	if !speedPitchTicketBool and GamesGlobal.checkBeatGame("speedPitch"):
+		giveItem("speedPitchTicket")
 
 func giveItem(itemName) -> void:
 	if !checkItem(itemName):
@@ -37,12 +41,24 @@ func giveItem(itemName) -> void:
 				ufoTokenBool = true
 			"ufoTicket":
 				ufoTicketBool = true
-			"funPassLevel2":
-				funPassLevel2 = true
 			"speedPitchToken":
 				speedPitchTokenBool = true
 			"speedPitchTicket":
 				speedPitchTicketBool = true
+			"skeebleToken":
+				skeebleTokenBool = true
+			"skeebleTicket":
+				skeebleTicketBool = true
+			"towerToken":
+				towerTokenBool = true
+			"towerTicket":
+				towerTicketBool = true
+			"rangeToken":
+				rangeTokenBool = true
+			"rangeTicket":
+				rangeTicketBool = true
+			"funPassLevel2":
+				funPassLevel2 = true
 		showItemUI = true
 
 func checkItem(itemName) -> bool:
@@ -52,12 +68,24 @@ func checkItem(itemName) -> bool:
 			hasItem = ufoTokenBool
 		"ufoTicket":
 			hasItem = ufoTicketBool
-		"funPassLevel2":
-			hasItem = funPassLevel2
 		"speedPitchToken":
 			hasItem = speedPitchTokenBool
 		"speedPitchTicket":
 			hasItem = speedPitchTicketBool
+		"skeebleToken":
+			skeebleTokenBool = true
+		"skeebleTicket":
+			hasItem = skeebleTicketBool
+		"towerToken":
+			hasItem = towerTokenBool
+		"towerTicket":
+			hasItem = towerTicketBool
+		"rangeToken":
+			hasItem = rangeTokenBool
+		"rangeTicket":
+			hasItem = rangeTicketBool
+		"funPassLevel2":
+			hasItem = funPassLevel2
 		_:
 			hasItem = false
 	return hasItem

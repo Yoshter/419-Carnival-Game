@@ -74,9 +74,10 @@ offset_right = 662.0
 offset_bottom = 350.0
 text = "SURPRISE
 "
-nextScene = "res://scenes/world.tscn"
+script = null
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="deathMenu/Button2" to="deathMenu/Button2" method="_on_pressed"]
 [connection signal="pressed" from="deathMenu/Button" to="deathMenu/Button" method="_on_pressed"]
+[connection signal="pressed" from="deathMenu/tokenButton" to="." method="_on_token_button_pressed"]
 [connection signal="pressed" from="deathMenu/tokenButton" to="deathMenu/tokenButton" method="_on_pressed"]

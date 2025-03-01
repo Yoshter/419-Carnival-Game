@@ -4,6 +4,9 @@ var isTalking : bool = false
 var isTalkingTo : String
 var inUI : bool = false
 
+var needsTeleport = false
+var newPosition : Vector3
+
 func setIsTalking(talkBool : bool) -> void:
 	isTalking = talkBool
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=15 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="8_35jog"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="8_o68hd"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
+[ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="13_tro7e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhfba"]
 albedo_texture = ExtResource("3_r8wb4")
@@ -201,7 +202,7 @@ max_distance = 10.0
 transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.515, 1.11752, -152.534)
 
 [node name="player2" parent="." instance=ExtResource("5_453l1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)
+transform = Transform3D(-0.776574, 0, 0.630025, 0, 1, 0, -0.630025, 0, -0.776574, 6.22102, 1.62468, -0.844785)
 
 [node name="gates" type="Node3D" parent="."]
 
@@ -239,3 +240,8 @@ omni_range = 29.2478
 
 [node name="funPass" parent="." instance=ExtResource("10_kksxs")]
 transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.7019, -11.4181)
+
+[node name="cabinets" type="Node3D" parent="."]
+
+[node name="speedPitchCabinet" parent="." instance=ExtResource("13_tro7e")]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -29, 1, 10.2531)

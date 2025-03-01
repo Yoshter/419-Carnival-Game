@@ -11,6 +11,18 @@ extends Control
 @onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
 
 #item icons
+@onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
+@onready var rangeTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/rangeToken
+@onready var skeebleTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/skeebleToken
+@onready var speedPitchTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/speedPitchToken
+@onready var towerTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/towerToken
+
+@onready var ufoTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/ufoTicket
+@onready var rangeTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/rangeTicket
+@onready var skeebleTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/skeebleTicket
+@onready var speedPitchTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/speedPitchTicket
+@onready var towerTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/towerTicket
+
 @onready var funPassIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPass
 
 var dialogueCount : int = 0
@@ -34,6 +46,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
+		inventoryMenu.set_visible(false)
 		isVisible = false
 		delay = 0.0
 		$"Close SFX".play()
@@ -72,7 +85,6 @@ func _on_dialogue_timer_timeout() -> void:
 func _on_quit_2_pressed() -> void:
 	confirm_quit_2.set_visible(true)
 
-
 func _on_inventory_pressed() -> void:
 	updateItemIcons()
 	$"TabSwitch SFX".play()
@@ -82,15 +94,31 @@ func _on_quit_inv_pressed() -> void:
 	inventoryMenu.set_visible(false)
 
 func updateItemIcons() -> void:
+	if ItemsGlobal.checkItem("ufoToken"):
+		ufoTokenIcon.set_visible(true)
+	if ItemsGlobal.checkItem("ufoTicket"):
+		ufoTicketIcon.set_visible(true)
+	if ItemsGlobal.checkItem("speedPitchToken"):
+		speedPitchTokenIcon.set_visible(true)
+	if ItemsGlobal.checkItem("speedPitchTicket"):
+		speedPitchTicketIcon.set_visible(true)
+	if ItemsGlobal.checkItem("skeebleToken"):
+		skeebleTokenIcon.set_visible(true)
+	if ItemsGlobal.checkItem("skeebleTicket"):
+		skeebleTicketIcon.set_visible(true)
+	if ItemsGlobal.checkItem("towerToken"):
+		towerTokenIcon.set_visible(true)
+	if ItemsGlobal.checkItem("towerTicket"):
+		towerTicketIcon.set_visible(true)
+	if ItemsGlobal.checkItem("rangeToken"):
+		rangeTokenIcon.set_visible(true)
+	if ItemsGlobal.checkItem("rangeTicket"):
+		rangeTicketIcon.set_visible(true)
 	if ItemsGlobal.checkItem("funPassLevel2"):
 		funPassIcon.set_visible(true)
 
-
 func _on_no_pressed() -> void:
-	confirm_quit_2.set_visible (false)
-
-
-
+	confirm_quit_2.set_visible(false)
 
 func _on_yes_pressed() -> void:
 	get_tree().quit()

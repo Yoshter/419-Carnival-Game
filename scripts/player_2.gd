@@ -24,9 +24,16 @@ func _input(event: InputEvent) -> void:
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-60), deg_to_rad(50))
 
 func _process(delta: float) -> void:
+	if PlayerGlobal.needsTeleport:
+		position = PlayerGlobal.newPosition
+		PlayerGlobal.needsTeleport = false
+	
 	if GamesGlobal.checkBeatGame("ufo") and !GamesGlobal.ufoChecked:
 		ItemsGlobal.itemUpdateSet(true)
 		GamesGlobal.ufoChecked = true
+	if GamesGlobal.checkBeatGame("speedPitch") and !GamesGlobal.speedPitchChecked:
+		ItemsGlobal.itemUpdateSet(true)
+		GamesGlobal.speedPitchChecked = true
 	if canTalk and Input.is_action_just_pressed("ui_accept") and !PlayerGlobal.inUI:
 		PlayerGlobal.setIsTalking(true)
 

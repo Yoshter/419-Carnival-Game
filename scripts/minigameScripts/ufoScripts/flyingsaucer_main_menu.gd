@@ -21,3 +21,8 @@ func _process(delta: float) -> void:
 			DialogueGlobal.addToEncCount("dan")
 			GamesGlobal.ufoScoreReset()
 		checked = true
+
+func _on_token_button_pressed() -> void:
+	PlayerGlobal.needsTeleport = true
+	PlayerGlobal.newPosition = Vector3(-110,1.6,-150)
+	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")

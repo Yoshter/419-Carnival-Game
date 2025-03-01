@@ -5,6 +5,9 @@ var ufoScore : int = 0
 var ufoBeat : bool = false
 var ufoChecked : bool = false
 
+var speedPitchBeat : bool = false
+var speedPitchChecked : bool = false
+
 var dead : bool = false
 
 #Custom Funcs
@@ -19,4 +22,6 @@ func checkBeatGame(gameName) -> bool:
 	match gameName:
 		"ufo":
 			beatGame = ufoBeat
+		"speedPitch":
+			beatGame = speedPitchBeat
 	return beatGame
