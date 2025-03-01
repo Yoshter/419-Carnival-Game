@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 [gd_scene load_steps=15 format=3 uid="uid://calufsomygbn7"]
+=======
+[gd_scene load_steps=18 format=3 uid="uid://calufsomygbn7"]
+>>>>>>> 789f0dbabbf1113097e4d452d0d046f62deb4a73
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_svhta"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="2_lqw58"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_p43t0"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="3_pcqcv"]
 [ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="3_r8wb4"]
+[ext_resource type="Material" uid="uid://cm8x7kqg25onx" path="res://assets/materials/clearcoatchrome.tres" id="3_wes11"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="4_8a371"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="5_453l1"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="5_e7yqm"]
@@ -14,11 +19,28 @@
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="10_kksxs"]
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="13_tro7e"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mhfba"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
+albedo_texture = ExtResource("3_r8wb4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
+albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7i6m"]
 albedo_texture = ExtResource("3_r8wb4")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
-texture_filter = 4
+uv1_triplanar_sharpness = 127.999
+uv1_world_triplanar = true
+uv2_triplanar = true
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwju3"]
+albedo_texture = ExtResource("3_r8wb4")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 17.1484
+uv2_scale = Vector3(0.5, 0.5, 0.5)
 
 [node name="gamestent" type="Node3D"]
 
@@ -71,6 +93,7 @@ sides = 16
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 3.93235, 0.678884)
+material_override = ExtResource("3_wes11")
 use_collision = true
 radius = 9.15803
 height = 6.84955
@@ -79,11 +102,13 @@ cone = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06494, 0)
+material_override = SubResource("StandardMaterial3D_2oind")
 operation = 2
 size = Vector3(17.8389, 8.27246, 17.4238)
 
 [node name="CSGCylinder3D5" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 4.22567, 0.678884)
+material_override = SubResource("StandardMaterial3D_lc1h6")
 use_collision = true
 radius = 7.65629
 height = 6.80287
@@ -101,7 +126,7 @@ size = Vector3(1, 5.23438, 34.353)
 
 [node name="CSGCylinder3D6" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
-material_override = SubResource("StandardMaterial3D_mhfba")
+material_override = SubResource("StandardMaterial3D_n7i6m")
 use_collision = true
 radius = 27.3136
 height = 14.4892
@@ -128,6 +153,7 @@ transform = Transform3D(0.786086, 0, 0, 0, 3.1128, 0, 0, 0, 0.773173, -25.6063, 
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
+material_override = SubResource("StandardMaterial3D_fwju3")
 use_collision = true
 radius = 8.7772
 height = 7.59151
