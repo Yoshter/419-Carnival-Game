@@ -9,6 +9,7 @@ extends Control
 @onready var getItemMenu : Control = $GetItemMenu
 @onready var dialogueMenu : Control = $DialogueMenu
 @onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
+@onready var mapMenu: Control = $PauseMenu/mapMenu
 
 #item icons
 @onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
@@ -47,6 +48,7 @@ func _process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
 		inventoryMenu.set_visible(false)
+		mapMenu.set_visible(false)
 		isVisible = false
 		delay = 0.0
 		$"Close SFX".play()
@@ -122,3 +124,6 @@ func _on_no_pressed() -> void:
 
 func _on_yes_pressed() -> void:
 	get_tree().quit()
+
+func _on_map_pressed() -> void:
+	mapMenu.set_visible(true)
