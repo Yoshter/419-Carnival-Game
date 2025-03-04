@@ -18,12 +18,12 @@ var canPlay : bool = false
 func _ready() -> void:
 	if pluggedIn:
 		plugSprite.play("plugged")
-		brokenMusic.stop() #not working
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if canFix:
 		if Input.is_action_just_pressed("ui_accept"):
+			brokenMusic.stop() #Not working
 			fix()
 	
 	if canPlay:
@@ -53,6 +53,7 @@ func _on_game_portal_body_exited(body: Node3D) -> void:
 func fix() -> void:
 	plugSprite.play("plugged")
 	pluggedIn = true
+	brokenMusic.stop() #Not working
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)

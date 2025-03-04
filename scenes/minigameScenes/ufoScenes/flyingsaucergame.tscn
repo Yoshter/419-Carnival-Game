@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bir814prxcdts"]
+[gd_scene load_steps=12 format=3 uid="uid://bir814prxcdts"]
 
 [ext_resource type="Script" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
 [ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/minigameScenes/ufoScenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="5_2gl3j"]
 [ext_resource type="AudioStream" uid="uid://d3xhwrtmwg01y" path="res://assets/allsound/SFX/Ufo Beam sound new.wav" id="6_mx413"]
 [ext_resource type="AudioStream" uid="uid://dsl8s0amhivyt" path="res://assets/allsound/SFX/UFO score point.wav" id="7_jxm20"]
+[ext_resource type="AudioStream" uid="uid://dqcnlube4v44r" path="res://assets/allsound/Music/Ufo game.wav" id="8_voyvo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pfjs"]
 size = Vector2(3671, 196)
@@ -170,9 +171,16 @@ stream = ExtResource("5_2gl3j")
 
 [node name="Beamsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_mx413")
-volume_db = 5.557
+volume_db = -6.351
 max_distance = 100000.0
 panning_strength = 0.0
 
 [node name="ScoreupSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_jxm20")
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_voyvo")
+volume_db = 4.23
+autoplay = true
+max_distance = 24640.0
+panning_strength = 0.0
