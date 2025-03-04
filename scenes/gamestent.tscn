@@ -221,7 +221,7 @@ autoplay = true
 max_distance = 10.0
 
 [node name="world" parent="audioSpeakers" instance=ExtResource("10_86om8")]
-transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.515, 1.11752, -152.534)
+transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.119, 1.08691, -152.738)
 
 [node name="player2" parent="." instance=ExtResource("11_j2o88")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.03637, 1.62468, 0.342537)

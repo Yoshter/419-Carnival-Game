@@ -20,9 +20,12 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and velocity.y > -1000:
 		velocity.y = -100
 		beam.set_visible(true)
-	
+		$"../Beamsound".play()
+		#Not working due to action pressed, not held
+
 	if Input.is_action_just_released("ui_accept"):
 		beam.set_visible(false)
+		$"../Beamsound".stop()
 
 	move_and_slide()
 
