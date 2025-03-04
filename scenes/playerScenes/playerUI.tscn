@@ -454,6 +454,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/mapMenu"]
+layout_mode = 0
 offset_left = 397.0
 offset_top = 102.0
 offset_right = 976.0
