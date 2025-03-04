@@ -1,10 +1,13 @@
 extends Node2D
 
+@onready var scoreSound: AudioStreamPlayer = $scoreSound
+
 func _on_deathbox_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ufoPlayer"):
-		#$"../Deathsound".play() not working
 		body.die()
 
 func _on_score_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ufoPlayer"):
-		GamesGlobal.ufoScoreUp()
+		if !body.isDead:
+			scoreSound.play(0.0)
+			GamesGlobal.ufoScoreUp()

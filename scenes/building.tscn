@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://duxrh0oc2gdr"]
+[gd_scene load_steps=7 format=3 uid="uid://duxrh0oc2gdr"]
 
 [ext_resource type="Texture2D" uid="uid://dywbrd7vkml87" path="res://assets/art/building.png" id="1_2ed7c"]
 [ext_resource type="Script" path="res://scripts/building.gd" id="1_b4mm2"]
+[ext_resource type="AudioStream" uid="uid://dsl8s0amhivyt" path="res://assets/allsound/SFX/UFO score point.wav" id="3_8lrrx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gb76"]
 size = Vector2(31, 66)
@@ -42,6 +43,9 @@ shape = SubResource("RectangleShape2D_kjou0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scoreArea"]
 position = Vector2(5, -145.25)
 shape = SubResource("RectangleShape2D_orm35")
+
+[node name="scoreSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8lrrx")
 
 [connection signal="body_entered" from="deathbox" to="." method="_on_deathbox_body_entered"]
 [connection signal="body_entered" from="scoreArea" to="." method="_on_score_area_body_entered"]
