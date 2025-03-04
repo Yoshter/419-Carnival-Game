@@ -7,6 +7,9 @@ extends Node3D
 @onready var plugSprite: AnimatedSprite3D = $plugSprite
 @onready var fixLight: SpotLight3D = $SpotLight3D
 @onready var playLight: SpotLight3D = $SpotLight3D2
+@onready var brokenMusic = $Brokenmusic
+
+
 
 var canFix : bool = false
 var canPlay : bool = false
@@ -15,6 +18,7 @@ var canPlay : bool = false
 func _ready() -> void:
 	if pluggedIn:
 		plugSprite.play("plugged")
+		brokenMusic.stop() #not working
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
