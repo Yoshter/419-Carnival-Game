@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bir814prxcdts"]
+[gd_scene load_steps=13 format=3 uid="uid://bir814prxcdts"]
 
 [ext_resource type="Script" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
 [ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/minigameScenes/ufoScenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d3xhwrtmwg01y" path="res://assets/allsound/SFX/Ufo Beam sound new.wav" id="6_mx413"]
 [ext_resource type="AudioStream" uid="uid://dsl8s0amhivyt" path="res://assets/allsound/SFX/UFO score point.wav" id="7_jxm20"]
 [ext_resource type="AudioStream" uid="uid://dqcnlube4v44r" path="res://assets/allsound/Music/Ufo game.wav" id="8_voyvo"]
+[ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="9_te0li"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pfjs"]
 size = Vector2(3671, 196)
@@ -184,3 +185,7 @@ volume_db = 4.23
 autoplay = true
 max_distance = 24640.0
 panning_strength = 0.0
+
+[node name="Ticket get" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_te0li")
+max_distance = 99999.0
