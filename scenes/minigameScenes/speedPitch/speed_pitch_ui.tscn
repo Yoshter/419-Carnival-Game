@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5n7t3651pny5"]
 
-[ext_resource type="Script" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
+[ext_resource type="Script" uid="uid://dcxhvd8os0ywv" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
 [ext_resource type="AudioStream" uid="uid://cngyr4t7dpkgb" path="res://assets/allsound/SFX/Speed pitch target miss.wav" id="2_b15ol"]
 [ext_resource type="AudioStream" uid="uid://bhwivv03ec0eb" path="res://assets/allsound/SFX/Speed pitch target hit.wav" id="3_4ta8n"]
 

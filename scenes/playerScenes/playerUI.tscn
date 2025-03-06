@@ -1,8 +1,8 @@
 [gd_scene load_steps=22 format=3 uid="uid://gw27gms06jj0"]
 
-[ext_resource type="Script" path="res://scripts/player_ui.gd" id="1_4pjyk"]
+[ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
-[ext_resource type="Script" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
+[ext_resource type="Script" uid="uid://b2ndqfn7mxhna" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 [ext_resource type="Texture2D" uid="uid://cm1y3u5fcalkb" path="res://assets/UI/mapButton.png" id="3_lpw4w"]
 [ext_resource type="Texture2D" uid="uid://7cg1vs42bmbb" path="res://assets/art/funpass.png" id="3_wstr5"]
 [ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="4_acwhg"]

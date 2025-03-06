@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dxi413p71bf7s"]
 
-[ext_resource type="Script" path="res://scenes/fungate.gd" id="1_5cohp"]
+[ext_resource type="Script" uid="uid://be4dnwb6q21ms" path="res://scenes/fungate.gd" id="1_5cohp"]
 [ext_resource type="Texture2D" uid="uid://v8bvtcp75o4s" path="res://assets/Tent/Gate.png" id="2_cx8a8"]
 [ext_resource type="Texture2D" uid="uid://0bg8h3jhei8v" path="res://assets/art/gatetop.png" id="2_qgrv6"]
 

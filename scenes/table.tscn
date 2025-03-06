@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1ygngepfcasq"]
 
 [ext_resource type="Texture2D" uid="uid://dbkx0lrfjptr6" path="res://assets/art/table1.png" id="1_rwm3s"]
-[ext_resource type="Script" path="res://scenes/table.gd" id="1_vxesm"]
+[ext_resource type="Script" uid="uid://d0tpre5u4ergx" path="res://scenes/table.gd" id="1_vxesm"]
 [ext_resource type="Texture2D" uid="uid://dddkq25qgk6cb" path="res://assets/art/tableleg.png" id="2_c1kva"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_35ghw"]

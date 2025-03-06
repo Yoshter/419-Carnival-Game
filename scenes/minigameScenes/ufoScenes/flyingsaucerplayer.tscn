@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ci06h665vgkgm"]
 
-[ext_resource type="Script" path="res://scripts/minigameScripts/flyingsaucerplayer.gd" id="1_2lje1"]
+[ext_resource type="Script" uid="uid://dsi5lp3gm7lsp" path="res://scripts/minigameScripts/flyingsaucerplayer.gd" id="1_2lje1"]
 [ext_resource type="Texture2D" uid="uid://fsicn7nul6i7" path="res://assets/art/ufo.png" id="2_y7qrm"]
 [ext_resource type="AudioStream" uid="uid://d3xhwrtmwg01y" path="res://assets/allsound/SFX/Ufo Beam sound new.wav" id="3_mym1x"]
 [ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="4_agixg"]

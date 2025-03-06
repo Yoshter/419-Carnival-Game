@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bir814prxcdts"]
 
-[ext_resource type="Script" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
+[ext_resource type="Script" uid="uid://bk8av2cgx5pkn" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
 [ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/minigameScenes/ufoScenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
 [ext_resource type="PackedScene" uid="uid://duxrh0oc2gdr" path="res://scenes/building.tscn" id="2_huc4y"]
 [ext_resource type="PackedScene" uid="uid://c6qm0k7kc53a1" path="res://scenes/ufoui.tscn" id="3_l7gnf"]

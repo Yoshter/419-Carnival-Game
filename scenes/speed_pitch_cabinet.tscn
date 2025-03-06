@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://o2t2c4twpgi8"]
 
-[ext_resource type="Script" path="res://scenes/speed_pitch_cabinet.gd" id="1_ur6e3"]
+[ext_resource type="Script" uid="uid://dtlm5h3uqoeeq" path="res://scenes/speed_pitch_cabinet.gd" id="1_ur6e3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_suewp"]
 size = Vector3(1.27661, 2.11841, 1)

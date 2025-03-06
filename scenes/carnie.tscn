@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cfrvinb5rmhlm"]
 
 [ext_resource type="Texture2D" uid="uid://bqyisb76l70ap" path="res://assets/art/carnie.png" id="1_a7ifa"]
-[ext_resource type="Script" path="res://scripts/NPCscripts/carnie.gd" id="1_l17di"]
+[ext_resource type="Script" uid="uid://3gh8gkilwvfi" path="res://scripts/NPCscripts/carnie.gd" id="1_l17di"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqvl1"]
 atlas = ExtResource("1_a7ifa")
