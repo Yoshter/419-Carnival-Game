@@ -1,11 +1,12 @@
-[gd_scene load_steps=20 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=19 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_7ovt0"]
+[ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_ikt7c"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_vq8fw"]
 [ext_resource type="Material" uid="uid://cm8x7kqg25onx" path="res://assets/materials/clearcoatchrome.tres" id="3_u6un1"]
 [ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="4_5ix5a"]
 [ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="5_woyub"]
-[ext_resource type="Texture2D" uid="uid://dkcftp5d7j4yo" path="res://assets/Textures/Tent_Wall_New.png" id="5_xbnw5"]
+[ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="6_ikt7c"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="6_m4csp"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
@@ -22,18 +23,6 @@ albedo_texture = ExtResource("4_5ix5a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ikt7c"]
-albedo_texture = ExtResource("5_xbnw5")
-uv1_triplanar = true
-uv1_triplanar_sharpness = 150.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fwju3"]
-albedo_texture = ExtResource("5_xbnw5")
-uv1_scale = Vector3(0.5, 0.5, 0.5)
-uv1_triplanar = true
-uv1_triplanar_sharpness = 17.1484
-uv2_scale = Vector3(0.5, 0.5, 0.5)
 
 [node name="gamestent" type="Node3D"]
 
@@ -52,6 +41,7 @@ size = Vector3(12.7969, 1, 8.22095)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60156, 0.705879, 4.74571)
+material_override = ExtResource("2_ikt7c")
 use_collision = true
 size = Vector3(12.7969, 0.817871, 1.26282)
 
@@ -115,11 +105,12 @@ size = Vector3(17.8389, 8.51656, 17.4238)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2548, 2.11719, -0.716921)
+material_override = ExtResource("2_ikt7c")
 size = Vector3(1, 5.23438, 34.353)
 
 [node name="CSGCylinder3D6" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
-material_override = SubResource("StandardMaterial3D_ikt7c")
+material_override = ExtResource("6_ikt7c")
 use_collision = true
 radius = 27.3136
 height = 14.4892
@@ -146,7 +137,7 @@ transform = Transform3D(0.786086, 0, 0, 0, 3.1128, 0, 0, 0, 0.773173, -25.6063, 
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
-material_override = SubResource("StandardMaterial3D_fwju3")
+material_override = ExtResource("6_ikt7c")
 use_collision = true
 radius = 8.7772
 height = 7.59151
@@ -237,7 +228,8 @@ itemToCheck = "funPassLevel2"
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5577, 7.6444, 0)
-light_color = Color(1, 0.425788, 0.357085, 1)
+light_color = Color(0.793181, 0.601833, 0, 1)
+light_energy = 1.095
 omni_range = 29.2478
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
@@ -252,7 +244,7 @@ omni_range = 29.2478
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4088, 7.6444, 21.6412)
-light_color = Color(1, 0.425788, 0.357085, 1)
+light_color = Color(0.793181, 0.601833, 0, 1)
 omni_range = 29.2478
 
 [node name="items" type="Node3D" parent="."]
