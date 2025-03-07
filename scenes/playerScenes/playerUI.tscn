@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=23 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="6_4kfvc"]
 [ext_resource type="Texture2D" uid="uid://biovfdi5bv5np" path="res://assets/Token/Token Shooting Range.png" id="6_67p70"]
 [ext_resource type="Texture2D" uid="uid://dyib5hpye3qyo" path="res://assets/Token/Token Skee ball.png" id="7_0lfn4"]
+[ext_resource type="Texture2D" uid="uid://dk42v3xd14uro" path="res://assets/art/saw.png" id="7_hty8y"]
 [ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="7_luwil"]
 [ext_resource type="Texture2D" uid="uid://bqhtogt15dg8r" path="res://assets/Token/Token Baseball.png" id="8_xvmha"]
 [ext_resource type="Texture2D" uid="uid://dom3xjkrrbwbo" path="res://assets/Token/Token Tower.png" id="9_k2bd0"]
@@ -108,7 +109,6 @@ offset_left = 481.0
 offset_top = 288.0
 offset_right = 881.0
 offset_bottom = 383.0
-text = "INVENTORY"
 flat = true
 
 [node name="inventoryMenu" type="Control" parent="PauseMenu"]
@@ -311,9 +311,16 @@ offset_bottom = 40.0
 
 [node name="funPass" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
 visible = false
-position = Vector2(443, 337)
+position = Vector2(445, 341)
 scale = Vector2(1.475, 1.475)
 texture = ExtResource("3_wstr5")
+
+[node name="saw" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(554, 342)
+scale = Vector2(1.59375, 1.59375)
+texture = ExtResource("7_hty8y")
 
 [node name="tokens" type="Control" parent="PauseMenu/inventoryMenu/itemIcons"]
 anchors_preset = 0
@@ -334,13 +341,13 @@ texture = ExtResource("6_67p70")
 
 [node name="skeebleToken" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons/tokens"]
 visible = false
-position = Vector2(551, 163)
+position = Vector2(646, 163)
 scale = Vector2(0.5625, 0.5625)
 texture = ExtResource("7_0lfn4")
 
 [node name="speedPitchToken" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons/tokens"]
 visible = false
-position = Vector2(645, 164)
+position = Vector2(553, 164)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("8_xvmha")
 
@@ -363,13 +370,13 @@ texture = ExtResource("10_1nmfo")
 
 [node name="skeebleTicket" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons/tickets"]
 visible = false
-position = Vector2(547, 253)
+position = Vector2(640, 253)
 scale = Vector2(0.342308, 0.342308)
 texture = ExtResource("11_latnh")
 
 [node name="speedPitchTicket" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons/tickets"]
 visible = false
-position = Vector2(642, 253)
+position = Vector2(544, 253)
 scale = Vector2(0.353846, 0.353846)
 texture = ExtResource("12_qjt8n")
 
@@ -514,6 +521,37 @@ offset_right = 1121.0
 offset_bottom = 126.0
 text = "nothing"
 
+[node name="controls" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1029.0
+offset_top = 316.0
+offset_right = 1069.0
+offset_bottom = 356.0
+
+[node name="ColorRect" type="ColorRect" parent="controls"]
+layout_mode = 0
+offset_left = -85.0
+offset_top = -36.0
+offset_right = 95.0
+offset_bottom = 75.0
+color = Color(0.227451, 0.227451, 0.227451, 0.568627)
+
+[node name="Label" type="Label" parent="controls"]
+layout_mode = 0
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 275.0
+text = "W A S D Move
+Space Interact
+Mouse Camera"
+horizontal_alignment = 1
+
+[node name="hudTimer" type="Timer" parent="controls"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
 [node name="dialogueTimer" type="Timer" parent="."]
 wait_time = 3.0
 
@@ -532,4 +570,5 @@ stream = ExtResource("7_luwil")
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
+[connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]

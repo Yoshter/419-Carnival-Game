@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcg3ygwtwkmsr"]
+[gd_scene load_steps=7 format=3 uid="uid://dcg3ygwtwkmsr"]
 
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="1_3s7w3"]
+[ext_resource type="Script" uid="uid://dlvr51l86wbhe" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/arcadecabinet.tscn" id="2_u6xsm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_no5us"]
@@ -17,6 +18,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="world" type="Node3D"]
+script = ExtResource("1_4wyf3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kq6ix")

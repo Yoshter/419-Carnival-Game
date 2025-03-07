@@ -4,6 +4,9 @@ extends Control
 @onready var label : Label = $DialogueMenu/Label
 @onready var dialogueTimer: Timer = $dialogueTimer
 
+#Control Pop-Up
+@onready var controls: Control = $controls
+var controlsShown : bool = false
 #menus
 @onready var pauseMenu : Control = $PauseMenu
 @onready var getItemMenu : Control = $GetItemMenu
@@ -25,6 +28,7 @@ extends Control
 @onready var towerTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/towerTicket
 
 @onready var funPassIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPass
+@onready var sawIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/saw
 
 var dialogueCount : int = 0
 var maxDialogueCount : int = 0
@@ -38,6 +42,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	delay += delta
+	
+	if PlayerGlobal.controlsShown:
+		controls.set_visible(false)
+	
+	if !PlayerGlobal.controlsShown:
+		print("fuck")
+	
 	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
@@ -118,6 +129,8 @@ func updateItemIcons() -> void:
 		rangeTicketIcon.set_visible(true)
 	if ItemsGlobal.checkItem("funPassLevel2"):
 		funPassIcon.set_visible(true)
+	if ItemsGlobal.checkItem("saw"):
+		sawIcon.set_visible(true)
 
 func _on_no_pressed() -> void:
 	confirm_quit_2.set_visible(false)
@@ -127,3 +140,7 @@ func _on_yes_pressed() -> void:
 
 func _on_map_pressed() -> void:
 	mapMenu.set_visible(true)
+
+func _on_hud_timer_timeout() -> void:
+	PlayerGlobal.controlsShown = true
+	controls.set_visible(false)

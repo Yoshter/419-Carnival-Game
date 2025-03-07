@@ -3,6 +3,7 @@ extends Node
 var isTalking : bool = false
 var isTalkingTo : String
 var inUI : bool = false
+var controlsShown = false
 
 var needsTeleport = false
 var newPosition : Vector3

@@ -1,7 +1,10 @@
-[gd_scene format=3 uid="uid://lpvmrhxrmmkp"]
+[gd_scene load_steps=2 format=3 uid="uid://lpvmrhxrmmkp"]
+
+[ext_resource type="Script" uid="uid://bf1jrgpmw32ch" path="res://scenes/hallway.gd" id="1_owcqv"]
 
 [node name="hallway" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9622, 0, 22.8016)
+script = ExtResource("1_owcqv")
 
 [node name="CSGCylinder3D9" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.313562, 0, 0.949568, 0, 1, 0, -0.949568, 0, 0.313562, 37.7442, -1.66376, -13.088)

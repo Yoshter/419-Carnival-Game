@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpufxile48ao1"]
+
+[ext_resource type="Script" uid="uid://df5xl527e2hfo" path="res://scenes/good_hallway.gd" id="1_qn5qp"]
+
+[node name="goodHallway" type="Node3D"]
+script = ExtResource("1_qn5qp")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -12.1588)
+use_collision = true
+size = Vector3(10.0596, 9, 25.3176)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0566883, -1.36976)
+operation = 2
+size = Vector3(6.09961, 5.57129, 28.0807)

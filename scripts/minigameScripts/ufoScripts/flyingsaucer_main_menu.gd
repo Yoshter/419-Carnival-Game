@@ -24,5 +24,5 @@ func _process(delta: float) -> void:
 
 func _on_token_button_pressed() -> void:
 	PlayerGlobal.needsTeleport = true
-	PlayerGlobal.newPosition = Vector3(-110,1.6,-150)
+	PlayerGlobal.newPosition = Vector3(-25.082,1.444,-58.956)
 	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")

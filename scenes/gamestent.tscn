@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=20 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_ikt7c"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="12_8gcbl"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="13_4vgoj"]
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
+[ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -125,9 +126,9 @@ height = 12.8748
 sides = 16
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D6"]
-transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, -4.6542, -3.23495, -25.5845)
+transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, -4.6542, -3.72398, -25.5845)
 operation = 2
-size = Vector3(5.60522, 6.55986, 4.49072)
+size = Vector3(5.60522, 5.58181, 4.49072)
 
 [node name="Carnival Speaker" parent="ground/mainarea" instance=ExtResource("5_woyub")]
 transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -25.6081, 5.31891, 0.438267)
@@ -171,7 +172,7 @@ operation = 2
 size = Vector3(3, 5, 6)
 
 [node name="hallway" parent="ground" instance=ExtResource("6_m4csp")]
-transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.58389, -28.0353)
+transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.61359, -30.3189)
 
 [node name="obstacles" type="Node3D" parent="."]
 
@@ -209,10 +210,10 @@ autoplay = true
 max_distance = 10.0
 
 [node name="world" parent="audioSpeakers" instance=ExtResource("10_86om8")]
-transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.119, 1.08691, -152.738)
+transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -101.134, 1.20716, -154.32)
 
 [node name="player2" parent="." instance=ExtResource("11_j2o88")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.79687, 0.983997, -0.987535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.72246, 1.26577, 1.2748)
 
 [node name="gates" type="Node3D" parent="."]
 
@@ -256,3 +257,6 @@ transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.06
 
 [node name="speedPitchCabinet" parent="." instance=ExtResource("14_vg1bg")]
 transform = Transform3D(-0.638163, 0, 0.769901, 0, 1, 0, -0.769901, 0, -0.638163, -28.9504, 0.5, 10.6087)
+
+[node name="goodHallway" parent="." instance=ExtResource("17_k74dv")]
+transform = Transform3D(0.978699, 0, 0.205299, 0, 1, 0, -0.205299, 0, 0.978699, -63.4244, -0.673, -26.211)
