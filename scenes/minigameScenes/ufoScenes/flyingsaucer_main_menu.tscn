@@ -23,13 +23,18 @@ nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 [node name="deathMenu" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 446.0
-offset_top = 106.0
-offset_right = 742.0
-offset_bottom = 517.0
+offset_left = 392.0
+offset_top = 107.0
+offset_right = 688.0
+offset_bottom = 518.0
 color = Color(0.236997, 0.433879, 0.652528, 1)
 
-[node name="Button2" parent="deathMenu" instance=ExtResource("1_31kig")]
+[node name="buttons" type="Control" parent="deathMenu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" parent="deathMenu/buttons" instance=ExtResource("1_31kig")]
 layout_mode = 0
 offset_left = 36.0
 offset_top = 218.0
@@ -38,7 +43,7 @@ offset_bottom = 279.0
 text = "RETRY"
 nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
-[node name="Button" parent="deathMenu" instance=ExtResource("1_31kig")]
+[node name="Button" parent="deathMenu/buttons" instance=ExtResource("1_31kig")]
 layout_mode = 0
 offset_left = 35.0
 offset_top = 309.0
@@ -68,16 +73,16 @@ text = "00"
 [node name="tokenButton" parent="deathMenu" instance=ExtResource("1_31kig")]
 visible = false
 layout_mode = 0
-offset_left = 439.0
-offset_top = 231.0
-offset_right = 662.0
-offset_bottom = 350.0
+offset_left = 33.0
+offset_top = 230.0
+offset_right = 256.0
+offset_bottom = 349.0
 text = "SURPRISE
 "
 script = null
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
-[connection signal="pressed" from="deathMenu/Button2" to="deathMenu/Button2" method="_on_pressed"]
-[connection signal="pressed" from="deathMenu/Button" to="deathMenu/Button" method="_on_pressed"]
+[connection signal="pressed" from="deathMenu/buttons/Button2" to="deathMenu/buttons/Button2" method="_on_pressed"]
+[connection signal="pressed" from="deathMenu/buttons/Button" to="deathMenu/buttons/Button" method="_on_pressed"]
 [connection signal="pressed" from="deathMenu/tokenButton" to="." method="_on_token_button_pressed"]
 [connection signal="pressed" from="deathMenu/tokenButton" to="deathMenu/tokenButton" method="_on_pressed"]

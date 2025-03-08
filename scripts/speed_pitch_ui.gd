@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 	
 	if throwDir == "vert":
 		hit = false
+		startButton.set_visible(false)
 		vertBar.set_visible(true)
 		vertCharge += pow(.45 + delta, 2)
 		vertBar.value = vertCharge
@@ -70,6 +71,7 @@ func _process(delta: float) -> void:
 	
 	if throwDir == "hor":
 		hit = null
+		startButton.set_visible(false)
 		horBar.set_visible(true)
 		horCharge += pow(.45 + delta, 2)
 		horBar.value = horCharge
@@ -88,6 +90,9 @@ func _process(delta: float) -> void:
 				fail()
 		if horCharge >= 100:
 			fail()
+	
+		if throwDir == "null":
+			startButton.set_visible(true)
 	
 	if countingDown:
 		countdownLabel.set_text(str(countdown.time_left))
