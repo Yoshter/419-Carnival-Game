@@ -185,13 +185,13 @@ transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, 
 size = Vector3(19.1089, 2.42468, 1)
 
 [node name="table" parent="obstacles" instance=ExtResource("7_7gm3j")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.683355, -17.5478)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.276409, -17.5478)
 
 [node name="table2" parent="obstacles" instance=ExtResource("7_7gm3j")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.683355, -10.6543)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.276409, -10.6543)
 
 [node name="table3" parent="obstacles" instance=ExtResource("7_7gm3j")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.683355, -11.7532)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.276409, -11.7532)
 isFlickering = true
 
 [node name="audioSpeakers" type="Node3D" parent="."]
@@ -227,31 +227,25 @@ itemToCheck = "funPassLevel2"
 
 [node name="Lights" type="Node3D" parent="."]
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5577, 7.6444, 0)
-light_color = Color(0.793181, 0.601833, 0, 1)
-light_energy = 1.095
-omni_range = 29.2478
-
-[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5153, 7.6444, 0)
-light_color = Color(1, 0.425788, 0.357085, 1)
-omni_range = 29.2478
-
-[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.02933, 7.6444, -20.7243)
-light_color = Color(1, 0.425788, 0.357085, 1)
-omni_range = 29.2478
-
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4088, 7.6444, 21.6412)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64639, 14.4358, 0.555725)
 light_color = Color(0.793181, 0.601833, 0, 1)
-omni_range = 29.2478
+light_energy = 6.142
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.368
+light_specular = 4.97
+shadow_enabled = true
+shadow_bias = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 41.37
+omni_range = 4096.0
+omni_attenuation = 1.202
+omni_shadow_mode = 0
 
 [node name="items" type="Node3D" parent="."]
 
 [node name="funPass" parent="." instance=ExtResource("13_4vgoj")]
-transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.7019, -11.4181)
+transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.16, -11.4181)
 
 [node name="Node3D" type="Node3D" parent="."]
 
