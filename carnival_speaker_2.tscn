@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx16tjr211b04"]
+
+[ext_resource type="PackedScene" uid="uid://bj7tvdf6dt304" path="res://assets/3dmodels/Carnival Speaker2.blend" id="1_s2erp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dsyrg"]
+cull_mode = 1
+albedo_color = Color(0.11, 0.11, 0.11, 1)
+metallic = 0.3
+metallic_specular = 0.75
+
+[node name="Carnival Speaker2" instance=ExtResource("1_s2erp")]
+
+[node name="Speaker" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dsyrg")

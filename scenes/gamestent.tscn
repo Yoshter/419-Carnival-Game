@@ -1,11 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=21 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_ikt7c"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_vq8fw"]
 [ext_resource type="Material" uid="uid://cm8x7kqg25onx" path="res://assets/materials/clearcoatchrome.tres" id="3_u6un1"]
 [ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="4_5ix5a"]
-[ext_resource type="PackedScene" uid="uid://cdcnc5h1qm7s7" path="res://assets/3dmodels/Carnival Speaker.blend" id="5_woyub"]
 [ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="6_ikt7c"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="6_m4csp"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/fun_pass.tscn" id="13_4vgoj"]
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
+[ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -24,6 +24,9 @@ albedo_texture = ExtResource("4_5ix5a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k74dv"]
+albedo_color = Color(0.1, 0.047, 0.047, 1)
 
 [node name="gamestent" type="Node3D"]
 
@@ -130,11 +133,12 @@ transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, 
 operation = 2
 size = Vector3(5.60522, 5.58181, 4.49072)
 
-[node name="Carnival Speaker" parent="ground/mainarea" instance=ExtResource("5_woyub")]
-transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -25.6081, 5.31891, 0.438267)
+[node name="Carnival Speaker2" parent="ground/mainarea/CSGCylinder3D6" instance=ExtResource("18_21i7n")]
+transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -15.1891, -1.70501, -0.240733)
 
-[node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea"]
-transform = Transform3D(0.786086, 0, 0, 0, 3.1128, 0, 0, 0, 0.773173, -25.6063, 2.21968, 0.447486)
+[node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea/CSGCylinder3D6/Carnival Speaker2"]
+transform = Transform3D(3.79468, 0, 0, 0, 15.0264, 0, 0, 0, 3.73234, 0.00868988, -14.9609, 0.044503)
+material = SubResource("StandardMaterial3D_k74dv")
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
