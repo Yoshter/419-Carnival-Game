@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=22 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_ikt7c"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
+[ext_resource type="PackedScene" uid="uid://drwyd1icj7mxy" path="res://scenes/vent_closet.tscn" id="18_bfm21"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -258,3 +259,6 @@ transform = Transform3D(-0.638163, 0, 0.769901, 0, 1, 0, -0.769901, 0, -0.638163
 
 [node name="goodHallway" parent="." instance=ExtResource("17_k74dv")]
 transform = Transform3D(0.978699, 0, 0.205299, 0, 1, 0, -0.205299, 0, 0.978699, -63.4244, -0.673, -26.211)
+
+[node name="ventCloset" parent="." instance=ExtResource("18_bfm21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.8755, 2.60325, -3.70924)

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://drwyd1icj7mxy"]
+
+[node name="ventCloset" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5978, 2.80029, 0)
+size = Vector3(34.1956, 4.60059, 4.72095)
