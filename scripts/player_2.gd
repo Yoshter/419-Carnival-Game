@@ -8,10 +8,18 @@ var mouseSens : float = 0.05
 
 var canTalk : bool = false
 var isTalking : bool = false
+var isCrouching : bool = false
+var canCrouch : bool = true
 
 @onready var player: CharacterBody3D = $"."
 @onready var body: Node3D = $body
 @onready var camera: Camera3D = $body/Camera3D
+@onready var crouchDelay: Timer = $crouchDelay
+
+@onready var crouchCamera: Node3D = $crouchCamera
+@onready var standCamera: Node3D = $standCamera
+@onready var crouchingCollide: CollisionShape3D = $crouchingCollide
+@onready var standingCollide: CollisionShape3D = $standingCollide
 
 func _ready() -> void:
 	add_to_group("player")
@@ -48,6 +56,24 @@ func _physics_process(delta: float) -> void:
 	else:
 		currSpeed = SPEED
 
+	if isCrouching and canCrouch:
+		if Input.is_action_just_pressed("crouch"):
+			body.position.y = 1.142
+			standingCollide.set_visible(true)
+			crouchingCollide.set_visible(false)
+			canCrouch = false
+			isCrouching = false
+			crouchDelay.start()
+
+	if !isCrouching and canCrouch:
+		if Input.is_action_just_pressed("crouch"):
+			body.position.y = 0.442
+			standingCollide.set_visible(false)
+			crouchingCollide.set_visible(true)
+			canCrouch = false
+			isCrouching = true
+			crouchDelay.start()
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("left", "right", "forward", "backward")
@@ -61,3 +87,6 @@ func _physics_process(delta: float) -> void:
 
 	if !PlayerGlobal.isTalking:
 		move_and_slide()
+
+func _on_crouch_delay_timeout() -> void:
+	canCrouch = true

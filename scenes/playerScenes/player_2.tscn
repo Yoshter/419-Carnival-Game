@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ec2iu4a6f3mf"]
+[gd_scene load_steps=5 format=3 uid="uid://ec2iu4a6f3mf"]
 
 [ext_resource type="Script" uid="uid://cwssn13aabkk1" path="res://scripts/player_2.gd" id="1_xuxxf"]
 [ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="2_8dcr5"]
@@ -6,13 +6,20 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pssrb"]
 height = 2.87251
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dkfn"]
+
 [node name="player2" type="CharacterBody3D"]
 collision_layer = 3
 script = ExtResource("1_xuxxf")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="standingCollide" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966512, 0)
 shape = SubResource("CapsuleShape3D_pssrb")
+
+[node name="crouchingCollide" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525761, 0)
+visible = false
+shape = SubResource("CapsuleShape3D_7dkfn")
 
 [node name="body" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14201, 0)
@@ -22,3 +29,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.739211, 0)
 current = true
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_8dcr5")]
+
+[node name="crouchCamera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736917, 0)
+
+[node name="standCamera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87763, 0)
+
+[node name="crouchDelay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="crouchDelay" to="." method="_on_crouch_delay_timeout"]
