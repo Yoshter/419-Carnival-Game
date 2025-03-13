@@ -15,6 +15,7 @@ var canCrouch : bool = true
 @onready var body: Node3D = $body
 @onready var camera: Camera3D = $body/Camera3D
 @onready var crouchDelay: Timer = $crouchDelay
+@onready var crouchRay: RayCast3D = $crouchRay
 
 @onready var crouchCamera: Node3D = $crouchCamera
 @onready var standCamera: Node3D = $standCamera
@@ -57,19 +58,20 @@ func _physics_process(delta: float) -> void:
 		currSpeed = SPEED
 
 	if isCrouching and canCrouch:
-		if Input.is_action_just_pressed("crouch"):
+		if Input.is_action_just_pressed("crouch") and !crouchRay.is_colliding():
 			body.position.y = 1.142
-			standingCollide.set_visible(true)
-			crouchingCollide.set_visible(false)
+			standingCollide.set_disabled(false)
+			crouchingCollide.set_disabled(true)
 			canCrouch = false
 			isCrouching = false
+			
 			crouchDelay.start()
 
 	if !isCrouching and canCrouch:
 		if Input.is_action_just_pressed("crouch"):
 			body.position.y = 0.442
-			standingCollide.set_visible(false)
-			crouchingCollide.set_visible(true)
+			standingCollide.set_disabled(true)
+			crouchingCollide.set_disabled(false)
 			canCrouch = false
 			isCrouching = true
 			crouchDelay.start()

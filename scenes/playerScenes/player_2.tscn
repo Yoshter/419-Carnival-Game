@@ -7,6 +7,8 @@
 height = 2.87251
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7dkfn"]
+radius = 0.429022
+height = 1.64591
 
 [node name="player2" type="CharacterBody3D"]
 collision_layer = 3
@@ -17,15 +19,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.966512, 0)
 shape = SubResource("CapsuleShape3D_pssrb")
 
 [node name="crouchingCollide" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525761, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355522, 0)
 visible = false
 shape = SubResource("CapsuleShape3D_7dkfn")
 
 [node name="body" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14201, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14201, 1.36994)
 
 [node name="Camera3D" type="Camera3D" parent="body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.739211, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.739211, -1.33995)
 current = true
 
 [node name="PlayerUI" parent="." instance=ExtResource("2_8dcr5")]
@@ -37,7 +39,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.736917, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.87763, 0)
 
 [node name="crouchDelay" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
+
+[node name="crouchRay" type="RayCast3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 1.42268, 0)
 
 [connection signal="timeout" from="crouchDelay" to="." method="_on_crouch_delay_timeout"]

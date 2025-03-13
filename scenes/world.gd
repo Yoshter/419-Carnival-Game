@@ -1,6 +1,6 @@
 extends Node3D
 
-var position1 : Vector3 = Vector3(-101.1,1.207,-154.32)
+var position1 : Vector3 = Vector3(-99.57,1.243,-154.32)
 var position2 : Vector3 = Vector3(-18.409, 1.435, -60.0331)
 
 func _ready() -> void:
