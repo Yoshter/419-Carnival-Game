@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=22 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_ikt7c"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="6_ikt7c"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="6_m4csp"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
+[ext_resource type="PackedScene" uid="uid://bspombtyhjd6a" path="res://scenes/shooting_range.tscn" id="8_21i7n"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="9_hb0km"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
@@ -112,7 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2548, 2.11719, -0.716921)
 material_override = ExtResource("2_ikt7c")
 size = Vector3(1, 5.23438, 34.353)
 
-[node name="CSGCylinder3D6" type="CSGCylinder3D" parent="ground/mainarea"]
+[node name="mainTentCyl" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
 material_override = ExtResource("6_ikt7c")
 use_collision = true
@@ -120,7 +121,7 @@ radius = 27.3136
 height = 14.4892
 sides = 16
 
-[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea/CSGCylinder3D6"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.221481, -1.52907, -0.265364)
 operation = 2
 use_collision = true
@@ -128,22 +129,27 @@ radius = 24.7083
 height = 12.8748
 sides = 16
 
-[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D6"]
+[node name="hallway1Hole" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
 transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, -4.6542, -3.72398, -25.5845)
 operation = 2
 size = Vector3(5.60522, 5.58181, 4.49072)
 
-[node name="Carnival Speaker2" parent="ground/mainarea/CSGCylinder3D6" instance=ExtResource("18_21i7n")]
+[node name="Carnival Speaker2" parent="ground/mainarea/mainTentCyl" instance=ExtResource("18_21i7n")]
 transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -15.1891, -1.70501, -0.240733)
 
-[node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea/CSGCylinder3D6/Carnival Speaker2"]
+[node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl/Carnival Speaker2"]
 transform = Transform3D(3.79468, 0, 0, 0, 15.0264, 0, 0, 0, 3.73234, 0.00868988, -14.9609, 0.044503)
 material = SubResource("StandardMaterial3D_k74dv")
 
-[node name="janitorDoorway" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D6"]
+[node name="janitorDoorway" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
 transform = Transform3D(0.834858, 0, -0.550466, 0, 1, 0, 0.550466, 0, 0.834858, -23.0456, -3.72398, -12.3187)
 operation = 2
 size = Vector3(5.60522, 5.58181, 4.49072)
+
+[node name="shootingRangeHole" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(0.997065, 0, 0.0765629, 0, 1, 0, -0.0765629, 0, 0.997065, -0.167727, -2.52758, 28.0764)
+operation = 2
+size = Vector3(17.4697, 7.92762, 13.6633)
 
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
@@ -171,17 +177,26 @@ operation = 2
 size = Vector3(3, 5, 6)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
-transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.356434, 2, 7.26852)
+transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.359479, 2, 7.45633)
 operation = 2
-size = Vector3(3, 5, 6)
+size = Vector3(3.37567, 5, 6)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
 transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.104492, 2, -8.26852)
 operation = 2
 size = Vector3(3, 5, 6)
 
+[node name="CSGBox3D4" type="CSGBox3D" parent="ground/mainarea"]
+transform = Transform3D(0.715486, 0, -0.698628, 0, 1, 0, 0.698628, 0, 0.715486, 6.70192, 1.88953, 17.2936)
+material_override = ExtResource("2_ikt7c")
+use_collision = true
+size = Vector3(31.0439, 3.18518, 1.26282)
+
 [node name="hallway" parent="ground" instance=ExtResource("6_m4csp")]
 transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.61359, -30.3189)
+
+[node name="shootingRange" parent="." instance=ExtResource("8_21i7n")]
+transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189, -2.56122, -0.0716987, 29.9597)
 
 [node name="obstacles" type="Node3D" parent="."]
 

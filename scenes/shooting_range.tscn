@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://bspombtyhjd6a"]
+
+[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="1_7m8ba"]
+
+[node name="shootingRange" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61365, 3.92505, -8.06494)
+size = Vector3(26.5408, 8.8501, 17.1299)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13826, 0.509216, -0.00703239)
+operation = 2
+size = Vector3(39.2916, 7.40955, 16.3457)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98169, 1.42276, -5.35299)
+size = Vector3(1, 1.37354, 10.9268)
+
+[node name="fungate" parent="." instance=ExtResource("1_7m8ba")]
+transform = Transform3D(0.0643648, 0, 3.99948, 0, 4, 0, -3.99948, 0, 0.0643648, 8.05401, 2.19533, -13.4719)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.566981, -0.190121, 0.801491, 0.0406329, 0.978271, 0.203311, -0.822729, -0.0827063, 0.562386, 5.74372, 6.3778, -0.274516)
+light_energy = 4.0
+spot_range = 36.8603
+spot_angle = 20.1224
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.562044, -0.145856, 0.814145, 0.0406328, 0.978271, 0.203311, -0.826109, 0.147351, -0.543905, 5.74372, 6.3778, -17.764)
+light_energy = 4.0
+spot_range = 36.8603
+spot_angle = 20.1224

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://drft1bhwsn1xm"]
+
+[ext_resource type="Texture2D" uid="uid://biovfdi5bv5np" path="res://assets/Token/Token Shooting Range.png" id="1_jx13s"]
+
+[node name="overworldToken" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_jx13s")
