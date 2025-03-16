@@ -106,15 +106,36 @@ use_collision = true
 size = Vector3(27.51, 9.76161, 16.0957)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="closet/janitorCloset"]
-transform = Transform3D(0.999826, 0, -0.0186738, 0, 1, 0, 0.0186738, 0, 0.999826, -2.41066, 0.686192, 0.727368)
+transform = Transform3D(0.999826, 0, -0.0186738, 0, 1, 0, 0.0186738, 0, 0.999826, -0.184483, 0.686192, 0.768944)
 operation = 2
-size = Vector3(30.8926, 7.00256, 13.2398)
+size = Vector3(26.4395, 7.00256, 13.2398)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="closet/janitorCloset"]
 transform = Transform3D(0.764945, 0, -0.644097, 0, 1, 0, 0.644097, 0, 0.764945, -1.63658, 2.49736, 0.112638)
 operation = 2
 size = Vector3(3.02824, 8.01047, 4.07788)
 
+[node name="CSGBox3D8" type="CSGBox3D" parent="closet/janitorCloset"]
+transform = Transform3D(0.999826, 0, -0.0186738, 0, 1, 0, 0.0186738, 0, 0.999826, -17.2361, -0.760188, 0.353948)
+operation = 2
+size = Vector3(9.76856, 4.1098, 4.4541)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="closet"]
-transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -14.9926, 2.04059, -30.2187)
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -16.9529, 2.04059, -32.9651)
 size = Vector3(4.28003, 5.08118, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="closet"]
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.7977, 2.69907, -22.9352)
+size = Vector3(9.46179, 6.39813, 2.09961)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="closet"]
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.9715, 2.26561, -17.3924)
+size = Vector3(0.79599, 5.53122, 5.09985)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="closet"]
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.0424, 0.712551, -18.1825)
+size = Vector3(1.37691, 2.4251, 5.09985)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="closet"]
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -27.8349, 0.869736, -31.9862)
+size = Vector3(6.31482, 2.73947, 1.8125)

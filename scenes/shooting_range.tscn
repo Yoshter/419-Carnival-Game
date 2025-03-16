@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bspombtyhjd6a"]
 
-[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/fungate.tscn" id="1_7m8ba"]
+[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="1_7m8ba"]
 
 [node name="shootingRange" type="Node3D"]
 

@@ -3,19 +3,33 @@ extends Node3D
 @export var pluggedIn : bool = false
 @export var gameScene : String
 @export var bust : bool = false
+@export var game : String
 
-@onready var plugSprite: AnimatedSprite3D = $plugSprite
+@onready var plugSprite: AnimatedSprite3D = $bodySprites/plugSprite
 @onready var fixLight: SpotLight3D = $SpotLight3D
 @onready var playLight: SpotLight3D = $SpotLight3D2
 @onready var brokenMusic = $Brokenmusic
 
-
+@onready var ufoCabSprites: Node3D = $bodySprites/ufoCabSprites
+@onready var towerCabSprites: Node3D = $bodySprites/towerCabSprites
+@onready var bustCabSprites: Node3D = $bodySprites/bustCabSprites
 
 var canFix : bool = false
 var canPlay : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if bust:
+		bustCabSprites.set_visible(true)
+	
+	match game:
+		"ufo":
+			ufoCabSprites.set_visible(true)
+		"tower":
+			towerCabSprites.set_visible(true)
+		_:
+			bustCabSprites.set_visible(true)
+	
 	if pluggedIn:
 		plugSprite.play("plugged")
 
@@ -26,7 +40,7 @@ func _process(delta: float) -> void:
 			brokenMusic.stop() #Not working
 			fix()
 	
-	if canPlay:
+	if canPlay and game == "ufo":
 		if Input.is_action_just_pressed("ui_accept") and ItemsGlobal.checkItem("ufoToken"):
 			play()
 

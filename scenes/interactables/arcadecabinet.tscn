@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dm64f4kpr4iqe"]
+[gd_scene load_steps=35 format=3 uid="uid://dm64f4kpr4iqe"]
 
 [ext_resource type="Script" uid="uid://ck2u2ojurbih1" path="res://scripts/arcadecabinet.gd" id="1_smnev"]
 [ext_resource type="Texture2D" uid="uid://dtbhqr0fajxjg" path="res://assets/Space/Space Art/Cab Base Back.png" id="2_3akc8"]
@@ -10,7 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://dldqxdaecu6do" path="res://assets/Space/Space Art/Cab Base Screen.png" id="6_6g64g"]
 [ext_resource type="Texture2D" uid="uid://by023jh8afqoi" path="res://assets/Space/Space Art/Cab Base Underish.png" id="7_7t5x5"]
 [ext_resource type="Texture2D" uid="uid://c7dp2cv1aco6" path="res://assets/Space/Space Art/Cab Space Top.png" id="8_wiumi"]
+[ext_resource type="Texture2D" uid="uid://enlovsprp84h" path="res://assets/Tower Cab/Tower Screen.png" id="9_j7nvy"]
+[ext_resource type="Texture2D" uid="uid://dmyhtla2tiqev" path="res://assets/Tower Cab/Tower Bottom.png" id="10_ig5vg"]
 [ext_resource type="AudioStream" uid="uid://dekhjr771xgx3" path="res://assets/allsound/Music/Ufo game Corrupt.wav" id="11_rdk3c"]
+[ext_resource type="Texture2D" uid="uid://cj3j220bivc4h" path="res://assets/Tower Cab/Tower Side.png" id="11_xtcub"]
+[ext_resource type="Texture2D" uid="uid://dw1yydok6bshy" path="res://assets/Tower Cab/Tower Top.png" id="12_atseq"]
+[ext_resource type="Texture2D" uid="uid://bp1boyvdxcqh4" path="res://assets/Tower Cab/Tower Underish.png" id="13_wrjek"]
+[ext_resource type="Texture2D" uid="uid://bi7b5ievofupi" path="res://assets/Cab Base/Cab Base Bottom.png" id="15_h5v03"]
+[ext_resource type="Texture2D" uid="uid://bmxrkv5ygrucu" path="res://assets/Cab Base/Cab Base Screen.png" id="16_fvrso"]
+[ext_resource type="Texture2D" uid="uid://bftrsi8fl4gfe" path="res://assets/Cab Base/Cab Base Side.png" id="17_lem57"]
+[ext_resource type="Texture2D" uid="uid://b68m6fu5dp06p" path="res://assets/Cab Base/Cab Base Top.png" id="18_knelh"]
+[ext_resource type="Texture2D" uid="uid://dpnfnnkskmnoq" path="res://assets/Cab Base/Cab Base Underish.png" id="19_5prtv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3u2v"]
 atlas = ExtResource("3_kf8qd")
@@ -119,49 +129,131 @@ size = Vector3(1, 1.18945, 1)
 
 [node name="bodySprites" type="Node3D" parent="."]
 
-[node name="Sprite3D" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.54982, 0, -0.0140711, 0, 0.55, 0, 0.0140711, 0, 0.54982, -0.151961, 1.83344, -0.879884)
+[node name="backSprite" type="Sprite3D" parent="bodySprites"]
+transform = Transform3D(0.549984, 0, -0.0042429, 0, 0.55, 0, 0.0042429, 0, 0.549984, -0.151961, 1.83344, -0.854745)
 texture = ExtResource("2_3akc8")
 
-[node name="Sprite3D2" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.00208264, -1.40633, 1.81725, 0.381332)
-texture = ExtResource("3_7njlu")
-
-[node name="Sprite3D3" type="Sprite3D" parent="bodySprites"]
+[node name="joystickSprite" type="Sprite3D" parent="bodySprites"]
 transform = Transform3D(-0.536642, 0.0262992, -0.117575, 0.0130435, 0.546264, 0.0626551, 0.119772, 0.0583443, -0.53362, -0.198596, 1.73915, 1.41767)
 texture = ExtResource("4_ia3io")
 
-[node name="Sprite3D4" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.549979, 0, 0.0047804, 0, 0.55, 0, -0.0047804, 0, 0.549979, -0.178811, 0.577765, 1.6868)
-texture = ExtResource("5_33fjs")
-
-[node name="Sprite3D5" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.539823, 0, -0.0138152, 0, 0.54, 0, 0.0138152, 0, 0.539823, -0.175218, 2.3162, 1.10767)
-texture = ExtResource("6_6g64g")
-
-[node name="Sprite3D6" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.54982, 0, -0.0140711, -0.0138219, 0.103041, -0.540085, 0.00263617, 0.540262, 0.103007, -0.151961, 2.96646, 1.29315)
-texture = ExtResource("7_7t5x5")
-
-[node name="Sprite3D7" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.54982, 0, -0.0140711, 0, 0.55, 0, 0.0140711, 0, 0.54982, -0.151961, 3.38034, 1.68246)
-texture = ExtResource("8_wiumi")
-
-[node name="Sprite3D8" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(0.549993, -0.00272985, -0.000511457, 0.00193169, 0.303214, 0.458866, -0.00199555, -0.458862, 0.30322, -0.169821, 1.5052, 1.30358)
-texture = ExtResource("7_7t5x5")
-
-[node name="Sprite3D9" type="Sprite3D" parent="bodySprites"]
-transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.00208264, 1.07219, 1.81725, 0.419821)
-texture = ExtResource("3_7njlu")
-
-[node name="plugSprite" type="AnimatedSprite3D" parent="."]
+[node name="plugSprite" type="AnimatedSprite3D" parent="bodySprites"]
 transform = Transform3D(-0.0481698, 0, -0.998839, 0, 1, 0, 0.998839, 0, -0.0481698, 0.69858, 0.757961, -1.89857)
 pixel_size = 0.04
 texture_filter = 2
 sprite_frames = SubResource("SpriteFrames_8kwk5")
 animation = &"unplugged"
 autoplay = "unplugged"
+
+[node name="ufoCabSprites" type="Node3D" parent="bodySprites"]
+visible = false
+
+[node name="Sprite3D2" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.00208264, -1.40633, 1.81725, 0.381332)
+texture = ExtResource("3_7njlu")
+
+[node name="Sprite3D4" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(0.549979, 0, 0.0047804, 0, 0.55, 0, -0.0047804, 0, 0.549979, -0.178811, 0.577765, 1.6868)
+texture = ExtResource("5_33fjs")
+
+[node name="Sprite3D5" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(0.539823, 0, -0.0138152, 0, 0.54, 0, 0.0138152, 0, 0.539823, -0.175218, 2.3162, 1.10767)
+texture = ExtResource("6_6g64g")
+
+[node name="Sprite3D6" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(0.54982, 0, -0.0140711, -0.0138219, 0.103041, -0.540085, 0.00263617, 0.540262, 0.103007, -0.151961, 2.96646, 1.29315)
+texture = ExtResource("7_7t5x5")
+
+[node name="Sprite3D7" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(0.54982, 0, -0.0140711, 0, 0.55, 0, 0.0140711, 0, 0.54982, -0.151961, 3.38034, 1.68246)
+texture = ExtResource("8_wiumi")
+
+[node name="Sprite3D8" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(0.549993, -0.00272985, -0.000511457, 0.00193169, 0.303214, 0.458866, -0.00199555, -0.458862, 0.30322, -0.169821, 1.5052, 1.30358)
+texture = ExtResource("7_7t5x5")
+
+[node name="Sprite3D9" type="Sprite3D" parent="bodySprites/ufoCabSprites"]
+transform = Transform3D(-0.00208264, 0, -0.554996, 0, 0.555, 0, 0.554996, 0, -0.00208264, 1.07219, 1.81725, 0.419821)
+texture = ExtResource("3_7njlu")
+
+[node name="towerCabSprites" type="Node3D" parent="bodySprites"]
+visible = false
+
+[node name="screen" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.163528, 2.34985, 1.11962)
+pixel_size = 0.0055
+texture_filter = 0
+texture = ExtResource("9_j7nvy")
+
+[node name="bottom" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17022, 0.580441, 1.63623)
+pixel_size = 0.0055
+texture = ExtResource("10_ig5vg")
+
+[node name="side" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.43209, 1.86984, 0.468628)
+pixel_size = 0.0055
+texture = ExtResource("11_xtcub")
+
+[node name="top" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.16862, 3.41654, 1.70853)
+pixel_size = 0.0055
+texture = ExtResource("12_atseq")
+
+[node name="frontBottom" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 0.561289, 0.82762, 0, -0.82762, 0.561289, -0.186094, 1.54837, 1.28446)
+pixel_size = 0.0055
+texture = ExtResource("13_wrjek")
+
+[node name="side2" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.0739, 1.86984, 0.468628)
+pixel_size = 0.0055
+texture = ExtResource("11_xtcub")
+
+[node name="frontTop" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+transform = Transform3D(1, 0, 0, 0, -0.193104, 0.981178, 0, -0.981178, -0.193104, -0.186094, 2.99343, 1.28446)
+pixel_size = 0.0055
+texture = ExtResource("13_wrjek")
+
+[node name="Sprite3D" type="Sprite3D" parent="bodySprites/towerCabSprites"]
+
+[node name="bustCabSprites" type="Node3D" parent="bodySprites"]
+visible = false
+
+[node name="bottom" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.155941, 0.598291, 1.60741)
+pixel_size = 0.0055
+texture = ExtResource("15_h5v03")
+
+[node name="screen" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.166232, 2.27945, 1.13138)
+pixel_size = 0.0055
+texture = ExtResource("16_fvrso")
+
+[node name="side" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.39988, 1.80893, 0.434484)
+pixel_size = 0.0055
+texture = ExtResource("17_lem57")
+
+[node name="top" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159416, 3.41094, 1.65758)
+pixel_size = 0.0055
+texture = ExtResource("18_knelh")
+
+[node name="frontTop" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(1, 0, 0, 0, 0.157227, -0.987562, 0, 0.987562, 0.157227, -0.162596, 2.98263, 1.23953)
+pixel_size = 0.0055
+texture = ExtResource("19_5prtv")
+
+[node name="side2" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.07032, 1.80893, 0.455706)
+pixel_size = 0.0055
+texture = ExtResource("17_lem57")
+
+[node name="frontBottom" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(1, 0, 0, 0, -0.548016, -0.836468, 0, 0.836468, -0.548016, -0.162596, 1.54316, 1.23953)
+pixel_size = 0.0055
+texture = ExtResource("19_5prtv")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0521617, 0.998639, 0, -0.998639, 0.0521617, 0.655028, 2.44133, -1.9872)
