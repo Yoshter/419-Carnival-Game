@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dshpia0pht20c"]
+
+[ext_resource type="PackedScene" uid="uid://1d8hfcvynxb4" path="res://assets/3dmodels/tent.glb" id="1_lwpx7"]
+[ext_resource type="Texture2D" uid="uid://dkcftp5d7j4yo" path="res://assets/Textures/Tent_Wall_New.png" id="2_lwpx7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4bs7v"]
+albedo_texture = ExtResource("2_lwpx7")
+uv1_scale = Vector3(8.96, 8.96, 8.96)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+
+[node name="tent" instance=ExtResource("1_lwpx7")]
+
+[node name="Cone" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_4bs7v")

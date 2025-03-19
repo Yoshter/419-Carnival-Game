@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=16 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="6_skt0m"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="7_vdkxn"]
 [ext_resource type="Texture2D" uid="uid://14orcqr16abo" path="res://assets/art/truck.png" id="8_flvmx"]
+[ext_resource type="PackedScene" uid="uid://dshpia0pht20c" path="res://scenes/tentmodel.tscn" id="11_v7x2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -97,7 +98,7 @@ use_collision = true
 size = Vector3(30.4621, 1, 57.394)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.998527, -0.0212775, 0.0499065, 0.0207824, 0.99973, 0.0104193, -0.0501148, -0.00936676, 0.9987, 135.588, 1.62254, -55.216)
+transform = Transform3D(0.998527, -0.0212775, 0.0499065, 0.0207824, 0.99973, 0.0104193, -0.0501148, -0.00936676, 0.9987, 135.588, 1.62254, -64.5555)
 material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(117.5, 1, 64.7432)
@@ -225,3 +226,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.74686, 24)
 stream = ExtResource("6_1waf8")
 volume_db = -2.0
 autoplay = true
+
+[node name="tent" parent="." instance=ExtResource("11_v7x2m")]
+transform = Transform3D(0.988042, 0, 0, 0, 1.08363, 0, 0, 0, 1.62392, 104.971, 1.91788, -68.4041)
