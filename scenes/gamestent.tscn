@@ -270,6 +270,7 @@ omni_shadow_mode = 0
 
 [node name="funPass" parent="." instance=ExtResource("13_4vgoj")]
 transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.16, -11.4181)
+funPassLevel = 2
 
 [node name="Node3D" type="Node3D" parent="."]
 

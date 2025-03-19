@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=2 format=3 uid="uid://drwyd1icj7mxy"]
+
+[ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="1_tia7w"]
 
 [node name="ventCloset" type="Node3D"]
 
@@ -111,7 +113,7 @@ operation = 2
 size = Vector3(26.4395, 7.00256, 13.2398)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="closet/janitorCloset"]
-transform = Transform3D(0.764945, 0, -0.644097, 0, 1, 0, 0.644097, 0, 0.764945, -1.63658, 2.49736, 0.112638)
+transform = Transform3D(0.764945, 0, -0.644097, 0, 1, 0, 0.644097, 0, 0.764945, -1.59394, 2.49736, -3.06924)
 operation = 2
 size = Vector3(3.02824, 8.01047, 4.07788)
 
@@ -139,3 +141,7 @@ size = Vector3(1.37691, 2.4251, 5.09985)
 [node name="CSGBox3D5" type="CSGBox3D" parent="closet"]
 transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -27.8349, 0.869736, -31.9862)
 size = Vector3(6.31482, 2.73947, 1.8125)
+
+[node name="funPass" parent="." instance=ExtResource("1_tia7w")]
+transform = Transform3D(0.907506, 0.420038, 0, -0.420038, 0.907506, 0, 0, 0, 1, -26.0734, 2.43936, -33.5747)
+funPassLevel = 3

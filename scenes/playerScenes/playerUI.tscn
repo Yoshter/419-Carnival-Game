@@ -1,19 +1,20 @@
-[gd_scene load_steps=23 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=24 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
 [ext_resource type="Script" uid="uid://b2ndqfn7mxhna" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 [ext_resource type="Texture2D" uid="uid://cm1y3u5fcalkb" path="res://assets/UI/mapButton.png" id="3_lpw4w"]
-[ext_resource type="Texture2D" uid="uid://7cg1vs42bmbb" path="res://assets/art/funpass.png" id="3_wstr5"]
 [ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="4_acwhg"]
 [ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="5_mnosj"]
 [ext_resource type="AudioStream" uid="uid://w66dwwgi4id0" path="res://assets/allsound/SFX/Inventory Open.wav" id="5_psxp3"]
+[ext_resource type="Texture2D" uid="uid://ccyw0jhi6wdcg" path="res://assets/art/funpassJr.png" id="6_0wfp1"]
 [ext_resource type="Texture2D" uid="uid://dpn3vnjec682r" path="res://assets/UI/Checkmark.png" id="6_3odoy"]
 [ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="6_4kfvc"]
 [ext_resource type="Texture2D" uid="uid://biovfdi5bv5np" path="res://assets/Token/Token Shooting Range.png" id="6_67p70"]
 [ext_resource type="Texture2D" uid="uid://dyib5hpye3qyo" path="res://assets/Token/Token Skee ball.png" id="7_0lfn4"]
 [ext_resource type="Texture2D" uid="uid://dk42v3xd14uro" path="res://assets/art/saw.png" id="7_hty8y"]
 [ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="7_luwil"]
+[ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="7_uray3"]
 [ext_resource type="Texture2D" uid="uid://bqhtogt15dg8r" path="res://assets/Token/Token Baseball.png" id="8_xvmha"]
 [ext_resource type="Texture2D" uid="uid://dom3xjkrrbwbo" path="res://assets/Token/Token Tower.png" id="9_k2bd0"]
 [ext_resource type="Texture2D" uid="uid://nng7l7qflqy8" path="res://assets/Tickets/Ticket Space.png" id="10_1nmfo"]
@@ -309,11 +310,18 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="funPass" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+[node name="funPassJr" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
 visible = false
-position = Vector2(445, 341)
-scale = Vector2(1.475, 1.475)
-texture = ExtResource("3_wstr5")
+position = Vector2(446, 343)
+scale = Vector2(1.6875, 1.6875)
+texture = ExtResource("6_0wfp1")
+
+[node name="funPassSr" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(552, 343)
+scale = Vector2(1.688, 1.688)
+texture = ExtResource("7_uray3")
 
 [node name="saw" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
 visible = false
@@ -533,7 +541,7 @@ layout_mode = 0
 offset_left = -85.0
 offset_top = -36.0
 offset_right = 95.0
-offset_bottom = 75.0
+offset_bottom = 98.0
 color = Color(0.227451, 0.227451, 0.227451, 0.568627)
 
 [node name="Label" type="Label" parent="controls"]
@@ -542,9 +550,10 @@ offset_left = -75.0
 offset_top = -20.0
 offset_right = 84.0
 offset_bottom = 275.0
-text = "W A S D Move
-Space Interact
-Mouse Camera"
+text = "W A S D   Move
+Shift   Sprint
+Space   Interact
+Mouse   Camera"
 horizontal_alignment = 1
 
 [node name="hudTimer" type="Timer" parent="controls"]

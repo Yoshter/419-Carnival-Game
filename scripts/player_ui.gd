@@ -27,7 +27,8 @@ var controlsShown : bool = false
 @onready var speedPitchTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/speedPitchTicket
 @onready var towerTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/towerTicket
 
-@onready var funPassIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPass
+@onready var funPassJrIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassJr
+@onready var funPassSrIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassSr
 @onready var sawIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/saw
 
 var dialogueCount : int = 0
@@ -125,7 +126,9 @@ func updateItemIcons() -> void:
 	if ItemsGlobal.checkItem("rangeTicket"):
 		rangeTicketIcon.set_visible(true)
 	if ItemsGlobal.checkItem("funPassLevel2"):
-		funPassIcon.set_visible(true)
+		funPassJrIcon.set_visible(true)
+	if ItemsGlobal.checkItem("funPassLevel3"):
+		funPassSrIcon.set_visible(true)
 	if ItemsGlobal.checkItem("saw"):
 		sawIcon.set_visible(true)
 
