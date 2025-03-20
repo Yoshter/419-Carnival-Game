@@ -288,6 +288,8 @@ transform = Transform3D(-0.000963464, 0, -0.799999, 0, 0.8, 0, 0.799999, 0, -0.0
 
 [node name="Brokenmusic" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("11_rdk3c")
+volume_db = -5.0
+max_db = -1.857
 autoplay = true
 max_distance = 10.0
 
