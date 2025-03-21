@@ -1,9 +1,12 @@
 extends Node3D
 
-@export var pluggedIn : bool = false
+#@export var pluggedIn : bool = false
 @export var gameScene : String
 @export var bust : bool = false
 @export var game : String
+@export var hasJoyStick : bool = true
+
+@onready var joystickSprite: Sprite3D = $bodySprites/joystickSprite
 
 @onready var plugSprite: AnimatedSprite3D = $bodySprites/plugSprite
 @onready var fixLight: SpotLight3D = $SpotLight3D
@@ -21,19 +24,24 @@ var canPlay : bool = false
 func _ready() -> void:
 	if bust:
 		bustCabSprites.set_visible(true)
+		plugSprite.play("plugged")
+	
+	if hasJoyStick:
+		joystickSprite.set_visible(true)
 	
 	match game:
 		"ufo":
 			ufoCabSprites.set_visible(true)
 		"tower":
 			towerCabSprites.set_visible(true)
+			plugSprite.play("plugged")
 		_:
 			bustCabSprites.set_visible(true)
 	
-	if pluggedIn:
+	if GamesGlobal.ufoPlugged:
 		plugSprite.play("plugged")
 	
-	if !pluggedIn:
+	if !GamesGlobal.ufoPlugged:
 		brokenMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,28 +56,28 @@ func _process(delta: float) -> void:
 			play()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and !pluggedIn:
+	if body.is_in_group("player") and !GamesGlobal.ufoPlugged:
 		fixLight.set_visible(true)
 		canFix = true
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player") and !pluggedIn:
+	if body.is_in_group("player") and !GamesGlobal.ufoPlugged:
 		fixLight.set_visible(false)
 		canFix = false
 
 func _on_game_portal_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and pluggedIn and !bust:
+	if body.is_in_group("player") and GamesGlobal.ufoPlugged and !bust:
 		canPlay = true
 		playLight.set_visible(true)
 
 func _on_game_portal_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player") and pluggedIn:
+	if body.is_in_group("player") and GamesGlobal.ufoPlugged:
 		canPlay = false
 		playLight.set_visible(false)
 
 func fix() -> void:
 	plugSprite.play("plugged")
-	pluggedIn = true
+	GamesGlobal.ufoPlugged = true
 	brokenMusic.stop() #Not working
 
 func play() -> void:

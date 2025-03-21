@@ -4,6 +4,7 @@ extends Node
 var ufoScore : int = 0
 var ufoBeat : bool = false
 var ufoChecked : bool = false
+var ufoPlugged : bool = false
 
 var speedPitchBeat : bool = false
 var speedPitchChecked : bool = false

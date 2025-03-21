@@ -135,6 +135,7 @@ texture = ExtResource("2_3akc8")
 
 [node name="joystickSprite" type="Sprite3D" parent="bodySprites"]
 transform = Transform3D(-0.536642, 0.0262992, -0.117575, 0.0130435, 0.546264, 0.0626551, 0.119772, 0.0583443, -0.53362, -0.198596, 1.73915, 1.41767)
+visible = false
 texture = ExtResource("4_ia3io")
 
 [node name="plugSprite" type="AnimatedSprite3D" parent="bodySprites"]
