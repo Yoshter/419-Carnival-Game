@@ -46,6 +46,7 @@ shape = SubResource("RectangleShape2D_orm35")
 
 [node name="scoreSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8lrrx")
+volume_db = -8.0
 
 [connection signal="body_entered" from="deathbox" to="." method="_on_deathbox_body_entered"]
 [connection signal="body_entered" from="scoreArea" to="." method="_on_score_area_body_entered"]

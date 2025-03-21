@@ -51,7 +51,8 @@ offset_right = 258.0
 offset_bottom = 370.0
 text = "QUIT
 "
-nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
+nextScene = "res://scenes/gamestent.tscn"
+isQuit = true
 
 [node name="ColorRect" type="ColorRect" parent="deathMenu"]
 layout_mode = 0
