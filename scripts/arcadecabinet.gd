@@ -8,7 +8,7 @@ extends Node3D
 @onready var plugSprite: AnimatedSprite3D = $bodySprites/plugSprite
 @onready var fixLight: SpotLight3D = $SpotLight3D
 @onready var playLight: SpotLight3D = $SpotLight3D2
-@onready var brokenMusic = $Brokenmusic
+@onready var brokenMusic: AudioStreamPlayer3D = $Brokenmusic
 
 @onready var ufoCabSprites: Node3D = $bodySprites/ufoCabSprites
 @onready var towerCabSprites: Node3D = $bodySprites/towerCabSprites
@@ -32,12 +32,15 @@ func _ready() -> void:
 	
 	if pluggedIn:
 		plugSprite.play("plugged")
+	
+	if !pluggedIn:
+		brokenMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if canFix:
 		if Input.is_action_just_pressed("ui_accept"):
-			brokenMusic.stop() #Not working
+			brokenMusic.stop()
 			fix()
 	
 	if canPlay and game == "ufo":
