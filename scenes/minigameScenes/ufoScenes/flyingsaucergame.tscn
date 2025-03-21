@@ -182,7 +182,7 @@ stream = ExtResource("7_jxm20")
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_voyvo")
-volume_db = 4.23
+volume_db = -5.675
 autoplay = true
 max_distance = 24640.0
 panning_strength = 0.0

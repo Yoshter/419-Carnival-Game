@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://brlc1sovsxia8"]
+
+[ext_resource type="Script" uid="uid://mhrjxtijv8ej" path="res://scripts/janitor_door.gd" id="1_41b4k"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my85p"]
+albedo_color = Color(0.266667, 0.105882, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_41b4k"]
+size = Vector3(4.3689, 4, 2.23401)
+
+[node name="janitorDoor" type="Node3D"]
+transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 0, 0, 0)
+script = ExtResource("1_41b4k")
+
+[node name="doorBox" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+use_collision = true
+size = Vector3(6.98633, 5, 1)
+material = SubResource("StandardMaterial3D_my85p")
+
+[node name="unlockArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="unlockArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.98465e-07, 2.21697, 2.0214)
+shape = SubResource("BoxShape3D_41b4k")
+
+[connection signal="body_entered" from="unlockArea" to="." method="_on_unlock_area_body_entered"]
+[connection signal="body_exited" from="unlockArea" to="." method="_on_unlock_area_body_exited"]

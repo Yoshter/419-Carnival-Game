@@ -5,8 +5,16 @@ var isTalkingTo : String
 var inUI : bool = false
 var controlsShown = false
 
+var interactText : String
+
 var needsTeleport = false
 var newPosition : Vector3
+
+func setInteractText(newText : String) -> void:
+	interactText = newText
+
+func getInteractText() -> String:
+	return interactText
 
 func setIsTalking(talkBool : bool) -> void:
 	isTalking = talkBool
