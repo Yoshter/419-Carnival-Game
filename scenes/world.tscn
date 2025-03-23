@@ -97,6 +97,6 @@ transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -2.95728
 
 [node name="arcadecabinet12" parent="cabinets" instance=ExtResource("2_u6xsm")]
 transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -5.90274, -0.920323, -13.5922)
+gameScene = "res://scenes/minigameScenes/towerCrash/w1c1.tscn"
 bust = false
 game = "tower"
-hasJoyStick = false

@@ -54,6 +54,10 @@ func _process(delta: float) -> void:
 	if canPlay and game == "ufo":
 		if Input.is_action_just_pressed("ui_accept") and ItemsGlobal.checkItem("ufoToken"):
 			play()
+	
+	if canPlay and game == "tower":
+		if Input.is_action_just_pressed("ui_accept") and ItemsGlobal.checkItem("towerToken"):
+			play()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and !GamesGlobal.ufoPlugged:
@@ -66,12 +70,12 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		canFix = false
 
 func _on_game_portal_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and GamesGlobal.ufoPlugged and !bust:
+	if body.is_in_group("player") and (game == "tower" or GamesGlobal.ufoPlugged) and !bust:
 		canPlay = true
 		playLight.set_visible(true)
 
 func _on_game_portal_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player") and GamesGlobal.ufoPlugged:
+	if body.is_in_group("player") and (game == "tower" or GamesGlobal.ufoPlugged):
 		canPlay = false
 		playLight.set_visible(false)
 
