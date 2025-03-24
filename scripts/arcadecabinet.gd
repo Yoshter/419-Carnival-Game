@@ -40,6 +40,7 @@ func _ready() -> void:
 	
 	if GamesGlobal.ufoPlugged:
 		plugSprite.play("plugged")
+		brokenMusic.stop()
 	
 	if !GamesGlobal.ufoPlugged:
 		brokenMusic.play()
@@ -48,7 +49,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if canFix:
 		if Input.is_action_just_pressed("ui_accept"):
-			brokenMusic.stop()
 			fix()
 	
 	if canPlay and game == "ufo":
@@ -82,7 +82,6 @@ func _on_game_portal_body_exited(body: Node3D) -> void:
 func fix() -> void:
 	plugSprite.play("plugged")
 	GamesGlobal.ufoPlugged = true
-	brokenMusic.stop() #Not working
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)

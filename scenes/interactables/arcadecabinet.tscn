@@ -291,6 +291,7 @@ transform = Transform3D(-0.000963464, 0, -0.799999, 0, 0.8, 0, 0.799999, 0, -0.0
 stream = ExtResource("11_rdk3c")
 volume_db = -5.0
 max_db = -5.0
+autoplay = true
 max_distance = 10.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
