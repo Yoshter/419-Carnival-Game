@@ -100,3 +100,4 @@ transform = Transform3D(1, 0, 0.000383973, 0, 1, 0, -0.000383973, 0, 1, -5.90274
 gameScene = "res://scenes/minigameScenes/towerCrash/w1c1.tscn"
 bust = false
 game = "tower"
+hasJoyStick = false

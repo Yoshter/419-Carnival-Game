@@ -32,6 +32,7 @@ func _ready() -> void:
 	match game:
 		"ufo":
 			ufoCabSprites.set_visible(true)
+			brokenMusic.play(0.0)
 		"tower":
 			towerCabSprites.set_visible(true)
 			plugSprite.play("plugged")
@@ -40,10 +41,11 @@ func _ready() -> void:
 	
 	if GamesGlobal.ufoPlugged:
 		plugSprite.play("plugged")
-		brokenMusic.stop()
+		if brokenMusic.is_playing():
+			brokenMusic.stop()
 	
-	if !GamesGlobal.ufoPlugged:
-		brokenMusic.play()
+	#if !GamesGlobal.ufoPlugged:
+		#brokenMusic.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -81,7 +83,8 @@ func _on_game_portal_body_exited(body: Node3D) -> void:
 
 func fix() -> void:
 	plugSprite.play("plugged")
-	GamesGlobal.ufoPlugged = true
+	brokenMusic.volume_db = -80.0
+	GamesGlobal.setUfoPlugged(true)
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)

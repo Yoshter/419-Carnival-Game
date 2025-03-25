@@ -19,6 +19,9 @@ func ufoScoreUp() -> void:
 func ufoScoreReset() -> void:
 	ufoScore = 0
 
+func setUfoPlugged(isPlugged : bool) -> void:
+	ufoPlugged = isPlugged
+
 func checkBeatGame(gameName) -> bool:
 	var beatGame : bool = false
 	match gameName:
