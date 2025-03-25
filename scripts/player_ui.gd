@@ -50,6 +50,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
+		PlayerGlobal.inUI = true
 		isVisible = true
 		delay = 0.0
 		$OpenSFX.play()
@@ -58,6 +59,7 @@ func _process(delta: float) -> void:
 		pauseMenu.set_visible(false)
 		inventoryMenu.set_visible(false)
 		mapMenu.set_visible(false)
+		PlayerGlobal.inUI = false
 		isVisible = false
 		delay = 0.0
 		$"Close SFX".play()
@@ -140,6 +142,7 @@ func _on_yes_pressed() -> void:
 
 func _on_map_pressed() -> void:
 	mapMenu.set_visible(true)
+	$"TabSwitch SFX".play()
 
 func _on_hud_timer_timeout() -> void:
 	PlayerGlobal.controlsShown = true
