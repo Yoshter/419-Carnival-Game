@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxid2u5f7gtil"
-path.s3tc="res://.godot/imported/arcadefloor.png-081dadc6a3923a51c77d1b9c3b4d59db.s3tc.ctex"
+uid="uid://lylc4otiydit"
+path.s3tc="res://.godot/imported/arcadefloortest.png-c616c18b9218168af92b2f95a9ae4ea8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/Textures/arcadefloor.png"
-dest_files=["res://.godot/imported/arcadefloor.png-081dadc6a3923a51c77d1b9c3b4d59db.s3tc.ctex"]
+source_file="res://assets/Textures/arcadefloortest.png"
+dest_files=["res://.godot/imported/arcadefloortest.png-c616c18b9218168af92b2f95a9ae4ea8.s3tc.ctex"]
 
 [params]
 

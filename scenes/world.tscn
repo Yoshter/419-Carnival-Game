@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcg3ygwtwkmsr"]
+[gd_scene load_steps=10 format=3 uid="uid://dcg3ygwtwkmsr"]
 
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="1_3s7w3"]
 [ext_resource type="Script" uid="uid://dlvr51l86wbhe" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://drwyd1icj7mxy" path="res://scenes/vent_closet.tscn" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="2_u6xsm"]
+[ext_resource type="Texture2D" uid="uid://lylc4otiydit" path="res://assets/Textures/arcadefloortest.png" id="3_71j4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_no5us"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,39 +24,55 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.1501
 volumetric_fog_emission = Color(0.08, 0.08, 0.08, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+albedo_texture = ExtResource("3_71j4m")
+uv1_scale = Vector3(36.83, 36.83, 36.83)
+uv1_triplanar = true
+
 [node name="world" type="Node3D"]
 script = ExtResource("1_4wyf3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kq6ix")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2.42487)
+[node name="ventCloset" parent="." instance=ExtResource("2_k0juu")]
+transform = Transform3D(0.0204889, 0, 0.99979, 0, 1, 0, -0.99979, 0, 0.0204889, -2.91958, -1.69084, -52.7051)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.98989, 0, 0, 0, 9.79393, 0, 0, 0, 34.4714, -9.00283, 1.05833, -2.57725)
 use_collision = true
-size = Vector3(17.8455, 7.74316, 33.6281)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.302673, 0, -6.28728)
-operation = 2
-size = Vector3(15.4053, 5.85132, 16.2106)
-
-[node name="CSGTorus3D" type="CSGTorus3D" parent="CSGBox3D"]
-transform = Transform3D(-0.0993198, -0.995055, 0, 0.992751, -0.0990898, 0.0680153, -0.067679, 0.00675526, 0.997684, -8.03509, -1.28629, -1.89621)
-inner_radius = 2.00052
-outer_radius = 2.95591
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58303, -1.25294, -2.299)
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D6"]
+transform = Transform3D(1.01021, 0, 0, 0, 0.16256, 0, 0, 0, 0.110803, -0.633914, 0.0592197, -0.0807065)
 operation = 2
 size = Vector3(4.42676, 3.37204, 2.06396)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.58807, -1.21039, -16.4258)
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(0.98989, 0, 0, 0, 9.79393, 0, 0, 0, 34.4714, 7.9502, 1.00071, -2.57725)
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(17.8875, 0, 0, 0, 0.878905, 0, 0, 0, 34.7505, 0, -1.47268, -2.83916)
+material_override = SubResource("StandardMaterial3D_qfnet")
+use_collision = true
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(13.7699, 0, 0, 0, 5.59889, 0, 0, 0, 1, -0.798426, 2.00244, -0.00454617)
+use_collision = true
+size = Vector3(1.24438, 1.16125, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(13.7699, 0, 0, 0, 5.59889, 0, 0, 0, 2.00582, -0.798426, 2.00244, -17.7219)
+use_collision = true
+size = Vector3(1.24438, 1.16125, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGBox3D9"]
+transform = Transform3D(0.0726221, 0, 0, 0, 0.178607, 0, 0, 0, 1, -0.20259, -0.216621, -1.67775)
 operation = 2
 size = Vector3(2.27356, 3.42078, 4.85181)
 
-[node name="ventCloset" parent="CSGBox3D" instance=ExtResource("2_k0juu")]
-transform = Transform3D(0.0204889, 0, 0.99979, 0, 1, 0, -0.99979, 0, 0.0204889, -2.91958, -3.69084, -50.2802)
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(17.8875, 0, 0, 0, 0.878905, 0, 0, 0, 34.7505, -0.517193, 5.53691, -2.83916)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314456, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)
