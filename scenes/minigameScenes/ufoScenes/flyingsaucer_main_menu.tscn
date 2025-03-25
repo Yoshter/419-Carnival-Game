@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cpc04ng0fn85u"]
+[gd_scene load_steps=4 format=3 uid="uid://cpc04ng0fn85u"]
 
 [ext_resource type="PackedScene" uid="uid://hmnwjbqslhkw" path="res://scenes/button.tscn" id="1_31kig"]
 [ext_resource type="Script" uid="uid://63n1e1lutkg0" path="res://scripts/minigameScripts/ufoScripts/flyingsaucer_main_menu.gd" id="1_tfthn"]
+[ext_resource type="Texture2D" uid="uid://csktf1wsu6n3p" path="res://assets/MenuScreens/FlyingSaucer.png" id="3_8bwpo"]
 
 [node name="flyingsaucerMainMenu" type="Control"]
 layout_mode = 3
@@ -12,12 +13,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_tfthn")
 
-[node name="Button" parent="." instance=ExtResource("1_31kig")]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 428.0
-offset_top = 303.0
-offset_right = 651.0
-offset_bottom = 364.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_8bwpo")
+
+[node name="Button" parent="TextureRect" instance=ExtResource("1_31kig")]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 490.0
+offset_right = 1240.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 100
 nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
 [node name="deathMenu" type="ColorRect" parent="."]
@@ -82,7 +90,7 @@ text = "SURPRISE
 "
 script = null
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="TextureRect/Button" to="TextureRect/Button" method="_on_pressed"]
 [connection signal="pressed" from="deathMenu/buttons/Button2" to="deathMenu/buttons/Button2" method="_on_pressed"]
 [connection signal="pressed" from="deathMenu/buttons/Button" to="deathMenu/buttons/Button" method="_on_pressed"]
 [connection signal="pressed" from="deathMenu/tokenButton" to="." method="_on_token_button_pressed"]
