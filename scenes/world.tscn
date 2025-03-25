@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcg3ygwtwkmsr"]
+[gd_scene load_steps=9 format=3 uid="uid://dcg3ygwtwkmsr"]
 
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="1_3s7w3"]
 [ext_resource type="Script" uid="uid://dlvr51l86wbhe" path="res://scenes/world.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://drwyd1icj7mxy" path="res://scenes/vent_closet.tscn" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="2_u6xsm"]
+[ext_resource type="AudioStream" uid="uid://chisnv2xi7mn" path="res://assets/allsound/Music/Tower Menu Theme.wav" id="5_71j4m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_no5us"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -101,3 +102,11 @@ gameScene = "res://scenes/minigameScenes/towerCrash/w1c1.tscn"
 bust = false
 game = "tower"
 hasJoyStick = false
+
+[node name="Towermusic" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.90544, 1.55503, -11.5432)
+stream = ExtResource("5_71j4m")
+volume_db = -5.0
+max_db = -5.0
+autoplay = true
+max_distance = 10.0

@@ -16,6 +16,7 @@ extends Node3D
 @onready var ufoCabSprites: Node3D = $bodySprites/ufoCabSprites
 @onready var towerCabSprites: Node3D = $bodySprites/towerCabSprites
 @onready var bustCabSprites: Node3D = $bodySprites/bustCabSprites
+@onready var fixNoise = $FixNoise
 
 var canFix : bool = false
 var canPlay : bool = false
@@ -85,6 +86,7 @@ func fix() -> void:
 	plugSprite.play("plugged")
 	brokenMusic.volume_db = -80.0
 	GamesGlobal.setUfoPlugged(true)
+	fixNoise.play() #Bug where it will continue playing the sound on subsequent space presses
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)
