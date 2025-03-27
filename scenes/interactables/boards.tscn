@@ -7,6 +7,7 @@
 size = Vector3(2.04272, 2.45505, 0.617676)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg8vy"]
+size = Vector3(1, 1, 1.33801)
 
 [node name="boards" type="Node3D"]
 script = ExtResource("1_8bp6c")
@@ -20,13 +21,13 @@ texture = ExtResource("1_acins")
 [node name="boardWall" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="boardWall"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0174713, -0.191162)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0174713, 0.264018)
 shape = SubResource("BoxShape3D_acins")
 
 [node name="boardArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="boardArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.836836)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.257623, -0.991904)
 shape = SubResource("BoxShape3D_vg8vy")
 
 [connection signal="body_entered" from="boardArea" to="." method="_on_board_area_body_entered"]

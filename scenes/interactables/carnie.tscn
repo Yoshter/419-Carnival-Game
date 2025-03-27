@@ -35,12 +35,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.452261, -0.460978, 1.97211
 shape = SubResource("BoxShape3D_ckbgb")
 
 [node name="talkLight" type="SpotLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.0243624, 0.999703, 0, -0.999703, 0.0243624, 0, 1.15206, 1.86914)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 0.0243624, 0.999703, 0, -0.999703, 0.0243624, 0, 3.29399, 1.86914)
 light_energy = 9.192
-spot_range = 4.19489
+spot_range = 5.31309
 spot_attenuation = 1.46
-spot_angle = 25.8382
+spot_angle = 22.137
 
 [connection signal="body_entered" from="talkBox" to="." method="_on_talk_box_body_entered"]
 [connection signal="body_exited" from="talkBox" to="." method="_on_talk_box_body_exited"]

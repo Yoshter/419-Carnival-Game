@@ -32,16 +32,19 @@ nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 [node name="deathMenu" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 392.0
-offset_top = 107.0
-offset_right = 688.0
-offset_bottom = 518.0
+offset_left = 593.0
+offset_top = 164.0
+offset_right = 916.0
+offset_bottom = 575.0
+scale = Vector2(2, 2)
 color = Color(0.236997, 0.433879, 0.652528, 1)
 
 [node name="buttons" type="Control" parent="deathMenu"]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 18.5
+offset_top = 9.5
+offset_right = 58.5
+offset_bottom = 49.5
 
 [node name="Button2" parent="deathMenu/buttons" instance=ExtResource("1_31kig")]
 layout_mode = 0
@@ -65,28 +68,28 @@ isQuit = true
 
 [node name="ColorRect" type="ColorRect" parent="deathMenu"]
 layout_mode = 0
-offset_left = 50.0
-offset_top = 36.0
-offset_right = 237.0
-offset_bottom = 179.0
+offset_left = 68.5
+offset_top = 45.5
+offset_right = 255.5
+offset_bottom = 188.5
 color = Color(0, 0.347584, 0.208124, 1)
 
 [node name="score" type="Label" parent="deathMenu"]
 layout_mode = 0
-offset_left = 110.0
-offset_top = 75.0
-offset_right = 257.0
-offset_bottom = 163.0
+offset_left = 128.5
+offset_top = 84.5
+offset_right = 275.5
+offset_bottom = 172.5
 theme_override_font_sizes/font_size = 48
 text = "00"
 
 [node name="tokenButton" parent="deathMenu" instance=ExtResource("1_31kig")]
 visible = false
 layout_mode = 0
-offset_left = 33.0
-offset_top = 230.0
-offset_right = 256.0
-offset_bottom = 349.0
+offset_left = 54.5
+offset_top = 239.5
+offset_right = 277.5
+offset_bottom = 358.5
 text = "SURPRISE
 "
 script = null

@@ -10,7 +10,6 @@ func _on_talk_box_body_entered(body: Node3D) -> void:
 		PlayerGlobal.setIsTalkingTo("dan")
 		talkLight.set_visible(true)
 		body.canTalk = true
-		
 
 func _on_talk_box_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
