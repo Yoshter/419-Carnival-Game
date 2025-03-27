@@ -62,5 +62,5 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 #Custom functions
 func die() -> void:
 	#$DeathAudio.play() dont work
-	#Global.enemiesKilled += 1
+	GamesGlobal.incrementEnemiesKilled()
 	queue_free()

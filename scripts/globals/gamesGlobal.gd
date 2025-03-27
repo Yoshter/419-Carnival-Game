@@ -9,6 +9,8 @@ var ufoPlugged : bool = false
 var speedPitchBeat : bool = false
 var speedPitchChecked : bool = false
 
+var enemiesKilled : int = 0
+
 var dead : bool = false
 
 #Custom Funcs
@@ -21,6 +23,12 @@ func ufoScoreReset() -> void:
 
 func setUfoPlugged(isPlugged : bool) -> void:
 	ufoPlugged = isPlugged
+
+func incrementEnemiesKilled() -> void:
+	enemiesKilled += 1
+
+func resetEnemiesKilled() -> void:
+	enemiesKilled = 0
 
 func checkBeatGame(gameName) -> bool:
 	var beatGame : bool = false

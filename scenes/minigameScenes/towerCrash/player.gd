@@ -145,7 +145,8 @@ func spin() -> void:
 	spinTimer.start()
 
 func die() -> void:
-	pass
+	GamesGlobal.resetEnemiesKilled()
+	get_tree().change_scene_to_file.call_deferred("res://scenes/minigameScenes/towerCrash/w1c1.tscn")
 	#Global.enemiesKilled = 0
 	#print(Global.currLevel)
 	#get_tree().change_scene_to_file.call_deferred(Global.currLevel)
