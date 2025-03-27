@@ -203,12 +203,12 @@ transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189
 [node name="obstacles" type="Node3D" parent="."]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="obstacles"]
-transform = Transform3D(0.702662, 0, 0.711523, 0, 1, 0, -0.711523, 0, 0.702662, -23.0985, 1.87776, 12.9711)
-size = Vector3(19.1089, 2.42468, 1)
+transform = Transform3D(0.702662, 0, 0.711523, 0, 1, 0, -0.711523, 0, 0.702662, -22.3184, 1.87776, 12.1811)
+size = Vector3(16.8884, 2.42468, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="obstacles"]
-transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -24.2603, 1.87776, -10.9677)
-size = Vector3(19.1089, 2.42468, 1)
+transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -23.1752, 1.87776, -10.204)
+size = Vector3(16.4552, 2.42468, 1)
 
 [node name="table" parent="obstacles" instance=ExtResource("7_7gm3j")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.276409, -17.5478)

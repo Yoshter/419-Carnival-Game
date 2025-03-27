@@ -36,8 +36,9 @@ script = ExtResource("1_4pjyk")
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 140.0
+offset_bottom = 140.0
+scale = Vector2(1.8, 1.8)
 
 [node name="colorRects" type="Control" parent="PauseMenu"]
 anchors_preset = 0
@@ -326,7 +327,7 @@ texture = ExtResource("7_uray3")
 [node name="saw" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
 visible = false
 texture_filter = 1
-position = Vector2(554, 342)
+position = Vector2(651.111, 342.222)
 scale = Vector2(1.59375, 1.59375)
 texture = ExtResource("7_hty8y")
 
@@ -483,10 +484,10 @@ texture = ExtResource("18_c1ib8")
 [node name="GetItemMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_left = 420.0
-offset_top = 225.0
-offset_right = 723.0
-offset_bottom = 405.0
+offset_left = 951.0
+offset_top = 484.0
+offset_right = 1129.0
+offset_bottom = 574.0
 
 [node name="ColorRect" type="ColorRect" parent="GetItemMenu"]
 layout_mode = 0
@@ -506,10 +507,11 @@ visible = false
 anchors_preset = 0
 offset_right = 1150.0
 offset_bottom = 150.0
+scale = Vector2(1.6, 1.6)
 
 [node name="ColorRect" type="ColorRect" parent="DialogueMenu"]
 layout_mode = 0
-offset_right = 1152.0
+offset_right = 1201.0
 offset_bottom = 150.0
 color = Color(0.073069, 0.0232537, 0.0698616, 1)
 
@@ -517,7 +519,7 @@ color = Color(0.073069, 0.0232537, 0.0698616, 1)
 layout_mode = 0
 offset_left = 27.0
 offset_top = 19.0
-offset_right = 1125.0
+offset_right = 1175.0
 offset_bottom = 131.0
 color = Color(0.137461, 0.0590339, 0.132642, 1)
 
@@ -527,14 +529,15 @@ offset_left = 35.0
 offset_top = 32.0
 offset_right = 1121.0
 offset_bottom = 126.0
+theme_override_font_sizes/font_size = 28
 text = "nothing"
 
 [node name="controls" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 1029.0
-offset_top = 316.0
-offset_right = 1069.0
-offset_bottom = 356.0
+offset_left = 1776.0
+offset_top = 526.0
+offset_right = 1816.0
+offset_bottom = 566.0
 
 [node name="ColorRect" type="ColorRect" parent="controls"]
 layout_mode = 0

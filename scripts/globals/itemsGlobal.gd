@@ -19,6 +19,7 @@ var rangeTicketBool : bool = false
 var funPassLevel2 : bool = false
 var funPassLevel3 : bool = false
 var saw : bool = false
+var bbgun : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -65,6 +66,8 @@ func giveItem(itemName) -> void:
 				funPassLevel3 = true
 			"saw":
 				saw = true
+			"bbgun":
+				bbgun = true
 		showItemUI = true
 
 func checkItem(itemName) -> bool:
@@ -96,6 +99,8 @@ func checkItem(itemName) -> bool:
 			hasItem = funPassLevel3
 		"saw":
 			hasItem = saw
+		"bbgun":
+			hasItem = bbgun
 		_:
 			hasItem = false
 	return hasItem

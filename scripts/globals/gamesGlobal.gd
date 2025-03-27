@@ -9,6 +9,7 @@ var ufoPlugged : bool = false
 var speedPitchBeat : bool = false
 var speedPitchChecked : bool = false
 
+var towerBeat : bool = false
 var enemiesKilled : int = 0
 
 var dead : bool = false

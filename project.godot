@@ -22,6 +22,12 @@ ItemsGlobal="*res://scripts/globals/itemsGlobal.gd"
 PlayerGlobal="*res://scripts/globals/playerGlobal.gd"
 DialogueGlobal="*res://scripts/globals/DialogueGlobal.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=3
+
 [editor]
 
 version_control/plugin_name="GitPlugin"

@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://37auurnldi7g"]
+
+[ext_resource type="Script" uid="uid://tbt75lgjlpf" path="res://scenes/minigameScenes/towerCrash/tower_main_menu.gd" id="1_4rwf4"]
+
+[node name="towerMainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rwf4")
+
+[node name="startButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 263.0
+offset_right = 707.0
+offset_bottom = 402.0
+text = "START"
+
+[node name="winMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_left = 378.0
+offset_top = 456.0
+offset_right = 730.0
+offset_bottom = 560.0
+
+[node name="prizeButton" type="Button" parent="winMenu"]
+layout_mode = 0
+offset_right = 348.0
+offset_bottom = 136.0
+text = "PRIZE"

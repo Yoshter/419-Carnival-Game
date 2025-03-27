@@ -5,6 +5,8 @@ extends Control
 @onready var tokenButton: Button = $deathMenu/tokenButton
 
 @onready var buttons: Control = $deathMenu/buttons
+@onready var gameArt : TextureRect = $TextureRect
+@onready var startButton: Button = $TextureRect/Button
 
 var checked : bool = false
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +21,7 @@ func _process(delta: float) -> void:
 		if GamesGlobal.ufoScore >= 10:
 			GamesGlobal.ufoBeat = true
 			#PlayerGlobal.inUI = true
+			startButton.set_visible(false)
 			buttons.set_visible(false)
 			tokenButton.set_visible(true)
 			DialogueGlobal.addToEncCount("dan")
