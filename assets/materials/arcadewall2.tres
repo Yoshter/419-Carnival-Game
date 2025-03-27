@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://og6vap8pg4hf"]
+
+[ext_resource type="Texture2D" uid="uid://cxbba8tuhjlv8" path="res://assets/Textures/Arcade_Wall_Brick.png" id="1_5xg4n"]
+
+[resource]
+albedo_texture = ExtResource("1_5xg4n")
+uv1_scale = Vector3(9.78, 4.205, 9.78)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 6.49801
+uv2_scale = Vector3(1.235, 1.235, 1.235)

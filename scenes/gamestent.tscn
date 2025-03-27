@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=22 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -11,12 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
 [ext_resource type="PackedScene" uid="uid://bspombtyhjd6a" path="res://scenes/shooting_range.tscn" id="8_21i7n"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
-[ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="9_hb0km"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="12_8gcbl"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="13_4vgoj"]
-[ext_resource type="AudioStream" uid="uid://chisnv2xi7mn" path="res://assets/allsound/Music/Tower Menu Theme.wav" id="14_3oqoc"]
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
@@ -229,21 +227,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3839, 10.7838, 0.1558)
 stream = ExtResource("8_56qu4")
 autoplay = true
 max_distance = 300.0
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="audioSpeakers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -102.435, 2.97877, -141.08)
-stream = ExtResource("9_hb0km")
-volume_db = 3.664
-autoplay = true
-max_distance = 10.0
-
-[node name="Towermusic" type="AudioStreamPlayer3D" parent="audioSpeakers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.837, 2.75544, -145.746)
-stream = ExtResource("14_3oqoc")
-volume_db = -5.0
-max_db = -5.0
-autoplay = true
-max_distance = 10.0
 
 [node name="world" parent="." instance=ExtResource("10_86om8")]
 transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -99.57, 1.243, -154.32)

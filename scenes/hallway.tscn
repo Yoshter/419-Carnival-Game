@@ -1,10 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://lpvmrhxrmmkp"]
+[gd_scene load_steps=5 format=3 uid="uid://lpvmrhxrmmkp"]
 
 [ext_resource type="Script" uid="uid://bf1jrgpmw32ch" path="res://scenes/hallway.gd" id="1_owcqv"]
+[ext_resource type="Texture2D" uid="uid://cxbba8tuhjlv8" path="res://assets/Textures/Arcade_Wall_Brick.png" id="2_h81ti"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7i40"]
+albedo_texture = ExtResource("2_h81ti")
+uv1_scale = Vector3(6.425, 6.425, 6.425)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w3tr"]
+albedo_texture = ExtResource("2_h81ti")
 
 [node name="hallway" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9622, 0, 22.8016)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9622, -0.311615, 22.8016)
 script = ExtResource("1_owcqv")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.627364, -0.0726024, -0.775334, 0.00849301, 0.996223, -0.0864144, 0.77868, 0.0476284, 0.625611, 70.7938, -6.52751, -113.749)
+visible = false
+use_collision = true
+size = Vector3(6.79407, 1, 16.5335)
 
 [node name="CSGCylinder3D9" type="CSGCylinder3D" parent="."]
 transform = Transform3D(0.313562, 0, 0.949568, 0, 1, 0, -0.949568, 0, 0.313562, 37.7442, -1.66376, -13.088)
@@ -109,6 +123,20 @@ light_color = Color(0.63249, 0.0441786, 0.155239, 1)
 light_energy = 4.0
 omni_range = 25.0
 
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-0.152649, -0.806127, -0.571714, -0.959146, -0.018586, 0.282301, -0.238196, 0.59145, -0.770357, 71.2426, -3.78923, -114.132)
+material_override = SubResource("StandardMaterial3D_u7i40")
+radius = 5.98477
+height = 16.2154
+sides = 10
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D4"]
+transform = Transform3D(-0.772684, -0.0668538, 0.63126, 0.0647738, -0.997552, -0.0263607, 0.631477, 0.0205206, 0.775123, -0.930811, 2.95445, 0.162117)
+material_override = SubResource("StandardMaterial3D_3w3tr")
+operation = 2
+radius = 3.65604
+height = 24.5427
+
 [node name="CSGCylinder3D10" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-0.267962, 0, -0.96343, 0, 1, 0, 0.96343, 0, -0.267962, 38.3655, -1.88759, -97.7899)
 use_collision = true
@@ -163,15 +191,3 @@ transform = Transform3D(0.167233, -0.806634, 0.566898, -0.954475, 0.0115953, 0.2
 operation = 2
 radius = 4.08907
 height = 14.5681
-
-[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="CSGCylinder3D10"]
-transform = Transform3D(-0.188581, 0.785831, -0.588987, -0.959146, -0.018586, 0.282301, 0.210894, 0.61816, 0.757232, -24.5544, -1.90164, -27.2957)
-radius = 5.98477
-height = 16.2154
-sides = 10
-
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCylinder3D10/CSGCylinder3D4"]
-transform = Transform3D(-0.772684, -0.0668538, 0.63126, 0.0647738, -0.997552, -0.0263607, 0.631477, 0.0205206, 0.775123, -0.930811, 2.95445, 0.162117)
-operation = 2
-radius = 3.65604
-height = 24.5427

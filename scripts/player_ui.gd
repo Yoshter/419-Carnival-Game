@@ -142,6 +142,7 @@ func _on_yes_pressed() -> void:
 
 func _on_map_pressed() -> void:
 	mapMenu.set_visible(true)
+	$"TabSwitch SFX".play()
 
 func _on_hud_timer_timeout() -> void:
 	PlayerGlobal.controlsShown = true
