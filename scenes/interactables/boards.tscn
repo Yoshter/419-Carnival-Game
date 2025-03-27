@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cu2fv0eula8to"]
+
+[ext_resource type="Script" uid="uid://wob7fga6hqxj" path="res://scenes/interactables/boards.gd" id="1_8bp6c"]
+[ext_resource type="Texture2D" uid="uid://twvt3f037n7v" path="res://assets/art/boards.png" id="1_acins"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_acins"]
+size = Vector3(2.04272, 2.45505, 0.617676)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vg8vy"]
+
+[node name="boards" type="Node3D"]
+script = ExtResource("1_8bp6c")
+
+[node name="boardSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1.65217, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+pixel_size = 0.012
+texture_filter = 0
+texture = ExtResource("1_acins")
+
+[node name="boardWall" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="boardWall"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0174713, -0.191162)
+shape = SubResource("BoxShape3D_acins")
+
+[node name="boardArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="boardArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.836836)
+shape = SubResource("BoxShape3D_vg8vy")
+
+[connection signal="body_entered" from="boardArea" to="." method="_on_board_area_body_entered"]
+[connection signal="body_exited" from="boardArea" to="." method="_on_board_area_body_exited"]

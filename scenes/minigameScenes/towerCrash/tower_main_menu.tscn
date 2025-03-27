@@ -32,3 +32,6 @@ layout_mode = 0
 offset_right = 348.0
 offset_bottom = 136.0
 text = "PRIZE"
+
+[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]

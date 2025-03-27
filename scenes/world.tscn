@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcg3ygwtwkmsr"]
+[gd_scene load_steps=14 format=3 uid="uid://dcg3ygwtwkmsr"]
 
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="1_3s7w3"]
 [ext_resource type="Script" uid="uid://dlvr51l86wbhe" path="res://scenes/world.gd" id="1_4wyf3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cjkc0x1j0cux3" path="res://assets/materials/arcadewall.tres" id="3_i7141"]
 [ext_resource type="Material" uid="uid://og6vap8pg4hf" path="res://assets/materials/arcadewall2.tres" id="5_4mrxx"]
 [ext_resource type="AudioStream" uid="uid://chisnv2xi7mn" path="res://assets/allsound/Music/Tower Menu Theme.wav" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://cu2fv0eula8to" path="res://scenes/interactables/boards.tscn" id="9_7r4gi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_no5us"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -133,3 +134,6 @@ volume_db = -5.0
 max_db = -3.0
 autoplay = true
 max_distance = 10.0
+
+[node name="boards" parent="." instance=ExtResource("9_7r4gi")]
+transform = Transform3D(-0.998395, 0, -0.0566405, 0, 1, 0, 0.0566405, 0, -0.998395, -3.5783, 0.34639, -19.5217)
