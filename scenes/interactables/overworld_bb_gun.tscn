@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://7ir04oxgkcfm"]
 
-[ext_resource type="Texture2D" uid="uid://dk42v3xd14uro" path="res://assets/art/saw.png" id="1_1ne86"]
 [ext_resource type="Script" uid="uid://ko0i2otntefr" path="res://scenes/interactables/overworld_bb_gun.gd" id="1_f7nxy"]
+[ext_resource type="Texture2D" uid="uid://kbfn4dcjifw6" path="res://assets/art/bbgun.png" id="2_f7nxy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f7nxy"]
 size = Vector3(1.21289, 2.91382, 1.50696)
@@ -11,8 +11,9 @@ script = ExtResource("1_f7nxy")
 
 [node name="bbGunSprite" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.10701, 0.994258, 0, -0.994258, 0.10701, 0, 0.178766, 0)
-pixel_size = 0.02
-texture = ExtResource("1_1ne86")
+pixel_size = 0.005
+texture_filter = 0
+texture = ExtResource("2_f7nxy")
 
 [node name="pickUpArea" type="Area3D" parent="."]
 

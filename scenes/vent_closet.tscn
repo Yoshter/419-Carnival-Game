@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=4 format=3 uid="uid://drwyd1icj7mxy"]
 
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="1_tia7w"]
 [ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="2_taaqu"]
+[ext_resource type="PackedScene" uid="uid://cttfkisb511ib" path="res://scenes/interactables/map_item.tscn" id="3_iw1bk"]
 
 [node name="ventCloset" type="Node3D"]
 
@@ -152,3 +153,6 @@ funPassLevel = 3
 
 [node name="janitorDoor" parent="." instance=ExtResource("2_taaqu")]
 transform = Transform3D(0.731008, 0, 0.682368, 0, 1, 0, -0.682368, 0, 0.731008, -28.5189, 0.618558, -39.9841)
+
+[node name="mapItem" parent="." instance=ExtResource("3_iw1bk")]
+transform = Transform3D(-0.681424, 0, 0.731889, 0, 1, 0, -0.731889, 0, -0.681424, -18.5826, 3.52889, -17.7673)

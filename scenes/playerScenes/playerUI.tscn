@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=26 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -17,12 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="7_uray3"]
 [ext_resource type="Texture2D" uid="uid://bqhtogt15dg8r" path="res://assets/Token/Token Baseball.png" id="8_xvmha"]
 [ext_resource type="Texture2D" uid="uid://dom3xjkrrbwbo" path="res://assets/Token/Token Tower.png" id="9_k2bd0"]
+[ext_resource type="Texture2D" uid="uid://kbfn4dcjifw6" path="res://assets/art/bbgun.png" id="9_uray3"]
 [ext_resource type="Texture2D" uid="uid://nng7l7qflqy8" path="res://assets/Tickets/Ticket Space.png" id="10_1nmfo"]
 [ext_resource type="Texture2D" uid="uid://decvfdibqy3m6" path="res://assets/Tickets/Ticket SkeeBall.png" id="11_latnh"]
 [ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="12_qjt8n"]
 [ext_resource type="Texture2D" uid="uid://thv22n5oohsl" path="res://assets/Tickets/Ticket Tower.png" id="13_h1pdy"]
 [ext_resource type="Texture2D" uid="uid://bdx3tl8wgqkuq" path="res://assets/Tickets/Ticket Shooting range.png" id="14_w3uxw"]
 [ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="18_c1ib8"]
+[ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -204,25 +206,9 @@ offset_right = 679.0
 offset_bottom = 383.0
 color = Color(0.278044, 0.270093, 4.81308e-08, 1)
 
-[node name="ColorRect11" type="ColorRect" parent="PauseMenu/inventoryMenu/iconBacks"]
-layout_mode = 0
-offset_left = 412.0
-offset_top = 401.0
-offset_right = 481.0
-offset_bottom = 474.0
-color = Color(0.278044, 0.270093, 4.81308e-08, 1)
-
-[node name="ColorRect12" type="ColorRect" parent="PauseMenu/inventoryMenu/iconBacks"]
-layout_mode = 0
-offset_left = 515.0
-offset_top = 401.0
-offset_right = 584.0
-offset_bottom = 474.0
-color = Color(0.278044, 0.270093, 4.81308e-08, 1)
-
 [node name="ColorRect13" type="ColorRect" parent="PauseMenu/inventoryMenu/iconBacks"]
 layout_mode = 0
-offset_left = 609.0
+offset_left = 413.0
 offset_top = 403.0
 offset_right = 678.0
 offset_bottom = 476.0
@@ -330,6 +316,12 @@ texture_filter = 1
 position = Vector2(651.111, 342.222)
 scale = Vector2(1.59375, 1.59375)
 texture = ExtResource("7_hty8y")
+
+[node name="bbgun" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+visible = false
+position = Vector2(567.778, 438.333)
+scale = Vector2(0.636639, 0.636639)
+texture = ExtResource("9_uray3")
 
 [node name="tokens" type="Control" parent="PauseMenu/inventoryMenu/itemIcons"]
 anchors_preset = 0
@@ -472,14 +464,20 @@ offset_bottom = 40.0
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/mapMenu"]
 layout_mode = 0
 offset_left = 397.0
-offset_top = 102.0
+offset_top = 140.0
 offset_right = 976.0
-offset_bottom = 487.0
+offset_bottom = 450.0
 color = Color(1, 1, 0.745098, 1)
 
 [node name="mapMissingSprite" type="Sprite2D" parent="PauseMenu/mapMenu"]
 position = Vector2(673, 291)
 texture = ExtResource("18_c1ib8")
+
+[node name="Map" type="Sprite2D" parent="PauseMenu/mapMenu"]
+visible = false
+position = Vector2(685, 289.444)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("22_cx60t")
 
 [node name="GetItemMenu" type="Control" parent="."]
 visible = false
@@ -545,10 +543,11 @@ layout_mode = 0
 offset_left = -85.0
 offset_top = -36.0
 offset_right = 95.0
-offset_bottom = 98.0
+offset_bottom = 119.0
 color = Color(0.227451, 0.227451, 0.227451, 0.568627)
 
 [node name="Label" type="Label" parent="controls"]
+texture_filter = 2
 layout_mode = 0
 offset_left = -75.0
 offset_top = -20.0
@@ -556,6 +555,7 @@ offset_right = 84.0
 offset_bottom = 275.0
 text = "W A S D   Move
 Shift   Sprint
+C   Crouch
 Space   Interact
 Mouse   Camera"
 horizontal_alignment = 1

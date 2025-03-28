@@ -21,6 +21,8 @@ var funPassLevel3 : bool = false
 var saw : bool = false
 var bbgun : bool = false
 
+var map : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -68,6 +70,8 @@ func giveItem(itemName) -> void:
 				saw = true
 			"bbgun":
 				bbgun = true
+			"map":
+				map = true
 		showItemUI = true
 
 func checkItem(itemName) -> bool:
@@ -101,6 +105,8 @@ func checkItem(itemName) -> bool:
 			hasItem = saw
 		"bbgun":
 			hasItem = bbgun
+		"map":
+			hasItem = map
 		_:
 			hasItem = false
 	return hasItem

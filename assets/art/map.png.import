@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kbfn4dcjifw6"
-path.s3tc="res://.godot/imported/bbgun.png-cdb7de89a5b4e411239d080b37812e68.s3tc.ctex"
+uid="uid://do13in58l2eh5"
+path.s3tc="res://.godot/imported/map.png-72ec4aacb492724cd80dca4fd90d6046.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/art/bbgun.png"
-dest_files=["res://.godot/imported/bbgun.png-cdb7de89a5b4e411239d080b37812e68.s3tc.ctex"]
+source_file="res://assets/art/map.png"
+dest_files=["res://.godot/imported/map.png-72ec4aacb492724cd80dca4fd90d6046.s3tc.ctex"]
 
 [params]
 
