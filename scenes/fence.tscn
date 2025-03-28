@@ -1,21 +1,52 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6qxis5s8yusb"]
+[gd_scene load_steps=9 format=3 uid="uid://b6qxis5s8yusb"]
 
-[ext_resource type="Texture2D" uid="uid://bwtd3hy61nygd" path="res://assets/art/fence.png" id="1_ksjbb"]
+[ext_resource type="Texture2D" uid="uid://bjjbb1lhnclu8" path="res://assets/Textures/Fench_Left_to_Right-Sheet.png" id="1_tphf0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7b7nr"]
 size = Vector3(15.8976, 8.84546, 2.0752)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0moir"]
-transparency = 1
-cull_mode = 2
-albedo_texture = ExtResource("1_ksjbb")
-uv1_triplanar = true
-texture_filter = 0
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tlro"]
+atlas = ExtResource("1_tphf0")
+region = Rect2(0, 0, 100, 48)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_ngo6w"]
-lightmap_size_hint = Vector2i(12, 12)
-material = SubResource("StandardMaterial3D_0moir")
-size = Vector2(8, 2)
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3etb"]
+atlas = ExtResource("1_tphf0")
+region = Rect2(100, 0, 100, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ixbi"]
+atlas = ExtResource("1_tphf0")
+region = Rect2(200, 0, 100, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_agt3l"]
+atlas = ExtResource("1_tphf0")
+region = Rect2(300, 0, 100, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ip11"]
+atlas = ExtResource("1_tphf0")
+region = Rect2(400, 0, 100, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0uhok"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tlro")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b3etb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ixbi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_agt3l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ip11")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.8
+}]
 
 [node name="fence" type="Node3D"]
 
@@ -26,6 +57,34 @@ collision_layer = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.311218, 1.63881, -0.500769)
 shape = SubResource("BoxShape3D_7b7nr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(2, 1.67037e-22, -7.30144e-30, 0, -8.74228e-08, -2, -1.67037e-22, 2, -8.74228e-08, -0.339014, -0.00741661, 0.0237749)
-mesh = SubResource("PlaneMesh_ngo6w")
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, 1.5961, 1.00527, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_0uhok")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, 5.62497, 1.00527, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_0uhok")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, -6.41761, 1.00527, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_0uhok")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0
+
+[node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, -2.44775, 1.00527, 0)
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_0uhok")
+autoplay = "default"
+frame = 4
+frame_progress = 1.0

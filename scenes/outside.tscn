@@ -174,19 +174,55 @@ transform = Transform3D(0.211603, -0.00294501, -0.977351, 0.0104195, 0.999945, -
 transform = Transform3D(-0.1451, 0.00801185, 0.989385, -0.0424944, 0.998995, -0.0143218, -0.988505, -0.0441216, -0.144614, -15.8744, 5.18852, -36.3911)
 
 [node name="fence9" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(-0.259169, 0.00282194, 0.965828, -0.00677134, 0.999966, -0.0047387, -0.965809, -0.00776821, -0.259141, -18.7209, 5.00536, -51.8835)
+transform = Transform3D(-0.246352, 0.0029246, 0.969176, -0.00677134, 0.999966, -0.0047387, -0.969157, -0.00773015, -0.246324, -18.7924, 5.00536, -51.8835)
 
 [node name="fence10" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(-0.0564095, 0.0119129, 0.998337, -0.0238771, 0.999627, -0.0132774, -0.998123, -0.0245865, -0.0561041, -21.67, 4.74356, -67.6093)
+transform = Transform3D(-0.113408, 0.0104871, 0.993493, -0.0238771, 0.999627, -0.0132774, -0.993262, -0.0252276, -0.113115, -21.67, 4.74356, -67.6093)
 
 [node name="fence11" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(0.211603, -0.00294501, -0.977351, 0.0104195, 0.999945, -0.000757108, 0.977299, -0.0100233, 0.211622, -5.81846, 5.24419, -50.8306)
 
 [node name="fence12" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(-0.972456, 0.00264332, -0.233068, 0.00330816, 0.999991, -0.00246157, 0.233059, -0.00316488, -0.972457, 0.198307, 4.99261, -59.1599)
+transform = Transform3D(-0.9882, 0.00289217, -0.153137, 0.00330816, 0.999991, -0.00246157, 0.153128, -0.00293921, -0.988201, 0.386563, 4.99261, -59.7144)
 
 [node name="fence13" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(0.985043, -0.00358102, 0.172273, 0.00507265, 0.999954, -0.0082183, -0.172235, 0.00896928, 0.985015, -0.066967, 4.81125, -72.6386)
+
+[node name="fence17" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.985043, -0.00358102, 0.172273, 0.00507265, 0.999954, -0.0082183, -0.172235, 0.00896928, 0.985015, 15.9524, 4.81125, -75.5158)
+
+[node name="fence23" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.985043, -0.00358102, 0.172273, 0.00507265, 0.999954, -0.0082183, -0.172235, 0.00896928, 0.985015, 15.7534, 5.0083, -62.4173)
+
+[node name="fence24" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.999368, -0.00477996, 0.0352357, 0.00507265, 0.999954, -0.0082183, -0.0351942, 0.00839188, 0.999345, 31.7928, 5.08651, -64.1711)
+
+[node name="fence25" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.98824, 0.0743623, -0.133611, -0.0765181, 0.997007, -0.011067, 0.132389, 0.0211606, 0.990972, 47.65, 4.52011, -63.3623)
+
+[node name="fence26" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.989886, 0.124659, -0.0677247, -0.125795, 0.991975, -0.0127602, 0.065591, 0.0211506, 0.997622, 63.5782, 2.84003, -61.7524)
+
+[node name="fence27" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.993044, 0.0696713, -0.0949214, -0.0713762, 0.997342, -0.0146836, 0.0936466, 0.0213567, 0.995376, 79.6903, 1.19438, -60.5176)
+
+[node name="fence28" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.994988, -0.0372105, -0.0928111, 0.0350565, 0.99908, -0.0247342, 0.0936466, 0.0213567, 0.995376, 95.8792, 0.885093, -58.9532)
+
+[node name="fence18" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.998421, -0.00460465, 0.0559824, 0.00507265, 0.999954, -0.0082183, -0.0559414, 0.00848934, 0.998398, 31.8729, 4.81125, -77.4016)
+
+[node name="fence19" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.997972, 0.062648, 0.0112558, -0.0625482, 0.998002, -0.00899996, -0.0117966, 0.00827772, 0.999896, 47.7469, 4.36198, -78.1706)
+
+[node name="fence20" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.990911, 0.134102, 0.010581, -0.134, 0.990933, -0.00978446, -0.0117966, 0.00827772, 0.999896, 63.7863, 2.77771, -78.4313)
+
+[node name="fence21" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.999468, 0.0305015, 0.0115396, -0.0304027, 0.999501, -0.0086331, -0.0117966, 0.00827771, 0.999896, 79.8732, 1.3873, -78.7044)
+
+[node name="fence22" parent="fences" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.999869, 0.011151, 0.0117045, -0.0110528, 0.999904, -0.00840814, -0.0117966, 0.00827771, 0.999896, 96.1732, 1.03597, -78.9139)
 
 [node name="fence14" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(0.198543, -0.00906193, -0.980051, 0.00507265, 0.999954, -0.0082183, 0.980079, -0.00333963, 0.19858, -8.08394, 4.81125, -79.2145)
@@ -228,4 +264,4 @@ volume_db = -2.0
 autoplay = true
 
 [node name="tent" parent="." instance=ExtResource("11_v7x2m")]
-transform = Transform3D(0.988042, 0, 0, 0, 1.08363, 0, 0, 0, 1.62392, 104.971, 1.91788, -68.4041)
+transform = Transform3D(0.988042, 0, 0, 0, 1.08363, 0, 0, 0, 1.62392, 104.971, 1.03552, -68.4041)
