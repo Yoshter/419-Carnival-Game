@@ -233,6 +233,17 @@ offset_bottom = 110.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 
+[node name="retry" type="Button" parent="."]
+visible = false
+texture_filter = 2
+layout_mode = 0
+offset_left = 734.0
+offset_top = 771.0
+offset_right = 1027.0
+offset_bottom = 915.0
+theme_override_font_sizes/font_size = 48
+text = "RETRY"
+
 [node name="goAgainButton" type="Button" parent="."]
 visible = false
 layout_mode = 0
@@ -411,6 +422,7 @@ animation = &"center"
 stream = ExtResource("10_nh7fw")
 autoplay = true
 
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="goAgainButton" to="." method="_on_go_again_button_pressed"]
 [connection signal="pressed" from="startMenu/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="countDown" to="." method="_on_count_down_timeout"]

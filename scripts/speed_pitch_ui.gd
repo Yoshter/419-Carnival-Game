@@ -32,6 +32,7 @@ var countingDown : bool = false
 @onready var horBar: ProgressBar = $horbarNode/horBar
 
 @onready var goAgainButton: Button = $goAgainButton
+@onready var retryButton: Button = $retry
 
 @onready var winMenu: Control = $winMenu
 
@@ -54,8 +55,10 @@ func _process(delta: float) -> void:
 		startButton.set_visible(false)
 		goAgainButton.set_visible(false)
 		GamesGlobal.speedPitchBeat = true
-	else:
-		startButton.set_visible(true)
+	
+	if roundNum >= 4 and points < 150:
+		goAgainButton.set_visible(false)
+		retryButton.set_visible(true)
 	
 	if throwDir == "vert":
 		hit = false
@@ -127,10 +130,10 @@ func nextRound(goodThrow : bool) -> void:
 func fail() -> void:
 	failSound.play(0.0)
 	if throwDir == "hor":
-		horBar.set_visible(false)
+		horBarNode.set_visible(false)
 		horCharge = 0.0
 	elif throwDir == "vert":
-		vertBar.set_visible(false)
+		vertBarNode.set_visible(false)
 		vertCharge = 0.0
 	goAgainButton.set_visible(true)
 	throwDir = "null"
@@ -147,6 +150,11 @@ func _on_go_again_button_pressed() -> void:
 	countdown.start()
 	rightThrows.set_visible(false)
 	wrongThrows.set_visible(false)
+
+func _on_retry_pressed() -> void:
+	points = 0
+	roundNum = 0
+	get_tree().change_scene_to_file("res://scenes/minigameScenes/speedPitch/speed_pitch.tscn")
 
 func _on_count_down_timeout() -> void:
 	throwDir = "vert"
