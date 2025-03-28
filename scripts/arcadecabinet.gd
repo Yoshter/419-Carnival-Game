@@ -86,7 +86,8 @@ func fix() -> void:
 	plugSprite.play("plugged")
 	brokenMusic.volume_db = -80.0
 	GamesGlobal.setUfoPlugged(true)
-	fixNoise.play() #Bug where it will continue playing the sound on subsequent space presses
+	fixNoise.play(0.0) #Bug where it will continue playing the sound on subsequent space presses
+	canFix = false
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)

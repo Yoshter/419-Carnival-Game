@@ -22,12 +22,21 @@ var countingDown : bool = false
 @onready var roundLabel: Label = $roundLabel
 @onready var pointLabel: Label = $pointLabel
 
-@onready var startButton: Button = $startButton
+@onready var startButton: Button = $startMenu/startButton
+@onready var startMenu: TextureRect = $startMenu
 
-@onready var vertBar: ProgressBar = $vertBar
-@onready var horBar: ProgressBar = $horBar
+@onready var vertBarNode: Control = $vertBarNode
+@onready var horBarNode: Control = $horbarNode
+
+@onready var vertBar: ProgressBar = $vertBarNode/vertBar
+@onready var horBar: ProgressBar = $horbarNode/horBar
+
+@onready var goAgainButton: Button = $goAgainButton
 
 @onready var winMenu: Control = $winMenu
+
+@onready var wrongThrows: AnimatedSprite2D = $sprites/WrongThrows
+@onready var rightThrows: AnimatedSprite2D = $sprites/RightThrows
 
 var timeSinceLastThrow = 0.0
 
@@ -43,6 +52,7 @@ func _process(delta: float) -> void:
 	if roundNum >= 4 and points >= 150:
 		winMenu.set_visible(true)
 		startButton.set_visible(false)
+		goAgainButton.set_visible(false)
 		GamesGlobal.speedPitchBeat = true
 	else:
 		startButton.set_visible(true)
@@ -50,13 +60,13 @@ func _process(delta: float) -> void:
 	if throwDir == "vert":
 		hit = false
 		startButton.set_visible(false)
-		vertBar.set_visible(true)
-		vertCharge += pow(.45 + delta, 2)
+		vertBarNode.set_visible(true)
+		vertCharge += pow(.58 + delta, 2)
 		vertBar.value = vertCharge
 		if Input.is_action_pressed("ui_accept"):
 			if vertCharge >= safeRangeMin and vertCharge <= safeRangeMax:
 				throwDir = "hor"
-				vertBar.set_visible(false)
+				vertBarNode.set_visible(false)
 				vertCharge = 0
 				hitSound.play(0.0)
 				hit = true
@@ -72,18 +82,20 @@ func _process(delta: float) -> void:
 	if throwDir == "hor":
 		hit = null
 		startButton.set_visible(false)
-		horBar.set_visible(true)
-		horCharge += pow(.45 + delta, 2)
+		horBarNode.set_visible(true)
+		horCharge += pow(.58 + delta, 2)
 		horBar.value = horCharge
 		if Input.is_action_just_pressed("ui_accept") and timeSinceLastThrow > 0.01:
 			if horCharge >= safeRangeMin and horCharge <= safeRangeMax:
+				rightThrows.set_visible(true)
+				rightThrows.play("center")
 				timeSinceLastThrow = 0.0
 				hitSound.play(0.0)
 				throwDir = "null"
-				horBar.set_visible(false)
+				horBarNode.set_visible(false)
 				horCharge = 0
 				nextRound(true)
-				startButton.set_visible(true)
+				goAgainButton.set_visible(true)
 				hit = true
 			if (horCharge < safeRangeMin or horCharge > safeRangeMax) and !hit:
 				print("goof")
@@ -92,7 +104,7 @@ func _process(delta: float) -> void:
 			fail()
 	
 		if throwDir == "null":
-			startButton.set_visible(true)
+			goAgainButton.set_visible(true)
 	
 	if countingDown:
 		countdownLabel.set_text(str(countdown.time_left))
@@ -120,14 +132,21 @@ func fail() -> void:
 	elif throwDir == "vert":
 		vertBar.set_visible(false)
 		vertCharge = 0.0
-	startButton.set_visible(true)
+	goAgainButton.set_visible(true)
 	throwDir = "null"
 	nextRound(false)
 
 func _on_start_button_pressed() -> void:
-	startButton.set_visible(false)
+	startMenu.set_visible(false)
 	countingDown = true
 	countdown.start()
+
+func _on_go_again_button_pressed() -> void:
+	goAgainButton.set_visible(false)
+	countingDown = true
+	countdown.start()
+	rightThrows.set_visible(false)
+	wrongThrows.set_visible(false)
 
 func _on_count_down_timeout() -> void:
 	throwDir = "vert"

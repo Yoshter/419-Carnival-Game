@@ -1,9 +1,203 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5n7t3651pny5"]
+[gd_scene load_steps=36 format=3 uid="uid://c5n7t3651pny5"]
 
 [ext_resource type="Script" uid="uid://dcxhvd8os0ywv" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
+[ext_resource type="Texture2D" uid="uid://bugbtuws5ddjh" path="res://scenes/minigameScenes/speedPitch/speedpitchbackgorund.png" id="2_81bw4"]
 [ext_resource type="AudioStream" uid="uid://cngyr4t7dpkgb" path="res://assets/allsound/SFX/Speed pitch target miss.wav" id="2_b15ol"]
 [ext_resource type="AudioStream" uid="uid://bhwivv03ec0eb" path="res://assets/allsound/SFX/Speed pitch target hit.wav" id="3_4ta8n"]
 [ext_resource type="Texture2D" uid="uid://dn3todp0kwqbd" path="res://assets/MenuScreens/SpeedPitchMenu.png" id="4_1rd4m"]
+[ext_resource type="Texture2D" uid="uid://ciscl0gwoxx0p" path="res://assets/SpeedPitchArt/SpriteSheets/Baseball Animation Left-Sheet.png" id="6_7wvex"]
+[ext_resource type="Texture2D" uid="uid://cft0otdfkfxu" path="res://assets/SpeedPitchArt/SpriteSheets/Baseball Animation Right-Sheet.png" id="7_wg7l2"]
+[ext_resource type="Texture2D" uid="uid://c3k48g4fv6ly5" path="res://assets/SpeedPitchArt/SpriteSheets/Baseball Animation Middle-Sheet.png" id="8_ncbjr"]
+[ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="9_ncbjr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x60gc"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(0, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg7l2"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ncbjr"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(1200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nh7fw"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(1800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gohqm"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(2400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlg1q"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(3000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4e83h"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(3600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1bnh"]
+atlas = ExtResource("6_7wvex")
+region = Rect2(4200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qesvm"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(0, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_somc8"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl4xa"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(1200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enjvn"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(1800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0p2me"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(2400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52r1a"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(3000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ua3bq"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(3600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o4vq"]
+atlas = ExtResource("7_wg7l2")
+region = Rect2(4200, 0, 600, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qesvm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x60gc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg7l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ncbjr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nh7fw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gohqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlg1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4e83h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1bnh")
+}],
+"loop": false,
+"name": &"left",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qesvm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_somc8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl4xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enjvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0p2me")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_52r1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ua3bq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o4vq")
+}],
+"loop": false,
+"name": &"right",
+"speed": 9.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yhac"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(0, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_165xy"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n1hp"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(1200, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_havis"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(1800, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hx0qx"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(2400, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jlkq4"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(3000, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5bw2"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(3600, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q387p"]
+atlas = ExtResource("8_ncbjr")
+region = Rect2(4200, 0, 600, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1mu0m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yhac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_165xy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n1hp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_havis")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hx0qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jlkq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5bw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q387p")
+}],
+"loop": false,
+"name": &"center",
+"speed": 5.0
+}]
 
 [node name="speedPitchUI" type="Control"]
 layout_mode = 3
@@ -14,13 +208,65 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ct00x")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Speedpitchbackgorund" type="Sprite2D" parent="."]
+position = Vector2(944, 542)
+scale = Vector2(2, 2)
+texture = ExtResource("2_81bw4")
+
+[node name="roundLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 42.0
+offset_right = 79.0
+offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "1"
+
+[node name="pointLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 22.0
+offset_right = 304.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+
+[node name="goAgainButton" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 734.0
+offset_top = 771.0
+offset_right = 1044.0
+offset_bottom = 895.0
+theme_override_font_sizes/font_size = 36
+text = "GO AGAIN!"
+
+[node name="prizeBoard" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="pointReq" type="Label" parent="prizeBoard"]
+offset_left = 1489.0
+offset_top = 353.0
+offset_right = 1782.0
+offset_bottom = 441.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "150 pts. ="
+
+[node name="Sprite2D" type="Sprite2D" parent="prizeBoard"]
+position = Vector2(1633, 553)
+texture = ExtResource("9_ncbjr")
+
+[node name="startMenu" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("4_1rd4m")
 
-[node name="startButton" type="Button" parent="TextureRect"]
+[node name="startButton" type="Button" parent="startMenu"]
 layout_mode = 0
 offset_left = 830.0
 offset_top = 490.0
@@ -28,23 +274,66 @@ offset_right = 1090.0
 offset_bottom = 640.0
 flat = true
 
-[node name="vertBar" type="ProgressBar" parent="."]
+[node name="vertBarNode" type="Control" parent="."]
 visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="vertBarNode"]
 layout_mode = 0
-offset_left = 540.0
-offset_top = 172.0
-offset_right = 636.0
-offset_bottom = 532.0
+offset_left = 855.0
+offset_top = 300.0
+offset_right = 949.0
+offset_bottom = 651.0
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="vertBarNode"]
+offset_left = 855.0
+offset_top = 437.0
+offset_right = 949.0
+offset_bottom = 525.0
+color = Color(0, 1, 0, 1)
+
+[node name="vertBar" type="ProgressBar" parent="vertBarNode"]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 300.0
+offset_right = 951.0
+offset_bottom = 660.0
 fill_mode = 3
 
-[node name="horBar" type="ProgressBar" parent="."]
+[node name="horbarNode" type="Control" parent="."]
 visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="horbarNode"]
+offset_left = 692.0
+offset_top = 519.0
+offset_right = 766.0
+offset_bottom = 950.0
+rotation = -1.57079
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="horbarNode"]
+offset_left = 856.0
+offset_top = 524.0
+offset_right = 933.0
+offset_bottom = 612.0
+rotation = -1.57079
+color = Color(0, 1, 0, 1)
+
+[node name="horBar" type="ProgressBar" parent="horbarNode"]
 layout_mode = 0
-offset_left = 384.0
-offset_top = 304.0
-offset_right = 815.0
-offset_bottom = 378.0
+offset_left = 689.0
+offset_top = 444.0
+offset_right = 1120.0
+offset_bottom = 518.0
 step = 1.0
+show_percentage = false
 
 [node name="countDown" type="Timer" parent="."]
 wait_time = 3.0
@@ -69,30 +358,50 @@ offset_top = 183.0
 offset_right = 892.0
 offset_bottom = 223.0
 
+[node name="ColorRect2" type="ColorRect" parent="winMenu"]
+offset_left = -140.0
+offset_top = 67.0
+offset_right = 266.0
+offset_bottom = 260.0
+
 [node name="ColorRect" type="ColorRect" parent="winMenu"]
 layout_mode = 0
-offset_right = 110.0
-offset_bottom = 142.0
+offset_left = -113.0
+offset_top = 91.0
+offset_right = 245.0
+offset_bottom = 233.0
+color = Color(0.75339, 2.38247e-06, 5.77569e-07, 1)
 
 [node name="winButton" type="Button" parent="winMenu"]
+texture_filter = 2
 layout_mode = 0
-offset_right = 105.0
-offset_bottom = 146.0
+offset_left = -113.0
+offset_top = 92.0
+offset_right = 242.0
+offset_bottom = 236.0
+theme_override_font_sizes/font_size = 48
+text = "YOU WIN!!!"
 
-[node name="roundLabel" type="Label" parent="."]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 62.0
-offset_right = 46.0
-offset_bottom = 85.0
-text = "1"
-
-[node name="pointLabel" type="Label" parent="."]
-layout_mode = 0
-offset_top = 38.0
+[node name="sprites" type="Control" parent="."]
+anchors_preset = 0
 offset_right = 40.0
-offset_bottom = 61.0
+offset_bottom = 40.0
 
-[connection signal="pressed" from="TextureRect/startButton" to="." method="_on_start_button_pressed"]
+[node name="WrongThrows" type="AnimatedSprite2D" parent="sprites"]
+visible = false
+position = Vector2(875, 351)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_qesvm")
+animation = &"left"
+
+[node name="RightThrows" type="AnimatedSprite2D" parent="sprites"]
+visible = false
+position = Vector2(877, 638)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1mu0m")
+animation = &"center"
+
+[connection signal="pressed" from="goAgainButton" to="." method="_on_go_again_button_pressed"]
+[connection signal="pressed" from="startMenu/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="countDown" to="." method="_on_count_down_timeout"]
 [connection signal="pressed" from="winMenu/winButton" to="." method="_on_win_button_pressed"]
