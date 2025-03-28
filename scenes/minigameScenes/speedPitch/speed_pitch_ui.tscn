@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://c5n7t3651pny5"]
+[gd_scene load_steps=37 format=3 uid="uid://c5n7t3651pny5"]
 
 [ext_resource type="Script" uid="uid://dcxhvd8os0ywv" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
 [ext_resource type="Texture2D" uid="uid://bugbtuws5ddjh" path="res://scenes/minigameScenes/speedPitch/speedpitchbackgorund.png" id="2_81bw4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cft0otdfkfxu" path="res://assets/SpeedPitchArt/SpriteSheets/Baseball Animation Right-Sheet.png" id="7_wg7l2"]
 [ext_resource type="Texture2D" uid="uid://c3k48g4fv6ly5" path="res://assets/SpeedPitchArt/SpriteSheets/Baseball Animation Middle-Sheet.png" id="8_ncbjr"]
 [ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="9_ncbjr"]
+[ext_resource type="AudioStream" uid="uid://c7abv07816iu5" path="res://assets/allsound/Music/CARN speed pitch.wav" id="10_nh7fw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x60gc"]
 atlas = ExtResource("6_7wvex")
@@ -248,6 +249,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="pointReq" type="Label" parent="prizeBoard"]
+layout_mode = 0
 offset_left = 1489.0
 offset_top = 353.0
 offset_right = 1782.0
@@ -289,6 +291,7 @@ offset_bottom = 651.0
 color = Color(1, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="vertBarNode"]
+layout_mode = 0
 offset_left = 855.0
 offset_top = 437.0
 offset_right = 949.0
@@ -311,6 +314,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect" type="ColorRect" parent="horbarNode"]
+layout_mode = 0
 offset_left = 692.0
 offset_top = 519.0
 offset_right = 766.0
@@ -319,6 +323,7 @@ rotation = -1.57079
 color = Color(1, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="horbarNode"]
+layout_mode = 0
 offset_left = 856.0
 offset_top = 524.0
 offset_right = 933.0
@@ -359,6 +364,7 @@ offset_right = 892.0
 offset_bottom = 223.0
 
 [node name="ColorRect2" type="ColorRect" parent="winMenu"]
+layout_mode = 0
 offset_left = -140.0
 offset_top = 67.0
 offset_right = 266.0
@@ -400,6 +406,10 @@ position = Vector2(877, 638)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_1mu0m")
 animation = &"center"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_nh7fw")
+autoplay = true
 
 [connection signal="pressed" from="goAgainButton" to="." method="_on_go_again_button_pressed"]
 [connection signal="pressed" from="startMenu/startButton" to="." method="_on_start_button_pressed"]
