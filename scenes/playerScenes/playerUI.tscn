@@ -417,10 +417,10 @@ color = Color(0.43012, 0.195204, 0.483767, 1)
 
 [node name="No" type="Button" parent="PauseMenu/ConfirmQuit2/ColorRect"]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 335.0
-offset_right = 506.0
-offset_bottom = 591.0
+offset_left = 181.111
+offset_top = 332.222
+offset_right = 437.111
+offset_bottom = 588.222
 icon = ExtResource("5_mnosj")
 flat = true
 icon_alignment = 1
@@ -433,10 +433,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -507.0
-offset_top = -314.0
-offset_right = -251.0
-offset_bottom = -58.0
+offset_left = -589.222
+offset_top = -435.222
+offset_right = -333.222
+offset_bottom = -179.222
 grow_horizontal = 0
 grow_vertical = 0
 icon = ExtResource("6_3odoy")
@@ -446,8 +446,8 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="PauseMenu/ConfirmQuit2/ColorRect"]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 207.0
+offset_right = 1020.0
+offset_bottom = 277.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Are you sure you want to quit?"

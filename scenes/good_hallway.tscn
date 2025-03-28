@@ -1,16 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dpufxile48ao1"]
+[gd_scene load_steps=6 format=3 uid="uid://dpufxile48ao1"]
 
 [ext_resource type="Script" uid="uid://df5xl527e2hfo" path="res://scenes/good_hallway.gd" id="1_qn5qp"]
+[ext_resource type="Material" uid="uid://di0y05kyjldr6" path="res://assets/materials/arcadefloor.tres" id="2_vsx85"]
+[ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="3_fvq1v"]
+[ext_resource type="Material" uid="uid://b6qi4exs5o46m" path="res://assets/materials/arcadewall3.tres" id="4_m58f4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbigt"]
+albedo_texture = ExtResource("3_fvq1v")
+uv1_scale = Vector3(24.56, 15.41, 24.56)
+texture_filter = 0
 
 [node name="goodHallway" type="Node3D"]
 script = ExtResource("1_qn5qp")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, -12.1588)
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(9.92619, 0, 0, 0, 1.68021, 0, 0, 0, 1, 0, -0.0398803, -12.7393)
+material_override = ExtResource("2_vsx85")
 use_collision = true
-size = Vector3(10.0596, 9, 25.3176)
+size = Vector3(1, 1.30713, 26.4785)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0566883, -1.36976)
-operation = 2
-size = Vector3(6.09961, 5.57129, 28.0807)
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(9.92619, 0, 0, 0, 1.68021, 0, 0, 0, 1, 0, 7.67255, -12.1588)
+material_override = SubResource("StandardMaterial3D_hbigt")
+use_collision = true
+size = Vector3(1, 1, 25.3175)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.33888e-07, -1.68021, 0, 9.92619, -7.34443e-08, 0, 0, 0, 1, 9.09442, 4.01868, -12.1604)
+material_override = ExtResource("4_m58f4")
+use_collision = true
+size = Vector3(0.902222, 7.14331, 25.3294)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-4.33888e-07, -1.68021, 0, 9.92619, -7.34443e-08, 0, 0, 0, 1, -14.2054, 4.10817, -12.1464)
+material_override = ExtResource("4_m58f4")
+use_collision = true
+size = Vector3(0.902222, 13.2877, 25.3884)

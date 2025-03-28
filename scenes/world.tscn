@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dcg3ygwtwkmsr"]
+[gd_scene load_steps=16 format=3 uid="uid://dcg3ygwtwkmsr"]
 
 [ext_resource type="AudioStream" uid="uid://c6bhmp3l030lr" path="res://assets/allsound/SFX/Arcade Light Buzzing.wav" id="1_3s7w3"]
 [ext_resource type="Script" uid="uid://dlvr51l86wbhe" path="res://scenes/world.gd" id="1_4wyf3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Material" uid="uid://cjkc0x1j0cux3" path="res://assets/materials/arcadewall.tres" id="3_i7141"]
 [ext_resource type="Material" uid="uid://og6vap8pg4hf" path="res://assets/materials/arcadewall2.tres" id="5_4mrxx"]
 [ext_resource type="AudioStream" uid="uid://chisnv2xi7mn" path="res://assets/allsound/Music/Tower Menu Theme.wav" id="6_qfnet"]
+[ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="6_w7kh3"]
 [ext_resource type="PackedScene" uid="uid://cu2fv0eula8to" path="res://scenes/interactables/boards.tscn" id="9_7r4gi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_no5us"]
@@ -28,10 +29,17 @@ volumetric_fog_enabled = true
 volumetric_fog_density = 0.1501
 volumetric_fog_emission = Color(0.08, 0.08, 0.08, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfnet"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7kh3"]
 albedo_texture = ExtResource("3_71j4m")
-uv1_scale = Vector3(36.83, 36.83, 36.83)
+uv1_scale = Vector3(79.81, 25.532, 80.261)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3hyu"]
+albedo_texture = ExtResource("6_w7kh3")
+uv1_scale = Vector3(31.65, 37.757, 41.119)
 uv1_triplanar = true
+uv1_triplanar_sharpness = 150.0
+texture_filter = 0
 
 [node name="world" type="Node3D"]
 script = ExtResource("1_4wyf3")
@@ -59,7 +67,7 @@ use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
 transform = Transform3D(17.8875, 0, 0, 0, 0.878905, 0, 0, 0, 34.7505, 0, -1.47268, -2.83916)
-material_override = SubResource("StandardMaterial3D_qfnet")
+material_override = SubResource("StandardMaterial3D_w7kh3")
 use_collision = true
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="."]
@@ -80,7 +88,9 @@ operation = 2
 size = Vector3(2.27356, 3.42078, 4.85181)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(17.8875, 0, 0, 0, 0.878905, 0, 0, 0, 34.7505, -0.517193, 5.53691, -2.83916)
+transform = Transform3D(17.8875, 0, 0, 0, 0.878905, 0, 0, 0, 34.7505, 0.0243231, 5.53691, -2.83916)
+material_override = SubResource("StandardMaterial3D_e3hyu")
+size = Vector3(0.939453, 1, 1)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314456, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)

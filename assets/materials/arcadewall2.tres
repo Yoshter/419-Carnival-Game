@@ -8,3 +8,4 @@ uv1_scale = Vector3(9.78, 4.205, 9.78)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 6.49801
 uv2_scale = Vector3(1.235, 1.235, 1.235)
+texture_filter = 0

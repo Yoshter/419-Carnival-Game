@@ -19,8 +19,8 @@ script = ExtResource("1_3ycmb")
 layout_mode = 1
 offset_left = -30.0
 offset_top = -30.0
-offset_right = 194.0
-offset_bottom = 172.0
+offset_right = 399.0
+offset_bottom = 322.0
 theme_override_font_sizes/font_size = 32
 icon = ExtResource("1_877hs")
 flat = true
@@ -32,8 +32,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -128.0
-offset_bottom = 128.0
+offset_left = -251.0
+offset_bottom = 228.0
 grow_horizontal = 0
 action_mode = 0
 icon = ExtResource("2_cvts0")
@@ -46,10 +46,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -270.0
-offset_top = 393.0
-offset_right = 270.0
-offset_bottom = 558.0
+offset_left = -253.0
+offset_top = 461.0
+offset_right = 287.0
+offset_bottom = 626.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 115
 text = "START"
@@ -57,9 +57,10 @@ flat = true
 
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
-offset_top = 371.0
-offset_right = 319.0
-offset_bottom = 648.0
+offset_left = -31.0
+offset_top = 705.0
+offset_right = 406.0
+offset_bottom = 1065.0
 icon = ExtResource("4_6ck4q")
 flat = true
 icon_alignment = 1
@@ -85,10 +86,10 @@ color = Color(0.43012, 0.195204, 0.483767, 1)
 
 [node name="No" type="Button" parent="ConfirmQuit/ColorRect"]
 layout_mode = 0
-offset_left = 250.0
-offset_top = 335.0
-offset_right = 506.0
-offset_bottom = 591.0
+offset_left = 367.0
+offset_top = 647.0
+offset_right = 783.0
+offset_bottom = 1019.0
 icon = ExtResource("2_cvts0")
 flat = true
 icon_alignment = 1
@@ -101,10 +102,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -507.0
-offset_top = -314.0
-offset_right = -251.0
-offset_bottom = -58.0
+offset_left = -761.0
+offset_top = -487.0
+offset_right = -337.0
+offset_bottom = -66.0
 grow_horizontal = 0
 grow_vertical = 0
 icon = ExtResource("4_3qgl3")
@@ -114,8 +115,8 @@ expand_icon = true
 
 [node name="Label" type="Label" parent="ConfirmQuit/ColorRect"]
 layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 207.0
+offset_right = 1867.0
+offset_bottom = 601.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "Are you sure you want to quit?"
@@ -126,13 +127,13 @@ autowrap_mode = 2
 [node name="CreditsScreen" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_right = 1148.0
-offset_bottom = 650.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 
 [node name="ColorRect" type="ColorRect" parent="CreditsScreen"]
 layout_mode = 0
-offset_right = 1155.0
-offset_bottom = 653.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.646981, 0.00169882, 0.823183, 1)
 
 [node name="closeCredits" type="Button" parent="CreditsScreen/ColorRect"]
@@ -140,8 +141,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -128.0
-offset_bottom = 128.0
+offset_left = -333.0
+offset_bottom = 333.0
 grow_horizontal = 0
 icon = ExtResource("2_cvts0")
 icon_alignment = 1
@@ -150,9 +151,9 @@ expand_icon = true
 [node name="Label" type="Label" parent="CreditsScreen/ColorRect"]
 layout_mode = 0
 offset_left = 34.0
-offset_right = 1019.0
-offset_bottom = 652.0
-theme_override_font_sizes/font_size = 75
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_font_sizes/font_size = 137
 text = "Bren Murphy - 
 Cole Faker - 
 Cole Genevick -

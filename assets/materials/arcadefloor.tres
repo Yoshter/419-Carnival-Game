@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://di0y05kyjldr6"]
+
+[ext_resource type="Texture2D" uid="uid://lylc4otiydit" path="res://assets/Textures/arcadefloortest.png" id="1_cb3he"]
+
+[resource]
+albedo_texture = ExtResource("1_cb3he")
+uv1_scale = Vector3(42.24, 13.513, 42.479)
+texture_filter = 0

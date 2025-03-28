@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xjsh8joaoaib"
-path.s3tc="res://.godot/imported/Arcade Wall Brick.png-4bedc76186946236da554e768aabc46a.s3tc.ctex"
+uid="uid://u22f0nycncs8"
+path.s3tc="res://.godot/imported/ArcadeCeiling.png-f53a4e7f69de8536d5d8a654b10d690c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/materials/Arcade Wall Brick.png"
-dest_files=["res://.godot/imported/Arcade Wall Brick.png-4bedc76186946236da554e768aabc46a.s3tc.ctex"]
+source_file="res://assets/Textures/ArcadeCeiling.png"
+dest_files=["res://.godot/imported/ArcadeCeiling.png-f53a4e7f69de8536d5d8a654b10d690c.s3tc.ctex"]
 
 [params]
 
