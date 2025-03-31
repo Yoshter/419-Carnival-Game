@@ -23,3 +23,4 @@ transform = Transform3D(0.99999, -0.00438078, 0, 0.00438078, 0.99999, 0, 0, 0, 1
 shape = SubResource("BoxShape3D_suewp")
 
 [connection signal="body_entered" from="gamePortal" to="." method="_on_game_portal_body_entered"]
+[connection signal="body_exited" from="gamePortal" to="." method="_on_game_portal_body_exited"]
