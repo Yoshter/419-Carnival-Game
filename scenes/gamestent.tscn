@@ -222,11 +222,12 @@ isFlickering = true
 
 [node name="audioSpeakers" type="Node3D" parent="."]
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="audioSpeakers"]
+[node name="Carnival music" type="AudioStreamPlayer3D" parent="audioSpeakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3839, 10.7838, 0.1558)
 stream = ExtResource("8_56qu4")
+volume_db = 1.0
 autoplay = true
-max_distance = 300.0
+max_distance = 100.0
 
 [node name="world" parent="." instance=ExtResource("10_86om8")]
 transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -99.57, 1.243, -154.32)

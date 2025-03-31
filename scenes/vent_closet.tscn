@@ -1,8 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=9 format=3 uid="uid://drwyd1icj7mxy"]
 
+[ext_resource type="Script" uid="uid://cfyvkwoqliq2k" path="res://scenes/vent_thud_trigger.gd" id="1_fgy16"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="1_tia7w"]
+[ext_resource type="AudioStream" uid="uid://hqrqpsoxr73m" path="res://assets/allsound/SFX/Vent thud.wav" id="2_eunuo"]
 [ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="2_taaqu"]
 [ext_resource type="PackedScene" uid="uid://cttfkisb511ib" path="res://scenes/interactables/map_item.tscn" id="3_iw1bk"]
+[ext_resource type="AudioStream" uid="uid://cphxeoyi2jnwh" path="res://assets/allsound/SFX/Vent Ambience.wav" id="6_fpd5f"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_88vl5"]
+size = Vector3(3.70518, 1, 18.9334)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j82be"]
+size = Vector3(2.94141, 3.51355, 0.001)
 
 [node name="ventCloset" type="Node3D"]
 
@@ -102,6 +111,27 @@ transform = Transform3D(1, 0, 0, 0, 0.240702, -0.970599, 0, 0.970599, 0.240702, 
 operation = 2
 size = Vector3(1.94006, 13.0537, 3.54211)
 
+[node name="Reverb Test" type="Area3D" parent="vents"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72895, 2.17784, -17.7407)
+reverb_bus_enabled = true
+reverb_bus_amount = 1.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vents/Reverb Test"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0237198, 0, 19.8066)
+shape = SubResource("BoxShape3D_88vl5")
+
+[node name="Vent Thud trigger" type="Area3D" parent="vents"]
+script = ExtResource("1_fgy16")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="vents/Vent Thud trigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77635, 4.64352, -29.3044)
+shape = SubResource("BoxShape3D_j82be")
+
+[node name="Thud" type="AudioStreamPlayer3D" parent="vents/Vent Thud trigger"]
+stream = ExtResource("2_eunuo")
+volume_db = 1.0
+max_distance = 10.0
+
 [node name="closet" type="Node3D" parent="."]
 
 [node name="janitorCloset" type="CSGBox3D" parent="closet"]
@@ -156,3 +186,10 @@ transform = Transform3D(0.731008, 0, 0.682368, 0, 1, 0, -0.682368, 0, 0.731008, 
 
 [node name="mapItem" parent="." instance=ExtResource("3_iw1bk")]
 transform = Transform3D(-0.681424, 0, 0.731889, 0, 1, 0, -0.731889, 0, -0.681424, -18.5826, 3.52889, -17.7673)
+
+[node name="VentAmbience" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03202, 1.92135, 0)
+stream = ExtResource("6_fpd5f")
+volume_db = 1.0
+autoplay = true
+max_distance = 20.0
