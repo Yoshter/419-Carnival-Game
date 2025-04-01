@@ -21,5 +21,6 @@ offset_left = -11.0
 offset_right = 11.0
 offset_bottom = 23.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0455001, 0.91, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "00"

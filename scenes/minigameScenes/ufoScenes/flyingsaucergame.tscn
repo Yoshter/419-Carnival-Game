@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bir814prxcdts"]
+[gd_scene load_steps=15 format=3 uid="uid://bir814prxcdts"]
 
 [ext_resource type="Script" uid="uid://bk8av2cgx5pkn" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
 [ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/minigameScenes/ufoScenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
@@ -10,6 +10,7 @@
 [ext_resource type="AudioStream" uid="uid://dqcnlube4v44r" path="res://assets/allsound/Music/Ufo game.wav" id="8_voyvo"]
 [ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="9_te0li"]
 [ext_resource type="Texture2D" uid="uid://brqasxf5m5me0" path="res://assets/materials/Clouds.png" id="10_plu2v"]
+[ext_resource type="Texture2D" uid="uid://d0eas8jg7ytg7" path="res://scenes/minigameScenes/ufoScenes/Road dash.png" id="11_7cdds"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8pfjs"]
 size = Vector2(3671, 196)
@@ -40,7 +41,7 @@ shape = SubResource("RectangleShape2D_8pfjs")
 offset_left = -231.0
 offset_top = 183.0
 offset_right = 3445.0
-offset_bottom = 483.0
+offset_bottom = 286.0
 color = Color(0.643137, 0.643137, 0.643137, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -84,6 +85,7 @@ rotation = -0.380868
 color = Color(0.641934, 0.641934, 0.641934, 1)
 
 [node name="obstacles" type="Node2D" parent="."]
+z_index = 1
 position = Vector2(0, -12)
 
 [node name="building" parent="obstacles" instance=ExtResource("2_huc4y")]
@@ -153,6 +155,7 @@ rotation = -0.437797
 color = Color(0.304926, 0.107029, 7.21961e-08, 1)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
 offset_left = -230.0
 offset_top = 284.0
 offset_right = 3445.0
@@ -166,6 +169,7 @@ position = Vector2(76, 105)
 zoom = Vector2(3, 3)
 
 [node name="Control" parent="CharacterBody2D" instance=ExtResource("3_l7gnf")]
+z_index = 1
 offset_top = -166.0
 offset_bottom = -166.0
 
@@ -232,3 +236,171 @@ texture = ExtResource("10_plu2v")
 position = Vector2(3302, -259)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_plu2v")
+
+[node name="Road" type="Node2D" parent="."]
+z_index = 2
+
+[node name="Dash" type="Sprite2D" parent="Road"]
+position = Vector2(39, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash2" type="Sprite2D" parent="Road"]
+position = Vector2(139, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash3" type="Sprite2D" parent="Road"]
+position = Vector2(233, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash4" type="Sprite2D" parent="Road"]
+position = Vector2(334, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash5" type="Sprite2D" parent="Road"]
+position = Vector2(428.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash6" type="Sprite2D" parent="Road"]
+position = Vector2(528.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash7" type="Sprite2D" parent="Road"]
+position = Vector2(622.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash8" type="Sprite2D" parent="Road"]
+position = Vector2(723.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash9" type="Sprite2D" parent="Road"]
+position = Vector2(834.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash10" type="Sprite2D" parent="Road"]
+position = Vector2(934.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash11" type="Sprite2D" parent="Road"]
+position = Vector2(1028.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash12" type="Sprite2D" parent="Road"]
+position = Vector2(1129.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash13" type="Sprite2D" parent="Road"]
+position = Vector2(1224, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash14" type="Sprite2D" parent="Road"]
+position = Vector2(1324, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash15" type="Sprite2D" parent="Road"]
+position = Vector2(1418, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash16" type="Sprite2D" parent="Road"]
+position = Vector2(1519, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash17" type="Sprite2D" parent="Road"]
+position = Vector2(1620.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash18" type="Sprite2D" parent="Road"]
+position = Vector2(1720.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash19" type="Sprite2D" parent="Road"]
+position = Vector2(1814.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash20" type="Sprite2D" parent="Road"]
+position = Vector2(1915.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash21" type="Sprite2D" parent="Road"]
+position = Vector2(2010, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash22" type="Sprite2D" parent="Road"]
+position = Vector2(2110, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash23" type="Sprite2D" parent="Road"]
+position = Vector2(2204, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash24" type="Sprite2D" parent="Road"]
+position = Vector2(2305, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash25" type="Sprite2D" parent="Road"]
+position = Vector2(2416, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash26" type="Sprite2D" parent="Road"]
+position = Vector2(2516, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash27" type="Sprite2D" parent="Road"]
+position = Vector2(2610, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash28" type="Sprite2D" parent="Road"]
+position = Vector2(2711, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash29" type="Sprite2D" parent="Road"]
+position = Vector2(2805.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash30" type="Sprite2D" parent="Road"]
+position = Vector2(2905.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash31" type="Sprite2D" parent="Road"]
+position = Vector2(2999.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash32" type="Sprite2D" parent="Road"]
+position = Vector2(3100.5, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
+
+[node name="Dash33" type="Sprite2D" parent="Road"]
+position = Vector2(3192, 241)
+scale = Vector2(0.51, 0.25)
+texture = ExtResource("11_7cdds")
