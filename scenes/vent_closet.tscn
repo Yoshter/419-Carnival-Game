@@ -203,3 +203,5 @@ stream = ExtResource("6_fpd5f")
 volume_db = 1.0
 autoplay = true
 max_distance = 27.0
+
+[connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]

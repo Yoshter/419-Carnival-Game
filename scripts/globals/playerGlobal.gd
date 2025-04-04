@@ -5,6 +5,7 @@ var isTalkingTo : String
 var inUI : bool = false
 var controlsShown = false
 
+var canInteract : bool = false
 var interactText : String
 
 var needsTeleport = false
@@ -15,6 +16,12 @@ func setInteractText(newText : String) -> void:
 
 func getInteractText() -> String:
 	return interactText
+
+func setCanInteract(canInteractBool : bool) -> void:
+	canInteract = canInteractBool
+
+func getCanInteract() -> bool:
+	return canInteract
 
 func setIsTalking(talkBool : bool) -> void:
 	isTalking = talkBool
