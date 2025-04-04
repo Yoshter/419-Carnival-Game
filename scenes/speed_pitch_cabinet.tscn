@@ -3,13 +3,14 @@
 [ext_resource type="Script" uid="uid://dtlm5h3uqoeeq" path="res://scenes/speed_pitch_cabinet.gd" id="1_ur6e3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_suewp"]
-size = Vector3(1.27661, 2.11841, 1)
+size = Vector3(2.05957, 2.11841, 1.37061)
 
 [node name="speedPitchCabinet" type="Node3D"]
 script = ExtResource("1_ur6e3")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.972207, -0.234124, 0, 0.234124, 0.972207, 0, 0.565441, -0.832275)
+use_collision = true
 size = Vector3(1, 1, 2.66455)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
@@ -19,7 +20,7 @@ size = Vector3(1, 2.79443, 1)
 [node name="gamePortal" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gamePortal"]
-transform = Transform3D(0.99999, -0.00438078, 0, 0.00438078, 0.99999, 0, 0, 0, 1, 0.0155185, 1.28814, 1.35359)
+transform = Transform3D(0.99999, -0.00438078, 0, 0.00438078, 0.99999, 0, 0, 0, 1, 0.0155185, 1.28814, 1.53889)
 shape = SubResource("BoxShape3D_suewp")
 
 [connection signal="body_entered" from="gamePortal" to="." method="_on_game_portal_body_entered"]

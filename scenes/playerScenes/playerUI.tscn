@@ -78,6 +78,28 @@ texture_filter = 1
 position = Vector2(690, 190)
 texture = ExtResource("3_lpw4w")
 
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 937.778
+offset_top = 277.222
+offset_right = 1037.78
+offset_bottom = 355.417
+color = Color(0.206774, 0.200061, 0.197172, 1)
+
+[node name="Label" type="Label" parent="PauseMenu/ColorRect"]
+texture_filter = 2
+offset_left = -27.7778
+offset_top = -0.555557
+offset_right = 131.222
+offset_bottom = 294.444
+theme_override_font_sizes/font_size = 9
+text = "W A S D   Move
+Shift   Sprint
+C   Crouch
+Space   Interact
+Mouse   Camera"
+horizontal_alignment = 1
+
 [node name="quit2" type="Button" parent="PauseMenu"]
 texture_filter = 2
 layout_mode = 0
@@ -479,6 +501,40 @@ position = Vector2(685, 289.444)
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("22_cx60t")
 
+[node name="controls" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 1776.0
+offset_top = 526.0
+offset_right = 1816.0
+offset_bottom = 566.0
+
+[node name="ColorRect" type="ColorRect" parent="controls"]
+layout_mode = 0
+offset_left = -85.0
+offset_top = -36.0
+offset_right = 95.0
+offset_bottom = 119.0
+color = Color(0.227451, 0.227451, 0.227451, 0.568627)
+
+[node name="Label" type="Label" parent="controls"]
+texture_filter = 2
+layout_mode = 0
+offset_left = -75.0
+offset_top = -20.0
+offset_right = 84.0
+offset_bottom = 275.0
+text = "W A S D   Move
+Shift   Sprint
+C   Crouch
+Space   Interact
+Mouse   Camera"
+horizontal_alignment = 1
+
+[node name="hudTimer" type="Timer" parent="controls"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
 [node name="GetItemMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -530,40 +586,6 @@ offset_right = 1121.0
 offset_bottom = 126.0
 theme_override_font_sizes/font_size = 24
 text = "nothing"
-
-[node name="controls" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 1776.0
-offset_top = 526.0
-offset_right = 1816.0
-offset_bottom = 566.0
-
-[node name="ColorRect" type="ColorRect" parent="controls"]
-layout_mode = 0
-offset_left = -85.0
-offset_top = -36.0
-offset_right = 95.0
-offset_bottom = 119.0
-color = Color(0.227451, 0.227451, 0.227451, 0.568627)
-
-[node name="Label" type="Label" parent="controls"]
-texture_filter = 2
-layout_mode = 0
-offset_left = -75.0
-offset_top = -20.0
-offset_right = 84.0
-offset_bottom = 275.0
-text = "W A S D   Move
-Shift   Sprint
-C   Crouch
-Space   Interact
-Mouse   Camera"
-horizontal_alignment = 1
-
-[node name="hudTimer" type="Timer" parent="controls"]
-wait_time = 10.0
-one_shot = true
-autostart = true
 
 [node name="dialogueTimer" type="Timer" parent="."]
 wait_time = 3.0
