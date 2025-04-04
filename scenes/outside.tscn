@@ -180,7 +180,7 @@ transform = Transform3D(-0.246352, 0.0029246, 0.969176, -0.00677134, 0.999966, -
 transform = Transform3D(-0.113408, 0.0104871, 0.993493, -0.0238771, 0.999627, -0.0132774, -0.993262, -0.0252276, -0.113115, -21.67, 4.74356, -67.6093)
 
 [node name="fence11" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(0.211603, -0.00294501, -0.977351, 0.0104195, 0.999945, -0.000757108, 0.977299, -0.0100233, 0.211622, -5.81846, 5.24419, -50.8306)
+transform = Transform3D(-0.998679, 0.0103682, -0.0503041, 0.0104195, 0.999945, -0.000757108, 0.0502937, -0.00128034, -0.998733, -12.8745, 5.24419, -57.3835)
 
 [node name="fence12" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(-0.9882, 0.00289217, -0.153137, 0.00330816, 0.999991, -0.00246157, 0.153128, -0.00293921, -0.988201, 0.386563, 4.99261, -59.7144)
@@ -254,7 +254,7 @@ transform = Transform3D(0.999112, -0.0421372, 0, 0.0421372, 0.999112, 0, 0, 0, 1
 nextScene = "res://scenes/gamestent.tscn"
 
 [node name="player2" parent="." instance=ExtResource("7_vdkxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1.74686, 24)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3128, 6.75768, -62.3839)
 
 [node name="PlayerUI2" parent="player2" instance=ExtResource("6_skt0m")]
 
