@@ -13,6 +13,7 @@ var shootingRangeScore : int = 0
 
 var towerBeat : bool = false
 var enemiesKilled : int = 0
+var towerChecked : bool = false
 
 var dead : bool = false
 

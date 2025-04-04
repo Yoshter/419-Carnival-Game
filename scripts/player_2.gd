@@ -54,6 +54,10 @@ func _process(delta: float) -> void:
 	if GamesGlobal.checkBeatGame("speedPitch") and !GamesGlobal.speedPitchChecked:
 		ItemsGlobal.itemUpdateSet(true)
 		GamesGlobal.speedPitchChecked = true
+	if GamesGlobal.checkBeatGame("tower") and !GamesGlobal.towerChecked:
+		ItemsGlobal.itemUpdateSet(true)
+		GamesGlobal.towerChecked = true
+	
 	if canTalk and Input.is_action_just_pressed("ui_accept") and !PlayerGlobal.inUI:
 		PlayerGlobal.setIsTalking(true)
 	

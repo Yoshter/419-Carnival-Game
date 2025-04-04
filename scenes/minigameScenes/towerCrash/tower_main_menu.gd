@@ -12,4 +12,6 @@ func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/minigameScenes/towerCrash/w1c1.tscn")
 
 func _on_prize_button_pressed() -> void:
-	pass # Replace with function body.
+	PlayerGlobal.needsTeleport = true
+	PlayerGlobal.newPosition = Vector3(-25.082,1.444,-58.956)
+	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")
