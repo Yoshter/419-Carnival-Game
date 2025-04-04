@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=27 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -25,6 +25,10 @@
 [ext_resource type="Texture2D" uid="uid://bdx3tl8wgqkuq" path="res://assets/Tickets/Ticket Shooting range.png" id="14_w3uxw"]
 [ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="18_c1ib8"]
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
+
+[sub_resource type="GDScript" id="GDScript_cx60t"]
+script/source = "extends Button
+"
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -86,40 +90,16 @@ offset_right = 1037.78
 offset_bottom = 355.417
 color = Color(0.206774, 0.200061, 0.197172, 1)
 
-[node name="Label" type="Label" parent="PauseMenu/ColorRect"]
-texture_filter = 2
-offset_left = -27.7778
-offset_top = -0.555557
-offset_right = 131.222
-offset_bottom = 294.444
-theme_override_font_sizes/font_size = 9
-text = "W A S D   Move
-Shift   Sprint
-C   Crouch
-Space   Interact
-Mouse   Camera"
-horizontal_alignment = 1
-
 [node name="quit2" type="Button" parent="PauseMenu"]
 texture_filter = 2
 layout_mode = 0
-offset_left = 22.0
-offset_top = 369.0
-offset_right = 261.0
-offset_bottom = 451.0
+offset_left = 23.8889
+offset_top = 487.222
+offset_right = 262.889
+offset_bottom = 569.222
 theme_override_font_sizes/font_size = 49
 text = "QUIT"
 script = ExtResource("2_t4dtg")
-
-[node name="settings" type="Button" parent="PauseMenu"]
-texture_filter = 2
-layout_mode = 0
-offset_left = 22.0
-offset_top = 216.0
-offset_right = 261.0
-offset_bottom = 298.0
-theme_override_font_sizes/font_size = 49
-text = "SETTINGS"
 
 [node name="map" type="Button" parent="PauseMenu"]
 layout_mode = 0
@@ -128,6 +108,47 @@ offset_top = 140.0
 offset_right = 798.0
 offset_bottom = 235.0
 flat = true
+
+[node name="settings" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 23.8889
+offset_top = 381.111
+offset_right = 262.889
+offset_bottom = 463.111
+theme_override_font_sizes/font_size = 49
+text = "SETTINGS"
+
+[node name="load" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 23.8889
+offset_top = 268.889
+offset_right = 262.889
+offset_bottom = 350.889
+theme_override_font_sizes/font_size = 49
+text = "LOAD"
+
+[node name="save" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 23.8889
+offset_top = 152.778
+offset_right = 262.889
+offset_bottom = 234.778
+theme_override_font_sizes/font_size = 49
+text = "SAVE"
+
+[node name="resume" type="Button" parent="PauseMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = 23.8889
+offset_top = 40.0
+offset_right = 262.889
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 49
+text = "RESUME"
+script = SubResource("GDScript_cx60t")
 
 [node name="inventory" type="Button" parent="PauseMenu"]
 layout_mode = 0
@@ -601,6 +622,7 @@ stream = ExtResource("7_luwil")
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="PauseMenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]

@@ -46,13 +46,27 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -253.0
-offset_top = 461.0
-offset_right = 287.0
-offset_bottom = 626.0
+offset_left = -275.0
+offset_top = 495.0
+offset_right = 339.0
+offset_bottom = 660.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 115
-text = "START"
+text = "New Game"
+flat = true
+
+[node name="Start2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -284.0
+offset_top = 763.0
+offset_right = 330.0
+offset_bottom = 928.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 115
+text = "Load"
 flat = true
 
 [node name="Credits" type="Button" parent="."]

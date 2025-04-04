@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://37auurnldi7g"]
+[gd_scene load_steps=4 format=3 uid="uid://37auurnldi7g"]
 
 [ext_resource type="Script" uid="uid://tbt75lgjlpf" path="res://scenes/minigameScenes/towerCrash/tower_main_menu.gd" id="1_4rwf4"]
+[ext_resource type="Texture2D" uid="uid://c34ukuwxsrjoi" path="res://assets/MenuScreens/TowerCrashMenu.png" id="2_0xswr"]
+[ext_resource type="PackedScene" uid="uid://hmnwjbqslhkw" path="res://scenes/button.tscn" id="2_x125k"]
 
 [node name="towerMainMenu" type="Control"]
 layout_mode = 3
@@ -11,13 +13,33 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4rwf4")
 
-[node name="startButton" type="Button" parent="."]
+[node name="TowerCrashMenu" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(751, 530)
+scale = Vector2(1.117, 1.117)
+texture = ExtResource("2_0xswr")
+
+[node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 390.0
-offset_top = 263.0
-offset_right = 707.0
-offset_bottom = 402.0
-text = "START"
+offset_left = 234.0
+offset_top = 3.0
+offset_right = 1546.0
+offset_bottom = 861.0
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 72
+text = "Destroy All Enemies!
+
+WASD Spin Space
+Move	  Spin	  Jump"
+horizontal_alignment = 1
+
+[node name="startButton" parent="." instance=ExtResource("2_x125k")]
+offset_left = 575.0
+offset_top = 718.0
+offset_right = 1217.0
+offset_bottom = 931.0
+theme_override_font_sizes/font_size = 100
+nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
 [node name="winMenu" type="Control" parent="."]
 visible = false
@@ -33,5 +55,5 @@ offset_right = 348.0
 offset_bottom = 136.0
 text = "PRIZE"
 
-[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]
 [connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]

@@ -45,7 +45,7 @@ offset_bottom = 286.0
 color = Color(0.643137, 0.643137, 0.643137, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1605, -170)
+position = Vector2(1605, -165)
 shape = SubResource("RectangleShape2D_8pfjs")
 
 [node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
