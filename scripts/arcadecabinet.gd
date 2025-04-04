@@ -64,21 +64,37 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and !GamesGlobal.ufoPlugged:
+		PlayerGlobal.setCanInteract(true)
 		fixLight.set_visible(true)
 		canFix = true
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player") and !GamesGlobal.ufoPlugged:
+		PlayerGlobal.setCanInteract(false)
 		fixLight.set_visible(false)
 		canFix = false
 
 func _on_game_portal_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and (game == "tower" or GamesGlobal.ufoPlugged) and !bust:
+		match game:
+			"ufo":
+				if ItemsGlobal.checkItem("ufoToken"):
+					PlayerGlobal.setCanInteract(true)
+			"tower":
+				if ItemsGlobal.checkItem("towerToken"):
+					PlayerGlobal.setCanInteract(true)
 		canPlay = true
 		playLight.set_visible(true)
 
 func _on_game_portal_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player") and (game == "tower" or GamesGlobal.ufoPlugged):
+		match game:
+			"ufo":
+				if ItemsGlobal.checkItem("ufoToken"):
+					PlayerGlobal.setCanInteract(false)
+			"tower":
+				if ItemsGlobal.checkItem("towerToken"):
+					PlayerGlobal.setCanInteract(false)
 		canPlay = false
 		playLight.set_visible(false)
 
@@ -86,6 +102,7 @@ func fix() -> void:
 	plugSprite.play("plugged")
 	brokenMusic.volume_db = -80.0
 	GamesGlobal.setUfoPlugged(true)
+	PlayerGlobal.setCanInteract(false)
 	fixNoise.play(0.0) #Bug where it will continue playing the sound on subsequent space presses
 	canFix = false
 

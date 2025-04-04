@@ -7,12 +7,17 @@ extends Control
 #Control Pop-Up
 @onready var controls: Control = $controls
 var controlsShown : bool = false
+
 #menus
 @onready var pauseMenu : Control = $PauseMenu
 @onready var getItemMenu : Control = $GetItemMenu
 @onready var dialogueMenu : Control = $DialogueMenu
 @onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
 @onready var mapMenu: Control = $PauseMenu/mapMenu
+@onready var interactMenu: Control = $interactMenu
+@onready var shootingRangeMenu: Control = $shootingRangeMenu
+
+@onready var rangeScoreText: Label = $shootingRangeMenu/scoreText
 
 #item icons
 @onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
@@ -47,8 +52,19 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	delay += delta
 	
+	if PlayerGlobal.getCanInteract():
+		interactMenu.set_visible(true)
+	else:
+		interactMenu.set_visible(false)
+	
 	if PlayerGlobal.controlsShown:
 		controls.set_visible(false)
+	
+	if PlayerGlobal.inShootingRange:
+		rangeScoreText.set_text(str(GamesGlobal.shootingRangeScore))
+		shootingRangeMenu.set_visible(true)
+	else:
+		shootingRangeMenu.set_visible(false)
 	
 	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
@@ -71,6 +87,7 @@ func _process(delta: float) -> void:
 	#print(PlayerGlobal.inUI)
 	
 	if PlayerGlobal.isTalking:
+		PlayerGlobal.setCanInteract(false)
 		if !dialogueCount > maxDialogueCount:
 			dialogueMenu.set_visible(true)
 			maxDialogueCount = DialogueGlobal.returnMaxDialogueCount(PlayerGlobal.checkIsTalkingTo())
@@ -154,3 +171,14 @@ func _on_map_pressed() -> void:
 func _on_hud_timer_timeout() -> void:
 	PlayerGlobal.controlsShown = true
 	controls.set_visible(false)
+
+func _on_resume_pressed() -> void:
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#pauseMenu.set_visible(false)
+	#inventoryMenu.set_visible(false)
+	#mapMenu.set_visible(false)
+	#PlayerGlobal.inUI = false
+	#isVisible = false
+	#delay = 0.0
+	#$"Close SFX".play()
+	pass

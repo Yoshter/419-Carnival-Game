@@ -9,6 +9,8 @@ var ufoPlugged : bool = false
 var speedPitchBeat : bool = false
 var speedPitchChecked : bool = false
 
+var shootingRangeScore : int = 0
+
 var towerBeat : bool = false
 var enemiesKilled : int = 0
 
@@ -38,4 +40,6 @@ func checkBeatGame(gameName) -> bool:
 			beatGame = ufoBeat
 		"speedPitch":
 			beatGame = speedPitchBeat
+		"tower":
+			beatGame = towerBeat
 	return beatGame

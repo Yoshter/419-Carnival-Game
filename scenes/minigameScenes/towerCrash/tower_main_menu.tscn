@@ -34,12 +34,13 @@ Move	  Spin	  Jump"
 horizontal_alignment = 1
 
 [node name="startButton" parent="." instance=ExtResource("2_x125k")]
+layout_mode = 0
 offset_left = 575.0
 offset_top = 718.0
 offset_right = 1217.0
 offset_bottom = 931.0
 theme_override_font_sizes/font_size = 100
-nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
+nextScene = "res://scenes/minigameScenes/towerCrash/w1c1.tscn"
 
 [node name="winMenu" type="Control" parent="."]
 visible = false

@@ -15,8 +15,10 @@ func _process(delta: float) -> void:
 
 func _on_pick_up_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		PlayerGlobal.setCanInteract(true)
 		inArea = true
 
 func _on_pick_up_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		PlayerGlobal.setCanInteract(false)
 		inArea = false

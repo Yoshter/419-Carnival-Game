@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="4_agixg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_je1pn"]
-size = Vector2(39, 34)
+size = Vector2(38, 29)
 
 [node name="ufoPlayer" type="CharacterBody2D"]
 script = ExtResource("1_2lje1")
@@ -30,7 +30,7 @@ offset_bottom = 190.0
 color = Color(0.783377, 0.530021, 0.936321, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 3)
+position = Vector2(3, 4.5)
 shape = SubResource("RectangleShape2D_je1pn")
 
 [node name="Ufo" type="Sprite2D" parent="."]

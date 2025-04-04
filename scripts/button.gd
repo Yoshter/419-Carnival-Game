@@ -4,8 +4,7 @@ extends Button
 @export var isQuit : bool = false
 
 #Custom funcs
-func changeSceneTo(nextScene) -> void:
-	
+func changeSceneTo() -> void:
 	get_tree().change_scene_to_file(nextScene)
 
 func _on_pressed() -> void:
@@ -13,4 +12,4 @@ func _on_pressed() -> void:
 	if isQuit:
 		PlayerGlobal.needsTeleport = true
 		PlayerGlobal.newPosition = Vector3(-107.4,1.266,-152.4)
-	changeSceneTo(nextScene)
+	changeSceneTo()

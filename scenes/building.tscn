@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://duxrh0oc2gdr"]
+[gd_scene load_steps=8 format=3 uid="uid://duxrh0oc2gdr"]
 
 [ext_resource type="Texture2D" uid="uid://dywbrd7vkml87" path="res://assets/art/building.png" id="1_2ed7c"]
 [ext_resource type="Script" uid="uid://pxddu7g8s3wb" path="res://scripts/building.gd" id="1_b4mm2"]
 [ext_resource type="AudioStream" uid="uid://dsl8s0amhivyt" path="res://assets/allsound/SFX/UFO score point.wav" id="3_8lrrx"]
+[ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="4_rla3o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gb76"]
 size = Vector2(31, 66)
@@ -47,6 +48,9 @@ shape = SubResource("RectangleShape2D_orm35")
 [node name="scoreSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_8lrrx")
 volume_db = -8.0
+
+[node name="ticketGet" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_rla3o")
 
 [connection signal="body_entered" from="deathbox" to="." method="_on_deathbox_body_entered"]
 [connection signal="body_entered" from="scoreArea" to="." method="_on_score_area_body_entered"]

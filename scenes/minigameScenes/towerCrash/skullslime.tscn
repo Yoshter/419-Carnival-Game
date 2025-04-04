@@ -101,7 +101,8 @@ size = Vector2(80, 61)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_auivk"]
 size = Vector2(29, 8)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0ybg0"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3wwb2"]
+size = Vector2(26.7059, 17.6471)
 
 [node name="skullslime" type="CharacterBody2D"]
 scale = Vector2(1.7, 1.7)
@@ -133,20 +134,25 @@ position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_auivk")
 
 [node name="collision" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("CircleShape2D_0ybg0")
+position = Vector2(1, 1.17647)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_3wwb2")
 
 [node name="wallCast" type="RayCast2D" parent="."]
 position = Vector2(15, 0)
 target_position = Vector2(12.5, 0)
 
 [node name="wallCast2" type="RayCast2D" parent="."]
-position = Vector2(-12.5, 0)
+position = Vector2(-13.5294, 0)
 target_position = Vector2(-13.5, 0)
 
 [node name="DeathAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_j5e0m")
 
+[node name="turnAroundDelay" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_entered" from="triggerArea" to="." method="_on_trigger_area_body_entered"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="turnAroundDelay" to="." method="_on_turn_around_delay_timeout"]

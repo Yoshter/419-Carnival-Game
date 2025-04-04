@@ -1,8 +1,45 @@
-[gd_scene load_steps=2 format=3 uid="uid://drft1bhwsn1xm"]
+[gd_scene load_steps=7 format=3 uid="uid://drft1bhwsn1xm"]
 
+[ext_resource type="Script" uid="uid://dcsf5d81031ik" path="res://scenes/interactables/overworld_token.gd" id="1_ctvca"]
 [ext_resource type="Texture2D" uid="uid://biovfdi5bv5np" path="res://assets/Token/Token Shooting Range.png" id="1_r1e82"]
+[ext_resource type="Texture2D" uid="uid://dyib5hpye3qyo" path="res://assets/Token/Token Skee ball.png" id="3_4eaq6"]
+[ext_resource type="Texture2D" uid="uid://dom3xjkrrbwbo" path="res://assets/Token/Token Tower.png" id="4_5xsce"]
 
-[node name="overworldToken" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_r1e82"]
+size = Vector3(1.51367, 1.40625, 1)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ctvca"]
+size = Vector3(6.71313, 6.30164, 7.33105)
+
+[node name="overworldToken" type="StaticBody3D"]
+script = ExtResource("1_ctvca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_r1e82")
+
+[node name="overworldToken" type="Node3D" parent="."]
+
+[node name="shootingRangeToken" type="Sprite3D" parent="overworldToken"]
+visible = false
+texture_filter = 0
 texture = ExtResource("1_r1e82")
+
+[node name="skeebleToken" type="Sprite3D" parent="overworldToken"]
+visible = false
+texture_filter = 0
+texture = ExtResource("3_4eaq6")
+
+[node name="towerToken" type="Sprite3D" parent="overworldToken"]
+visible = false
+texture_filter = 0
+texture = ExtResource("4_5xsce")
+
+[node name="pickUpArea" type="Area3D" parent="."]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pickUpArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65082, 0)
+shape = SubResource("BoxShape3D_ctvca")
+
+[connection signal="body_entered" from="pickUpArea" to="." method="_on_pick_up_area_body_entered"]
+[connection signal="body_exited" from="pickUpArea" to="." method="_on_pick_up_area_body_exited"]

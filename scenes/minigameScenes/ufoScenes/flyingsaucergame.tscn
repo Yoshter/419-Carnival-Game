@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://bir814prxcdts"]
+[gd_scene load_steps=16 format=3 uid="uid://bir814prxcdts"]
 
 [ext_resource type="Script" uid="uid://bk8av2cgx5pkn" path="res://scripts/minigameScripts/flyingsaucergame.gd" id="1_faf8u"]
 [ext_resource type="PackedScene" uid="uid://ci06h665vgkgm" path="res://scenes/minigameScenes/ufoScenes/flyingsaucerplayer.tscn" id="1_v4fjw"]
 [ext_resource type="PackedScene" uid="uid://duxrh0oc2gdr" path="res://scenes/building.tscn" id="2_huc4y"]
+[ext_resource type="PackedScene" uid="uid://dqrnxawgj3fva" path="res://scenes/minigameScenes/ufoScenes/cloud.tscn" id="3_65rxp"]
 [ext_resource type="PackedScene" uid="uid://c6qm0k7kc53a1" path="res://scenes/ufoui.tscn" id="3_l7gnf"]
 [ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="5_2gl3j"]
 [ext_resource type="AudioStream" uid="uid://d3xhwrtmwg01y" path="res://assets/allsound/SFX/Ufo Beam sound new.wav" id="6_mx413"]
@@ -88,63 +89,122 @@ color = Color(0.641934, 0.641934, 0.641934, 1)
 z_index = 1
 position = Vector2(0, -12)
 
-[node name="building" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="buildings" type="Node2D" parent="obstacles"]
+
+[node name="building" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(417, 177)
 
-[node name="building2" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building2" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(715, 158)
 
-[node name="building3" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building3" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(1009, 175)
 
-[node name="building4" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building4" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(1330, 159)
 
-[node name="building5" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building5" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(1689, 171)
 
-[node name="building6" parent="obstacles" instance=ExtResource("2_huc4y")]
-position = Vector2(1917, 154)
+[node name="building6" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
+position = Vector2(1954, 154)
 
-[node name="building7" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building7" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(2200, 161)
 
-[node name="building8" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building8" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(2530, 153)
 
-[node name="building9" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building9" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(2876, 183)
 
-[node name="building10" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building10" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(3206, 175)
 
-[node name="building11" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building11" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(3534, 111)
 rotation = -0.414865
 
-[node name="building12" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building12" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(3766, -8.00012)
 rotation = -0.414865
 
-[node name="building13" parent="obstacles" instance=ExtResource("2_huc4y")]
-position = Vector2(4023, -122)
+[node name="building13" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
+position = Vector2(4052, -129)
 rotation = -0.414865
 
-[node name="building14" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building14" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(4329, -164)
 rotation = 1.14022
+scale = Vector2(1.5, 1.5)
 
-[node name="building15" parent="obstacles" instance=ExtResource("2_huc4y")]
-position = Vector2(3597, -69.0002)
-rotation = -3.55136
+[node name="building15" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
+position = Vector2(3574, -96)
+rotation = 2.73183
 
-[node name="building16" parent="obstacles" instance=ExtResource("2_huc4y")]
-position = Vector2(3830, -171)
-rotation = -3.55136
+[node name="building16" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
+position = Vector2(3851, -187)
+rotation = 2.73183
 
-[node name="building17" parent="obstacles" instance=ExtResource("2_huc4y")]
+[node name="building17" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(4138, -284)
-rotation = -3.58145
+rotation = 2.70174
+
+[node name="clouds" type="Node2D" parent="obstacles"]
+
+[node name="Cloud" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(275, 14)
+
+[node name="Cloud2" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(567, -12)
+
+[node name="Cloud3" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(875, 62)
+
+[node name="Cloud4" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(1167, 7)
+
+[node name="Cloud5" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(1214, 127)
+
+[node name="Cloud6" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(1540, -4)
+
+[node name="Cloud7" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(1587, 127)
+
+[node name="Cloud8" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(1438, 108)
+
+[node name="Cloud9" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(1811, 28)
+
+[node name="Cloud10" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(2072, 5)
+
+[node name="Cloud11" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(2394, 103)
+
+[node name="Cloud12" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(2300, -12)
+
+[node name="Cloud13" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(2655, 128)
+
+[node name="Cloud14" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(2778, 13)
+
+[node name="Cloud15" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(3087, 117)
+
+[node name="Cloud16" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(2971, 12)
+
+[node name="Cloud17" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(3424, 141)
+
+[node name="Cloud18" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
+position = Vector2(3329, 4)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = 3231.0

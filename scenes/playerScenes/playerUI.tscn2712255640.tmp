@@ -82,6 +82,14 @@ texture_filter = 1
 position = Vector2(690, 190)
 texture = ExtResource("3_lpw4w")
 
+[node name="ColorRect" type="ColorRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 937.778
+offset_top = 277.222
+offset_right = 1037.78
+offset_bottom = 355.417
+color = Color(0.206774, 0.200061, 0.197172, 1)
+
 [node name="quit2" type="Button" parent="PauseMenu"]
 texture_filter = 2
 layout_mode = 0
@@ -515,7 +523,6 @@ scale = Vector2(2.5, 2.5)
 texture = ExtResource("22_cx60t")
 
 [node name="controls" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 1776.0
 offset_top = 526.0

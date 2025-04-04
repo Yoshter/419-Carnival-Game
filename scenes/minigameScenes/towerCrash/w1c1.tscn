@@ -30,11 +30,11 @@ max_distance = 4000.0
 
 [node name="skullslime" parent="enemies" instance=ExtResource("8_e26vx")]
 position = Vector2(-121, 239)
+goingLeft = true
 onCeiling = false
 
 [node name="skullslime2" parent="enemies" instance=ExtResource("8_e26vx")]
 position = Vector2(275, 241)
-goingLeft = true
 onCeiling = false
 
 [node name="skullslime" parent="." instance=ExtResource("8_e26vx")]

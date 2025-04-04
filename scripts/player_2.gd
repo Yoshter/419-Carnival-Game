@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 var currSpeed : float = 5.0
-const SPEED = 6.5
-const RUN_SPEED = 9.3
+const SPEED = 9.0
+const RUN_SPEED = 11.2
 
 var mouseSens : float = 0.05
 
@@ -22,12 +22,18 @@ var canCrouch : bool = true
 @onready var crouchingCollide: CollisionShape3D = $crouchingCollide
 @onready var standingCollide: CollisionShape3D = $standingCollide
 
+var hasBBGun : bool = false
+var canShoot : bool = true
+@onready var bbRay: RayCast3D = $body/Camera3D/bbRay
+@onready var shootDelay: Timer = $shootDelay
+@onready var bbGunSprite: Sprite3D = $body/Camera3D/bbGun
+
 func _ready() -> void:
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and !PlayerGlobal.inUI:
+	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouseSens))
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-60), deg_to_rad(50))
@@ -37,6 +43,11 @@ func _process(delta: float) -> void:
 		position = PlayerGlobal.newPosition
 		PlayerGlobal.needsTeleport = false
 	
+	if !hasBBGun and ItemsGlobal.checkItem("bbgun"):
+		hasBBGun = true
+		bbGunSprite.set_visible(true)
+		bbRay.set_visible(true)
+	
 	if GamesGlobal.checkBeatGame("ufo") and !GamesGlobal.ufoChecked:
 		ItemsGlobal.itemUpdateSet(true)
 		GamesGlobal.ufoChecked = true
@@ -45,6 +56,15 @@ func _process(delta: float) -> void:
 		GamesGlobal.speedPitchChecked = true
 	if canTalk and Input.is_action_just_pressed("ui_accept") and !PlayerGlobal.inUI:
 		PlayerGlobal.setIsTalking(true)
+	
+	if hasBBGun and Input.is_action_pressed("shoot") and canShoot:
+		canShoot = false
+		shootDelay.start()
+		if bbRay.is_colliding():
+			if bbRay.get_collider().has_method("score"):
+				bbRay.get_collider().score()
+			if bbRay.get_collider().has_method("fall"):
+				bbRay.get_collider().fall()
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -92,3 +112,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_crouch_delay_timeout() -> void:
 	canCrouch = true
+
+func _on_shoot_delay_timeout() -> void:
+	canShoot = true

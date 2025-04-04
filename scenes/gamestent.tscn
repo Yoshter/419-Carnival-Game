@@ -9,7 +9,7 @@
 [ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="6_ikt7c"]
 [ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="6_m4csp"]
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
-[ext_resource type="PackedScene" uid="uid://bspombtyhjd6a" path="res://scenes/shooting_range.tscn" id="8_21i7n"]
+[ext_resource type="PackedScene" uid="uid://bspombtyhjd6a" path="res://scenes/minigameScenes/shootingRange/shooting_range.tscn" id="8_21i7n"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
@@ -233,7 +233,7 @@ max_distance = 100.0
 transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -99.57, 1.243, -154.32)
 
 [node name="player2" parent="." instance=ExtResource("11_j2o88")]
-transform = Transform3D(0.00171037, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00171037, 8.19607, 1.26577, 2.73806)
+transform = Transform3D(0.00171037, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00171037, 7.91301, 1.26577, 1.8325)
 
 [node name="gates" type="Node3D" parent="."]
 

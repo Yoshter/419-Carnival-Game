@@ -26,10 +26,12 @@ func _process(delta: float) -> void:
 
 func _on_light_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		PlayerGlobal.setCanInteract(true)
 		inArea = true
 		Light.set_visible(inArea)
 
 func _on_light_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		PlayerGlobal.setCanInteract(false)
 		inArea = false
 		Light.set_visible(inArea)

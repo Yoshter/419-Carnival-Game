@@ -11,6 +11,8 @@ var interactText : String
 var needsTeleport = false
 var newPosition : Vector3
 
+var inShootingRange : bool = false
+
 func setInteractText(newText : String) -> void:
 	interactText = newText
 
