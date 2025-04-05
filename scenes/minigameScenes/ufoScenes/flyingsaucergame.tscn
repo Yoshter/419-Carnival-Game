@@ -136,7 +136,6 @@ rotation = -0.414865
 [node name="building14" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(4329, -164)
 rotation = 1.14022
-scale = Vector2(1.5, 1.5)
 
 [node name="building15" parent="obstacles/buildings" instance=ExtResource("2_huc4y")]
 position = Vector2(3574, -96)
