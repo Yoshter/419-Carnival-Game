@@ -8,6 +8,7 @@ extends StaticBody3D
 @onready var pickUpArea: Area3D = $pickUpArea
 
 var inArea : bool = false
+var isFallen : bool = false
 
 func _ready() -> void:
 	match tokenString:
@@ -30,15 +31,17 @@ func process() -> void:
 					ItemsGlobal.giveItem("skeebleToken")
 
 func fall() -> void:
-	pickUpArea.set_visible(true)
-	match tokenString:
-		"tower":
-			global_position.y -= 4.5
-		"shootingRange":
-			global_position.y -= 0.05
-		"skeeble":
-			global_position.y -= 8
-	global_position.y -= 8
+	if !isFallen:
+		pickUpArea.set_visible(true)
+		isFallen = true
+		match tokenString:
+			"tower":
+				global_position.y -= 4.5
+			"shootingRange":
+				global_position.y -= 3.0
+			"skeeble":
+				global_position.y -= 8
+		#global_position.y -= 8
 
 func _on_pick_up_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
