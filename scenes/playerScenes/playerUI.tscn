@@ -101,15 +101,16 @@ offset_right = 798.0
 offset_bottom = 235.0
 flat = true
 
-[node name="settings" type="Button" parent="PauseMenu"]
+[node name="Bug" type="Button" parent="PauseMenu"]
 texture_filter = 2
 layout_mode = 0
 offset_left = 23.8889
-offset_top = 381.111
-offset_right = 262.889
-offset_bottom = 463.111
+offset_top = 370.556
+offset_right = 379.889
+offset_bottom = 452.556
+scale = Vector2(0.654913, 1.14062)
 theme_override_font_sizes/font_size = 49
-text = "SETTINGS"
+text = "REPORT A BUG"
 
 [node name="load" type="Button" parent="PauseMenu"]
 texture_filter = 2
@@ -683,7 +684,7 @@ text = "SCORE:"
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
