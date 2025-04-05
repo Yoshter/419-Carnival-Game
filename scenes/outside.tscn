@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=15 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://chafqkssb64xn" path="res://assets/allsound/Music/Carnival game intro sequence track.wav" id="6_1waf8"]
 [ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="6_skt0m"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="7_vdkxn"]
-[ext_resource type="Texture2D" uid="uid://14orcqr16abo" path="res://assets/art/truck.png" id="8_flvmx"]
 [ext_resource type="PackedScene" uid="uid://dshpia0pht20c" path="res://scenes/tentmodel.tscn" id="11_v7x2m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
@@ -115,10 +114,10 @@ use_collision = true
 size = Vector3(25.2188, 1, 49.1059)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="ground"]
-transform = Transform3D(-0.0245175, 0.0154231, 0.999582, -0.0403935, 0.999051, -0.0164057, -0.998883, -0.0407788, -0.0238716, 42.241, 3.87668, -43.049)
+transform = Transform3D(-0.0245175, 0.0154231, 0.999582, -0.0403935, 0.999051, -0.0164057, -0.998883, -0.0407788, -0.0238716, 42.2607, 3.90913, -42.2466)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(39.1895, 1, 49.1059)
+size = Vector3(37.5829, 1, 49.1059)
 
 [node name="carCollision" type="StaticBody3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.816931, 34.2321)
@@ -135,12 +134,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57986, 0.891394, 0.61557)
 shape = SubResource("BoxShape3D_wp0as")
 
 [node name="sprites" type="Node3D" parent="."]
-
-[node name="car" type="Sprite3D" parent="sprites"]
-transform = Transform3D(0.997179, 0, 0.0750657, 0, 1, 0, -0.0750657, 0, 0.997179, -3.03766, 3.08167, 34.7808)
-pixel_size = 0.013
-texture_filter = 0
-texture = ExtResource("8_flvmx")
 
 [node name="pole" type="Sprite3D" parent="sprites"]
 transform = Transform3D(0.994212, -0.0154455, 0.106321, 0.015358, 0.999881, 0.00164238, -0.106333, 2.32085e-11, 0.994331, -14.2433, 5.33224, -71.7366)
@@ -180,7 +173,7 @@ transform = Transform3D(-0.246352, 0.0029246, 0.969176, -0.00677134, 0.999966, -
 transform = Transform3D(-0.113408, 0.0104871, 0.993493, -0.0238771, 0.999627, -0.0132774, -0.993262, -0.0252276, -0.113115, -21.67, 4.74356, -67.6093)
 
 [node name="fence11" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(-0.998679, 0.0103682, -0.0503041, 0.0104195, 0.999945, -0.000757108, 0.0502937, -0.00128034, -0.998733, -12.8745, 5.24419, -57.3835)
+transform = Transform3D(-0.261012, 0.00273342, 0.965331, 0.0104718, 0.999945, 0, -0.965278, 0.0101087, -0.261027, -5.23097, 5.01106, -51.0576)
 
 [node name="fence12" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(-0.9882, 0.00289217, -0.153137, 0.00330816, 0.999991, -0.00246157, 0.153128, -0.00293921, -0.988201, 0.386563, 4.99261, -59.7144)
@@ -230,6 +223,9 @@ transform = Transform3D(0.198543, -0.00906193, -0.980051, 0.00507265, 0.999954, 
 [node name="fence15" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(-0.229915, -0.0179813, 0.973045, -0.0122334, 0.999804, 0.0155854, -0.973133, -0.00832003, -0.23009, -9.13997, 0.481142, 26.6541)
 
+[node name="fence15" parent="fences/fence15" instance=ExtResource("1_evbs2")]
+transform = Transform3D(0.10139, -0.00983582, 0.9948, -0.00784164, 0.999914, 0.0106857, -0.994816, -0.00888393, 0.101304, -8.99751, 0.0523861, 4.17249)
+
 [node name="fence16" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(0.285966, -0.0114374, 0.958172, -0.0122334, 0.999804, 0.0155854, -0.958161, -0.0161783, 0.28577, 3.47899, 0.481142, 25.8226)
 
@@ -254,7 +250,7 @@ transform = Transform3D(0.999112, -0.0421372, 0, 0.0421372, 0.999112, 0, 0, 0, 1
 nextScene = "res://scenes/gamestent.tscn"
 
 [node name="player2" parent="." instance=ExtResource("7_vdkxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3128, 6.75768, -62.3839)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98872, 0.781738, 31.2981)
 
 [node name="PlayerUI2" parent="player2" instance=ExtResource("6_skt0m")]
 
@@ -265,3 +261,9 @@ autoplay = true
 
 [node name="tent" parent="." instance=ExtResource("11_v7x2m")]
 transform = Transform3D(0.988042, 0, 0, 0, 1.08363, 0, 0, 0, 1.62392, 104.971, 1.03552, -68.4041)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.1712, 6.12165, -68.6787)
+visible = false
+use_collision = true
+size = Vector3(1, 11.4447, 22.0348)
