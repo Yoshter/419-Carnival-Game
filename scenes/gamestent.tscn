@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="19_bfm21"]
-[ext_resource type="PackedScene" uid="uid://cb34epq1jpe00" path="res://scenes/interactables/overworldJoystick.tscn" id="20_3oqoc"]
+[ext_resource type="PackedScene" uid="uid://bu67ukg6d81p1" path="res://scenes/interactables/overworldJoystick.tscn" id="20_3oqoc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
