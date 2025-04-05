@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _on_board_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		if ItemsGlobal.checkitem("saw"):
+		if ItemsGlobal.checkItem("saw"):
 			PlayerGlobal.setCanInteract(true)
 		inArea = true
 
