@@ -135,7 +135,6 @@ shape = SubResource("RectangleShape2D_auivk")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1.17647)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_3wwb2")
 
 [node name="wallCast" type="RayCast2D" parent="."]
