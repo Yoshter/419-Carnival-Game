@@ -17,9 +17,10 @@ var rangeTokenBool : bool = false
 var rangeTicketBool : bool = false
 
 var funPassLevel2 : bool = false
-var funPassLevel3 : bool = false
+var funPassLevel3 : bool = true
 var saw : bool = false
 var bbgun : bool = false
+var joystick : bool = false
 
 var map : bool = false
 
@@ -74,6 +75,8 @@ func giveItem(itemName) -> void:
 				bbgun = true
 			"map":
 				map = true
+			"joystick":
+				joystick = true
 		showItemUI = true
 
 func checkItem(itemName) -> bool:
@@ -109,6 +112,8 @@ func checkItem(itemName) -> bool:
 			hasItem = bbgun
 		"map":
 			hasItem = map
+		"joystick":
+			hasItem = joystick
 		_:
 			hasItem = false
 	return hasItem

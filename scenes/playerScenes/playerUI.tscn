@@ -358,6 +358,8 @@ position = Vector2(567.778, 438.333)
 scale = Vector2(0.636639, 0.636639)
 texture = ExtResource("9_uray3")
 
+[node name="joystick" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+
 [node name="tokens" type="Control" parent="PauseMenu/inventoryMenu/itemIcons"]
 anchors_preset = 0
 offset_right = 40.0

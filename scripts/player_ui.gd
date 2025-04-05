@@ -36,6 +36,7 @@ var controlsShown : bool = false
 @onready var funPassSrIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassSr
 @onready var sawIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/saw
 @onready var bbgunIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/bbgun
+@onready var joystickIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/joystick
 
 @onready var map: Sprite2D = $PauseMenu/mapMenu/Map
 
@@ -155,6 +156,8 @@ func updateItemIcons() -> void:
 		sawIcon.set_visible(true)
 	if ItemsGlobal.checkItem("bbgun"):
 		bbgunIcon.set_visible(true)
+	if ItemsGlobal.checkItem("joystick"):
+		joystickIcon.set_visible(true)
 
 func _on_no_pressed() -> void:
 	confirm_quit_2.set_visible(false)
