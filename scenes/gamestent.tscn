@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="19_bfm21"]
-[ext_resource type="PackedScene" uid="uid://bu67ukg6d81p1" path="res://scenes/interactables/overworldJoystick.tscn" id="20_3oqoc"]
+[ext_resource type="PackedScene" uid="uid://cx7yrqk2vpadl" path="res://scenes/interactables/overworld_joystick.tscn" id="20_3oqoc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -285,5 +285,5 @@ hasJoyStick = false
 [node name="arcadecabinet2" parent="." instance=ExtResource("19_bfm21")]
 transform = Transform3D(-0.804821, 0, -0.593517, 0, 1, 0, 0.593517, 0, -0.804821, 0.354205, 0.704026, 21.2771)
 
-[node name="OverworldJoystick" parent="." instance=ExtResource("20_3oqoc")]
-transform = Transform3D(0.551791, 0, -0.833982, 0, 1, 0, 0.833982, 0, 0.551791, 0.741815, 0.625481, 18.0195)
+[node name="overworldJoystick" parent="." instance=ExtResource("20_3oqoc")]
+transform = Transform3D(0.895463, 0, -0.445135, 0, 1, 0, 0.445135, 0, 0.895463, 1.45632, 0.700109, 16.7261)

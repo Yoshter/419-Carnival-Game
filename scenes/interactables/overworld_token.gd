@@ -35,7 +35,7 @@ func fall() -> void:
 		"tower":
 			global_position.y -= 4.5
 		"shootingRange":
-			global_position.y -= 0.1
+			global_position.y -= 0.05
 		"skeeble":
 			global_position.y -= 8
 	global_position.y -= 8

@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://cg2702rdyr5mq"]
+[gd_scene format=3 uid="uid://cg2702rdyr5mq"]
 
 [node name="Bug Report" type="Control"]
 layout_mode = 3

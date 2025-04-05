@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://cgpjpvw4sqd03" path="res://scenes/minigameScenes/shootingRange/shooting_range.gd" id="1_baoc8"]
 [ext_resource type="PackedScene" uid="uid://7ir04oxgkcfm" path="res://scenes/interactables/overworld_bb_gun.tscn" id="2_0amp2"]
 [ext_resource type="PackedScene" uid="uid://biwmiy3eim7u1" path="res://scenes/minigameScenes/shootingRange/target.tscn" id="3_t1gs1"]
-[ext_resource type="PackedScene" uid="uid://drft1bhwsn1xm" path="res://scenes/interactables/overworld_token.tscn" id="5_oadsy"]
+[ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="5_oadsy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1gs1"]
 size = Vector3(37.187, 12.1945, 21.6288)
@@ -23,9 +23,9 @@ operation = 2
 size = Vector3(39.2916, 7.40955, 16.3457)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98169, 1.42276, -5.35299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98169, 1.24515, -5.35299)
 use_collision = true
-size = Vector3(1, 1.37354, 10.9268)
+size = Vector3(1, 1.01831, 10.9268)
 
 [node name="fungate" parent="." instance=ExtResource("1_7m8ba")]
 transform = Transform3D(0.0643648, 0, 3.99948, 0, 4, 0, -3.99948, 0, 0.0643648, 8.05401, 2.19533, -13.4719)
@@ -44,7 +44,7 @@ spot_range = 36.8603
 spot_angle = 20.1224
 
 [node name="overworldBBGun" parent="." instance=ExtResource("2_0amp2")]
-transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985, -0.00544832, -0.997357, 0, 0.0726638, 8.07915, 2.23438, -5.74263)
+transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985, -0.00544832, -0.997357, 0, 0.0726638, 8.07915, 1.59677, -5.74263)
 
 [node name="targets" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9089, 0, -9.91666)

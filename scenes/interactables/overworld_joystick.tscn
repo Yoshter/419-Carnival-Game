@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx7yrqk2vpadl"]
+
+[ext_resource type="Script" uid="uid://b6l7ky04b5267" path="res://scenes/interactables/overworld_joystick.gd" id="1_8abeb"]
+[ext_resource type="Texture2D" uid="uid://dytjbknalbb36" path="res://assets/Cab Base/Arcade Machine Stick.png" id="2_ga1d6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cpi0k"]
+size = Vector3(3.30298, 3.34766, 3.53613)
+
+[node name="overworldJoystick" type="Node3D"]
+script = ExtResource("1_8abeb")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+texture = ExtResource("2_ga1d6")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17383, 0)
+shape = SubResource("BoxShape3D_cpi0k")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
