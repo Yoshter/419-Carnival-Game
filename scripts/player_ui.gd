@@ -58,8 +58,8 @@ func _process(delta: float) -> void:
 	else:
 		interactMenu.set_visible(false)
 	
-	if PlayerGlobal.controlsShown:
-		controls.set_visible(false)
+	#if PlayerGlobal.controlsShown:
+		#controls.set_visible(false)
 	
 	if PlayerGlobal.inShootingRange:
 		rangeScoreText.set_text(str(GamesGlobal.shootingRangeScore))
@@ -70,6 +70,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
+		controls.set_visible(true)
 		PlayerGlobal.inUI = true
 		isVisible = true
 		delay = 0.0
@@ -77,6 +78,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
+		if PlayerGlobal.controlsShown:
+			controls.set_visible(false)
 		inventoryMenu.set_visible(false)
 		mapMenu.set_visible(false)
 		PlayerGlobal.inUI = false

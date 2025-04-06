@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=28 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -16,9 +16,10 @@
 [ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="7_luwil"]
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="7_uray3"]
 [ext_resource type="Texture2D" uid="uid://bqhtogt15dg8r" path="res://assets/Token/Token Baseball.png" id="8_xvmha"]
+[ext_resource type="Texture2D" uid="uid://byv2hai6f75g2" path="res://assets/art/Gun.png" id="9_17uta"]
 [ext_resource type="Texture2D" uid="uid://dom3xjkrrbwbo" path="res://assets/Token/Token Tower.png" id="9_k2bd0"]
-[ext_resource type="Texture2D" uid="uid://kbfn4dcjifw6" path="res://assets/art/bbgun.png" id="9_uray3"]
 [ext_resource type="Texture2D" uid="uid://nng7l7qflqy8" path="res://assets/Tickets/Ticket Space.png" id="10_1nmfo"]
+[ext_resource type="Texture2D" uid="uid://dytjbknalbb36" path="res://assets/Cab Base/Arcade Machine Stick.png" id="10_14imd"]
 [ext_resource type="Texture2D" uid="uid://decvfdibqy3m6" path="res://assets/Tickets/Ticket SkeeBall.png" id="11_latnh"]
 [ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="12_qjt8n"]
 [ext_resource type="Texture2D" uid="uid://thv22n5oohsl" path="res://assets/Tickets/Ticket Tower.png" id="13_h1pdy"]
@@ -38,6 +39,54 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_4pjyk")
+
+[node name="shootingRangeMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="scoreText" type="Label" parent="shootingRangeMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_left = -910.0
+offset_top = -490.0
+offset_right = -690.0
+offset_bottom = -402.0
+theme_override_font_sizes/font_size = 64
+text = "SCORE:"
+
+[node name="interactMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="interactText" type="Label" parent="interactMenu"]
+texture_filter = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 36
+text = "SPACE TO INTERACT"
 
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
@@ -355,11 +404,16 @@ texture = ExtResource("7_hty8y")
 
 [node name="bbgun" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
 visible = false
-position = Vector2(567.778, 438.333)
-scale = Vector2(0.636639, 0.636639)
-texture = ExtResource("9_uray3")
+position = Vector2(545.556, 441.111)
+scale = Vector2(0.580946, 0.580946)
+texture = ExtResource("9_17uta")
 
 [node name="joystick" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(738.333, 345.556)
+scale = Vector2(0.522222, 0.522222)
+texture = ExtResource("10_14imd")
 
 [node name="tokens" type="Control" parent="PauseMenu/inventoryMenu/itemIcons"]
 anchors_preset = 0
@@ -531,7 +585,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="controls" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_left = 1776.0
 offset_top = 526.0
@@ -628,54 +681,6 @@ stream = ExtResource("6_4kfvc")
 
 [node name="TabSwitch SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_luwil")
-
-[node name="interactMenu" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="interactText" type="Label" parent="interactMenu"]
-texture_filter = 2
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 36
-text = "SPACE TO INTERACT"
-
-[node name="shootingRangeMenu" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="scoreText" type="Label" parent="shootingRangeMenu"]
-texture_filter = 2
-layout_mode = 0
-offset_left = -910.0
-offset_top = -490.0
-offset_right = -690.0
-offset_bottom = -402.0
-theme_override_font_sizes/font_size = 64
-text = "SCORE:"
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
