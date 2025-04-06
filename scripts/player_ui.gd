@@ -186,6 +186,5 @@ func _on_resume_pressed() -> void:
 	#$"Close SFX".play()
 	pass
 
-
 func _on_quit_inv_2_pressed() -> void:
 	mapMenu.set_visible(false)

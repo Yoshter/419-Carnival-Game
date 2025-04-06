@@ -18,6 +18,6 @@ func _on_board_area_body_entered(body: Node3D) -> void:
 
 func _on_board_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
-		if ItemsGlobal.checkitem("saw"):
+		if ItemsGlobal.checkItem("saw"):
 			PlayerGlobal.setCanInteract(false)
 		inArea = false
