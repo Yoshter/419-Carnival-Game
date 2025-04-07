@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://lpvmrhxrmmkp"]
+[gd_scene load_steps=10 format=3 uid="uid://lpvmrhxrmmkp"]
 
 [ext_resource type="Script" uid="uid://bf1jrgpmw32ch" path="res://scenes/hallway.gd" id="1_owcqv"]
 [ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="2_1k2v8"]
 [ext_resource type="Texture2D" uid="uid://cxbba8tuhjlv8" path="res://assets/Textures/Arcade_Wall_Brick.png" id="2_h81ti"]
 [ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="2_u7i40"]
-[ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box Mess.tscn" id="4_3w3tr"]
+[ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="5_1k2v8"]
+[ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="6_txc3n"]
+[ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="7_yjeik"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7i40"]
 albedo_texture = ExtResource("2_h81ti")
@@ -120,13 +122,13 @@ omni_range = 25.0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="."]
 transform = Transform3D(-0.998451, 0, -0.0556299, 0, 1, 0, 0.0556299, 0, -0.998451, 62.5424, -1.74173, -93.7599)
-light_color = Color(0.63249, 0.0441786, 0.155239, 1)
+light_color = Color(0.352941, 0.34902, 0.101961, 1)
 light_energy = 4.0
 omni_range = 25.0
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="."]
 transform = Transform3D(-0.998451, 0, -0.0556299, 0, 1, 0, 0.0556299, 0, -0.998451, 60.7624, -1.74173, -114.579)
-light_color = Color(0.63249, 0.0441786, 0.155239, 1)
+light_color = Color(0.353734, 0.350688, 0.10364, 1)
 light_energy = 4.0
 omni_range = 25.0
 
@@ -215,11 +217,39 @@ radius = 4.08907
 height = 14.5681
 material = ExtResource("2_1k2v8")
 
-[node name="Node3D" parent="." instance=ExtResource("4_3w3tr")]
-transform = Transform3D(0.12081, -0.790464, -1.32453, 1.54243, 0.0711862, 0.0982016, 0.0107703, -1.32812, 0.793589, -2.00568, -3.63901, 5.14545)
-
 [node name="OmniLight3D9" type="OmniLight3D" parent="."]
 transform = Transform3D(-0.998451, 0, -0.0556299, 0, 1, 0, 0.0556299, 0, -0.998451, 37.7955, -2.04723, -52.2157)
 light_color = Color(0.63249, 0.0441786, 0.155239, 1)
 light_energy = 4.0
 omni_range = 25.0
+
+[node name="Boxes" parent="." instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.846258, -0.0750925, -0.527454, -0.163696, 0.905479, -0.391549, 0.507001, 0.417694, 0.753977, -2.83952, -2.47192, 2.53694)
+
+[node name="Box" parent="Boxes" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.516618, -0.614308, 0.596432, 0.800482, 0.0993147, -0.59107, 0.303865, 0.782791, 0.54305, 2.32173, -1.48075, 2.14824)
+
+[node name="Box2" parent="Boxes/Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.948682, 0.286001, 0.13493, -0.302872, 0.944453, 0.127586, -0.0909454, -0.161906, 0.982608, -0.335561, 0.163052, -1.90986)
+
+[node name="Boxes2" parent="." instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.955367, -0.046565, 0.291729, -0.163696, 0.905479, -0.391549, -0.245922, -0.421828, -0.872687, 14.9374, -3.82755, 0.194403)
+
+[node name="Box" parent="Boxes2" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.516618, -0.614308, 0.596432, 0.800482, 0.0993147, -0.59107, 0.303865, 0.782791, 0.54305, 2.32173, -1.48075, 2.14824)
+
+[node name="Box2" parent="Boxes2/Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.948682, 0.286001, 0.13493, -0.302872, 0.944453, 0.127586, -0.0909454, -0.161906, 0.982608, -0.335561, 0.163052, -1.90986)
+
+[node name="arcadecabinet" parent="." instance=ExtResource("6_txc3n")]
+transform = Transform3D(0.995716, 0, 0.0924575, -0.0904334, 0.208099, 0.973918, -0.0192404, -0.978108, 0.207208, 8.78079, -6.46104, -18.375)
+hasJoyStick = false
+
+[node name="Bar" type="CSGBox3D" parent="."]
+transform = Transform3D(0.994762, -0.10222, 0, 0.10222, 0.994762, 0, 0, 0, 1, 11.5386, -3.87041, -19.6253)
+material_override = ExtResource("7_yjeik")
+use_collision = true
+size = Vector3(10.3033, 0.817871, 1.26282)
+
+[node name="Node3D" parent="Bar" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69676, -1.53611, -3.61659)
