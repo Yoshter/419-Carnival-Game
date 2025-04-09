@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://lpvmrhxrmmkp"]
+[gd_scene load_steps=13 format=3 uid="uid://lpvmrhxrmmkp"]
 
 [ext_resource type="Script" uid="uid://bf1jrgpmw32ch" path="res://scenes/hallway.gd" id="1_owcqv"]
 [ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="2_1k2v8"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="5_1k2v8"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="6_txc3n"]
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="7_yjeik"]
+[ext_resource type="Texture2D" uid="uid://b4b6f8vbx60fl" path="res://assets/Textures/arcadesign.png" id="8_nlnob"]
+[ext_resource type="AudioStream" uid="uid://bevupvjhvpinl" path="res://assets/allsound/Music/Tent Upper floor ambience.wav" id="9_w57m6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u7i40"]
 albedo_texture = ExtResource("2_h81ti")
@@ -14,6 +16,9 @@ uv1_scale = Vector3(6.425, 6.425, 6.425)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3w3tr"]
 albedo_texture = ExtResource("2_h81ti")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w57m6"]
+size = Vector3(4.78845, 1, 1.10632)
 
 [node name="hallway" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.9622, -0.311615, 22.8016)
@@ -232,6 +237,21 @@ transform = Transform3D(0.516618, -0.614308, 0.596432, 0.800482, 0.0993147, -0.5
 [node name="Box2" parent="Boxes/Box" instance=ExtResource("5_1k2v8")]
 transform = Transform3D(0.948682, 0.286001, 0.13493, -0.302872, 0.944453, 0.127586, -0.0909454, -0.161906, 0.982608, -0.335561, 0.163052, -1.90986)
 
+[node name="Boxes" parent="Boxes" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.892274, -0.140491, -0.429081, 0.243237, 0.651071, -0.718986, 0.380373, -0.7459, -0.546762, 25.0419, -19.4232, -52.057)
+
+[node name="Box" parent="Boxes/Boxes" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.516618, -0.614308, 0.596432, 0.800482, 0.0993147, -0.59107, 0.303865, 0.782791, 0.54305, 2.32173, -1.48075, 2.14824)
+
+[node name="Box2" parent="Boxes/Boxes/Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.948682, 0.286001, 0.13493, -0.302872, 0.944453, 0.127586, -0.0909454, -0.161906, 0.982608, -0.335561, 0.163052, -1.90986)
+
+[node name="Box" parent="Boxes/Boxes/Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.0648988, -0.493952, 0.867064, 0.945932, 0.307177, 0.104192, -0.317808, 0.813421, 0.487179, -2.57611, 0.529955, -4.82975)
+
+[node name="Box2" parent="Boxes/Boxes/Box/Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.948682, 0.286001, 0.13493, -0.302872, 0.944453, 0.127586, -0.0909454, -0.161906, 0.982608, -0.335561, 0.163052, -1.90986)
+
 [node name="Boxes2" parent="." instance=ExtResource("5_1k2v8")]
 transform = Transform3D(-0.955367, -0.046565, 0.291729, -0.163696, 0.905479, -0.391549, -0.245922, -0.421828, -0.872687, 14.9374, -3.82755, 0.194403)
 
@@ -245,11 +265,45 @@ transform = Transform3D(0.948682, 0.286001, 0.13493, -0.302872, 0.944453, 0.1275
 transform = Transform3D(0.995716, 0, 0.0924575, -0.0904334, 0.208099, 0.973918, -0.0192404, -0.978108, 0.207208, 8.78079, -6.46104, -18.375)
 hasJoyStick = false
 
+[node name="arcadecabinet" parent="arcadecabinet" instance=ExtResource("6_txc3n")]
+transform = Transform3D(0.221991, 0.95746, -0.184366, -0.935556, 0.262425, 0.236362, 0.274689, 0.120014, 0.954013, 17.5868, 13.3719, -1.45767)
+hasJoyStick = false
+
+[node name="Box" parent="." instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.994762, -0.10222, 0, 0.10222, 0.994762, 0, 0, 0, 1, 9.01299, -5.67414, -23.2419)
+
+[node name="Box" parent="Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.994762, -0.10222, 0, 0.10222, 0.994762, 0, 0, 0, 1, 9.72836, 1.06101, -11.609)
+
+[node name="Box" parent="Box/Box" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.990379, 0.135659, 0.0273049, -0.138088, 0.981657, 0.131457, -0.00897076, -0.133963, 0.990946, 3.95918, 0.3475, 4.45213)
+
 [node name="Bar" type="CSGBox3D" parent="."]
 transform = Transform3D(0.994762, -0.10222, 0, 0.10222, 0.994762, 0, 0, 0, 1, 11.5386, -3.87041, -19.6253)
 material_override = ExtResource("7_yjeik")
 use_collision = true
 size = Vector3(10.3033, 0.817871, 1.26282)
 
-[node name="Node3D" parent="Bar" instance=ExtResource("5_1k2v8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.69676, -1.53611, -3.61659)
+[node name="Bar" type="CSGBox3D" parent="Bar"]
+transform = Transform3D(0.660914, -0.0328764, -0.749742, 0.136526, 0.987636, 0.0770421, 0.737939, -0.153277, 0.657231, 8.67972, -1.59225, -13.0226)
+material_override = ExtResource("7_yjeik")
+use_collision = true
+size = Vector3(13.268, 0.817871, 1.26282)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(2.42631, 0, 0, 0, 2.79347, 0.646432, 0, -0.732854, 2.46405, 42.0041, -6.23869, -77.7491)
+texture = ExtResource("8_nlnob")
+
+[node name="Signhitbox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Signhitbox"]
+transform = Transform3D(0.99906, -5.55112e-17, 0.0433404, -0.00988651, 0.973635, 0.227899, -0.0421977, -0.228113, 0.97272, 41.9184, -6.30764, -78.1071)
+shape = SubResource("BoxShape3D_w57m6")
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.2185, 16.3035, -74.3789)
+stream = ExtResource("9_w57m6")
+volume_db = 6.0
+max_db = 6.0
+autoplay = true
+max_distance = 46.71
