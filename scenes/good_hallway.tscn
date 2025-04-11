@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpufxile48ao1"]
+[gd_scene load_steps=8 format=3 uid="uid://dpufxile48ao1"]
 
 [ext_resource type="Script" uid="uid://df5xl527e2hfo" path="res://scenes/good_hallway.gd" id="1_qn5qp"]
 [ext_resource type="Material" uid="uid://di0y05kyjldr6" path="res://assets/materials/arcadefloor.tres" id="2_vsx85"]
 [ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="3_fvq1v"]
 [ext_resource type="Material" uid="uid://b6qi4exs5o46m" path="res://assets/materials/arcadewall3.tres" id="4_m58f4"]
+[ext_resource type="Texture2D" uid="uid://b4b6f8vbx60fl" path="res://assets/Textures/arcadesign.png" id="5_fvq1v"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbigt"]
 albedo_texture = ExtResource("3_fvq1v")
 uv1_scale = Vector3(24.56, 15.41, 24.56)
 texture_filter = 0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m58f4"]
+size = Vector3(4.78845, 1, 1.10632)
 
 [node name="goodHallway" type="Node3D"]
 script = ExtResource("1_qn5qp")
@@ -36,3 +40,14 @@ transform = Transform3D(-4.33888e-07, -1.68021, 0, 9.92619, -7.34443e-08, 0, 0, 
 material_override = ExtResource("4_m58f4")
 use_collision = true
 size = Vector3(0.902222, 1.46319, 25.3884)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.023657, 0.0626336, 2.54671, 0.00675761, 2.88731, -0.0551809, -2.42619, 0.00743126, -0.0249859, -2.99703, 3.7301, -11.8416)
+texture = ExtResource("5_fvq1v")
+
+[node name="Signhitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.5864, 8.84263, 69.8416)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Signhitbox"]
+transform = Transform3D(-0.0530292, 0.0480941, 0.997434, 0.00486584, 0.99884, -0.0479028, -0.998581, 0.00231313, -0.0532017, 37.2271, -5.08074, -81.5939)
+shape = SubResource("BoxShape3D_m58f4")

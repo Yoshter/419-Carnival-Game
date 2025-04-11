@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="2_u7i40"]
 [ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="5_1k2v8"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="6_txc3n"]
-[ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="7_yjeik"]
+[ext_resource type="Material" uid="uid://c4lfocr3brs4w" path="res://assets/materials/woodTest.tres" id="7_w57m6"]
 [ext_resource type="Texture2D" uid="uid://b4b6f8vbx60fl" path="res://assets/Textures/arcadesign.png" id="8_nlnob"]
 [ext_resource type="AudioStream" uid="uid://bevupvjhvpinl" path="res://assets/allsound/Music/Tent Upper floor ambience.wav" id="9_w57m6"]
 
@@ -269,6 +269,10 @@ hasJoyStick = false
 transform = Transform3D(0.221991, 0.95746, -0.184366, -0.935556, 0.262425, 0.236362, 0.274689, 0.120014, 0.954013, 17.5868, 13.3719, -1.45767)
 hasJoyStick = false
 
+[node name="arcadecabinet" parent="arcadecabinet/arcadecabinet" instance=ExtResource("6_txc3n")]
+transform = Transform3D(0.740987, 0.660072, 0.123484, -0.670483, 0.716997, 0.190713, 0.037346, -0.22411, 0.97385, -42.8674, 15.4865, 0.555309)
+hasJoyStick = false
+
 [node name="Box" parent="." instance=ExtResource("5_1k2v8")]
 transform = Transform3D(0.994762, -0.10222, 0, 0.10222, 0.994762, 0, 0, 0, 1, 9.01299, -5.67414, -23.2419)
 
@@ -280,13 +284,25 @@ transform = Transform3D(0.990379, 0.135659, 0.0273049, -0.138088, 0.981657, 0.13
 
 [node name="Bar" type="CSGBox3D" parent="."]
 transform = Transform3D(0.994762, -0.10222, 0, 0.10222, 0.994762, 0, 0, 0, 1, 11.5386, -3.87041, -19.6253)
-material_override = ExtResource("7_yjeik")
+material_override = ExtResource("7_w57m6")
 use_collision = true
 size = Vector3(10.3033, 0.817871, 1.26282)
 
 [node name="Bar" type="CSGBox3D" parent="Bar"]
 transform = Transform3D(0.660914, -0.0328764, -0.749742, 0.136526, 0.987636, 0.0770421, 0.737939, -0.153277, 0.657231, 8.67972, -1.59225, -13.0226)
-material_override = ExtResource("7_yjeik")
+material_override = ExtResource("7_w57m6")
+use_collision = true
+size = Vector3(13.268, 0.817871, 1.26282)
+
+[node name="Bar" type="CSGBox3D" parent="Bar/Bar"]
+transform = Transform3D(-0.700702, 0.357867, -0.617211, 0.419348, 0.906476, 0.0495138, 0.577206, -0.224131, -0.78524, -11.7506, 3.78549, -68.1503)
+material_override = ExtResource("7_w57m6")
+use_collision = true
+size = Vector3(13.268, 0.817871, 1.26282)
+
+[node name="Bar" type="CSGBox3D" parent="Bar/Bar/Bar"]
+transform = Transform3D(0.824708, 0.545535, -0.149162, -0.495688, 0.824212, 0.273802, 0.27231, -0.151868, 0.950151, -0.271234, 0.510562, 9.67902)
+material_override = ExtResource("7_w57m6")
 use_collision = true
 size = Vector3(13.268, 0.817871, 1.26282)
 
@@ -307,3 +323,51 @@ volume_db = 6.0
 max_db = 6.0
 autoplay = true
 max_distance = 46.71
+
+[node name="Box thing" parent="." instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.570198, 0, -0.821508, 0, 1, 0, 0.821508, 0, 0.570198, 51.2233, -5.81061, -79.8212)
+
+[node name="Box thing" parent="Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.053926, -0.00422949, -0.998537, -0.00631287, 0.999972, -0.00389465, 0.998526, 0.0060936, -0.0539513, 0.780621, 1.95881, -0.469864)
+
+[node name="Box thing" parent="Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.0539258, -0.00422949, -0.998537, -0.00631287, 0.999972, -0.00389465, 0.998526, 0.0060936, -0.0539509, -0.161682, 1.95779, 0.797104)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.0979347, -0.00376825, -0.995184, -0.00480649, 0.999978, -0.00425939, 0.99518, 0.00520049, 0.0979151, -2.78001, -1.61034, -0.140453)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.053926, -0.00422949, -0.998537, -0.00631287, 0.999973, -0.00389465, 0.998526, 0.0060936, -0.0539513, 0.795292, -0.422845, 2.05995)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.0539261, -0.00422949, -0.998537, -0.00631287, 0.999972, -0.00389465, 0.998526, 0.0060936, -0.0539513, 2.01182, -0.503472, 0.453609)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.0539261, -0.00422949, -0.998536, -0.00631287, 0.999972, -0.00389464, 0.998525, 0.0060936, -0.0539514, 0.266495, -1.86722, -0.375134)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.0539261, -0.00422949, -0.998537, -0.00631287, 0.999973, -0.00389465, 0.998526, 0.0060936, -0.0539514, 0.241173, 3.71663, 0.441387)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.0539258, -0.00422949, -0.998537, -0.00631287, 0.999972, -0.00389465, 0.998526, 0.0060936, -0.0539512, -0.09408, 1.92499, -0.77951)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.497846, 0.000707543, -0.867267, -0.00608089, 0.999979, -0.00267486, 0.867246, 0.00660539, 0.49784, -2.71581, -1.18108, 1.0128)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.131645, -0.0069102, -0.991274, -0.0109215, 0.999927, -0.00552011, 0.991238, 0.0100994, -0.13171, 0.176479, -3.96, -1.50946)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.131645, -0.0069102, -0.991274, -0.0109215, 0.999926, -0.00552011, 0.991237, 0.0100994, -0.13171, -1.04174, -0.359885, 1.92051)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(-0.229388, 0.562878, -0.794073, -0.307573, 0.732105, 0.607802, 0.923462, 0.383658, 0.00518957, 0.184471, 2.17887, 0.456161)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.238643, 0.926326, -0.291499, -0.461013, 0.372257, 0.80554, 0.854704, -0.0578505, 0.515884, 0.511234, -0.108791, -2.75628)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.114152, 0.842324, 0.526747, -0.0394175, -0.525955, 0.849601, 0.992683, -0.117746, -0.0268364, 2.30172, -6.0598, -0.980601)
+
+[node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
+transform = Transform3D(0.238643, 0.926326, -0.291499, -0.461013, 0.372257, 0.80554, 0.854704, -0.0578505, 0.515885, 2.09868, -0.814914, 0.0939789)
