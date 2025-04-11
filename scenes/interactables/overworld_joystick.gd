@@ -2,7 +2,6 @@ extends Node3D
 
 var inArea : bool = false
 var isVisible : bool = true
-@onready var pickUpArea: Area3D = $pickUpArea
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
