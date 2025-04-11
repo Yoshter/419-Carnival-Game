@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dm64f4kpr4iqe"]
+[gd_scene load_steps=37 format=3 uid="uid://dm64f4kpr4iqe"]
 
 [ext_resource type="Script" uid="uid://ck2u2ojurbih1" path="res://scripts/arcadecabinet.gd" id="1_smnev"]
 [ext_resource type="Texture2D" uid="uid://dtbhqr0fajxjg" path="res://assets/Space/Space Art/Cab Base Back.png" id="2_3akc8"]
@@ -110,7 +110,10 @@ animations = [{
 size = Vector3(2.6, 5.02344, 2.86816)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fm5rr"]
-size = Vector3(1.77319, 3, 1.44824)
+size = Vector3(1.77319, 3, 2.31311)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfctr"]
+size = Vector3(2.25195, 3.005, 1.62146)
 
 [node name="arcadecabinet" type="Node3D"]
 script = ExtResource("1_smnev")
@@ -273,9 +276,10 @@ shape = SubResource("BoxShape3D_hda4r")
 
 [node name="gamePortal" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gamePortal"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.432435)
 shape = SubResource("BoxShape3D_fm5rr")
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
@@ -297,7 +301,15 @@ max_distance = 10.0
 [node name="FixNoise" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("22_mfctr")
 
+[node name="joystickFixArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="joystickFixArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0025, 2.81146)
+shape = SubResource("BoxShape3D_mfctr")
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="gamePortal" to="." method="_on_game_portal_body_entered"]
 [connection signal="body_exited" from="gamePortal" to="." method="_on_game_portal_body_exited"]
+[connection signal="body_entered" from="joystickFixArea" to="." method="_on_joystick_fix_area_body_entered"]
+[connection signal="body_exited" from="joystickFixArea" to="." method="_on_joystick_fix_area_body_exited"]

@@ -18,8 +18,12 @@ extends Node3D
 @onready var bustCabSprites: Node3D = $bodySprites/bustCabSprites
 @onready var fixNoise = $FixNoise
 
+@onready var gamePortal : Area3D = $gamePortal
+@onready var joystickFixArea : Area3D = $joystickFixArea
+
 var canFix : bool = false
 var canPlay : bool = false
+var canReplaceJoystick : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -36,6 +40,7 @@ func _ready() -> void:
 			brokenMusic.play(0.0)
 		"tower":
 			towerCabSprites.set_visible(true)
+			gamePortal.monitoring = false
 			plugSprite.play("plugged")
 		_:
 			bustCabSprites.set_visible(true)
@@ -53,6 +58,14 @@ func _process(delta: float) -> void:
 	if canFix:
 		if Input.is_action_just_pressed("ui_accept"):
 			fix()
+	
+	if canReplaceJoystick:
+		if Input.is_action_pressed("ui_accept"):
+			hasJoyStick = true
+			joystickSprite.set_visible(true)
+			joystickFixArea.monitorable = false
+			joystickFixArea.monitoring = false
+			gamePortal.monitoring = true
 	
 	if canPlay and game == "ufo":
 		if Input.is_action_just_pressed("ui_accept") and ItemsGlobal.checkItem("ufoToken"):
@@ -75,7 +88,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		canFix = false
 
 func _on_game_portal_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and (game == "tower" or GamesGlobal.ufoPlugged) and !bust:
+	if body.is_in_group("player") and (game == "tower" or GamesGlobal.ufoPlugged) and !bust and hasJoyStick:
 		match game:
 			"ufo":
 				if ItemsGlobal.checkItem("ufoToken"):
@@ -108,3 +121,14 @@ func fix() -> void:
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)
+
+
+func _on_joystick_fix_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player") and !hasJoyStick and !bust:
+		PlayerGlobal.setCanInteract(true)
+		canReplaceJoystick = true
+
+func _on_joystick_fix_area_body_exited(body: Node3D) -> void:
+	if body.is_in_group("player") and !hasJoyStick and !bust:
+		PlayerGlobal.setCanInteract(false)
+		canReplaceJoystick = false

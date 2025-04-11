@@ -11,13 +11,13 @@ var speedPitchTokenBool : bool = false
 var speedPitchTicketBool : bool = false
 var skeebleTokenBool : bool = false
 var skeebleTicketBool : bool = false
-var towerTokenBool : bool = false
+var towerTokenBool : bool = true
 var towerTicketBool : bool = false
 var rangeTokenBool : bool = false
 var rangeTicketBool : bool = false
 
 var funPassLevel2 : bool = false
-var funPassLevel3 : bool = false
+var funPassLevel3 : bool = true
 var saw : bool = true
 var bbgun : bool = false
 var joystick : bool = false
