@@ -115,6 +115,9 @@ func _process(delta: float) -> void:
 	if ItemsGlobal.showItemUI:
 		getItemMenu.set_visible(true)
 		PlayerGlobal.inUI = true
+	else:
+		getItemMenu.set_visible(false)
+		PlayerGlobal.inUI = false
 
 func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1

@@ -15,5 +15,6 @@ func _on_talk_box_body_entered(body: Node3D) -> void:
 func _on_talk_box_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		PlayerGlobal.setCanInteract(false)
+		ItemsGlobal.showItemUI = false
 		talkLight.set_visible(false)
 		body.canTalk = false
