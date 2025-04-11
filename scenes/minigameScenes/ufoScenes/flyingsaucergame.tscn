@@ -229,8 +229,10 @@ zoom = Vector2(3, 3)
 
 [node name="Control" parent="CharacterBody2D" instance=ExtResource("3_l7gnf")]
 z_index = 1
-offset_top = -166.0
-offset_bottom = -166.0
+offset_left = -1.0
+offset_top = -165.0
+offset_right = -1.0
+offset_bottom = -165.0
 
 [node name="Deathsound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_2gl3j")

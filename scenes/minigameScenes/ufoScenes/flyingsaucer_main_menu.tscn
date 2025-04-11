@@ -21,12 +21,13 @@ offset_bottom = 1080.0
 texture = ExtResource("3_8bwpo")
 
 [node name="Button" parent="TextureRect" instance=ExtResource("1_31kig")]
+texture_filter = 1
 layout_mode = 0
 offset_left = 598.0
 offset_top = 490.0
 offset_right = 1240.0
 offset_bottom = 703.0
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 129
 nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
 [node name="Label" type="Label" parent="TextureRect"]
@@ -37,7 +38,7 @@ offset_right = 1313.0
 offset_bottom = 1076.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
-theme_override_font_sizes/font_size = 87
+theme_override_font_sizes/font_size = 96
 text = "Use Space to Fly!"
 
 [node name="deathMenu" type="ColorRect" parent="."]
@@ -63,6 +64,7 @@ offset_left = 36.0
 offset_top = 218.0
 offset_right = 259.0
 offset_bottom = 279.0
+theme_override_font_sizes/font_size = 48
 text = "RETRY"
 nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
@@ -72,6 +74,7 @@ offset_left = 35.0
 offset_top = 309.0
 offset_right = 258.0
 offset_bottom = 370.0
+theme_override_font_sizes/font_size = 48
 text = "QUIT
 "
 nextScene = "res://scenes/gamestent.tscn"
@@ -87,20 +90,24 @@ color = Color(0, 0.347584, 0.208124, 1)
 
 [node name="score" type="Label" parent="deathMenu"]
 layout_mode = 0
-offset_left = 128.5
-offset_top = 84.5
-offset_right = 275.5
-offset_bottom = 172.5
+offset_left = 69.0
+offset_top = 46.0
+offset_right = 256.0
+offset_bottom = 189.0
 theme_override_font_sizes/font_size = 48
 text = "00"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="tokenButton" parent="deathMenu" instance=ExtResource("1_31kig")]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_left = 54.5
 offset_top = 239.5
 offset_right = 277.5
 offset_bottom = 358.5
+theme_override_font_sizes/font_size = 48
 text = "SURPRISE
 "
 script = null

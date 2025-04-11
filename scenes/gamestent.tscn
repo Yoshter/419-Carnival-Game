@@ -117,6 +117,7 @@ size = Vector3(17.8389, 8.51656, 17.4238)
 [node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2548, 2.11719, -0.716921)
 material_override = ExtResource("3_fh77p")
+use_collision = true
 size = Vector3(1, 5.23438, 34.353)
 
 [node name="mainTentCyl" type="CSGCylinder3D" parent="ground/mainarea"]

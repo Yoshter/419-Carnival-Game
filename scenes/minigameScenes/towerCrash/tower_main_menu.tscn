@@ -20,13 +20,14 @@ scale = Vector2(1.117, 1.117)
 texture = ExtResource("2_0xswr")
 
 [node name="Label" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_left = 234.0
 offset_top = 3.0
 offset_right = 1546.0
 offset_bottom = 861.0
 theme_override_constants/outline_size = 20
-theme_override_font_sizes/font_size = 72
+theme_override_font_sizes/font_size = 96
 text = "Destroy All Enemies!
 
 WASD Spin Space
@@ -34,12 +35,13 @@ Move	  Spin	  Jump"
 horizontal_alignment = 1
 
 [node name="startButton" parent="." instance=ExtResource("2_x125k")]
+texture_filter = 1
 layout_mode = 0
 offset_left = 575.0
 offset_top = 718.0
 offset_right = 1217.0
 offset_bottom = 931.0
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 96
 nextScene = "res://scenes/minigameScenes/towerCrash/w1c1.tscn"
 
 [node name="winMenu" type="Control" parent="."]
@@ -51,9 +53,13 @@ offset_right = 730.0
 offset_bottom = 560.0
 
 [node name="prizeButton" type="Button" parent="winMenu"]
+texture_filter = 1
 layout_mode = 0
-offset_right = 348.0
-offset_bottom = 136.0
+offset_left = 207.0
+offset_top = 259.0
+offset_right = 841.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 96
 text = "PRIZE"
 
 [connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]

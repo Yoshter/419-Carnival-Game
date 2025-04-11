@@ -215,13 +215,14 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_81bw4")
 
 [node name="roundLabel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 0
-offset_left = 39.0
-offset_top = 42.0
-offset_right = 79.0
-offset_bottom = 109.0
+offset_left = 46.0
+offset_top = 30.0
+offset_right = 86.0
+offset_bottom = 127.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 96
 text = "1"
 
 [node name="pointLabel" type="Label" parent="."]
@@ -235,23 +236,24 @@ theme_override_font_sizes/font_size = 64
 
 [node name="retry" type="Button" parent="."]
 visible = false
-texture_filter = 2
+texture_filter = 1
 layout_mode = 0
 offset_left = 734.0
 offset_top = 771.0
 offset_right = 1027.0
 offset_bottom = 915.0
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 96
 text = "RETRY"
 
 [node name="goAgainButton" type="Button" parent="."]
 visible = false
+texture_filter = 1
 layout_mode = 0
 offset_left = 734.0
 offset_top = 771.0
 offset_right = 1044.0
 offset_bottom = 895.0
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 48
 text = "GO AGAIN!"
 
 [node name="prizeBoard" type="Control" parent="."]
@@ -260,14 +262,16 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="pointReq" type="Label" parent="prizeBoard"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 1489.0
-offset_top = 353.0
-offset_right = 1782.0
-offset_bottom = 441.0
+offset_left = 1503.0
+offset_top = 188.0
+offset_right = 1858.0
+offset_bottom = 285.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 96
 text = "150 pts. ="
+horizontal_alignment = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="prizeBoard"]
 position = Vector2(1633, 553)
@@ -287,6 +291,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
 
 [node name="startMenu" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
@@ -304,9 +309,11 @@ flat = true
 layout_mode = 0
 offset_right = 1918.0
 offset_bottom = 185.0
-theme_override_font_sizes/font_size = 62
-text = "Press space on each meter in the green to get the perfect pitch!"
+theme_override_font_sizes/font_size = 96
+text = "Press space on each meter in the 
+green to get the perfect pitch!"
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="vertBarNode" type="Control" parent="."]
 visible = false
@@ -402,7 +409,7 @@ offset_bottom = 233.0
 color = Color(0.75339, 2.38247e-06, 5.77569e-07, 1)
 
 [node name="winButton" type="Button" parent="winMenu"]
-texture_filter = 2
+texture_filter = 1
 layout_mode = 0
 offset_left = -113.0
 offset_top = 92.0

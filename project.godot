@@ -33,6 +33,10 @@ window/size/mode=3
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
 
+[gui]
+
+theme/custom_font="uid://ct764c74wt8jb"
+
 [input]
 
 run={
