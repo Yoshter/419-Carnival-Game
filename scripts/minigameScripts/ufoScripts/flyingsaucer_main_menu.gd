@@ -24,7 +24,8 @@ func _process(delta: float) -> void:
 			startButton.set_visible(false)
 			buttons.set_visible(false)
 			tokenButton.set_visible(true)
-			DialogueGlobal.addToEncCount("dan")
+			if !ItemsGlobal.checkItem("ufoTicket"):
+				DialogueGlobal.addToEncCount("dan")
 			GamesGlobal.ufoScoreReset()
 		checked = true
 
