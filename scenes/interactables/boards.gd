@@ -1,12 +1,12 @@
 extends Node3D
-@onready var boardBreak = $BoardBreak
+@onready var boardBreak: AudioStreamPlayer3D = $boardBreakSound
 
 var inArea : bool = false
 
 func _process(delta: float) -> void:
 	if inArea:
 		if ItemsGlobal.checkItem("saw") and Input.is_action_pressed("ui_accept"):
-			boardBreak.play() #Not working
+			boardBreak.play(0.0) #Not working
 			PlayerGlobal.setCanInteract(false)
 			queue_free()
 

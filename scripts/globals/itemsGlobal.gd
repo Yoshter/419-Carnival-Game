@@ -18,7 +18,7 @@ var rangeTicketBool : bool = false
 
 var funPassLevel2 : bool = false
 var funPassLevel3 : bool = false
-var saw : bool = false
+var saw : bool = true
 var bbgun : bool = false
 var joystick : bool = false
 
