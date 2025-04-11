@@ -22,3 +22,9 @@ texture = ExtResource("3_4phth")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.908397, 0)
 visible = false
 texture = ExtResource("4_a1dta")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186279, -0.28949, -0.0169373)
+visible = false
+use_collision = true
+size = Vector3(4.24756, 4.44055, 0.135193)

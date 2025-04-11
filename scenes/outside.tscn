@@ -315,7 +315,7 @@ visible = false
 use_collision = true
 size = Vector3(1, 11.4447, 22.0348)
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
+[node name="Tent" type="Sprite3D" parent="."]
 transform = Transform3D(-2.95052e-07, 0, 6.75, 0, 6.75, 0, -6.75, 0, -2.95052e-07, 91.0958, 10.2573, -68.7746)
 alpha_cut = 3
 texture_filter = 0

@@ -465,3 +465,9 @@ texture = ExtResource("11_7cdds")
 position = Vector2(3192, 241)
 scale = Vector2(0.51, 0.25)
 texture = ExtResource("11_7cdds")
+
+[node name="End Death Barrier" parent="." instance=ExtResource("2_huc4y")]
+visible = false
+position = Vector2(4497, -25)
+rotation = -0.416927
+scale = Vector2(1.51931, 22.474)

@@ -218,11 +218,12 @@ transform = Transform3D(0.731008, 0, 0.682368, 0, 1, 0, -0.682368, 0, 0.731008, 
 transform = Transform3D(-0.681424, 0, 0.731889, 0, 1, 0, -0.731889, 0, -0.681424, -18.5826, 3.52889, -17.7673)
 
 [node name="VentAmbience" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83598, 17.2314, -54.4454)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47478, 34.78, -32.7693)
 stream = ExtResource("6_fpd5f")
-volume_db = -6.0
-max_db = -2.0
+volume_db = 4.095
+max_db = 0.0
+pitch_scale = 0.47
 autoplay = true
-max_distance = 27.0
+max_distance = 65.85
 
 [connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]

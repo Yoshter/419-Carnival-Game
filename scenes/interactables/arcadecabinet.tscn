@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dm64f4kpr4iqe"]
+[gd_scene load_steps=38 format=3 uid="uid://dm64f4kpr4iqe"]
 
 [ext_resource type="Script" uid="uid://ck2u2ojurbih1" path="res://scripts/arcadecabinet.gd" id="1_smnev"]
 [ext_resource type="Texture2D" uid="uid://dtbhqr0fajxjg" path="res://assets/Space/Space Art/Cab Base Back.png" id="2_3akc8"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bftrsi8fl4gfe" path="res://assets/Cab Base/Cab Base Side.png" id="17_lem57"]
 [ext_resource type="Texture2D" uid="uid://b68m6fu5dp06p" path="res://assets/Cab Base/Cab Base Top.png" id="18_knelh"]
 [ext_resource type="Texture2D" uid="uid://dpnfnnkskmnoq" path="res://assets/Cab Base/Cab Base Underish.png" id="19_5prtv"]
+[ext_resource type="Texture2D" uid="uid://cjlh0c7hf6akn" path="res://assets/Cab Base/Cab Base Very Bottom.png" id="20_8qvs2"]
 [ext_resource type="AudioStream" uid="uid://duffae0avdcae" path="res://assets/allsound/SFX/ArcadeFix.wav" id="22_mfctr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v3u2v"]
@@ -259,6 +260,14 @@ texture = ExtResource("17_lem57")
 transform = Transform3D(1, 0, 0, 0, -0.548016, -0.836468, 0, 0.836468, -0.548016, -0.162596, 1.54316, 1.23953)
 pixel_size = 0.0055
 texture = ExtResource("19_5prtv")
+
+[node name="Bottom bottom" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(0.554455, 0, 0, 0, -7.03577e-08, -1, 0, 1.6096, -4.37114e-08, -0.175161, -0.129923, 0.368968)
+texture = ExtResource("20_8qvs2")
+
+[node name="Top top" type="Sprite3D" parent="bodySprites/bustCabSprites"]
+transform = Transform3D(0.554455, 0, 0, 0, -7.318e-08, -1, 0, 1.67416, -4.37114e-08, -0.175161, 3.7572, 0.414476)
+texture = ExtResource("20_8qvs2")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.0521617, 0.998639, 0, -0.998639, 0.0521617, 0.655028, 2.44133, -1.9872)
