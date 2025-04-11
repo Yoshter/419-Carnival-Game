@@ -273,6 +273,19 @@ text = "150 pts. ="
 position = Vector2(1633, 553)
 texture = ExtResource("9_ncbjr")
 
+[node name="countDown" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="countdownLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 924.0
+offset_top = 411.0
+offset_right = 964.0
+offset_bottom = 543.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+
 [node name="startMenu" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 1920.0
@@ -359,15 +372,6 @@ offset_bottom = 518.0
 step = 1.0
 show_percentage = false
 
-[node name="countDown" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
-[node name="countdownLabel" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="failSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_b15ol")
 
@@ -432,6 +436,6 @@ autoplay = true
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="goAgainButton" to="." method="_on_go_again_button_pressed"]
-[connection signal="pressed" from="startMenu/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="timeout" from="countDown" to="." method="_on_count_down_timeout"]
+[connection signal="pressed" from="startMenu/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="winMenu/winButton" to="." method="_on_win_button_pressed"]

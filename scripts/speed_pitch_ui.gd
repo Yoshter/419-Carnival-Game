@@ -17,7 +17,7 @@ var hit = false
 
 @onready var countdown: Timer = $countDown
 @onready var countdownLabel: Label = $countdownLabel
-var countingDown : bool = false
+var countingDown : bool = true
 
 @onready var roundLabel: Label = $roundLabel
 @onready var pointLabel: Label = $pointLabel
@@ -110,7 +110,10 @@ func _process(delta: float) -> void:
 			goAgainButton.set_visible(true)
 	
 	if countingDown:
-		countdownLabel.set_text(str(countdown.time_left))
+		countdownLabel.set_visible(true)
+		countdownLabel.set_text(str(round(countdown.time_left)))
+	else:
+		countdownLabel.set_visible(false)
 
 func nextRound(goodThrow : bool) -> void:
 	safeRangeMin += 5
@@ -158,6 +161,7 @@ func _on_retry_pressed() -> void:
 
 func _on_count_down_timeout() -> void:
 	throwDir = "vert"
+	countingDown = false
 
 func _on_win_button_pressed() -> void:
 	PlayerGlobal.needsTeleport = true
