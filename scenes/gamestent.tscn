@@ -214,7 +214,7 @@ size = Vector3(16.8884, 2.42468, 1)
 material = ExtResource("2_ikt7c")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="obstacles"]
-transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -23.1752, 1.87776, -10.204)
+transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -23.1752, 1.54359, -10.204)
 size = Vector3(16.4552, 2.42468, 1)
 material = ExtResource("3_fh77p")
 

@@ -37,7 +37,7 @@ texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3hyu"]
 albedo_texture = ExtResource("6_w7kh3")
-uv1_scale = Vector3(31.65, 37.757, 41.119)
+uv1_scale = Vector3(12.567, 14.992, 15.177)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 150.0
 texture_filter = 0

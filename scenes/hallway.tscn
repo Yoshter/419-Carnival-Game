@@ -146,6 +146,7 @@ omni_range = 25.0
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-0.152649, -0.806127, -0.571714, -0.959146, -0.018586, 0.282301, -0.238196, 0.59145, -0.770357, 71.2426, -3.78923, -114.132)
 material_override = SubResource("StandardMaterial3D_u7i40")
+use_collision = true
 radius = 5.98477
 height = 16.2154
 sides = 10
