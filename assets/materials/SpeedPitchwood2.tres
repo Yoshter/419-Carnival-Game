@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://db5amvqsrckxd"]
+
+[ext_resource type="Texture2D" uid="uid://lylc4otiydit" path="res://assets/Textures/arcadefloortest.png" id="1_t417p"]
+
+[resource]
+albedo_texture = ExtResource("1_t417p")
+uv1_scale = Vector3(7.269, 2.324, 7.312)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 13.9288
+uv1_world_triplanar = true
+texture_filter = 0

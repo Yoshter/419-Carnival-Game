@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=29 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
 [ext_resource type="PackedScene" uid="uid://bspombtyhjd6a" path="res://scenes/minigameScenes/shootingRange/shooting_range.tscn" id="8_21i7n"]
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
+[ext_resource type="Material" uid="uid://b3p2lss2lrab0" path="res://assets/materials/MetalforPole.material" id="10_1c52o"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="12_8gcbl"]
@@ -21,6 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="19_bfm21"]
 [ext_resource type="PackedScene" uid="uid://cx7yrqk2vpadl" path="res://scenes/interactables/overworld_joystick.tscn" id="20_3oqoc"]
+[ext_resource type="PackedScene" uid="uid://c0heotbu56vd2" path="res://assets/SpeedPitchArt/Speed Pitch Cabinet.tscn" id="22_7ucd1"]
+[ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="23_b42cu"]
+[ext_resource type="Texture2D" uid="uid://hnbffjarvb5w" path="res://assets/SpeedPitchArt/Baseball.png" id="24_dub5i"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -29,8 +33,8 @@ albedo_texture = ExtResource("4_5ix5a")
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k74dv"]
-albedo_color = Color(0.1, 0.047, 0.047, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dub5i"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="gamestent" type="Node3D"]
 script = ExtResource("1_bfm21")
@@ -146,7 +150,8 @@ transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -15.1891
 
 [node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl/Carnival Speaker2"]
 transform = Transform3D(3.79468, 0, 0, 0, 15.0264, 0, 0, 0, 3.73234, 0.00868988, -14.9609, 0.044503)
-material = SubResource("StandardMaterial3D_k74dv")
+material_override = ExtResource("10_1c52o")
+material = ExtResource("10_1c52o")
 
 [node name="janitorDoorway" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
 transform = Transform3D(0.834858, 0, -0.550466, 0, 1, 0, 0.550466, 0, 0.834858, -23.0456, -3.72398, -12.3187)
@@ -210,11 +215,13 @@ transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189
 
 [node name="CSGBox3D" type="CSGBox3D" parent="obstacles"]
 transform = Transform3D(0.702662, 0, 0.711523, 0, 1, 0, -0.711523, 0, 0.702662, -22.3184, 1.87776, 12.1811)
+use_collision = true
 size = Vector3(16.8884, 2.42468, 1)
 material = ExtResource("2_ikt7c")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="obstacles"]
 transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -23.1752, 1.54359, -10.204)
+use_collision = true
 size = Vector3(16.4552, 2.42468, 1)
 material = ExtResource("3_fh77p")
 
@@ -231,7 +238,7 @@ isFlickering = true
 [node name="audioSpeakers" type="Node3D" parent="."]
 
 [node name="Carnival music" type="AudioStreamPlayer3D" parent="audioSpeakers"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3839, 10.7838, 0.1558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5533, 10.7838, 0.1558)
 stream = ExtResource("8_56qu4")
 volume_db = 1.0
 autoplay = true
@@ -261,7 +268,7 @@ light_color = Color(0.793181, 0.601833, 0, 1)
 light_energy = 6.142
 light_indirect_energy = 0.0
 light_volumetric_fog_energy = 0.368
-light_specular = 4.97
+light_specular = 0.0
 shadow_enabled = true
 shadow_bias = 0.0
 distance_fade_enabled = true
@@ -280,6 +287,7 @@ funPassLevel = 2
 
 [node name="speedPitchCabinet" parent="." instance=ExtResource("14_vg1bg")]
 transform = Transform3D(-0.638163, 0, 0.769901, 0, 1, 0, -0.769901, 0, -0.638163, -28.9504, 0.5, 10.6087)
+visible = false
 
 [node name="goodHallway" parent="." instance=ExtResource("17_k74dv")]
 transform = Transform3D(0.978699, 0, 0.205299, 0, 1, 0, -0.205299, 0, 0.978699, -92.0098, -0.673, -26.211)
@@ -293,3 +301,44 @@ transform = Transform3D(-0.804821, 0, -0.593517, 0, 1, 0, 0.593517, 0, -0.804821
 
 [node name="overworldJoystick" parent="." instance=ExtResource("20_3oqoc")]
 transform = Transform3D(0.895463, 0, -0.445135, 0, 1, 0, 0.445135, 0, 0.895463, 1.45632, 0.700109, 16.7261)
+
+[node name="SpeedPitchCabinetGood" parent="." instance=ExtResource("22_7ucd1")]
+transform = Transform3D(1.56972, 0, 1.2376, 0, 1.99892, 0, -1.2376, 0, 1.56972, -30.6835, 0.773483, 12.9009)
+
+[node name="Box2" parent="SpeedPitchCabinetGood" instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.170368, -0.0398177, -0.116975, 0.0505404, 0.204262, 0.0040797, 0.112758, -0.0313931, 0.174911, 0.537453, 0.0156864, 1.12528)
+
+[node name="Box" parent="SpeedPitchCabinetGood" instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.210301, -4.61541e-09, 0.00819291, 7.45461e-09, 0.210461, 3.7273e-09, -0.00819292, 5.85399e-09, 0.210301, 1.10779, 0.0861492, 0.401886)
+
+[node name="Box3" parent="SpeedPitchCabinetGood" instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.202643, -0.00855178, -0.0561823, 0.00532964, 0.210007, -0.0127428, 0.0565789, 0.0108467, 0.202423, 1.08301, 0.0182082, 1.77178)
+
+[node name="Balls" type="Sprite3D" parent="SpeedPitchCabinetGood"]
+transform = Transform3D(-0.00183894, -0.108096, -0.0578823, 0.016968, 0.0571075, -0.107188, 0.121438, -0.00961629, 0.0141004, 1.471, 0.180922, -0.590778)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball2" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.504922, 0.863035, 0.0149915, -0.863149, 0.504941, 0.00276913, -0.00518008, -0.0143381, 0.999884, 2.96801, -0.296463, 0.311893)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball3" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.718799, -0.684597, -0.12106, 0.555484, 0.67026, -0.492126, 0.41805, 0.286492, 0.862065, -4.83473, -3.87751, -0.116856)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball4" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.274268, -0.952989, -0.128799, 0.818863, 0.301665, -0.488325, 0.504222, 0.0284634, 0.863105, -6.12525, -0.758446, 1.31465)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball5" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.281523, -0.942477, -0.180228, 0.842323, 0.332694, -0.424036, 0.459605, -0.0324344, 0.887531, 6.4982, -4.3931, 1.31951)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball6" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.283802, -0.939216, -0.193212, 0.847803, 0.339916, -0.407047, 0.44798, -0.0482851, 0.892739, 5.95063, -2.25636, 2.29073)
+texture = ExtResource("24_dub5i")
+
+[node name="Door from outside" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, -5.96856e-13, 0, 1, 0, 8.27782e-13, 0, 1, 9.99241, 1.39098, 1.80406)
+material_override = SubResource("StandardMaterial3D_dub5i")
+size = Vector3(1, 3.47473, 2.52673)

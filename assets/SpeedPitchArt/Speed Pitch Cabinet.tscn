@@ -1,0 +1,90 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0heotbu56vd2"]
+
+[ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="1_fa5yg"]
+[ext_resource type="Texture2D" uid="uid://b73gpl2dp5t77" path="res://assets/art/Target.png" id="2_d7yb8"]
+[ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="2_q611x"]
+[ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="3_yj340"]
+[ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="5_j0ru1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j0ru1"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Vertical Base" type="CSGBox3D" parent="."]
+transform = Transform3D(0.998104, 0, 0, 0, 0.998104, 0, 0, 0, 0.601447, 0.423184, 0.692331, -0.40135)
+material_override = ExtResource("1_fa5yg")
+use_collision = true
+size = Vector3(0.153809, 1.69151, 1.41626)
+material = ExtResource("1_fa5yg")
+
+[node name="Title" type="CSGBox3D" parent="."]
+transform = Transform3D(0.998104, 0, 0, 0, 0.998104, 0, 0, 0, 0.601447, 0.516141, 1.44401, -0.400193)
+material_override = ExtResource("3_yj340")
+use_collision = true
+size = Vector3(0.0298462, 0.183228, 1.4175)
+material = ExtResource("2_q611x")
+
+[node name="Text" type="Label3D" parent="Title"]
+transform = Transform3D(-5.22508e-08, 0, 1.18565, 0, 1, 0, -1.19536, 0, -5.18264e-08, 0.020027, 0.000854731, 0.00275409)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "SPEED PITCH"
+
+[node name="Target" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-2.26888e-08, -0.519058, 0, 0.519058, -2.26888e-08, 0, 0, 0, 0.519058, 0.535365, 0.903246, -0.407035)
+use_collision = true
+height = 0.0490723
+material = SubResource("StandardMaterial3D_j0ru1")
+
+[node name="Sprite3D" type="Sprite3D" parent="Target"]
+transform = Transform3D(-8.74228e-09, 0.2, -8.74228e-09, 1.05879e-22, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 3.82137e-16, -0.00199974, -0.0306758, -0.00216872)
+texture = ExtResource("2_d7yb8")
+
+[node name="Ramp" type="CSGBox3D" parent="."]
+transform = Transform3D(0.929783, 0.368108, 0, -0.368108, 0.929783, 0, 0, 0, 1, 1.0503, 0.163244, -0.408312)
+material_override = ExtResource("1_fa5yg")
+use_collision = true
+size = Vector3(1.27325, 0.120056, 0.627441)
+material = ExtResource("1_fa5yg")
+
+[node name="Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08167, 0.210897, -0.0473239)
+material_override = ExtResource("1_fa5yg")
+use_collision = true
+size = Vector3(1.16832, 0.669556, 0.141632)
+material = ExtResource("1_fa5yg")
+
+[node name="Wall2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08167, 0.210897, -0.756002)
+material_override = ExtResource("1_fa5yg")
+use_collision = true
+size = Vector3(1.16832, 0.669556, 0.141632)
+material = ExtResource("1_fa5yg")
+
+[node name="Front Wall" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70382, 0.0245973, -0.401242)
+material_override = ExtResource("1_fa5yg")
+use_collision = true
+size = Vector3(0.0917969, 0.296265, 0.84552)
+material = ExtResource("1_fa5yg")
+
+[node name="Score1" type="CSGBox3D" parent="."]
+transform = Transform3D(0.592449, 0, -0.805608, 0, 1, 0, 0.805608, 0, 0.592449, 0.578193, 1.06151, -0.878408)
+material_override = ExtResource("3_yj340")
+size = Vector3(0.0296631, 0.171371, 0.187012)
+
+[node name="Score text" type="Label3D" parent="Score1"]
+transform = Transform3D(0.0053091, 0, 0.280402, 0, 0.236556, 0, -0.236496, 0, 0.0062947, 0.0214668, 0.00293171, 0.00108391)
+modulate = Color(1, 0, 0, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "150 points"
+
+[node name="Score2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.592449, 0, -0.805608, 0, 1, 0, 0.805608, 0, 0.592449, 0.578193, 0.854854, -0.878408)
+material_override = ExtResource("3_yj340")
+size = Vector3(0.0296631, 0.171371, 0.187012)
+
+[node name="Sprite3D" type="Sprite3D" parent="Score2"]
+transform = Transform3D(-0.000148445, 0, 0.0469997, 0, 0.047, 0, -0.0469997, 0, -0.000148445, 0.0171033, 0.00349504, -0.0021072)
+texture = ExtResource("5_j0ru1")
