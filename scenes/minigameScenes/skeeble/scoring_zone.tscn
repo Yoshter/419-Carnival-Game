@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkups3pxjh124"]
+
+[ext_resource type="Script" uid="uid://bvk5kdy7hk3xb" path="res://scoring_zone.gd" id="1_sowip"]
+[ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="2_53qsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53qsr"]
+size = Vector2(256, 39)
+
+[node name="scoringZone" type="Area2D"]
+script = ExtResource("1_sowip")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_53qsr")
+
+[node name="successMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_53qsr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

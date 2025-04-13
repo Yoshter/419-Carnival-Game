@@ -1,0 +1,60 @@
+[gd_scene load_steps=2 format=3 uid="uid://kuxm610yc4v1"]
+
+[ext_resource type="PackedScene" uid="uid://p0m0ng05l701" path="res://scenes/minigameScenes/skeeble/ball.tscn" id="1_06rbg"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1033.0
+offset_top = -574.0
+offset_right = 1010.0
+offset_bottom = 534.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.32549, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -171.0
+offset_right = 194.0
+offset_bottom = 534.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.294638, 1.83498e-07, 4.81308e-08, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -881.0
+offset_right = 194.0
+offset_bottom = -176.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.321569, 0, 0, 1)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_06rbg")]
+position = Vector2(-73, 360)
+
+[node name="powerBar" type="ProgressBar" parent="."]
+offset_left = -530.0
+offset_top = -328.0
+offset_right = -314.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 96
+fill_mode = 3

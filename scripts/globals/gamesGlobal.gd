@@ -17,6 +17,8 @@ var towerChecked : bool = false
 
 var dead : bool = false
 
+var skeebleBallNum : int = 1
+
 #Custom Funcs
 func ufoScoreUp() -> void:
 	ufoScore += 1
