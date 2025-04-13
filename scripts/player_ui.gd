@@ -18,6 +18,7 @@ var controlsShown : bool = false
 @onready var shootingRangeMenu: Control = $shootingRangeMenu
 
 @onready var rangeScoreText: Label = $shootingRangeMenu/scoreText
+@onready var crosshair: Control = $crosshair
 
 #item icons
 @onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
@@ -44,6 +45,7 @@ var dialogueCount : int = 0
 var maxDialogueCount : int = 0
 var isVisible : bool = false
 var delay : float = 0.0
+var hasGun : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,6 +59,10 @@ func _process(delta: float) -> void:
 		interactMenu.set_visible(true)
 	else:
 		interactMenu.set_visible(false)
+	
+	if !hasGun and ItemsGlobal.checkItem("bbgun"):
+		hasGun = true
+		crosshair.set_visible(true)
 	
 	#if PlayerGlobal.controlsShown:
 		#controls.set_visible(false)

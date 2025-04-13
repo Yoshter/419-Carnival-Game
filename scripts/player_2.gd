@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 var currSpeed : float = 5.0
-const SPEED = 9.0
-const RUN_SPEED = 11.2
+const SPEED = 8.3
+const RUN_SPEED = 10.4
 
 var mouseSens : float = 0.05
 

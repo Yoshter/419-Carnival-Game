@@ -74,28 +74,28 @@ use_collision = true
 size = Vector3(65.2122, 1, 16.7292)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="ground"]
-transform = Transform3D(1, 0, 0, 0, 0.996703, -0.0811383, 0, 0.0811383, 0.996703, -18.5002, 3.1714, -5.41279)
+transform = Transform3D(1, 0, 0, 0, 0.996703, -0.0811383, 0, 0.0811383, 0.996703, -26.541, 3.1714, -5.41279)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(51.3516, 1, 16.3186)
+size = Vector3(67.4331, 1, 16.3186)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.954057, 0.024311, 0.298636, 0, 0.996703, -0.0811383, -0.299624, 0.0774106, 0.950912, -14.2435, 4.19647, -15.8308)
+transform = Transform3D(0.954057, 0.024311, 0.298636, 0, 0.996703, -0.0811383, -0.299624, 0.0774106, 0.950912, -28.9123, 4.19647, -11.224)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(36.2307, 1, 16.3186)
+size = Vector3(66.9811, 1, 16.3186)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.961099, -0.000833984, 0.276202, -0.00303838, 0.999903, 0.0135918, -0.276187, -0.0139023, 0.961004, -17.8669, 4.74217, -31.6464)
+transform = Transform3D(0.961099, -0.000833984, 0.276202, -0.00303838, 0.999903, 0.0135918, -0.276187, -0.0139023, 0.961004, -32.3674, 4.78801, -27.4795)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(34.6896, 1, 16.3186)
+size = Vector3(64.8643, 1, 16.3186)
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.982365, 0.00044354, 0.186973, -0.00303838, 0.999903, 0.0135918, -0.186949, -0.0139202, 0.982271, -49.9811, 4.21079, -74.1063)
+transform = Transform3D(0.982365, 0.00044354, 0.186973, -0.00303838, 0.999903, 0.0135918, -0.186949, -0.0139202, 0.982271, -50.0375, 4.20669, -74.4024)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(86.3338, 1, 103.411)
+size = Vector3(86.3338, 1, 102.808)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="ground"]
 transform = Transform3D(0.982365, 0.00044354, 0.186973, -0.00303838, 0.999903, 0.0135918, -0.186949, -0.0139202, 0.982271, 2.28425, 4.14267, -88.0878)
@@ -116,10 +116,10 @@ use_collision = true
 size = Vector3(30.4621, 1, 110.702)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="ground"]
-transform = Transform3D(0.998527, -0.0212775, 0.0499065, 0.0207824, 0.99973, 0.0104193, -0.0501148, -0.00936676, 0.9987, 135.588, 1.62254, -64.5555)
+transform = Transform3D(0.998527, -0.0212775, 0.0499065, 0.0207824, 0.99973, 0.0104193, -0.0501148, -0.00936676, 0.9987, 135.238, 1.54943, -71.5632)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(117.5, 1, 64.7432)
+size = Vector3(117.5, 1, 129.127)
 
 [node name="CSGBox3D11" type="CSGBox3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 0.993976, -0.109596, 0, 0.109596, 0.993977, 41.848, 2.89576, -5.2095)
@@ -133,10 +133,10 @@ use_collision = true
 size = Vector3(25.2188, 1, 49.1059)
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="ground"]
-transform = Transform3D(-0.0245175, 0.0154231, 0.999582, -0.0403935, 0.999051, -0.0164057, -0.998883, -0.0407788, -0.0238716, 42.2607, 3.90913, -42.2466)
+transform = Transform3D(-0.131285, 0.0109701, 0.991286, -0.00801482, 0.999896, -0.0121268, -0.991313, -0.009537, -0.131184, 26.9021, 4.38685, -41.9418)
 material_override = ExtResource("1_tdisj")
 use_collision = true
-size = Vector3(37.5829, 1, 49.1059)
+size = Vector3(37.5829, 1.66162, 55.8929)
 
 [node name="carCollision" type="StaticBody3D" parent="ground"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.816931, 34.2321)
@@ -192,7 +192,7 @@ transform = Transform3D(-0.246352, 0.0029246, 0.969176, -0.00677134, 0.999966, -
 transform = Transform3D(-0.113408, 0.0104871, 0.993493, -0.0238771, 0.999627, -0.0132774, -0.993262, -0.0252276, -0.113115, -21.67, 4.74356, -67.6093)
 
 [node name="fence11" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(-0.261012, 0.00273342, 0.965331, 0.0104718, 0.999945, 0, -0.965278, 0.0101087, -0.261027, -5.23097, 5.01106, -51.0576)
+transform = Transform3D(-0.164866, 0.00172655, 0.986314, 0.0104718, 0.999945, -4.67859e-10, -0.98626, 0.0103284, -0.164876, -5.47118, 5.01106, -51.0576)
 
 [node name="fence12" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(-0.9882, 0.00289217, -0.153137, 0.00330816, 0.999991, -0.00246157, 0.153128, -0.00293921, -0.988201, 0.386563, 4.99261, -59.7144)

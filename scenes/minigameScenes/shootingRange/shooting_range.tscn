@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="5_oadsy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1gs1"]
-size = Vector3(37.187, 12.1945, 21.6288)
+size = Vector3(37.6171, 12.1945, 28.0642)
 
 [node name="shootingRange" type="Node3D"]
 script = ExtResource("1_baoc8")
@@ -76,7 +76,7 @@ targetLevel = 2
 [node name="shootingRangeArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shootingRangeArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2439, 5.59723, -8.69147)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02887, 5.59723, -8.69147)
 shape = SubResource("BoxShape3D_t1gs1")
 
 [node name="overworldToken" parent="." instance=ExtResource("5_oadsy")]
