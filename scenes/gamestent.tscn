@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=31 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="12_8gcbl"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="13_4vgoj"]
+[ext_resource type="PackedScene" uid="uid://drmxrykytqx0" path="res://scenes/table_no_light.tscn" id="14_joq6e"]
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
@@ -25,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://c0heotbu56vd2" path="res://assets/SpeedPitchArt/Speed Pitch Cabinet.tscn" id="22_7ucd1"]
 [ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="23_b42cu"]
 [ext_resource type="Texture2D" uid="uid://hnbffjarvb5w" path="res://assets/SpeedPitchArt/Baseball.png" id="24_dub5i"]
+[ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="26_yxr4s"]
+[ext_resource type="Texture2D" uid="uid://0oqg46rturns" path="res://assets/art/locksprite.png" id="27_d20k2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -32,9 +35,6 @@ albedo_texture = ExtResource("4_5ix5a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dub5i"]
-albedo_color = Color(0, 0, 0, 1)
 
 [node name="gamestent" type="Node3D"]
 script = ExtResource("1_bfm21")
@@ -131,6 +131,11 @@ use_collision = true
 radius = 27.3136
 height = 14.4892
 sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(0.859031, 0, -0.511923, 0, 1, 0, 0.511923, 0, 0.859031, -20.211, -3.7168, -18.2263)
+operation = 2
+size = Vector3(1.45801, 8.43359, 9.35452)
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.221481, -1.52907, -0.265364)
@@ -235,6 +240,12 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.276409, -10.6543)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.276409, -11.7532)
 isFlickering = true
 
+[node name="TableNoLight" parent="obstacles" instance=ExtResource("14_joq6e")]
+transform = Transform3D(1.56016, -2.43131, -1.06598, 2.59156, 1.66298, 0, 0.575696, -0.897152, 2.88884, 2.53154, 0.551051, 8.50081)
+
+[node name="TableNoLight2" parent="obstacles" instance=ExtResource("14_joq6e")]
+transform = Transform3D(-1.65924, 2.58573, 0.206433, 2.59156, 1.66298, -3.42686e-08, -0.111487, 0.173738, -3.07231, 6.08074, 0.551051, 11.4215)
+
 [node name="audioSpeakers" type="Node3D" parent="."]
 
 [node name="Carnival music" type="AudioStreamPlayer3D" parent="audioSpeakers"]
@@ -338,7 +349,23 @@ texture = ExtResource("24_dub5i")
 transform = Transform3D(0.283802, -0.939216, -0.193212, 0.847803, 0.339916, -0.407047, 0.44798, -0.0482851, 0.892739, 5.95063, -2.25636, 2.29073)
 texture = ExtResource("24_dub5i")
 
-[node name="Door from outside" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, -5.96856e-13, 0, 1, 0, 8.27782e-13, 0, 1, 9.99241, 1.39098, 1.80406)
-material_override = SubResource("StandardMaterial3D_dub5i")
-size = Vector3(1, 3.47473, 2.52673)
+[node name="ExitDoor" type="CSGBox3D" parent="."]
+transform = Transform3D(0.999187, 0, 0, 0, 1.16364, 0, 0, 0, 1.06756, 9.69832, 1.99509, -3.32433)
+material_override = ExtResource("26_yxr4s")
+size = Vector3(0.388611, 2.83159, 3.24994)
+material = ExtResource("26_yxr4s")
+
+[node name="Sprite3D" type="Sprite3D" parent="ExitDoor"]
+transform = Transform3D(-2.23517e-08, 0, 0.525, 1.49012e-08, 0.557853, 0, -0.525, 0, -6.70552e-08, -0.292068, 0.0134835, -1.66893e-06)
+texture = ExtResource("27_d20k2")
+
+[node name="Exit" type="Label3D" parent="ExitDoor"]
+transform = Transform3D(6.9906e-10, -2.08786e-07, -3.69595, -9.60427e-09, 3.17363, 5.12227e-08, 3.45925, 2.26821e-08, 1.81456e-07, 0.0541, 1.83823, -0.00397325)
+modulate = Color(1, 0, 0, 1)
+text = "EXIT"
+
+[node name="Box" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.98615, 1.12983, 7.36549)
+
+[node name="Box2" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.553267, 0, -0.331543, 0, 0.645, 0, 0.331543, 0, 0.553267, 4.2318, 1.12983, 10.3522)

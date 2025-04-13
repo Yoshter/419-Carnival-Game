@@ -1,0 +1,60 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://b11it312gaujv"]
+
+[ext_resource type="Texture2D" uid="uid://bvy6mnd1arjnv" path="res://assets/Space/Space Art/StormClouds1-animsheet.png" id="1_redyi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlqwd"]
+atlas = ExtResource("1_redyi")
+region = Rect2(0, 0, 275, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p5g2l"]
+atlas = ExtResource("1_redyi")
+region = Rect2(275, 0, 275, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxuwv"]
+atlas = ExtResource("1_redyi")
+region = Rect2(550, 0, 275, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckos8"]
+atlas = ExtResource("1_redyi")
+region = Rect2(825, 0, 275, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rrcvr"]
+atlas = ExtResource("1_redyi")
+region = Rect2(1100, 0, 275, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_incs3"]
+atlas = ExtResource("1_redyi")
+region = Rect2(1375, 0, 275, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8q8n"]
+atlas = ExtResource("1_redyi")
+region = Rect2(1650, 0, 275, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlqwd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p5g2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxuwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckos8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rrcvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_incs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d8q8n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

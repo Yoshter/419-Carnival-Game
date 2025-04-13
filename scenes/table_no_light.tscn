@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://drmxrykytqx0"]
+
+[ext_resource type="Texture2D" uid="uid://dbkx0lrfjptr6" path="res://assets/art/table1.png" id="1_jpwxw"]
+[ext_resource type="Texture2D" uid="uid://dddkq25qgk6cb" path="res://assets/art/tableleg.png" id="2_4qry5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g28sm"]
+radius = 0.484929
+
+[node name="TableNoLight" type="Node3D"]
+
+[node name="tableSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.624975, 0)
+pixel_size = 0.015
+texture_filter = 0
+texture = ExtResource("1_jpwxw")
+
+[node name="legSprite" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.305048, 0)
+texture_filter = 0
+texture = ExtResource("2_4qry5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.615819, 0)
+shape = SubResource("SphereShape3D_g28sm")

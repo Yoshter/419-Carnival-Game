@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://brhjbdmwuxl6a"]
+
+[ext_resource type="Texture2D" uid="uid://dqrx0kh000rai" path="res://assets/Space/Space Art/Saucer_Beam_Animated-Sheet.png" id="1_11ldr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2fx5"]
+atlas = ExtResource("1_11ldr")
+region = Rect2(0, 0, 290, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jty8f"]
+atlas = ExtResource("1_11ldr")
+region = Rect2(290, 0, 290, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyxgu"]
+atlas = ExtResource("1_11ldr")
+region = Rect2(580, 0, 290, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnnh5"]
+atlas = ExtResource("1_11ldr")
+region = Rect2(870, 0, 290, 140)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2fx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jty8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyxgu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnnh5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

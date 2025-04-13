@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 
 var isDead : bool = false
 
-@onready var beam: Node2D = $beam
+@onready var beam: AnimatedSprite2D = $beam
 
 @onready var beamSound: AudioStreamPlayer = $beamSound
 @onready var deathSound: AudioStreamPlayer = $deathSound
@@ -26,6 +26,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("ui_accept") and velocity.y > -1000 and !isDead:
 		velocity.y = -100
 		beam.set_visible(true)
+		beam.play()
 
 	if Input.is_action_just_pressed("ui_accept") and !isDead:
 		beamSound.play(0.0)

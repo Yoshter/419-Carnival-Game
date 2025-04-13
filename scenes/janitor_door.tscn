@@ -1,9 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://brlc1sovsxia8"]
+[gd_scene load_steps=5 format=3 uid="uid://brlc1sovsxia8"]
 
 [ext_resource type="Script" uid="uid://mhrjxtijv8ej" path="res://scripts/janitor_door.gd" id="1_41b4k"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my85p"]
-albedo_color = Color(0.266667, 0.105882, 0, 1)
+[ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="2_g5ncd"]
+[ext_resource type="Texture2D" uid="uid://0oqg46rturns" path="res://assets/art/locksprite.png" id="3_6cyqp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_41b4k"]
 size = Vector3(4.3689, 4, 2.23401)
@@ -13,10 +12,14 @@ transform = Transform3D(-5.96046e-08, 0, -1, 0, 1, 0, 1, 0, -5.96046e-08, 0, 0, 
 script = ExtResource("1_41b4k")
 
 [node name="doorBox" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-use_collision = true
-size = Vector3(6.98633, 5, 1)
-material = SubResource("StandardMaterial3D_my85p")
+transform = Transform3D(-4.36758e-08, 0, 1.61363, 0, 1.82541, 0, -0.999187, 0, -7.05338e-08, 0.340981, 1.99509, -0.311784)
+material_override = ExtResource("2_g5ncd")
+size = Vector3(0.388611, 2.83159, 3.67184)
+material = ExtResource("2_g5ncd")
+
+[node name="Sprite3D" type="Sprite3D" parent="doorBox"]
+transform = Transform3D(-2.23517e-08, 0, 0.525, 1.49012e-08, 0.557853, 0, -0.525, 0, -6.70552e-08, -0.292068, 0.0134835, -1.66893e-06)
+texture = ExtResource("3_6cyqp")
 
 [node name="unlockArea" type="Area3D" parent="."]
 

@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var doorBox: CSGBox3D = $doorBox
+@onready var door_box = $doorBox
 
 @onready var unlockArea: Area3D = $unlockArea
 var inArea : bool = false
