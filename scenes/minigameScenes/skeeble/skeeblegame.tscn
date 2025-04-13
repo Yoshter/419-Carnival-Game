@@ -15,7 +15,7 @@ anchor_bottom = 0.5
 offset_left = -1033.0
 offset_top = -574.0
 offset_right = 1010.0
-offset_bottom = 534.0
+offset_bottom = 631.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.32549, 0, 1)
@@ -48,9 +48,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.321569, 0, 0, 1)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("1_06rbg")]
-position = Vector2(-73, 360)
-
 [node name="powerBar" type="ProgressBar" parent="."]
 offset_left = -530.0
 offset_top = -328.0
@@ -58,3 +55,20 @@ offset_right = -314.0
 offset_bottom = 192.0
 theme_override_font_sizes/font_size = 96
 fill_mode = 3
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("1_06rbg")]
+position = Vector2(-27, 348)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("1_06rbg")]
+position = Vector2(-24, 419)
+ballNum = 2
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("1_06rbg")]
+position = Vector2(-25, 498)
+ballNum = 3
+
+[node name="roundDelayTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="roundDelayTimer" to="StaticBody2D2" method="_on_round_delay_timer_timeout"]

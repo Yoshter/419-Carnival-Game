@@ -707,6 +707,7 @@ offset_right = 23.0
 offset_bottom = 58.0
 
 [node name="ColorRect2" type="ColorRect" parent="crosshair"]
+layout_mode = 0
 offset_left = 57.0
 offset_top = 16.0
 offset_right = 62.0
