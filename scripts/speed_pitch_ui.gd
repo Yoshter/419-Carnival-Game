@@ -74,10 +74,15 @@ func _process(delta: float) -> void:
 				hitSound.play(0.0)
 				hit = true
 				timeSinceLastThrow = 0.0
-			if (vertCharge < safeRangeMin or vertCharge > safeRangeMax) and !hit:
-				print("whomp")
+			if vertCharge > safeRangeMax and !hit:
+				wrongThrows.set_visible(true)
+				wrongThrows.play("right")
 				fail()
-				
+			elif vertCharge < safeRangeMin and !hit:
+				wrongThrows.set_visible(true)
+				wrongThrows.play("left")
+				print("goof")
+				fail()
 		if vertCharge >= 100:
 			fail()
 			print("fool")
@@ -100,7 +105,13 @@ func _process(delta: float) -> void:
 				nextRound(true)
 				goAgainButton.set_visible(true)
 				hit = true
-			if (horCharge < safeRangeMin or horCharge > safeRangeMax) and !hit:
+			if horCharge > safeRangeMax and !hit:
+				wrongThrows.set_visible(true)
+				wrongThrows.play("right")
+				fail()
+			elif horCharge < safeRangeMin and !hit:
+				wrongThrows.set_visible(true)
+				wrongThrows.play("left")
 				print("goof")
 				fail()
 		if horCharge >= 100:

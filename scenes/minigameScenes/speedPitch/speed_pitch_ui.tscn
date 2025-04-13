@@ -427,7 +427,7 @@ visible = false
 position = Vector2(875, 351)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_qesvm")
-animation = &"left"
+animation = &"right"
 
 [node name="RightThrows" type="AnimatedSprite2D" parent="sprites"]
 visible = false
