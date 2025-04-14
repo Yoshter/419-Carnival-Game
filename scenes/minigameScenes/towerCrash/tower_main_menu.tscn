@@ -74,14 +74,5 @@ text = "PRIZE"
 stream = ExtResource("4_xeinb")
 autoplay = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = -446.0
-offset_top = 685.0
-offset_right = -406.0
-offset_bottom = 725.0
-scale = Vector2(59.6746, 10.4033)
-color = Color(0.0784314, 0.0313726, 0.0392157, 1)
-
 [connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]
 [connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]
