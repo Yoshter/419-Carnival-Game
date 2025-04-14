@@ -241,7 +241,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.276409, -11.7532)
 isFlickering = true
 
 [node name="TableNoLight" parent="obstacles" instance=ExtResource("14_joq6e")]
-transform = Transform3D(1.56016, -2.43131, -1.06598, 2.59156, 1.66298, 0, 0.575696, -0.897152, 2.88884, 2.53154, 0.551051, 8.50081)
+transform = Transform3D(1.87627, -2.20074, -1.05737, 2.37274, 1.95793, 0.135208, 0.575696, -0.897152, 2.88884, 2.53154, 0.551051, 8.50081)
 
 [node name="TableNoLight2" parent="obstacles" instance=ExtResource("14_joq6e")]
 transform = Transform3D(-1.65924, 2.58573, 0.206433, 2.59156, 1.66298, -3.42686e-08, -0.111487, 0.173738, -3.07231, 6.08074, 0.551051, 11.4215)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://d4a58tg3s4j0l"]
+[gd_scene load_steps=20 format=4 uid="uid://d4a58tg3s4j0l"]
 
 [ext_resource type="Script" uid="uid://b7vi0ytb4lhko" path="res://scenes/main_menu.gd" id="1_3ycmb"]
 [ext_resource type="Texture2D" uid="uid://cuhsx2pxdt7rw" path="res://assets/Textures/Bug Report Button.png" id="2_8ln24"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://d310brmkm4f60" path="res://assets/Textures/wood128.png" id="2_oa1go"]
 [ext_resource type="Texture2D" uid="uid://dpn3vnjec682r" path="res://assets/UI/Checkmark.png" id="4_3qgl3"]
 [ext_resource type="Texture2D" uid="uid://cjjw22r27mebd" path="res://assets/Logos/Toast Games Final.png" id="4_6ck4q"]
+[ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://b2kcgn8knyg2b" path="res://assets/Sprite Sheets/Carn_Logo_Animated-Sheet.png" id="6_rtw2f"]
+[ext_resource type="AudioStream" uid="uid://me68qe0c7bh6" path="res://assets/allsound/Music/Carnival main menu.wav" id="9_jk1qb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
 texture = ExtResource("2_oa1go")
@@ -89,9 +91,10 @@ tile_set = SubResource("TileSet_jk1qb")
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 1
-offset_left = -28.0
-offset_right = 401.0
-offset_bottom = 352.0
+offset_left = 1700.0
+offset_top = 811.0
+offset_right = 1929.0
+offset_bottom = 1066.0
 theme_override_font_sizes/font_size = 32
 icon = ExtResource("2_8ln24")
 flat = true
@@ -103,8 +106,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -251.0
-offset_bottom = 228.0
+offset_left = -192.0
+offset_bottom = 169.0
 grow_horizontal = 0
 action_mode = 0
 icon = ExtResource("2_cvts0")
@@ -122,9 +125,9 @@ offset_top = 644.0
 offset_right = 353.0
 offset_bottom = 809.0
 grow_horizontal = 2
+theme = ExtResource("5_tbmy8")
 theme_override_font_sizes/font_size = 115
 text = "Start Game"
-flat = true
 
 [node name="Start2" type="Button" parent="."]
 visible = false
@@ -161,7 +164,6 @@ autoplay = "default"
 frame_progress = 0.357085
 
 [node name="ConfirmQuit" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -176,7 +178,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.43012, 0.195204, 0.483767, 1)
+color = Color(0.48, 0.192, 0.192, 1)
 
 [node name="No" type="Button" parent="ConfirmQuit/ColorRect"]
 layout_mode = 0
@@ -254,6 +256,11 @@ Cole Faker -
 Cole Genevick -
 Gabe Cazzolla - "
 vertical_alignment = 1
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_jk1qb")
+volume_db = 8.0
+autoplay = true
 
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]

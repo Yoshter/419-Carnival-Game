@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=29 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
 [ext_resource type="Script" uid="uid://b2ndqfn7mxhna" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
 [ext_resource type="Texture2D" uid="uid://cm1y3u5fcalkb" path="res://assets/UI/mapButton.png" id="3_lpw4w"]
+[ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="4_14imd"]
 [ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="4_acwhg"]
 [ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="5_mnosj"]
 [ext_resource type="AudioStream" uid="uid://w66dwwgi4id0" path="res://assets/allsound/SFX/Inventory Open.wav" id="5_psxp3"]
@@ -66,7 +67,6 @@ theme_override_font_sizes/font_size = 96
 text = "SCORE:"
 
 [node name="interactMenu" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,9 +84,9 @@ grow_vertical = 2
 texture_filter = 2
 layout_mode = 0
 offset_left = -218.0
-offset_top = -23.0
+offset_top = 229.0
 offset_right = 222.0
-offset_bottom = 26.0
+offset_bottom = 278.0
 theme_override_font_sizes/font_size = 48
 text = "SPACE TO INTERACT"
 
@@ -140,6 +140,7 @@ offset_left = 23.8889
 offset_top = 401.667
 offset_right = 262.889
 offset_bottom = 483.667
+theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 48
 text = "QUIT"
 script = ExtResource("2_t4dtg")
@@ -159,6 +160,7 @@ offset_left = 23.8889
 offset_top = 235.0
 offset_right = 262.889
 offset_bottom = 341.0
+theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 48
 text = "REPORT 
 A BUG"
@@ -181,6 +183,7 @@ offset_left = 23.8889
 offset_top = 96.1111
 offset_right = 262.889
 offset_bottom = 178.111
+theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 48
 text = "RESUME"
 script = SubResource("GDScript_cx60t")
@@ -498,7 +501,7 @@ offset_right = -1.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.43012, 0.195204, 0.483767, 1)
+color = Color(0.478431, 0.192157, 0.192157, 1)
 
 [node name="No" type="Button" parent="PauseMenu/ConfirmQuit2/ColorRect"]
 layout_mode = 0
@@ -589,7 +592,7 @@ layout_mode = 0
 offset_left = -85.0
 offset_top = -36.0
 offset_right = 95.0
-offset_bottom = 119.0
+offset_bottom = 143.0
 color = Color(0.227451, 0.227451, 0.227451, 0.568627)
 
 [node name="Label" type="Label" parent="controls"]
@@ -598,13 +601,14 @@ layout_mode = 0
 offset_left = -75.0
 offset_top = -25.0
 offset_right = 87.0
-offset_bottom = 270.0
+offset_bottom = 119.0
 theme_override_font_sizes/font_size = 24
 text = "W A S D   Move
 Shift   Sprint
 C   Crouch
 Space   Interact
-Mouse   Camera"
+Mouse   Camera
+ESC       Menu"
 horizontal_alignment = 1
 
 [node name="hudTimer" type="Timer" parent="controls"]
@@ -622,17 +626,17 @@ offset_bottom = 574.0
 
 [node name="ColorRect" type="ColorRect" parent="GetItemMenu"]
 layout_mode = 0
-offset_left = -71.0
-offset_right = 336.0
+offset_left = -207.0
+offset_right = 200.0
 offset_bottom = 122.0
 color = Color(0.27451, 0.27451, 0.27451, 0.760784)
 
 [node name="Label" type="Label" parent="GetItemMenu"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -68.0
+offset_left = -204.0
 offset_top = 13.0
-offset_right = 334.0
+offset_right = 198.0
 offset_bottom = 175.0
 theme_override_font_sizes/font_size = 48
 text = "YOU GOT AN ITEM

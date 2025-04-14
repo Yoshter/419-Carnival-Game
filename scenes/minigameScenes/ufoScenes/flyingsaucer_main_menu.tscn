@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpc04ng0fn85u"]
+[gd_scene load_steps=6 format=3 uid="uid://cpc04ng0fn85u"]
 
 [ext_resource type="PackedScene" uid="uid://hmnwjbqslhkw" path="res://scenes/button.tscn" id="1_31kig"]
 [ext_resource type="Script" uid="uid://63n1e1lutkg0" path="res://scripts/minigameScripts/ufoScripts/flyingsaucer_main_menu.gd" id="1_tfthn"]
 [ext_resource type="Texture2D" uid="uid://csktf1wsu6n3p" path="res://assets/MenuScreens/FlyingSaucer.png" id="3_8bwpo"]
+[ext_resource type="Theme" uid="uid://ceau0h17kudr6" path="res://assets/Themes/UFO_UI_Theme.tres" id="4_4388a"]
 [ext_resource type="AudioStream" uid="uid://dqcnlube4v44r" path="res://assets/allsound/Music/Ufo game.wav" id="4_aa712"]
 
 [node name="flyingsaucerMainMenu" type="Control"]
@@ -27,6 +28,7 @@ offset_left = 598.0
 offset_top = 490.0
 offset_right = 1240.0
 offset_bottom = 703.0
+theme = ExtResource("4_4388a")
 theme_override_font_sizes/font_size = 129
 nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
@@ -64,6 +66,7 @@ offset_left = 36.0
 offset_top = 218.0
 offset_right = 259.0
 offset_bottom = 279.0
+theme = ExtResource("4_4388a")
 theme_override_font_sizes/font_size = 48
 text = "RETRY"
 nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
@@ -74,6 +77,7 @@ offset_left = 35.0
 offset_top = 309.0
 offset_right = 258.0
 offset_bottom = 370.0
+theme = ExtResource("4_4388a")
 theme_override_font_sizes/font_size = 48
 text = "QUIT
 "

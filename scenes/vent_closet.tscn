@@ -226,7 +226,7 @@ transform = Transform3D(0.907506, 0.420038, 0, -0.420038, 0.907506, 0, 0, 0, 1, 
 funPassLevel = 3
 
 [node name="janitorDoor" parent="." instance=ExtResource("2_taaqu")]
-transform = Transform3D(0.731008, 0, 0.682368, 0, 1, 0, -0.682368, 0, 0.731008, -28.476, 0.555335, -39.8625)
+transform = Transform3D(0.731008, 0, 0.682368, 0, 1, 0, -0.682368, 0, 0.731008, -28.2735, 0.555335, -39.5675)
 
 [node name="mapItem" parent="." instance=ExtResource("3_iw1bk")]
 transform = Transform3D(-0.681424, 0, 0.731889, 0, 1, 0, -0.731889, 0, -0.681424, -18.5826, 3.52889, -17.7673)
