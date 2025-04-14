@@ -40,7 +40,7 @@ func updateItems() -> void:
 	if !speedPitchTicketBool and GamesGlobal.checkBeatGame("speedPitch"):
 		giveItem("speedPitchTicket")
 	if !towerTicketBool and GamesGlobal.checkBeatGame("tower"):
-		giveItem("towerToken")
+		giveItem("towerTicket")
 
 func giveItem(itemName) -> void:
 	if !checkItem(itemName):
