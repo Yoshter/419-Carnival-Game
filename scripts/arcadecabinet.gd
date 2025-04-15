@@ -66,6 +66,7 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_accept"):
 			hasJoyStick = true
 			joystickSprite.set_visible(true)
+			PlayerGlobal.setCanInteract(false)
 			joystickFixArea.monitorable = false
 			joystickFixArea.monitoring = false
 			gamePortal.monitoring = true
@@ -118,20 +119,20 @@ func fix() -> void:
 	plugSprite.play("plugged")
 	brokenMusic.volume_db = -80.0
 	GamesGlobal.setUfoPlugged(true)
+	canFix = false
 	PlayerGlobal.setCanInteract(false)
 	fixNoise.play(0.0) #Bug where it will continue playing the sound on subsequent space presses
-	canFix = false
 
 func play() -> void:
 	get_tree().change_scene_to_file(gameScene)
 
 
 func _on_joystick_fix_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player") and !hasJoyStick and !bust:
+	if body.is_in_group("player") and !hasJoyStick and !bust and ItemsGlobal.checkItem("joystick"):
 		PlayerGlobal.setCanInteract(true)
 		canReplaceJoystick = true
 
 func _on_joystick_fix_area_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player") and !hasJoyStick and !bust:
+	if body.is_in_group("player") and !hasJoyStick and !bust and ItemsGlobal.checkItem("joystick"):
 		PlayerGlobal.setCanInteract(false)
 		canReplaceJoystick = false

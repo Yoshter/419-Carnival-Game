@@ -4,7 +4,9 @@ extends Control
 @onready var startButton: Button = $startButton
 
 func _process(delta: float) -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	if GamesGlobal.checkBeatGame("tower"):
+		
 		startButton.set_visible(false)
 		winMenu.set_visible(true)
 
