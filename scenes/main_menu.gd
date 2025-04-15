@@ -43,3 +43,8 @@ func _on_start_pressed():
 
 func _on_start_delay_timeout():
 	get_tree().change_scene_to_file("res://scenes/outside.tscn")
+
+
+func _on_bug_button_pressed():
+	button_push.play(0.0)
+	OS.shell_open("https://forms.gle/rjMwnETHGZXH6RL9A")
