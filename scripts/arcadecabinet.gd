@@ -20,6 +20,7 @@ extends Node3D
 
 @onready var gamePortal : Area3D = $gamePortal
 @onready var joystickFixArea : Area3D = $joystickFixArea
+@onready var plugArea: Area3D = $Area3D
 
 var canFix : bool = false
 var canPlay : bool = false
@@ -30,6 +31,7 @@ func _ready() -> void:
 	if bust:
 		bustCabSprites.set_visible(true)
 		plugSprite.play("plugged")
+		plugArea.set_monitoring(false)
 	
 	if hasJoyStick:
 		joystickSprite.set_visible(true)

@@ -177,6 +177,8 @@ func _on_count_down_timeout() -> void:
 func _on_win_button_pressed() -> void:
 	PlayerGlobal.needsTeleport = true
 	PlayerGlobal.newPosition = Vector3(-26,1.6,8.1)
-	DialogueGlobal.addToEncCount("dan")
+	if ItemsGlobal.checkItem("speedPitchToken"):
+		DialogueGlobal.addToEncCount("dan")
+		DialogueGlobal.objEncCount += 1
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")

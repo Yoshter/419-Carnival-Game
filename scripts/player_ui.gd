@@ -47,6 +47,9 @@ var isVisible : bool = false
 var delay : float = 0.0
 var hasGun : bool = false
 
+@onready var objectiveMenu: Control = $PauseMenu/objectiveMenu
+@onready var objectiveText: Label = $PauseMenu/objectiveMenu/objectiveText
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -87,6 +90,7 @@ func _process(delta: float) -> void:
 		if PlayerGlobal.controlsShown:
 			controls.set_visible(false)
 		inventoryMenu.set_visible(false)
+		objectiveMenu.set_visible(false)
 		mapMenu.set_visible(false)
 		PlayerGlobal.inUI = false
 		isVisible = false
@@ -195,7 +199,7 @@ func _on_hud_timer_timeout() -> void:
 func _on_resume_pressed() -> void:
 	if isVisible and delay > 0.1:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		#pauseMenu.set_visible(false)
+		pauseMenu.set_visible(false)
 		#pauseMenu.set_visible(false)
 		#inventoryMenu.set_visible(false)
 		#mapMenu.set_visible(false)
@@ -210,3 +214,23 @@ func _on_resume_pressed() -> void:
 
 func _on_quit_inv_2_pressed() -> void:
 	mapMenu.set_visible(false)
+
+func _on_objective_pressed() -> void:
+	match DialogueGlobal.objEncCount:
+		0: #until you walk in
+			objectiveText.set_text("Find somewhere to rest.")
+		1: #until talk to carnie
+			objectiveText.set_text("Who's that weird guy by the entrance?")
+		2: #until you beat ufo
+			objectiveText.set_text("Apparently there's something in the arcade.")
+		3: #until you talk to carnie
+			objectiveText.set_text("You just got a ticket. Go ask the carnie what it's for.")
+		4: #until you beat speed pitch
+			objectiveText.set_text("Throw the ol ball around")
+		5: #until you talk to carnie
+			objectiveText.set_text("Go see what the carnie's got to say about THIS ticket.")
+		6: #find use for saw
+			objectiveText.set_text("If you're really BOARD go to the arcade lol.")
+		7: #keep looking for them tokens.
+			objectiveText.set_text("Find the rest of the tokens.")
+	objectiveMenu.set_visible(true)

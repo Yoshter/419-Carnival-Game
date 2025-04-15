@@ -191,6 +191,14 @@ offset_right = 881.0
 offset_bottom = 383.0
 flat = true
 
+[node name="objective" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 450.556
+offset_top = 149.444
+offset_right = 538.556
+offset_bottom = 174.444
+text = "OBJECTIVE"
+
 [node name="inventoryMenu" type="Control" parent="PauseMenu"]
 visible = false
 anchors_preset = 0
@@ -575,6 +583,39 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
+[node name="objectiveMenu" type="Control" parent="PauseMenu"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 586.667
+offset_top = 209.444
+offset_right = 626.667
+offset_bottom = 249.444
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/objectiveMenu"]
+layout_mode = 0
+offset_left = -241.0
+offset_top = -164.0
+offset_right = 317.0
+offset_bottom = 197.0
+color = Color(0.517184, 0.517184, 0.517184, 1)
+
+[node name="objectiveText" type="Label" parent="PauseMenu/objectiveMenu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = -193.0
+offset_top = -133.0
+offset_right = 282.0
+offset_bottom = 148.0
+theme_override_font_sizes/font_size = 28
+text = "OBJECTIVE"
+
 [node name="controls" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 1776.0
@@ -717,6 +758,7 @@ rotation = 1.57079
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
 [connection signal="pressed" from="PauseMenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="PauseMenu/objective" to="." method="_on_objective_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
