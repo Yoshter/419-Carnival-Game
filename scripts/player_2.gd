@@ -26,7 +26,7 @@ var hasBBGun : bool = false
 var canShoot : bool = true
 @onready var bbRay: RayCast3D = $body/Camera3D/bbRay
 @onready var shootDelay: Timer = $shootDelay
-@onready var bbGunSprite: Sprite3D = $body/Camera3D/bbGun
+
 
 func _ready() -> void:
 	add_to_group("player")
@@ -45,7 +45,6 @@ func _process(delta: float) -> void:
 	
 	if !hasBBGun and ItemsGlobal.checkItem("bbgun"):
 		hasBBGun = true
-		bbGunSprite.set_visible(true)
 		bbRay.set_visible(true)
 	
 	if GamesGlobal.checkBeatGame("ufo") and !GamesGlobal.ufoChecked:
