@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d4a58tg3s4j0l"]
+[gd_scene load_steps=22 format=4 uid="uid://d4a58tg3s4j0l"]
 
 [ext_resource type="Script" uid="uid://b7vi0ytb4lhko" path="res://scenes/main_menu.gd" id="1_3ycmb"]
 [ext_resource type="Texture2D" uid="uid://cuhsx2pxdt7rw" path="res://assets/Textures/Bug Report Button.png" id="2_8ln24"]
@@ -9,6 +9,8 @@
 [ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="5_tbmy8"]
 [ext_resource type="Texture2D" uid="uid://b2kcgn8knyg2b" path="res://assets/Sprite Sheets/Carn_Logo_Animated-Sheet.png" id="6_rtw2f"]
 [ext_resource type="AudioStream" uid="uid://me68qe0c7bh6" path="res://assets/allsound/Music/Carnival main menu.wav" id="9_jk1qb"]
+[ext_resource type="AudioStream" uid="uid://2xal2nrt8ey8" path="res://assets/allsound/SFX/Mainmenu Button hover sound.wav" id="10_lgwnu"]
+[ext_resource type="AudioStream" uid="uid://bf7r1ifmffkcm" path="res://assets/allsound/SFX/Mainmenu Button click sound.wav" id="11_flqon"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
 texture = ExtResource("2_oa1go")
@@ -263,8 +265,22 @@ stream = ExtResource("9_jk1qb")
 volume_db = 8.0
 autoplay = true
 
+[node name="Button Hover" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_lgwnu")
+volume_db = 9.905
+
+[node name="Button Push" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_flqon")
+volume_db = 9.905
+
+[node name="StartDelay" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="ConfirmQuit/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="ConfirmQuit/ColorRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="CreditsScreen/ColorRect/closeCredits" to="." method="_on_close_credits_pressed"]
+[connection signal="timeout" from="StartDelay" to="." method="_on_start_delay_timeout"]
