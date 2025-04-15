@@ -43,6 +43,7 @@ func _ready() -> void:
 		"tower":
 			towerCabSprites.set_visible(true)
 			gamePortal.monitoring = false
+			plugArea.set_monitoring(false)
 			plugSprite.play("plugged")
 		_:
 			bustCabSprites.set_visible(true)

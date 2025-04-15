@@ -3,11 +3,14 @@ extends Node3D
 var inGameBoothArea : bool = false
 var shootingRangeStarted = false
 @onready var shootingRangeTimer: Timer = $shootingRangeTimer
+@onready var csgBarrier: CSGBox3D = $barrier/barrier/CSGBox3D5
 
 func _process(delta: float) -> void:
 	if inGameBoothArea and ItemsGlobal.checkItem("rangeToken"):
 		PlayerGlobal.setCanInteract(true)
 		if Input.is_action_pressed("ui_accept"):
+			csgBarrier.use_collision = true
+			PlayerGlobal.setCanInteract(false)
 			shootingRangeTimer.start()
 			shootingRangeStarted = true
 
@@ -32,4 +35,5 @@ func _on_game_booth_body_exited(body: Node3D) -> void:
 func _on_shooting_range_timer_timeout() -> void:
 	if GamesGlobal.shootingRangeScore >= 1500:
 		GamesGlobal.rangeBeat = true
+	csgBarrier.use_collision = false
  
