@@ -1,17 +1,19 @@
-[gd_scene load_steps=25 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=27 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
-[ext_resource type="Texture2D" uid="uid://cbtih5l8jnyvr" path="res://assets/art/pole.png" id="2_iifnn"]
 [ext_resource type="PackedScene" uid="uid://dahmluncw00so" path="res://scenes/carnsign.tscn" id="3_w4g2w"]
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="5_40moq"]
 [ext_resource type="AudioStream" uid="uid://chafqkssb64xn" path="res://assets/allsound/Music/Carnival game intro sequence track.wav" id="6_1waf8"]
 [ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="6_skt0m"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="7_vdkxn"]
+[ext_resource type="Texture2D" uid="uid://b58yh77v4cj73" path="res://assets/Textures/Pole.png" id="9_tjkqt"]
 [ext_resource type="Texture2D" uid="uid://b76abtf6tt3fo" path="res://assets/Tent/Tent.png" id="11_cdqji"]
 [ext_resource type="PackedScene" uid="uid://dshpia0pht20c" path="res://scenes/tentmodel.tscn" id="11_v7x2m"]
+[ext_resource type="Texture2D" uid="uid://7545cyyae58r" path="res://assets/Textures/PoleLeft.png" id="11_xq4d2"]
 [ext_resource type="Texture2D" uid="uid://h0jf1oqlvxau" path="res://assets/Textures/road.png" id="12_cdqji"]
+[ext_resource type="Texture2D" uid="uid://il6dxuxevcia" path="res://assets/Textures/PoleRight.png" id="12_ni2yb"]
 [ext_resource type="Texture2D" uid="uid://cnmumslsbm5ys" path="res://assets/Textures/Truck.png" id="13_x3una"]
 [ext_resource type="Texture2D" uid="uid://b20x1nhcqs7mh" path="res://assets/Textures/Grass Texture.png" id="14_nxbbw"]
 [ext_resource type="PackedScene" uid="uid://kl1cjqrainte" path="res://scenes/tree.tscn" id="15_ht1us"]
@@ -138,11 +140,6 @@ shape = SubResource("BoxShape3D_wp0as")
 
 [node name="sprites" type="Node3D" parent="."]
 
-[node name="pole" type="Sprite3D" parent="sprites"]
-transform = Transform3D(0.994212, -0.0154455, 0.106321, 0.015358, 0.999881, 0.00164238, -0.106333, 2.32085e-11, 0.994331, -14.2433, 5.33224, -71.7366)
-pixel_size = 0.018
-texture = ExtResource("2_iifnn")
-
 [node name="fences" type="Node3D" parent="."]
 
 [node name="fence" parent="fences" instance=ExtResource("1_evbs2")]
@@ -229,7 +226,7 @@ visible = false
 transform = Transform3D(0.306575, 0.0113924, 0.951778, 0.00541025, 0.999892, -0.0137108, -0.951831, 0.00935264, 0.306479, 89.2454, 0.913509, -86.4934)
 
 [node name="fence14" parent="fences" instance=ExtResource("1_evbs2")]
-transform = Transform3D(0.198543, -0.00906193, -0.980051, 0.00507265, 0.999954, -0.0082183, 0.980079, -0.00333963, 0.19858, -8.08394, 4.81125, -79.2145)
+transform = Transform3D(0.198543, -0.00906193, -0.980051, 0.00507265, 0.999954, -0.0082183, 0.980079, -0.00333963, 0.19858, -9.82395, 4.81125, -78.6654)
 
 [node name="fence15" parent="fences" instance=ExtResource("1_evbs2")]
 transform = Transform3D(-0.229915, -0.0179813, 0.973045, 0.0311425, 0.999182, 0.025823, -0.972712, 0.0362405, -0.229167, -9.13997, 0.481142, 26.6541)
@@ -244,7 +241,7 @@ transform = Transform3D(0.285966, -0.0114374, 0.958172, 0.0172338, 0.999829, 0.0
 [node name="signs" type="Node3D" parent="."]
 
 [node name="carnsign" parent="signs" instance=ExtResource("3_w4g2w")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.9149, 9.56402, -75.4461)
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -15.2649, 9.56402, -75.4461)
 
 [node name="sign" parent="signs" instance=ExtResource("4_ijg3w")]
 transform = Transform3D(0.849396, 0, -0.527756, 0, 1, 0, 0.527756, 0, 0.849396, 17.5723, 6.97682, -71.8993)
@@ -271,6 +268,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98872, 0.781738, 31.2981)
 stream = ExtResource("6_1waf8")
 volume_db = -2.0
 autoplay = true
+
+[node name="Ending Adjustments" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67717, 4.79474, -55.2784)
+
+[node name="pole" type="Sprite3D" parent="Ending Adjustments"]
+transform = Transform3D(0.553138, -0.00933539, 0.103329, 0.00854456, 0.604337, 0.00159616, -0.0591593, 1.40274e-11, 0.966345, -13.4522, 1.00865, -16.4582)
+visible = false
+pixel_size = 0.018
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("9_tjkqt")
+
+[node name="Tree9" parent="Ending Adjustments" instance=ExtResource("15_ht1us")]
+visible = false
+
+[node name="Tree10" parent="Ending Adjustments" instance=ExtResource("15_ht1us")]
+transform = Transform3D(0.199471, -0.979904, 0, 0.979904, 0.199471, 0, 0, 0, 1, -5.86902, 1.62708, -1.07825)
+
+[node name="PoleLeft" type="Sprite3D" parent="Ending Adjustments"]
+transform = Transform3D(0.597136, 0, 0, 0, 0.930245, 0, 0, 0, 1, -15.6355, 0.949408, -15.9526)
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("11_xq4d2")
+
+[node name="PoleRight" type="Sprite3D" parent="Ending Adjustments"]
+transform = Transform3D(0.543287, 0, 0.122609, 0, 0.930245, 0, -0.0701461, 0, 0.949618, -10.4561, 0.949408, -16.6205)
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("12_ni2yb")
 
 [node name="tent" parent="." instance=ExtResource("11_v7x2m")]
 transform = Transform3D(-0.988042, 0, -1.41968e-07, 0, 1.08363, 0, 8.63774e-08, 0, -1.62392, 104.971, 1.03552, -68.4041)
@@ -447,9 +473,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.3168, 5.00035, -70.5683)
 
 [node name="Tree8" parent="." instance=ExtResource("15_ht1us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5388, 4.85177, -81.0247)
-
-[node name="Tree9" parent="." instance=ExtResource("15_ht1us")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67717, 4.79474, -55.2784)
 
 [node name="Tree10" parent="." instance=ExtResource("15_ht1us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.9677, 4.24725, -45.297)

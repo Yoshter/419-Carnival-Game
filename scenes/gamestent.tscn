@@ -169,6 +169,9 @@ transform = Transform3D(0.997065, 0, 0.0765629, 0, 1, 0, -0.0765629, 0, 0.997065
 operation = 2
 size = Vector3(17.4697, 7.92762, 13.6633)
 
+[node name="TableNoLight" parent="ground/mainarea/mainTentCyl" instance=ExtResource("14_joq6e")]
+transform = Transform3D(-1.44429, 2.39938, -1.2801, 2.55717, 1.69149, 0.285346, 0.92554, -0.929226, -2.78597, -13.9835, -6.47191, -16.3396)
+
 [node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
 material_override = ExtResource("6_ikt7c")
@@ -369,3 +372,12 @@ transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.98615, 1.12983,
 
 [node name="Box2" parent="." instance=ExtResource("23_b42cu")]
 transform = Transform3D(0.553267, 0, -0.331543, 0, 0.645, 0, 0.331543, 0, 0.553267, 4.2318, 1.12983, 10.3522)
+
+[node name="TableNoLight" parent="." instance=ExtResource("14_joq6e")]
+transform = Transform3D(2.12978, -1.96805, -1.03563, 2.1481, 2.19169, 0.252573, 0.575696, -0.897152, 2.88884, -15.5359, -0.00258958, -8.00153)
+
+[node name="Box3" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -18.5184, 1.12983, -11.6402)
+
+[node name="Box4" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -21.2749, 1.12983, -12.9253)
