@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=9 format=3 uid="uid://bspombtyhjd6a"]
+=======
+[gd_scene load_steps=12 format=3 uid="uid://bspombtyhjd6a"]
+>>>>>>> eb40ef5f5f11c5a0fa7e17a98326017b5738b203
 
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="1_7m8ba"]
 [ext_resource type="Script" uid="uid://cgpjpvw4sqd03" path="res://scenes/minigameScenes/shootingRange/shooting_range.gd" id="1_baoc8"]
@@ -6,23 +10,47 @@
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_v74r3"]
 [ext_resource type="PackedScene" uid="uid://biwmiy3eim7u1" path="res://scenes/minigameScenes/shootingRange/target.tscn" id="3_t1gs1"]
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="5_oadsy"]
+[ext_resource type="Material" uid="uid://5o4c42nxr5a8" path="res://assets/materials/shootingrangefloor.tres" id="7_5mf57"]
+[ext_resource type="Material" uid="uid://b6qi4exs5o46m" path="res://assets/materials/arcadewall3.tres" id="7_s1lab"]
+[ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="9_xxta3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1gs1"]
 size = Vector3(37.6171, 12.1945, 28.0642)
 
+<<<<<<< HEAD
 [sub_resource type="BoxShape3D" id="BoxShape3D_v74r3"]
 size = Vector3(1.84192, 2.70264, 3.45874)
+=======
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnhrr"]
+albedo_texture = ExtResource("9_xxta3")
+uv1_triplanar = true
+texture_filter = 0
+>>>>>>> eb40ef5f5f11c5a0fa7e17a98326017b5738b203
 
 [node name="shootingRange" type="Node3D"]
 script = ExtResource("1_baoc8")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61365, 3.92505, -8.06494)
+visible = false
 use_collision = true
 size = Vector3(26.5408, 8.8501, 17.1299)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13826, 0.509216, -0.00703239)
+visible = false
+operation = 2
+size = Vector3(39.2916, 7.40955, 16.3457)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.61365, 3.92505, -8.06494)
+visible = false
+use_collision = true
+size = Vector3(26.5408, 8.8501, 17.1299)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.13826, 0.509216, -0.00703239)
+visible = false
 operation = 2
 size = Vector3(39.2916, 7.40955, 16.3457)
 
@@ -89,6 +117,7 @@ collision_mask = 2
 tokenString = "shootingRange"
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97053, 1.5437, -9.06538)
 size = Vector3(1, 4.0874, 1)
 
@@ -102,6 +131,31 @@ shape = SubResource("BoxShape3D_v74r3")
 [node name="shootingRangeTimer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 3.92017, 0.280212)
+material_override = ExtResource("7_s1lab")
+size = Vector3(26.4781, 8.84033, 0.439575)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 3.92017, -16.481)
+material_override = ExtResource("7_s1lab")
+size = Vector3(26.4781, 8.84033, 0.439575)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 0.115662, -8.31214)
+material_override = ExtResource("7_5mf57")
+size = Vector3(26.4781, 1.23132, 16.7773)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -16.4509, 4.08946, -8.08336)
+material_override = ExtResource("7_s1lab")
+size = Vector3(2.73111, 16.6346, 8.5769)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57402, 8.26286, -8.31214)
+material_override = SubResource("StandardMaterial3D_rnhrr")
+size = Vector3(26.4849, 0.163681, 16.7773)
+>>>>>>> eb40ef5f5f11c5a0fa7e17a98326017b5738b203
 
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]
