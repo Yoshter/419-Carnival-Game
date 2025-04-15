@@ -152,10 +152,10 @@ flat = true
 [node name="load" type="Button" parent="PauseMenu"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 24.0
+offset_left = 23.8889
 offset_top = 235.0
-offset_right = 263.0
-offset_bottom = 352.0
+offset_right = 262.889
+offset_bottom = 341.0
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 48
 text = "REPORT 
@@ -192,18 +192,12 @@ offset_bottom = 383.0
 flat = true
 
 [node name="objective" type="Button" parent="PauseMenu"]
-texture_filter = 1
 layout_mode = 0
-offset_left = 20.0
-offset_top = 81.0
-offset_right = 141.0
-offset_bottom = 139.0
-scale = Vector2(2, 2)
-theme = ExtResource("4_14imd")
-theme_override_font_sizes/font_size = 24
-text = "CURRENT
-GOAL"
-metadata/_edit_group_ = true
+offset_left = 450.556
+offset_top = 149.444
+offset_right = 538.556
+offset_bottom = 174.444
+text = "OBJECTIVE"
 
 [node name="inventoryMenu" type="Control" parent="PauseMenu"]
 visible = false
@@ -621,18 +615,6 @@ offset_right = 282.0
 offset_bottom = 148.0
 theme_override_font_sizes/font_size = 28
 text = "OBJECTIVE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="QuitObj" type="Button" parent="PauseMenu/objectiveMenu"]
-layout_mode = 0
-offset_left = 256.111
-offset_top = -164.444
-offset_right = 296.111
-offset_bottom = -124.444
-scale = Vector2(1.53028, 1.53509)
-icon = ExtResource("5_mnosj")
-flat = true
 
 [node name="controls" type="Control" parent="."]
 anchors_preset = 0
@@ -781,10 +763,6 @@ rotation = 1.57079
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
-<<<<<<< Updated upstream
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
-=======
-[connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
->>>>>>> Stashed changes
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]

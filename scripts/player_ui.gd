@@ -234,7 +234,3 @@ func _on_objective_pressed() -> void:
 		7: #keep looking for them tokens.
 			objectiveText.set_text("Find the rest of the tokens.")
 	objectiveMenu.set_visible(true)
-
-
-func _on_quit_obj_pressed():
-	objectiveMenu.set_visible(false)
