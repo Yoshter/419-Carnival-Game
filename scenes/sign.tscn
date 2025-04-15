@@ -11,16 +11,23 @@ script = ExtResource("1_awcpc")
 [node name="thisway" type="Sprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 visible = false
+billboard = 1
+alpha_cut = 3
+texture_filter = 0
 texture = ExtResource("2_6bf27")
 
 [node name="hurry" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67772, 0)
 visible = false
+billboard = 1
+alpha_cut = 3
 texture = ExtResource("3_4phth")
 
 [node name="almostat" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.908397, 0)
 visible = false
+billboard = 1
+alpha_cut = 3
 texture = ExtResource("4_a1dta")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
