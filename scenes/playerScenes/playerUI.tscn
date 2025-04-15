@@ -87,7 +87,6 @@ theme_override_font_sizes/font_size = 48
 text = "SPACE TO INTERACT"
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 140.0
 offset_bottom = 140.0
@@ -157,7 +156,7 @@ offset_top = 235.0
 offset_right = 262.889
 offset_bottom = 341.0
 theme = ExtResource("4_14imd")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 36
 text = "REPORT 
 A BUG"
 
@@ -172,17 +171,6 @@ offset_bottom = 234.778
 theme_override_font_sizes/font_size = 49
 text = "SAVE"
 
-[node name="resume" type="Button" parent="PauseMenu"]
-texture_filter = 1
-layout_mode = 0
-offset_left = 23.8889
-offset_top = 96.1111
-offset_right = 262.889
-offset_bottom = 178.111
-theme = ExtResource("4_14imd")
-theme_override_font_sizes/font_size = 48
-text = "RESUME"
-
 [node name="inventory" type="Button" parent="PauseMenu"]
 layout_mode = 0
 offset_left = 481.0
@@ -193,10 +181,12 @@ flat = true
 
 [node name="objective" type="Button" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 450.556
-offset_top = 149.444
-offset_right = 538.556
-offset_bottom = 174.444
+offset_left = 23.0
+offset_top = 97.0
+offset_right = 262.0
+offset_bottom = 178.0
+theme = ExtResource("4_14imd")
+theme_override_font_sizes/font_size = 36
 text = "OBJECTIVE"
 
 [node name="inventoryMenu" type="Control" parent="PauseMenu"]
@@ -584,7 +574,6 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="objectiveMenu" type="Control" parent="PauseMenu"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -615,6 +604,18 @@ offset_right = 282.0
 offset_bottom = 148.0
 theme_override_font_sizes/font_size = 28
 text = "OBJECTIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitObj" type="Button" parent="PauseMenu/objectiveMenu"]
+layout_mode = 0
+offset_left = 246.111
+offset_top = -163.333
+offset_right = 286.111
+offset_bottom = -123.333
+scale = Vector2(1.75241, 1.69913)
+icon = ExtResource("5_mnosj")
+flat = true
 
 [node name="controls" type="Control" parent="."]
 anchors_preset = 0
@@ -756,13 +757,12 @@ rotation = 1.57079
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
-[connection signal="pressed" from="PauseMenu/resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
 [connection signal="pressed" from="PauseMenu/objective" to="." method="_on_objective_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
