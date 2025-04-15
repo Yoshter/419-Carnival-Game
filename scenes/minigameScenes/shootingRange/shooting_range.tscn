@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-[gd_scene load_steps=9 format=3 uid="uid://bspombtyhjd6a"]
-=======
 [gd_scene load_steps=12 format=3 uid="uid://bspombtyhjd6a"]
->>>>>>> eb40ef5f5f11c5a0fa7e17a98326017b5738b203
 
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="1_7m8ba"]
 [ext_resource type="Script" uid="uid://cgpjpvw4sqd03" path="res://scenes/minigameScenes/shootingRange/shooting_range.gd" id="1_baoc8"]
@@ -17,15 +13,10 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1gs1"]
 size = Vector3(37.6171, 12.1945, 28.0642)
 
-<<<<<<< HEAD
-[sub_resource type="BoxShape3D" id="BoxShape3D_v74r3"]
-size = Vector3(1.84192, 2.70264, 3.45874)
-=======
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnhrr"]
 albedo_texture = ExtResource("9_xxta3")
 uv1_triplanar = true
 texture_filter = 0
->>>>>>> eb40ef5f5f11c5a0fa7e17a98326017b5738b203
 
 [node name="shootingRange" type="Node3D"]
 script = ExtResource("1_baoc8")
@@ -62,7 +53,7 @@ material = ExtResource("2_v74r3")
 
 [node name="fungate" parent="." instance=ExtResource("1_7m8ba")]
 transform = Transform3D(0.0643648, 0, 3.99948, 0, 4, 0, -3.99948, 0, 0.0643648, 8.05401, 2.19533, -13.4719)
-itemToCheck = "funPassLevel4"
+itemToCheck = "funPassLevel3"
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.566981, -0.190121, 0.801491, 0.0406329, 0.978271, 0.203311, -0.822729, -0.0827063, 0.562386, 5.74372, 6.3778, -0.274516)
@@ -117,21 +108,6 @@ collision_mask = 2
 tokenString = "shootingRange"
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-<<<<<<< HEAD
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.97053, 1.5437, -9.06538)
-size = Vector3(1, 4.0874, 1)
-
-[node name="gameBooth" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.80234, 1.75378, -9.18234)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="gameBooth"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.892832, 0.851318, 0.337524)
-shape = SubResource("BoxShape3D_v74r3")
-
-[node name="shootingRangeTimer" type="Timer" parent="."]
-wait_time = 30.0
-one_shot = true
-=======
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 3.92017, 0.280212)
 material_override = ExtResource("7_s1lab")
 size = Vector3(26.4781, 8.84033, 0.439575)
@@ -155,10 +131,6 @@ size = Vector3(2.73111, 16.6346, 8.5769)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57402, 8.26286, -8.31214)
 material_override = SubResource("StandardMaterial3D_rnhrr")
 size = Vector3(26.4849, 0.163681, 16.7773)
->>>>>>> eb40ef5f5f11c5a0fa7e17a98326017b5738b203
 
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]
-[connection signal="body_entered" from="gameBooth" to="." method="_on_game_booth_body_entered"]
-[connection signal="body_exited" from="gameBooth" to="." method="_on_game_booth_body_exited"]
-[connection signal="timeout" from="shootingRangeTimer" to="." method="_on_shooting_range_timer_timeout"]
