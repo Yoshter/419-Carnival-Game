@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://kl1cjqrainte"]
+
+[ext_resource type="Texture2D" uid="uid://blkf8o0o5pshj" path="res://assets/Textures/Tree.png" id="1_avsvi"]
+
+[node name="Tree" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.19778, 0)
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("1_avsvi")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 6.19778, 0)
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("1_avsvi")
