@@ -16,6 +16,7 @@ var rangeBeat : bool = false
 var towerBeat : bool = false
 var enemiesKilled : int = 0
 var towerChecked : bool = false
+var towerHasJoystick : bool = false
 
 var dead : bool = false
 
