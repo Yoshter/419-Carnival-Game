@@ -9,8 +9,10 @@ func _process(delta: float) -> void:
 
 func _on_game_portal_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		PlayerGlobal.setCanInteract(true)
 		canPlay = true
 
 func _on_game_portal_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
+		PlayerGlobal.setCanInteract(false)
 		canPlay = false

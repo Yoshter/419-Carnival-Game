@@ -13,7 +13,7 @@ var skeebleTokenBool : bool = false
 var skeebleTicketBool : bool = false
 var towerTokenBool : bool = true
 var towerTicketBool : bool = false
-var rangeTokenBool : bool = false
+var rangeTokenBool : bool = true
 var rangeTicketBool : bool = false
 
 var funPassLevel2 : bool = false
@@ -41,6 +41,10 @@ func updateItems() -> void:
 		giveItem("speedPitchTicket")
 	if !towerTicketBool and GamesGlobal.checkBeatGame("tower"):
 		giveItem("towerTicket")
+	if !rangeTicketBool and GamesGlobal.checkBeatGame("range"):
+		giveItem("rangeTicket")
+	if !skeebleTicketBool and GamesGlobal.checkBeatGame("skeeble"):
+		giveItem("skeebleTicket")
 
 func giveItem(itemName) -> void:
 	if !checkItem(itemName):

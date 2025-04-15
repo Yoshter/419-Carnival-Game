@@ -10,6 +10,8 @@ var speedPitchBeat : bool = false
 var speedPitchChecked : bool = false
 
 var shootingRangeScore : int = 0
+var rangeChecked : bool = false
+var rangeBeat : bool = false
 
 var towerBeat : bool = false
 var enemiesKilled : int = 0
@@ -18,6 +20,8 @@ var towerChecked : bool = false
 var dead : bool = false
 
 var skeebleBallNum : int = 1
+var skeebleChecked : bool = false
+var skeebleBeat : bool = false
 
 #Custom Funcs
 func ufoScoreUp() -> void:
@@ -45,4 +49,8 @@ func checkBeatGame(gameName) -> bool:
 			beatGame = speedPitchBeat
 		"tower":
 			beatGame = towerBeat
+		"range":
+			beatGame = rangeBeat
+		"skeeble":
+			beatGame = skeebleBeat
 	return beatGame
