@@ -25,7 +25,6 @@ size = Vector3(2.37671, 2.24438, 2.18848)
 script = ExtResource("1_l17di")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-billboard = 1
 alpha_cut = 3
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_8nexf")
