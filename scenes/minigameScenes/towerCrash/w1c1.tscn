@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://bi4et2tq56o5d"]
+[gd_scene load_steps=7 format=4 uid="uid://bi4et2tq56o5d"]
 
 [ext_resource type="Script" uid="uid://01tmwt7n53kh" path="res://scenes/minigameScenes/towerCrash/w_1c_1.gd" id="1_cb3lf"]
 [ext_resource type="TileSet" uid="uid://dg5xw10rirusa" path="res://scenes/minigameScenes/towerCrash/w1p1.tres" id="1_ol1v7"]
 [ext_resource type="PackedScene" uid="uid://behnxqsbu8whn" path="res://scenes/minigameScenes/towerCrash/player/player.tscn" id="2_gmhan"]
 [ext_resource type="AudioStream" uid="uid://cy0ebqjp47qub" path="res://assets/allsound/Music/Tower Combat theme.wav" id="5_iy05s"]
+[ext_resource type="Texture2D" uid="uid://bq80lddgxkdb5" path="res://assets/Backgrounds/cellarbackground2.png" id="6_1t2li"]
 [ext_resource type="PackedScene" uid="uid://cil4wt8gdjlhs" path="res://scenes/minigameScenes/towerCrash/skullslime.tscn" id="8_e26vx"]
 
 [node name="w1c1" type="Node2D"]
@@ -51,3 +52,10 @@ onCeiling = false
 stream = ExtResource("5_iy05s")
 volume_db = -2.825
 autoplay = true
+
+[node name="Cellarbackground3" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(79, -72)
+rotation = -6.28319
+scale = Vector2(1.43721, -2.47784)
+texture = ExtResource("6_1t2li")

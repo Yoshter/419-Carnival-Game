@@ -245,10 +245,10 @@ transform = Transform3D(0.285966, -0.0114374, 0.958172, 0.0172338, 0.999829, 0.0
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.9149, 9.56402, -75.4461)
 
 [node name="sign" parent="signs" instance=ExtResource("4_ijg3w")]
-transform = Transform3D(0.849396, 0, -0.527756, 0, 1, 0, 0.527756, 0, 0.849396, 17.5723, 7.49796, -71.8993)
+transform = Transform3D(0.849396, 0, -0.527756, 0, 1, 0, 0.527756, 0, 0.849396, 17.5723, 6.97682, -71.8993)
 
 [node name="sign2" parent="signs" instance=ExtResource("4_ijg3w")]
-transform = Transform3D(0.723172, 0, -0.690668, 0, 1, 0, 0.690668, 0, 0.723172, 42.9245, 8.42102, -76.1441)
+transform = Transform3D(0.723172, 0, -0.690668, 0, 1, 0, 0.690668, 0, 0.723172, 42.9245, 7.54856, -76.1441)
 signNum = 2
 
 [node name="sign3" parent="signs" instance=ExtResource("4_ijg3w")]

@@ -14,6 +14,7 @@ script = ExtResource("1_41b4k")
 [node name="doorBox" type="CSGBox3D" parent="."]
 transform = Transform3D(-4.36758e-08, 0, 1.61363, 0, 1.82541, 0, -0.999187, 0, -7.05338e-08, 0.340981, 1.99509, -0.311784)
 material_override = ExtResource("2_g5ncd")
+use_collision = true
 size = Vector3(0.388611, 2.83159, 3.67184)
 material = ExtResource("2_g5ncd")
 

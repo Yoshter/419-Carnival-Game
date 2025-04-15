@@ -14,7 +14,7 @@ visible = false
 texture = ExtResource("2_6bf27")
 
 [node name="hurry" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.809566, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.67772, 0)
 visible = false
 texture = ExtResource("3_4phth")
 

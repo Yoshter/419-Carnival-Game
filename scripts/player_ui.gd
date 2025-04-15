@@ -140,6 +140,7 @@ func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1
 	
 func _on_quit_2_pressed() -> void:
+	$OpenSFX.play()
 	confirm_quit_2.set_visible(true)
 
 func _on_inventory_pressed() -> void:
@@ -199,6 +200,7 @@ func _on_hud_timer_timeout() -> void:
 	controls.set_visible(false)
 
 func _on_resume_pressed() -> void:
+	$OpenSFX.play()
 	if isVisible and delay > 0.1:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
@@ -218,6 +220,7 @@ func _on_quit_inv_2_pressed() -> void:
 	mapMenu.set_visible(false)
 
 func _on_objective_pressed() -> void:
+	$OpenSFX.play()
 	match DialogueGlobal.objEncCount:
 		0: #until you walk in
 			objectiveText.set_text("Find somewhere to rest.")
@@ -239,3 +242,8 @@ func _on_objective_pressed() -> void:
 
 func _on_quit_obj_pressed() -> void:
 	objectiveMenu.set_visible(false)
+
+
+func _on_bug_report_pressed():
+	$OpenSFX.play()
+	OS.shell_open("https://forms.gle/rjMwnETHGZXH6RL9A")

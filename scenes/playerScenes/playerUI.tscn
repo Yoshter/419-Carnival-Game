@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=30 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="6_4kfvc"]
 [ext_resource type="Texture2D" uid="uid://biovfdi5bv5np" path="res://assets/Token/Token Shooting Range.png" id="6_67p70"]
 [ext_resource type="Texture2D" uid="uid://dyib5hpye3qyo" path="res://assets/Token/Token Skee ball.png" id="7_0lfn4"]
+[ext_resource type="Script" uid="uid://n3nockxn7cub" path="res://scenes/playerScenes/bug_report.gd" id="7_fbr3v"]
 [ext_resource type="Texture2D" uid="uid://dk42v3xd14uro" path="res://assets/art/saw.png" id="7_hty8y"]
 [ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="7_luwil"]
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="7_uray3"]
@@ -93,6 +94,7 @@ theme_override_font_sizes/font_size = 48
 text = "SPACE TO INTERACT"
 
 [node name="PauseMenu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 140.0
 offset_bottom = 140.0
@@ -154,7 +156,7 @@ offset_right = 798.0
 offset_bottom = 235.0
 flat = true
 
-[node name="load" type="Button" parent="PauseMenu"]
+[node name="bugReport" type="Button" parent="PauseMenu"]
 texture_filter = 1
 layout_mode = 0
 offset_left = 23.8889
@@ -165,6 +167,7 @@ theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 36
 text = "REPORT 
 A BUG"
+script = ExtResource("7_fbr3v")
 
 [node name="save" type="Button" parent="PauseMenu"]
 visible = false
@@ -580,6 +583,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="objectiveMenu" type="Control" parent="PauseMenu"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -612,6 +616,7 @@ theme_override_font_sizes/font_size = 28
 text = "OBJECTIVE"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="QuitObj" type="Button" parent="PauseMenu/objectiveMenu"]
 layout_mode = 0
@@ -763,13 +768,14 @@ rotation = 1.57079
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
 [connection signal="pressed" from="PauseMenu/objective" to="." method="_on_objective_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
