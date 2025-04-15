@@ -124,7 +124,6 @@ offset_bottom = 90.0
 rotation = 1.57079
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 140.0
 offset_bottom = 140.0
@@ -576,7 +575,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="mapMenu" type="Control" parent="PauseMenu"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -590,6 +588,7 @@ offset_bottom = 450.0
 color = Color(1, 1, 0.745098, 1)
 
 [node name="mapMissingSprite" type="Sprite2D" parent="PauseMenu/mapMenu"]
+visible = false
 position = Vector2(673, 291)
 texture = ExtResource("18_c1ib8")
 
@@ -611,6 +610,18 @@ icon = ExtResource("5_mnosj")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Label" type="Label" parent="PauseMenu/mapMenu"]
+layout_mode = 0
+offset_left = 507.222
+offset_top = 201.667
+offset_right = 877.222
+offset_bottom = 367.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 192
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="objectiveMenu" type="Control" parent="PauseMenu"]
 visible = false
