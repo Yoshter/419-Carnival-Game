@@ -60,14 +60,6 @@ fill_mode = 3
 [node name="StaticBody2D2" parent="." instance=ExtResource("1_06rbg")]
 position = Vector2(-27, 348)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("1_06rbg")]
-position = Vector2(-24, 419)
-ballNum = 2
-
-[node name="StaticBody2D4" parent="." instance=ExtResource("1_06rbg")]
-position = Vector2(-25, 498)
-ballNum = 3
-
 [node name="roundDelayTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
