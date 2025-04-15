@@ -59,6 +59,7 @@ shape = SubResource("BoxShape3D_7b7nr")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, 1.5961, 1.00527, 0)
+alpha_cut = 3
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0uhok")
 autoplay = "default"
@@ -67,6 +68,7 @@ frame_progress = 1.0
 
 [node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, 5.62497, 1.00527, 0)
+alpha_cut = 3
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0uhok")
 autoplay = "default"
@@ -75,6 +77,7 @@ frame_progress = 1.0
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, -6.41761, 1.00527, 0)
+alpha_cut = 3
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0uhok")
 autoplay = "default"
@@ -83,6 +86,7 @@ frame_progress = 1.0
 
 [node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 0.493, -2.44775, 1.00527, 0)
+alpha_cut = 3
 texture_filter = 0
 sprite_frames = SubResource("SpriteFrames_0uhok")
 autoplay = "default"
