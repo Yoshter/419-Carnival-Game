@@ -193,15 +193,20 @@ func _on_hud_timer_timeout() -> void:
 	controls.set_visible(false)
 
 func _on_resume_pressed() -> void:
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	#pauseMenu.set_visible(false)
-	#inventoryMenu.set_visible(false)
-	#mapMenu.set_visible(false)
-	#PlayerGlobal.inUI = false
-	#isVisible = false
-	#delay = 0.0
-	#$"Close SFX".play()
-	pass
+	if isVisible and delay > 0.1:
+		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		#pauseMenu.set_visible(false)
+		#pauseMenu.set_visible(false)
+		#inventoryMenu.set_visible(false)
+		#mapMenu.set_visible(false)
+		#PlayerGlobal.inUI = false
+		#isVisible = false
+		#delay = 0.0
+		#$"Close SFX".play()
+		pass
+	else:
+		pass
+	
 
 func _on_quit_inv_2_pressed() -> void:
 	mapMenu.set_visible(false)

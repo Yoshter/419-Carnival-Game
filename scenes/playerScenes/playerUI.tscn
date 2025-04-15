@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=28 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -27,10 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://bdx3tl8wgqkuq" path="res://assets/Tickets/Ticket Shooting range.png" id="14_w3uxw"]
 [ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="18_c1ib8"]
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
-
-[sub_resource type="GDScript" id="GDScript_cx60t"]
-script/source = "extends Button
-"
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -186,7 +182,6 @@ offset_bottom = 178.111
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 48
 text = "RESUME"
-script = SubResource("GDScript_cx60t")
 
 [node name="inventory" type="Button" parent="PauseMenu"]
 layout_mode = 0
