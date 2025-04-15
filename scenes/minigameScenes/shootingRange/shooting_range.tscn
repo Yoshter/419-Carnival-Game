@@ -69,7 +69,7 @@ spot_angle = 20.1224
 transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985, -0.00544832, -0.997357, 0, 0.0726638, 52.7138, 1.59677, 4.73042)
 
 [node name="targets" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9089, 0, -9.91666)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9089, 0.602802, -9.91666)
 
 [node name="Target" parent="targets" instance=ExtResource("3_t1gs1")]
 transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 47.7493, 0, 5.69972)
@@ -127,9 +127,9 @@ tokenString = "tower"
 wait_time = 30.0
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0941, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0941, 0.132782, 0)
 use_collision = true
-size = Vector3(30.656, 1, 22.7676)
+size = Vector3(30.656, 1.168, 22.768)
 
 [node name="barrier" type="Node3D" parent="."]
 
