@@ -3,6 +3,7 @@ extends CharacterBody3D
 var currSpeed : float = 5.0
 const SPEED = 8.3
 const RUN_SPEED = 10.4
+const CROUCH_SPEED = 5.5
 
 var mouseSens : float = 0.05
 
@@ -81,7 +82,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	#Handle run
-	if Input.is_action_pressed("run"):
+	if Input.is_action_pressed("run") and !isCrouching:
 		currSpeed = RUN_SPEED
 	else:
 		currSpeed = SPEED
@@ -93,12 +94,12 @@ func _physics_process(delta: float) -> void:
 			crouchingCollide.set_disabled(true)
 			canCrouch = false
 			isCrouching = false
-			
 			crouchDelay.start()
 
 	if !isCrouching and canCrouch:
 		if Input.is_action_just_pressed("crouch"):
 			body.position.y = 0.442
+			currSpeed = CROUCH_SPEED
 			standingCollide.set_disabled(true)
 			crouchingCollide.set_disabled(false)
 			canCrouch = false

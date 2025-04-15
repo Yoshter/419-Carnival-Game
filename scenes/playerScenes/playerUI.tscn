@@ -93,6 +93,36 @@ offset_bottom = 278.0
 theme_override_font_sizes/font_size = 48
 text = "SPACE TO INTERACT"
 
+[node name="crosshair" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="crosshair"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -18.0
+offset_right = 23.0
+offset_bottom = 58.0
+
+[node name="ColorRect2" type="ColorRect" parent="crosshair"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 16.0
+offset_right = 62.0
+offset_bottom = 90.0
+rotation = 1.57079
+
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -735,36 +765,6 @@ stream = ExtResource("6_4kfvc")
 
 [node name="TabSwitch SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_luwil")
-
-[node name="crosshair" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="crosshair"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = -18.0
-offset_right = 23.0
-offset_bottom = 58.0
-
-[node name="ColorRect2" type="ColorRect" parent="crosshair"]
-layout_mode = 0
-offset_left = 57.0
-offset_top = 16.0
-offset_right = 62.0
-offset_bottom = 90.0
-rotation = 1.57079
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]

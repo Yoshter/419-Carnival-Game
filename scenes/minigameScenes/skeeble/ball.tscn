@@ -1,18 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://p0m0ng05l701"]
+[gd_scene load_steps=4 format=3 uid="uid://p0m0ng05l701"]
 
 [ext_resource type="Script" uid="uid://dkgwmmrrv75lv" path="res://scenes/minigameScenes/skeeble/ball.gd" id="1_00n8o"]
+[ext_resource type="AudioStream" uid="uid://d4jpfmkwccd63" path="res://assets/allsound/SFX/Shooting range target hit.wav" id="2_dowmc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dowmc"]
-radius = 30.0
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="ball" type="Node2D"]
 script = ExtResource("1_00n8o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("CircleShape2D_dowmc")
 
+[node name="successMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_dowmc")
+
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -19.0
-offset_top = -20.0
-offset_right = 21.0
-offset_bottom = 20.0
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0

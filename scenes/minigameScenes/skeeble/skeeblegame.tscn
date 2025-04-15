@@ -61,7 +61,7 @@ fill_mode = 3
 position = Vector2(-27, 348)
 
 [node name="roundDelayTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 4.0
 one_shot = true
 
 [node name="scoringzones" type="Node2D" parent="."]
@@ -72,7 +72,7 @@ reqPowMax = 85
 reqPowMin = 90
 
 [node name="scoringZone3" parent="scoringzones" instance=ExtResource("2_wj3o0")]
-position = Vector2(125, -50)
+position = Vector2(125, -49)
 reqPowMax = 70
 reqPowMin = 90
 

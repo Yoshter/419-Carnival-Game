@@ -9,7 +9,7 @@
 size = Vector3(1.51367, 1.40625, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ctvca"]
-size = Vector3(6.71313, 6.30164, 7.33105)
+size = Vector3(4.54895, 2.18549, 1.75316)
 
 [node name="overworldToken" type="StaticBody3D"]
 script = ExtResource("1_ctvca")
@@ -35,11 +35,33 @@ texture_filter = 0
 texture = ExtResource("4_5xsce")
 
 [node name="pickUpArea" type="Area3D" parent="."]
-visible = false
+transform = Transform3D(1, 0, 0, 0, 0.99996, 0.00898832, 0, -0.00898832, 0.99996, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pickUpArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.65082, 0)
+transform = Transform3D(1, 0, 0, 0, 1.00001, 1.86265e-09, 0, -1.86265e-09, 1.00001, 0.176819, 1.98583, 0.166668)
 shape = SubResource("BoxShape3D_ctvca")
+
+[node name="pickUpTokens" type="Node3D" parent="."]
+
+[node name="shootingRangeToken" type="Sprite3D" parent="pickUpTokens"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
+texture_filter = 0
+texture = ExtResource("1_r1e82")
+
+[node name="skeebleToken" type="Sprite3D" parent="pickUpTokens"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
+texture_filter = 0
+texture = ExtResource("3_4eaq6")
+
+[node name="towerToken" type="Sprite3D" parent="pickUpTokens"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
+texture_filter = 0
+texture = ExtResource("4_5xsce")
 
 [connection signal="body_entered" from="pickUpArea" to="." method="_on_pick_up_area_body_entered"]
 [connection signal="body_exited" from="pickUpArea" to="." method="_on_pick_up_area_body_exited"]

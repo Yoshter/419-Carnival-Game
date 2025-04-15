@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Node2D
 
 @export var ballNum : int = 1
 var power : float = 0.0

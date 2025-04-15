@@ -1,12 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bspombtyhjd6a"]
+[gd_scene load_steps=10 format=3 uid="uid://bspombtyhjd6a"]
 
-[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="1_7m8ba"]
 [ext_resource type="Script" uid="uid://cgpjpvw4sqd03" path="res://scenes/minigameScenes/shootingRange/shooting_range.gd" id="1_baoc8"]
 [ext_resource type="PackedScene" uid="uid://7ir04oxgkcfm" path="res://scenes/interactables/overworld_bb_gun.tscn" id="2_0amp2"]
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_v74r3"]
 [ext_resource type="PackedScene" uid="uid://biwmiy3eim7u1" path="res://scenes/minigameScenes/shootingRange/target.tscn" id="3_t1gs1"]
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="5_oadsy"]
-[ext_resource type="Material" uid="uid://5o4c42nxr5a8" path="res://assets/materials/shootingrangefloor.tres" id="7_5mf57"]
 [ext_resource type="Material" uid="uid://b6qi4exs5o46m" path="res://assets/materials/arcadewall3.tres" id="7_s1lab"]
 [ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="9_xxta3"]
 
@@ -19,6 +17,7 @@ uv1_triplanar = true
 texture_filter = 0
 
 [node name="shootingRange" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5689, 0, 0)
 script = ExtResource("1_baoc8")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -46,91 +45,89 @@ operation = 2
 size = Vector3(39.2916, 7.40955, 16.3457)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.98169, 1.24515, -5.35299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.6163, 1.24515, 5.12006)
 use_collision = true
 size = Vector3(1, 1.01831, 10.9268)
 material = ExtResource("2_v74r3")
 
-[node name="fungate" parent="." instance=ExtResource("1_7m8ba")]
-transform = Transform3D(0.0643648, 0, 3.99948, 0, 4, 0, -3.99948, 0, 0.0643648, 8.05401, 2.19533, -13.4719)
-itemToCheck = "funPassLevel3"
-
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.566981, -0.190121, 0.801491, 0.0406329, 0.978271, 0.203311, -0.822729, -0.0827063, 0.562386, 5.74372, 6.3778, -0.274516)
+transform = Transform3D(0.566981, -0.190121, 0.801491, 0.0406329, 0.978271, 0.203311, -0.822728, -0.0827064, 0.562386, 53.5998, 6.3778, 9.86412)
 light_energy = 4.0
 spot_range = 36.8603
 spot_angle = 20.1224
 
 [node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.562044, -0.145856, 0.814145, 0.0406328, 0.978271, 0.203311, -0.826109, 0.147351, -0.543905, 5.74372, 6.3778, -17.764)
+transform = Transform3D(-0.562044, -0.145856, 0.814145, 0.0406328, 0.978271, 0.203311, -0.826109, 0.14735, -0.543905, 53.9333, 6.3778, -4.94109)
 light_energy = 4.0
 spot_range = 36.8603
 spot_angle = 20.1224
 
 [node name="overworldBBGun" parent="." instance=ExtResource("2_0amp2")]
-transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985, -0.00544832, -0.997357, 0, 0.0726638, 8.07915, 1.59677, -5.74263)
+transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985, -0.00544832, -0.997357, 0, 0.0726638, 52.7138, 1.59677, 4.73042)
 
 [node name="targets" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9089, 0, -9.91666)
 
 [node name="Target" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 3.11472, 0, -4.77333)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 47.7493, 0, 5.69972)
 targetLevel = 3
 
 [node name="Target2" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 3.11472, 0, 8.53942)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 47.7493, 0, 19.0125)
 targetLevel = 3
 
 [node name="Target3" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 13.6034, 0, -4.77333)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 58.238, 0, 5.69972)
 
 [node name="Target4" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 13.6034, 0, 8.53942)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 58.238, 0, 19.0125)
 
 [node name="Target5" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 9.23212, 0, -1.02676)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 53.8667, 0, 9.44629)
 targetLevel = 2
 
 [node name="Target6" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 9.23212, 0, 5.93275)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 53.8667, 0, 16.4058)
 targetLevel = 2
 
 [node name="shootingRangeArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="shootingRangeArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.02887, 5.59723, -8.69147)
+transform = Transform3D(0.999952, -0.00977369, 0, 0.00977369, 0.999952, 0, 0, 0, 1, 38.656, 5.59723, -0.0705996)
 shape = SubResource("BoxShape3D_t1gs1")
 
-[node name="overworldToken" parent="." instance=ExtResource("5_oadsy")]
-transform = Transform3D(0.0147998, 0, 0.99989, 0, 1, 0, -0.99989, 0, 0.0147998, -14.9466, 7.1338, -5.71831)
-collision_layer = 2
-collision_mask = 2
-tokenString = "shootingRange"
-
 [node name="CSGBox3D3" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 3.92017, 0.280212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0572, 3.92017, 10.7533)
 material_override = ExtResource("7_s1lab")
 size = Vector3(26.4781, 8.84033, 0.439575)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 3.92017, -16.481)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0572, 3.92017, -6.00795)
 material_override = ExtResource("7_s1lab")
 size = Vector3(26.4781, 8.84033, 0.439575)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57738, 0.115662, -8.31214)
-material_override = ExtResource("7_5mf57")
-size = Vector3(26.4781, 1.23132, 16.7773)
-
 [node name="CSGBox3D6" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -16.4509, 4.08946, -8.08336)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 28.1837, 4.08946, 2.38969)
 material_override = ExtResource("7_s1lab")
 size = Vector3(2.73111, 16.6346, 8.5769)
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.57402, 8.26286, -8.31214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.0606, 8.26286, 2.16091)
 material_override = SubResource("StandardMaterial3D_rnhrr")
 size = Vector3(26.4849, 0.163681, 16.7773)
 
+[node name="overworldToken" parent="." instance=ExtResource("5_oadsy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 30.3335, 5.22147, 6.50658)
+tokenString = "tower"
+
+[node name="shootingRangeTimer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0941, 0, 0)
+use_collision = true
+size = Vector3(30.656, 1, 22.7676)
+
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]
+[connection signal="timeout" from="shootingRangeTimer" to="." method="_on_shooting_range_timer_timeout"]

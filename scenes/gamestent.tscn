@@ -214,7 +214,7 @@ size = Vector3(31.0439, 3.18518, 1.26282)
 transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.61359, -30.3189)
 
 [node name="shootingRange" parent="." instance=ExtResource("8_21i7n")]
-transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189, -2.56122, -0.0716987, 29.9597)
+transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189, -11.8779, -0.0716987, 76.9288)
 
 [node name="obstacles" type="Node3D" parent="."]
 
