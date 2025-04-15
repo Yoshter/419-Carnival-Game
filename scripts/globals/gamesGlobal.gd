@@ -42,7 +42,7 @@ func resetEnemiesKilled() -> void:
 
 func checkBeatGame(gameName) -> bool:
 	var beatGame : bool = false
-	match gameName:
+	match gameName:  
 		"ufo":
 			beatGame = ufoBeat
 		"speedPitch":

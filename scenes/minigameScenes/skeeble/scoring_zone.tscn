@@ -4,13 +4,13 @@
 [ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="2_53qsr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_53qsr"]
-size = Vector2(256, 39)
+size = Vector2(132, 99)
 
 [node name="scoringZone" type="Area2D"]
 script = ExtResource("1_sowip")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9.5)
+position = Vector2(-8, 1.5)
 shape = SubResource("RectangleShape2D_53qsr")
 
 [node name="successMusic" type="AudioStreamPlayer" parent="."]

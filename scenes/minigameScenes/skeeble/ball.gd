@@ -36,11 +36,11 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if !hasThrown:
 		if Input.is_action_pressed("left") and leftPos < 3:
-			position.x -= delta * 30
+			position.x -= delta * 75
 			leftPos += 1 * delta
 			rightPos -= 1 * delta
 		if Input.is_action_pressed("right")and rightPos < 3:
-			position.x += delta * 30
+			position.x += delta * 75
 			rightPos += 1 * delta
 			leftPos -= 1 * delta 
 	if hasThrown:

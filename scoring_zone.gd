@@ -6,8 +6,13 @@ extends Area2D
 
 @onready var successMusic: AudioStreamPlayer = $successMusic
 
-
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(body: StaticBody2D) -> void:
+	print("whomp")
 	if body.is_in_group("ball"):
+		print("hello")
+		print(body.power)
 		if body.power > reqPowMin and body.power < reqPowMax:
 			successMusic.play(0.0)
+			print("win")
+		else:
+			print("fail")

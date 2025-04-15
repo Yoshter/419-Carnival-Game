@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://kuxm610yc4v1"]
+[gd_scene load_steps=3 format=3 uid="uid://kuxm610yc4v1"]
 
 [ext_resource type="PackedScene" uid="uid://p0m0ng05l701" path="res://scenes/minigameScenes/skeeble/ball.tscn" id="1_06rbg"]
+[ext_resource type="PackedScene" uid="uid://dkups3pxjh124" path="res://scenes/minigameScenes/skeeble/scoring_zone.tscn" id="2_wj3o0"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -70,5 +71,22 @@ ballNum = 3
 [node name="roundDelayTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="scoringzones" type="Node2D" parent="."]
+
+[node name="scoringZone2" parent="scoringzones" instance=ExtResource("2_wj3o0")]
+position = Vector2(11, -164)
+reqPowMax = 85
+reqPowMin = 90
+
+[node name="scoringZone3" parent="scoringzones" instance=ExtResource("2_wj3o0")]
+position = Vector2(125, -50)
+reqPowMax = 70
+reqPowMin = 90
+
+[node name="scoringZone" parent="scoringzones" instance=ExtResource("2_wj3o0")]
+position = Vector2(-109, -51)
+reqPowMax = 50
+reqPowMin = 90
 
 [connection signal="timeout" from="roundDelayTimer" to="StaticBody2D2" method="_on_round_delay_timer_timeout"]
