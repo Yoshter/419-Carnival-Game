@@ -19,6 +19,7 @@ var controlsShown : bool = false
 
 @onready var rangeScoreText: Label = $shootingRangeMenu/scoreText
 @onready var crosshair: Control = $crosshair
+@onready var gun_ui: Sprite2D = $Gun_UI
 
 #item icons
 @onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
@@ -66,6 +67,7 @@ func _process(delta: float) -> void:
 	if !hasGun and ItemsGlobal.checkItem("bbgun"):
 		hasGun = true
 		crosshair.set_visible(true)
+		gun_ui.set_visible(true)
 	
 	#if PlayerGlobal.controlsShown:
 		#controls.set_visible(false)
