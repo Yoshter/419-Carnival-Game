@@ -57,9 +57,6 @@ offset_bottom = 192.0
 theme_override_font_sizes/font_size = 96
 fill_mode = 3
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("1_06rbg")]
-position = Vector2(-27, 348)
-
 [node name="roundDelayTimer" type="Timer" parent="."]
 wait_time = 4.0
 one_shot = true
@@ -81,4 +78,5 @@ position = Vector2(-109, -51)
 reqPowMax = 50
 reqPowMin = 90
 
-[connection signal="timeout" from="roundDelayTimer" to="StaticBody2D2" method="_on_round_delay_timer_timeout"]
+[node name="ball" parent="." instance=ExtResource("1_06rbg")]
+position = Vector2(-2, 276)

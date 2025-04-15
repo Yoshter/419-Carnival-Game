@@ -2,19 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dkgwmmrrv75lv" path="res://scenes/minigameScenes/skeeble/ball.gd" id="1_00n8o"]
 [ext_resource type="AudioStream" uid="uid://d4jpfmkwccd63" path="res://assets/allsound/SFX/Shooting range target hit.wav" id="2_dowmc"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_dowmc"]
+[ext_resource type="PackedScene" uid="uid://b3x7o4jn5saou" path="res://scenes/ball2.tscn" id="2_n83hr"]
 
 [node name="ball" type="Node2D"]
 script = ExtResource("1_00n8o")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-collision_layer = 3
-collision_mask = 3
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("CircleShape2D_dowmc")
+[node name="RigidBody2D" parent="." instance=ExtResource("2_n83hr")]
 
 [node name="successMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_dowmc")
