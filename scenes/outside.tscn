@@ -284,7 +284,7 @@ texture = ExtResource("9_tjkqt")
 [node name="Tree9" parent="Ending Adjustments" instance=ExtResource("15_ht1us")]
 
 [node name="Tree10" parent="Ending Adjustments" instance=ExtResource("15_ht1us")]
-transform = Transform3D(0.199471, -0.979904, 0, 0.979904, 0.199471, 0, 0, 0, 1, -5.86902, 1.62708, -1.07825)
+transform = Transform3D(0.199471, -0.979904, 0, 0.646031, 0.131507, 0.751897, -0.736787, -0.149982, 0.65928, -5.86902, 1.62708, -1.07825)
 visible = false
 
 [node name="PoleLeft" type="Sprite3D" parent="Ending Adjustments"]
