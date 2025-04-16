@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://5ntjc343fmyh"]
+
+[ext_resource type="Script" uid="uid://ottvxh3cuycr" path="res://scenes/interactables/exit_portal.gd" id="1_i4x6m"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fqmh7"]
+size = Vector3(3, 3, 3.1)
+
+[node name="exitPortal" type="Node3D"]
+script = ExtResource("1_i4x6m")
+
+[node name="portalArea" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="portalArea"]
+shape = SubResource("BoxShape3D_fqmh7")
+
+[connection signal="body_entered" from="portalArea" to="." method="_on_portal_area_body_entered"]
