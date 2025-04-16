@@ -32,6 +32,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if itemUpdateReq():
 		updateItems()
+	if ufoTicketBool and speedPitchTicketBool and towerTicketBool and rangeTicketBool and skeebleTicketBool:
+		DialogueGlobal.danEncCount = 9
 
 #Custom Functions
 func updateItems() -> void:
