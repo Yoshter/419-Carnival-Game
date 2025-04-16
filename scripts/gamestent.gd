@@ -7,6 +7,8 @@ var musicTime : float
 @onready var mainLight: OmniLight3D = $Lights/OmniLight3D4
 
 func _process(delta: float) -> void:
+	if PlayerGlobal.isBlackout:
+		carnivalMusic.stop()
 	if !janitorDoorwayVisible and GamesGlobal.checkBeatGame("ufo"):
 		janitorDoorwayBox.set_visible(true)
 		janitorDoorwayVisible = true

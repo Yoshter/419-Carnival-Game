@@ -1,13 +1,71 @@
-[gd_scene load_steps=7 format=3 uid="uid://ci06h665vgkgm"]
+[gd_scene load_steps=16 format=3 uid="uid://ci06h665vgkgm"]
 
 [ext_resource type="Script" uid="uid://dsi5lp3gm7lsp" path="res://scripts/minigameScripts/flyingsaucerplayer.gd" id="1_2lje1"]
 [ext_resource type="SpriteFrames" uid="uid://brhjbdmwuxl6a" path="res://assets/Space/Space Art/SaucerAnim.tres" id="2_8xdep"]
 [ext_resource type="Texture2D" uid="uid://dk5xpvc1u5imu" path="res://assets/art/Saucer_Sprite.png" id="2_t6htm"]
 [ext_resource type="AudioStream" uid="uid://d3xhwrtmwg01y" path="res://assets/allsound/SFX/Ufo Beam sound new.wav" id="3_mym1x"]
 [ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="4_agixg"]
+[ext_resource type="Texture2D" uid="uid://cobhxppte5tuc" path="res://assets/Space/Space Art/Explosion-Sheet.png" id="6_m3qie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_je1pn"]
 size = Vector2(38, 29)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50rq3"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(0, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlfen"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(450, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgido"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(900, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auw35"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(1350, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0re04"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(1800, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_025if"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(2250, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq5ck"]
+atlas = ExtResource("6_m3qie")
+region = Rect2(2700, 0, 450, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3k2m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50rq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlfen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgido")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auw35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0re04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_025if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq5ck")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 9.0
+}]
 
 [node name="ufoPlayer" type="CharacterBody2D"]
 script = ExtResource("1_2lje1")
@@ -24,6 +82,13 @@ speed_scale = 2.0
 position = Vector2(3, 4.5)
 shape = SubResource("RectangleShape2D_je1pn")
 
+[node name="animation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(3, 5)
+scale = Vector2(0.28875, 0.28875)
+sprite_frames = SubResource("SpriteFrames_a3k2m")
+animation = &"explosion"
+
 [node name="Ufo" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(3, 5)
@@ -39,7 +104,7 @@ stream = ExtResource("4_agixg")
 volume_db = -10.0
 
 [node name="deathTimer" type="Timer" parent="."]
-wait_time = 0.8
+wait_time = 1.6
 one_shot = true
 
 [connection signal="timeout" from="deathTimer" to="." method="_on_death_timer_timeout"]

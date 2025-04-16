@@ -6,6 +6,8 @@ const JUMP_VELOCITY = -400.0
 var isDead : bool = false
 
 @onready var beam: AnimatedSprite2D = $beam
+@onready var ufoSprite: Sprite2D = $Ufo
+@onready var animation: AnimatedSprite2D = $animation
 
 @onready var beamSound: AudioStreamPlayer = $beamSound
 @onready var deathSound: AudioStreamPlayer = $deathSound
@@ -41,6 +43,9 @@ func _physics_process(delta: float) -> void:
 #die function, game over that puts player at start menu
 func die():
 	isDead = true
+	ufoSprite.set_visible(false)
+	animation.set_visible(true)
+	animation.play("explosion")
 	deathTimer.start()
 	deathSound.play(0.0)
 	GamesGlobal.dead = true

@@ -5,9 +5,13 @@ extends Node3D
 var inArea : bool = false
 
 func _process(delta: float) -> void:
+	if ItemsGlobal.boardsBroken:
+		queue_free()
+	
 	if inArea:
 		if ItemsGlobal.checkItem("saw") and Input.is_action_pressed("ui_accept"):
-			boardBreak.play(0.0) #Not working
+			boardBreak.play(0.0) 
+			ItemsGlobal.boardsBroken = true
 			PlayerGlobal.setCanInteract(false)
 			boardBreakTimer.start()
 

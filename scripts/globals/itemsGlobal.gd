@@ -6,6 +6,8 @@ var showItemUI : bool = false
 
 var hasAllTickets : bool = false
 
+var boardsBroken : bool = false
+
 #don't want to write 'has' a million times so if false, you do NOT have the item
 var ufoTokenBool : bool = false
 var ufoTicketBool : bool = false
