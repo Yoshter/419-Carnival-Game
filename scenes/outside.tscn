@@ -272,7 +272,7 @@ visible = false
 nextScene = "res://scenes/gamestent.tscn"
 
 [node name="player2" parent="." instance=ExtResource("7_vdkxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.8572, 1.76218, -68.1418)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.55707, 0.496709, 28.4123)
 
 [node name="PlayerUI2" parent="player2" instance=ExtResource("6_skt0m")]
 
