@@ -22,10 +22,17 @@ func _ready() -> void:
 			shootingRangeTokenSprite.set_visible(true)
 		"skeeble":
 			skeebleTokenSprite.set_visible(true)
+			
 
 func _process(delta: float) -> void:
 	print(isFallen)
 	print("anything")
+	if tokenString == "tower" and ItemsGlobal.checkItem("towerToken"):
+		queue_free()
+	if tokenString == "shootingRange" and ItemsGlobal.checkItem("rangeToken"):
+		queue_free()
+	if tokenString == "skeeble" and ItemsGlobal.checkItem("skeebleToken"):
+		queue_free()
 	if !isFallen:
 		pickUpArea.set_visible(false)
 		pickUpArea.set_monitoring(false)

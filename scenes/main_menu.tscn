@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://d4a58tg3s4j0l"]
+[gd_scene load_steps=23 format=4 uid="uid://d4a58tg3s4j0l"]
 
 [ext_resource type="Script" uid="uid://b7vi0ytb4lhko" path="res://scenes/main_menu.gd" id="1_3ycmb"]
 [ext_resource type="Texture2D" uid="uid://cuhsx2pxdt7rw" path="res://assets/Textures/Bug Report Button.png" id="2_8ln24"]
@@ -77,6 +77,8 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgwnu"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -287,6 +289,22 @@ volume_db = 9.905
 [node name="StartDelay" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 1111.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_lgwnu")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="Bug Button" to="." method="_on_bug_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

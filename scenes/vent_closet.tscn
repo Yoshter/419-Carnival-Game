@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=13 format=3 uid="uid://drwyd1icj7mxy"]
 
 [ext_resource type="Material" uid="uid://wy55ycr3fm5i" path="res://assets/materials/Metal.material" id="1_eunuo"]
 [ext_resource type="Script" uid="uid://cfyvkwoqliq2k" path="res://scenes/vent_thud_trigger.gd" id="1_fgy16"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="1_tia7w"]
 [ext_resource type="AudioStream" uid="uid://hqrqpsoxr73m" path="res://assets/allsound/SFX/Vent thud.wav" id="2_eunuo"]
+[ext_resource type="PackedScene" uid="uid://dkb5b43kccdo5" path="res://scenes/secret_room.tscn" id="2_j82be"]
 [ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="2_taaqu"]
 [ext_resource type="PackedScene" uid="uid://cttfkisb511ib" path="res://scenes/interactables/map_item.tscn" id="3_iw1bk"]
 [ext_resource type="Material" uid="uid://c4lfocr3brs4w" path="res://assets/materials/woodTest.tres" id="4_88vl5"]
@@ -39,9 +40,9 @@ size = Vector3(34.1956, 4.60059, 4.72095)
 material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents/CSGBox3D2"]
-transform = Transform3D(1, 0, 2.08616e-07, 0, 1, 0, -2.08616e-07, 0, 1, 0.283002, -0.547335, 7.15256e-07)
+transform = Transform3D(1, 0, 2.81259e-07, 0, 1, 0, -2.81259e-07, 0, 1, -0.267167, -0.547335, 9.53674e-07)
 operation = 2
-size = Vector3(34.1753, 3.0924, 1.87329)
+size = Vector3(35.2756, 3.0924, 1.87329)
 material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="vents/CSGBox3D2"]
@@ -49,6 +50,9 @@ transform = Transform3D(1, 0, 6.89179e-08, 0, 1, 0, -6.89179e-08, 0, 1, -4.80087
 operation = 2
 size = Vector3(1.87525, 2.32636, 5.56653)
 material = ExtResource("1_eunuo")
+
+[node name="secretRoom" parent="vents/CSGBox3D2" instance=ExtResource("2_j82be")]
+transform = Transform3D(-0.0240483, 0, -0.999711, 0, 1, 0, 0.999711, 0, -0.0240483, -19.0986, -2.63272, -0.638544)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="vents"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0.278505, 0.960435, 1.21738e-08, -0.960435, 0.278505, -4.19819e-08, 1.78347, 7.45585, -37.0026)
