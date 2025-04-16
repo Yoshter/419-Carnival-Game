@@ -18,6 +18,9 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed("ui_accept"):
 			#print(DialogueGlobal.danEncCount)
 			match DialogueGlobal.danEncCount:
+				5:
+					if !PlayerGlobal.isBlackout:
+						PlayerGlobal.isBlackout = true
 				6:
 					mainDoorKey.set_visible(true)
 					mainDoorKey.monitoring = true
