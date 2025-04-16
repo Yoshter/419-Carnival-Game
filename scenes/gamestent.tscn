@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=36 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="12_8gcbl"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="13_4vgoj"]
+[ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="13_ux0jv"]
 [ext_resource type="PackedScene" uid="uid://drmxrykytqx0" path="res://scenes/table_no_light.tscn" id="14_joq6e"]
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
@@ -31,6 +32,7 @@
 [ext_resource type="PackedScene" uid="uid://5ntjc343fmyh" path="res://scenes/interactables/exit_portal.tscn" id="30_886bn"]
 [ext_resource type="PackedScene" uid="uid://hfs1d8gq404l" path="res://scenes/interactables/skeeble_cabinet.tscn" id="30_j7vy6"]
 [ext_resource type="PackedScene" uid="uid://bjo2allw3y0sd" path="res://scenes/interactables/Skeeble Cabinet Good.tscn" id="31_886bn"]
+[ext_resource type="Texture2D" uid="uid://qu8hudgpyhf7" path="res://assets/Textures/CarnivalSign.png" id="32_6j3e0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -226,6 +228,12 @@ size = Vector3(31.0439, 3.18518, 1.26282)
 [node name="hallway" parent="ground" instance=ExtResource("6_m4csp")]
 transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.61359, -30.3189)
 
+[node name="CSGBox3D" type="CSGBox3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4492, 1.63861, -3.31048)
+material_override = ExtResource("13_ux0jv")
+use_collision = true
+size = Vector3(1, 4.27722, 3.15332)
+
 [node name="shootingRange" parent="." instance=ExtResource("8_21i7n")]
 transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189, -11.8779, -0.0716987, 76.9288)
 
@@ -407,3 +415,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0825, 1.57094, -2.91931)
 
 [node name="Node3D2" parent="." instance=ExtResource("31_886bn")]
 transform = Transform3D(2.53957, 0, 0.153507, 0, 2.54421, 0, -0.153507, 0, 2.53957, -33.7006, 0.40309, 2.45683)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.732757, 0, 0.680491, 0, 1, 0, -0.680491, 0, -0.732757, -15.4345, 5.95593, 5.47944)
+pixel_size = 0.005
+alpha_cut = 3
+texture = ExtResource("32_6j3e0")
