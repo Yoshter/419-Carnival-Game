@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://d4a58tg3s4j0l"]
+[gd_scene load_steps=50 format=4 uid="uid://d4a58tg3s4j0l"]
 
 [ext_resource type="Script" uid="uid://b7vi0ytb4lhko" path="res://scenes/main_menu.gd" id="1_3ycmb"]
 [ext_resource type="Texture2D" uid="uid://cuhsx2pxdt7rw" path="res://assets/Textures/Bug Report Button.png" id="2_8ln24"]
@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://2xal2nrt8ey8" path="res://assets/allsound/SFX/Mainmenu Button hover sound.wav" id="10_lgwnu"]
 [ext_resource type="AudioStream" uid="uid://bf7r1ifmffkcm" path="res://assets/allsound/SFX/Mainmenu Button click sound.wav" id="11_flqon"]
 [ext_resource type="Texture2D" uid="uid://phvmuwdqfrhv" path="res://assets/Sprite Sheets/Toast_Games_Final-Sheet.png" id="12_flqon"]
+[ext_resource type="AudioStream" uid="uid://da0ry1haukb0l" path="res://assets/allsound/SFX/Toastergames Jingle.wav" id="13_rcqid"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tbmy8"]
 texture = ExtResource("2_oa1go")
@@ -254,7 +255,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"popUp",
-"speed": 20.0
+"speed": 30.0
 }]
 
 [node name="Main Menu" type="Control"]
@@ -453,7 +454,6 @@ vertical_alignment = 1
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_jk1qb")
 volume_db = 8.0
-autoplay = true
 
 [node name="Button Hover" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_lgwnu")
@@ -520,6 +520,9 @@ layout_mode = 0
 offset_right = 1928.0
 offset_bottom = 1153.0
 color = Color(0, 0, 0, 1)
+
+[node name="Jingle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_rcqid")
 
 [connection signal="pressed" from="Bug Button" to="." method="_on_bug_button_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

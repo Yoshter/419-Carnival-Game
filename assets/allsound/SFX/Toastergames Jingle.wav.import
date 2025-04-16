@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://da0ry1haukb0l"
+path="res://.godot/imported/Toastergames Jingle.wav-e15490235cb592fa195c7da4614abb7c.sample"
+
+[deps]
+
+source_file="res://assets/allsound/SFX/Toastergames Jingle.wav"
+dest_files=["res://.godot/imported/Toastergames Jingle.wav-e15490235cb592fa195c7da4614abb7c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -8,6 +8,8 @@ var introSeqNum : int = 1
 @onready var introScreen: Control = $introScreen
 @onready var toasterLabel: Label = $introScreen/toasterLabel
 @onready var fadeRect: ColorRect = $introScreen/fadeRect
+@onready var jingle = $Jingle
+@onready var music = $Music
 
 
 # Called when the node enters the scene tree for the first time.
@@ -54,9 +56,12 @@ func _on_intro_timer_timeout() -> void:
 		1:
 			toasterAnim.set_visible(true)
 			toasterAnim.play("popUp")
+			jingle.play(0.0)
 			introSeqNum += 1
 		2:
 			toasterLabel.set_visible(true)
 			introSeqNum += 1
 		3:
 			introScreen.set_visible(false)
+			if !music.playing:
+				music.play(0.0)
