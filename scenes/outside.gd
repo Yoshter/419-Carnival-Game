@@ -1,0 +1,18 @@
+extends Node3D
+
+@onready var poleCollision1: StaticBody3D = $poleCollision
+@onready var pole: Sprite3D = $"Ending Adjustments/pole"
+@onready var tree_9: Node3D = $"Ending Adjustments/Tree9"
+@onready var tree_10: Node3D = $"Ending Adjustments/Tree10"
+@onready var poleLeft: Sprite3D = $"Ending Adjustments/PoleLeft"
+@onready var poleRight: Sprite3D = $"Ending Adjustments/PoleRight"
+var isInEndingSequence : bool = false
+
+func _process(delta: float) -> void:
+	if PlayerGlobal.isEndingSequence and !isInEndingSequence:
+		isInEndingSequence = true
+		pole.set_visible(false)
+		tree_9.set_visible(false)
+		tree_10.set_visible(true)
+		poleLeft.set_visible(true)
+		poleRight.set_visible(true)

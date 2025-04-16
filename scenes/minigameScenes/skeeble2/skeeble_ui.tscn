@@ -37,6 +37,7 @@ offset_bottom = 127.0
 color = Color(0, 1, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="greenRects"]
+layout_mode = 0
 offset_left = -131.0
 offset_top = 2.0
 offset_right = -6.0
@@ -44,6 +45,7 @@ offset_bottom = 127.0
 color = Color(0, 1, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="greenRects"]
+layout_mode = 0
 offset_left = 76.0
 offset_top = 2.0
 offset_right = 201.0
@@ -51,6 +53,7 @@ offset_bottom = 127.0
 color = Color(0, 1, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="greenRects"]
+layout_mode = 0
 offset_left = 283.0
 offset_top = 2.0
 offset_right = 408.0
@@ -58,6 +61,7 @@ offset_bottom = 127.0
 color = Color(0, 1, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="greenRects"]
+layout_mode = 0
 offset_left = -5.0
 offset_top = 2.0
 offset_right = 75.0

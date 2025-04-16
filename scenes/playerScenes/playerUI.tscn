@@ -589,6 +589,18 @@ offset_right = 976.0
 offset_bottom = 450.0
 color = Color(1, 1, 0.745098, 1)
 
+[node name="Label" type="Label" parent="PauseMenu/mapMenu"]
+layout_mode = 0
+offset_left = 507.222
+offset_top = 201.667
+offset_right = 877.222
+offset_bottom = 394.667
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 192
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="mapMissingSprite" type="Sprite2D" parent="PauseMenu/mapMenu"]
 visible = false
 position = Vector2(673, 291)
@@ -612,18 +624,6 @@ icon = ExtResource("5_mnosj")
 flat = true
 icon_alignment = 1
 expand_icon = true
-
-[node name="Label" type="Label" parent="PauseMenu/mapMenu"]
-layout_mode = 0
-offset_left = 507.222
-offset_top = 201.667
-offset_right = 877.222
-offset_bottom = 367.667
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 192
-text = "???"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="objectiveMenu" type="Control" parent="PauseMenu"]
 visible = false
@@ -787,8 +787,8 @@ stream = ExtResource("7_luwil")
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]

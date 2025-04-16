@@ -1,7 +1,8 @@
-[gd_scene load_steps=27 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=28 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
+[ext_resource type="Script" uid="uid://djebpgb50v7bq" path="res://scenes/outside.gd" id="1_xq4d2"]
 [ext_resource type="PackedScene" uid="uid://dahmluncw00so" path="res://scenes/carnsign.tscn" id="3_w4g2w"]
 [ext_resource type="PackedScene" uid="uid://bwqm2stqsp6y4" path="res://scenes/sign.tscn" id="4_ijg3w"]
 [ext_resource type="PackedScene" uid="uid://bhr4dtuwreu5a" path="res://scenes/portal.tscn" id="5_40moq"]
@@ -61,6 +62,7 @@ uv1_triplanar = true
 uv1_triplanar_sharpness = 144.89
 
 [node name="outside" type="Node3D"]
+script = ExtResource("1_xq4d2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
@@ -124,18 +126,18 @@ material_override = ExtResource("1_tdisj")
 use_collision = true
 size = Vector3(38.6479, 1.66162, 54.8079)
 
+[node name="poleCollision" type="StaticBody3D" parent="."]
+transform = Transform3D(0.994403, 0, 0.105657, 0, 1, 0, -0.105657, 0, 0.994403, -12.5373, 6.48188, -73.0799)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="poleCollision"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57986, 0.891394, 0.61557)
+shape = SubResource("BoxShape3D_wp0as")
+
 [node name="carCollision" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.816931, 34.2321)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="carCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.47339, 2.0816, 0.52063)
-shape = SubResource("BoxShape3D_wp0as")
-
-[node name="poleCollision" type="StaticBody3D" parent="carCollision"]
-transform = Transform3D(0.994403, 0, 0.105657, 0, 1, 0, -0.105657, 0, 0.994403, -12.5373, 5.66495, -107.312)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="carCollision/poleCollision"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57986, 0.891394, 0.61557)
 shape = SubResource("BoxShape3D_wp0as")
 
 [node name="sprites" type="Node3D" parent="."]
@@ -274,26 +276,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67717, 4.79474, -55.2784)
 
 [node name="pole" type="Sprite3D" parent="Ending Adjustments"]
 transform = Transform3D(0.553138, -0.00933539, 0.103329, 0.00854456, 0.604337, 0.00159616, -0.0591593, 1.40274e-11, 0.966345, -13.4522, 1.00865, -16.4582)
-visible = false
 pixel_size = 0.018
 alpha_cut = 3
 texture_filter = 0
 texture = ExtResource("9_tjkqt")
 
 [node name="Tree9" parent="Ending Adjustments" instance=ExtResource("15_ht1us")]
-visible = false
 
 [node name="Tree10" parent="Ending Adjustments" instance=ExtResource("15_ht1us")]
 transform = Transform3D(0.199471, -0.979904, 0, 0.979904, 0.199471, 0, 0, 0, 1, -5.86902, 1.62708, -1.07825)
+visible = false
 
 [node name="PoleLeft" type="Sprite3D" parent="Ending Adjustments"]
 transform = Transform3D(0.597136, 0, 0, 0, 0.930245, 0, 0, 0, 1, -15.6355, 0.949408, -15.9526)
+visible = false
 alpha_cut = 3
 texture_filter = 0
 texture = ExtResource("11_xq4d2")
 
 [node name="PoleRight" type="Sprite3D" parent="Ending Adjustments"]
 transform = Transform3D(0.543287, 0, 0.122609, 0, 0.930245, 0, -0.0701461, 0, 0.949618, -10.4561, 0.949408, -16.6205)
+visible = false
 alpha_cut = 3
 texture_filter = 0
 texture = ExtResource("12_ni2yb")
