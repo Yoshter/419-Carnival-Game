@@ -1,42 +1,50 @@
-[gd_scene load_steps=16 format=3 uid="uid://ci06h665vgkgm"]
+[gd_scene load_steps=18 format=3 uid="uid://ci06h665vgkgm"]
 
 [ext_resource type="Script" uid="uid://dsi5lp3gm7lsp" path="res://scripts/minigameScripts/flyingsaucerplayer.gd" id="1_2lje1"]
 [ext_resource type="SpriteFrames" uid="uid://brhjbdmwuxl6a" path="res://assets/Space/Space Art/SaucerAnim.tres" id="2_8xdep"]
 [ext_resource type="Texture2D" uid="uid://dk5xpvc1u5imu" path="res://assets/art/Saucer_Sprite.png" id="2_t6htm"]
+[ext_resource type="Texture2D" uid="uid://ccwh0sr8qih3a" path="res://assets/Space/Space Art/Explosion-Sheet-New.png" id="3_m3qie"]
 [ext_resource type="AudioStream" uid="uid://d3xhwrtmwg01y" path="res://assets/allsound/SFX/Ufo Beam sound new.wav" id="3_mym1x"]
 [ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="4_agixg"]
-[ext_resource type="Texture2D" uid="uid://cobhxppte5tuc" path="res://assets/Space/Space Art/Explosion-Sheet.png" id="6_m3qie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_je1pn"]
 size = Vector2(38, 29)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_50rq3"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(0, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xlfen"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(450, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xgido"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(900, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_auw35"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(1350, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0re04"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(1800, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_025if"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(2250, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nq5ck"]
-atlas = ExtResource("6_m3qie")
+atlas = ExtResource("3_m3qie")
 region = Rect2(2700, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3k2m"]
+atlas = ExtResource("3_m3qie")
+region = Rect2(3150, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4nhfa"]
+atlas = ExtResource("3_m3qie")
+region = Rect2(3600, 0, 450, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3k2m"]
 animations = [{
@@ -61,6 +69,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nq5ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3k2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4nhfa")
 }],
 "loop": false,
 "name": &"explosion",

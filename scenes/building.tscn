@@ -1,38 +1,46 @@
-[gd_scene load_steps=17 format=3 uid="uid://duxrh0oc2gdr"]
+[gd_scene load_steps=19 format=3 uid="uid://duxrh0oc2gdr"]
 
 [ext_resource type="Texture2D" uid="uid://dywbrd7vkml87" path="res://assets/art/building.png" id="1_2ed7c"]
 [ext_resource type="Script" uid="uid://pxddu7g8s3wb" path="res://scripts/building.gd" id="1_b4mm2"]
+[ext_resource type="Texture2D" uid="uid://ccwh0sr8qih3a" path="res://assets/Space/Space Art/Explosion-Sheet-New.png" id="2_lm2ef"]
 [ext_resource type="AudioStream" uid="uid://dsl8s0amhivyt" path="res://assets/allsound/SFX/UFO score point.wav" id="3_8lrrx"]
 [ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="4_rla3o"]
-[ext_resource type="Texture2D" uid="uid://cobhxppte5tuc" path="res://assets/Space/Space Art/Explosion-Sheet.png" id="5_lm2ef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5uvq"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(0, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gof7m"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(450, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g3pb6"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(900, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8lqx8"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(1350, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iwd2d"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(1800, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7huw0"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(2250, 0, 450, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_blq7k"]
-atlas = ExtResource("5_lm2ef")
+atlas = ExtResource("2_lm2ef")
 region = Rect2(2700, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm462"]
+atlas = ExtResource("2_lm2ef")
+region = Rect2(3150, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc16f"]
+atlas = ExtResource("2_lm2ef")
+region = Rect2(3600, 0, 450, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nm462"]
 animations = [{
@@ -57,6 +65,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_blq7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm462")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc16f")
 }],
 "loop": false,
 "name": &"explosion",
@@ -88,6 +102,8 @@ position = Vector2(0.666687, 6.66666)
 scale = Vector2(0.341667, 0.341667)
 sprite_frames = SubResource("SpriteFrames_nm462")
 animation = &"explosion"
+frame = 8
+frame_progress = 1.0
 
 [node name="Building" type="Sprite2D" parent="."]
 position = Vector2(5, 1)

@@ -3,9 +3,10 @@ extends Node3D
 @onready var boardBreakTimer: Timer = $boardBreakTimer
 
 var inArea : bool = false
+var isBroken: bool = false
 
 func _process(delta: float) -> void:
-	if ItemsGlobal.boardsBroken:
+	if ItemsGlobal.boardsBroken and isBroken:
 		queue_free()
 	
 	if inArea:
@@ -28,4 +29,5 @@ func _on_board_area_body_exited(body: Node3D) -> void:
 		inArea = false
 
 func _on_board_break_timer_timeout() -> void:
+	isBroken = true
 	queue_free()

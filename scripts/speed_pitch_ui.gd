@@ -65,7 +65,7 @@ func _process(delta: float) -> void:
 		hit = false
 		startButton.set_visible(false)
 		vertBarNode.set_visible(true)
-		vertCharge += pow(.72 + delta, 2)
+		vertCharge += pow(.90 + delta, 2)
 		vertBar.value = vertCharge
 		if Input.is_action_pressed("ui_accept"):
 			if vertCharge >= safeRangeMin and vertCharge <= safeRangeMax:
@@ -92,7 +92,7 @@ func _process(delta: float) -> void:
 		hit = null
 		startButton.set_visible(false)
 		horBarNode.set_visible(true)
-		horCharge += pow(.72 + delta, 2)
+		horCharge += pow(.90 + delta, 2)
 		horBar.value = horCharge
 		if Input.is_action_just_pressed("ui_accept") and timeSinceLastThrow > 0.01:
 			if horCharge >= safeRangeMin and horCharge <= safeRangeMax:
