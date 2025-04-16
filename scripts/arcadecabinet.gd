@@ -65,10 +65,10 @@ func _process(delta: float) -> void:
 	if (canReplaceJoystick and Input.is_action_pressed("ui_accept")) or GamesGlobal.towerHasJoystick:
 			hasJoyStick = true
 			joystickSprite.set_visible(true)
-			PlayerGlobal.setCanInteract(false)
 			joystickFixArea.monitorable = false
 			joystickFixArea.monitoring = false
 			gamePortal.monitoring = true
+			
 			GamesGlobal.towerHasJoystick = true
 	
 	if canPlay and game == "ufo":
