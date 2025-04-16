@@ -217,7 +217,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"center",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -261,7 +261,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"innerLeft",
-"speed": 5.0
+"speed": 14.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -308,7 +308,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"outerLeft",
-"speed": 5.0
+"speed": 14.0
 }]
 
 [node name="skeebleUI" type="Control"]
@@ -423,7 +423,9 @@ text = "PRIZE"
 
 [node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ar2wm")
-animation = &"center"
+animation = &"outerLeft"
+frame = 13
+frame_progress = 1.0
 
 [connection signal="pressed" from="nextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="retryMenu/retryButton" to="." method="_on_retry_button_pressed"]

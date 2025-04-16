@@ -50,7 +50,7 @@ onCeiling = false
 
 [node name="TowerCombatTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_iy05s")
-volume_db = -2.825
+volume_db = -10.0
 autoplay = true
 
 [node name="Cellarbackground3" type="Sprite2D" parent="."]

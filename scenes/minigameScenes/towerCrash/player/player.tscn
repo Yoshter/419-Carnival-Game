@@ -254,11 +254,11 @@ disabled = true
 
 [node name="jumpAudio" type="AudioStreamPlayer2D" parent="audioBox"]
 stream = ExtResource("5_hoaqd")
-volume_db = -4.0
+volume_db = -15.0
 
 [node name="spinAudio" type="AudioStreamPlayer2D" parent="audioBox"]
 stream = ExtResource("6_hx30n")
-volume_db = -12.0
+volume_db = -18.0
 pitch_scale = 0.8
 
 [node name="fallAudio" type="AudioStreamPlayer2D" parent="audioBox"]
