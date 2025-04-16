@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 				"skeeble":
 					skeebleTokenSprite.set_visible(false)
 					skeeblePickUpSprite.set_visible(true)
-		print(isFallen)
+		#print(isFallen)
 		if inArea:
 			#print("whoopy")
 			if Input.is_action_pressed("ui_accept"):

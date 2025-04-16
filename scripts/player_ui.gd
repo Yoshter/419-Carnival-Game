@@ -53,6 +53,7 @@ var hasGun : bool = false
 @onready var objectiveMenu: Control = $PauseMenu/objectiveMenu
 @onready var objectiveText: Label = $PauseMenu/objectiveMenu/objectiveText
 @onready var timerText: Label = $shootingRangeMenu/timerText
+@onready var danEncNumLabel: Label = $danEncNumLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,6 +62,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	delay += delta
+	danEncNumLabel.set_text("Dan Enc Num: " + str(DialogueGlobal.danEncCount))
 	
 	if PlayerGlobal.getCanInteract():
 		interactMenu.set_visible(true)
@@ -115,23 +117,26 @@ func _process(delta: float) -> void:
 			if dialogueTimer.is_stopped():
 				dialogueTimer.start()
 		else:
-			dialogueCount = 0
+			print("dialogue count : " + str(dialogueCount))
 			dialogueMenu.set_visible(false)
 			if DialogueGlobal.returnGivingItem(PlayerGlobal.checkIsTalkingTo()):
 				ItemsGlobal.giveItem(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2))
 				PlayerGlobal.setIsTalking(false)
+				dialogueCount = 0
 				PlayerGlobal.inUI = true
 			else:
 				getItemMenu.set_visible(false)
 				ItemsGlobal.showItemUI = false
 				PlayerGlobal.setIsTalking(false)
 				PlayerGlobal.inUI = false
+				dialogueCount = 0
 			#DialogueGlobal.addToEncCount(PlayerGlobal.checkIsTalkingTo())
 	
 	if PlayerGlobal.inUI and Input.is_action_pressed("interact"):
 		PlayerGlobal.inUI = false
 		getItemMenu.set_visible(false)
 		ItemsGlobal.showItemUI = false
+		dialogueCount = 0
 	#print(ItemsGlobal.showItemUI)
 	if ItemsGlobal.showItemUI:
 		getItemMenu.set_visible(true)
@@ -248,12 +253,17 @@ func _on_objective_pressed() -> void:
 			objectiveText.set_text("Find the rest of the tokens.")
 		9: #all tickets collected.
 			objectiveText.set_text("Congratulations on finding all the tickets! Go talk to the carnie to recieve your prize.")
+		10:
+			objectiveText.set_text("Go fix the power!")
+		11:
+			objectiveText.set_text("You fixed the power, get outta there!!!")
+		12:
+			objectiveText.set_text(str(DialogueGlobal.objEncCount) + ", " + str(DialogueGlobal.danEncCount))
 	print("IN MENU: " + str(DialogueGlobal.objEncCount))
 	objectiveMenu.set_visible(true)
 
 func _on_quit_obj_pressed() -> void:
 	objectiveMenu.set_visible(false)
-
 
 func _on_bug_report_pressed():
 	$OpenSFX.play()

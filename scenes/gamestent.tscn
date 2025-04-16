@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=32 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -26,8 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c0heotbu56vd2" path="res://assets/SpeedPitchArt/Speed Pitch Cabinet.tscn" id="22_7ucd1"]
 [ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="23_b42cu"]
 [ext_resource type="Texture2D" uid="uid://hnbffjarvb5w" path="res://assets/SpeedPitchArt/Baseball.png" id="24_dub5i"]
-[ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="26_yxr4s"]
-[ext_resource type="Texture2D" uid="uid://0oqg46rturns" path="res://assets/art/locksprite.png" id="27_d20k2"]
+[ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="29_j7vy6"]
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="29_n1i75"]
 [ext_resource type="PackedScene" uid="uid://hfs1d8gq404l" path="res://scenes/interactables/skeeble_cabinet.tscn" id="30_j7vy6"]
 
@@ -125,6 +124,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2548, 2.11719, -0.716921)
 material_override = ExtResource("3_fh77p")
 use_collision = true
 size = Vector3(1, 5.23438, 34.353)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105048, -0.206693, -2.66519)
+material_override = ExtResource("3_fh77p")
+operation = 2
+use_collision = true
+size = Vector3(1.71533, 3.30396, 2.74194)
 
 [node name="mainTentCyl" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
@@ -354,21 +360,6 @@ texture = ExtResource("24_dub5i")
 transform = Transform3D(0.283802, -0.939216, -0.193212, 0.847803, 0.339916, -0.407047, 0.44798, -0.0482851, 0.892739, 5.95063, -2.25636, 2.29073)
 texture = ExtResource("24_dub5i")
 
-[node name="ExitDoor" type="CSGBox3D" parent="."]
-transform = Transform3D(0.999187, 0, 0, 0, 1.16364, 0, 0, 0, 1.06756, 9.69832, 1.99509, -3.32433)
-material_override = ExtResource("26_yxr4s")
-size = Vector3(0.388611, 2.83159, 3.24994)
-material = ExtResource("26_yxr4s")
-
-[node name="Sprite3D" type="Sprite3D" parent="ExitDoor"]
-transform = Transform3D(-2.23517e-08, 0, 0.525, 1.49012e-08, 0.557853, 0, -0.525, 0, -6.70552e-08, -0.292068, 0.0134835, -1.66893e-06)
-texture = ExtResource("27_d20k2")
-
-[node name="Exit" type="Label3D" parent="ExitDoor"]
-transform = Transform3D(6.9906e-10, -2.08786e-07, -3.69595, -9.60427e-09, 3.17363, 5.12227e-08, 3.45925, 2.26821e-08, 1.81456e-07, 0.0541, 1.83823, -0.00397325)
-modulate = Color(1, 0, 0, 1)
-text = "EXIT"
-
 [node name="Box" parent="." instance=ExtResource("23_b42cu")]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.98615, 1.12983, 7.36549)
 
@@ -397,3 +388,7 @@ isFallen = true
 [node name="overworldToken2" parent="tokens" instance=ExtResource("29_n1i75")]
 transform = Transform3D(0.949994, 0, 0.312269, 0, 1, 0, -0.312269, 0, 0.949994, -20.1993, 4.21868, -19.7464)
 tokenString = "skeeble"
+
+[node name="janitorDoor" parent="." instance=ExtResource("29_j7vy6")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.52007, 0.877352, -3.31965)
+doorType = "mainDoor"

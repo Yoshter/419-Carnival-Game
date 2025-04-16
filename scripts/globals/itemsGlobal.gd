@@ -4,24 +4,26 @@ extends Node
 var needsItemUpdate : bool = false
 var showItemUI : bool = false
 
+var hasAllTickets : bool = false
+
 #don't want to write 'has' a million times so if false, you do NOT have the item
 var ufoTokenBool : bool = false
-var ufoTicketBool : bool = false
+var ufoTicketBool : bool = true
 var speedPitchTokenBool : bool = false
-var speedPitchTicketBool : bool = false
+var speedPitchTicketBool : bool = true
 var skeebleTokenBool : bool = false
-var skeebleTicketBool : bool = false
+var skeebleTicketBool : bool = true
 var towerTokenBool : bool = false
-var towerTicketBool : bool = false
+var towerTicketBool : bool = true
 var rangeTokenBool : bool = false
-var rangeTicketBool : bool = false
+var rangeTicketBool : bool = true
 
 var funPassLevel2 : bool = false
 var funPassLevel3 : bool = false
-var saw : bool = false
+var saw : bool = true
 var bbgun : bool = false
 var joystick : bool = false
-var janitorsKey : bool = false
+var janitorsKey : bool = true
 var mainDoorKey : bool = false
 
 var map : bool = false
@@ -34,9 +36,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if itemUpdateReq():
 		updateItems()
-	if ufoTicketBool and speedPitchTicketBool and towerTicketBool and rangeTicketBool and skeebleTicketBool:
-		DialogueGlobal.danEncCount = 9
-		DialogueGlobal.objEncCount = 9
+	if !hasAllTickets and ufoTicketBool and speedPitchTicketBool and towerTicketBool and rangeTicketBool and skeebleTicketBool:
+		DialogueGlobal.danEncCount += 5
+		DialogueGlobal.objEncCount += 6
+		hasAllTickets = true
+		print("ITEMSGLOBAL" + str(DialogueGlobal.danEncCount))
 
 #Custom Functions
 func updateItems() -> void:

@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfrvinb5rmhlm"]
+[gd_scene load_steps=7 format=3 uid="uid://cfrvinb5rmhlm"]
 
 [ext_resource type="Texture2D" uid="uid://bqyisb76l70ap" path="res://assets/art/carnie.png" id="1_a7ifa"]
 [ext_resource type="Script" uid="uid://3gh8gkilwvfi" path="res://scripts/NPCscripts/carnie.gd" id="1_l17di"]
+[ext_resource type="PackedScene" uid="uid://qse0gjwqc2le" path="res://scenes/interactables/main_door_key.tscn" id="3_stmyg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tqvl1"]
 atlas = ExtResource("1_a7ifa")
@@ -41,6 +42,10 @@ light_energy = 9.192
 spot_range = 5.31309
 spot_attenuation = 1.46
 spot_angle = 22.137
+
+[node name="mainDoorKeyPickUpArea" parent="." instance=ExtResource("3_stmyg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42303, -1.7065, 2.91847)
+visible = false
 
 [connection signal="body_entered" from="talkBox" to="." method="_on_talk_box_body_entered"]
 [connection signal="body_exited" from="talkBox" to="." method="_on_talk_box_body_exited"]

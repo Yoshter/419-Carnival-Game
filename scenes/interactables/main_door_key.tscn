@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://qse0gjwqc2le"]
+
+[ext_resource type="Script" uid="uid://4dgxgohn18g1" path="res://scenes/interactables/main_door_key.gd" id="1_6f8oc"]
+[ext_resource type="Texture2D" uid="uid://npqfokrsikot" path="res://assets/UI/TKey.png" id="1_tjqpi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hgye0"]
+size = Vector3(2.3, 1.8, 2)
+
+[node name="mainDoorKeyPickUpArea" type="Area3D"]
+monitoring = false
+script = ExtResource("1_6f8oc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -0.4, 1.4, 1.3)
+shape = SubResource("BoxShape3D_hgye0")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0.6, -0.9)
+texture_filter = 0
+texture = ExtResource("1_tjqpi")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

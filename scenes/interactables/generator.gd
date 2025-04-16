@@ -18,15 +18,20 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 		inArea = false
 
 func fix() -> void:
+	print("hello")
 	PlayerGlobal.isBlackout = false
 	PlayerGlobal.setCanInteract(false)
-	print(DialogueGlobal.danEncCount)
-	if DialogueGlobal.danEncCount == 9 and DialogueGlobal.objEncCount == 9:
-		DialogueGlobal.danEncCount = 10
-		DialogueGlobal.objEncCount = 10
-		print(DialogueGlobal.danEncCount)
+	print("fix/ should be 9" + str(DialogueGlobal.danEncCount))
+	if DialogueGlobal.danEncCount == 5 and DialogueGlobal.objEncCount == 6:
+			DialogueGlobal.addToEncCount("dan")
+			DialogueGlobal.objEncCount +=1
+			print(DialogueGlobal.danEncCount)
+			print("should be 10"+ str(DialogueGlobal.danEncCount))
+			print(DialogueGlobal.objEncCount)
+			print("should be 11"+ str(DialogueGlobal.objEncCount))
 	else:
-		print("fail" + str(DialogueGlobal.danEncCount))
-		#print("fail" + str(DialogueGlobal.danEncCount))
+			pass
+			#print("fail" + str(DialogueGlobal.danEncCount))
+			#print("fail" + str(DialogueGlobal.danEncCount))
 	
 	

@@ -805,6 +805,13 @@ stream = ExtResource("6_4kfvc")
 [node name="TabSwitch SFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_luwil")
 
+[node name="danEncNumLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 165.0
+theme_override_font_sizes/font_size = 96
+text = "Dan Enc Num: "
+
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
 [connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]

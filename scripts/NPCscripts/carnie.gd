@@ -9,13 +9,14 @@ var carnie1SpokenTo : bool = false
 var carnie2SpokenTo : bool = false
 var carnie3SpokenTo : bool = false
 var carnie4SpokenTo : bool = false
-var carnie9SpokenTo : bool = false
+var carnie7SpokenTo : bool = false
+@onready var mainDoorKey: Node3D = $mainDoorKeyPickUpArea
 
 func _process(delta: float) -> void:
 	if inArea:
 		
 		if Input.is_action_pressed("ui_accept"):
-			print(DialogueGlobal.danEncCount)
+			#print(DialogueGlobal.danEncCount)
 			match DialogueGlobal.objEncCount:
 				1:
 					if !carnie1SpokenTo:
@@ -29,13 +30,14 @@ func _process(delta: float) -> void:
 					if !carnie3SpokenTo:
 						DialogueGlobal.objEncCount += 1
 						carnie3SpokenTo = true
-				9:
-					if !carnie9SpokenTo:
-						carnie9SpokenTo = true
-						PlayerGlobal.isBlackout = true
+				6:
+					if !carnie7SpokenTo:
+						mainDoorKey.set_visible(true)
+						mainDoorKey.monitoring = true
+						mainDoorKey.monitorable = true
+						carnie7SpokenTo = true
 				_:
 					pass
-			print(DialogueGlobal.danEncCount)
 	if PlayerGlobal.isBlackout:
 		talkLight.set_visible(false)
 
@@ -55,6 +57,7 @@ func _on_talk_box_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		inArea = false
 		PlayerGlobal.setCanInteract(false)
+		PlayerGlobal.inUI = false
 		ItemsGlobal.showItemUI = false
 		talkLight.set_visible(false)
 		body.canTalk = false
