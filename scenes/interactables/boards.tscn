@@ -34,5 +34,10 @@ shape = SubResource("BoxShape3D_vg8vy")
 [node name="boardBreakSound" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_vg8vy")
 
+[node name="boardBreakTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="body_entered" from="boardArea" to="." method="_on_board_area_body_entered"]
 [connection signal="body_exited" from="boardArea" to="." method="_on_board_area_body_exited"]
+[connection signal="timeout" from="boardBreakTimer" to="." method="_on_board_break_timer_timeout"]
