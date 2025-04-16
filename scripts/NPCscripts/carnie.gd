@@ -2,9 +2,11 @@ extends Node3D
 var wantsToTalk
 @onready var talkBox : Area3D = $talkBox
 @onready var talkLight: SpotLight3D = $talkLight
+@onready var powerDown = $"../PowerDown"
 var hasTalkedTo : bool = false
 var bodySafe : Node3D
 var inArea : bool = false
+var isPowerDown : bool = false
 var carnie1SpokenTo : bool = false
 var carnie2SpokenTo : bool = false
 var carnie3SpokenTo : bool = false
@@ -22,6 +24,9 @@ func _process(delta: float) -> void:
 				5:
 					if !PlayerGlobal.isBlackout:
 						PlayerGlobal.isBlackout = true
+						if !isPowerDown:
+							isPowerDown = true
+							powerDown.play(0.0)
 				6:
 					mainDoorKey.set_visible(true)
 					mainDoorKey.monitoring = true

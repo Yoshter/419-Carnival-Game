@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=37 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://hfs1d8gq404l" path="res://scenes/interactables/skeeble_cabinet.tscn" id="30_j7vy6"]
 [ext_resource type="PackedScene" uid="uid://bjo2allw3y0sd" path="res://scenes/interactables/Skeeble Cabinet Good.tscn" id="31_886bn"]
 [ext_resource type="Texture2D" uid="uid://qu8hudgpyhf7" path="res://assets/Textures/CarnivalSign.png" id="32_6j3e0"]
+[ext_resource type="AudioStream" uid="uid://cx8ow2sid860k" path="res://assets/allsound/SFX/PowerDown sfx.wav" id="34_y3mcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -421,3 +422,6 @@ transform = Transform3D(-0.732757, 0, 0.680491, 0, 1, 0, -0.680491, 0, -0.732757
 pixel_size = 0.005
 alpha_cut = 3
 texture = ExtResource("32_6j3e0")
+
+[node name="PowerDown" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("34_y3mcc")

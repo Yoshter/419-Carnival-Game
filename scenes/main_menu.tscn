@@ -496,7 +496,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="toasterAnim" type="AnimatedSprite2D" parent="introScreen"]
 visible = false
-position = Vector2(960, 581)
+position = Vector2(960, 454)
 sprite_frames = SubResource("SpriteFrames_q13xq")
 animation = &"popUp"
 
@@ -504,9 +504,9 @@ animation = &"popUp"
 visible = false
 layout_mode = 0
 offset_left = 577.0
-offset_top = 780.0
+offset_top = 653.0
 offset_right = 1303.0
-offset_bottom = 877.0
+offset_bottom = 750.0
 theme_override_font_sizes/font_size = 96
 text = "TOASTER GAMES"
 
