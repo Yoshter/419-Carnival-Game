@@ -38,10 +38,13 @@ func _process(delta: float) -> void:
 		pickUpArea.set_monitoring(false)
 		match tokenString:
 				"tower":
+					towerTokenSprite.set_visible(false)
 					towerPickUpSprite.set_visible(true)
 				"shootingRange":
+					shootingRangeTokenSprite.set_visible(false)
 					rangePickUpSprite.set_visible(true)
 				"skeeble":
+					skeebleTokenSprite.set_visible(false)
 					skeeblePickUpSprite.set_visible(true)
 	if isFallen:
 		print(isFallen)
