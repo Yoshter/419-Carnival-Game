@@ -264,8 +264,8 @@ texture = ExtResource("2_umtaw")
 
 [node name="Bug Button" type="Button" parent="."]
 layout_mode = 1
-offset_left = 1700.0
-offset_top = 811.0
+offset_left = 1801.0
+offset_top = 923.0
 offset_right = 1929.0
 offset_bottom = 1066.0
 theme_override_font_sizes/font_size = 32
@@ -279,8 +279,8 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -192.0
-offset_bottom = 169.0
+offset_left = -155.0
+offset_bottom = 136.0
 grow_horizontal = 0
 action_mode = 0
 icon = ExtResource("4_2mf3k")
@@ -294,9 +294,9 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -281.0
-offset_top = 644.0
+offset_top = 732.0
 offset_right = 353.0
-offset_bottom = 809.0
+offset_bottom = 897.0
 grow_horizontal = 2
 theme = ExtResource("5_1h1tu")
 theme_override_font_sizes/font_size = 115
@@ -320,9 +320,9 @@ flat = true
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = -31.0
-offset_top = 705.0
-offset_right = 406.0
-offset_bottom = 1065.0
+offset_top = 877.0
+offset_right = 225.0
+offset_bottom = 1088.0
 icon = ExtResource("6_qk78y")
 flat = true
 icon_alignment = 1
@@ -330,8 +330,8 @@ expand_icon = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(958, 332)
-scale = Vector2(0.813513, 0.813514)
+position = Vector2(958, 155)
+scale = Vector2(0.629, 0.629)
 sprite_frames = SubResource("SpriteFrames_1ajci")
 autoplay = "default"
 frame_progress = 0.357085
@@ -475,7 +475,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="introScreen" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c5n7t3651pny5"]
+[gd_scene load_steps=39 format=3 uid="uid://c5n7t3651pny5"]
 
 [ext_resource type="Script" uid="uid://dcxhvd8os0ywv" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
 [ext_resource type="Texture2D" uid="uid://bugbtuws5ddjh" path="res://scenes/minigameScenes/speedPitch/speedpitchbackgorund.png" id="2_81bw4"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="9_ncbjr"]
 [ext_resource type="AudioStream" uid="uid://c7abv07816iu5" path="res://assets/allsound/Music/CARN speed pitch.wav" id="10_nh7fw"]
 [ext_resource type="AudioStream" uid="uid://b7fm8m1nsm77e" path="res://assets/allsound/SFX/BallThrow1.wav" id="11_gohqm"]
+[ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="12_hlg1q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x60gc"]
 atlas = ExtResource("6_7wvex")
@@ -445,6 +446,9 @@ autoplay = true
 [node name="ThrowSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_gohqm")
 volume_db = 4.0
+
+[node name="WinSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_hlg1q")
 
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="goAgainButton" to="." method="_on_go_again_button_pressed"]

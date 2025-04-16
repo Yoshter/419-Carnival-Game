@@ -2,12 +2,15 @@ extends Control
 
 @onready var winMenu: Control = $winMenu
 @onready var startButton: Button = $startButton
+@onready var winSound = $winSound
+var hasWon: bool = false
 
 func _process(delta: float) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	if GamesGlobal.checkBeatGame("tower"):
-		
+	if GamesGlobal.checkBeatGame("tower") and !hasWon:
 		startButton.set_visible(false)
+		winSound.play(0.0)
+		hasWon = true
 		winMenu.set_visible(true)
 
 func _on_start_button_pressed() -> void:

@@ -126,7 +126,7 @@ size = Vector3(30.656, 1.168, 22.768)
 
 [node name="barrier" type="CSGBox3D" parent="barrier"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6865, 1.06914, 2.22031)
-visible = false
+material_override = ExtResource("2_v74r3")
 size = Vector3(4.21619, 1, 20.0531)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="barrier/barrier"]

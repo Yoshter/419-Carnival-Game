@@ -36,6 +36,7 @@ var countingDown : bool = true
 
 @onready var winMenu: Control = $winMenu
 @onready var throwSound = $ThrowSound
+@onready var winSound = $WinSound
 
 @onready var wrongThrows: AnimatedSprite2D = $sprites/WrongThrows
 @onready var rightThrows: AnimatedSprite2D = $sprites/RightThrows
@@ -51,8 +52,9 @@ func _process(delta: float) -> void:
 	
 	timeSinceLastThrow += delta
 	
-	if roundNum >= 4 and points >= 150:
+	if roundNum >= 4 and points >= 150 and !GamesGlobal.speedPitchBeat:
 		winMenu.set_visible(true)
+		winSound.play(0.0)
 		startButton.set_visible(false)
 		goAgainButton.set_visible(false)
 		GamesGlobal.speedPitchBeat = true

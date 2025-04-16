@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://37auurnldi7g"]
+[gd_scene load_steps=7 format=3 uid="uid://37auurnldi7g"]
 
 [ext_resource type="Script" uid="uid://tbt75lgjlpf" path="res://scenes/minigameScenes/towerCrash/tower_main_menu.gd" id="1_4rwf4"]
 [ext_resource type="Texture2D" uid="uid://c34ukuwxsrjoi" path="res://assets/MenuScreens/TowerCrashMenu.png" id="2_0xswr"]
 [ext_resource type="PackedScene" uid="uid://hmnwjbqslhkw" path="res://scenes/button.tscn" id="2_x125k"]
 [ext_resource type="Theme" uid="uid://bbm345j8ak088" path="res://assets/Themes/Tower_UI_Theme.tres" id="4_e52mu"]
 [ext_resource type="AudioStream" uid="uid://chisnv2xi7mn" path="res://assets/allsound/Music/Tower Menu Theme.wav" id="4_xeinb"]
+[ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="6_4blew"]
 
 [node name="towerMainMenu" type="Control"]
 layout_mode = 3
@@ -73,6 +74,9 @@ text = "PRIZE"
 [node name="MenuMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_xeinb")
 autoplay = true
+
+[node name="winSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_4blew")
 
 [connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]
 [connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]
