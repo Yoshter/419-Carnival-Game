@@ -37,8 +37,8 @@ func _process(delta: float) -> void:
 	if itemUpdateReq():
 		updateItems()
 	if !hasAllTickets and ufoTicketBool and speedPitchTicketBool and towerTicketBool and rangeTicketBool and skeebleTicketBool:
-		DialogueGlobal.danEncCount += 2
-		DialogueGlobal.objEncCount += 3
+		DialogueGlobal.danEncCount = 5
+		DialogueGlobal.objEncCount = 9
 		hasAllTickets = true
 		print("ITEMSGLOBAL" + str(DialogueGlobal.danEncCount))
 

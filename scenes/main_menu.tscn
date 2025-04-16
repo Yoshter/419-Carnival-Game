@@ -503,9 +503,9 @@ animation = &"popUp"
 [node name="toasterLabel" type="Label" parent="introScreen"]
 visible = false
 layout_mode = 0
-offset_left = 635.0
+offset_left = 577.0
 offset_top = 780.0
-offset_right = 1361.0
+offset_right = 1303.0
 offset_bottom = 877.0
 theme_override_font_sizes/font_size = 96
 text = "TOASTER GAMES"
@@ -516,6 +516,7 @@ autostart = true
 
 [node name="fadeRect" type="ColorRect" parent="introScreen"]
 visible = false
+layout_mode = 0
 offset_right = 1928.0
 offset_bottom = 1153.0
 color = Color(0, 0, 0, 1)
