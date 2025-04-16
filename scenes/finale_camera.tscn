@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://087gtq5af8be"]
+
+[ext_resource type="Script" uid="uid://cj0uewst0fvv0" path="res://node_3d.gd" id="1_s4wbh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mjvop"]
+size = Vector3(2.9, 4, 3.6)
+
+[node name="finaleCamera" type="Node3D"]
+script = ExtResource("1_s4wbh")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_mjvop")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
