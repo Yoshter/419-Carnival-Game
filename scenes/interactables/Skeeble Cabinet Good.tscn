@@ -1,48 +1,39 @@
 [gd_scene load_steps=4 format=3 uid="uid://bjo2allw3y0sd"]
 
 [ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="1_4ap3v"]
-[ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="2_qdlqx"]
-[ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="3_pduek"]
+[ext_resource type="Material" uid="uid://uygwr6xt525w" path="res://assets/Textures/evilWood.tres" id="1_uo5w1"]
+[ext_resource type="Texture2D" uid="uid://c5c2tivqsdijf" path="res://assets/Sprite Sheets/skeebleSpriteSheets/Skeeble_goals.png" id="3_uxj5d"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="Title" type="CSGBox3D" parent="."]
-transform = Transform3D(0.998104, 0, 0, 0, 0.998104, 0, 0, 0, 0.601447, 0.516141, 1.44401, -0.400193)
-material_override = ExtResource("2_qdlqx")
-use_collision = true
-size = Vector3(0.0298462, 0.183228, 1.4175)
-material = ExtResource("3_pduek")
-
-[node name="Text" type="Label3D" parent="Title"]
-transform = Transform3D(-5.22508e-08, 0, 1.18565, 0, 1, 0, -1.19536, 0, -5.18264e-08, 0.020027, 0.000854731, 0.00275409)
-modulate = Color(0.964706, 0.94902, 0.294118, 1)
-text = "SKEEBLE"
-font_size = 37
-
 [node name="Ramp" type="CSGBox3D" parent="."]
 transform = Transform3D(0.987701, 0.168511, 0, -0.168511, 0.987701, 0, 0, 0, 1.00197, 1.10537, 0.153849, -0.408312)
-material_override = ExtResource("1_4ap3v")
+material_override = ExtResource("1_uo5w1")
 use_collision = true
 size = Vector3(1.16157, 0.120056, 0.627441)
 material = ExtResource("1_4ap3v")
 
 [node name="Wall" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.497852, 0, 0, 0, 1, 1.08167, 0.138767, -0.0473239)
-material_override = ExtResource("1_4ap3v")
+transform = Transform3D(1, 0, 0, 0, 0.497852, 0, 0, 0, 1.04088, 1.08167, 0.138767, -0.0328372)
+material_override = ExtResource("1_uo5w1")
 use_collision = true
 size = Vector3(1.16832, 0.669556, 0.141632)
 material = ExtResource("1_4ap3v")
 
 [node name="Wall2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.497852, 0, 0, 0, 1, 1.08167, 0.138767, -0.756002)
-material_override = ExtResource("1_4ap3v")
+transform = Transform3D(0.99784, 0, 0, 0, 0.496776, 0, 0, 0, 1.03864, 1.08167, 0.138767, -0.770489)
+material_override = ExtResource("1_uo5w1")
 use_collision = true
 size = Vector3(1.16832, 0.669556, 0.141632)
 material = ExtResource("1_4ap3v")
 
 [node name="Ramp2" type="CSGBox3D" parent="."]
-transform = Transform3D(0.607977, 0.796438, 0, -0.796438, 0.607977, 0, 0, 0, 1.00197, 0.162568, 0.725176, -0.397388)
-material_override = ExtResource("1_4ap3v")
+transform = Transform3D(0.607977, 0.796438, 0, -0.796411, 0.607956, -0.00832404, -0.00661655, 0.00505087, 1.00194, 0.162568, 0.725176, -0.397388)
+material_override = ExtResource("1_uo5w1")
 use_collision = true
 size = Vector3(1.17076, 0.120056, 0.870788)
 material = ExtResource("1_4ap3v")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-4.40461e-09, -0.0830554, 0.0810715, -3.50384e-09, 0.104407, 0.0644918, -0.12876, 2.13015e-16, -4.52825e-09, 0.20688, 0.788309, -0.393204)
+texture = ExtResource("3_uxj5d")

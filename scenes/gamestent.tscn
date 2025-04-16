@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=34 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -30,6 +30,7 @@
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="29_n1i75"]
 [ext_resource type="PackedScene" uid="uid://5ntjc343fmyh" path="res://scenes/interactables/exit_portal.tscn" id="30_886bn"]
 [ext_resource type="PackedScene" uid="uid://hfs1d8gq404l" path="res://scenes/interactables/skeeble_cabinet.tscn" id="30_j7vy6"]
+[ext_resource type="PackedScene" uid="uid://bjo2allw3y0sd" path="res://scenes/interactables/Skeeble Cabinet Good.tscn" id="31_886bn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -377,7 +378,8 @@ transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -18.5184, 1.12983
 transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -21.2749, 1.12983, -12.9253)
 
 [node name="skeebleCabinet" parent="." instance=ExtResource("30_j7vy6")]
-transform = Transform3D(0.384328, 0, 0.923197, 0, 1, 0, -0.923197, 0, 0.384328, -29.5125, 1.60233, -6.6831)
+transform = Transform3D(0.384328, 0, 0.923197, 0, 1, 0, -0.923197, 0, 0.384328, -29.5125, 1.60233, -8.16809)
+visible = false
 
 [node name="tokens" type="Node3D" parent="."]
 
@@ -402,3 +404,6 @@ font_size = 150
 
 [node name="exitPortal" parent="." instance=ExtResource("30_886bn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0825, 1.57094, -2.91931)
+
+[node name="Node3D2" parent="." instance=ExtResource("31_886bn")]
+transform = Transform3D(2.29489, 0, -1.09839, 0, 2.54421, 0, 1.09839, 0, 2.29489, -32.4817, 0.40309, -8.29319)
