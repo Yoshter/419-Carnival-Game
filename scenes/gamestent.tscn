@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=32 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://hnbffjarvb5w" path="res://assets/SpeedPitchArt/Baseball.png" id="24_dub5i"]
 [ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="26_yxr4s"]
 [ext_resource type="Texture2D" uid="uid://0oqg46rturns" path="res://assets/art/locksprite.png" id="27_d20k2"]
+[ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="29_n1i75"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -381,3 +382,8 @@ transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -18.5184, 1.12983
 
 [node name="Box4" parent="." instance=ExtResource("23_b42cu")]
 transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -21.2749, 1.12983, -12.9253)
+
+[node name="overworldToken" parent="." instance=ExtResource("29_n1i75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1232, 1.90833, 17.0916)
+tokenString = "shootingRange"
+isFallen = true

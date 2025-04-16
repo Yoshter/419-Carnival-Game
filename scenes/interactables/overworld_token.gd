@@ -36,6 +36,10 @@ func _process(delta: float) -> void:
 	if !isFallen:
 		pickUpArea.set_visible(false)
 		pickUpArea.set_monitoring(false)
+		
+	if isFallen:
+		pickUpArea.set_visible(true)
+		pickUpArea.set_monitoring(true)
 		match tokenString:
 				"tower":
 					towerTokenSprite.set_visible(false)
@@ -46,7 +50,6 @@ func _process(delta: float) -> void:
 				"skeeble":
 					skeebleTokenSprite.set_visible(false)
 					skeeblePickUpSprite.set_visible(true)
-	if isFallen:
 		print(isFallen)
 		if inArea:
 			print("whoopy")
@@ -71,7 +74,7 @@ func fall() -> void:
 			"tower":
 				global_position.y -= 4.5
 			"shootingRange":
-				global_position.y -= 4.0
+				global_position.y -= 3.0
 			"skeeble":
 				global_position.y -= 8
 		print(isFallen)
