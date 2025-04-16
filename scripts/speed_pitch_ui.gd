@@ -35,6 +35,7 @@ var countingDown : bool = true
 @onready var retryButton: Button = $retry
 
 @onready var winMenu: Control = $winMenu
+@onready var throwSound = $ThrowSound
 
 @onready var wrongThrows: AnimatedSprite2D = $sprites/WrongThrows
 @onready var rightThrows: AnimatedSprite2D = $sprites/RightThrows
@@ -99,6 +100,7 @@ func _process(delta: float) -> void:
 				rightThrows.play("center")
 				timeSinceLastThrow = 0.0
 				hitSound.play(0.0)
+				throwSound.play(0.0)
 				throwDir = "null"
 				horBarNode.set_visible(false)
 				horCharge = 0
