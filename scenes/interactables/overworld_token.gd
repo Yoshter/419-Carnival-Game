@@ -25,8 +25,8 @@ func _ready() -> void:
 			
 
 func _process(delta: float) -> void:
-	print(isFallen)
-	print("anything")
+	#print(isFallen)
+	#print("anything")
 	if tokenString == "tower" and ItemsGlobal.checkItem("towerToken"):
 		queue_free()
 	if tokenString == "shootingRange" and ItemsGlobal.checkItem("rangeToken"):
@@ -52,12 +52,12 @@ func _process(delta: float) -> void:
 					skeeblePickUpSprite.set_visible(true)
 		print(isFallen)
 		if inArea:
-			print("whoopy")
+			#print("whoopy")
 			if Input.is_action_pressed("ui_accept"):
-				print("nuts")
+				#print("nuts")
 				match tokenString:
 					"tower":
-						print("haha")
+						#print("haha")
 						ItemsGlobal.giveItem("towerToken")
 					"shootingRange":
 						ItemsGlobal.giveItem("rangeToken")
@@ -76,8 +76,8 @@ func fall() -> void:
 			"shootingRange":
 				global_position.y -= 3.0
 			"skeeble":
-				global_position.y -= 8
-		print(isFallen)
+				global_position.y -= 4.5
+		#print(isFallen)
 		#global_position.y -= 8
 
 func _on_pick_up_area_body_entered(body: Node3D) -> void:

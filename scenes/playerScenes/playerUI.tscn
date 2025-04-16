@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=32 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -26,7 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://decvfdibqy3m6" path="res://assets/Tickets/Ticket SkeeBall.png" id="11_latnh"]
 [ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="12_qjt8n"]
 [ext_resource type="Texture2D" uid="uid://thv22n5oohsl" path="res://assets/Tickets/Ticket Tower.png" id="13_h1pdy"]
+[ext_resource type="Texture2D" uid="uid://bl0tpvf7ioluq" path="res://assets/UI/JKey.png" id="14_5jumc"]
 [ext_resource type="Texture2D" uid="uid://bdx3tl8wgqkuq" path="res://assets/Tickets/Ticket Shooting range.png" id="14_w3uxw"]
+[ext_resource type="Texture2D" uid="uid://npqfokrsikot" path="res://assets/UI/TKey.png" id="15_khqck"]
 [ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="18_c1ib8"]
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
 
@@ -45,6 +47,7 @@ position = Vector2(1562, 861)
 texture = ExtResource("2_nye1j")
 
 [node name="shootingRangeMenu" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -78,6 +81,7 @@ theme_override_font_sizes/font_size = 96
 text = "00"
 
 [node name="interactMenu" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -451,6 +455,20 @@ position = Vector2(738.333, 345.556)
 scale = Vector2(0.522222, 0.522222)
 texture = ExtResource("10_14imd")
 
+[node name="janitorsKey" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(827.778, 348.333)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("14_5jumc")
+
+[node name="mainDoorKey" type="Sprite2D" parent="PauseMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(826.667, 442.778)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("15_khqck")
+
 [node name="tokens" type="Control" parent="PauseMenu/inventoryMenu/itemIcons"]
 anchors_preset = 0
 offset_right = 40.0
@@ -795,8 +813,8 @@ stream = ExtResource("7_luwil")
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]

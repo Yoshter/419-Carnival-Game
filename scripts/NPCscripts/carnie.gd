@@ -9,11 +9,13 @@ var carnie1SpokenTo : bool = false
 var carnie2SpokenTo : bool = false
 var carnie3SpokenTo : bool = false
 var carnie4SpokenTo : bool = false
+var carnie9SpokenTo : bool = false
 
 func _process(delta: float) -> void:
 	if inArea:
+		
 		if Input.is_action_pressed("ui_accept"):
-			print(DialogueGlobal.objEncCount)
+			print(DialogueGlobal.danEncCount)
 			match DialogueGlobal.objEncCount:
 				1:
 					if !carnie1SpokenTo:
@@ -27,9 +29,15 @@ func _process(delta: float) -> void:
 					if !carnie3SpokenTo:
 						DialogueGlobal.objEncCount += 1
 						carnie3SpokenTo = true
+				9:
+					if !carnie9SpokenTo:
+						carnie9SpokenTo = true
+						PlayerGlobal.isBlackout = true
 				_:
 					pass
-			print(DialogueGlobal.objEncCount)
+			print(DialogueGlobal.danEncCount)
+	if PlayerGlobal.isBlackout:
+		talkLight.set_visible(false)
 
 func _on_talk_box_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and !PlayerGlobal.inUI:
@@ -39,7 +47,8 @@ func _on_talk_box_body_entered(body: Node3D) -> void:
 		inArea = true
 		PlayerGlobal.setIsTalkingTo("dan")
 		PlayerGlobal.setCanInteract(true)
-		talkLight.set_visible(true)
+		if !PlayerGlobal.isBlackout:
+			talkLight.set_visible(true)
 		body.canTalk = true
 
 func _on_talk_box_body_exited(body: Node3D) -> void:

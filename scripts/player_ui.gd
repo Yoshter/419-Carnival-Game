@@ -34,11 +34,13 @@ var controlsShown : bool = false
 @onready var speedPitchTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/speedPitchTicket
 @onready var towerTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/towerTicket
 
-@onready var funPassJrIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassJr
-@onready var funPassSrIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassSr
-@onready var sawIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/saw
-@onready var bbgunIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/bbgun
-@onready var joystickIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/joystick
+@onready var funPassJrIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassJr
+@onready var funPassSrIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassSr
+@onready var sawIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/saw
+@onready var bbgunIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/bbgun
+@onready var joystickIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/joystick
+@onready var janitorsKeyIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/janitorsKey
+@onready var mainDoorKeyIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/mainDoorKey
 
 @onready var map: Sprite2D = $PauseMenu/mapMenu/Map
 
@@ -184,6 +186,10 @@ func updateItemIcons() -> void:
 		bbgunIcon.set_visible(true)
 	if ItemsGlobal.checkItem("joystick"):
 		joystickIcon.set_visible(true)
+	if ItemsGlobal.checkItem("janitorsKey"):
+		janitorsKeyIcon.set_visible(true)
+	if ItemsGlobal.checkItem("mainDoorKey"):
+		mainDoorKeyIcon.set_visible(true)
 
 func _on_no_pressed() -> void:
 	confirm_quit_2.set_visible(false)
@@ -240,6 +246,8 @@ func _on_objective_pressed() -> void:
 			objectiveText.set_text("If you're really BOARED go to the arcade lol.")
 		7: #keep looking for them tokens.
 			objectiveText.set_text("Find the rest of the tokens.")
+		9: #all tickets collected.
+			objectiveText.set_text("Congratulations on finding all the tickets! Go talk to the carnie to recieve your prize.")
 	print("IN MENU: " + str(DialogueGlobal.objEncCount))
 	objectiveMenu.set_visible(true)
 

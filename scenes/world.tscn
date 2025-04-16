@@ -93,12 +93,6 @@ transform = Transform3D(17.8875, 0, 0, 0, 0.878905, 0, 0, 0, 34.7505, 0.0243231,
 material_override = SubResource("StandardMaterial3D_e3hyu")
 size = Vector3(0.939453, 1, 1)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314456, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)
-light_energy = 75.0
-spot_range = 7.54494
-spot_angle = 12.9002
-
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55214, 3.62937, -12.9525)
 light_color = Color(1, 0.129412, 1, 1)
@@ -152,8 +146,16 @@ transform = Transform3D(-0.998395, 0, -0.0566405, 0, 1, 0, 0.0566405, 0, -0.9983
 [node name="BoardBreak" type="AudioStreamPlayer3D" parent="boards"]
 stream = ExtResource("11_e3hyu")
 
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314458, 0.811845, 0.743034, 0.424796, 0.517155, -7.41009, 5.1856, -9.77367)
+[node name="lights" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314458, 0.811845, 0.743034, 0.424796, 0.517155, 1.9354, 5.28246, -4.78507)
+light_energy = 75.0
+spot_range = 7.54494
+spot_angle = 12.9002
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-0.328606, 0.904743, -0.271032, -0.583025, 0.0314459, 0.811845, 0.743034, 0.424796, 0.517155, -7.41009, 5.1856, -9.77367)
 light_energy = 75.0
 spot_range = 7.54494
 spot_angle = 12.9002

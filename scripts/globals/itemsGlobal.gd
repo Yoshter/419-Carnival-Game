@@ -21,6 +21,8 @@ var funPassLevel3 : bool = false
 var saw : bool = false
 var bbgun : bool = false
 var joystick : bool = false
+var janitorsKey : bool = false
+var mainDoorKey : bool = false
 
 var map : bool = false
 
@@ -34,6 +36,7 @@ func _process(delta: float) -> void:
 		updateItems()
 	if ufoTicketBool and speedPitchTicketBool and towerTicketBool and rangeTicketBool and skeebleTicketBool:
 		DialogueGlobal.danEncCount = 9
+		DialogueGlobal.objEncCount = 9
 
 #Custom Functions
 func updateItems() -> void:
@@ -83,6 +86,10 @@ func giveItem(itemName) -> void:
 				map = true
 			"joystick":
 				joystick = true
+			"janitorsKey":
+				janitorsKey = true
+			"mainDoorKey":
+				mainDoorKey = true
 		showItemUI = true
 
 func checkItem(itemName) -> bool:
@@ -120,6 +127,10 @@ func checkItem(itemName) -> bool:
 			hasItem = map
 		"joystick":
 			hasItem = joystick
+		"janitorsKey":
+			hasItem = janitorsKey
+		"mainDoorKey":
+			hasItem = mainDoorKey
 		_:
 			hasItem = false
 	return hasItem

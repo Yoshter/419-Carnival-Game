@@ -12,7 +12,8 @@ var danEnc1 = ["Welcome", "You must be new here.", "Have a token!", "There's an 
 var danEnc2 = ["Well done!!!", "You've earned another token!", "Go try the Speed Pitch game in the Carnival Games section.", true, "speedPitchToken", 2]
 var danEnc3 = ["Good job on that last game kid!", "I'd give you another token, but I can't remember where I put 'em.", "Have a saw! I think I remember there being some boards over in the arcade if you're... BOARED!", true, "saw", 2]
 var danEnc4 = ["Keep looking for those tokens!", false, "null", 0]
-var danEnc9 = ["Hey look at that all the ticke-", "Darn, looks like the power went out, can you go find the breaker room and fix the generator", "Thanks!", false, "null", 2]
+var danEnc9 = ["Hey look at that all the ticke", "Darn, looks like the power went out, can you go find the breaker room and fix the generator", "Thanks!", false, "null", 2]
+var danEnc10 = ["You DID it!", "You saved my Midway Arcade.", "Thank you so much! Here's the key, as promised.", true, "mainDoorKey", 2]
 
 func returnDialogueText(npc, dialogueCount) -> String:
 	match npc:
@@ -28,6 +29,8 @@ func returnDialogueText(npc, dialogueCount) -> String:
 					dialogueText = danEnc4[dialogueCount]
 				9:
 					dialogueText = danEnc9[dialogueCount]
+				10:
+					dialogueText = danEnc10[dialogueCount]
 	return dialogueText
 
 func returnMaxDialogueCount(npc) -> int:
@@ -45,6 +48,8 @@ func returnMaxDialogueCount(npc) -> int:
 						maxCount = danEnc4[-1]
 					9:
 						maxCount = danEnc9[-1]
+					10:
+						maxCount = danEnc10[-1]
 	return maxCount
 
 func returnGivingItem(npc) -> bool:
@@ -62,6 +67,9 @@ func returnGivingItem(npc) -> bool:
 					beingGivenItem = danEnc4[-3]
 				9:
 					beingGivenItem = danEnc9[-3]
+				10:
+					beingGivenItem = danEnc10[-3]
+				
 	return beingGivenItem
 
 func addToEncCount(npcName) -> void:

@@ -12,6 +12,9 @@ var roundNum : int = 1
 @onready var retryMenu: Control = $retryMenu
 @onready var retryButton: Button = $retryMenu/retryButton
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+
 func _process(delta: float) -> void:
 	if !isThrowing:
 		nextRoundButton.set_visible(true)

@@ -13,6 +13,8 @@ var newPosition : Vector3
 
 var inShootingRange : bool = false
 var isEndingSequence: bool = false
+var isBlackout : bool = false
+
 func setInteractText(newText : String) -> void:
 	interactText = newText
 

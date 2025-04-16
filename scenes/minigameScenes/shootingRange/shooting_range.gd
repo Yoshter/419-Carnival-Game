@@ -5,8 +5,13 @@ var shootingRangeStarted = false
 @onready var shootingRangeTimer: Timer = $shootingRangeTimer
 @onready var csgBarrier: CSGBox3D = $barrier/barrier/CSGBox3D5
 @onready var barrier: CSGBox3D = $barrier/barrier
+@onready var lights: Node3D = $lights
 
 func _process(delta: float) -> void:
+	if PlayerGlobal.isBlackout:
+		lights.set_visible(false)
+	else:
+		lights.set_visible(true)
 	if !shootingRangeTimer.is_stopped():
 		GamesGlobal.shootingRangeTimeLeft = shootingRangeTimer.time_left
 	if inGameBoothArea and ItemsGlobal.checkItem("rangeToken"):
@@ -19,7 +24,7 @@ func _process(delta: float) -> void:
 			GamesGlobal.shootingRangeScore = 0
 			shootingRangeTimer.start()
 			shootingRangeStarted = true
-			print("womp" + str(csgBarrier.use_collision))
+			#print("womp" + str(csgBarrier.use_collision))
 
 func _on_shooting_range_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

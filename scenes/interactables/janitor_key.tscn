@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://qtjxsyh8rw1u"]
+
+[ext_resource type="Script" uid="uid://p4lyiptnyvfc" path="res://janitor_key.gd" id="1_ur4vj"]
+[ext_resource type="Texture2D" uid="uid://bl0tpvf7ioluq" path="res://assets/UI/JKey.png" id="2_j4yem"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4yem"]
+size = Vector3(2.6, 2, 2.1)
+
+[node name="janitorKey" type="Node3D"]
+script = ExtResource("1_ur4vj")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 1, -1)
+pixel_size = 0.04
+texture_filter = 0
+texture = ExtResource("2_j4yem")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, -1, 0, 1)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0.55)
+shape = SubResource("BoxShape3D_j4yem")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

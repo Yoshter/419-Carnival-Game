@@ -53,18 +53,6 @@ use_collision = true
 size = Vector3(1, 1.01831, 10.9268)
 material = ExtResource("2_v74r3")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="."]
-transform = Transform3D(0.566981, -0.190121, 0.801491, 0.0406329, 0.978271, 0.203311, -0.822728, -0.0827064, 0.562386, 53.5998, 6.3778, 9.86412)
-light_energy = 4.0
-spot_range = 36.8603
-spot_angle = 20.1224
-
-[node name="SpotLight3D2" type="SpotLight3D" parent="."]
-transform = Transform3D(-0.562044, -0.145856, 0.814145, 0.0406328, 0.978271, 0.203311, -0.826109, 0.14735, -0.543905, 53.9333, 6.3778, -4.94109)
-light_energy = 4.0
-spot_range = 36.8603
-spot_angle = 20.1224
-
 [node name="overworldBBGun" parent="." instance=ExtResource("2_0amp2")]
 transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985, -0.00544832, -0.997357, 0, 0.0726638, 52.7138, 1.59677, 4.73042)
 
@@ -155,6 +143,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.5762, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="gameBooth"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.226221, 2.08969, -0.0143099)
 shape = SubResource("BoxShape3D_5mf57")
+
+[node name="lights" type="Node3D" parent="."]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="lights"]
+transform = Transform3D(0.566981, -0.190121, 0.801491, 0.0406329, 0.978271, 0.203311, -0.822728, -0.0827064, 0.562386, 53.5998, 6.3778, 9.86412)
+light_energy = 4.0
+spot_range = 36.8603
+spot_angle = 20.1224
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="lights"]
+transform = Transform3D(-0.562044, -0.145856, 0.814145, 0.0406328, 0.978271, 0.203311, -0.826109, 0.14735, -0.543905, 53.9333, 6.3778, -4.94109)
+light_energy = 4.0
+spot_range = 36.8603
+spot_angle = 20.1224
 
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]

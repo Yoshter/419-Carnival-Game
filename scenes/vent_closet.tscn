@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=14 format=3 uid="uid://drwyd1icj7mxy"]
 
 [ext_resource type="Material" uid="uid://wy55ycr3fm5i" path="res://assets/materials/Metal.material" id="1_eunuo"]
 [ext_resource type="Script" uid="uid://cfyvkwoqliq2k" path="res://scenes/vent_thud_trigger.gd" id="1_fgy16"]
@@ -10,6 +10,7 @@
 [ext_resource type="Material" uid="uid://c4lfocr3brs4w" path="res://assets/materials/woodTest.tres" id="4_88vl5"]
 [ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="5_j82be"]
 [ext_resource type="AudioStream" uid="uid://cphxeoyi2jnwh" path="res://assets/allsound/SFX/Vent Ambience.wav" id="6_fpd5f"]
+[ext_resource type="PackedScene" uid="uid://qtjxsyh8rw1u" path="res://scenes/interactables/janitor_key.tscn" id="11_tbu8d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88vl5"]
 size = Vector3(52.3173, 19.9845, 15.2442)
@@ -231,6 +232,7 @@ funPassLevel = 3
 
 [node name="janitorDoor" parent="." instance=ExtResource("2_taaqu")]
 transform = Transform3D(0.731008, 0, 0.682368, 0, 1, 0, -0.682368, 0, 0.731008, -28.2735, 0.555335, -39.5675)
+visible = false
 
 [node name="mapItem" parent="." instance=ExtResource("3_iw1bk")]
 transform = Transform3D(-0.681424, 0, 0.731889, 0, 1, 0, -0.731889, 0, -0.681424, -18.5826, 3.52889, -17.7673)
@@ -243,5 +245,8 @@ max_db = 0.0
 pitch_scale = 0.47
 autoplay = true
 max_distance = 65.85
+
+[node name="janitorKey" parent="." instance=ExtResource("11_tbu8d")]
+transform = Transform3D(-0.991945, 0, -0.126666, 0, 1, 0, 0.126666, 0, -0.991945, -21.7408, 0.718874, -23.9825)
 
 [connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]

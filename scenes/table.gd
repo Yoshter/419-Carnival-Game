@@ -18,6 +18,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if isFlickering and timer.is_stopped():
 		timer.start()
+	if PlayerGlobal.isBlackout:
+		light.set_visible(false)
 
 func _on_timer_timeout() -> void:
 	isOn = !isOn

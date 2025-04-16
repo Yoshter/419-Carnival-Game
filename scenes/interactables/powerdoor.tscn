@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://65yxhmqfwmsl"]
+
+[ext_resource type="Script" uid="uid://c0jac2dkwqubr" path="res://scenes/interactables/powerdoor.gd" id="1_6iqno"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7spyh"]
+albedo_color = Color(0.259294, 0.259294, 0.259294, 1)
+
+[node name="powerdoor" type="Node3D"]
+script = ExtResource("1_6iqno")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19705, 0)
+size = Vector3(3.85254, 7.3941, 1)
+material = SubResource("StandardMaterial3D_7spyh")

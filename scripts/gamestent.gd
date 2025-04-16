@@ -4,6 +4,7 @@ extends Node3D
 var janitorDoorwayVisible : bool = false
 @onready var carnivalMusic: AudioStreamPlayer3D = $"audioSpeakers/Carnival music"
 var musicTime : float 
+@onready var mainLight: OmniLight3D = $Lights/OmniLight3D4
 
 func _process(delta: float) -> void:
 	if !janitorDoorwayVisible and GamesGlobal.checkBeatGame("ufo"):
@@ -15,3 +16,7 @@ func _process(delta: float) -> void:
 	else:
 		if !carnivalMusic.playing:
 			carnivalMusic.play(musicTime)
+	if PlayerGlobal.isBlackout:
+		mainLight.set_visible(false)
+	else:
+		mainLight.set_visible(true)

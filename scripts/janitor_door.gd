@@ -11,11 +11,11 @@ func _process(delta: float) -> void:
 			queue_free()
 
 func _on_unlock_area_body_entered(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and ItemsGlobal.checkItem("janitorsKey"):
 		PlayerGlobal.setCanInteract(true)
 		inArea = true
 
 func _on_unlock_area_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") and ItemsGlobal.checkItem("janitorsKey"):
 		PlayerGlobal.setCanInteract(false)
 		inArea = false

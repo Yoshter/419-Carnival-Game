@@ -384,10 +384,16 @@ transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -18.5184, 1.12983
 [node name="Box4" parent="." instance=ExtResource("23_b42cu")]
 transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -21.2749, 1.12983, -12.9253)
 
-[node name="overworldToken" parent="." instance=ExtResource("29_n1i75")]
+[node name="skeebleCabinet" parent="." instance=ExtResource("30_j7vy6")]
+transform = Transform3D(0.384328, 0, 0.923197, 0, 1, 0, -0.923197, 0, 0.384328, -29.5125, 1.60233, -6.6831)
+
+[node name="tokens" type="Node3D" parent="."]
+
+[node name="overworldToken" parent="tokens" instance=ExtResource("29_n1i75")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1232, 1.90833, 17.0916)
 tokenString = "shootingRange"
 isFallen = true
 
-[node name="skeebleCabinet" parent="." instance=ExtResource("30_j7vy6")]
-transform = Transform3D(0.384328, 0, 0.923197, 0, 1, 0, -0.923197, 0, 0.384328, -29.5125, 1.60233, -6.6831)
+[node name="overworldToken2" parent="tokens" instance=ExtResource("29_n1i75")]
+transform = Transform3D(0.949994, 0, 0.312269, 0, 1, 0, -0.312269, 0, 0.949994, -20.1993, 4.21868, -19.7464)
+tokenString = "skeeble"

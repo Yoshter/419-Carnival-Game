@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="1_ribn6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ribn6"]
-size = Vector3(1.58594, 2.60156, 1)
+size = Vector3(3.6875, 2.60156, 2.25073)
 
 [node name="mapItem" type="Node3D"]
 script = ExtResource("1_8e2f0")
@@ -16,7 +16,7 @@ texture = ExtResource("1_ribn6")
 [node name="pickUpArea" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pickUpArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.33391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.3355)
 shape = SubResource("BoxShape3D_ribn6")
 
 [connection signal="body_entered" from="pickUpArea" to="." method="_on_pick_up_area_body_entered"]

@@ -82,11 +82,11 @@ func _process(delta: float) -> void:
 			elif vertCharge < safeRangeMin and !hit:
 				wrongThrows.set_visible(true)
 				wrongThrows.play("left")
-				print("goof")
+				#print("goof")
 				fail()
 		if vertCharge >= 100:
 			fail()
-			print("fool")
+			#print("fool")
 	
 	if throwDir == "hor":
 		hit = null
