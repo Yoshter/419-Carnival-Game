@@ -6,7 +6,10 @@
 
 [node name="skeebleUI" parent="." instance=ExtResource("1_7etln")]
 offset_left = 882.0
-offset_top = 233.0
+offset_top = 278.0
 offset_right = 882.0
-offset_bottom = 233.0
-scale = Vector2(2, 2)
+offset_bottom = 278.0
+scale = Vector2(1.19199, 1.19199)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(889, 276)

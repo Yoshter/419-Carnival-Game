@@ -8,6 +8,9 @@ var roundNum : int = 1
 @onready var nextRoundButton: Button = $nextRoundButton
 @onready var winMenu: Control = $winMenu
 @onready var prizeButton: Button = $winMenu/prizeButton
+@onready var skeebleAnim: AnimatedSprite2D = $skeebleAnim
+@onready var retryMenu: Control = $retryMenu
+@onready var retryButton: Button = $retryMenu/retryButton
 
 func _process(delta: float) -> void:
 	if !isThrowing:
@@ -20,12 +23,15 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			if throwPower >= 5 and throwPower <= 20:
 				GamesGlobal.skeebleScore += 10
+				skeebleAnim.play("outerLeft")
 				endRound()
 			elif throwPower >= 30 and throwPower <= 45:
 				GamesGlobal.skeebleScore += 50
+				skeebleAnim.play("innerLeft")
 				endRound()
 			elif throwPower > 45 and throwPower < 55:
 				GamesGlobal.skeebleScore += 100
+				skeebleAnim.play("center")
 				endRound()
 			elif throwPower >= 55 and throwPower <= 70:
 				GamesGlobal.skeebleScore += 50
@@ -42,6 +48,12 @@ func _process(delta: float) -> void:
 	if roundNum == 4 and GamesGlobal.skeebleScore >= 175:
 		nextRoundButton.set_visible(false)
 		winMenu.set_visible(true)
+	if roundNum >= 4:
+		print("round4")
+		if GamesGlobal.skeebleScore < 175:
+			print(GamesGlobal.skeebleScore)
+			nextRoundButton.set_visible(false)
+			retryMenu.set_visible(true)
 
 func endRound() -> void:
 	roundNum += 1
@@ -57,3 +69,11 @@ func _on_prize_button_pressed() -> void:
 	GamesGlobal.skeebleBeat = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")
+
+
+func _on_retry_button_pressed() -> void:
+	isThrowing = false
+	throwPower = 0.0
+	roundNum = 1
+	GamesGlobal.skeebleScore = 0
+	retryMenu.set_visible(false)
