@@ -28,13 +28,14 @@ var canShoot : bool = true
 @onready var bbRay: RayCast3D = $body/Camera3D/bbRay
 @onready var shootDelay: Timer = $shootDelay
 
+@onready var animation: AnimationPlayer = $animation
 
 func _ready() -> void:
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion:
+	if event is InputEventMouseMotion and !animation.is_playing():
 		rotate_y(deg_to_rad(-event.relative.x * mouseSens))
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-60), deg_to_rad(50))
@@ -117,8 +118,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, currSpeed)
 		velocity.z = move_toward(velocity.z, 0, currSpeed)
 
-	if !PlayerGlobal.isTalking:
+	if !PlayerGlobal.isTalking and !animation.is_playing():
 		move_and_slide()
+
+func camMove() -> void:
+	if !animation.is_playing():
+		animation.play("finaleCamera")
 
 func _on_crouch_delay_timeout() -> void:
 	canCrouch = true

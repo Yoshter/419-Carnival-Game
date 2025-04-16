@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=29 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://b20x1nhcqs7mh" path="res://assets/Textures/Grass Texture.png" id="14_nxbbw"]
 [ext_resource type="PackedScene" uid="uid://kl1cjqrainte" path="res://scenes/tree.tscn" id="15_ht1us"]
 [ext_resource type="PackedScene" uid="uid://d2k7t0kvqwa8o" path="res://scenes/bush.tscn" id="16_lpxjy"]
+[ext_resource type="PackedScene" uid="uid://087gtq5af8be" path="res://scenes/finale_camera.tscn" id="20_ni2yb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o0dts"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -512,3 +513,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8395, 2.67522, -51.9895)
 
 [node name="Tree19" parent="." instance=ExtResource("15_ht1us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.8865, 4.47855, -56.2905)
+
+[node name="finaleCamera" parent="." instance=ExtResource("20_ni2yb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4107, 7.14187, -78.9629)
