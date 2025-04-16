@@ -7,14 +7,19 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 110.0
+offset_top = 125.0
+offset_right = 110.0
+offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c4a3s")
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0
+offset_left = -89.0
 offset_top = 219.0
-offset_right = 257.0
+offset_right = 168.0
 offset_bottom = 353.0
 text = "NEXT ROUND"
 
