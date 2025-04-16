@@ -68,7 +68,7 @@ func _on_next_round_button_pressed() -> void:
 
 func _on_prize_button_pressed() -> void:
 	PlayerGlobal.needsTeleport = true
-	PlayerGlobal.newPosition = Vector3(-26,1.6,8.1)
+	PlayerGlobal.newPosition = Vector3(-26.46,1.266,-5.309)
 	GamesGlobal.skeebleBeat = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")
