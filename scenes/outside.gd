@@ -6,11 +6,14 @@ extends Node3D
 @onready var tree_10: Node3D = $"Ending Adjustments/Tree10"
 @onready var poleLeft: Sprite3D = $"Ending Adjustments/PoleLeft"
 @onready var poleRight: Sprite3D = $"Ending Adjustments/PoleRight"
+@onready var treeBody: StaticBody3D = $"Ending Adjustments/treeBody"
 var isInEndingSequence : bool = false
+
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.isEndingSequence and !isInEndingSequence:
 		isInEndingSequence = true
+		treeBody.position.y -= 4.0
 		poleCollision1.queue_free()
 		pole.set_visible(false)
 		tree_9.set_visible(false)

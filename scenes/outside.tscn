@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=32 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
@@ -40,6 +40,9 @@ volumetric_fog_emission_energy = 0.3
 [sub_resource type="BoxShape3D" id="BoxShape3D_wp0as"]
 size = Vector3(14.2598, 5.16321, 1.55566)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xi7x6"]
+size = Vector3(23.3164, 3.4491, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lt7nq"]
 albedo_color = Color(0, 0, 0, 1)
 
@@ -61,6 +64,12 @@ albedo_texture = ExtResource("14_nxbbw")
 uv1_scale = Vector3(2.36, 1.438, 2.743)
 uv1_triplanar = true
 uv1_triplanar_sharpness = 144.89
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ni2yb"]
+size = Vector3(4.8092, 1, 1.68469)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pu366"]
+size = Vector3(4.22809, 2.27942, 1)
 
 [node name="outside" type="Node3D"]
 script = ExtResource("1_xq4d2")
@@ -303,10 +312,11 @@ texture_filter = 0
 texture = ExtResource("12_ni2yb")
 
 [node name="treeBody" type="StaticBody3D" parent="Ending Adjustments"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.45699)
 
-[node name="poleLeftBody" type="StaticBody3D" parent="Ending Adjustments"]
-
-[node name="poleRightBody" type="StaticBody3D" parent="Ending Adjustments"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ending Adjustments/treeBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1582, 7.64724, 0)
+shape = SubResource("BoxShape3D_xi7x6")
 
 [node name="tent" parent="." instance=ExtResource("11_v7x2m")]
 transform = Transform3D(-0.988042, 0, -1.41968e-07, 0, 1.08363, 0, 8.63774e-08, 0, -1.62392, 104.971, 1.03552, -68.4041)
@@ -515,4 +525,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8395, 2.67522, -51.9895)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.8865, 4.47855, -56.2905)
 
 [node name="finaleCamera" parent="." instance=ExtResource("20_ni2yb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4107, 7.14187, -78.9629)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0605, 6.86169, -79.2194)
+
+[node name="leftPoleCollision" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4925, 4.88174, -72.0401)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="leftPoleCollision"]
+transform = Transform3D(0.990885, 0, 0.134713, 0, 1, 0, -0.134713, 0, 0.990885, -0.962503, 0, 0.226357)
+shape = SubResource("BoxShape3D_ni2yb")
+
+[node name="rightPoleCollision" type="StaticBody3D" parent="."]
+transform = Transform3D(0.993439, 0, 0.114365, 0, 1, 0, -0.114365, 0, 0.993439, -10.7807, 4.92256, -72.276)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rightPoleCollision"]
+transform = Transform3D(1, 0, -1.41561e-07, 0, 1, 0, 1.41561e-07, 0, 1, 0.27084, 0.639709, 0)
+shape = SubResource("BoxShape3D_pu366")

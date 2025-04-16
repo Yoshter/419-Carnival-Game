@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cj0uewst0fvv0" path="res://node_3d.gd" id="1_s4wbh"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mjvop"]
-size = Vector3(2.9, 4, 3.6)
+size = Vector3(10.4, 4, 3.6)
 
 [node name="finaleCamera" type="Node3D"]
 script = ExtResource("1_s4wbh")
