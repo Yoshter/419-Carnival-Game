@@ -3,8 +3,8 @@ extends Node
 var dialogueText : String
 
 var maxDialogueCount
-var danEncCount = 1
-var objEncCount = 0
+var danEncCount = 5
+var objEncCount = 9
 
 #Naming conventions for array go "character" + "Enc(ounter)" + "(Encounter) #"
 #Array STRUCTURE [Dialogue Strings, giving item after dialogue bool, if so the item, maxDialogueArrayCount]

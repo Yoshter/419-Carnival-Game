@@ -28,7 +28,7 @@ func fix() -> void:
 			print(DialogueGlobal.danEncCount)
 			print("should be 6"+ str(DialogueGlobal.danEncCount))
 			print(DialogueGlobal.objEncCount)
-			print("should be 7"+ str(DialogueGlobal.objEncCount))
+			print("should be 11"+ str(DialogueGlobal.objEncCount))
 	else:
 			pass
 			#print("fail" + str(DialogueGlobal.danEncCount))

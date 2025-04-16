@@ -9,7 +9,8 @@ var carnie1SpokenTo : bool = false
 var carnie2SpokenTo : bool = false
 var carnie3SpokenTo : bool = false
 var carnie4SpokenTo : bool = false
-var carnie7SpokenTo : bool = false
+var carnie7SpokenTo: bool = false
+var carnie9SpokenTo : bool = false
 @onready var mainDoorKey: Node3D = $mainDoorKeyPickUpArea
 
 func _process(delta: float) -> void:
@@ -42,12 +43,10 @@ func _process(delta: float) -> void:
 					if !carnie3SpokenTo:
 						DialogueGlobal.objEncCount += 1
 						carnie3SpokenTo = true
-				#7:
-					#if !carnie7SpokenTo:
-						#mainDoorKey.set_visible(true)
-						#mainDoorKey.monitoring = true
-						#mainDoorKey.monitorable = true
-						#carnie7SpokenTo = true
+				9:
+					if !carnie9SpokenTo:
+						DialogueGlobal.objEncCount += 1
+						carnie9SpokenTo = false
 				_:
 					pass
 	if PlayerGlobal.isBlackout:
