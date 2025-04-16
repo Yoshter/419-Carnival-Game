@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://hfs1d8gq404l"]
+
+[ext_resource type="Script" uid="uid://c220nvm7g8h2i" path="res://scenes/interactables/skeeble_cabinet.gd" id="1_liewy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0itne"]
+
+[node name="skeebleCabinet" type="Node3D"]
+script = ExtResource("1_liewy")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.98878, 0.14938, 0, -0.14938, 0.98878, 0, 0, 0)
+size = Vector3(1, 1, 3.69141)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.77446, -2.20757)
+size = Vector3(1, 3.72464, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00439405, -0.594612, 1.36864)
+size = Vector3(1, 0.930206, 1)
+
+[node name="gamePortal" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gamePortal"]
+shape = SubResource("BoxShape3D_0itne")
+
+[connection signal="body_entered" from="gamePortal" to="." method="_on_game_portal_body_entered"]
+[connection signal="body_exited" from="gamePortal" to="." method="_on_game_portal_body_exited"]

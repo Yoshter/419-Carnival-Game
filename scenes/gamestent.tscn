@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=33 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -29,6 +29,7 @@
 [ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="26_yxr4s"]
 [ext_resource type="Texture2D" uid="uid://0oqg46rturns" path="res://assets/art/locksprite.png" id="27_d20k2"]
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="29_n1i75"]
+[ext_resource type="PackedScene" uid="uid://hfs1d8gq404l" path="res://scenes/interactables/skeeble_cabinet.tscn" id="30_j7vy6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -387,3 +388,6 @@ transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.5767
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1232, 1.90833, 17.0916)
 tokenString = "shootingRange"
 isFallen = true
+
+[node name="skeebleCabinet" parent="." instance=ExtResource("30_j7vy6")]
+transform = Transform3D(0.384328, 0, 0.923197, 0, 1, 0, -0.923197, 0, 0.384328, -29.5125, 1.60233, -6.6831)
