@@ -192,13 +192,13 @@ operation = 2
 size = Vector3(9.76856, 4.1098, 5.55481)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="closet"]
-transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -16.9529, 2.04059, -32.9651)
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -15.922, 2.12021, -31.7007)
 material_override = ExtResource("5_j82be")
 use_collision = true
 size = Vector3(4.28003, 5.08118, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="closet"]
-transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.7977, 2.69907, -22.9352)
+transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.4826, 2.69907, -22.5545)
 material_override = ExtResource("5_j82be")
 use_collision = true
 size = Vector3(9.46179, 6.39813, 2.09961)
@@ -220,7 +220,7 @@ use_collision = true
 size = Vector3(6.31482, 2.73947, 1.8125)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="closet/CSGBox3D5"]
-transform = Transform3D(1, 0, -0.000122488, 0, 1, 0, 0.000122488, 0, 1, -1.4568, 0.169062, 10.8174)
+transform = Transform3D(1, 0, -0.000122458, 0, 1, 0, 0.000122458, 0, 1, -1.47663, 0.169062, 11.3112)
 material_override = ExtResource("5_j82be")
 use_collision = true
 size = Vector3(3.1498, 1.14708, 1.8125)

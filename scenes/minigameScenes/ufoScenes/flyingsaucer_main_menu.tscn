@@ -112,7 +112,7 @@ offset_top = 239.5
 offset_right = 277.5
 offset_bottom = 358.5
 theme = ExtResource("4_4388a")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 42
 text = "SURPRISE
 "
 script = null
