@@ -19,14 +19,14 @@ func _process(delta: float) -> void:
 		deathMenu.set_visible(true)
 		score.set_text(str(GamesGlobal.ufoScore))
 		if GamesGlobal.ufoScore >= 10:
+			if GamesGlobal.ufoBeat == false:
+				DialogueGlobal.addToEncCount("dan")
+				DialogueGlobal.objEncCount += 1
 			GamesGlobal.ufoBeat = true
 			#PlayerGlobal.inUI = true
 			startButton.set_visible(false)
 			buttons.set_visible(false)
 			tokenButton.set_visible(true)
-			if !ItemsGlobal.checkItem("ufoTicket"):
-				DialogueGlobal.addToEncCount("dan")
-				DialogueGlobal.objEncCount += 1
 			GamesGlobal.ufoScoreReset()
 		checked = true
 

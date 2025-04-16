@@ -238,6 +238,7 @@ func _on_objective_pressed() -> void:
 			objectiveText.set_text("If you're really BOARD go to the arcade lol.")
 		7: #keep looking for them tokens.
 			objectiveText.set_text("Find the rest of the tokens.")
+	print("IN MENU: " + str(DialogueGlobal.objEncCount))
 	objectiveMenu.set_visible(true)
 
 func _on_quit_obj_pressed() -> void:
