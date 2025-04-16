@@ -301,6 +301,12 @@ alpha_cut = 3
 texture_filter = 0
 texture = ExtResource("12_ni2yb")
 
+[node name="treeBody" type="StaticBody3D" parent="Ending Adjustments"]
+
+[node name="poleLeftBody" type="StaticBody3D" parent="Ending Adjustments"]
+
+[node name="poleRightBody" type="StaticBody3D" parent="Ending Adjustments"]
+
 [node name="tent" parent="." instance=ExtResource("11_v7x2m")]
 transform = Transform3D(-0.988042, 0, -1.41968e-07, 0, 1.08363, 0, 8.63774e-08, 0, -1.62392, 104.971, 1.03552, -68.4041)
 

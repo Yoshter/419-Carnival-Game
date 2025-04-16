@@ -179,7 +179,7 @@ func _on_count_down_timeout() -> void:
 func _on_win_button_pressed() -> void:
 	PlayerGlobal.needsTeleport = true
 	PlayerGlobal.newPosition = Vector3(-26,1.6,8.1)
-	if ItemsGlobal.checkItem("speedPitchToken"):
+	if GamesGlobal.checkBeatGame("speedPitch"):
 		DialogueGlobal.addToEncCount("dan")
 		DialogueGlobal.objEncCount += 1
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
