@@ -12,7 +12,7 @@ var needsTeleport = false
 var newPosition : Vector3
 
 var inShootingRange : bool = false
-
+var isEndingSequence: bool = false
 func setInteractText(newText : String) -> void:
 	interactText = newText
 
