@@ -21,6 +21,7 @@ var towerHasJoystick : bool = false
 
 var dead : bool = false
 
+var skeebleScore : int = 0
 var skeebleBallNum : int = 1
 var skeebleChecked : bool = false
 var skeebleBeat : bool = false

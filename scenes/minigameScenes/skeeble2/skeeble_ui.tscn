@@ -74,4 +74,19 @@ offset_left = -384.0
 offset_right = 449.0
 offset_bottom = 128.0
 
+[node name="winMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="prizeButton" type="Button" parent="winMenu"]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 382.0
+offset_right = 105.0
+offset_bottom = 463.0
+text = "PRIZE"
+
 [connection signal="pressed" from="nextRoundButton" to="." method="_on_next_round_button_pressed"]
+[connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]
