@@ -136,6 +136,8 @@ func _process(delta: float) -> void:
 				PlayerGlobal.inUI = false
 				dialogueCount = 0
 			#DialogueGlobal.addToEncCount(PlayerGlobal.checkIsTalkingTo())
+	else:
+		dialogueCount = 0
 	
 	if PlayerGlobal.inUI and Input.is_action_pressed("interact"):
 		PlayerGlobal.inUI = false
