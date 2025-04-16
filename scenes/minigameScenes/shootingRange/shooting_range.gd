@@ -4,15 +4,22 @@ var inGameBoothArea : bool = false
 var shootingRangeStarted = false
 @onready var shootingRangeTimer: Timer = $shootingRangeTimer
 @onready var csgBarrier: CSGBox3D = $barrier/barrier/CSGBox3D5
+@onready var barrier: CSGBox3D = $barrier/barrier
 
 func _process(delta: float) -> void:
+	if !shootingRangeTimer.is_stopped():
+		GamesGlobal.shootingRangeTimeLeft = shootingRangeTimer.time_left
 	if inGameBoothArea and ItemsGlobal.checkItem("rangeToken"):
 		PlayerGlobal.setCanInteract(true)
 		if Input.is_action_pressed("ui_accept"):
-			csgBarrier.use_collision = true
+			barrier.set_visible(true)
+			barrier.use_collision = true
+			csgBarrier.use_collision = true 
 			PlayerGlobal.setCanInteract(false)
+			GamesGlobal.shootingRangeScore = 0
 			shootingRangeTimer.start()
 			shootingRangeStarted = true
+			print("womp" + str(csgBarrier.use_collision))
 
 func _on_shooting_range_area_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):
@@ -35,5 +42,7 @@ func _on_game_booth_body_exited(body: Node3D) -> void:
 func _on_shooting_range_timer_timeout() -> void:
 	if GamesGlobal.shootingRangeScore >= 1500:
 		GamesGlobal.rangeBeat = true
+	barrier.set_visible(false)
+	barrier.use_collision = false
 	csgBarrier.use_collision = false
  

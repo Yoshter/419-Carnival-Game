@@ -50,6 +50,7 @@ var hasGun : bool = false
 
 @onready var objectiveMenu: Control = $PauseMenu/objectiveMenu
 @onready var objectiveText: Label = $PauseMenu/objectiveMenu/objectiveText
+@onready var timerText: Label = $shootingRangeMenu/timerText
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -75,6 +76,7 @@ func _process(delta: float) -> void:
 	if PlayerGlobal.inShootingRange:
 		rangeScoreText.set_text(str(GamesGlobal.shootingRangeScore))
 		shootingRangeMenu.set_visible(true)
+		timerText.set_text(str(round(GamesGlobal.shootingRangeTimeLeft,)))
 	else:
 		shootingRangeMenu.set_visible(false)
 	

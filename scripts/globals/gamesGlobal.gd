@@ -12,6 +12,7 @@ var speedPitchChecked : bool = false
 var shootingRangeScore : int = 0
 var rangeChecked : bool = false
 var rangeBeat : bool = false
+var shootingRangeTimeLeft : float = 0.0
 
 var towerBeat : bool = false
 var enemiesKilled : int = 0

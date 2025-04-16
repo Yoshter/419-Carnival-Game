@@ -125,6 +125,7 @@ tokenString = "tower"
 
 [node name="shootingRangeTimer" type="Timer" parent="."]
 wait_time = 30.0
+one_shot = true
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0941, 0.132782, 0)
