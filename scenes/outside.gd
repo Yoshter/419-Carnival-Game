@@ -11,6 +11,7 @@ var isInEndingSequence : bool = false
 func _process(delta: float) -> void:
 	if PlayerGlobal.isEndingSequence and !isInEndingSequence:
 		isInEndingSequence = true
+		poleCollision1.queue_free()
 		pole.set_visible(false)
 		tree_9.set_visible(false)
 		tree_10.set_visible(true)
