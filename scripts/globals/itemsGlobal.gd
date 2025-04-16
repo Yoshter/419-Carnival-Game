@@ -8,22 +8,22 @@ var hasAllTickets : bool = false
 
 #don't want to write 'has' a million times so if false, you do NOT have the item
 var ufoTokenBool : bool = false
-var ufoTicketBool : bool = true
+var ufoTicketBool : bool = false
 var speedPitchTokenBool : bool = false
-var speedPitchTicketBool : bool = true
+var speedPitchTicketBool : bool = false
 var skeebleTokenBool : bool = false
-var skeebleTicketBool : bool = true
+var skeebleTicketBool : bool = false
 var towerTokenBool : bool = false
-var towerTicketBool : bool = true
+var towerTicketBool : bool = false
 var rangeTokenBool : bool = false
-var rangeTicketBool : bool = true
+var rangeTicketBool : bool = false
 
 var funPassLevel2 : bool = false
 var funPassLevel3 : bool = false
-var saw : bool = true
+var saw : bool = false
 var bbgun : bool = false
 var joystick : bool = false
-var janitorsKey : bool = true
+var janitorsKey : bool = false
 var mainDoorKey : bool = false
 
 var map : bool = false
@@ -37,8 +37,8 @@ func _process(delta: float) -> void:
 	if itemUpdateReq():
 		updateItems()
 	if !hasAllTickets and ufoTicketBool and speedPitchTicketBool and towerTicketBool and rangeTicketBool and skeebleTicketBool:
-		DialogueGlobal.danEncCount += 5
-		DialogueGlobal.objEncCount += 6
+		DialogueGlobal.danEncCount += 2
+		DialogueGlobal.objEncCount += 3
 		hasAllTickets = true
 		print("ITEMSGLOBAL" + str(DialogueGlobal.danEncCount))
 

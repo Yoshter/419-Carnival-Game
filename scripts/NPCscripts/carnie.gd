@@ -17,6 +17,15 @@ func _process(delta: float) -> void:
 		
 		if Input.is_action_pressed("ui_accept"):
 			#print(DialogueGlobal.danEncCount)
+			match DialogueGlobal.danEncCount:
+				6:
+					mainDoorKey.set_visible(true)
+					mainDoorKey.monitoring = true
+					mainDoorKey.monitorable = true
+					carnie7SpokenTo = true
+				_:
+					pass
+			
 			match DialogueGlobal.objEncCount:
 				1:
 					if !carnie1SpokenTo:
@@ -30,12 +39,12 @@ func _process(delta: float) -> void:
 					if !carnie3SpokenTo:
 						DialogueGlobal.objEncCount += 1
 						carnie3SpokenTo = true
-				6:
-					if !carnie7SpokenTo:
-						mainDoorKey.set_visible(true)
-						mainDoorKey.monitoring = true
-						mainDoorKey.monitorable = true
-						carnie7SpokenTo = true
+				#7:
+					#if !carnie7SpokenTo:
+						#mainDoorKey.set_visible(true)
+						#mainDoorKey.monitoring = true
+						#mainDoorKey.monitorable = true
+						#carnie7SpokenTo = true
 				_:
 					pass
 	if PlayerGlobal.isBlackout:
