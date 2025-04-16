@@ -21,7 +21,7 @@ var rangeTokenBool : bool = false
 var rangeTicketBool : bool = false
 
 var funPassLevel2 : bool = false
-var funPassLevel3 : bool = false
+var funPassLevel3 : bool = true
 var saw : bool = true
 var bbgun : bool = false
 var joystick : bool = false

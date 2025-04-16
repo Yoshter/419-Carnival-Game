@@ -2,6 +2,8 @@ extends Node3D
 @onready var red: Sprite3D = $"Target Sprites/Red"
 @onready var blue: Sprite3D = $"Target Sprites/Blue"
 @onready var purple: Sprite3D = $"Target Sprites/Purple"
+@onready var animation: AnimationPlayer = $animation
+@onready var delayTimer: Timer = $delayTimer
 
 @export var targetLevel : int = 1
 var targetScore : int = 0
@@ -20,3 +22,8 @@ func _ready() -> void:
 
 func score() -> void:
 	GamesGlobal.shootingRangeScore += targetScore
+	animation.play("fall_down")
+	delayTimer.start()
+
+func _on_delay_timer_timeout() -> void:
+	animation.play("backUp")
