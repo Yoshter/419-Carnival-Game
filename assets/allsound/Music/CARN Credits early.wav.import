@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dir7xmlfktyjl"
+path="res://.godot/imported/CARN Credits early.wav-71ee3f5ede5b12deb5c8c8e37be2d55e.sample"
+
+[deps]
+
+source_file="res://assets/allsound/Music/CARN Credits early.wav"
+dest_files=["res://.godot/imported/CARN Credits early.wav-71ee3f5ede5b12deb5c8c8e37be2d55e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

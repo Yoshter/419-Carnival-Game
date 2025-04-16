@@ -378,7 +378,7 @@ transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -18.5184, 1.12983
 transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -21.2749, 1.12983, -12.9253)
 
 [node name="skeebleCabinet" parent="." instance=ExtResource("30_j7vy6")]
-transform = Transform3D(0.384328, 0, 0.923197, 0, 1, 0, -0.923197, 0, 0.384328, -29.5125, 1.60233, -8.16809)
+transform = Transform3D(-0.112058, 0, 0.993702, 0, 1, 0, -0.993702, 0, -0.112058, -31.0438, 1.60233, 1.12508)
 visible = false
 
 [node name="tokens" type="Node3D" parent="."]
@@ -406,4 +406,4 @@ font_size = 150
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0825, 1.57094, -2.91931)
 
 [node name="Node3D2" parent="." instance=ExtResource("31_886bn")]
-transform = Transform3D(2.29489, 0, -1.09839, 0, 2.54421, 0, 1.09839, 0, 2.29489, -32.4817, 0.40309, -8.29319)
+transform = Transform3D(2.53957, 0, 0.153507, 0, 2.54421, 0, -0.153507, 0, 2.53957, -33.7006, 0.40309, 2.45683)
