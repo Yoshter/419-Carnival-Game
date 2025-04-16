@@ -812,6 +812,20 @@ offset_bottom = 165.0
 theme_override_font_sizes/font_size = 96
 text = "Dan Enc Num: "
 
+[node name="objEncNumLabel" type="Label" parent="."]
+offset_top = 120.0
+offset_right = 601.0
+offset_bottom = 285.0
+theme_override_font_sizes/font_size = 96
+text = "Obj Enc Num: "
+
+[node name="dialogueCountLabel" type="Label" parent="."]
+offset_top = 240.0
+offset_right = 601.0
+offset_bottom = 405.0
+theme_override_font_sizes/font_size = 96
+text = "Dialogue Counter: "
+
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
 [connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]

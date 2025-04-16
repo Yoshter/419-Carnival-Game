@@ -54,6 +54,9 @@ var hasGun : bool = false
 @onready var objectiveText: Label = $PauseMenu/objectiveMenu/objectiveText
 @onready var timerText: Label = $shootingRangeMenu/timerText
 @onready var danEncNumLabel: Label = $danEncNumLabel
+@onready var objEncNumLabel: Label = $objEncNumLabel
+@onready var dialogueCountLabel: Label = $dialogueCountLabel
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -63,6 +66,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	delay += delta
 	danEncNumLabel.set_text("Dan Enc Num: " + str(DialogueGlobal.danEncCount))
+	objEncNumLabel.set_text("Obj Enc Num: " + str(DialogueGlobal.objEncCount))
+	dialogueCountLabel.set_text("Dialogue Count: " + str(dialogueCount))
 	
 	if PlayerGlobal.getCanInteract():
 		interactMenu.set_visible(true)

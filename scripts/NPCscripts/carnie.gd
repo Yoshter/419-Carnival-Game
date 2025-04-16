@@ -67,6 +67,7 @@ func _on_talk_box_body_exited(body: Node3D) -> void:
 		inArea = false
 		PlayerGlobal.setCanInteract(false)
 		PlayerGlobal.inUI = false
+		PlayerGlobal.isTalking = false
 		ItemsGlobal.showItemUI = false
 		talkLight.set_visible(false)
 		body.canTalk = false
