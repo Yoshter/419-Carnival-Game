@@ -394,5 +394,11 @@ tokenString = "skeeble"
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.52007, 0.877352, -3.31965)
 doorType = "mainDoor"
 
+[node name="Label3D" type="Label3D" parent="janitorDoor"]
+transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0.435448, 5.25263, -0.382438)
+modulate = Color(1, 0, 0, 1)
+text = "EXIT"
+font_size = 150
+
 [node name="exitPortal" parent="." instance=ExtResource("30_886bn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0825, 1.57094, -2.91931)
