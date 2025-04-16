@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c10cy5fkshmo4"]
+[gd_scene load_steps=3 format=3 uid="uid://c10cy5fkshmo4"]
 
 [ext_resource type="PackedScene" uid="uid://dd043ie4lgq3s" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.tscn" id="1_7etln"]
+[ext_resource type="AudioStream" uid="uid://bduq1kic26k1a" path="res://assets/allsound/Music/CARN Skeeble project.wav" id="2_ojgpp"]
 
 [node name="skeeble2" type="Node2D"]
 
@@ -13,3 +14,7 @@ scale = Vector2(1.19199, 1.19199)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(889, 276)
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ojgpp")
+autoplay = true

@@ -405,14 +405,8 @@ tokenString = "skeeble"
 transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.52007, 0.877352, -3.31965)
 doorType = "mainDoor"
 
-[node name="Label3D" type="Label3D" parent="janitorDoor"]
-transform = Transform3D(1, 0, 2.13163e-14, 0, 1, 0, -2.13163e-14, 0, 1, 0.435448, 5.25263, -0.382438)
-modulate = Color(1, 0, 0, 1)
-text = "EXIT"
-font_size = 150
-
 [node name="exitPortal" parent="." instance=ExtResource("30_886bn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.0825, 1.57094, -2.91931)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2676, 1.57094, -2.91931)
 
 [node name="Node3D2" parent="." instance=ExtResource("31_886bn")]
 transform = Transform3D(2.53957, 0, 0.153507, 0, 2.54421, 0, -0.153507, 0, 2.53957, -33.7006, 0.40309, 2.45683)
@@ -425,3 +419,9 @@ texture = ExtResource("32_6j3e0")
 
 [node name="PowerDown" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("34_y3mcc")
+
+[node name="Exitq" type="Label3D" parent="."]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.74953, 4.02893, -3.41287)
+modulate = Color(1, 0, 0, 1)
+text = "EXIT"
+font_size = 150
