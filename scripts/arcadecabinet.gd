@@ -25,6 +25,7 @@ extends Node3D
 var canFix : bool = false
 var canPlay : bool = false
 var canReplaceJoystick : bool = false
+var joystickPlugged : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -64,12 +65,15 @@ func _process(delta: float) -> void:
 			fix()
 	
 	if (canReplaceJoystick and Input.is_action_pressed("ui_accept")) or GamesGlobal.towerHasJoystick:
+			if !joystickPlugged:
+				PlayerGlobal.setCanInteract(false)
+				joystickPlugged = true
 			hasJoyStick = true
 			joystickSprite.set_visible(true)
 			joystickFixArea.monitorable = false
 			joystickFixArea.monitoring = false
 			gamePortal.monitoring = true
-			PlayerGlobal.setCanInteract(false)
+			
 			GamesGlobal.towerHasJoystick = true
 	
 	if canPlay and game == "ufo":

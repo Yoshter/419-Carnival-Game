@@ -58,7 +58,7 @@ var hasGun : bool = false
 @onready var dialogueCountLabel: Label = $dialogueCountLabel
 
 @onready var endScreen: Control = $endScreen
-var outroSeqNum : int = 1
+var outroSeqNum : int = 0
 
 @onready var creditsTimer: Timer = $creditsTimer
 @onready var toasterAnim: AnimatedSprite2D = $endScreen/toasterAnim
@@ -67,6 +67,8 @@ var toasterAnimHasPlayed : bool = false
 @onready var designerCredits: Label = $endScreen/designerCredits
 @onready var artCredits: Label = $endScreen/artCredits
 @onready var brenCredits: Label = $endScreen/BrenCredits
+@onready var gabeCredits: Label = $endScreen/gabeCredits
+
 @onready var bbgunShootSound: AudioStreamPlayer = $bbgunShootSound
 @onready var timerLabel: Label = $PauseMenu/timer/timerLabel
 var shootSoundDelay : float = 0.0
@@ -192,6 +194,8 @@ func _process(delta: float) -> void:
 		if creditsTimer.is_stopped():
 			creditsTimer.start()
 		match outroSeqNum:
+			0:
+				pass
 			1:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 				endScreen.set_visible(true)
@@ -202,12 +206,14 @@ func _process(delta: float) -> void:
 				toasterAnim.set_visible(false)
 				programmerCredits.set_visible(true)
 			3:
-				brenCredits.set_visible(true)
+				gabeCredits.set_visible(true)
 			4:
-				artCredits.set_visible(true)
+				brenCredits.set_visible(true)
 			5:
-				designerCredits.set_visible(true)
+				artCredits.set_visible(true)
 			6:
+				designerCredits.set_visible(true)
+			7:
 				get_tree().change_scene_to_file("res://assets/MenuScreens/main_menu.tscn")
 				creditsTimer.stop()
 

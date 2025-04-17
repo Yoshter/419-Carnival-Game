@@ -1031,7 +1031,6 @@ theme_override_font_sizes/font_size = 96
 text = "Dialogue Counter: "
 
 [node name="endScreen" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1051,7 +1050,6 @@ animation = &"popUp"
 stream = ExtResource("33_g8clv")
 
 [node name="programmerCredits" type="Label" parent="endScreen"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1068,62 +1066,76 @@ theme_override_font_sizes/font_size = 84
 text = "LEAD PROGRAMMER
 COLEMAN FAKER"
 
-[node name="designerCredits" type="Label" parent="endScreen"]
-visible = false
+[node name="gabeCredits" type="Label" parent="endScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 960.0
-offset_top = 550.0
-offset_right = 1840.0
-offset_bottom = 987.0
+offset_left = 986.0
+offset_top = 57.0
+offset_right = 1881.0
+offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 84
-text = "DESIGNERS
-GABRIEL CAZZOLLA
-COLEMAN FAKER
-COLE GENEVICK
-BREN MURPHY"
+text = "LEAD UI ENGINEER
+GABE CAZZOLLA"
 
-[node name="artCredits" type="Label" parent="endScreen"]
-visible = false
+[node name="BrenCredits" type="Label" parent="endScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 19.0
-offset_top = 428.0
-offset_right = 899.0
-offset_bottom = 625.0
+offset_left = 13.0
+offset_top = 294.0
+offset_right = 908.0
+offset_bottom = 555.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 84
+text = "PRODUCER & 
+LEAD SOUND ENGINEER
+BREN MURPHY"
+
+[node name="artCredits" type="Label" parent="endScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 986.0
+offset_top = 377.0
+offset_right = 1866.0
+offset_bottom = 574.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 84
 text = "ASSET PRODUCTION
 COLE GENEVICK"
 
-[node name="BrenCredits" type="Label" parent="endScreen"]
-visible = false
+[node name="designerCredits" type="Label" parent="endScreen"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 951.0
-offset_top = 159.0
-offset_right = 1846.0
-offset_bottom = 420.0
+offset_left = 663.0
+offset_top = 598.0
+offset_right = 1543.0
+offset_bottom = 1035.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 84
-text = "PRODUCER & 
-LEAD SOUND ENGINEER
+text = "DESIGNERS
+GABE CAZZOLLA
+COLEMAN FAKER
+COLE GENEVICK
 BREN MURPHY"
 
 [node name="creditsTimer" type="Timer" parent="."]
@@ -1140,8 +1152,8 @@ stream = ExtResource("34_8irf4")
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]

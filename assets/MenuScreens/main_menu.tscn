@@ -320,9 +320,9 @@ flat = true
 [node name="Credits" type="Button" parent="."]
 layout_mode = 0
 offset_left = -31.0
-offset_top = 877.0
+offset_top = 860.0
 offset_right = 225.0
-offset_bottom = 1088.0
+offset_bottom = 1071.0
 icon = ExtResource("6_qk78y")
 flat = true
 icon_alignment = 1

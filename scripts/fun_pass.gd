@@ -21,8 +21,9 @@ func _process(delta: float) -> void:
 			ItemsGlobal.giveItem("funPassLevel2")
 			queue_free()
 		if Input.is_action_pressed("ui_accept")  and funPassLevel == 3:
+			if !ItemsGlobal.checkItem("funPassLevel3"):
+				DialogueGlobal.objEncCount += 1
 			ItemsGlobal.giveItem("funPassLevel3")
-			DialogueGlobal.objEncCount += 1
 			queue_free()
 
 func _on_light_area_body_entered(body: Node3D) -> void:

@@ -163,9 +163,9 @@ spot_range = 36.8603
 spot_angle = 20.1224
 
 [node name="music" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2375, 5.78303, -4.3193)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2375, 5.78303, 0.279973)
 stream = ExtResource("9_rnhrr")
-volume_db = -10.0
+volume_db = -5.0
 
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]

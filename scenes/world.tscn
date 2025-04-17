@@ -137,7 +137,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.15618, 1.35445, -12.1525)
 stream = ExtResource("6_qfnet")
 volume_db = -5.0
 max_db = -3.0
-autoplay = true
 max_distance = 10.0
 
 [node name="boards" parent="." instance=ExtResource("9_7r4gi")]
