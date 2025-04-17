@@ -7,6 +7,8 @@ var hasTalkedTo : bool = false
 var bodySafe : Node3D
 var inArea : bool = false
 var isPowerDown : bool = false
+var isSpeaking : bool = false
+var isBeingTalkedTo : bool = false
 var carnie1SpokenTo : bool = false
 var carnie2SpokenTo : bool = false
 var carnie3SpokenTo : bool = false
@@ -14,11 +16,19 @@ var carnie4SpokenTo : bool = false
 var carnie7SpokenTo: bool = false
 var carnie9SpokenTo : bool = false
 @onready var mainDoorKey: Node3D = $mainDoorKeyPickUpArea
+@onready var carnieVoice: AudioStreamPlayer3D = $carnieVoice
 
 func _process(delta: float) -> void:
+	#if PlayerGlobal.checkIsTalkingTo() == "dan" and !carnieVoice.is_playing:
+	if isBeingTalkedTo:
+		print("cmon now")
+		if !isSpeaking:
+			carnieVoice.play(0.0)
+			isSpeaking = true
+
 	if inArea:
-		
 		if Input.is_action_pressed("ui_accept"):
+			isBeingTalkedTo = true
 			#print(DialogueGlobal.danEncCount)
 			match DialogueGlobal.danEncCount:
 				5:
@@ -77,4 +87,6 @@ func _on_talk_box_body_exited(body: Node3D) -> void:
 		PlayerGlobal.isTalking = false
 		ItemsGlobal.showItemUI = false
 		talkLight.set_visible(false)
+		isSpeaking = false
+		isBeingTalkedTo = false
 		body.canTalk = false
