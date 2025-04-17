@@ -37,10 +37,11 @@ func _process(delta: float) -> void:
 							isPowerDown = true
 							powerDown.play(0.0)
 				6:
-					mainDoorKey.set_visible(true)
-					mainDoorKey.monitoring = true
-					mainDoorKey.monitorable = true
-					carnie7SpokenTo = true
+					if !carnie7SpokenTo:
+						mainDoorKey.set_visible(true)
+						mainDoorKey.monitoring = true
+						mainDoorKey.monitorable = true
+						carnie7SpokenTo = true
 				_:
 					pass
 			

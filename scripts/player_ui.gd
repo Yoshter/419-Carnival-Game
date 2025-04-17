@@ -69,6 +69,7 @@ var toasterAnimHasPlayed : bool = false
 @onready var brenCredits: Label = $endScreen/BrenCredits
 @onready var bbgunShootSound: AudioStreamPlayer = $bbgunShootSound
 @onready var timerLabel: Label = $PauseMenu/timer/timerLabel
+var shootSoundDelay : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -77,6 +78,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	#print("IN PLAYERUI:" + str(PlayerGlobal.inUI))
+	shootSoundDelay += delta
 	PlayerGlobal.gameTime += delta
 	timerLabel.set_text(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))) + ": " + str("%02d" % int(str(fmod(PlayerGlobal.gameTime, 60)))))
 	print(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))))
@@ -104,12 +106,14 @@ func _process(delta: float) -> void:
 		timerText.set_text(str(round(GamesGlobal.shootingRangeTimeLeft,)))
 	else:
 		shootingRangeMenu.set_visible(false)
-	
-	if Input.is_action_pressed("shoot"):
-		if !bbgunShootSound.playing:
+	print(isVisible)
+	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("bbgun") and !isVisible and !PlayerGlobal.isDeaf:
+		if !bbgunShootSound.playing and shootSoundDelay > 0.8:
 			bbgunShootSound.play(0.0)
-	
-	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1:
+			shootSoundDelay = 0.0
+		print("nuts")
+	print("berries" + str(isVisible))
+	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
 		if PlayerGlobal.controlsShown:
@@ -119,6 +123,7 @@ func _process(delta: float) -> void:
 		mapMenu.set_visible(false)
 		PlayerGlobal.inUI = false
 		delay = 0.0
+		bbgunShootSound.volume_db = 0.0
 		isVisible = false
 		#bbgunShootSound.volume_db = 0.0
 		$"Close SFX".play()
@@ -134,7 +139,6 @@ func _process(delta: float) -> void:
 		$OpenSFX.play()
 		#print("in enable pause" + str(PlayerGlobal.inUI))
 		#print("in disable pause" + str(PlayerGlobal.inUI))
-	
 	
 	#print(ItemsGlobal.showItemUI)
 	#print("after" + str(PlayerGlobal.inUI))

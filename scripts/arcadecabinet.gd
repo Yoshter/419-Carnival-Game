@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 			joystickFixArea.monitorable = false
 			joystickFixArea.monitoring = false
 			gamePortal.monitoring = true
-			
+			PlayerGlobal.setCanInteract(false)
 			GamesGlobal.towerHasJoystick = true
 	
 	if canPlay and game == "ufo":
