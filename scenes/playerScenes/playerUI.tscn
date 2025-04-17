@@ -1008,6 +1008,7 @@ stream = ExtResource("6_4kfvc")
 stream = ExtResource("7_luwil")
 
 [node name="danEncNumLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 165.0
@@ -1015,6 +1016,7 @@ theme_override_font_sizes/font_size = 96
 text = "Dan Enc Num: "
 
 [node name="objEncNumLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 120.0
 offset_right = 601.0
@@ -1023,6 +1025,7 @@ theme_override_font_sizes/font_size = 96
 text = "Obj Enc Num: "
 
 [node name="dialogueCountLabel" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_top = 240.0
 offset_right = 601.0
@@ -1031,6 +1034,7 @@ theme_override_font_sizes/font_size = 96
 text = "Dialogue Counter: "
 
 [node name="endScreen" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -1050,6 +1054,7 @@ animation = &"popUp"
 stream = ExtResource("33_g8clv")
 
 [node name="programmerCredits" type="Label" parent="endScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1067,6 +1072,7 @@ text = "LEAD PROGRAMMER
 COLEMAN FAKER"
 
 [node name="gabeCredits" type="Label" parent="endScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1080,10 +1086,12 @@ offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 84
-text = "LEAD UI ENGINEER
-GABE CAZZOLLA"
+text = "UI ENGINEERs
+GABE CAZZOLLA
+COLEMAN FAKER"
 
 [node name="BrenCredits" type="Label" parent="endScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1102,6 +1110,7 @@ LEAD SOUND ENGINEER
 BREN MURPHY"
 
 [node name="artCredits" type="Label" parent="endScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1119,6 +1128,7 @@ text = "ASSET PRODUCTION
 COLE GENEVICK"
 
 [node name="designerCredits" type="Label" parent="endScreen"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
