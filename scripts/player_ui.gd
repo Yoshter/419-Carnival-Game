@@ -57,6 +57,16 @@ var hasGun : bool = false
 @onready var objEncNumLabel: Label = $objEncNumLabel
 @onready var dialogueCountLabel: Label = $dialogueCountLabel
 
+@onready var endScreen: Control = $endScreen
+var outroSeqNum : int = 1
+
+@onready var creditsTimer: Timer = $creditsTimer
+@onready var toasterAnim: AnimatedSprite2D = $endScreen/toasterAnim
+var toasterAnimHasPlayed : bool = false
+@onready var programmerCredits: Label = $endScreen/programmerCredits
+@onready var designerCredits: Label = $endScreen/designerCredits
+@onready var artCredits: Label = $endScreen/artCredits
+@onready var brenCredits: Label = $endScreen/BrenCredits
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -151,6 +161,29 @@ func _process(delta: float) -> void:
 	else:
 		getItemMenu.set_visible(false)
 		PlayerGlobal.inUI = false
+	
+	if PlayerGlobal.beatCARN:
+		if creditsTimer.is_stopped():
+			creditsTimer.start()
+		match outroSeqNum:
+			1:
+				Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+				endScreen.set_visible(true)
+				if !toasterAnimHasPlayed:
+					toasterAnimHasPlayed = true
+					toasterAnim.play("popUp")
+			2:
+				toasterAnim.set_visible(false)
+				programmerCredits.set_visible(true)
+			3:
+				brenCredits.set_visible(true)
+			4:
+				artCredits.set_visible(true)
+			5:
+				designerCredits.set_visible(true)
+			6:
+				get_tree().change_scene_to_file("res://assets/MenuScreens/main_menu.tscn")
+				creditsTimer.stop()
 
 func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1
@@ -275,3 +308,6 @@ func _on_quit_obj_pressed() -> void:
 func _on_bug_report_pressed():
 	$OpenSFX.play()
 	OS.shell_open("https://forms.gle/rjMwnETHGZXH6RL9A")
+
+func _on_credits_timer_timeout() -> void:
+	outroSeqNum += 1

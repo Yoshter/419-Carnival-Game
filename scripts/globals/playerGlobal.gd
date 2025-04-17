@@ -15,6 +15,10 @@ var inShootingRange : bool = false
 var isEndingSequence: bool = false
 var isBlackout : bool = false
 
+var isDeaf : bool = false
+
+var beatCARN : bool = false
+
 func setInteractText(newText : String) -> void:
 	interactText = newText
 

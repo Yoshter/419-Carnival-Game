@@ -8,9 +8,14 @@ extends Node3D
 @onready var poleRight: Sprite3D = $"Ending Adjustments/PoleRight"
 @onready var treeBody: StaticBody3D = $"Ending Adjustments/treeBody"
 var isInEndingSequence : bool = false
-
+@onready var ambienceMusic: AudioStreamPlayer = $AudioStreamPlayer
 
 func _process(delta: float) -> void:
+	#if PlayerGlobal.beatCARN:
+		
+	if PlayerGlobal.isDeaf:
+		ambienceMusic.stop()
+	
 	if PlayerGlobal.isEndingSequence and !isInEndingSequence:
 		isInEndingSequence = true
 		treeBody.position.y -= 4.0

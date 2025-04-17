@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://087gtq5af8be"]
+[gd_scene load_steps=4 format=3 uid="uid://087gtq5af8be"]
 
 [ext_resource type="Script" uid="uid://cj0uewst0fvv0" path="res://node_3d.gd" id="1_s4wbh"]
+[ext_resource type="AudioStream" uid="uid://dir7xmlfktyjl" path="res://assets/allsound/Music/CARN Credits early.wav" id="2_mjvop"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mjvop"]
 size = Vector3(10.4, 4, 3.6)
@@ -13,4 +14,13 @@ script = ExtResource("1_s4wbh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_mjvop")
 
+[node name="finaleTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="endCredits" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_mjvop")
+volume_db = -5.0
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="finaleTimer" to="." method="_on_finale_timer_timeout"]
