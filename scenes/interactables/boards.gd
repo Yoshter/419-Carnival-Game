@@ -6,13 +6,12 @@ var inArea : bool = false
 var isBroken: bool = false
 
 func _process(delta: float) -> void:
-	if ItemsGlobal.boardsBroken and isBroken:
+	if ItemsGlobal.boardsBroken:
 		queue_free()
 	
 	if inArea:
 		if ItemsGlobal.checkItem("saw") and Input.is_action_pressed("ui_accept"):
 			boardBreak.play(0.0) 
-			ItemsGlobal.boardsBroken = true
 			PlayerGlobal.setCanInteract(false)
 			boardBreakTimer.start()
 
@@ -30,4 +29,5 @@ func _on_board_area_body_exited(body: Node3D) -> void:
 
 func _on_board_break_timer_timeout() -> void:
 	isBroken = true
+	ItemsGlobal.boardsBroken = true
 	queue_free()

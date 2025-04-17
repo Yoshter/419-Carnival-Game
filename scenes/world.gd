@@ -10,7 +10,7 @@ func _ready() -> void:
 	if PlayerGlobal.isBlackout:
 		towerMusic.stop()
 		buzzing.stop()
-	if PlayerGlobal.isBlackout:
+	if !PlayerGlobal.isBlackout:
 		if !towerMusic.is_playing():
 			towerMusic.start(0.0)
 		if !buzzing.is_playing():
