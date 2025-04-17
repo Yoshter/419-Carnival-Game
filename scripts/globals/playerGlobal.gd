@@ -10,7 +10,7 @@ var interactText : String
 
 var needsTeleport = false
 var newPosition : Vector3
-
+var newRotation : float = 0.0
 var inShootingRange : bool = false
 var isEndingSequence: bool = false
 var isBlackout : bool = false

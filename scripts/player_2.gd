@@ -44,6 +44,7 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if PlayerGlobal.needsTeleport:
 		position = PlayerGlobal.newPosition
+		rotation.y = PlayerGlobal.newRotation
 		PlayerGlobal.needsTeleport = false
 	
 	if !hasBBGun and ItemsGlobal.checkItem("bbgun"):
