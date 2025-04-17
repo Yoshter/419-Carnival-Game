@@ -6,10 +6,12 @@ var shootingRangeStarted = false
 @onready var csgBarrier: CSGBox3D = $barrier/barrier/CSGBox3D5
 @onready var barrier: CSGBox3D = $barrier/barrier
 @onready var lights: Node3D = $lights
+@onready var music: AudioStreamPlayer3D = $music
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.isBlackout:
 		lights.set_visible(false)
+		music.stop()
 	else:
 		lights.set_visible(true)
 	if !shootingRangeTimer.is_stopped():
@@ -17,6 +19,7 @@ func _process(delta: float) -> void:
 	if inGameBoothArea and ItemsGlobal.checkItem("rangeToken"):
 		PlayerGlobal.setCanInteract(true)
 		if Input.is_action_pressed("ui_accept"):
+			music.play(0.0)
 			barrier.set_visible(true)
 			barrier.use_collision = true
 			csgBarrier.use_collision = true 
@@ -47,6 +50,7 @@ func _on_game_booth_body_exited(body: Node3D) -> void:
 func _on_shooting_range_timer_timeout() -> void:
 	if GamesGlobal.shootingRangeScore >= 1500:
 		GamesGlobal.rangeBeat = true
+	music.stop()
 	barrier.set_visible(false)
 	barrier.use_collision = false
 	csgBarrier.use_collision = false

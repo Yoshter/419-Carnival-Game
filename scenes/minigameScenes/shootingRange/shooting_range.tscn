@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bspombtyhjd6a"]
+[gd_scene load_steps=13 format=3 uid="uid://bspombtyhjd6a"]
 
 [ext_resource type="Script" uid="uid://cgpjpvw4sqd03" path="res://scenes/minigameScenes/shootingRange/shooting_range.gd" id="1_baoc8"]
 [ext_resource type="PackedScene" uid="uid://7ir04oxgkcfm" path="res://scenes/interactables/overworld_bb_gun.tscn" id="2_0amp2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="5_oadsy"]
 [ext_resource type="Material" uid="uid://b6qi4exs5o46m" path="res://assets/materials/arcadewall3.tres" id="7_s1lab"]
 [ext_resource type="Material" uid="uid://5o4c42nxr5a8" path="res://assets/materials/shootingrangefloor.tres" id="8_s1lab"]
+[ext_resource type="AudioStream" uid="uid://dm0o66ksxb216" path="res://assets/allsound/Music/CARN shooting range.wav" id="9_rnhrr"]
 [ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="9_xxta3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1gs1"]
@@ -160,6 +161,11 @@ transform = Transform3D(-0.562044, -0.145856, 0.814145, 0.0406328, 0.978271, 0.2
 light_energy = 4.0
 spot_range = 36.8603
 spot_angle = 20.1224
+
+[node name="music" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.2375, 5.78303, -4.3193)
+stream = ExtResource("9_rnhrr")
+volume_db = -10.0
 
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]

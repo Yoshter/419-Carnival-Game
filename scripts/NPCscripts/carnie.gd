@@ -21,9 +21,8 @@ var carnie9SpokenTo : bool = false
 func _process(delta: float) -> void:
 	#if PlayerGlobal.checkIsTalkingTo() == "dan" and !carnieVoice.is_playing:
 	if isBeingTalkedTo:
-		print("cmon now")
 		if !isSpeaking:
-			carnieVoice.play(0.0)
+			#carnieVoice.play(0.0)
 			isSpeaking = true
 
 	if inArea:

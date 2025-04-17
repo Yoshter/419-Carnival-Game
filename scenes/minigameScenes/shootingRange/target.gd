@@ -5,6 +5,8 @@ extends Node3D
 @onready var animation: AnimationPlayer = $animation
 @onready var delayTimer: Timer = $delayTimer
 
+@onready var targetBody: CollisionShape3D = $CollisionShape3D
+
 @export var targetLevel : int = 1
 var targetScore : int = 0
 
@@ -22,8 +24,10 @@ func _ready() -> void:
 
 func score() -> void:
 	GamesGlobal.shootingRangeScore += targetScore
+	targetBody.disabled = true
 	animation.play("fall_down")
 	delayTimer.start()
 
 func _on_delay_timer_timeout() -> void:
+	targetBody.disabled = false
 	animation.play("backUp")

@@ -27,6 +27,7 @@ var hasBBGun : bool = false
 var canShoot : bool = true
 @onready var bbRay: RayCast3D = $body/Camera3D/bbRay
 @onready var shootDelay: Timer = $shootDelay
+@onready var bbgunShootSound: AudioStreamPlayer3D = $bbgunShootSound
 
 @onready var animation: AnimationPlayer = $animation
 
@@ -69,6 +70,7 @@ func _process(delta: float) -> void:
 		PlayerGlobal.setIsTalking(true)
 	
 	if hasBBGun and Input.is_action_pressed("shoot") and canShoot:
+		bbgunShootSound.play(0.0)
 		canShoot = false
 		shootDelay.start()
 		if bbRay.is_colliding():
