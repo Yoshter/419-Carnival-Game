@@ -67,6 +67,8 @@ var toasterAnimHasPlayed : bool = false
 @onready var designerCredits: Label = $endScreen/designerCredits
 @onready var artCredits: Label = $endScreen/artCredits
 @onready var brenCredits: Label = $endScreen/BrenCredits
+@onready var bbgunShootSound: AudioStreamPlayer = $bbgunShootSound
+@onready var timerLabel: Label = $PauseMenu/timer/timerLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -74,6 +76,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	#print("IN PLAYERUI:" + str(PlayerGlobal.inUI))
+	PlayerGlobal.gameTime += delta
+	timerLabel.set_text(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))) + ": " + str("%02d" % int(str(fmod(PlayerGlobal.gameTime, 60)))))
+	print(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))))
 	delay += delta
 	danEncNumLabel.set_text("Dan Enc Num: " + str(DialogueGlobal.danEncCount))
 	objEncNumLabel.set_text("Obj Enc Num: " + str(DialogueGlobal.objEncCount))
@@ -99,14 +105,10 @@ func _process(delta: float) -> void:
 	else:
 		shootingRangeMenu.set_visible(false)
 	
-	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
-		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-		pauseMenu.set_visible(true)
-		controls.set_visible(true)
-		PlayerGlobal.inUI = true
-		isVisible = true
-		delay = 0.0
-		$OpenSFX.play()
+	if Input.is_action_pressed("shoot"):
+		if !bbgunShootSound.playing:
+			bbgunShootSound.play(0.0)
+	
 	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
@@ -116,12 +118,26 @@ func _process(delta: float) -> void:
 		objectiveMenu.set_visible(false)
 		mapMenu.set_visible(false)
 		PlayerGlobal.inUI = false
-		isVisible = false
 		delay = 0.0
+		isVisible = false
+		#bbgunShootSound.volume_db = 0.0
 		$"Close SFX".play()
-		
+	
+	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		pauseMenu.set_visible(true)
+		controls.set_visible(true)
+		PlayerGlobal.inUI = true
+		isVisible = true
+		delay = 0.0
+		bbgunShootSound.volume_db = -80.0
+		$OpenSFX.play()
+		#print("in enable pause" + str(PlayerGlobal.inUI))
+		#print("in disable pause" + str(PlayerGlobal.inUI))
+	
+	
 	#print(ItemsGlobal.showItemUI)
-	#print(PlayerGlobal.inUI)
+	#print("after" + str(PlayerGlobal.inUI))
 	
 	if PlayerGlobal.isTalking:
 		PlayerGlobal.setCanInteract(false)
@@ -132,7 +148,7 @@ func _process(delta: float) -> void:
 			if dialogueTimer.is_stopped():
 				dialogueTimer.start()
 		else:
-			print("dialogue count : " + str(dialogueCount))
+			#print("dialogue count : " + str(dialogueCount))
 			dialogueMenu.set_visible(false)
 			if DialogueGlobal.returnGivingItem(PlayerGlobal.checkIsTalkingTo()):
 				ItemsGlobal.giveItem(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2))
@@ -161,6 +177,10 @@ func _process(delta: float) -> void:
 	else:
 		getItemMenu.set_visible(false)
 		PlayerGlobal.inUI = false
+	
+	if PlayerGlobal.isDeaf == true:
+		gun_ui.set_visible(false)
+		crosshair.set_visible(false)
 	
 	if PlayerGlobal.beatCARN:
 		gun_ui.set_visible(false)

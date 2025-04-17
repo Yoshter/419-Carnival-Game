@@ -20,6 +20,8 @@ var isDeaf : bool = false
 
 var beatCARN : bool = false
 
+var gameTime : float = 0.0
+
 func setInteractText(newText : String) -> void:
 	interactText = newText
 

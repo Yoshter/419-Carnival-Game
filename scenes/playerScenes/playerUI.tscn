@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=60 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
 [ext_resource type="Texture2D" uid="uid://phvmuwdqfrhv" path="res://assets/Sprite Sheets/Toast_Games_Final-Sheet.png" id="32_j5ims"]
 [ext_resource type="AudioStream" uid="uid://dir7xmlfktyjl" path="res://assets/allsound/Music/CARN Credits early.wav" id="33_g8clv"]
+[ext_resource type="AudioStream" uid="uid://c01dlgfvgond1" path="res://assets/allsound/SFX/bbgun shoot.wav" id="34_8irf4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
 atlas = ExtResource("32_j5ims")
@@ -875,6 +876,29 @@ scale = Vector2(1.75241, 1.69913)
 icon = ExtResource("5_mnosj")
 flat = true
 
+[node name="timer" type="Control" parent="PauseMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="timerLabel" type="Label" parent="PauseMenu/timer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.7778
+offset_top = 0.555557
+offset_right = 291.778
+offset_bottom = 85.5556
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 54
+text = "00:00.00"
+
 [node name="controls" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 1776.0
@@ -1107,6 +1131,9 @@ BREN MURPHY"
 
 [node name="creditsTimer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="bbgunShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_8irf4")
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]

@@ -69,8 +69,8 @@ func _process(delta: float) -> void:
 	if canTalk and Input.is_action_just_pressed("ui_accept") and !PlayerGlobal.inUI:
 		PlayerGlobal.setIsTalking(true)
 	
-	if hasBBGun and Input.is_action_pressed("shoot") and canShoot:
-		bbgunShootSound.play(0.0)
+	if hasBBGun and Input.is_action_pressed("shoot") and canShoot and !PlayerGlobal.inUI:
+		#bbgunShootSound.play(0.0)
 		canShoot = false
 		shootDelay.start()
 		if bbRay.is_colliding():

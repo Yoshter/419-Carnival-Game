@@ -427,6 +427,17 @@ animation = &"outerLeft"
 frame = 13
 frame_progress = 1.0
 
+[node name="score" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_left = -670.0
+offset_top = -315.0
+offset_right = -408.0
+offset_bottom = -266.0
+scale = Vector2(1.16, 1.16)
+theme_override_font_sizes/font_size = 48
+text = "SCORE: 0000"
+
 [connection signal="pressed" from="nextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="retryMenu/retryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]
