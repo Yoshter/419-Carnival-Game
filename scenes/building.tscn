@@ -1,10 +1,11 @@
-[gd_scene load_steps=19 format=3 uid="uid://duxrh0oc2gdr"]
+[gd_scene load_steps=20 format=3 uid="uid://duxrh0oc2gdr"]
 
 [ext_resource type="Texture2D" uid="uid://dywbrd7vkml87" path="res://assets/art/building.png" id="1_2ed7c"]
 [ext_resource type="Script" uid="uid://pxddu7g8s3wb" path="res://scripts/building.gd" id="1_b4mm2"]
 [ext_resource type="Texture2D" uid="uid://ccwh0sr8qih3a" path="res://assets/Space/Space Art/Explosion-Sheet-New.png" id="2_lm2ef"]
 [ext_resource type="AudioStream" uid="uid://dsl8s0amhivyt" path="res://assets/allsound/SFX/UFO score point.wav" id="3_8lrrx"]
 [ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="4_rla3o"]
+[ext_resource type="AudioStream" uid="uid://cv3qyk017g7ui" path="res://assets/allsound/SFX/Ufo Death Explosion.wav" id="6_f5uvq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f5uvq"]
 atlas = ExtResource("2_lm2ef")
@@ -131,6 +132,10 @@ volume_db = -8.0
 
 [node name="ticketGet" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_rla3o")
+
+[node name="deathSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_f5uvq")
+volume_db = -10.0
 
 [connection signal="body_entered" from="deathbox" to="." method="_on_deathbox_body_entered"]
 [connection signal="body_entered" from="scoreArea" to="." method="_on_score_area_body_entered"]

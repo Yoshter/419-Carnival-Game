@@ -20,6 +20,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 func fix() -> void:
 	print("hello")
 	PlayerGlobal.isBlackout = false
+	PlayerGlobal.afterBlackout = true
 	PlayerGlobal.setCanInteract(false)
 	print("fix/ should be 5" + str(DialogueGlobal.danEncCount))
 	if DialogueGlobal.danEncCount == 5:

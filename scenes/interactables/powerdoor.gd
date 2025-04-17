@@ -3,6 +3,8 @@ extends Node3D
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.isBlackout:
-		doorBox.position.y += 4.5
-	else:
-		doorBox.position.y = 0.0
+		doorBox.position.y += 6.925
+	if !PlayerGlobal.isBlackout and !PlayerGlobal.afterBlackout:
+		doorBox.position.y = 2.425
+	if PlayerGlobal.afterBlackout:
+		doorBox.position.y = 6.0

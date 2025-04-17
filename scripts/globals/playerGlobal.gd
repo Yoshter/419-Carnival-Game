@@ -14,6 +14,7 @@ var newPosition : Vector3
 var inShootingRange : bool = false
 var isEndingSequence: bool = false
 var isBlackout : bool = false
+var afterBlackout : bool = false
 
 var isDeaf : bool = false
 

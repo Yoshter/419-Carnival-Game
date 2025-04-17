@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=38 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -42,6 +42,9 @@ albedo_texture = ExtResource("4_5ix5a")
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3mcc"]
+albedo_color = Color(0.241136, 0.0509818, 0.0388588, 1)
+
 [node name="gamestent" type="Node3D"]
 script = ExtResource("1_bfm21")
 
@@ -80,6 +83,11 @@ size = Vector3(44.5161, 7, 56.2458)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7684, -1.32325, -3.35581)
 operation = 2
 size = Vector3(6.79718, 7, 34.8997)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 6.75209e-08, 0, -6.75209e-08, 1, 1.39437, -1.48601, 27.1809)
+operation = 2
+size = Vector3(44.5161, 7, 7.08855)
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="ground/mainarea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 0.347517, 0.678884)
@@ -268,6 +276,16 @@ transform = Transform3D(1.87627, -2.20074, -1.05737, 2.37274, 1.95793, 0.135208,
 [node name="TableNoLight2" parent="obstacles" instance=ExtResource("14_joq6e")]
 transform = Transform3D(-1.65924, 2.58573, 0.206433, 2.59156, 1.66298, -3.42686e-08, -0.111487, 0.173738, -3.07231, 6.08074, 0.551051, 11.4215)
 
+[node name="CSGBox3D3" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(0.620518, 0, -0.784192, 0, 1, 0, 0.784192, 0, 0.620518, -20.314, 4.41293, -21.5662)
+size = Vector3(1.17395, 0.348633, 1.15625)
+material = SubResource("StandardMaterial3D_y3mcc")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(-0.0168591, 0, -0.999858, 0, 1, 0, 0.999858, 0, -0.0168591, -6.03215, 4.32863, 46.7161)
+size = Vector3(1.60846, 0.348633, 3.70508)
+material = SubResource("StandardMaterial3D_y3mcc")
+
 [node name="audioSpeakers" type="Node3D" parent="."]
 
 [node name="Carnival music" type="AudioStreamPlayer3D" parent="audioSpeakers"]
@@ -393,12 +411,12 @@ visible = false
 [node name="tokens" type="Node3D" parent="."]
 
 [node name="overworldToken" parent="tokens" instance=ExtResource("29_n1i75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1232, 1.90833, 17.0916)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4591, 0.988568, -9.95815)
 tokenString = "shootingRange"
 isFallen = true
 
 [node name="overworldToken2" parent="tokens" instance=ExtResource("29_n1i75")]
-transform = Transform3D(0.949994, 0, 0.312269, 0, 1, 0, -0.312269, 0, 0.949994, -20.1993, 4.21868, -19.7464)
+transform = Transform3D(0.817879, 0, 0.575391, 0, 1, 0, -0.575391, 0, 0.817879, -20.1993, 5.14577, -21.4857)
 tokenString = "skeeble"
 
 [node name="janitorDoor" parent="." instance=ExtResource("29_j7vy6")]

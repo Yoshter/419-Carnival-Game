@@ -163,6 +163,8 @@ func _process(delta: float) -> void:
 		PlayerGlobal.inUI = false
 	
 	if PlayerGlobal.beatCARN:
+		gun_ui.set_visible(false)
+		crosshair.set_visible(false)
 		if creditsTimer.is_stopped():
 			creditsTimer.start()
 		match outroSeqNum:
