@@ -206,9 +206,9 @@ func _process(delta: float) -> void:
 				#toasterAnim.set_visible(false)
 				programmerCredits.set_visible(true)
 			3:
-				gabeCredits.set_visible(true)
-			4:
 				brenCredits.set_visible(true)
+			4:
+				gabeCredits.set_visible(true)
 			5:
 				artCredits.set_visible(true)
 			6:

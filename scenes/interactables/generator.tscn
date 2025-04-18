@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bi3xbstqkw3xb"]
+[gd_scene load_steps=6 format=3 uid="uid://bi3xbstqkw3xb"]
 
 [ext_resource type="Script" uid="uid://brghhcweynpr4" path="res://scenes/interactables/generator.gd" id="1_f5p1e"]
 [ext_resource type="Texture2D" uid="uid://c3w0i41geusn3" path="res://assets/Textures/Metal.png" id="2_x657g"]
+[ext_resource type="AudioStream" uid="uid://duffae0avdcae" path="res://assets/allsound/SFX/ArcadeFix.wav" id="3_qrq2b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrq2b"]
 albedo_texture = ExtResource("2_x657g")
@@ -23,6 +24,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.144093, 0, 2)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65, 0.2)
 shape = SubResource("BoxShape3D_f5p1e")
+
+[node name="FixNoise" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_qrq2b")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

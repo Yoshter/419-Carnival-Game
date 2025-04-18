@@ -1,6 +1,7 @@
 extends Node3D
 
 var inArea : bool = false
+@onready var fixNoise: AudioStreamPlayer3D = $FixNoise
 
 func _process(delta: float) -> void:
 	if inArea:
@@ -19,6 +20,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 
 func fix() -> void:
 	print("hello")
+	fixNoise.play(0.0)
 	PlayerGlobal.isBlackout = false
 	PlayerGlobal.afterBlackout = true
 	PlayerGlobal.setCanInteract(false)
