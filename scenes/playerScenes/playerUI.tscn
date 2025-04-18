@@ -847,10 +847,10 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/objectiveMenu"]
 layout_mode = 0
-offset_left = -241.0
-offset_top = -164.0
-offset_right = 317.0
-offset_bottom = 197.0
+offset_left = -269.0
+offset_top = -181.0
+offset_right = 330.0
+offset_bottom = 215.0
 color = Color(0.517184, 0.517184, 0.517184, 1)
 
 [node name="objectiveText" type="Label" parent="PauseMenu/objectiveMenu"]
