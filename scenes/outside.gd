@@ -9,6 +9,7 @@ extends Node3D
 @onready var treeBody: StaticBody3D = $"Ending Adjustments/treeBody"
 var isInEndingSequence : bool = false
 @onready var ambienceMusic: AudioStreamPlayer = $AudioStreamPlayer
+@onready var rainParticles: GPUParticles3D = $Rain/RainParticles
 
 func _process(delta: float) -> void:
 	#if PlayerGlobal.beatCARN:
@@ -25,3 +26,5 @@ func _process(delta: float) -> void:
 		tree_10.set_visible(true)
 		poleLeft.set_visible(true)
 		poleRight.set_visible(true)
+		rainParticles.amount = 200000
+		rainParticles.speed_scale = 1.5
