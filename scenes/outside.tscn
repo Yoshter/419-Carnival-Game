@@ -531,7 +531,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4654, 5.47834, -35.9836)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.18085, 4.77476, -85.2539)
 
 [node name="Tree20" parent="." instance=ExtResource("15_ht1us")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45778, 4.56134, -95.8162)
+transform = Transform3D(0.415424, -0.909628, 0, 0.767079, 0.350322, 0.537461, -0.48889, -0.223274, 0.843288, -5.45778, 4.56134, -95.8162)
 
 [node name="Tree21" parent="." instance=ExtResource("15_ht1us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97187, 4.56134, -104.588)
@@ -549,7 +549,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.8395, 2.67522, -51.9895)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.8865, 4.47855, -56.2905)
 
 [node name="finaleCamera" parent="." instance=ExtResource("20_ni2yb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.0605, 6.86169, -79.2194)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8296, 6.86169, -98.949)
 
 [node name="leftPoleCollision" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.4925, 4.88174, -72.0401)
@@ -569,7 +569,7 @@ shape = SubResource("BoxShape3D_pu366")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18698, 4.32935, -117.515)
 
 [node name="Tree22" parent="." instance=ExtResource("15_ht1us")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7546, 4.2879, -121.18)
+transform = Transform3D(0.394551, 0.918874, 0, -0.918874, 0.394551, 0, 0, 0, 1, -25.4653, 4.6821, -121.18)
 
 [node name="Tree23" parent="." instance=ExtResource("15_ht1us")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.17, 4.35178, -116.971)
@@ -590,7 +590,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.8334, 4.46066, -98.9185)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9572, 4.28792, -111.139)
 
 [node name="Bush34" parent="." instance=ExtResource("16_lpxjy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1855, 4.15477, -120.424)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3048, 4.15477, -120.424)
 
 [node name="Bush35" parent="." instance=ExtResource("16_lpxjy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5977, 4.26347, -111.922)

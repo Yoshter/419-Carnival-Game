@@ -130,7 +130,7 @@ func _process(delta: float) -> void:
 		#bbgunShootSound.volume_db = 0.0
 		$"Close SFX".play()
 	
-	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1:
+	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
 		controls.set_visible(true)
@@ -199,11 +199,11 @@ func _process(delta: float) -> void:
 			1:
 				Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 				endScreen.set_visible(true)
-				if !toasterAnimHasPlayed:
-					toasterAnimHasPlayed = true
-					toasterAnim.play("popUp")
+				#if !toasterAnimHasPlayed:
+					#toasterAnimHasPlayed = true
+					#toasterAnim.play("popUp")
 			2:
-				toasterAnim.set_visible(false)
+				#toasterAnim.set_visible(false)
 				programmerCredits.set_visible(true)
 			3:
 				gabeCredits.set_visible(true)
