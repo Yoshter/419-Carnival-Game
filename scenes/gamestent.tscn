@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=43 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="36_61scv"]
 [ext_resource type="AudioStream" uid="uid://dx48i70xduqdb" path="res://assets/allsound/SFX/Rain + Thunder for power outage.wav" id="37_61scv"]
 [ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="38_nlnqw"]
+[ext_resource type="AudioStream" uid="uid://bx2giqq7gi1qn" path="res://assets/allsound/SFX/Thunder Jumpscare.wav" id="39_q2qs1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -483,3 +484,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1423, 6.1947, 0.719514)
 stream = ExtResource("38_nlnqw")
 volume_db = -15.0
 max_db = -15.0
+
+[node name="Thunder Jumpscare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_q2qs1")

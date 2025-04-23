@@ -17,6 +17,7 @@ var carnie7SpokenTo: bool = false
 var carnie9SpokenTo : bool = false
 @onready var mainDoorKey: Node3D = $mainDoorKeyPickUpArea
 @onready var carnieVoice: AudioStreamPlayer3D = $carnieVoice
+@onready var thunder_jumpscare: AudioStreamPlayer = $"../Thunder Jumpscare"
 
 func _process(delta: float) -> void:
 	#if PlayerGlobal.checkIsTalkingTo() == "dan" and !carnieVoice.is_playing:
@@ -36,6 +37,7 @@ func _process(delta: float) -> void:
 						if !isPowerDown:
 							isPowerDown = true
 							powerDown.play(0.0)
+							thunder_jumpscare.play(0.0)
 				6:
 					if !carnie7SpokenTo:
 						mainDoorKey.set_visible(true)
