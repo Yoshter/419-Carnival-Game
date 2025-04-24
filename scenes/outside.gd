@@ -8,7 +8,7 @@ extends Node3D
 @onready var poleRight: Sprite3D = $"Ending Adjustments/PoleRight"
 @onready var treeBody: StaticBody3D = $"Ending Adjustments/treeBody"
 var isInEndingSequence : bool = false
-@onready var ambienceMusic: AudioStreamPlayer = $AudioStreamPlayer
+@onready var ambienceMusic: AudioStreamPlayer = $Ambience
 @onready var rainParticles: GPUParticles3D = $Rain/RainParticles
 
 func _process(delta: float) -> void:
