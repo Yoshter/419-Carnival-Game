@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bffoms32sldhx"
-path.s3tc="res://.godot/imported/Saw.png-2ba3b205a03b90b4859edecd803e58d1.s3tc.ctex"
+uid="uid://3ycqjxw0yj8s"
+path.s3tc="res://.godot/imported/Gate_Animated-Sheet.png-94833861166281833778d7c16cb81eef.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/UI/Saw.png"
-dest_files=["res://.godot/imported/Saw.png-2ba3b205a03b90b4859edecd803e58d1.s3tc.ctex"]
+source_file="res://assets/Sprite Sheets/Gate_Animated-Sheet.png"
+dest_files=["res://.godot/imported/Gate_Animated-Sheet.png-94833861166281833778d7c16cb81eef.s3tc.ctex"]
 
 [params]
 
