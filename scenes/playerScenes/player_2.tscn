@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://ec2iu4a6f3mf"]
+[gd_scene load_steps=9 format=3 uid="uid://ec2iu4a6f3mf"]
 
 [ext_resource type="Script" uid="uid://cwssn13aabkk1" path="res://scripts/player_2.gd" id="1_xuxxf"]
 [ext_resource type="PackedScene" uid="uid://gw27gms06jj0" path="res://scenes/playerScenes/playerUI.tscn" id="2_8dcr5"]
 [ext_resource type="AudioStream" uid="uid://c01dlgfvgond1" path="res://assets/allsound/SFX/bbgun shoot.wav" id="3_j7i8f"]
-[ext_resource type="Texture2D" uid="uid://bffoms32sldhx" path="res://assets/UI/Saw.png" id="4_78b7v"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pssrb"]
 height = 2.87251
@@ -127,12 +126,6 @@ libraries = {
 [node name="bbgunShootSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.553862, 1.33471, -0.933779)
 stream = ExtResource("3_j7i8f")
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(-0.251563, 0, 0.967841, 0, 1, 0, -0.967841, 0, -0.251563, 0.389573, 1.60904, -0.961196)
-pixel_size = 0.004
-texture_filter = 0
-texture = ExtResource("4_78b7v")
 
 [connection signal="timeout" from="crouchDelay" to="." method="_on_crouch_delay_timeout"]
 [connection signal="timeout" from="shootDelay" to="." method="_on_shoot_delay_timeout"]

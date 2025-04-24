@@ -16,6 +16,8 @@ var controlsShown : bool = false
 @onready var mapMenu: Control = $PauseMenu/mapMenu
 @onready var interactMenu: Control = $interactMenu
 @onready var shootingRangeMenu: Control = $shootingRangeMenu
+@onready var settings_menu: Control = $PauseMenu/settingsMenu
+
 
 @onready var rangeScoreText: Label = $shootingRangeMenu/scoreText
 @onready var crosshair: Control = $crosshair
@@ -229,8 +231,12 @@ func _on_inventory_pressed() -> void:
 	$"TabSwitch SFX".play()
 	inventoryMenu.set_visible(true)
 
+func _on_settings_pressed() -> void:
+	settings_menu.set_visible(true)
+
 func _on_quit_inv_pressed() -> void:
 	inventoryMenu.set_visible(false)
+
 
 func updateItemIcons() -> void:
 	if ItemsGlobal.checkItem("ufoToken"):
@@ -343,3 +349,7 @@ func _on_bug_report_pressed():
 
 func _on_credits_timer_timeout() -> void:
 	outroSeqNum += 1
+
+
+func _on_quit_settings_pressed() -> void:
+	settings_menu.set_visible(false)

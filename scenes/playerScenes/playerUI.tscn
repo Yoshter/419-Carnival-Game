@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=63 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://npqfokrsikot" path="res://assets/UI/TKey.png" id="15_khqck"]
 [ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="18_c1ib8"]
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
+[ext_resource type="Script" uid="uid://bpuomhrhlixuh" path="res://scenes/playerScenes/volume_slider.gd" id="28_j3u5f"]
 [ext_resource type="Texture2D" uid="uid://phvmuwdqfrhv" path="res://assets/Sprite Sheets/Toast_Games_Final-Sheet.png" id="32_j5ims"]
 [ext_resource type="AudioStream" uid="uid://dir7xmlfktyjl" path="res://assets/allsound/Music/CARN Credits early.wav" id="33_g8clv"]
 [ext_resource type="AudioStream" uid="uid://c01dlgfvgond1" path="res://assets/allsound/SFX/bbgun shoot.wav" id="34_8irf4"]
@@ -228,6 +229,7 @@ position = Vector2(1562, 861)
 texture = ExtResource("2_nye1j")
 
 [node name="Saw_UI" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(1562, 861)
 texture = ExtResource("3_r58bp")
 
@@ -350,7 +352,7 @@ offset_bottom = 498.0
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/colorRects"]
 layout_mode = 0
 offset_right = 280.0
-offset_bottom = 648.0
+offset_bottom = 602.0
 color = Color(0, 0, 0, 0.341176)
 
 [node name="invButSprite" type="Sprite2D" parent="PauseMenu/colorRects"]
@@ -387,9 +389,9 @@ flat = true
 texture_filter = 1
 layout_mode = 0
 offset_left = 23.8889
-offset_top = 235.0
+offset_top = 152.778
 offset_right = 262.889
-offset_bottom = 341.0
+offset_bottom = 258.778
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 36
 text = "REPORT 
@@ -417,13 +419,24 @@ flat = true
 
 [node name="objective" type="Button" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 97.0
-offset_right = 262.0
-offset_bottom = 178.0
+offset_left = 23.8889
+offset_top = 40.0
+offset_right = 262.889
+offset_bottom = 121.0
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 36
 text = "OBJECTIVE"
+
+[node name="settings" type="Button" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 23.8889
+offset_top = 287.778
+offset_right = 262.889
+offset_bottom = 368.778
+localize_numeral_system = false
+theme = ExtResource("4_14imd")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
 
 [node name="inventoryMenu" type="Control" parent="PauseMenu"]
 visible = false
@@ -573,6 +586,72 @@ visible = false
 position = Vector2(461.667, 446.111)
 scale = Vector2(0.470299, 0.470299)
 texture = ExtResource("11_latnh")
+
+[node name="settingsMenu" type="Control" parent="PauseMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 1067.0
+offset_bottom = 600.0
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/settingsMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.478431, 0.192157, 0.192157, 1)
+
+[node name="CheckButton" type="CheckButton" parent="PauseMenu/settingsMenu"]
+layout_mode = 0
+offset_left = 106.667
+offset_top = 150.556
+offset_right = 537.667
+offset_bottom = 207.556
+scale = Vector2(1.88, 1.88)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "Performance Mode"
+
+[node name="volumeSlider" type="HSlider" parent="PauseMenu/settingsMenu"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 115.0
+offset_top = 404.0
+offset_right = 912.0
+offset_bottom = 515.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+script = ExtResource("28_j3u5f")
+bus_name = "Master"
+
+[node name="Label" type="Label" parent="PauseMenu/settingsMenu"]
+layout_mode = 0
+offset_left = 215.556
+offset_top = 344.444
+offset_right = 825.556
+offset_bottom = 441.444
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 96
+text = "Master Volume"
+
+[node name="quitSettings" type="Button" parent="PauseMenu/settingsMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.001
+anchor_bottom = 1.0
+offset_left = 912.222
+offset_right = 0.155151
+offset_bottom = -461.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+icon = ExtResource("5_mnosj")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ConfirmQuit2" type="Control" parent="PauseMenu"]
 visible = false
@@ -1015,7 +1094,9 @@ stream = ExtResource("34_8irf4")
 [connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]
 [connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
 [connection signal="pressed" from="PauseMenu/objective" to="." method="_on_objective_pressed"]
+[connection signal="pressed" from="PauseMenu/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/settingsMenu/quitSettings" to="." method="_on_quit_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
