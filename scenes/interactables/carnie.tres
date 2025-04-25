@@ -1,0 +1,37 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b2klb2wvfkst7"]
+
+[ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="1_08rhc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hs2t"]
+atlas = ExtResource("1_08rhc")
+region = Rect2(0, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0nxg"]
+atlas = ExtResource("1_08rhc")
+region = Rect2(0, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_umgj7"]
+atlas = ExtResource("1_08rhc")
+region = Rect2(450, 0, 450, 560)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hs2t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0nxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_umgj7")
+}],
+"loop": true,
+"name": &"talking",
+"speed": 5.0
+}]

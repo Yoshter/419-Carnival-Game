@@ -3,20 +3,19 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ccyw0jhi6wdcg"
-path.s3tc="res://.godot/imported/funpassJr.png-1ad6dc699529fd8bf30e6fec0d23774d.s3tc.ctex"
+path="res://.godot/imported/funpassJr.png-1ad6dc699529fd8bf30e6fec0d23774d.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://assets/art/funpassJr.png"
-dest_files=["res://.godot/imported/funpassJr.png-1ad6dc699529fd8bf30e6fec0d23774d.s3tc.ctex"]
+dest_files=["res://.godot/imported/funpassJr.png-1ad6dc699529fd8bf30e6fec0d23774d.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

@@ -2,22 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnmumslsbm5ys"
-path.bptc="res://.godot/imported/Truck.png-6409d78daa3f384fc1ca52a45401dcc7.bptc.ctex"
+uid="uid://nryrfqki41wj"
+path="res://.godot/imported/Carne-talking-Sheet.png-c9335c2c759be790315cb4106f1cef95.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Textures/Truck.png"
-dest_files=["res://.godot/imported/Truck.png-6409d78daa3f384fc1ca52a45401dcc7.bptc.ctex"]
+source_file="res://assets/art/Carne-talking-Sheet.png"
+dest_files=["res://.godot/imported/Carne-talking-Sheet.png-c9335c2c759be790315cb4106f1cef95.ctex"]
 
 [params]
 
-compress/mode=2
-compress/high_quality=true
+compress/mode=3
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0

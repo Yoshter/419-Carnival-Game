@@ -20,6 +20,7 @@ material = ExtResource("2_g5ncd")
 
 [node name="Sprite3D" type="Sprite3D" parent="doorBox"]
 transform = Transform3D(-2.23517e-08, 0, 0.525, 1.49012e-08, 0.557853, 0, -0.525, 0, -6.70552e-08, -0.292068, 0.0134835, -1.66893e-06)
+texture_filter = 2
 texture = ExtResource("3_6cyqp")
 
 [node name="unlockArea" type="Area3D" parent="."]
