@@ -124,6 +124,7 @@ func _process(delta: float) -> void:
 			controls.set_visible(false)
 		inventoryMenu.set_visible(false)
 		objectiveMenu.set_visible(false)
+		confirm_quit_2.set_visible(false)
 		mapMenu.set_visible(false)
 		PlayerGlobal.inUI = false
 		delay = 0.0

@@ -323,7 +323,6 @@ offset_bottom = 90.0
 rotation = 1.57079
 
 [node name="PauseMenu" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchor_right = 1.00031
 anchor_bottom = 1.0
@@ -610,10 +609,62 @@ position = Vector2(461.667, 446.111)
 scale = Vector2(0.470299, 0.470299)
 texture = ExtResource("11_latnh")
 
-[node name="settingsMenu" type="Control" parent="PauseMenu"]
+[node name="objectiveMenu" type="Control" parent="PauseMenu"]
 visible = false
-anchors_preset = 0
-anchor_right = 1.0
+layout_mode = 1
+anchor_left = 0.356139
+anchor_top = 0.155
+anchor_right = 0.891284
+anchor_bottom = 0.831667
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/objectiveMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00700525
+anchor_top = -0.00492611
+anchor_right = 1.00525
+anchor_bottom = 1.01724
+scale = Vector2(0.994755, 0.981129)
+color = Color(0.517184, 0.517184, 0.517184, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="objectiveText" type="Label" parent="PauseMenu/objectiveMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0836739
+anchor_top = 0.251232
+anchor_right = 1.09321
+anchor_bottom = 0.650246
+scale = Vector2(0.994755, 0.981129)
+theme_override_font_sizes/font_size = 28
+text = "OBJECTIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitObj" type="Button" parent="PauseMenu/objectiveMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.871765
+anchor_top = -0.00191571
+anchor_right = 0.994526
+anchor_bottom = 0.165486
+offset_right = -30.0964
+offset_bottom = -27.9652
+scale = Vector2(1.74322, 1.66707)
+icon = ExtResource("5_mnosj")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="settingsMenu" type="Control" parent="PauseMenu"]
+layout_mode = 1
+anchor_right = 1.00469
 anchor_bottom = 1.0
 metadata/_edit_use_anchors_ = true
 
@@ -682,9 +733,92 @@ icon_alignment = 1
 expand_icon = true
 metadata/_edit_use_anchors_ = true
 
+[node name="mapMenu" type="Control" parent="PauseMenu"]
+visible = false
+layout_mode = 1
+anchor_left = -0.00208269
+anchor_top = 0.05
+anchor_right = 0.915443
+anchor_bottom = 0.801667
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PauseMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.39326
+anchor_top = 0.23725
+anchor_right = 0.969361
+anchor_bottom = 0.924612
+color = Color(1, 1, 0.745098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PauseMenu/mapMenu"]
+layout_mode = 0
+anchor_left = 0.518102
+anchor_top = 0.447155
+anchor_right = 0.896039
+anchor_bottom = 0.875093
+offset_left = 3.05176e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 192
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mapMissingSprite" type="Sprite2D" parent="PauseMenu/mapMenu"]
+visible = false
+position = Vector2(673, 291)
+texture = ExtResource("18_c1ib8")
+
+[node name="Map" type="Sprite2D" parent="PauseMenu/mapMenu"]
+visible = false
+position = Vector2(651.453, 270.972)
+scale = Vector2(2.1047, 2.1047)
+texture = ExtResource("22_cx60t")
+
+[node name="quitInv2" type="Button" parent="PauseMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.919309
+anchor_top = 0.247598
+anchor_right = 0.975489
+anchor_bottom = 0.376201
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+icon = ExtResource("5_mnosj")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="timer" type="Control" parent="PauseMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="timerLabel" type="Label" parent="PauseMenu/timer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.7778
+offset_top = 0.555557
+offset_right = 291.778
+offset_bottom = 85.5556
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 54
+text = "00:00.00"
+
 [node name="ConfirmQuit2" type="Control" parent="PauseMenu"]
 visible = false
 layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -738,135 +872,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
-
-[node name="mapMenu" type="Control" parent="PauseMenu"]
-visible = false
-anchors_preset = 0
-anchor_right = 0.917526
-anchor_bottom = 0.751667
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect" type="ColorRect" parent="PauseMenu/mapMenu"]
-layout_mode = 0
-anchor_left = 0.405516
-anchor_top = 0.310421
-anchor_right = 0.996936
-anchor_bottom = 0.997783
-color = Color(1, 1, 0.745098, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="PauseMenu/mapMenu"]
-layout_mode = 0
-anchor_left = 0.518102
-anchor_top = 0.447155
-anchor_right = 0.896039
-anchor_bottom = 0.875093
-offset_left = 3.05176e-05
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 192
-text = "???"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="mapMissingSprite" type="Sprite2D" parent="PauseMenu/mapMenu"]
-visible = false
-position = Vector2(673, 291)
-texture = ExtResource("18_c1ib8")
-
-[node name="Map" type="Sprite2D" parent="PauseMenu/mapMenu"]
-position = Vector2(685, 289.444)
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("22_cx60t")
-
-[node name="quitInv2" type="Button" parent="PauseMenu/mapMenu"]
-layout_mode = 0
-anchor_left = 0.935762
-anchor_top = 0.306725
-anchor_right = 0.991942
-anchor_bottom = 0.435328
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-icon = ExtResource("5_mnosj")
-flat = true
-icon_alignment = 1
-expand_icon = true
-metadata/_edit_use_anchors_ = true
-
-[node name="objectiveMenu" type="Control" parent="PauseMenu"]
-visible = false
-layout_mode = 1
-anchor_left = 0.356139
-anchor_top = 0.155
-anchor_right = 0.891284
-anchor_bottom = 0.831667
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="ColorRect" type="ColorRect" parent="PauseMenu/objectiveMenu"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.00700525
-anchor_top = -0.00492611
-anchor_right = 1.00525
-anchor_bottom = 1.01724
-scale = Vector2(0.994755, 0.981129)
-color = Color(0.517184, 0.517184, 0.517184, 1)
-metadata/_edit_use_anchors_ = true
-
-[node name="objectiveText" type="Label" parent="PauseMenu/objectiveMenu"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.0836739
-anchor_top = 0.251232
-anchor_right = 1.09321
-anchor_bottom = 0.650246
-scale = Vector2(0.994755, 0.981129)
-theme_override_font_sizes/font_size = 28
-text = "OBJECTIVE"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="QuitObj" type="Button" parent="PauseMenu/objectiveMenu"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.871765
-anchor_top = -0.00191571
-anchor_right = 0.994526
-anchor_bottom = 0.165486
-offset_right = -30.0964
-offset_bottom = -27.9652
-scale = Vector2(1.74322, 1.66707)
-icon = ExtResource("5_mnosj")
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="timer" type="Control" parent="PauseMenu"]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="timerLabel" type="Label" parent="PauseMenu/timer"]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 17.7778
-offset_top = 0.555557
-offset_right = 291.778
-offset_bottom = 85.5556
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 54
-text = "00:00.00"
 
 [node name="controls" type="Control" parent="."]
 anchors_preset = 0
@@ -1133,12 +1138,12 @@ stream = ExtResource("34_8irf4")
 [connection signal="pressed" from="PauseMenu/objective" to="." method="_on_objective_pressed"]
 [connection signal="pressed" from="PauseMenu/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="pressed" from="PauseMenu/settingsMenu/quitSettings" to="." method="_on_quit_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
-[connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
 [connection signal="timeout" from="creditsTimer" to="." method="_on_credits_timer_timeout"]
