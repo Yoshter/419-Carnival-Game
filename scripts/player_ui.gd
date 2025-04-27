@@ -217,7 +217,7 @@ func _process(delta: float) -> void:
 			6:
 				designerCredits.set_visible(true)
 			7:
-				get_tree().change_scene_to_file("res://assets/MenuScreens/main_menu.tscn")
+				get_tree().change_scene_to_file("res://scenes/outside.tscn")
 				creditsTimer.stop()
 
 func _on_dialogue_timer_timeout() -> void:

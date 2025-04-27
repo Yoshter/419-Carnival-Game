@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://dxi413p71bf7s"]
+[gd_scene load_steps=31 format=3 uid="uid://dxi413p71bf7s"]
 
 [ext_resource type="Script" uid="uid://be4dnwb6q21ms" path="res://scenes/fungate.gd" id="1_5cohp"]
 [ext_resource type="Texture2D" uid="uid://v8bvtcp75o4s" path="res://assets/Tent/Gate.png" id="2_cx8a8"]
 [ext_resource type="Texture2D" uid="uid://3ycqjxw0yj8s" path="res://assets/Sprite Sheets/Gate_Animated-Sheet.png" id="2_qg8rk"]
 [ext_resource type="Texture2D" uid="uid://0bg8h3jhei8v" path="res://assets/art/gatetop.png" id="2_qgrv6"]
 [ext_resource type="AudioStream" uid="uid://cde6wev2eyhxk" path="res://assets/allsound/SFX/GateOpen.wav" id="5_ecr7t"]
+[ext_resource type="AudioStream" uid="uid://ca6xh7e8h8epa" path="res://assets/allsound/SFX/GateDenied.wav" id="6_7yjq4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecr7t"]
 atlas = ExtResource("2_qg8rk")
@@ -236,7 +237,7 @@ stream = ExtResource("5_ecr7t")
 
 [node name="gateDeniedSound" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.445271, 0.261481, 0)
-stream = ExtResource("5_ecr7t")
+stream = ExtResource("6_7yjq4")
 
 [connection signal="body_entered" from="passCheckArea" to="." method="_on_pass_check_area_body_entered"]
 [connection signal="body_exited" from="passCheckArea" to="." method="_on_pass_check_area_body_exited"]

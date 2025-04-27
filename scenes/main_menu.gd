@@ -14,12 +14,14 @@ var introSeqNum : int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	PlayerGlobal.inUI = true
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if introSeqNum == 0:
 		pass
 	pass
+
 func _on_quit_pressed() -> void:
 	button_push.play(0.0)
 	confirmQuit.set_visible (true) # Replace with function body.
@@ -45,7 +47,8 @@ func _on_start_pressed():
 	button_push.play(0.0)
 
 func _on_start_delay_timeout():
-	get_tree().change_scene_to_file("res://scenes/outside.tscn")
+	PlayerGlobal.inUI = false
+	queue_free()
 
 func _on_bug_button_pressed():
 	button_push.play(0.0)

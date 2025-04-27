@@ -575,7 +575,6 @@ scale = Vector2(0.583333, 0.583333)
 texture = ExtResource("9_k2bd0")
 
 [node name="tickets" type="Control" parent="PauseMenu/inventoryMenu/itemIcons"]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
