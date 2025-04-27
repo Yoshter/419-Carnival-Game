@@ -213,11 +213,7 @@ script = ExtResource("1_ct00x")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 
 [node name="Speedpitchbackgorund" type="Sprite2D" parent="Control"]
 position = Vector2(944, 542)
@@ -234,27 +230,27 @@ anchor_bottom = 0.117593
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
 text = "1"
-metadata/_edit_use_anchors_ = true
 
 [node name="pointLabel" type="Label" parent="."]
 layout_mode = 0
-anchor_left = 0.0880208
-anchor_top = 0.0203704
-anchor_right = 0.158333
-anchor_bottom = 0.101852
+offset_left = 114.0
+offset_top = 42.0
+offset_right = 287.0
+offset_bottom = 107.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-metadata/_edit_use_anchors_ = true
 
 [node name="retry" type="Button" parent="."]
 visible = false
 texture_filter = 1
-layout_mode = 0
-anchor_left = 0.382292
-anchor_top = 0.713889
-anchor_right = 0.542708
-anchor_bottom = 0.847222
-offset_right = -15.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368229
+anchor_top = 0.749074
+anchor_right = 0.368229
+anchor_bottom = 0.749074
+offset_right = 308.0
+offset_bottom = 105.0
 theme_override_font_sizes/font_size = 96
 text = "RETRY"
 metadata/_edit_use_anchors_ = true
@@ -262,34 +258,34 @@ metadata/_edit_use_anchors_ = true
 [node name="goAgainButton" type="Button" parent="."]
 visible = false
 texture_filter = 1
-layout_mode = 0
-anchor_left = 0.382292
-anchor_top = 0.713889
-anchor_right = 0.54375
-anchor_bottom = 0.828704
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.391667
+anchor_top = 0.752778
+anchor_right = 0.430729
+anchor_bottom = 0.807407
+offset_right = 224.0
+offset_bottom = 57.0
 theme_override_font_sizes/font_size = 48
 text = "GO AGAIN!"
 metadata/_edit_use_anchors_ = true
 
 [node name="prizeBoard" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 anchor_right = 0.0208333
 anchor_bottom = 0.037037
-metadata/_edit_use_anchors_ = true
 
 [node name="pointReq" type="Label" parent="prizeBoard"]
 texture_filter = 1
 layout_mode = 0
-anchor_left = 37.575
-anchor_top = 4.7
-anchor_right = 46.45
-anchor_bottom = 7.125
+offset_left = 1511.0
+offset_top = 229.0
+offset_right = 1866.0
+offset_bottom = 326.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
 text = "150 pts. ="
 horizontal_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="prizeBoard"]
 position = Vector2(1633, 553)
@@ -301,24 +297,20 @@ one_shot = true
 
 [node name="countdownLabel" type="Label" parent="."]
 layout_mode = 0
-anchor_left = 0.48125
-anchor_top = 0.380556
-anchor_right = 0.502083
-anchor_bottom = 0.502778
-offset_top = -3.05176e-05
-offset_right = -6.10352e-05
+offset_left = 863.0
+offset_top = 423.0
+offset_right = 954.705
+offset_bottom = 520.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
-metadata/_edit_use_anchors_ = true
 
 [node name="startMenu" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = -0.00833333
-anchor_right = 1.0
-anchor_bottom = 1.0
+layout_mode = 0
+offset_left = -42.0
+offset_top = -5.0
+offset_right = 1953.0
+offset_bottom = 1117.0
 texture = ExtResource("4_1rd4m")
-metadata/_edit_use_anchors_ = true
 
 [node name="startButton" type="Button" parent="startMenu"]
 layout_mode = 0
@@ -344,76 +336,81 @@ metadata/_edit_use_anchors_ = true
 [node name="vertBarNode" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-anchor_right = 0.0208333
-anchor_bottom = 0.037037
+offset_right = 50.0
+offset_bottom = 50.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="vertBarNode"]
-layout_mode = 0
-anchor_left = 21.375
-anchor_top = 7.5
-anchor_right = 23.725
-anchor_bottom = 16.275
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.86
+anchor_top = 4.92
+anchor_right = 19.21
+anchor_bottom = 13.695
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="vertBarNode"]
-layout_mode = 0
-anchor_left = 21.375
-anchor_top = 10.925
-anchor_right = 23.725
-anchor_bottom = 13.125
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.86
+anchor_top = 8.345
+anchor_right = 19.21
+anchor_bottom = 10.545
 color = Color(0, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="vertBar" type="ProgressBar" parent="vertBarNode"]
-layout_mode = 0
-anchor_left = 21.375
-anchor_top = 7.5
-anchor_right = 23.775
-anchor_bottom = 16.5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.86
+anchor_top = 4.92
+anchor_right = 19.26
+anchor_bottom = 13.92
 fill_mode = 3
+show_percentage = false
 metadata/_edit_use_anchors_ = true
 
 [node name="horbarNode" type="Control" parent="."]
 visible = false
-layout_mode = 1
-anchor_right = 0.0208333
-anchor_bottom = 0.037037
+anchors_preset = 0
+offset_right = 50.0
+offset_bottom = 50.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="horbarNode"]
-layout_mode = 0
-anchor_left = 17.3
-anchor_top = 11.1251
-anchor_right = 28.075
-anchor_bottom = 11.1251
-offset_top = 73.9973
-offset_right = -357.0
-offset_bottom = 504.997
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.6
+anchor_top = 10.46
+anchor_right = 13.78
+anchor_bottom = 12.66
+offset_right = 33.0
+offset_bottom = 431.0
 rotation = -1.57079
 color = Color(1, 0, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="horbarNode"]
-layout_mode = 0
-anchor_left = 21.4
-anchor_top = 11.175
-anchor_right = 23.6
-anchor_bottom = 11.175
-offset_top = 76.9995
-offset_right = -11.0005
-offset_bottom = 164.999
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 16.88
+anchor_top = 10.46
+anchor_right = 17.0453
+anchor_bottom = 11.0089
+offset_right = 83.735
+offset_bottom = 89.554
 rotation = -1.57079
 color = Color(0, 1, 0, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="horBar" type="ProgressBar" parent="horbarNode"]
-layout_mode = 0
-anchor_left = 17.225
-anchor_top = 11.1
-anchor_right = 28.0
-anchor_bottom = 12.95
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 12.62
+anchor_top = 8.62
+anchor_right = 23.395
+anchor_bottom = 10.47
 step = 1.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
@@ -465,7 +462,6 @@ metadata/_edit_use_anchors_ = true
 anchors_preset = 0
 anchor_right = 0.0208333
 anchor_bottom = 0.037037
-metadata/_edit_use_anchors_ = true
 
 [node name="WrongThrows" type="AnimatedSprite2D" parent="sprites"]
 visible = false
