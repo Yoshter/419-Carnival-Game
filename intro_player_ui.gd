@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 		#bbgunShootSound.volume_db = 0.0
 		isVisible = false
 		pauseCloseSFX.play(0.0)
-			
+		
 	if PlayerGlobal.canMove and Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
