@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 				GamesGlobal.skeebleScore += 10
 				endRound()
 			else:
-				pass
+				endRound()
 		throwPowerBar.set_value(throwPower)
 		if throwPower >= 100:
 			#fail music playes

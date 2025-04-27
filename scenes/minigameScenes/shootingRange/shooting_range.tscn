@@ -62,26 +62,36 @@ transform = Transform3D(0.0726627, 0.00546291, 0.997342, -0.000396946, 0.999985,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9089, 0.602802, -9.91666)
 
 [node name="Target" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 47.7493, 0, 5.69972)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0.864554, 0.50071, 0.0428434, -0.500096, 0.865615, -0.0247825, 47.7493, 3.22479, 4.44492)
 targetLevel = 3
 
 [node name="Target2" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 47.7493, 0, 19.0125)
+transform = Transform3D(-0.0494947, 0, 0.998774, -0.952091, -0.302154, -0.0471813, 0.301783, -0.953259, 0.014955, 47.7493, 4.04209, 20.6052)
 targetLevel = 3
 
 [node name="Target3" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 58.238, 0, 5.69972)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 58.238, 0, 5.39134)
 
 [node name="Target4" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 58.238, 0, 19.0125)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 58.238, 0, 19.3554)
 
 [node name="Target5" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 53.8667, 0, 9.44629)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 52.0119, -0.0293798, 9.44567)
 targetLevel = 2
 
 [node name="Target6" parent="targets" instance=ExtResource("3_t1gs1")]
-transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 53.8667, 0, 16.4058)
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 52.0119, -0.0293798, 16.4052)
 targetLevel = 2
+
+[node name="Target7" parent="targets" instance=ExtResource("3_t1gs1")]
+transform = Transform3D(-0.0494947, 0, 0.998774, 0, 1, 0, -0.998774, 0, -0.0494947, 56.0808, -0.0293798, 12.9805)
+targetLevel = 2
+
+[node name="Target8" parent="targets" instance=ExtResource("3_t1gs1")]
+transform = Transform3D(-0.0494947, 0, 0.998774, -0.965585, 0.255648, -0.04785, -0.255335, -0.96677, -0.0126532, 55.4109, 1.39714, 20.2874)
+
+[node name="Target9" parent="targets" instance=ExtResource("3_t1gs1")]
+transform = Transform3D(-0.0494947, 1.85274e-09, 0.998774, 0.92107, -0.386711, 0.0456441, 0.386237, 0.922201, 0.0191401, 55.4109, 2.2797, 4.10617)
 
 [node name="shootingRangeArea" type="Area3D" parent="."]
 

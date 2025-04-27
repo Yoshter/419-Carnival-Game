@@ -48,7 +48,7 @@ func _on_game_booth_body_exited(body: Node3D) -> void:
 		inGameBoothArea = false
 
 func _on_shooting_range_timer_timeout() -> void:
-	if GamesGlobal.shootingRangeScore >= 1500:
+	if GamesGlobal.shootingRangeScore >= 2500:
 		GamesGlobal.rangeBeat = true
 	music.stop()
 	barrier.set_visible(false)
