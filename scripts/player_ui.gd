@@ -110,13 +110,14 @@ func _process(delta: float) -> void:
 		timerText.set_text(str(round(GamesGlobal.shootingRangeTimeLeft,)))
 	else:
 		shootingRangeMenu.set_visible(false)
-	print(isVisible)
+	#print(isVisible)
 	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("bbgun") and !isVisible and !PlayerGlobal.isDeaf:
 		if !bbgunShootSound.playing and shootSoundDelay > 0.8:
 			bbgunShootSound.play(0.0)
 			shootSoundDelay = 0.0
-		print("nuts")
-	print("berries" + str(isVisible))
+		#print("nuts")
+	#print("berries" + str(isVisible))
+	
 	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
@@ -237,7 +238,6 @@ func _on_settings_pressed() -> void:
 
 func _on_quit_inv_pressed() -> void:
 	inventoryMenu.set_visible(false)
-
 
 func updateItemIcons() -> void:
 	if ItemsGlobal.checkItem("ufoToken"):

@@ -20,13 +20,13 @@ var towerTicketBool : bool = false
 var rangeTokenBool : bool = false
 var rangeTicketBool : bool = false
 
-var funPassLevel2 : bool = true
+var funPassLevel2 : bool = false
 var funPassLevel3 : bool = false
 var saw : bool = false
 var bbgun : bool = false
 var joystick : bool = false
 var janitorsKey : bool = false
-var mainDoorKey : bool = true
+var mainDoorKey : bool = false
 
 var map : bool = false
 

@@ -14,6 +14,12 @@ var isInEndingSequence : bool = false
 func _process(delta: float) -> void:
 	#if PlayerGlobal.beatCARN:
 		
+	if PlayerGlobal.inUI:
+		ambienceMusic.stop()
+	else:
+		if !ambienceMusic.playing:
+			ambienceMusic.play(0.0)
+	
 	if PlayerGlobal.isDeaf:
 		ambienceMusic.stop()
 	

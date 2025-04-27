@@ -1,7 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0vres6hkcoxf"]
+[gd_scene load_steps=7 format=3 uid="uid://d0vres6hkcoxf"]
 
-[ext_resource type="PackedScene" uid="uid://d4a58tg3s4j0l" path="res://assets/MenuScreens/main_menu.tscn" id="1_0w38x"]
 [ext_resource type="Script" uid="uid://cqxbb51j2r04f" path="res://scenes/playerScenes/introplayer.gd" id="1_n7qod"]
+
+[sub_resource type="Animation" id="Animation_n7qod"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.75721, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("body/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.0608597, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_168gg"]
 resource_name = "floatIn"
@@ -31,33 +57,6 @@ tracks/1/keys = {
 "values": [Vector3(-0.385975, -0.654311, 0.010469), Vector3(0, -0.0608597, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_n7qod"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("body/Camera3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 1.75721, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("body/Camera3D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, -0.0608597, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n7qod"]
 _data = {
 &"RESET": SubResource("Animation_n7qod"),
@@ -74,12 +73,10 @@ height = 1.64591
 [node name="introPlayer" type="CharacterBody3D"]
 script = ExtResource("1_n7qod")
 
-[node name="Main Menu" parent="." instance=ExtResource("1_0w38x")]
-
 [node name="body" type="Node3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="body"]
-transform = Transform3D(0.998149, 0, -0.0608221, 0, 1, 0, 0.0608221, 0, 0.998149, 0, 1.75721, 0)
+transform = Transform3D(0.998149, 0, -0.0608222, 0, 1, 0, 0.0608222, 0, 0.998149, 0, 1.75721, 0)
 
 [node name="playerAnimations" type="AnimationPlayer" parent="."]
 libraries = {
