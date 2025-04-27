@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=16 format=3 uid="uid://drwyd1icj7mxy"]
 
+[ext_resource type="Material" uid="uid://b33va4kp658uy" path="res://assets/materials/VentRedo.material" id="1_aj7ev"]
 [ext_resource type="Material" uid="uid://wy55ycr3fm5i" path="res://assets/materials/Metal.material" id="1_eunuo"]
 [ext_resource type="Script" uid="uid://cfyvkwoqliq2k" path="res://scenes/vent_thud_trigger.gd" id="1_fgy16"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="1_tia7w"]
 [ext_resource type="AudioStream" uid="uid://hqrqpsoxr73m" path="res://assets/allsound/SFX/Vent thud.wav" id="2_eunuo"]
 [ext_resource type="PackedScene" uid="uid://dkb5b43kccdo5" path="res://scenes/secret_room.tscn" id="2_j82be"]
 [ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="2_taaqu"]
+[ext_resource type="Material" uid="uid://b5yl4usr7ba4k" path="res://assets/materials/VentFront.material" id="3_8gdm5"]
 [ext_resource type="PackedScene" uid="uid://cttfkisb511ib" path="res://scenes/interactables/map_item.tscn" id="3_iw1bk"]
 [ext_resource type="Material" uid="uid://c4lfocr3brs4w" path="res://assets/materials/woodTest.tres" id="4_88vl5"]
 [ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="5_j82be"]
@@ -24,9 +26,10 @@ size = Vector3(2.94141, 3.51355, 0.001)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="vents"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.8541, 2.80029, 0)
+material_override = ExtResource("1_aj7ev")
 use_collision = true
 size = Vector3(34.7082, 4.60059, 4.72095)
-material = ExtResource("1_eunuo")
+material = ExtResource("1_aj7ev")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents/CSGBox3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408895, -0.619392, 0)
@@ -36,9 +39,10 @@ material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents"]
 transform = Transform3D(-0.0240483, 0, 0.999711, 0, 1, 0, -0.999711, 0, -0.0240483, 2.17907, 2.80029, -4.91553)
+material_override = ExtResource("1_aj7ev")
 use_collision = true
 size = Vector3(34.1956, 4.60059, 4.72095)
-material = ExtResource("1_eunuo")
+material = ExtResource("3_8gdm5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents/CSGBox3D2"]
 transform = Transform3D(1, 0, 2.81259e-07, 0, 1, 0, -2.81259e-07, 0, 1, -0.267167, -0.547335, 9.53674e-07)
@@ -57,9 +61,10 @@ transform = Transform3D(-0.0240483, 0, -0.999711, 0, 1, 0, 0.999711, 0, -0.02404
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="vents"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0.278505, 0.960435, 1.21738e-08, -0.960435, 0.278505, -4.19819e-08, 1.78347, 7.45585, -37.0026)
+material_override = ExtResource("1_aj7ev")
 use_collision = true
 size = Vector3(34.1956, 4.60059, 4.72095)
-material = ExtResource("1_eunuo")
+material = ExtResource("3_8gdm5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents/CSGBox3D3"]
 transform = Transform3D(1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 0.115753, -0.728145, 0)
@@ -69,9 +74,10 @@ material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="vents"]
 transform = Transform3D(-0.999711, 0, -0.0240483, 0, 1, 0, 0.0240483, 0, -0.999711, -3.04618, 12.2965, -56.2818)
+material_override = ExtResource("1_aj7ev")
 use_collision = true
 size = Vector3(34.1956, 4.60059, 4.72095)
-material = ExtResource("1_eunuo")
+material = ExtResource("3_8gdm5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents/CSGBox3D4"]
 transform = Transform3D(1, 0, 1.28523e-07, 0, 1, 0, -1.28523e-07, 0, 1, 0.138576, -0.584667, 3.05176e-05)
@@ -104,9 +110,10 @@ material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="vents"]
 transform = Transform3D(0.0472883, -0.000966604, 0.998881, -0.259417, 0.965675, 0.0132156, -0.964607, -0.259751, 0.0454144, -18.7505, 18.1914, -32.8857)
+material_override = ExtResource("1_aj7ev")
 use_collision = true
 size = Vector3(45.6147, 4.60422, 4.72095)
-material = ExtResource("1_eunuo")
+material = ExtResource("3_8gdm5")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="vents/CSGBox3D5"]
 transform = Transform3D(0.999999, -4.47035e-07, 3.35276e-07, 3.8743e-07, 1, -8.10251e-08, 5.58794e-08, 2.04891e-08, 0.999992, 5.78328, -0.729509, -1.14441e-05)
@@ -122,15 +129,15 @@ material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="vents"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8649, 11.8395, -33.4977)
+material_override = ExtResource("3_8gdm5")
 use_collision = true
 size = Vector3(4.60608, 9.14874, 3.63269)
-material = ExtResource("1_eunuo")
+material = ExtResource("3_8gdm5")
 
 [node name="CSGBox3D7" type="CSGBox3D" parent="vents/CSGBox3D7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.180132, 1.24829, 0.169086)
 operation = 2
 size = Vector3(3.33423, 13.0537, 2.21289)
-material = ExtResource("1_eunuo")
 
 [node name="CSGBox3D8" type="CSGBox3D" parent="vents/CSGBox3D7"]
 transform = Transform3D(1, 0, 0, 0, 0.240702, -0.970599, 0, 0.970599, 0.240702, 0.227064, 5.76596, 0.32906)
