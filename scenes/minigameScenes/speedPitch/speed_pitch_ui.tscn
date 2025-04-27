@@ -210,7 +210,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ct00x")
-metadata/_edit_use_anchors_ = true
 
 [node name="Speedpitchbackgorund" type="Sprite2D" parent="."]
 position = Vector2(944, 542)
