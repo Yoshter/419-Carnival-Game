@@ -316,10 +316,6 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 110.0
-offset_top = 125.0
-offset_right = 110.0
-offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c4a3s")
@@ -330,96 +326,112 @@ texture = ExtResource("2_uv541")
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = -112.0
-offset_top = 270.0
-offset_right = 145.0
-offset_bottom = 404.0
+anchor_left = -0.0583333
+anchor_top = 0.25
+anchor_right = 0.0755208
+anchor_bottom = 0.374074
 text = "NEXT ROUND"
+metadata/_edit_use_anchors_ = true
 
 [node name="retryMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_left = 3.0
-offset_top = 332.0
-offset_right = 43.0
-offset_bottom = 372.0
+anchor_left = 0.0015625
+anchor_top = 0.307407
+anchor_right = 0.0223958
+anchor_bottom = 0.344444
+metadata/_edit_use_anchors_ = true
 
 [node name="retryButton" type="Button" parent="retryMenu"]
 layout_mode = 0
-offset_left = -159.0
-offset_top = -70.0
-offset_right = 167.0
-offset_bottom = 78.0
+anchor_left = -3.975
+anchor_top = -1.75
+anchor_right = 4.175
+anchor_bottom = 1.95
 text = "RETRY"
+metadata/_edit_use_anchors_ = true
 
 [node name="greenRects" type="Control" parent="."]
 anchors_preset = 0
-offset_top = -274.0
-offset_right = 40.0
-offset_bottom = -234.0
+anchor_top = -0.253704
+anchor_right = 0.00916669
+anchor_bottom = -0.237407
+offset_right = 22.4
+offset_bottom = 22.4
 scale = Vector2(0.440001, 0.440001)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="greenRects"]
 layout_mode = 0
-offset_left = -339.0
-offset_top = 2.0
-offset_right = -214.0
-offset_bottom = 127.0
+anchor_left = -8.475
+anchor_top = 0.05
+anchor_right = -5.35
+anchor_bottom = 3.175
 color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="greenRects"]
 layout_mode = 0
-offset_left = -131.0
-offset_top = 2.0
-offset_right = -6.0
-offset_bottom = 127.0
+anchor_left = -3.275
+anchor_top = 0.05
+anchor_right = -0.15
+anchor_bottom = 3.175
 color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect3" type="ColorRect" parent="greenRects"]
 layout_mode = 0
-offset_left = 76.0
-offset_top = 2.0
-offset_right = 201.0
-offset_bottom = 127.0
+anchor_left = 1.9
+anchor_top = 0.05
+anchor_right = 5.025
+anchor_bottom = 3.175
 color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect4" type="ColorRect" parent="greenRects"]
 layout_mode = 0
-offset_left = 283.0
-offset_top = 2.0
-offset_right = 408.0
-offset_bottom = 127.0
+anchor_left = 7.075
+anchor_top = 0.05
+anchor_right = 10.2
+anchor_bottom = 3.175
 color = Color(0, 1, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect5" type="ColorRect" parent="greenRects"]
 layout_mode = 0
-offset_left = -5.0
-offset_top = 2.0
-offset_right = 75.0
-offset_bottom = 127.0
+anchor_left = -0.125
+anchor_top = 0.05
+anchor_right = 1.875
+anchor_bottom = 3.175
 color = Color(0.866633, 0.862315, 0, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="throwPowerBar" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = -168.0
-offset_top = -274.0
-offset_right = 665.0
-offset_bottom = -146.0
+anchor_left = -0.0875
+anchor_top = -0.253704
+anchor_right = 0.103396
+anchor_bottom = -0.201555
+offset_right = 466.479
+offset_bottom = 71.6799
 scale = Vector2(0.440001, 0.440001)
+metadata/_edit_use_anchors_ = true
 
 [node name="winMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchor_right = 0.0208333
+anchor_bottom = 0.037037
+metadata/_edit_use_anchors_ = true
 
 [node name="prizeButton" type="Button" parent="winMenu"]
 layout_mode = 0
-offset_left = -53.0
-offset_top = 382.0
-offset_right = 105.0
-offset_bottom = 463.0
+anchor_left = -1.325
+anchor_top = 9.55
+anchor_right = 2.625
+anchor_bottom = 11.575
 text = "PRIZE"
+metadata/_edit_use_anchors_ = true
 
 [node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ar2wm")
@@ -430,13 +442,16 @@ frame_progress = 1.0
 [node name="score" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 0
-offset_left = -670.0
-offset_top = -315.0
-offset_right = -408.0
-offset_bottom = -266.0
+anchor_left = -0.348958
+anchor_top = -0.291667
+anchor_right = -0.190667
+anchor_bottom = -0.239037
+offset_right = -41.92
+offset_bottom = -7.84
 scale = Vector2(1.16, 1.16)
 theme_override_font_sizes/font_size = 48
 text = "SCORE: 0000"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="nextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="retryMenu/retryButton" to="." method="_on_retry_button_pressed"]

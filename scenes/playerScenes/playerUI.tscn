@@ -221,6 +221,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
 script = ExtResource("1_4pjyk")
 
 [node name="Gun_UI" type="Sprite2D" parent="."]
@@ -236,36 +237,37 @@ texture = ExtResource("3_r58bp")
 [node name="shootingRangeMenu" type="Control" parent="."]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchor_left = 0.489583
+anchor_top = 0.481481
+anchor_right = 0.510417
+anchor_bottom = 0.518519
+offset_right = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="scoreText" type="Label" parent="shootingRangeMenu"]
 texture_filter = 1
 layout_mode = 0
-offset_left = -910.0
-offset_top = -490.0
-offset_right = -690.0
-offset_bottom = -402.0
+anchor_left = -22.75
+anchor_top = -12.25
+anchor_right = -15.125
+anchor_bottom = -9.825
+offset_right = -85.0
+offset_bottom = -9.0
 theme_override_font_sizes/font_size = 96
 text = "SCORE:"
+metadata/_edit_use_anchors_ = true
 
 [node name="timerText" type="Label" parent="shootingRangeMenu"]
 layout_mode = 0
-offset_left = -824.0
-offset_top = -362.0
-offset_right = -657.0
-offset_bottom = -265.0
+anchor_left = -20.6
+anchor_top = -9.05
+anchor_right = -16.425
+anchor_bottom = -6.625
 theme_override_font_sizes/font_size = 96
 text = "00"
+metadata/_edit_use_anchors_ = true
 
 [node name="interactMenu" type="Control" parent="."]
 visible = false
@@ -285,49 +287,52 @@ grow_vertical = 2
 [node name="interactText" type="Label" parent="interactMenu"]
 texture_filter = 2
 layout_mode = 0
-offset_left = -218.0
-offset_top = 229.0
-offset_right = 222.0
-offset_bottom = 278.0
+anchor_left = -5.45
+anchor_top = 5.725
+anchor_right = 5.55
+anchor_bottom = 6.95
 theme_override_font_sizes/font_size = 48
 text = "SPACE TO INTERACT"
+metadata/_edit_use_anchors_ = true
 
 [node name="crosshair" type="Control" parent="."]
 visible = false
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchor_left = 0.489583
+anchor_top = 0.481481
+anchor_right = 0.510417
+anchor_bottom = 0.518519
+offset_right = -6.10352e-05
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="crosshair"]
 layout_mode = 0
-offset_left = 17.0
-offset_top = -18.0
-offset_right = 23.0
-offset_bottom = 58.0
+anchor_left = 0.425
+anchor_top = -0.45
+anchor_right = 0.575
+anchor_bottom = 1.45
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="crosshair"]
 layout_mode = 0
-offset_left = 57.0
-offset_top = 16.0
-offset_right = 62.0
-offset_bottom = 90.0
+anchor_left = -0.424999
+anchor_top = 0.4
+anchor_right = -0.424999
+anchor_bottom = 0.525012
+offset_left = 74.0
+offset_right = 79.0
+offset_bottom = 68.9995
 rotation = 1.57079
+metadata/_edit_use_anchors_ = true
 
 [node name="PauseMenu" type="Control" parent="."]
 visible = false
 layout_mode = 1
 anchor_right = 1.00031
 anchor_bottom = 1.0
-offset_right = -853.6
+offset_right = -853.596
 offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -336,8 +341,8 @@ metadata/_edit_use_anchors_ = true
 
 [node name="colorRects" type="Control" parent="PauseMenu"]
 anchors_preset = 0
-offset_right = 1064.0
-offset_bottom = 598.0
+anchor_right = 0.997193
+anchor_bottom = 0.996667
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="PauseMenu/colorRects"]
@@ -356,7 +361,7 @@ anchor_left = 0.357143
 anchor_top = 0.152174
 anchor_right = 0.893797
 anchor_bottom = 0.832776
-offset_bottom = 3.05176e-05
+offset_bottom = -3.05176e-05
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="PauseMenu/colorRects"]
@@ -1141,8 +1146,8 @@ stream = ExtResource("34_8irf4")
 [connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="pressed" from="PauseMenu/settingsMenu/quitSettings" to="." method="_on_quit_settings_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
