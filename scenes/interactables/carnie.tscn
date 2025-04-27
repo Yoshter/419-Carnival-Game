@@ -10,16 +10,16 @@ size = Vector3(2.37671, 2.24438, 2.18848)
 [node name="carnie" type="Node3D"]
 script = ExtResource("1_l17di")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="carnieSprite" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.41755)
 pixel_size = 0.006
 alpha_cut = 3
 texture_filter = 0
 sprite_frames = ExtResource("2_stmyg")
 animation = &"talking"
-autoplay = "talking"
+autoplay = "default"
 frame = 1
-frame_progress = 0.924372
+frame_progress = 0.951982
 
 [node name="talkBox" type="Area3D" parent="."]
 

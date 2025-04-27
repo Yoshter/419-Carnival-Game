@@ -20,7 +20,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6hs2t")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -33,5 +33,5 @@ animations = [{
 }],
 "loop": true,
 "name": &"talking",
-"speed": 5.0
+"speed": 4.0
 }]

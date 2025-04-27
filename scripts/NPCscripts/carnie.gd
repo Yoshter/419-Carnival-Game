@@ -18,13 +18,17 @@ var carnie9SpokenTo : bool = false
 @onready var mainDoorKey: Node3D = $mainDoorKeyPickUpArea
 @onready var carnieVoice: AudioStreamPlayer3D = $carnieVoice
 @onready var thunder_jumpscare: AudioStreamPlayer = $"../Thunder Jumpscare"
+@onready var carnieSprite: AnimatedSprite3D = $carnieSprite
 
 func _process(delta: float) -> void:
 	#if PlayerGlobal.checkIsTalkingTo() == "dan" and !carnieVoice.is_playing:
 	if isBeingTalkedTo:
+		carnieSprite.play("talking")
 		if !isSpeaking:
 			#carnieVoice.play(0.0)
 			isSpeaking = true
+	else:
+		carnieSprite.play("default")
 
 	if inArea:
 		if Input.is_action_pressed("ui_accept"):

@@ -1,9 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://dxi413p71bf7s"]
+[gd_scene load_steps=30 format=3 uid="uid://dxi413p71bf7s"]
 
 [ext_resource type="Script" uid="uid://be4dnwb6q21ms" path="res://scenes/fungate.gd" id="1_5cohp"]
 [ext_resource type="Texture2D" uid="uid://v8bvtcp75o4s" path="res://assets/Tent/Gate.png" id="2_cx8a8"]
 [ext_resource type="Texture2D" uid="uid://3ycqjxw0yj8s" path="res://assets/Sprite Sheets/Gate_Animated-Sheet.png" id="2_qg8rk"]
 [ext_resource type="Texture2D" uid="uid://0bg8h3jhei8v" path="res://assets/art/gatetop.png" id="2_qgrv6"]
+[ext_resource type="AudioStream" uid="uid://cde6wev2eyhxk" path="res://assets/allsound/SFX/GateOpen.wav" id="5_ecr7t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ecr7t"]
 atlas = ExtResource("2_qg8rk")
@@ -226,4 +227,17 @@ shape = SubResource("BoxShape3D_snkpy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192139, 0.517865)
 shape = SubResource("BoxShape3D_snkpy")
 
+[node name="gateDownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="gateOpenSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -0.453347, 0.277179, 0)
+stream = ExtResource("5_ecr7t")
+
+[node name="gateDeniedSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.445271, 0.261481, 0)
+stream = ExtResource("5_ecr7t")
+
 [connection signal="body_entered" from="passCheckArea" to="." method="_on_pass_check_area_body_entered"]
+[connection signal="body_exited" from="passCheckArea" to="." method="_on_pass_check_area_body_exited"]
+[connection signal="timeout" from="gateDownTimer" to="." method="_on_gate_down_timer_timeout"]
