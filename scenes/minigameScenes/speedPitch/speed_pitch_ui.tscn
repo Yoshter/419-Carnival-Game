@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://c5n7t3651pny5"]
+[gd_scene load_steps=40 format=3 uid="uid://c5n7t3651pny5"]
 
 [ext_resource type="Script" uid="uid://dcxhvd8os0ywv" path="res://scripts/speed_pitch_ui.gd" id="1_ct00x"]
 [ext_resource type="Texture2D" uid="uid://bugbtuws5ddjh" path="res://scenes/minigameScenes/speedPitch/speedpitchbackgorund.png" id="2_81bw4"]
 [ext_resource type="AudioStream" uid="uid://cngyr4t7dpkgb" path="res://assets/allsound/SFX/Speed pitch target miss.wav" id="2_b15ol"]
+[ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="3_4e83h"]
 [ext_resource type="AudioStream" uid="uid://bhwivv03ec0eb" path="res://assets/allsound/SFX/Speed pitch target hit.wav" id="3_4ta8n"]
 [ext_resource type="Texture2D" uid="uid://dn3todp0kwqbd" path="res://assets/MenuScreens/SpeedPitchMenu.png" id="4_1rd4m"]
 [ext_resource type="Texture2D" uid="uid://ciscl0gwoxx0p" path="res://assets/SpeedPitchArt/SpriteSheets/Baseball Animation Left-Sheet.png" id="6_7wvex"]
@@ -212,21 +213,19 @@ grow_vertical = 2
 script = ExtResource("1_ct00x")
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 1
 anchors_preset = 0
 
 [node name="Speedpitchbackgorund" type="Sprite2D" parent="Control"]
-position = Vector2(944, 542)
-scale = Vector2(2, 2)
+position = Vector2(952.5, 540.5)
+scale = Vector2(2.01771, 2.00556)
 texture = ExtResource("2_81bw4")
 
 [node name="roundLabel" type="Label" parent="."]
 texture_filter = 1
 layout_mode = 0
-anchor_left = 0.0239583
-anchor_top = 0.0277778
-anchor_right = 0.0447917
-anchor_bottom = 0.117593
+offset_left = 10.0
+offset_right = 43.0
+offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
 text = "1"
@@ -248,7 +247,8 @@ offset_left = 726.0
 offset_top = 778.0
 offset_right = 1034.0
 offset_bottom = 883.0
-theme_override_font_sizes/font_size = 96
+theme = ExtResource("3_4e83h")
+theme_override_font_sizes/font_size = 83
 text = "RETRY"
 
 [node name="goAgainButton" type="Button" parent="."]
@@ -259,11 +259,11 @@ offset_left = 727.0
 offset_top = 782.0
 offset_right = 1030.0
 offset_bottom = 884.0
+theme = ExtResource("3_4e83h")
 theme_override_font_sizes/font_size = 48
 text = "GO AGAIN!"
 
 [node name="prizeBoard" type="Control" parent="."]
-visible = false
 anchors_preset = 0
 anchor_right = 0.0208333
 anchor_bottom = 0.037037
@@ -315,9 +315,11 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="startMenu"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0204991
 anchor_right = 0.990702
-anchor_bottom = 0.182407
+anchor_bottom = 0.206774
 offset_bottom = -12.0
 theme_override_font_sizes/font_size = 96
 text = "Press space on each meter in the 
@@ -417,14 +419,16 @@ stream = ExtResource("3_4ta8n")
 [node name="winMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
-anchor_left = 0.44375
-anchor_top = 0.169444
-anchor_right = 0.464583
-anchor_bottom = 0.206481
+offset_left = 690.0
+offset_top = 776.0
+offset_right = 690.0
+offset_bottom = 776.0
+scale = Vector2(1.71039, 1.71039)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="winMenu"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = -3.5
 anchor_top = 1.675
 anchor_right = 6.65
@@ -443,13 +447,11 @@ metadata/_edit_use_anchors_ = true
 [node name="winButton" type="Button" parent="winMenu"]
 texture_filter = 1
 layout_mode = 0
-anchor_left = -2.825
-anchor_top = 2.3
-anchor_right = 6.05
-anchor_bottom = 5.9
-theme_override_font_sizes/font_size = 48
+offset_right = 222.0
+offset_bottom = 49.0
+theme = ExtResource("3_4e83h")
+theme_override_font_sizes/font_size = 41
 text = "YOU WIN!!!"
-metadata/_edit_use_anchors_ = true
 
 [node name="sprites" type="Control" parent="."]
 anchors_preset = 0
