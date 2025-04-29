@@ -12,6 +12,11 @@ var isInEndingSequence : bool = false
 @onready var rainParticles: GPUParticles3D = $Rain/RainParticles
 
 func _process(delta: float) -> void:
+	if PlayerGlobal.performanceModeOn:
+		rainParticles.amount = 20000
+	else:
+		rainParticles.amount = 200000
+	
 	if PlayerGlobal.beatCARN:
 		PlayerGlobal.resetPlayerGlobal()
 		DialogueGlobal.resetDialogueGlobal()

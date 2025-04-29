@@ -1,5 +1,7 @@
 extends Node
 
+var performanceModeOn = false
+
 var isTalking : bool = false
 var isTalkingTo : String
 var inUI : bool = false

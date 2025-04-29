@@ -354,3 +354,6 @@ func _on_credits_timer_timeout() -> void:
 
 func _on_quit_settings_pressed() -> void:
 	settings_menu.set_visible(false)
+
+func _on_check_button_pressed() -> void:
+	PlayerGlobal.performanceModeOn = !PlayerGlobal.performanceModeOn

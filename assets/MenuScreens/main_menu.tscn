@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="4_2mf3k"]
 [ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="5_1h1tu"]
 [ext_resource type="Texture2D" uid="uid://cjjw22r27mebd" path="res://assets/Logos/Toast Games Final.png" id="6_qk78y"]
-[ext_resource type="Texture2D" uid="uid://b2kcgn8knyg2b" path="res://assets/Sprite Sheets/Carn_Logo_Animated-Sheet.png" id="7_hy1o2"]
+[ext_resource type="Texture2D" uid="uid://b3stofpx3dcq8" path="res://assets/Sprite Sheets/Carn_Logo_Animated-Sheet_Fixed.png" id="7_1ovvg"]
 [ext_resource type="Texture2D" uid="uid://dpn3vnjec682r" path="res://assets/UI/Checkmark.png" id="8_5cavg"]
 [ext_resource type="AudioStream" uid="uid://me68qe0c7bh6" path="res://assets/allsound/Music/Carnival main menu.wav" id="9_hvsov"]
 [ext_resource type="AudioStream" uid="uid://2xal2nrt8ey8" path="res://assets/allsound/SFX/Mainmenu Button hover sound.wav" id="10_kqol1"]
@@ -14,60 +14,60 @@
 [ext_resource type="Texture2D" uid="uid://phvmuwdqfrhv" path="res://assets/Sprite Sheets/Toast_Games_Final-Sheet.png" id="12_1xk4j"]
 [ext_resource type="AudioStream" uid="uid://da0ry1haukb0l" path="res://assets/allsound/SFX/Toastergames Jingle.wav" id="13_eg8d5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oa1go"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(0, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_umtaw"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(0, 0, 1770, 370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tbmy8"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(1660, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ra4jo"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(1770, 0, 1770, 370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jk1qb"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(3320, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mf3k"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(3540, 0, 1770, 370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5dd4i"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(4980, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h1tu"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(5310, 0, 1770, 370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lgwnu"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(6640, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_qk78y"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(7080, 0, 1770, 370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_flqon"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(8300, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_hy1o2"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(8850, 0, 1770, 370)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcqid"]
-atlas = ExtResource("7_hy1o2")
-region = Rect2(9960, 0, 1660, 370)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cavg"]
+atlas = ExtResource("7_1ovvg")
+region = Rect2(10620, 0, 1770, 370)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1ajci"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oa1go")
+"texture": SubResource("AtlasTexture_umtaw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tbmy8")
+"texture": SubResource("AtlasTexture_ra4jo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jk1qb")
+"texture": SubResource("AtlasTexture_2mf3k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5dd4i")
+"texture": SubResource("AtlasTexture_1h1tu")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lgwnu")
+"texture": SubResource("AtlasTexture_qk78y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_flqon")
+"texture": SubResource("AtlasTexture_hy1o2")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_rcqid")
+"texture": SubResource("AtlasTexture_5cavg")
 }],
 "loop": true,
-"name": &"default",
+"name": &"new_animation",
 "speed": 5.0
 }]
 
@@ -343,8 +343,9 @@ texture_filter = 1
 position = Vector2(958, 155)
 scale = Vector2(0.629, 0.629)
 sprite_frames = SubResource("SpriteFrames_1ajci")
-autoplay = "default"
-frame_progress = 0.357085
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.470412
 
 [node name="ConfirmQuit" type="Control" parent="."]
 visible = false
@@ -496,6 +497,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="introScreen" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
