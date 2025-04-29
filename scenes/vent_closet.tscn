@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=17 format=3 uid="uid://drwyd1icj7mxy"]
 
 [ext_resource type="Material" uid="uid://b33va4kp658uy" path="res://assets/materials/VentRedo.material" id="1_aj7ev"]
 [ext_resource type="Material" uid="uid://wy55ycr3fm5i" path="res://assets/materials/Metal.material" id="1_eunuo"]
@@ -9,9 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="2_taaqu"]
 [ext_resource type="Material" uid="uid://b5yl4usr7ba4k" path="res://assets/materials/VentFront.material" id="3_8gdm5"]
 [ext_resource type="PackedScene" uid="uid://cttfkisb511ib" path="res://scenes/interactables/map_item.tscn" id="3_iw1bk"]
-[ext_resource type="Material" uid="uid://c4lfocr3brs4w" path="res://assets/materials/woodTest.tres" id="4_88vl5"]
 [ext_resource type="Material" uid="uid://chnacwolx18pt" path="res://assets/materials/SpeedPitchwood1.tres" id="5_j82be"]
 [ext_resource type="AudioStream" uid="uid://cphxeoyi2jnwh" path="res://assets/allsound/SFX/Vent Ambience.wav" id="6_fpd5f"]
+[ext_resource type="Material" uid="uid://5okwryy4mwyj" path="res://assets/materials/janitor wood1.tres" id="7_8gdm5"]
+[ext_resource type="Material" uid="uid://bbwjw5qb5mxox" path="res://assets/materials/janitorwood2.tres" id="9_0nrvi"]
 [ext_resource type="PackedScene" uid="uid://qtjxsyh8rw1u" path="res://scenes/interactables/janitor_key.tscn" id="11_tbu8d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88vl5"]
@@ -180,7 +181,7 @@ max_distance = 10.0
 
 [node name="janitorCloset" type="CSGBox3D" parent="closet"]
 transform = Transform3D(0.672005, 0, -0.740547, 0, 1, 0, 0.740547, 0, 0.672005, -20.048, 3.50464, -29.957)
-material_override = ExtResource("4_88vl5")
+material_override = ExtResource("7_8gdm5")
 use_collision = true
 size = Vector3(27.51, 9.76161, 16.0957)
 
@@ -207,24 +208,24 @@ size = Vector3(4.28003, 5.08118, 1)
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="closet"]
 transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.4826, 2.69907, -22.5545)
-material_override = ExtResource("5_j82be")
+material_override = ExtResource("9_0nrvi")
 use_collision = true
 size = Vector3(9.46179, 6.39813, 2.09961)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="closet"]
 transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.9715, 2.26561, -17.3924)
-material_override = ExtResource("5_j82be")
+material_override = ExtResource("7_8gdm5")
 size = Vector3(0.79599, 5.53122, 5.09985)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="closet"]
 transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -18.5706, 0.778386, -17.7419)
-material_override = ExtResource("5_j82be")
+material_override = ExtResource("7_8gdm5")
 use_collision = true
 size = Vector3(1.37691, 2.4251, 5.09985)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="closet"]
 transform = Transform3D(0.74409, 0, 0.668079, 0, 1, 0, -0.668079, 0, 0.74409, -27.8349, 0.869736, -31.9862)
-material_override = ExtResource("5_j82be")
+material_override = ExtResource("9_0nrvi")
 use_collision = true
 size = Vector3(6.31482, 2.73947, 1.8125)
 

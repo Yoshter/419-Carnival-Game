@@ -15,6 +15,10 @@ var danEnc4 = ["Keep looking for those tokens!", false, "null", 0]
 var danEnc5 = ["Hey, look at all those tic...", "Darn, looks like the power went out, you better go find the breaker room and fix it!", "Thanks!", false, "null", 2]
 var danEnc6 = ["You DID it! By the way, I found this random key if you want it.", false, "null", 0]
 
+func _process(delta: float) -> void:
+	if PlayerGlobal.beatCARN:
+		resetDialogueGlobal()
+
 func returnDialogueText(npc, dialogueCount) -> String:
 	match npc:
 		"dan":
