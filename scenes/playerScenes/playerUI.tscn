@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=66 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -37,6 +37,68 @@
 [ext_resource type="Texture2D" uid="uid://phvmuwdqfrhv" path="res://assets/Sprite Sheets/Toast_Games_Final-Sheet.png" id="32_j5ims"]
 [ext_resource type="AudioStream" uid="uid://dir7xmlfktyjl" path="res://assets/allsound/Music/CARN Credits early.wav" id="33_g8clv"]
 [ext_resource type="AudioStream" uid="uid://c01dlgfvgond1" path="res://assets/allsound/SFX/bbgun shoot.wav" id="34_8irf4"]
+
+[sub_resource type="Animation" id="Animation_j3u5f"]
+resource_name = "gunShot"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.346271, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1562, 861), Vector2(1562, 861), Vector2(1562, 861)]
+}
+
+[sub_resource type="Animation" id="Animation_j7ol1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1562, 861)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dexik"]
+_data = {
+&"RESET": SubResource("Animation_j7ol1"),
+&"gunShot": SubResource("Animation_j3u5f")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
 atlas = ExtResource("32_j5ims")
@@ -225,9 +287,13 @@ size_flags_horizontal = 0
 script = ExtResource("1_4pjyk")
 
 [node name="Gun_UI" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(1562, 861)
 texture = ExtResource("2_nye1j")
+
+[node name="gunShot" type="AnimationPlayer" parent="Gun_UI"]
+libraries = {
+&"": SubResource("AnimationLibrary_dexik")
+}
 
 [node name="Saw_UI" type="Sprite2D" parent="."]
 visible = false
@@ -1147,8 +1213,8 @@ stream = ExtResource("34_8irf4")
 [connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
 [connection signal="pressed" from="PauseMenu/settingsMenu/CheckButton" to="." method="_on_check_button_pressed"]
 [connection signal="pressed" from="PauseMenu/settingsMenu/quitSettings" to="." method="_on_quit_settings_pressed"]
-[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]

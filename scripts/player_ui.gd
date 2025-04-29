@@ -22,6 +22,7 @@ var controlsShown : bool = false
 @onready var rangeScoreText: Label = $shootingRangeMenu/scoreText
 @onready var crosshair: Control = $crosshair
 @onready var gun_ui: Sprite2D = $Gun_UI
+@onready var gunShot: AnimationPlayer = $Gun_UI/gunShot
 
 #item icons
 @onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
@@ -115,6 +116,8 @@ func _process(delta: float) -> void:
 		if !bbgunShootSound.playing and shootSoundDelay > 0.8:
 			bbgunShootSound.play(0.0)
 			shootSoundDelay = 0.0
+			gunShot.play("gunShot")
+			
 		#print("nuts")
 	#print("berries" + str(isVisible))
 	
