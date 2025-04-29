@@ -46,3 +46,22 @@ func setIsTalkingTo(npcName) -> void:
 
 func checkIsTalkingTo() -> String:
 	return isTalkingTo
+
+func resetPlayerGlobal() -> void:
+	isTalking = false
+	isTalkingTo = ""
+	inUI = false
+	controlsShown = false
+	canMove = false
+	canInteract = false
+	interactText = ""
+	needsTeleport = false
+	newPosition = Vector3(0,0,0)
+	newRotation = 0.0
+	inShootingRange  = false
+	isEndingSequence = false
+	isBlackout = false
+	afterBlackout = false
+	isDeaf = false
+	beatCARN = false
+	gameTime = 0.0

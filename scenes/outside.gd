@@ -12,7 +12,12 @@ var isInEndingSequence : bool = false
 @onready var rainParticles: GPUParticles3D = $Rain/RainParticles
 
 func _process(delta: float) -> void:
-	#if PlayerGlobal.beatCARN:
+	if PlayerGlobal.beatCARN:
+		PlayerGlobal.resetPlayerGlobal()
+		DialogueGlobal.resetDialogueGlobal()
+		ItemsGlobal.resetItemsGlobal()
+		GamesGlobal.resetGamesGlobal()
+		PlayerGlobal.beatCarn = false
 		
 	if PlayerGlobal.inUI:
 		ambienceMusic.stop()

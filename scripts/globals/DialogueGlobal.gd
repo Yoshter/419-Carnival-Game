@@ -76,3 +76,7 @@ func addToEncCount(npcName) -> void:
 	match npcName:
 		"dan":
 			danEncCount += 1
+
+func resetDialogueGlobal() -> void:
+	var danEncCount = 1
+	var objEncCount = 0
