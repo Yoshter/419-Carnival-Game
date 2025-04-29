@@ -97,7 +97,7 @@ func _physics_process(delta: float) -> void:
 		jumpBuffered = false
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") or Input.is_action_just_pressed("jump"):
 		if (is_on_floor() || !coyoteTimer.is_stopped()) && jumpCounter < 1 && !isSpinning:
 			jump()
 

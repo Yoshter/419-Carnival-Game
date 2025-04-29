@@ -7,6 +7,7 @@ var shootingRangeStarted = false
 @onready var barrier: CSGBox3D = $barrier/barrier
 @onready var lights: Node3D = $lights
 @onready var music: AudioStreamPlayer3D = $music
+@onready var win_sound = $WinSound
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.isBlackout:
@@ -50,6 +51,7 @@ func _on_game_booth_body_exited(body: Node3D) -> void:
 func _on_shooting_range_timer_timeout() -> void:
 	if GamesGlobal.shootingRangeScore >= 2500:
 		GamesGlobal.rangeBeat = true
+		win_sound.play(0.0)
 	music.stop()
 	barrier.set_visible(false)
 	barrier.use_collision = false

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbx7qm3qhho1j"
+path="res://.godot/imported/Rain + Thunder for power outage Updated.wav-9558b599a62dd53b0cd64e77f9d5fcfe.sample"
+
+[deps]
+
+source_file="res://assets/allsound/SFX/Rain + Thunder for power outage Updated.wav"
+dest_files=["res://.godot/imported/Rain + Thunder for power outage Updated.wav-9558b599a62dd53b0cd64e77f9d5fcfe.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

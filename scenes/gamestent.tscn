@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=45 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
 [ext_resource type="Material" uid="uid://b3p2lss2lrab0" path="res://assets/materials/MetalforPole.material" id="10_1c52o"]
 [ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
+[ext_resource type="Texture2D" uid="uid://b51im7wmkuorn" path="res://assets/art/Coin_Slot_back.png" id="10_kwrsc"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
 [ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="12_8gcbl"]
 [ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="13_4vgoj"]
@@ -22,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
 [ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
 [ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
+[ext_resource type="AudioStream" uid="uid://cbx7qm3qhho1j" path="res://assets/allsound/SFX/Rain + Thunder for power outage Updated.wav" id="18_kwrsc"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="19_bfm21"]
 [ext_resource type="PackedScene" uid="uid://cx7yrqk2vpadl" path="res://scenes/interactables/overworld_joystick.tscn" id="20_3oqoc"]
 [ext_resource type="PackedScene" uid="uid://c0heotbu56vd2" path="res://assets/SpeedPitchArt/Speed Pitch Cabinet.tscn" id="22_7ucd1"]
@@ -36,7 +38,6 @@
 [ext_resource type="AudioStream" uid="uid://cx8ow2sid860k" path="res://assets/allsound/SFX/PowerDown sfx.wav" id="34_y3mcc"]
 [ext_resource type="Texture2D" uid="uid://ccyw0jhi6wdcg" path="res://assets/art/funpassJr.png" id="35_mvimg"]
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="36_61scv"]
-[ext_resource type="AudioStream" uid="uid://dx48i70xduqdb" path="res://assets/allsound/SFX/Rain + Thunder for power outage.wav" id="37_61scv"]
 [ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="38_nlnqw"]
 [ext_resource type="AudioStream" uid="uid://bx2giqq7gi1qn" path="res://assets/allsound/SFX/Thunder Jumpscare.wav" id="39_q2qs1"]
 
@@ -46,6 +47,9 @@ albedo_texture = ExtResource("4_5ix5a")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
 albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
 metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8wokk"]
+albedo_texture = ExtResource("10_kwrsc")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3mcc"]
 albedo_color = Color(0.241136, 0.0509818, 0.0388588, 1)
@@ -181,7 +185,7 @@ transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -15.1891
 
 [node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl/Carnival Speaker2"]
 transform = Transform3D(3.79468, 0, 0, 0, 15.0264, 0, 0, 0, 3.73234, 0.00868988, -14.9609, 0.044503)
-material_override = ExtResource("10_1c52o")
+material_override = SubResource("StandardMaterial3D_8wokk")
 material = ExtResource("10_1c52o")
 
 [node name="janitorDoorway" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
@@ -302,7 +306,7 @@ max_distance = 100.0
 
 [node name="Rain + Thunder" type="AudioStreamPlayer3D" parent="audioSpeakers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4699, 6.0431, 0)
-stream = ExtResource("37_61scv")
+stream = ExtResource("18_kwrsc")
 volume_db = 15.0
 max_db = 6.0
 
