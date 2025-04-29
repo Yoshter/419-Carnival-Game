@@ -18,6 +18,8 @@ var danEnc6 = ["You DID it! By the way, I found this random key if you want it."
 func _process(delta: float) -> void:
 	if PlayerGlobal.beatCARN:
 		resetDialogueGlobal()
+		DialogueGlobal.danEncCount = 1
+		DialogueGlobal.objEncCount = 0
 
 func returnDialogueText(npc, dialogueCount) -> String:
 	match npc:

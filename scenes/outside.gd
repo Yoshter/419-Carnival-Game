@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 	if PlayerGlobal.beatCARN:
 		PlayerGlobal.resetPlayerGlobal()
 		DialogueGlobal.resetDialogueGlobal()
+		DialogueGlobal.danEncCount = 1
+		DialogueGlobal.objEncCount = 0
 		ItemsGlobal.resetItemsGlobal()
 		GamesGlobal.resetGamesGlobal()
 		PlayerGlobal.beatCARN = false
