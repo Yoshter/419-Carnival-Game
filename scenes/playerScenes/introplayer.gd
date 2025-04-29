@@ -39,10 +39,11 @@ func _process(delta: float) -> void:
 	
 	if PlayerGlobal.inUI == true:
 		playerAnimations.stop()
-	else:
-		if !hasFloatedIn and !playerAnimations.is_playing():
-			playerAnimations.play("floatIn")
-			hasFloatedIn = true
+	
+	if !PlayerGlobal.inUI and !hasFloatedIn and !playerAnimations.is_playing() and PlayerGlobal.mustFloat:
+		playerAnimations.play("floatIn")
+		hasFloatedIn = true
+		PlayerGlobal.mustFloat = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
