@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://21j3ovfr4clt"]
+
+[ext_resource type="Texture2D" uid="uid://dqreodbopf5ix" path="res://assets/art/Coin_Slot.png" id="1_w6wcs"]
+
+[resource]
+albedo_texture = ExtResource("1_w6wcs")
+uv1_scale = Vector3(0.975, 0.975, 0.975)
+uv1_offset = Vector3(0, -0.485, -0.505)
+uv1_triplanar = true
