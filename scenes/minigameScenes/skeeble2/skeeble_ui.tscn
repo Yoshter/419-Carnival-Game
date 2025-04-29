@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dd043ie4lgq3s"]
+[gd_scene load_steps=50 format=3 uid="uid://dd043ie4lgq3s"]
 
 [ext_resource type="Script" uid="uid://c6gme7p3guj6g" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.gd" id="1_c4a3s"]
 [ext_resource type="Texture2D" uid="uid://c5c2tivqsdijf" path="res://assets/Sprite Sheets/skeebleSpriteSheets/Skeeble_goals.png" id="2_uv541"]
@@ -6,6 +6,7 @@
 [ext_resource type="Theme" uid="uid://u6xta2i6ba7o" path="res://assets/Themes/Skeeble_UI_Theme.tres" id="3_b5vv0"]
 [ext_resource type="Texture2D" uid="uid://cny0k5gpcfih1" path="res://assets/Sprite Sheets/skeebleSpriteSheets/skeebleAnim.png" id="4_b5vv0"]
 [ext_resource type="Texture2D" uid="uid://4o75mgh6gwvl" path="res://assets/Sprite Sheets/skeebleSpriteSheets/skeebleAnim2.png" id="5_036ll"]
+[ext_resource type="Texture2D" uid="uid://cts328ll5bs4x" path="res://assets/skeeble/Skeeble_runway.png" id="7_b5vv0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4mumh"]
 atlas = ExtResource("3_6ylh3")
@@ -321,9 +322,24 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c4a3s")
 
+[node name="SkeebleRunway" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(944, 725)
+scale = Vector2(0.614658, 0.615902)
+texture = ExtResource("7_b5vv0")
+
 [node name="SkeebleGoals" type="Sprite2D" parent="."]
-position = Vector2(947, 546)
+position = Vector2(942.548, 228.88)
+scale = Vector2(0.484422, 0.484422)
 texture = ExtResource("2_uv541")
+
+[node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
+position = Vector2(942.548, 228.88)
+scale = Vector2(0.484422, 0.484422)
+sprite_frames = SubResource("SpriteFrames_ar2wm")
+animation = &"outerLeft"
+frame = 13
+frame_progress = 1.0
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0
@@ -361,10 +377,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="greenRects" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 654.0
-offset_top = 708.0
-offset_right = 1216.0
-offset_bottom = 781.0
+offset_left = 93.0
+offset_top = 230.0
+offset_right = 655.0
+offset_bottom = 303.0
 
 [node name="ColorRect" type="ColorRect" parent="greenRects"]
 layout_mode = 0
@@ -436,13 +452,6 @@ offset_bottom = 49.0
 theme = ExtResource("3_b5vv0")
 theme_override_font_sizes/font_size = 48
 text = "PRIZE"
-
-[node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
-position = Vector2(947, 546)
-sprite_frames = SubResource("SpriteFrames_ar2wm")
-animation = &"outerLeft"
-frame = 13
-frame_progress = 1.0
 
 [node name="score" type="Label" parent="."]
 texture_filter = 1
