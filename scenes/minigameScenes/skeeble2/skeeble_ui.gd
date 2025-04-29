@@ -1,7 +1,8 @@
 extends Control
 
 var throwPower : float = 0.0
-@onready var throwPowerBar: ProgressBar = $throwPowerBar
+@onready var throwPowerBar: ProgressBar = $greenRects/throwPowerBar
+
 var isAdding : bool = true
 var isThrowing : bool = false
 var roundNum : int = 1
