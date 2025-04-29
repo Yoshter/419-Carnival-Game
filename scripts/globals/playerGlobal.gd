@@ -4,9 +4,10 @@ var performanceModeOn = false
 
 var isTalking : bool = false
 var isTalkingTo : String
-var inUI : bool = false
+var inUI : bool = true
 var controlsShown = false
 
+var mustFloat = false
 var canMove : bool = false
 var canInteract : bool = false
 var interactText : String
@@ -15,7 +16,7 @@ var needsTeleport = false
 var newPosition : Vector3
 var newRotation : float = 0.0
 var inShootingRange : bool = false
-var isEndingSequence: bool = false
+var isEndingSequence : bool = false
 var isBlackout : bool = false
 var afterBlackout : bool = false
 
@@ -52,8 +53,9 @@ func checkIsTalkingTo() -> String:
 func resetPlayerGlobal() -> void:
 	isTalking = false
 	isTalkingTo = ""
-	inUI = false
+	inUI = true
 	controlsShown = false
+	mustFloat = false
 	canMove = false
 	canInteract = false
 	interactText = ""
