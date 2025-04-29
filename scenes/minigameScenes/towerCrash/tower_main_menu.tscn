@@ -52,6 +52,15 @@ theme = ExtResource("4_e52mu")
 theme_override_font_sizes/font_size = 96
 nextScene = "res://scenes/minigameScenes/towerCrash/w1c1.tscn"
 
+[node name="quitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 851.0
+offset_right = 280.0
+offset_bottom = 991.0
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+
 [node name="winMenu" type="Control" parent="."]
 visible = false
 anchors_preset = 0
@@ -78,5 +87,6 @@ autoplay = true
 [node name="winSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_4blew")
 
-[connection signal="pressed" from="startButton" to="startButton" method="_on_pressed"]
+[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="quitButton" to="." method="_on_quit_b_utton_pressed"]
 [connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]
