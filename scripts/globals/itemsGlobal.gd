@@ -146,3 +146,27 @@ func itemUpdateSet(needsUpdate) -> void:
 
 func itemUpdateReq() -> bool:
 	return needsItemUpdate
+
+func resetItemsGlobal() -> void:
+	needsItemUpdate = false
+	showItemUI = false
+	hasAllTickets = false
+	boardsBroken = false
+	ufoTokenBool = false
+	ufoTicketBool = false
+	speedPitchTokenBool = false
+	speedPitchTicketBool = false
+	skeebleTokenBool = false
+	skeebleTicketBool = false
+	towerTokenBool = false
+	towerTicketBool = false
+	rangeTokenBool = false
+	rangeTicketBool = false
+	funPassLevel2 = false
+	funPassLevel3 = false
+	saw = false
+	bbgun = false
+	joystick = false
+	janitorsKey = false
+	mainDoorKey = false
+	map = false

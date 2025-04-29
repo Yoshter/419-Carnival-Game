@@ -57,3 +57,29 @@ func checkBeatGame(gameName) -> bool:
 		"skeeble":
 			beatGame = skeebleBeat
 	return beatGame
+
+func resetGamesGlobal() -> void:
+	ufoScore = 0
+	ufoBeat = false
+	ufoChecked = false
+	ufoPlugged = false
+
+	speedPitchBeat = false
+	speedPitchChecked = false
+
+	shootingRangeScore = 0
+	rangeChecked = false
+	rangeBeat = false
+	shootingRangeTimeLeft = 0.0
+
+	towerBeat = false
+	enemiesKilled = 0
+	towerChecked = false
+	towerHasJoystick = false
+
+	dead = false
+
+	skeebleScore = 0000
+	skeebleBallNum = 1
+	skeebleChecked = false
+	skeebleBeat = false
