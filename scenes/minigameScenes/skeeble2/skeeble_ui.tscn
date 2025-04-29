@@ -1,8 +1,9 @@
-[gd_scene load_steps=48 format=3 uid="uid://dd043ie4lgq3s"]
+[gd_scene load_steps=49 format=3 uid="uid://dd043ie4lgq3s"]
 
 [ext_resource type="Script" uid="uid://c6gme7p3guj6g" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.gd" id="1_c4a3s"]
 [ext_resource type="Texture2D" uid="uid://c5c2tivqsdijf" path="res://assets/Sprite Sheets/skeebleSpriteSheets/Skeeble_goals.png" id="2_uv541"]
 [ext_resource type="Texture2D" uid="uid://b2fvifq5njpqk" path="res://assets/Sprite Sheets/skeebleSpriteSheets/skeebleAnim3.png" id="3_6ylh3"]
+[ext_resource type="Theme" uid="uid://u6xta2i6ba7o" path="res://assets/Themes/Skeeble_UI_Theme.tres" id="3_b5vv0"]
 [ext_resource type="Texture2D" uid="uid://cny0k5gpcfih1" path="res://assets/Sprite Sheets/skeebleSpriteSheets/skeebleAnim.png" id="4_b5vv0"]
 [ext_resource type="Texture2D" uid="uid://4o75mgh6gwvl" path="res://assets/Sprite Sheets/skeebleSpriteSheets/skeebleAnim2.png" id="5_036ll"]
 
@@ -330,6 +331,8 @@ anchor_left = -0.0583333
 anchor_top = 0.25
 anchor_right = 0.0755208
 anchor_bottom = 0.374074
+theme = ExtResource("3_b5vv0")
+theme_override_font_sizes/font_size = 36
 text = "NEXT ROUND"
 metadata/_edit_use_anchors_ = true
 
@@ -348,6 +351,8 @@ anchor_left = -3.975
 anchor_top = -1.75
 anchor_right = 4.175
 anchor_bottom = 1.95
+theme = ExtResource("3_b5vv0")
+theme_override_font_sizes/font_size = 48
 text = "RETRY"
 metadata/_edit_use_anchors_ = true
 
@@ -430,6 +435,8 @@ anchor_left = -1.325
 anchor_top = 9.55
 anchor_right = 2.625
 anchor_bottom = 11.575
+theme = ExtResource("3_b5vv0")
+theme_override_font_sizes/font_size = 48
 text = "PRIZE"
 metadata/_edit_use_anchors_ = true
 
