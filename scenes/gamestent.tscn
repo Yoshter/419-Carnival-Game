@@ -307,7 +307,7 @@ volume_db = 15.0
 max_db = 6.0
 
 [node name="world" parent="." instance=ExtResource("10_86om8")]
-transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -99.57, 1.243, -154.32)
+transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -18.409, 1.435, -154.32)
 
 [node name="player2" parent="." instance=ExtResource("11_j2o88")]
 transform = Transform3D(0.00171037, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00171037, 6.21241, 1.26577, -2.8202)

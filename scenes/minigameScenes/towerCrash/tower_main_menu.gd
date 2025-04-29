@@ -18,5 +18,5 @@ func _on_start_button_pressed() -> void:
 
 func _on_prize_button_pressed() -> void:
 	PlayerGlobal.needsTeleport = true
-	PlayerGlobal.newPosition = Vector3(-25.082,1.444,-58.956)
+	PlayerGlobal.newPosition = Vector3(-26.36,1.266,-51.17)
 	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")
