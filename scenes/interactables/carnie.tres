@@ -1,6 +1,7 @@
-[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://b2klb2wvfkst7"]
+[gd_resource type="SpriteFrames" load_steps=12 format=3 uid="uid://b2klb2wvfkst7"]
 
 [ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="1_08rhc"]
+[ext_resource type="Texture2D" uid="uid://x3owrp223dq2" path="res://assets/Sprite Sheets/Carne_Wave-Sheet.png" id="2_6hs2t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6hs2t"]
 atlas = ExtResource("1_08rhc")
@@ -13,6 +14,30 @@ region = Rect2(0, 0, 450, 560)
 [sub_resource type="AtlasTexture" id="AtlasTexture_umgj7"]
 atlas = ExtResource("1_08rhc")
 region = Rect2(450, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lyiuh"]
+atlas = ExtResource("2_6hs2t")
+region = Rect2(0, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8q4k"]
+atlas = ExtResource("2_6hs2t")
+region = Rect2(450, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekvg0"]
+atlas = ExtResource("2_6hs2t")
+region = Rect2(900, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8l7bx"]
+atlas = ExtResource("2_6hs2t")
+region = Rect2(1350, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a2qbg"]
+atlas = ExtResource("2_6hs2t")
+region = Rect2(1800, 0, 450, 560)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tc4gt"]
+atlas = ExtResource("2_6hs2t")
+region = Rect2(2250, 0, 450, 560)
 
 [resource]
 animations = [{
@@ -34,4 +59,27 @@ animations = [{
 "loop": true,
 "name": &"talking",
 "speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lyiuh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8q4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekvg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8l7bx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a2qbg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tc4gt")
+}],
+"loop": true,
+"name": &"waving",
+"speed": 7.18
 }]

@@ -40,3 +40,39 @@ func _process(delta: float) -> void:
 		delay = 0.0
 		#bbgunShootSound.volume_db = -80.0
 		pauseCloseSFX.play(0.0)
+
+func _on_quit_2_pressed() -> void:
+	confirm_quit_2.set_visible(true)
+
+func _on_map_pressed() -> void:
+	mapMenu.set_visible(true)
+
+func _on_bug_report_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_inventory_pressed() -> void:
+	inventoryMenu.set_visible(true)
+
+func _on_objective_pressed() -> void:
+	objectiveMenu.set_visible(true)
+
+func _on_settings_pressed() -> void:
+	settingsMenu.set_visible(true)
+
+func _on_quit_inv_pressed() -> void:
+	inventoryMenu.set_visible(false)
+
+func _on_quit_obj_pressed() -> void:
+	objectiveMenu.set_visible(false)
+
+func _on_quit_settings_pressed() -> void:
+	settingsMenu.set_visible(false)
+
+func _on_quit_inv_2_pressed() -> void:
+	mapMenu.set_visible(true)
+
+func _on_no_pressed() -> void:
+	confirm_quit_2.set_visible(true)
+
+func _on_yes_pressed() -> void:
+	get_tree().quit()

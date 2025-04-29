@@ -16,10 +16,8 @@ pixel_size = 0.006
 alpha_cut = 3
 texture_filter = 0
 sprite_frames = ExtResource("2_stmyg")
-animation = &"talking"
+animation = &"waving"
 autoplay = "default"
-frame = 1
-frame_progress = 0.951982
 
 [node name="talkBox" type="Area3D" parent="."]
 
@@ -41,5 +39,10 @@ visible = false
 [node name="carnieVoice" type="AudioStreamPlayer3D" parent="."]
 volume_db = -15.0
 
+[node name="waveDelay" type="Timer" parent="."]
+wait_time = 9.0
+one_shot = true
+
 [connection signal="body_entered" from="talkBox" to="." method="_on_talk_box_body_entered"]
 [connection signal="body_exited" from="talkBox" to="." method="_on_talk_box_body_exited"]
+[connection signal="timeout" from="waveDelay" to="." method="_on_wave_delay_timeout"]

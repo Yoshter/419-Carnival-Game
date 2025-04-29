@@ -19,11 +19,16 @@ var carnie9SpokenTo : bool = false
 @onready var carnieVoice: AudioStreamPlayer3D = $carnieVoice
 @onready var thunder_jumpscare: AudioStreamPlayer = $"../Thunder Jumpscare"
 @onready var carnieSprite: AnimatedSprite3D = $carnieSprite
+@onready var waveDelay: Timer = $waveDelay
+var isWaving : bool = false
 
 func _process(delta: float) -> void:
 	#if PlayerGlobal.checkIsTalkingTo() == "dan" and !carnieVoice.is_playing:
 	if isBeingTalkedTo:
-		carnieSprite.play("talking")
+		if !isWaving:
+			carnieSprite.play("talking")
+			if waveDelay.is_stopped():
+				waveDelay.start()
 		if !isSpeaking:
 			#carnieVoice.play(0.0)
 			isSpeaking = true
@@ -95,4 +100,11 @@ func _on_talk_box_body_exited(body: Node3D) -> void:
 		talkLight.set_visible(false)
 		isSpeaking = false
 		isBeingTalkedTo = false
+		isWaving = false
 		body.canTalk = false
+
+
+func _on_wave_delay_timeout() -> void:
+	carnieSprite.stop()
+	carnieSprite.play("waving")
+	isWaving = true

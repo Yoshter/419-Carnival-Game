@@ -631,3 +631,16 @@ autostart = true
 
 [node name="pauseClose" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_fpvbo")
+
+[connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
+[connection signal="pressed" from="PauseMenu/map" to="." method="_on_map_pressed"]
+[connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]
+[connection signal="pressed" from="PauseMenu/inventory" to="." method="_on_inventory_pressed"]
+[connection signal="pressed" from="PauseMenu/objective" to="." method="_on_objective_pressed"]
+[connection signal="pressed" from="PauseMenu/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
+[connection signal="pressed" from="PauseMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
+[connection signal="pressed" from="PauseMenu/settingsMenu/quitSettings" to="." method="_on_quit_settings_pressed"]
+[connection signal="pressed" from="PauseMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/No" to="." method="_on_no_pressed"]
+[connection signal="pressed" from="PauseMenu/ConfirmQuit2/ColorRect/Yes" to="." method="_on_yes_pressed"]
