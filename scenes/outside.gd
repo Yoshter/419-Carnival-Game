@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		DialogueGlobal.resetDialogueGlobal()
 		ItemsGlobal.resetItemsGlobal()
 		GamesGlobal.resetGamesGlobal()
-		PlayerGlobal.beatCarn = false
+		PlayerGlobal.beatCARN = false
 		
 	if PlayerGlobal.inUI:
 		ambienceMusic.stop()
