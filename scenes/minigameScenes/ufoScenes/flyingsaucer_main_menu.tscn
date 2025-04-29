@@ -51,7 +51,7 @@ offset_top = 164.0
 offset_right = 916.0
 offset_bottom = 575.0
 scale = Vector2(2, 2)
-color = Color(0.236997, 0.433879, 0.652528, 1)
+color = Color(0, 0, 0.94902, 1)
 
 [node name="buttons" type="Control" parent="deathMenu"]
 anchors_preset = 0
@@ -90,7 +90,7 @@ offset_left = 68.5
 offset_top = 45.5
 offset_right = 255.5
 offset_bottom = 188.5
-color = Color(0, 0.347584, 0.208124, 1)
+color = Color(0, 0.666667, 0.666667, 1)
 
 [node name="score" type="Label" parent="deathMenu"]
 layout_mode = 0
@@ -98,6 +98,7 @@ offset_left = 69.0
 offset_top = 46.0
 offset_right = 256.0
 offset_bottom = 189.0
+theme_override_colors/font_color = Color(0.0470588, 0.909804, 0, 1)
 theme_override_font_sizes/font_size = 48
 text = "00"
 horizontal_alignment = 1

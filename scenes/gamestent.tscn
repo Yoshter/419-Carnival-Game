@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=46 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="36_61scv"]
 [ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="38_nlnqw"]
 [ext_resource type="AudioStream" uid="uid://bx2giqq7gi1qn" path="res://assets/allsound/SFX/Thunder Jumpscare.wav" id="39_q2qs1"]
+[ext_resource type="Texture2D" uid="uid://boayby032butd" path="res://assets/art/shootingrangeboard.png" id="41_8wokk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -492,3 +493,9 @@ max_db = -15.0
 
 [node name="Thunder Jumpscare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("39_q2qs1")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.906926, 0, -0.421289, 0, 1, 0, 0.421289, 0, -0.906926, -2.34858, 4.7388, 23.557)
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("41_8wokk")

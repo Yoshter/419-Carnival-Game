@@ -1,9 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://65yxhmqfwmsl"]
+[gd_scene load_steps=21 format=3 uid="uid://65yxhmqfwmsl"]
 
 [ext_resource type="Script" uid="uid://c0jac2dkwqubr" path="res://scenes/interactables/powerdoor.gd" id="1_6iqno"]
+[ext_resource type="Texture2D" uid="uid://dt1opn7rts6ym" path="res://assets/art/SteelDoor.png" id="2_i5bpn"]
 [ext_resource type="Texture2D" uid="uid://cp7q2vqqgqxqc" path="res://assets/art/lock/Lock.png" id="2_j0wql"]
 [ext_resource type="Texture2D" uid="uid://dgn0evjmc033n" path="res://assets/art/lock/Lock_Open.png" id="3_i5bpn"]
 [ext_resource type="Texture2D" uid="uid://bw88a4xr8b3na" path="res://assets/art/lock/LockAnimation-Sheet.png" id="4_cgc06"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgc06"]
+albedo_texture = ExtResource("2_i5bpn")
+texture_filter = 0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7spyh"]
 albedo_color = Color(0.259294, 0.259294, 0.259294, 1)
@@ -115,6 +120,7 @@ script = ExtResource("1_6iqno")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.19705, 0)
+material_override = SubResource("StandardMaterial3D_cgc06")
 use_collision = true
 size = Vector3(3.85254, 7.3941, 1)
 material = SubResource("StandardMaterial3D_7spyh")
