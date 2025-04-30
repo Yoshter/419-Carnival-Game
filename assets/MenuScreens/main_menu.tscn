@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b7vi0ytb4lhko" path="res://scenes/main_menu.gd" id="1_1ovvg"]
 [ext_resource type="Texture2D" uid="uid://bec7df448qjea" path="res://assets/MenuScreens/mainmenufinal.png" id="2_umtaw"]
-[ext_resource type="Texture2D" uid="uid://cuhsx2pxdt7rw" path="res://assets/Textures/Bug Report Button.png" id="3_ra4jo"]
+[ext_resource type="Texture2D" uid="uid://c54xfeu143uaw" path="res://assets/art/Bug.png" id="3_1ovvg"]
 [ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="4_2mf3k"]
 [ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="5_1h1tu"]
 [ext_resource type="Texture2D" uid="uid://cjjw22r27mebd" path="res://assets/Logos/Toast Games Final.png" id="6_qk78y"]
@@ -264,6 +264,7 @@ position = Vector2(961, 541)
 texture = ExtResource("2_umtaw")
 
 [node name="Bug Button" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -277,7 +278,7 @@ offset_bottom = -19.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
-icon = ExtResource("3_ra4jo")
+icon = ExtResource("3_1ovvg")
 flat = true
 icon_alignment = 1
 expand_icon = true

@@ -13,7 +13,8 @@ config_version=5
 config/name="CARN"
 run/main_scene="uid://unflq15lb488"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://assets/art/icon.svg"
+config/icon="uid://poivq7bpxper"
+config/windows_native_icon="res://assets/Logos/CARN_Icon.ico"
 
 [autoload]
 
