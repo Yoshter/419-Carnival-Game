@@ -1,0 +1,37 @@
+[gd_scene load_steps=8 format=3 uid="uid://b0p3qvl532at"]
+
+[ext_resource type="PackedScene" uid="uid://b2q6mp2hkdhkv" path="res://scenes/minigameScenes/skeeble2/Skeeble.dae" id="1_3kgyt"]
+[ext_resource type="Texture2D" uid="uid://cm31wo1kvs6yc" path="res://assets/Sprite Sheets/skeebleSpriteSheets/yellow.png" id="2_17iml"]
+[ext_resource type="Texture2D" uid="uid://c5c2tivqsdijf" path="res://assets/Sprite Sheets/skeebleSpriteSheets/Skeeble_goals.png" id="2_gqnml"]
+[ext_resource type="Texture2D" uid="uid://cts328ll5bs4x" path="res://assets/skeeble/Skeeble_runway.png" id="3_17iml"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn4ed"]
+albedo_texture = ExtResource("2_17iml")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jruee"]
+albedo_texture = ExtResource("2_gqnml")
+uv1_scale = Vector3(4.268, 4.129, 5.662)
+uv1_offset = Vector3(0.44, -0.025, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0fva"]
+albedo_texture = ExtResource("3_17iml")
+uv1_scale = Vector3(0.44, 0.44, 0.555)
+uv1_offset = Vector3(0.505, -0.085, -0.545)
+uv1_triplanar = true
+
+[node name="Skeeble" instance=ExtResource("1_3kgyt")]
+
+[node name="Cube" parent="." index="2"]
+material_override = SubResource("StandardMaterial3D_xn4ed")
+
+[node name="Cube_001" parent="." index="3"]
+material_override = SubResource("StandardMaterial3D_jruee")
+
+[node name="Cube_002" parent="." index="4"]
+material_override = SubResource("StandardMaterial3D_r0fva")
+
+[node name="Camera" parent="." index="6"]
+visible = false
+
+[node name="Light" parent="." index="7"]
+visible = false

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cts328ll5bs4x"
-path.s3tc="res://.godot/imported/Skeeble_runway.png-6745f45b9dbbe67765f842d329471659.s3tc.ctex"
+uid="uid://b5cjic8tbihba"
+path.s3tc="res://.godot/imported/Black.png-58630432a1e99efc23b1ea566b6d2721.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/skeeble/Skeeble_runway.png"
-dest_files=["res://.godot/imported/Skeeble_runway.png-6745f45b9dbbe67765f842d329471659.s3tc.ctex"]
+source_file="res://scenes/minigameScenes/skeeble2/textures/textures/Black.png"
+dest_files=["res://.godot/imported/Black.png-58630432a1e99efc23b1ea566b6d2721.s3tc.ctex"]
 
 [params]
 

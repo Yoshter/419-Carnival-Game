@@ -2,27 +2,26 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cts328ll5bs4x"
-path.s3tc="res://.godot/imported/Skeeble_runway.png-6745f45b9dbbe67765f842d329471659.s3tc.ctex"
+uid="uid://cuj28pj5o0qgg"
+path="res://.godot/imported/Skeeble runway.png-9c8657450adbff48b9a24ac4e6f122dc.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/skeeble/Skeeble_runway.png"
-dest_files=["res://.godot/imported/Skeeble_runway.png-6745f45b9dbbe67765f842d329471659.s3tc.ctex"]
+source_file="res://scenes/minigameScenes/skeeble2/textures/Skeeble runway.png"
+dest_files=["res://.godot/imported/Skeeble runway.png-9c8657450adbff48b9a24ac4e6f122dc.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -32,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1
