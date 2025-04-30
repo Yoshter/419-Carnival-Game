@@ -324,17 +324,17 @@ script = ExtResource("1_c4a3s")
 
 [node name="SkeebleRunway" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(944, 725)
+position = Vector2(1441.28, 725)
 scale = Vector2(0.614658, 0.615902)
 texture = ExtResource("7_b5vv0")
 
 [node name="SkeebleGoals" type="Sprite2D" parent="."]
-position = Vector2(942.548, 228.88)
+position = Vector2(1439.82, 228.88)
 scale = Vector2(0.484422, 0.484422)
 texture = ExtResource("2_uv541")
 
 [node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
-position = Vector2(942.548, 228.88)
+position = Vector2(1439.82, 228.88)
 scale = Vector2(0.484422, 0.484422)
 sprite_frames = SubResource("SpriteFrames_ar2wm")
 animation = &"outerLeft"
@@ -343,10 +343,10 @@ frame_progress = 1.0
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 903.0
-offset_right = 1062.0
-offset_bottom = 968.0
+offset_left = 802.0
+offset_top = 783.0
+offset_right = 1048.0
+offset_bottom = 848.0
 theme = ExtResource("3_b5vv0")
 theme_override_font_sizes/font_size = 36
 text = "NEXT ROUND"
@@ -366,21 +366,20 @@ metadata/_edit_use_anchors_ = true
 
 [node name="retryButton" type="Button" parent="retryMenu"]
 layout_mode = 0
-anchor_left = -3.975
-anchor_top = -1.75
-anchor_right = 4.175
-anchor_bottom = 1.95
+offset_left = -98.9999
+offset_top = -26.0
+offset_right = 83.0001
+offset_bottom = 49.0
 theme = ExtResource("3_b5vv0")
 theme_override_font_sizes/font_size = 48
 text = "RETRY"
-metadata/_edit_use_anchors_ = true
 
 [node name="greenRects" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 93.0
-offset_top = 230.0
-offset_right = 655.0
-offset_bottom = 303.0
+offset_left = 626.0
+offset_top = 648.0
+offset_right = 1188.0
+offset_bottom = 721.0
 
 [node name="ColorRect" type="ColorRect" parent="greenRects"]
 layout_mode = 0
@@ -446,8 +445,9 @@ scale = Vector2(1.03, 1.03)
 
 [node name="prizeButton" type="Button" parent="winMenu"]
 layout_mode = 0
+offset_left = -17.4757
 offset_top = -19.0
-offset_right = 183.0
+offset_right = 165.524
 offset_bottom = 49.0
 theme = ExtResource("3_b5vv0")
 theme_override_font_sizes/font_size = 48

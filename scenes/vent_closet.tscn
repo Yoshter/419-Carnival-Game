@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=18 format=3 uid="uid://drwyd1icj7mxy"]
 
 [ext_resource type="Material" uid="uid://b33va4kp658uy" path="res://assets/materials/VentRedo.material" id="1_aj7ev"]
 [ext_resource type="Material" uid="uid://wy55ycr3fm5i" path="res://assets/materials/Metal.material" id="1_eunuo"]
@@ -14,6 +14,7 @@
 [ext_resource type="Material" uid="uid://5okwryy4mwyj" path="res://assets/materials/janitor wood1.tres" id="7_8gdm5"]
 [ext_resource type="Material" uid="uid://bbwjw5qb5mxox" path="res://assets/materials/janitorwood2.tres" id="9_0nrvi"]
 [ext_resource type="PackedScene" uid="uid://qtjxsyh8rw1u" path="res://scenes/interactables/janitor_key.tscn" id="11_tbu8d"]
+[ext_resource type="Texture2D" uid="uid://bqyisb76l70ap" path="res://assets/art/carnie.png" id="15_0nrvi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88vl5"]
 size = Vector3(52.3173, 19.9845, 15.2442)
@@ -256,5 +257,9 @@ max_distance = 65.85
 
 [node name="janitorKey" parent="." instance=ExtResource("11_tbu8d")]
 transform = Transform3D(-0.991945, 0, -0.126666, 0, 1, 0, 0.126666, 0, -0.991945, -21.7408, 0.718874, -23.9825)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.48864, 0.247853, -0.137513, -0.0329148, 0.881378, 1.23227, 0.281527, -1.20754, 0.871206, -14.3732, 1.55876, -29.9626)
+texture = ExtResource("15_0nrvi")
 
 [connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]

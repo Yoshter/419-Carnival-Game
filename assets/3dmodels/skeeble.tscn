@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://b0p3qvl532at"]
+[gd_scene load_steps=13 format=3 uid="uid://b0p3qvl532at"]
 
 [ext_resource type="PackedScene" uid="uid://b2q6mp2hkdhkv" path="res://scenes/minigameScenes/skeeble2/Skeeble.dae" id="1_3kgyt"]
 [ext_resource type="Texture2D" uid="uid://cm31wo1kvs6yc" path="res://assets/Sprite Sheets/skeebleSpriteSheets/yellow.png" id="2_17iml"]
 [ext_resource type="Texture2D" uid="uid://c5c2tivqsdijf" path="res://assets/Sprite Sheets/skeebleSpriteSheets/Skeeble_goals.png" id="2_gqnml"]
 [ext_resource type="Texture2D" uid="uid://cts328ll5bs4x" path="res://assets/skeeble/Skeeble_runway.png" id="3_17iml"]
+[ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="5_jruee"]
+[ext_resource type="Texture2D" uid="uid://b51im7wmkuorn" path="res://assets/art/Coin_Slot_back.png" id="6_xn4ed"]
+[ext_resource type="Texture2D" uid="uid://decvfdibqy3m6" path="res://assets/Tickets/Ticket SkeeBall.png" id="7_vein6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn4ed"]
 albedo_texture = ExtResource("2_17iml")
@@ -18,6 +21,12 @@ albedo_texture = ExtResource("3_17iml")
 uv1_scale = Vector3(0.44, 0.44, 0.555)
 uv1_offset = Vector3(0.505, -0.085, -0.545)
 uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo2w8"]
+albedo_texture = ExtResource("6_xn4ed")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q6x4"]
+albedo_texture = ExtResource("6_xn4ed")
 
 [node name="Skeeble" instance=ExtResource("1_3kgyt")]
 
@@ -35,3 +44,62 @@ visible = false
 
 [node name="Light" parent="." index="7"]
 visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." index="9"]
+transform = Transform3D(1, 0, 0, 0, 0.992386, 0.123168, 0, -0.123168, 0.992386, 0.426054, 1.88029, -1.8524)
+material_override = ExtResource("5_jruee")
+size = Vector3(1.86835, 2.41873, 0.0257568)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." index="10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.541943, 0.630085, -0.49588)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.0823669, 0.0967712, 2.61481)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="." index="11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35887, 0.630085, -0.497589)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.0823669, 0.0967712, 2.61823)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="." index="12"]
+transform = Transform3D(-0.0066148, 0, 0.999978, 0, 1, 0, -0.999978, 0, -0.0066148, 0.410675, 0.630554, 0.849933)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.107628, 0.0967712, 1.98521)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="." index="13"]
+transform = Transform3D(-0.0066148, 0, 0.999978, 0, 1, 0, -0.999978, 0, -0.0066148, 0.410675, 0.630554, -1.83869)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.107628, 0.0967712, 1.98521)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="." index="14"]
+transform = Transform3D(-0.0066148, 0, 0.999978, 0, 1, 0, -0.999978, 0, -0.0066148, 0.410675, 0.708405, -1.76252)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.107628, 0.0967712, 1.98521)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="." index="15"]
+transform = Transform3D(1, 0, 0, 0, -0.123601, 0.992332, 0, -0.992332, -0.123601, -0.541943, 1.80891, -1.79155)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.0823669, 0.111534, 2.61481)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="." index="16"]
+transform = Transform3D(1, 0, 0, 0, -0.123601, 0.992332, 0, -0.992332, -0.123601, 1.3909, 1.80891, -1.79155)
+material_override = ExtResource("5_jruee")
+size = Vector3(0.0823669, 0.111534, 2.61481)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="." index="17"]
+transform = Transform3D(0.326437, 0.00455732, 0.0235433, -0.0193721, 0.332729, 0.00357169, -0.170715, -0.0290426, 0.0446138, -0.754033, 2.1855, -1.72579)
+material_override = SubResource("StandardMaterial3D_bo2w8")
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="." index="18"]
+transform = Transform3D(0.326437, 0.00455732, 0.0235433, -0.0193721, 0.332729, 0.00357169, -0.170715, -0.0290426, 0.0446138, -0.754033, 1.78594, -1.69792)
+material_override = SubResource("StandardMaterial3D_1q6x4")
+
+[node name="Ticket" type="Sprite3D" parent="." index="19"]
+transform = Transform3D(0.101085, 0.0015925, 0.054811, -0.00592386, 0.114596, 0.00759558, -0.0545132, -0.00949995, 0.100812, -0.741966, 1.79226, -1.67284)
+texture = ExtResource("7_vein6")
+
+[node name="Label3D" type="Label3D" parent="." index="20"]
+transform = Transform3D(0.118559, 0.00556357, 0.0606908, -0.00569971, 0.13318, -0.00107436, -0.0606782, -0.00163942, 0.118685, -0.737819, 2.19674, -1.69704)
+modulate = Color(0.988235, 0.972549, 0.317647, 1)
+outline_modulate = Color(1, 1, 1, 1)
+text = "175 Points"
+font_size = 120
