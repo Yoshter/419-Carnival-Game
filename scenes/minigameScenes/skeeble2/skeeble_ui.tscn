@@ -265,6 +265,11 @@ animations = [{
 "name": &"innerLeft",
 "speed": 14.0
 }, {
+"frames": [],
+"loop": true,
+"name": &"innerRight",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h118e")
@@ -311,6 +316,11 @@ animations = [{
 "loop": false,
 "name": &"outerLeft",
 "speed": 14.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"outerRight",
+"speed": 5.0
 }]
 
 [node name="skeebleUI" type="Control"]
@@ -337,9 +347,7 @@ texture = ExtResource("2_uv541")
 position = Vector2(1439.82, 228.88)
 scale = Vector2(0.484422, 0.484422)
 sprite_frames = SubResource("SpriteFrames_ar2wm")
-animation = &"outerLeft"
-frame = 13
-frame_progress = 1.0
+animation = &"center"
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0

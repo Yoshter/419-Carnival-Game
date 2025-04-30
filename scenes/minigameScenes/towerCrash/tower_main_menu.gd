@@ -5,15 +5,19 @@ extends Control
 @onready var winSound = $winSound
 var hasWon: bool = false
 @onready var quitButton: Button = $quitButton
+var winSoundPlayed : bool = false
 
 func _process(delta: float) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
-	
-	if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket"):
+	if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon:
+		hasWon = true
+	if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and hasWon:
 		startButton.set_visible(false)
-		winSound.play(0.0)
+		if !winSound.is_playing and !winSoundPlayed:
+			winSound.play(0.0)
+			winSoundPlayed = true
 		winMenu.set_visible(true)
-	else:
+	if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon:
 		GamesGlobal.enemiesKilled = 0
 		startButton.set_visible(true)
 		quitButton.set_visible(true)
