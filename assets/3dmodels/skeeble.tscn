@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0p3qvl532at"]
+[gd_scene load_steps=14 format=3 uid="uid://b0p3qvl532at"]
 
 [ext_resource type="PackedScene" uid="uid://b2q6mp2hkdhkv" path="res://scenes/minigameScenes/skeeble2/Skeeble.dae" id="1_3kgyt"]
 [ext_resource type="Texture2D" uid="uid://cm31wo1kvs6yc" path="res://assets/Sprite Sheets/skeebleSpriteSheets/yellow.png" id="2_17iml"]
@@ -28,6 +28,9 @@ albedo_texture = ExtResource("6_xn4ed")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1q6x4"]
 albedo_texture = ExtResource("6_xn4ed")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xn4ed"]
+size = Vector3(2.05188, 2.91028, 3.94312)
+
 [node name="Skeeble" instance=ExtResource("1_3kgyt")]
 
 [node name="Cube" parent="." index="2"]
@@ -41,6 +44,7 @@ material_override = SubResource("StandardMaterial3D_r0fva")
 
 [node name="Camera" parent="." index="6"]
 visible = false
+fov = 75.0
 
 [node name="Light" parent="." index="7"]
 visible = false
@@ -103,3 +107,9 @@ modulate = Color(0.988235, 0.972549, 0.317647, 1)
 outline_modulate = Color(1, 1, 1, 1)
 text = "175 Points"
 font_size = 120
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="21"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.397148, 0.955139, -1.02869)
+shape = SubResource("BoxShape3D_xn4ed")
