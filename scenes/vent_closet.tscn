@@ -260,6 +260,8 @@ transform = Transform3D(-0.991945, 0, -0.126666, 0, 1, 0, 0.126666, 0, -0.991945
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(1.48864, 0.247853, -0.137513, -0.0329148, 0.881378, 1.23227, 0.281527, -1.20754, 0.871206, -14.3732, 1.55876, -29.9626)
+alpha_cut = 3
+texture_filter = 0
 texture = ExtResource("15_0nrvi")
 
 [connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]

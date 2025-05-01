@@ -73,7 +73,7 @@ volumetric_fog_emission_energy = 0.3
 size = Vector3(14.2598, 5.16321, 1.55566)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7aptm"]
-size = Vector3(23.3164, 3.4491, 1)
+size = Vector3(23.3164, 5.25983, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh3t0"]
 albedo_color = Color(0, 0, 0, 1)
@@ -358,7 +358,7 @@ texture = ExtResource("8_fcsnu")
 [node name="Tree9" parent="Ending Adjustments" instance=ExtResource("9_m13py")]
 
 [node name="Tree10" parent="Ending Adjustments" instance=ExtResource("9_m13py")]
-transform = Transform3D(0.199471, -0.979904, 0, 0.646031, 0.131507, 0.751897, -0.736787, -0.149982, 0.65928, -5.86902, 1.62708, -1.07825)
+transform = Transform3D(0.199471, -0.979904, 0, 0.646031, 0.131507, 0.751897, -0.736787, -0.149982, 0.65928, -6.43198, 1.62708, -1.07825)
 visible = false
 
 [node name="PoleLeft" type="Sprite3D" parent="Ending Adjustments"]
@@ -379,7 +379,7 @@ texture = ExtResource("11_ldk1o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.45699)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ending Adjustments/treeBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1582, 7.64724, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1582, 8.5526, 0)
 shape = SubResource("BoxShape3D_7aptm")
 
 [node name="tent" parent="." instance=ExtResource("12_js7db")]

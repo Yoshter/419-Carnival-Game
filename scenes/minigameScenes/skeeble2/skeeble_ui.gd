@@ -43,8 +43,10 @@ func _process(delta: float) -> void:
 				endRound()
 			elif throwPower >= 55 and throwPower <= 70:
 				GamesGlobal.skeebleScore += 50
+				skeebleAnim.play("innerRight")
 				endRound()
 			elif throwPower >= 80 and throwPower <= 95:
+				skeebleAnim.play("outerRight")
 				GamesGlobal.skeebleScore += 10
 				endRound()
 			else:

@@ -14,6 +14,7 @@ script = ExtResource("1_f5p1e")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+use_collision = true
 size = Vector3(4, 2, 2)
 
 [node name="Area3D" type="Area3D" parent="."]
