@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dvfffmneck3ao"
+path="res://.godot/imported/Starship - We Built This City Official Music Video HD.wav-56107a903f256e3bf77bca942da426f0.sample"
+
+[deps]
+
+source_file="res://assets/allsound/Music/Starship - We Built This City Official Music Video HD.wav"
+dest_files=["res://.godot/imported/Starship - We Built This City Official Music Video HD.wav-56107a903f256e3bf77bca942da426f0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

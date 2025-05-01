@@ -13,6 +13,7 @@ var roundNum : int = 1
 @onready var retryMenu: Control = $retryMenu
 @onready var retryButton: Button = $retryMenu/retryButton
 @onready var score: Label = $score
+@onready var roll = $Roll
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
@@ -33,27 +34,32 @@ func _process(delta: float) -> void:
 				GamesGlobal.skeebleScore += 10
 				skeebleAnim.play("outerLeft")
 				endRound()
+				roll.play(0.0)
 			elif throwPower >= 30 and throwPower <= 45:
 				GamesGlobal.skeebleScore += 50
 				skeebleAnim.play("innerLeft")
+				roll.play(0.0)
 				endRound()
 			elif throwPower > 45 and throwPower < 55:
 				GamesGlobal.skeebleScore += 100
 				skeebleAnim.play("center")
+				roll.play(0.0)
 				endRound()
 			elif throwPower >= 55 and throwPower <= 70:
 				GamesGlobal.skeebleScore += 50
 				skeebleAnim.play("innerRight")
+				roll.play(0.0)
 				endRound()
 			elif throwPower >= 80 and throwPower <= 95:
 				skeebleAnim.play("outerRight")
 				GamesGlobal.skeebleScore += 10
+				roll.play(0.0)
 				endRound()
 			else:
 				endRound()
 		throwPowerBar.set_value(throwPower)
 		if throwPower >= 100:
-			#fail music playes
+			#fail music playes. no it doesnt lmaooo what i didnt make that -bren
 			endRound()
 	if roundNum == 4 and GamesGlobal.skeebleScore >= 175:
 		nextRoundButton.set_visible(false)

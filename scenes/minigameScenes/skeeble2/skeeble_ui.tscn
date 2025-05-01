@@ -1,4 +1,4 @@
-[gd_scene load_steps=197 format=3 uid="uid://dd043ie4lgq3s"]
+[gd_scene load_steps=198 format=3 uid="uid://dd043ie4lgq3s"]
 
 [ext_resource type="Script" uid="uid://c6gme7p3guj6g" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.gd" id="1_c4a3s"]
 [ext_resource type="Texture2D" uid="uid://cm2d3bch38db7" path="res://assets/art/skeeblebackground.png" id="2_036ll"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cts328ll5bs4x" path="res://assets/skeeble/Skeeble_runway.png" id="7_b5vv0"]
 [ext_resource type="Texture2D" uid="uid://db7s6ut6x31vo" path="res://assets/Sprite Sheets/skeebleSpriteSheets/new folder/farleft.png" id="8_i0etv"]
 [ext_resource type="Texture2D" uid="uid://buh4mab6uew2j" path="res://assets/Sprite Sheets/skeebleSpriteSheets/new folder/farright.png" id="9_f824s"]
+[ext_resource type="AudioStream" uid="uid://cs45oof7bwyr6" path="res://assets/allsound/SFX/Skeeble Roll.wav" id="11_51eo2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioqx0"]
 atlas = ExtResource("7_4mumh")
@@ -1343,38 +1344,38 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_c4a3s")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="background" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(961.111, 538.5)
-scale = Vector2(2.03148, 2.03148)
+scale = Vector2(2.15811, 2.09382)
 texture = ExtResource("2_036ll")
 
 [node name="SkeebleRunway" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1441.28, 725)
+position = Vector2(1025.28, 703.453)
 scale = Vector2(0.614658, 0.615902)
 texture = ExtResource("7_b5vv0")
 
 [node name="SkeebleGoals" type="Sprite2D" parent="."]
-position = Vector2(1439.82, 228.88)
+position = Vector2(1023.82, 207.333)
 scale = Vector2(0.484422, 0.484422)
 texture = ExtResource("2_uv541")
 
 [node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
-position = Vector2(1441, 477)
+position = Vector2(1025, 455.453)
 scale = Vector2(0.518328, 0.518328)
 sprite_frames = SubResource("SpriteFrames_ar2wm")
 animation = &"center"
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 802.0
-offset_top = 783.0
-offset_right = 1048.0
-offset_bottom = 848.0
+offset_left = 445.0
+offset_top = 687.0
+offset_right = 613.285
+offset_bottom = 752.0
 theme = ExtResource("3_b5vv0")
-theme_override_font_sizes/font_size = 36
-text = "NEXT ROUND"
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
 
 [node name="retryMenu" type="Control" parent="."]
 visible = false
@@ -1385,20 +1386,21 @@ offset_bottom = 9.79498
 
 [node name="retryButton" type="Button" parent="retryMenu"]
 layout_mode = 0
-offset_left = 724.43
-offset_top = 696.0
-offset_right = 906.43
-offset_bottom = 771.0
+offset_left = 1345.43
+offset_top = 678.0
+offset_right = 1527.43
+offset_bottom = 753.0
 theme = ExtResource("3_b5vv0")
 theme_override_font_sizes/font_size = 48
 text = "RETRY"
 
 [node name="greenRects" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 542.995
-offset_top = 887.64
-offset_right = 1104.99
-offset_bottom = 960.64
+offset_left = 793.0
+offset_top = 938.0
+offset_right = 1354.99
+offset_bottom = 1011.0
+scale = Vector2(0.794925, 0.794925)
 
 [node name="ColorRect" type="ColorRect" parent="greenRects"]
 layout_mode = 0
@@ -1464,10 +1466,10 @@ scale = Vector2(1.03, 1.03)
 
 [node name="prizeButton" type="Button" parent="winMenu"]
 layout_mode = 0
-offset_left = -22.3301
-offset_top = -227.184
-offset_right = 160.67
-offset_bottom = -159.184
+offset_left = 586.408
+offset_top = -233.01
+offset_right = 769.408
+offset_bottom = -165.01
 theme = ExtResource("3_b5vv0")
 theme_override_font_sizes/font_size = 48
 text = "PRIZE"
@@ -1480,6 +1482,10 @@ offset_bottom = 49.0
 scale = Vector2(1.16, 1.16)
 theme_override_font_sizes/font_size = 48
 text = "SCORE: 0000"
+
+[node name="Roll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_51eo2")
+volume_db = -3.0
 
 [connection signal="pressed" from="nextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="retryMenu/retryButton" to="." method="_on_retry_button_pressed"]
