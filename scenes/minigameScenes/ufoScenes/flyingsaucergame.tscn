@@ -161,49 +161,49 @@ position = Vector2(567, -12)
 position = Vector2(875, 62)
 
 [node name="Cloud4" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(1167, 7)
+position = Vector2(1177, -7)
 
 [node name="Cloud5" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(1214, 127)
+position = Vector2(1128, 163)
 
 [node name="Cloud6" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(1540, -4)
+position = Vector2(1508, -13)
 
 [node name="Cloud7" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(1587, 127)
+position = Vector2(1591, 138)
 
 [node name="Cloud8" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(1438, 108)
+position = Vector2(1443, 146)
 
 [node name="Cloud9" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(1811, 28)
+position = Vector2(1829, 47)
 
 [node name="Cloud10" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
 position = Vector2(2072, 5)
 
 [node name="Cloud11" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(2394, 103)
+position = Vector2(2412, 123)
 
 [node name="Cloud12" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(2300, -12)
+position = Vector2(2297, -24)
 
 [node name="Cloud13" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
 position = Vector2(2655, 128)
 
 [node name="Cloud14" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(2778, 13)
+position = Vector2(2778, -7)
 
 [node name="Cloud15" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(3087, 117)
+position = Vector2(3096, 129)
 
 [node name="Cloud16" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(2971, 12)
+position = Vector2(2965, -19)
 
 [node name="Cloud17" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
 position = Vector2(3424, 141)
 
 [node name="Cloud18" parent="obstacles/clouds" instance=ExtResource("3_65rxp")]
-position = Vector2(3329, 4)
+position = Vector2(3329, -3)
 
 [node name="ColorRect3" type="ColorRect" parent="."]
 offset_left = 3231.0
