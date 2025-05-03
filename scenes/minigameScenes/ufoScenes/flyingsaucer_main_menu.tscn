@@ -34,14 +34,16 @@ nextScene = "res://scenes/minigameScenes/ufoScenes/flyingsaucergame.tscn"
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 593.0
-offset_top = 952.0
-offset_right = 1313.0
-offset_bottom = 1076.0
+offset_left = 557.0
+offset_top = 885.0
+offset_right = 1372.0
+offset_bottom = 1082.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
-theme_override_font_sizes/font_size = 96
-text = "Use Space to Fly!"
+theme_override_font_sizes/font_size = 88
+text = "Use Space to Fly!
+10 Points for Token!"
+horizontal_alignment = 1
 
 [node name="deathMenu" type="ColorRect" parent="."]
 visible = false

@@ -13,6 +13,7 @@ config_version=5
 config/name="CARN"
 run/main_scene="uid://unflq15lb488"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/image="uid://bt8dfkrnyi1qc"
 config/icon="uid://poivq7bpxper"
 config/windows_native_icon="res://assets/Logos/CARN_Icon.ico"
 
