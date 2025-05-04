@@ -450,11 +450,12 @@ texture = ExtResource("3_lpw4w")
 
 [node name="quit2" type="Button" parent="PauseMenu"]
 texture_filter = 2
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0223888
-anchor_top = 0.669445
+anchor_top = 0.733334
 anchor_right = 0.246381
-anchor_bottom = 0.806112
+anchor_bottom = 0.870001
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 48
 text = "QUIT"
@@ -473,11 +474,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="bugReport" type="Button" parent="PauseMenu"]
 texture_filter = 1
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0223888
-anchor_top = 0.25463
+anchor_top = 0.318519
 anchor_right = 0.246381
-anchor_bottom = 0.431297
+anchor_bottom = 0.495186
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 36
 text = "REPORT 
@@ -506,22 +508,24 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="objective" type="Button" parent="PauseMenu"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0223888
-anchor_top = 0.0666667
+anchor_top = 0.130556
 anchor_right = 0.246381
-anchor_bottom = 0.201667
+anchor_bottom = 0.265556
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 36
 text = "OBJECTIVE"
 metadata/_edit_use_anchors_ = true
 
 [node name="settings" type="Button" parent="PauseMenu"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.0223888
-anchor_top = 0.47963
+anchor_top = 0.543519
 anchor_right = 0.246381
-anchor_bottom = 0.61463
+anchor_bottom = 0.678519
 localize_numeral_system = false
 theme = ExtResource("4_14imd")
 theme_override_font_sizes/font_size = 40
@@ -824,11 +828,12 @@ color = Color(1, 1, 0.745098, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="PauseMenu/mapMenu"]
-layout_mode = 0
-anchor_left = 0.518102
-anchor_top = 0.447155
-anchor_right = 0.896039
-anchor_bottom = 0.875093
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.503349
+anchor_top = 0.391722
+anchor_right = 0.881286
+anchor_bottom = 0.81966
 offset_left = 3.05176e-05
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 192

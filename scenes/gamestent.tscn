@@ -280,7 +280,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.276409, -17.5478)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.276409, -10.6543)
 
 [node name="table3" parent="obstacles" instance=ExtResource("7_7gm3j")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.276409, -11.7532)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.127354, -11.7532)
 isFlickering = true
 
 [node name="TableNoLight" parent="obstacles" instance=ExtResource("14_joq6e")]
@@ -350,7 +350,7 @@ omni_shadow_mode = 0
 [node name="items" type="Node3D" parent="."]
 
 [node name="funPass" parent="." instance=ExtResource("13_4vgoj")]
-transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.16, -11.4181)
+transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.01095, -11.4181)
 funPassLevel = 2
 
 [node name="Node3D" type="Node3D" parent="."]

@@ -186,3 +186,9 @@ func _on_win_button_pressed() -> void:
 		DialogueGlobal.objEncCount += 1
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")
+
+
+func _on_exit_pressed():
+	PlayerGlobal.needsTeleport = true
+	PlayerGlobal.newPosition = Vector3(-26,1.6,8.1)
+	get_tree().change_scene_to_file("res://scenes/gamestent.tscn")

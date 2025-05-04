@@ -483,8 +483,20 @@ volume_db = 4.0
 [node name="WinSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("12_hlg1q")
 
+[node name="Exit" type="Button" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 1025.0
+offset_right = 111.0
+offset_bottom = 1082.0
+scale = Vector2(0.909091, 0.95495)
+theme = ExtResource("3_4e83h")
+theme_override_font_sizes/font_size = 48
+text = "QUIT"
+
 [connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]
 [connection signal="pressed" from="goAgainButton" to="." method="_on_go_again_button_pressed"]
 [connection signal="timeout" from="countDown" to="." method="_on_count_down_timeout"]
 [connection signal="pressed" from="startMenu/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="winMenu/winButton" to="." method="_on_win_button_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
