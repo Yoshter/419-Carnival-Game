@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://drwyd1icj7mxy"]
+[gd_scene load_steps=19 format=3 uid="uid://drwyd1icj7mxy"]
 
 [ext_resource type="Material" uid="uid://b33va4kp658uy" path="res://assets/materials/VentRedo.material" id="1_aj7ev"]
 [ext_resource type="Material" uid="uid://wy55ycr3fm5i" path="res://assets/materials/Metal.material" id="1_eunuo"]
@@ -15,6 +15,7 @@
 [ext_resource type="Material" uid="uid://bbwjw5qb5mxox" path="res://assets/materials/janitorwood2.tres" id="9_0nrvi"]
 [ext_resource type="PackedScene" uid="uid://qtjxsyh8rw1u" path="res://scenes/interactables/janitor_key.tscn" id="11_tbu8d"]
 [ext_resource type="Texture2D" uid="uid://bqyisb76l70ap" path="res://assets/art/carnie.png" id="15_0nrvi"]
+[ext_resource type="Texture2D" uid="uid://yij1euyali54" path="res://assets/art/YoureNotSupposedToSeeThis.jpg" id="16_0imd4"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88vl5"]
 size = Vector3(52.3173, 19.9845, 15.2442)
@@ -263,5 +264,9 @@ transform = Transform3D(1.48864, 0.247853, -0.137513, -0.0329148, 0.881378, 1.23
 alpha_cut = 3
 texture_filter = 0
 texture = ExtResource("15_0nrvi")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0084299, -13.7518, -1.08781, -0.106565, 1.08785, -13.7514, 13.7943, 0, -0.106898, 0, 34.2512, 0)
+texture = ExtResource("16_0imd4")
 
 [connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]
