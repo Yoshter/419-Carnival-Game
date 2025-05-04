@@ -266,7 +266,32 @@ texture_filter = 0
 texture = ExtResource("15_0nrvi")
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform3D(-0.0084299, -13.7518, -1.08781, -0.106565, 1.08785, -13.7514, 13.7943, 0, -0.106898, 0, 34.2512, 0)
+transform = Transform3D(-0.00682794, -11.1385, -0.881091, -0.0863142, 0.881123, -11.1382, 11.1729, 0, -0.0865839, 0, 28.7925, 0)
 texture = ExtResource("16_0imd4")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.13427, -16.8343, 4.82425, 0)
+size = Vector3(34.6686, 1.76367, 1)
+material = ExtResource("1_aj7ev")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 6.13427, -9.53128, 15.5607, -57.5577)
+size = Vector3(49.2746, 1.89209, 1.23645)
+material = ExtResource("1_aj7ev")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(0.0397366, 0.0133299, 6.12888, -0.271898, 0.962324, -0.0124227, -0.961505, -0.271579, 0.256804, -18.1868, 23.328, -28.5728)
+size = Vector3(51.1261, 2.45166, 1.62256)
+material = ExtResource("1_aj7ev")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.014381, 0, 6.13364, 0, 1, 0, -0.999897, 0, -0.0882168, 1.48665, 6.31578, -5.95241)
+size = Vector3(34.6686, 2.3866, 1.83447)
+material = ExtResource("1_aj7ev")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(-0.014381, 0, 6.13364, 0, 1, 0, -0.999897, 0, -0.0882168, 1.48665, 15.7654, -36.4877)
+size = Vector3(34.6686, 2.3866, 1.83447)
+material = ExtResource("1_aj7ev")
 
 [connection signal="body_entered" from="vents/Vent Thud trigger" to="vents/Vent Thud trigger" method="_on_body_entered"]
