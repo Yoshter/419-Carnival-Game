@@ -162,6 +162,7 @@ material = ExtResource("2_u7i40")
 
 [node name="CSGCylinder3D10" type="CSGCylinder3D" parent="."]
 transform = Transform3D(-0.267962, 0, -0.96343, 0, 1, 0, 0.96343, 0, -0.267962, 38.3655, -1.88759, -97.7899)
+material_override = ExtResource("2_1k2v8")
 use_collision = true
 radius = 35.8793
 height = 11.1207
@@ -372,3 +373,8 @@ transform = Transform3D(0.114152, 0.842324, 0.526747, -0.0394175, -0.525955, 0.8
 
 [node name="Box thing" parent="Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing/Box thing" instance=ExtResource("5_1k2v8")]
 transform = Transform3D(0.238643, 0.926326, -0.291499, -0.461013, 0.372257, 0.80554, 0.854704, -0.0578505, 0.515885, 2.09868, -0.814914, 0.0939789)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.99828, 0, 0.0586269, 0, 1, 0, -0.0586269, 0, 0.99828, 21.8599, -2.28559, -86.4536)
+material_override = ExtResource("2_1k2v8")
+size = Vector3(1, 9.56854, 1)

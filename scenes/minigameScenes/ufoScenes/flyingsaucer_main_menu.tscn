@@ -42,7 +42,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 17
 theme_override_font_sizes/font_size = 88
 text = "Use Space to Fly!
-10 Points for Token!"
+10 Points for Prize!"
 horizontal_alignment = 1
 
 [node name="deathMenu" type="ColorRect" parent="."]
