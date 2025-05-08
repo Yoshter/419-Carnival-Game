@@ -48,9 +48,9 @@ horizontal_alignment = 1
 [node name="deathMenu" type="ColorRect" parent="."]
 visible = false
 layout_mode = 0
-offset_left = 593.0
+offset_left = 647.0
 offset_top = 164.0
-offset_right = 916.0
+offset_right = 970.0
 offset_bottom = 575.0
 scale = Vector2(2, 2)
 color = Color(0, 0, 0.94902, 1)

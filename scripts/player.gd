@@ -20,7 +20,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	#capture mouse inpute
+	#capture mouse input
 	if event is InputEventMouseMotion:
 		rotate_y(deg_to_rad(-event.relative.x * mouseSens))
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))
