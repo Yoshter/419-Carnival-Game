@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://unflq15lb488"]
+[gd_scene load_steps=40 format=3 uid="uid://unflq15lb488"]
 
 [ext_resource type="PackedScene" uid="uid://b6qxis5s8yusb" path="res://scenes/fence.tscn" id="1_evbs2"]
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_tdisj"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://b07cp1sql701x" path="res://scenes/playerScenes/intro_player_ui.tscn" id="22_s22lx"]
 [ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="22_xi7x6"]
 [ext_resource type="PackedScene" uid="uid://d4a58tg3s4j0l" path="res://assets/MenuScreens/main_menu.tscn" id="23_s22lx"]
+[ext_resource type="Texture2D" uid="uid://o5pn3fm6yhik" path="res://assets/Maltigi/artworks-zq6KDlwYKW5M8oGl-Hzqzcw-t1080x1080.jpg" id="24_2xi43"]
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ni2yb"]
 emission_shape_scale = Vector3(1, 14.685, 1)
@@ -664,3 +665,7 @@ offset_right = 3.0
 offset_bottom = 3.0
 
 [node name="Main Menu" parent="introPlayer" instance=ExtResource("23_s22lx")]
+
+[node name="Maltigi" type="Sprite3D" parent="."]
+transform = Transform3D(-0.611789, 0, -0.791021, 0, 1, 0, 0.791021, 0, -0.611789, 44.3237, 4.99648, 53.9041)
+texture = ExtResource("24_2xi43")
