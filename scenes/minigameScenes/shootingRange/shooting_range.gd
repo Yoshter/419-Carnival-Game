@@ -8,6 +8,8 @@ var shootingRangeStarted = false
 @onready var lights: Node3D = $lights
 @onready var music: AudioStreamPlayer3D = $music
 @onready var win_sound = $WinSound
+@onready var token_sign = $TokenSign
+
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.isBlackout:
@@ -21,6 +23,7 @@ func _process(delta: float) -> void:
 		PlayerGlobal.setCanInteract(true)
 		if Input.is_action_pressed("ui_accept"):
 			music.play(0.0)
+			token_sign.set_visible(false)
 			barrier.set_visible(true)
 			barrier.use_collision = true
 			csgBarrier.use_collision = true 
@@ -54,6 +57,7 @@ func _on_shooting_range_timer_timeout() -> void:
 		win_sound.play(0.0)
 	music.stop()
 	barrier.set_visible(false)
+	token_sign.set_visible(true)
 	barrier.use_collision = false
 	csgBarrier.use_collision = false
  

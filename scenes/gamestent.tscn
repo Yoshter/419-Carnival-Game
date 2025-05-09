@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=47 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -39,7 +39,6 @@
 [ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="36_61scv"]
 [ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="38_nlnqw"]
 [ext_resource type="AudioStream" uid="uid://bx2giqq7gi1qn" path="res://assets/allsound/SFX/Thunder Jumpscare.wav" id="39_q2qs1"]
-[ext_resource type="Texture2D" uid="uid://c83amlphjga6j" path="res://assets/Textures/tokeninsert.png" id="40_ires6"]
 [ext_resource type="Texture2D" uid="uid://boayby032butd" path="res://assets/art/shootingrangeboard.png" id="41_8wokk"]
 [ext_resource type="Texture2D" uid="uid://3qb8shnl5abi" path="res://assets/skeeble/SkeebleBall.png" id="42_ires6"]
 [ext_resource type="PackedScene" uid="uid://b0p3qvl532at" path="res://assets/3dmodels/skeeble.tscn" id="42_movvg"]
@@ -496,13 +495,6 @@ max_db = -15.0
 
 [node name="Thunder Jumpscare" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("39_q2qs1")
-
-[node name="ShootingRangeTokenSign" type="Sprite3D" parent="."]
-transform = Transform3D(-1, 0, 8.74227e-08, 0, 1, 0, -8.74227e-08, 0, -1, -12.1446, 1.21823, 23.7946)
-pixel_size = 0.025
-alpha_cut = 3
-texture_filter = 0
-texture = ExtResource("40_ires6")
 
 [node name="ShootingRangeSign" type="Sprite3D" parent="."]
 transform = Transform3D(-0.906926, 0, -0.421289, 0, 1, 0, 0.421289, 0, -0.906926, -2.34858, 4.7388, 23.557)

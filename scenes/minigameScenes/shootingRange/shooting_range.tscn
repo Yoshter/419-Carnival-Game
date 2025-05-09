@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bspombtyhjd6a"]
+[gd_scene load_steps=18 format=3 uid="uid://bspombtyhjd6a"]
 
 [ext_resource type="Script" uid="uid://cgpjpvw4sqd03" path="res://scenes/minigameScenes/shootingRange/shooting_range.gd" id="1_baoc8"]
 [ext_resource type="PackedScene" uid="uid://7ir04oxgkcfm" path="res://scenes/interactables/overworld_bb_gun.tscn" id="2_0amp2"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://u22f0nycncs8" path="res://assets/Textures/ArcadeCeiling.png" id="9_xxta3"]
 [ext_resource type="Texture2D" uid="uid://b51im7wmkuorn" path="res://assets/art/Coin_Slot_back.png" id="11_dai4d"]
 [ext_resource type="AudioStream" uid="uid://8xtcw4e2shux" path="res://assets/allsound/SFX/Minigame win Jingle.wav" id="12_81lev"]
+[ext_resource type="Texture2D" uid="uid://c83amlphjga6j" path="res://assets/Textures/tokeninsert.png" id="13_5djaw"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t1gs1"]
 size = Vector3(37.6171, 12.1945, 28.0642)
@@ -195,6 +196,13 @@ size = Vector3(0.948792, 1.02865, 1)
 [node name="WinSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("12_81lev")
 volume_db = -2.0
+
+[node name="TokenSign" type="Sprite3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 53.143, 1.28468, 0.495987)
+pixel_size = 0.025
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("13_5djaw")
 
 [connection signal="body_entered" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_entered"]
 [connection signal="body_exited" from="shootingRangeArea" to="." method="_on_shooting_range_area_body_exited"]
