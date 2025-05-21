@@ -1146,13 +1146,11 @@ anchor_left = 0.01973
 anchor_top = 0.0322581
 anchor_right = 0.484424
 anchor_bottom = 0.272811
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 84
-text = "UI ENGINEER
+text = "LEAD ASSET 
+IMPLEMENTATION
 GABE CAZZOLLA
 "
-metadata/_edit_use_anchors_ = true
 
 [node name="BrenCredits" type="Label" parent="endScreen"]
 visible = false
