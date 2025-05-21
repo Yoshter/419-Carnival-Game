@@ -458,7 +458,8 @@ texture = ExtResource("32_6j3e0")
 stream = ExtResource("34_y3mcc")
 
 [node name="Exitq" type="Label3D" parent="."]
-transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.74953, 4.02893, -3.41287)
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.74953, 4.02893, -3.55429)
+pixel_size = 0.01
 modulate = Color(1, 0, 0, 1)
 text = "EXIT"
 font_size = 150
