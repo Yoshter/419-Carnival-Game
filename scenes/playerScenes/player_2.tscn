@@ -127,5 +127,8 @@ libraries = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.553862, 1.33471, -0.933779)
 stream = ExtResource("3_j7i8f")
 
+[node name="devVisualIndicator" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+
 [connection signal="timeout" from="crouchDelay" to="." method="_on_crouch_delay_timeout"]
 [connection signal="timeout" from="shootDelay" to="." method="_on_shoot_delay_timeout"]

@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfb7lqc7aq2vl"]
+
+[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="1_xfv6i"]
+[ext_resource type="PackedScene" uid="uid://bsag5y1g02vmd" path="res://scenes/bossScenes/craneBossScenes/crane_boss.tscn" id="2_au665"]
+
+[node name="craneBossEnvironment" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+use_collision = true
+radius = 25.4663
+
+[node name="player2" parent="." instance=ExtResource("1_xfv6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.395078, 1.44522, 5.98837)
+
+[node name="craneBoss" parent="." instance=ExtResource("2_au665")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00776, 18.2994, -2.84538)
+
+[node name="lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.6765, 0)
+light_color = Color(0.784314, 0.184314, 0.0627451, 1)
+light_energy = 11.02
+omni_range = 27.7771
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.8882, 0)
+use_collision = true
+radius = 25.4663
+height = 25.7764
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="CSGCylinder3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.12196, 0)
+operation = 2
+use_collision = true
+radius = 21.2432
+height = 22.5104

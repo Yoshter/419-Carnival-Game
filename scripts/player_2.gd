@@ -39,8 +39,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and !animation.is_playing():
 		rotate_y(deg_to_rad(-event.relative.x * mouseSens))
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))
-		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-60), deg_to_rad(50))
-
+		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-40), deg_to_rad(60))
+		
 func _process(delta: float) -> void:
 	if PlayerGlobal.needsTeleport:
 		position = PlayerGlobal.newPosition
