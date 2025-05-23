@@ -91,7 +91,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		currSpeed = SPEED
 
-	if isCrouching and canCrouch:
+	if isCrouching and canCrouch and !PlayerGlobal.isTalking:
 		if Input.is_action_just_pressed("crouch") and !crouchRay.is_colliding():
 			body.position.y = 1.142
 			standingCollide.set_disabled(false)
@@ -100,7 +100,7 @@ func _physics_process(delta: float) -> void:
 			isCrouching = false
 			crouchDelay.start()
 
-	if !isCrouching and canCrouch:
+	if !isCrouching and canCrouch and !PlayerGlobal.isTalking:
 		if Input.is_action_just_pressed("crouch"):
 			body.position.y = 0.442
 			currSpeed = CROUCH_SPEED
