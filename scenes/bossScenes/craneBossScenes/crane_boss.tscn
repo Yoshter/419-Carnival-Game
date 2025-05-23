@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://bsag5y1g02vmd"]
+[gd_scene load_steps=23 format=3 uid="uid://bsag5y1g02vmd"]
 
 [ext_resource type="Texture2D" uid="uid://bf001c3huv23w" path="res://assets/art/CARN-E.png" id="1_nonsw"]
 [ext_resource type="Script" uid="uid://bb4saetp54rkl" path="res://scenes/bossScenes/craneBossScenes/crane_boss.gd" id="1_s0yjc"]
 [ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="2_s0yjc"]
+[ext_resource type="Texture2D" uid="uid://ccwh0sr8qih3a" path="res://assets/Space/Space Art/Explosion-Sheet-New.png" id="4_r50x6"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_r50x6"]
 height = 4.77344
@@ -51,9 +52,83 @@ animations = [{
 height = 3.36279
 radius = 2.44238
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s0yjc"]
+albedo_color = Color(0.886275, 0, 0, 1)
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_gbskh"]
 height = 2.73828
 radius = 2.1665
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns60q"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(0, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eljey"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(450, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_noirq"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(900, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5idq6"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(1350, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ykl"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(1800, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0dvf"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(2250, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1i84"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(2700, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mg7r"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(3150, 0, 450, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy4w6"]
+atlas = ExtResource("4_r50x6")
+region = Rect2(3600, 0, 450, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v0emw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns60q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eljey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_noirq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5idq6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ykl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0dvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1i84")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mg7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy4w6")
+}],
+"loop": false,
+"name": &"explode",
+"speed": 10.0
+}]
 
 [node name="craneBoss" type="CharacterBody3D"]
 script = ExtResource("1_s0yjc")
@@ -123,6 +198,10 @@ size = Vector3(3.97949, 1, 1)
 transform = Transform3D(-6.82836e-08, 3.14711e-08, 1, 0.913147, -0.407629, 7.51816e-08, 0.407629, 0.913147, -9.03327e-10, -0.339853, -2.5283, 2.30907)
 size = Vector3(3.97949, 1, 1)
 
+[node name="barrel" type="CSGCylinder3D" parent="claw"]
+visible = false
+material = SubResource("StandardMaterial3D_s0yjc")
+
 [node name="playerScanner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -13.1331, 0)
 
@@ -135,9 +214,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15618, 0)
 shape = SubResource("CylinderShape3D_gbskh")
 
 [node name="clawDropDelayTimer" type="Timer" parent="."]
-wait_time = 2.0
 one_shot = true
 
+[node name="explosionTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="explosionAnim" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.20173, 0)
+sprite_frames = SubResource("SpriteFrames_v0emw")
+animation = &"explode"
+
+[connection signal="body_entered" from="claw/clawArea" to="." method="_on_claw_area_body_entered"]
 [connection signal="body_entered" from="playerScanner/playScanArea" to="." method="_on_play_scan_area_body_entered"]
 [connection signal="body_exited" from="playerScanner/playScanArea" to="." method="_on_play_scan_area_body_exited"]
 [connection signal="timeout" from="clawDropDelayTimer" to="." method="_on_claw_drop_delay_timer_timeout"]
+[connection signal="timeout" from="explosionTimer" to="." method="_on_explosion_timer_timeout"]

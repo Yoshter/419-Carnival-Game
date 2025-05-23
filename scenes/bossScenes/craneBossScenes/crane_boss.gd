@@ -3,6 +3,9 @@ extends CharacterBody3D
 @onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var claw: Node3D = $claw
 @onready var clawDropDelayTimer: Timer = $clawDropDelayTimer
+@onready var explosionTimer: Timer = $explosionTimer
+@onready var barrel: CSGCylinder3D = $claw/barrel
+@onready var animation: AnimatedSprite3D = $explosionAnim
 
 const SPEED = 5.0
 
@@ -46,3 +49,15 @@ func _on_play_scan_area_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
 		inArea = false
 		playerInAreaTime = 0.0
+
+func _on_claw_area_body_entered(body: Node3D) -> void:
+	if body.is_in_group("barrel"):
+		barrel.set_visible(true)
+		claw.position.y = -5.416
+		body.pickUp()
+		explosionTimer.start()
+
+func _on_explosion_timer_timeout() -> void:
+	barrel.set_visible(false)
+	animation.play("explode")
+	canMove = true
