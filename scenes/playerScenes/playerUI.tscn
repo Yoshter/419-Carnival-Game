@@ -1165,7 +1165,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 84
 text = "PRODUCER & 
 LEAD SOUND ENGINEER
-BREN MURPHY"
+BRENDAN MURPHY"
 metadata/_edit_use_anchors_ = true
 
 [node name="artCredits" type="Label" parent="endScreen"]
@@ -1187,16 +1187,16 @@ metadata/_edit_use_anchors_ = true
 visible = false
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.145379
+anchor_left = 0.151091
 anchor_top = 0.352074
-anchor_right = 0.84891
+anchor_right = 0.898758
 anchor_bottom = 0.754839
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 84
 text = "                    DESIGNERS
 GABE CAZZOLLA    COLEMAN FAKER
-COLE GENEVICK         BREN MURPHY"
+COLE GENEVICK      BRENDAN MURPHY"
 metadata/_edit_use_anchors_ = true
 
 [node name="creditsTimer" type="Timer" parent="."]
