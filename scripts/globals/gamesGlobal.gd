@@ -29,7 +29,6 @@ var skeebleBeat : bool = false
 #Custom Funcs
 func ufoScoreUp() -> void:
 	ufoScore += 1
-	#$ScoreupSound.play() not working
 
 func ufoScoreReset() -> void:
 	ufoScore = 0

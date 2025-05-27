@@ -315,11 +315,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="scoreText" type="Label" parent="shootingRangeMenu"]
 texture_filter = 1
-layout_mode = 0
-anchor_left = -22.75
-anchor_top = -12.25
-anchor_right = -15.125
-anchor_bottom = -9.825
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -22.7993
+anchor_top = -9.87473
+anchor_right = -13.0496
+anchor_bottom = -7.2248
 offset_right = -85.0
 offset_bottom = -9.0
 theme_override_font_sizes/font_size = 96
@@ -327,13 +328,42 @@ text = "SCORE:"
 metadata/_edit_use_anchors_ = true
 
 [node name="timerText" type="Label" parent="shootingRangeMenu"]
-layout_mode = 0
-anchor_left = -20.6
-anchor_top = -9.05
-anchor_right = -16.425
-anchor_bottom = -6.625
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 13.5996
+anchor_top = -9.89973
+anchor_right = 17.7746
+anchor_bottom = -7.47473
 theme_override_font_sizes/font_size = 96
 text = "00"
+metadata/_edit_use_anchors_ = true
+
+[node name="timeText" type="Label" parent="shootingRangeMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.37485
+anchor_top = -12.25
+anchor_right = 26.0742
+anchor_bottom = -9.60007
+offset_right = -85.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 96
+text = "TIME REMAINING:"
+metadata/_edit_use_anchors_ = true
+
+[node name="ScoreTextReal" type="Label" parent="shootingRangeMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -22.6993
+anchor_top = -12.2497
+anchor_right = -12.9246
+anchor_bottom = -9.59975
+offset_right = -85.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 96
+text = "SCORE:"
 metadata/_edit_use_anchors_ = true
 
 [node name="interactMenu" type="Control" parent="."]

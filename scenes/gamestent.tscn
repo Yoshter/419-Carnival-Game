@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://calufsomygbn7"]
+[gd_scene load_steps=50 format=3 uid="uid://calufsomygbn7"]
 
 [ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
 [ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
@@ -42,6 +42,9 @@
 [ext_resource type="Texture2D" uid="uid://boayby032butd" path="res://assets/art/shootingrangeboard.png" id="41_8wokk"]
 [ext_resource type="Texture2D" uid="uid://3qb8shnl5abi" path="res://assets/skeeble/SkeebleBall.png" id="42_ires6"]
 [ext_resource type="PackedScene" uid="uid://b0p3qvl532at" path="res://assets/3dmodels/skeeble.tscn" id="42_movvg"]
+[ext_resource type="Material" uid="uid://bbwjw5qb5mxox" path="res://assets/materials/janitorwood2.tres" id="43_ires6"]
+[ext_resource type="Material" uid="uid://5okwryy4mwyj" path="res://assets/materials/janitor wood1.tres" id="44_c3fdj"]
+[ext_resource type="Texture2D" uid="uid://b73gpl2dp5t77" path="res://assets/art/Target.png" id="45_wukyr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
 albedo_texture = ExtResource("4_5ix5a")
@@ -407,6 +410,18 @@ texture = ExtResource("24_dub5i")
 transform = Transform3D(0.283802, -0.939216, -0.193212, 0.847803, 0.339916, -0.407047, 0.44798, -0.0482851, 0.892739, 5.95063, -2.25636, 2.29073)
 texture = ExtResource("24_dub5i")
 
+[node name="Ball7" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.281523, -0.942476, -0.180228, 0.842323, 0.332694, -0.424036, 0.459605, -0.0324343, 0.88753, 33.3921, -26.0464, -6.0643)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball8" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(-0.569778, -0.797662, -0.197703, 0.770259, -0.434505, -0.466803, 0.286449, -0.418257, 0.861978, 35.5196, -24.7374, -5.0301)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball9" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(-0.925676, 0.348373, -0.147509, -0.228117, -0.825041, -0.51698, -0.301804, -0.444908, 0.843189, 37.4887, -27.1631, -6.01073)
+texture = ExtResource("24_dub5i")
+
 [node name="Box" parent="." instance=ExtResource("23_b42cu")]
 transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.98615, 1.12983, 7.36549)
 
@@ -539,3 +554,56 @@ texture = ExtResource("42_ires6")
 [node name="SkeebleBall7" type="Sprite3D" parent="."]
 transform = Transform3D(1.2004e-08, -0.27462, 0.0362325, -1.58377e-09, 0.0362325, 0.27462, 0.277, 1.21081e-08, -5.2926e-16, -31.1209, 0.964046, 3.55935)
 texture = ExtResource("42_ires6")
+
+[node name="Shooting Range Sign" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5515, 9.32237, 24.1819)
+material_override = ExtResource("43_ires6")
+use_collision = true
+size = Vector3(11.2742, 2.01157, 1.26282)
+
+[node name="Label3D2" type="Label3D" parent="Shooting Range Sign"]
+transform = Transform3D(-5.22548, 0, -0.111466, 0, 5.22667, 0, 0.111466, 0, -5.22548, -0.0266247, -0.0157776, -0.76358)
+modulate = Color(0.56, 0.4732, 0.3864, 1)
+text = "Shooting Range"
+font_size = 56
+
+[node name="TableNoLight2" parent="." instance=ExtResource("14_joq6e")]
+transform = Transform3D(0.165817, -0.411371, 3.04713, 2.50172, 1.79217, 0.10581, -1.78762, 2.46993, 0.430727, -16.6969, 0.551051, 9.18335)
+
+[node name="SkeebleBall8" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -20.2425, 0.59623, 14.79)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall9" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -19.5229, 0.59623, 15.7473)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall10" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -20.8231, 0.59623, 15.8247)
+texture = ExtResource("42_ires6")
+
+[node name="Target" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-0.250434, -0.822674, -0.910239, 1.14531, -0.489904, 0.127665, -0.439986, -0.806998, 0.850418, -22.5869, 1.23034, 13.6219)
+use_collision = true
+height = 0.0490723
+material = ExtResource("44_c3fdj")
+
+[node name="Sprite3D" type="Sprite3D" parent="Target"]
+transform = Transform3D(-8.74228e-09, 0.2, -8.74228e-09, 1.05879e-22, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 3.82137e-16, -0.00199974, -0.0306758, -0.00216872)
+texture = ExtResource("45_wukyr")
+
+[node name="Target2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-0.243981, 0.053349, 1.22706, 0.065053, -1.24872, 0.0672256, 1.22649, 0.0768444, 0.240528, -23.9807, 0.655959, 15.9525)
+use_collision = true
+height = 0.0490723
+material = ExtResource("44_c3fdj")
+
+[node name="Sprite3D" type="Sprite3D" parent="Target2"]
+transform = Transform3D(0.00012479, 0.2, -0.000397575, -0.00202411, -0.000396289, -0.199989, -0.19999, 0.000128813, 0.00202386, -0.00200081, -0.0306758, -0.00216866)
+texture = ExtResource("45_wukyr")
+
+[node name="TableNoLight3" parent="." instance=ExtResource("14_joq6e")]
+transform = Transform3D(-1.26935, 1.90669, -2.0579, 2.42235, 1.88428, 0.251695, 1.41515, -1.51513, -2.27671, -22.8379, 0.551051, 19.3345)
+
+[node name="Box8" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.61864, -1.35771e-08, 0.024101, 2.19292e-08, 0.619111, 1.09646e-08, -0.024101, 1.72206e-08, 0.61864, -20.1085, 1.0859, 12.1747)
