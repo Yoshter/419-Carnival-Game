@@ -294,8 +294,8 @@ size = Vector3(1.17395, 0.348633, 1.15625)
 material = SubResource("StandardMaterial3D_y3mcc")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="obstacles"]
-transform = Transform3D(-0.0168591, 0, -0.999858, 0, 1, 0, 0.999858, 0, -0.0168591, -6.03215, 4.32863, 46.7161)
-size = Vector3(1.60846, 0.348633, 3.70508)
+transform = Transform3D(-0.0168591, 0, -0.999858, 0, 1, 0, 0.999858, 0, -0.0168591, -3.45576, 5.72595, 46.7186)
+size = Vector3(1.60846, 0.348633, 1.55676)
 material = SubResource("StandardMaterial3D_y3mcc")
 
 [node name="audioSpeakers" type="Node3D" parent="."]

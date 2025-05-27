@@ -72,7 +72,7 @@ func fall() -> void:
 		isFallen = true
 		match tokenString:
 			"tower":
-				global_position.y -= 4.5
+				global_position.y -= 5.5
 			"shootingRange":
 				global_position.y -= 3.0
 			"skeeble":
