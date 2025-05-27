@@ -51,6 +51,12 @@ func _process(delta: float) -> void:
 		hasBBGun = true
 		bbRay.set_visible(true)
 	
+	#if PlayerGlobal.isPaused:
+		#Freeze Camera Movement
+	
+	#if !PlayerGlobal.isPaused:
+		#Unfreeze Camera Movement
+	
 	if GamesGlobal.checkBeatGame("ufo") and !GamesGlobal.ufoChecked:
 		ItemsGlobal.itemUpdateSet(true)
 		GamesGlobal.ufoChecked = true
