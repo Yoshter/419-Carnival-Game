@@ -4,13 +4,12 @@
 [ext_resource type="AudioStream" uid="uid://bduq1kic26k1a" path="res://assets/allsound/Music/CARN Skeeble project.wav" id="2_ojgpp"]
 
 [node name="skeeble2" type="Node2D"]
-position = Vector2(72, 264)
 
 [node name="skeebleUI" parent="." instance=ExtResource("1_7etln")]
-offset_left = -53.0
-offset_top = -248.0
-offset_right = -53.0
-offset_bottom = -248.0
+offset_left = -45.0
+offset_top = -255.0
+offset_right = -45.0
+offset_bottom = -255.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(889, 276)

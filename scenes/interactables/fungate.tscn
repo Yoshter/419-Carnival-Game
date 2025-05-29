@@ -169,7 +169,6 @@ size = Vector3(1.32446, 1, 0.187012)
 size = Vector3(1, 0.615723, 0.615723)
 
 [node name="fungate" type="Node3D"]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 script = ExtResource("1_5cohp")
 
 [node name="sprite1" type="AnimatedSprite3D" parent="."]
