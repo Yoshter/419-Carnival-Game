@@ -28,7 +28,7 @@ func _process(delta: float) -> void:
 	if isThrowing:
 		nextRoundButton.set_visible(false)
 		if isAdding:
-			throwPower += delta * 30
+			throwPower += delta * 90
 		if Input.is_action_just_pressed("ui_accept"):
 			if throwPower >= 5 and throwPower <= 20:
 				GamesGlobal.skeebleScore += 10

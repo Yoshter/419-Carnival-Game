@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=3 uid="uid://dd043ie4lgq3s"]
+[gd_scene load_steps=199 format=3 uid="uid://dd043ie4lgq3s"]
 
 [ext_resource type="Script" uid="uid://c6gme7p3guj6g" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.gd" id="1_c4a3s"]
 [ext_resource type="Texture2D" uid="uid://cm2d3bch38db7" path="res://assets/art/skeeblebackground.png" id="2_036ll"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://db7s6ut6x31vo" path="res://assets/Sprite Sheets/skeebleSpriteSheets/new folder/farleft.png" id="8_i0etv"]
 [ext_resource type="Texture2D" uid="uid://buh4mab6uew2j" path="res://assets/Sprite Sheets/skeebleSpriteSheets/new folder/farright.png" id="9_f824s"]
 [ext_resource type="AudioStream" uid="uid://cs45oof7bwyr6" path="res://assets/allsound/SFX/Skeeble Roll.wav" id="11_51eo2"]
+[ext_resource type="Texture2D" uid="uid://decvfdibqy3m6" path="res://assets/Tickets/Ticket SkeeBall.png" id="12_i0etv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ioqx0"]
 atlas = ExtResource("7_4mumh")
@@ -1352,29 +1353,29 @@ texture = ExtResource("2_036ll")
 
 [node name="SkeebleRunway" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1025.28, 703.453)
+position = Vector2(947.71, 703.453)
 scale = Vector2(0.614658, 0.615902)
 texture = ExtResource("7_b5vv0")
 
 [node name="SkeebleGoals" type="Sprite2D" parent="."]
-position = Vector2(1023.82, 207.333)
+position = Vector2(946.25, 207.333)
 scale = Vector2(0.484422, 0.484422)
 texture = ExtResource("2_uv541")
 
 [node name="skeebleAnim" type="AnimatedSprite2D" parent="."]
-position = Vector2(1025, 455.453)
+position = Vector2(947.43, 455.453)
 scale = Vector2(0.518328, 0.518328)
 sprite_frames = SubResource("SpriteFrames_ar2wm")
 animation = &"center"
 
 [node name="nextRoundButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 445.0
-offset_top = 687.0
-offset_right = 613.285
-offset_bottom = 752.0
+offset_left = 358.0
+offset_top = 639.0
+offset_right = 649.0
+offset_bottom = 722.0
 theme = ExtResource("3_b5vv0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 68
 text = "PLAY"
 
 [node name="retryMenu" type="Control" parent="."]
@@ -1386,20 +1387,21 @@ offset_bottom = 9.79498
 
 [node name="retryButton" type="Button" parent="retryMenu"]
 layout_mode = 0
-offset_left = 1345.43
-offset_top = 678.0
-offset_right = 1527.43
-offset_bottom = 753.0
+offset_left = 251.43
+offset_top = 638.0
+offset_right = 538.43
+offset_bottom = 722.0
 theme = ExtResource("3_b5vv0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 65
 text = "RETRY"
 
 [node name="greenRects" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 793.0
-offset_top = 938.0
-offset_right = 1354.99
-offset_bottom = 1011.0
+offset_left = 1210.43
+offset_top = 911.0
+offset_right = 1772.42
+offset_bottom = 984.0
+rotation = -1.57473
 scale = Vector2(0.794925, 0.794925)
 
 [node name="ColorRect" type="ColorRect" parent="greenRects"]
@@ -1409,16 +1411,16 @@ offset_top = 2.0
 offset_right = 53.0
 offset_bottom = 6.0
 scale = Vector2(18.45, 17.61)
-color = Color(0, 1, 0, 1)
+color = Color(1, 0.815686, 0, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="greenRects"]
 layout_mode = 0
-offset_left = 182.73
-offset_top = 2.0
-offset_right = 186.73
-offset_bottom = 6.0
+offset_left = 182.401
+offset_top = 1.97582
+offset_right = 186.401
+offset_bottom = 5.97582
 scale = Vector2(20.18, 17.545)
-color = Color(0, 1, 0, 1)
+color = Color(0, 0.678431, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="greenRects"]
 layout_mode = 0
@@ -1427,7 +1429,7 @@ offset_top = 1.785
 offset_right = 319.245
 offset_bottom = 5.785
 scale = Vector2(20.18, 17.59)
-color = Color(0, 1, 0, 1)
+color = Color(0, 0.68, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="greenRects"]
 layout_mode = 0
@@ -1436,7 +1438,7 @@ offset_top = 2.0
 offset_right = 460.99
 offset_bottom = 6.0
 scale = Vector2(18.45, 17.605)
-color = Color(0, 1, 0, 1)
+color = Color(1, 0.816667, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="greenRects"]
 layout_mode = 0
@@ -1445,7 +1447,7 @@ offset_top = 2.273
 offset_right = 267.488
 offset_bottom = 5.273
 scale = Vector2(13.005, 23.435)
-color = Color(0.866633, 0.862315, 0, 1)
+color = Color(0.384231, 0.978442, 0, 1)
 
 [node name="throwPowerBar" type="ProgressBar" parent="greenRects"]
 layout_mode = 0
@@ -1454,6 +1456,7 @@ offset_top = 2.27272
 offset_right = 1249.45
 offset_bottom = 162.273
 scale = Vector2(0.440001, 0.440001)
+show_percentage = false
 
 [node name="winMenu" type="Control" parent="."]
 visible = false
@@ -1466,12 +1469,12 @@ scale = Vector2(1.03, 1.03)
 
 [node name="prizeButton" type="Button" parent="winMenu"]
 layout_mode = 0
-offset_left = 586.408
-offset_top = -233.01
-offset_right = 769.408
-offset_bottom = -165.01
+offset_left = 465.466
+offset_top = -274.757
+offset_right = 745.466
+offset_bottom = -191.757
 theme = ExtResource("3_b5vv0")
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 70
 text = "PRIZE"
 
 [node name="score" type="Label" parent="."]
@@ -1487,6 +1490,36 @@ text = "SCORE: 0"
 [node name="Roll" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("11_51eo2")
 volume_db = -3.0
+
+[node name="Score req" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 708.0
+offset_top = 127.0
+offset_right = 780.0
+offset_bottom = 191.0
+color = Color(0.54902, 0.54902, 0.54902, 1)
+
+[node name="Label" type="Label" parent="Score req"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 22.0
+offset_right = 71.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.992157, 0.94902, 0.215686, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "175 Points"
+
+[node name="Ticket Poster" type="ColorRect" parent="."]
+offset_left = 708.0
+offset_top = 219.0
+offset_right = 780.0
+offset_bottom = 283.0
+color = Color(0.54902, 0.54902, 0.54902, 1)
+
+[node name="ticket" type="Sprite2D" parent="Ticket Poster"]
+position = Vector2(35, 32)
+scale = Vector2(0.196154, 0.226923)
+texture = ExtResource("12_i0etv")
 
 [connection signal="pressed" from="nextRoundButton" to="." method="_on_next_round_button_pressed"]
 [connection signal="pressed" from="retryMenu/retryButton" to="." method="_on_retry_button_pressed"]
