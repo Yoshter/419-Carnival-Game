@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 		hasWon = true
 	if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and hasWon:
 		startButton.set_visible(false)
+		winMenu.set_visible(true)
 		GamesGlobal.enemiesKilled = 0
 		if !winSound.is_playing and !winSoundPlayed:
 			winSound.play(0.0)

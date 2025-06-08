@@ -36,7 +36,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseMotion and !animation.is_playing():
+	if event is InputEventMouseMotion and !animation.is_playing() and !PlayerGlobal.isPaused:
 		rotate_y(deg_to_rad(-event.relative.x * mouseSens))
 		body.rotate_x(deg_to_rad(-event.relative.y * mouseSens))
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-40), deg_to_rad(60))
