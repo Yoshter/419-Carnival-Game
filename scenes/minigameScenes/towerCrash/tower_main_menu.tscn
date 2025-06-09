@@ -87,6 +87,11 @@ autoplay = true
 [node name="winSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_4blew")
 
+[node name="songDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="quitButton" to="." method="_on_quit_b_utton_pressed"]
 [connection signal="pressed" from="winMenu/prizeButton" to="." method="_on_prize_button_pressed"]
+[connection signal="timeout" from="songDelay" to="." method="_on_song_delay_timeout"]
