@@ -27,6 +27,7 @@ func _process(delta: float) -> void:
 		objectiveMenu.set_visible(false)
 		confirm_quit_2.set_visible(false)
 		mapMenu.set_visible(false)
+		PlayerGlobal.isPaused = false
 		#PlayerGlobal.inUI = false
 		delay = 0.0
 		#bbgunShootSound.volume_db = 0.0
@@ -37,6 +38,7 @@ func _process(delta: float) -> void:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
 		controls.set_visible(true)
+		PlayerGlobal.isPaused = true
 		#PlayerGlobal.inUI = true
 		isVisible = true
 		delay = 0.0
