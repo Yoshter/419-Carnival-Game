@@ -13,23 +13,23 @@ var updateCount : int = 0
 func _process(delta: float) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	
-	if updateCount < 1:
-		if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon:
+	if (updateCount < 1):
+		if (GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon):
 			hasWon = true
-		if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and hasWon:
+		if (GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and hasWon):
 			print("winner")
 			startButton.set_visible(false)
 			winMenu.set_visible(true)
-			GamesGlobal.enemiesKilled = 0
+			(GamesGlobal.enemiesKilled) = 0
 			print(winSound.playing)
-			if !winSound.playing and !winSoundPlayed:
+			if (!winSound.playing and !winSoundPlayed):
 				menuMusic.volume_db = -90
 				print("winnerbinner")
 				winSound.play(0.0)
 				winSoundPlayed = true
 				songDelay.start()
-		if GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon:
-			GamesGlobal.enemiesKilled = 0
+		if (GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon):
+			(GamesGlobal.enemiesKilled) = 0
 			startButton.set_visible(true)
 			quitButton.set_visible(true)
 			#winMenu.set_visible(false)

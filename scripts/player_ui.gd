@@ -332,7 +332,7 @@ func _on_objective_pressed() -> void:
 		5: #until you talk to carnie
 			objectiveText.set_text("Go see what the carnie's got to say about THIS ticket.")
 		6: #find use for saw
-			objectiveText.set_text("If you're really BOARED go to the arcade lol.")
+			objectiveText.set_text("If you're BOARD, go to the arcade.")
 		7: #keep looking for them tokens.
 			objectiveText.set_text("Find the rest of the tokens.")
 		9: #all tickets collected.
