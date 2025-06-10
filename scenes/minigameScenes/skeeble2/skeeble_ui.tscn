@@ -1,6 +1,6 @@
 [gd_scene load_steps=199 format=3 uid="uid://dd043ie4lgq3s"]
 
-[ext_resource type="Script" uid="uid://c6gme7p3guj6g" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.gd" id="1_c4a3s"]
+[ext_resource type="Script" path="res://scenes/minigameScenes/skeeble2/skeeble_ui.gd" id="1_c4a3s"]
 [ext_resource type="Texture2D" uid="uid://cm2d3bch38db7" path="res://assets/art/skeeblebackground.png" id="2_036ll"]
 [ext_resource type="Texture2D" uid="uid://c5c2tivqsdijf" path="res://assets/Sprite Sheets/skeebleSpriteSheets/Skeeble_goals.png" id="2_uv541"]
 [ext_resource type="Theme" uid="uid://u6xta2i6ba7o" path="res://assets/Themes/Skeeble_UI_Theme.tres" id="3_b5vv0"]

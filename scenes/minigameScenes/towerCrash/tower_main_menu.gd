@@ -14,9 +14,18 @@ func _process(delta: float) -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	
 	if (updateCount < 1):
-		if (GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon):
+		print("beat tower = " + str(GamesGlobal.checkBeatGame("tower")))
+		print("has ticket = " + str(ItemsGlobal.checkItem("towerTicket")))
+		if (GamesGlobal.checkBeatGame("tower") and !hasWon):
 			hasWon = true
-		if (GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and hasWon):
+		if (GamesGlobal.checkBeatGame("tower") and !hasWon):
+			(GamesGlobal.enemiesKilled) = 0
+			startButton.set_visible(true)
+			quitButton.set_visible(true)
+			#winMenu.set_visible(false)
+		#print(hasWon)
+		updateCount += 1
+	if hasWon:
 			print("winner")
 			startButton.set_visible(false)
 			winMenu.set_visible(true)
@@ -28,14 +37,6 @@ func _process(delta: float) -> void:
 				winSound.play(0.0)
 				winSoundPlayed = true
 				songDelay.start()
-		if (GamesGlobal.checkBeatGame("tower") and !ItemsGlobal.checkItem("towerTicket") and !hasWon):
-			(GamesGlobal.enemiesKilled) = 0
-			startButton.set_visible(true)
-			quitButton.set_visible(true)
-			#winMenu.set_visible(false)
-		#print(hasWon)
-		updateCount += 1
-	
 func _on_start_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/minigameScenes/towerCrash/w1c1.tscn")
 
