@@ -3,17 +3,17 @@ extends Node
 var dialogueText : String
 
 var maxDialogueCount
-var danEncCount = 1
+var danEncCount = 6
 var objEncCount = 0
 
 #Naming conventions for array go "character" + "Enc(ounter)" + "(Encounter) #"
 #Array STRUCTURE [Dialogue Strings, giving item after dialogue bool, if so the item, maxDialogueArrayCount]
-var danEnc1 = ["Welcome", "You must be new here.", "Have a token!", "There's an arcade right down that hallway.", true, "ufoToken", 3]
-var danEnc2 = ["Well done!!!", "You've earned another token!", "Go try the Speed Pitch game in the Carnival Games section.", true, "speedPitchToken", 2]
-var danEnc3 = ["Good job on that last game kid!", "I'd give you another token, but I can't remember where I put 'em.", "Have a saw! I think I remember there being some boards over in the arcade if you're... BOARED!", true, "saw", 2]
-var danEnc4 = ["Keep looking for those tokens!", false, "null", 0]
-var danEnc5 = ["Hey, look at all those tic...", "Darn, looks like the power went out, you better go find the breaker room and fix it!", "Thanks!", false, "null", 2]
-var danEnc6 = ["You DID it! By the way, I found this random key if you want it.", false, "null", 0]
+var danEnc1 = ["A A A A H !   O  h   h-hello I didn’t s e e you there.", "U h h h m… ri-right! Y e s.", "Welcome to the  H A L F W A Y   A R C A D E  your  h a l f w a y  stop between fun and friends!", "You must be a N E W FRIEND!", "Have a T O K E N !", "Our STATE OF THE ART Digital Arcade is just down the hallway", "D o n ‘ t  g e t  l o s t .", "See ya!", true, "ufoToken", 7]
+var danEnc2 = ["W O O O O O O W ! CONGRATULATIONS for beating UFO BLAST!", "For your display of INCREDIBLE SKILL and PERSEVERANCE you are rewarded…", "A N O T H E R  T O K E N ! ! !", "Travel to the FIELD GAMES Section to test your dexterity!", true, "speedPitchToken", 3]
+var danEnc3 = ["Oh G-Good! You B E A T another G A M E ! ! ! ", "This was completely E X P E C T E D and A C C O U N T E D  F O R . . .", "In place of another T O K E N, please take this…", "S A W…", "I-I admit I misplaced the T H R E E other T O K E N S.", "And Y O U must F I N D them…", "P-please.", true, "saw", 6]
+var danEnc4 = ["Have you found all T H R E E of the T O K E N S yet?", false, "null", 0]
+var danEnc5 = ["Ah hello! Y O U have B E A T . . .", "A L L  O F  M Y  G A M E S ! ? !", "A A A A H! O-oh now the POWER is O U T.", "This... is... ", " U N S A T I S F A C T O R Y ", false, "null", 3]
+var danEnc6 = ["Oh, i-it’s Y O U.", "Y O U are still H E R E .", "After I L O S T my T O K E N S .", "After you B E A T all of my G A M E S .", "And N O W . . .", "After the B L A C K O U T  that Y O U-", "N e v e r m i n d", "J u s t  l e a v e", false, "null", 7]
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.beatCARN:
