@@ -2,7 +2,7 @@ extends Node
 
 #variables to handle in game scores for token-giving
 var ufoScore : int = 0
-var ufoBeat : bool = false
+var ufoBeat : bool = true
 var ufoChecked : bool = false
 var ufoPlugged : bool = false
 

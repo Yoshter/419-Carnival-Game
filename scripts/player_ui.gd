@@ -8,16 +8,21 @@ extends Control
 @onready var controls: Control = $controls
 var controlsShown : bool = false
 
+@onready var openSFX: AudioStreamPlayer2D = $OpenSFX
+@onready var closeSFX: AudioStreamPlayer2D = $"Close SFX"
+@onready var pageTurnSFX: AudioStreamPlayer2D = $"TabSwitch SFX"
+
 #menus
 @onready var pauseMenu : Control = $PauseMenu
+@onready var personalMenu: Control = $PersonalMenu
 @onready var getItemMenu : Control = $GetItemMenu
 @onready var dialogueMenu : Control = $DialogueMenu
-@onready var inventoryMenu: Control = $PauseMenu/inventoryMenu
-@onready var mapMenu: Control = $PauseMenu/mapMenu
+@onready var inventoryMenu: Control = $PersonalMenu/inventoryMenu
+@onready var mapMenu: Control = $PersonalMenu/mapMenu
 @onready var interactMenu: Control = $interactMenu
 @onready var shootingRangeMenu: Control = $shootingRangeMenu
 @onready var settings_menu: Control = $PauseMenu/settingsMenu
-
+@onready var objectiveMenu: Control = $PersonalMenu/objectiveMenu
 
 @onready var rangeScoreText: Label = $shootingRangeMenu/scoreText
 @onready var crosshair: Control = $crosshair
@@ -25,36 +30,36 @@ var controlsShown : bool = false
 @onready var gunShot: AnimationPlayer = $Gun_UI/gunShot
 
 #item icons
-@onready var ufoTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/ufoToken
-@onready var rangeTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/rangeToken
-@onready var skeebleTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/skeebleToken
-@onready var speedPitchTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/speedPitchToken
-@onready var towerTokenIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tokens/towerToken
+@onready var ufoTokenIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tokens/ufoToken
+@onready var rangeTokenIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tokens/rangeToken
+@onready var skeebleTokenIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tokens/skeebleToken
+@onready var speedPitchTokenIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tokens/speedPitchToken
+@onready var towerTokenIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tokens/towerToken
 
-@onready var ufoTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/ufoTicket
-@onready var rangeTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/rangeTicket
-@onready var skeebleTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/skeebleTicket
-@onready var speedPitchTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/speedPitchTicket
-@onready var towerTicketIcon: Sprite2D = $PauseMenu/inventoryMenu/itemIcons/tickets/towerTicket
+@onready var ufoTicketIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tickets/ufoTicket
+@onready var rangeTicketIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tickets/rangeTicket
+@onready var skeebleTicketIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tickets/skeebleTicket
+@onready var speedPitchTicketIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tickets/speedPitchTicket
+@onready var towerTicketIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tickets/towerTicket
 
-@onready var funPassJrIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassJr
-@onready var funPassSrIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/funPassSr
-@onready var sawIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/saw
-@onready var bbgunIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/bbgun
-@onready var joystickIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/joystick
-@onready var janitorsKeyIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/janitorsKey
-@onready var mainDoorKeyIcon : Sprite2D = $PauseMenu/inventoryMenu/itemIcons/mainDoorKey
+@onready var funPassJrIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/funPassJr
+@onready var funPassSrIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/funPassSr
+@onready var sawIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/saw
+@onready var bbgunIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/bbgun
+@onready var joystickIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/joystick
+@onready var janitorsKeyIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/janitorsKey
+@onready var mainDoorKeyIcon : Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/mainDoorKey
 
-@onready var map: Sprite2D = $PauseMenu/mapMenu/Map
+@onready var map: Sprite2D = $PersonalMenu/mapMenu/Map
 
 var dialogueCount : int = 0
 var maxDialogueCount : int = 0
-var isVisible : bool = false
+var pauseIsVisible : bool = false
+var personalIsVisible : bool = false
 var delay : float = 0.0
 var hasGun : bool = false
 
-@onready var objectiveMenu: Control = $PauseMenu/objectiveMenu
-@onready var objectiveText: Label = $PauseMenu/objectiveMenu/objectiveText
+@onready var objectiveText: Label = $PersonalMenu/objectiveMenu/objectiveText
 @onready var timerText: Label = $shootingRangeMenu/timerText
 @onready var danEncNumLabel: Label = $danEncNumLabel
 @onready var objEncNumLabel: Label = $objEncNumLabel
@@ -73,7 +78,7 @@ var toasterAnimHasPlayed : bool = false
 @onready var gabeCredits: Label = $endScreen/gabeCredits
 
 @onready var bbgunShootSound: AudioStreamPlayer = $bbgunShootSound
-@onready var timerLabel: Label = $PauseMenu/timer/timerLabel
+@onready var timerLabel: Label = $PersonalMenu/timer/timerLabel
 var shootSoundDelay : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
@@ -112,7 +117,7 @@ func _process(delta: float) -> void:
 	else:
 		shootingRangeMenu.set_visible(false)
 	#print(isVisible)
-	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("bbgun") and !isVisible and !PlayerGlobal.isDeaf:
+	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("bbgun") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf:
 		if !bbgunShootSound.playing and shootSoundDelay > 0.8:
 			bbgunShootSound.play(0.0)
 			shootSoundDelay = 0.0
@@ -121,30 +126,53 @@ func _process(delta: float) -> void:
 		#print("nuts")
 	#print("berries" + str(isVisible))
 	
-	if Input.is_action_just_pressed("Pause") and isVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
+	if Input.is_action_just_pressed("tab") and personalIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		pauseMenu.set_visible(false)
-		if PlayerGlobal.controlsShown:
-			controls.set_visible(false)
+		personalMenu.set_visible(false)
 		inventoryMenu.set_visible(false)
 		objectiveMenu.set_visible(false)
-		confirm_quit_2.set_visible(false)
 		mapMenu.set_visible(false)
 		PlayerGlobal.inUI = false
 		PlayerGlobal.isPaused = false
 		delay = 0.0
 		bbgunShootSound.volume_db = 0.0
-		isVisible = false
-		#bbgunShootSound.volume_db = 0.0
-		$"Close SFX".play()
+		pauseIsVisible = false
+		closeSFX.play(0.0)
 	
-	if Input.is_action_just_pressed("Pause") and !isVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
+	if Input.is_action_just_pressed("tab") and !personalIsVisible and !pauseIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		personalMenu.set_visible(true)
+		PlayerGlobal.inUI = true
+		PlayerGlobal.isPaused = true
+		delay = 0.0
+		bbgunShootSound.volume_db = -80.0
+		personalIsVisible = true
+		openSFX.play(0.0)
+	
+	if Input.is_action_just_pressed("Pause") and pauseIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		pauseMenu.set_visible(false)
+		if PlayerGlobal.controlsShown:
+			controls.set_visible(false)
+		#inventoryMenu.set_visible(false)
+		#objectiveMenu.set_visible(false)
+		#mapMenu.set_visible(false)
+		confirm_quit_2.set_visible(false)
+		PlayerGlobal.inUI = false
+		PlayerGlobal.isPaused = false
+		delay = 0.0
+		bbgunShootSound.volume_db = 0.0
+		pauseIsVisible = false
+		#bbgunShootSound.volume_db = 0.0
+		closeSFX.play()
+	
+	if Input.is_action_just_pressed("Pause") and !pauseIsVisible and !personalIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
 		controls.set_visible(true)
 		PlayerGlobal.isPaused = true
 		PlayerGlobal.inUI = true
-		isVisible = true
+		pauseIsVisible = true
 		delay = 0.0
 		bbgunShootSound.volume_db = -80.0
 		$OpenSFX.play()
@@ -298,7 +326,7 @@ func _on_hud_timer_timeout() -> void:
 
 func _on_resume_pressed() -> void:
 	$OpenSFX.play()
-	if isVisible and delay > 0.1:
+	if pauseIsVisible and delay > 0.1:
 		#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		pauseMenu.set_visible(false)
 		#pauseMenu.set_visible(false)
