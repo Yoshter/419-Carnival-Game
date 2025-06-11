@@ -64,6 +64,9 @@ var hasGun : bool = false
 @onready var danEncNumLabel: Label = $danEncNumLabel
 @onready var objEncNumLabel: Label = $objEncNumLabel
 @onready var dialogueCountLabel: Label = $dialogueCountLabel
+@onready var npcNameLabel: Label = $DialogueMenu/npcNameLabel
+@onready var npcSpriteAnim: AnimatedSprite2D = $DialogueMenu/npcSprite
+
 
 @onready var endScreen: Control = $endScreen
 var outroSeqNum : int = 0
@@ -180,6 +183,11 @@ func _process(delta: float) -> void:
 	#print("after" + str(PlayerGlobal.inUI))
 	
 	if PlayerGlobal.isTalking:
+		npcNameLabel.set_text(PlayerGlobal.checkIsTalkingTo())
+		match PlayerGlobal.checkIsTalkingTo():
+			"CARN-E":
+				
+				npcSpriteAnim.play("carneTalking")
 		PlayerGlobal.setCanInteract(false)
 		if !(dialogueCount > maxDialogueCount):
 			dialogueMenu.set_visible(true)

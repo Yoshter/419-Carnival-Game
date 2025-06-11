@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=72 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -34,7 +34,9 @@
 [ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="18_c1ib8"]
 [ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="22_cx60t"]
 [ext_resource type="Script" uid="uid://bpuomhrhlixuh" path="res://scenes/playerScenes/volume_slider.gd" id="28_j3u5f"]
+[ext_resource type="Texture2D" uid="uid://bf001c3huv23w" path="res://assets/art/CARN-E.png" id="32_dexik"]
 [ext_resource type="Texture2D" uid="uid://phvmuwdqfrhv" path="res://assets/Sprite Sheets/Toast_Games_Final-Sheet.png" id="32_j5ims"]
+[ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="33_0osqc"]
 [ext_resource type="AudioStream" uid="uid://dir7xmlfktyjl" path="res://assets/allsound/Music/CARN Credits early.wav" id="33_g8clv"]
 [ext_resource type="AudioStream" uid="uid://c01dlgfvgond1" path="res://assets/allsound/SFX/bbgun shoot.wav" id="34_8irf4"]
 
@@ -99,6 +101,40 @@ _data = {
 &"RESET": SubResource("Animation_j7ol1"),
 &"gunShot": SubResource("Animation_j3u5f")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpw4g"]
+atlas = ExtResource("32_dexik")
+region = Rect2(0, 0, 450, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdq03"]
+atlas = ExtResource("33_0osqc")
+region = Rect2(0, 0, 450, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvwy4"]
+atlas = ExtResource("33_0osqc")
+region = Rect2(450, 0, 450, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8dxj0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpw4g")
+}],
+"loop": false,
+"name": &"carneIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdq03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvwy4")
+}],
+"loop": true,
+"name": &"carneTalking",
+"speed": 3.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1ajci"]
 atlas = ExtResource("32_j5ims")
@@ -1136,16 +1172,36 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="DialogueMenu"]
 texture_filter = 1
-layout_mode = 0
-anchor_left = 0.0304348
-anchor_top = 0.213333
-anchor_right = 0.974783
-anchor_bottom = 0.84
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.170435
+anchor_top = 0.266667
+anchor_right = 1.00609
+anchor_bottom = 0.746668
 theme_override_font_sizes/font_size = 24
 text = "nothing"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="npcNameLabel" type="Label" parent="DialogueMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0313044
+anchor_top = 0.22
+anchor_right = 0.0956522
+anchor_bottom = 0.426667
+offset_right = 40.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 28
+text = "nothing"
+metadata/_edit_use_anchors_ = true
+
+[node name="npcSprite" type="AnimatedSprite2D" parent="DialogueMenu"]
+position = Vector2(205.625, 70.625)
+scale = Vector2(0.445755, 0.445755)
+sprite_frames = SubResource("SpriteFrames_8dxj0")
+animation = &"carneTalking"
 
 [node name="dialogueTimer" type="Timer" parent="."]
 wait_time = 3.0
@@ -1305,8 +1361,8 @@ stream = ExtResource("34_8irf4")
 [connection signal="pressed" from="PersonalMenu/objective" to="." method="_on_objective_pressed"]
 [connection signal="pressed" from="PersonalMenu/inventoryMenu/quitInv" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PersonalMenu/objectiveMenu/QuitObj" to="." method="_on_quit_obj_pressed"]
-[connection signal="pressed" from="PersonalMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
 [connection signal="pressed" from="PersonalMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_2_pressed"]
+[connection signal="pressed" from="PersonalMenu/mapMenu/quitInv2" to="." method="_on_quit_inv_pressed"]
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
 [connection signal="timeout" from="creditsTimer" to="." method="_on_credits_timer_timeout"]

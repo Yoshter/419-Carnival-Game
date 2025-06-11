@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 
 func returnDialogueText(npc, dialogueCount) -> String:
 	match npc:
-		"dan":
+		"CARN-E":
 			match danEncCount:
 				1:
 					dialogueText = danEnc1[dialogueCount]
@@ -42,7 +42,7 @@ func returnDialogueText(npc, dialogueCount) -> String:
 func returnMaxDialogueCount(npc) -> int:
 	var maxCount : int
 	match npc:
-			"dan":
+			"CARN-E":
 				match danEncCount:
 					1:
 						maxCount = danEnc1[-1]
@@ -61,7 +61,7 @@ func returnMaxDialogueCount(npc) -> int:
 func returnGivingItem(npc) -> bool:
 	var beingGivenItem : bool
 	match npc:
-		"dan":
+		"CARN-E":
 			match danEncCount:
 				1:
 					beingGivenItem = danEnc1[-3]
@@ -80,7 +80,7 @@ func returnGivingItem(npc) -> bool:
 
 func addToEncCount(npcName) -> void:
 	match npcName:
-		"dan":
+		"CARN-E":
 			danEncCount += 1
 
 func resetDialogueGlobal() -> void:

@@ -84,7 +84,7 @@ func _on_talk_box_body_entered(body: Node3D) -> void:
 			hasTalkedTo = true
 			#DialogueGlobal.objEncCount
 		inArea = true
-		PlayerGlobal.setIsTalkingTo("dan")
+		PlayerGlobal.setIsTalkingTo("CARN-E")
 		PlayerGlobal.setCanInteract(true)
 		if !PlayerGlobal.isBlackout:
 			talkLight.set_visible(true)
