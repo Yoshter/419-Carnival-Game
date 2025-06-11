@@ -136,10 +136,10 @@ func _process(delta: float) -> void:
 		PlayerGlobal.isPaused = false
 		delay = 0.0
 		bbgunShootSound.volume_db = 0.0
-		pauseIsVisible = false
+		personalIsVisible = false
 		closeSFX.play(0.0)
 	
-	if Input.is_action_just_pressed("tab") and !personalIsVisible and !pauseIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
+	if Input.is_action_just_pressed("tab") and !personalIsVisible and !pauseIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf and PlayerGlobal.inUI == false and !PlayerGlobal.isTalking:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		personalMenu.set_visible(true)
 		PlayerGlobal.inUI = true
@@ -154,9 +154,6 @@ func _process(delta: float) -> void:
 		pauseMenu.set_visible(false)
 		if PlayerGlobal.controlsShown:
 			controls.set_visible(false)
-		#inventoryMenu.set_visible(false)
-		#objectiveMenu.set_visible(false)
-		#mapMenu.set_visible(false)
 		confirm_quit_2.set_visible(false)
 		PlayerGlobal.inUI = false
 		PlayerGlobal.isPaused = false
@@ -166,7 +163,7 @@ func _process(delta: float) -> void:
 		#bbgunShootSound.volume_db = 0.0
 		closeSFX.play()
 	
-	if Input.is_action_just_pressed("Pause") and !pauseIsVisible and !personalIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
+	if Input.is_action_just_pressed("Pause") and !pauseIsVisible and !personalIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf and PlayerGlobal.inUI == false and !PlayerGlobal.isTalking:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		pauseMenu.set_visible(true)
 		controls.set_visible(true)
