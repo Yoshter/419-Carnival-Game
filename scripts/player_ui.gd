@@ -54,6 +54,8 @@ var controlsShown : bool = false
 
 var dialogueCount : int = 0
 var maxDialogueCount : int = 0
+@onready var textAnimation: AnimationPlayer = $textAnimation
+
 var pauseIsVisible : bool = false
 var personalIsVisible : bool = false
 var delay : float = 0.0
@@ -67,6 +69,7 @@ var hasGun : bool = false
 @onready var npcNameLabel: Label = $DialogueMenu/npcNameLabel
 @onready var npcSpriteAnim: AnimatedSprite2D = $DialogueMenu/npcSprite
 
+@onready var fallingRect: ColorRect = $fallingRect
 
 @onready var endScreen: Control = $endScreen
 var outroSeqNum : int = 0
@@ -104,6 +107,14 @@ func _process(delta: float) -> void:
 		interactMenu.set_visible(true)
 	else:
 		interactMenu.set_visible(false)
+	
+	if PlayerGlobal.isFalling:
+		fallingRect.set_visible(true)
+	else:
+		fallingRect.set_visible(false)
+	
+	if Input.is_action_just_pressed("ui_accept") and !textAnimation.is_playing():
+		textAnimation.play("moveOver")
 	
 	if !hasGun and ItemsGlobal.checkItem("bbgun"):
 		hasGun = true
@@ -186,7 +197,6 @@ func _process(delta: float) -> void:
 		npcNameLabel.set_text(PlayerGlobal.checkIsTalkingTo())
 		match PlayerGlobal.checkIsTalkingTo():
 			"CARN-E":
-				
 				npcSpriteAnim.play("carneTalking")
 		PlayerGlobal.setCanInteract(false)
 		if !(dialogueCount > maxDialogueCount):
@@ -261,6 +271,8 @@ func _process(delta: float) -> void:
 
 func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1
+	textAnimation.stop()
+	textAnimation.play("moveOver")
 	
 func _on_quit_2_pressed() -> void:
 	$OpenSFX.play()
@@ -388,7 +400,6 @@ func _on_bug_report_pressed():
 
 func _on_credits_timer_timeout() -> void:
 	outroSeqNum += 1
-
 
 func _on_quit_settings_pressed() -> void:
 	settings_menu.set_visible(false)

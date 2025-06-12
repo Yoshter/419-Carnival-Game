@@ -1,5 +1,6 @@
 extends Node3D
 var wantsToTalk
+@onready var player : CharacterBody3D = get_tree().get_first_node_in_group("player")
 @onready var talkBox : Area3D = $talkBox
 @onready var talkLight: SpotLight3D = $talkLight
 @onready var powerDown = $"../PowerDown"
@@ -102,9 +103,19 @@ func _on_talk_box_body_exited(body: Node3D) -> void:
 		isBeingTalkedTo = false
 		isWaving = false
 		body.canTalk = false
-
+		if DialogueGlobal.danEncCount == 6:
+			DialogueGlobal.addToEncCount("CARN-E")
 
 func _on_wave_delay_timeout() -> void:
 	carnieSprite.stop()
 	carnieSprite.play("waving")
 	isWaving = true
+
+func _on_surprise_box_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player") and !PlayerGlobal.inUI:
+		print(DialogueGlobal.danEncCount)
+		if DialogueGlobal.danEncCount == 7:
+			isBeingTalkedTo = true
+			PlayerGlobal.setIsTalking(true)
+			PlayerGlobal.setIsTalkingTo("CARN-E")
+			body.fallTimer.start()

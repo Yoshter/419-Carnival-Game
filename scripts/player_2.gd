@@ -30,6 +30,8 @@ var canShoot : bool = true
 @onready var bbgunShootSound: AudioStreamPlayer3D = $bbgunShootSound
 
 @onready var animation: AnimationPlayer = $animation
+@onready var fallTimer: Timer = $fallTimer
+var fallCount : int = 0
 
 func _ready() -> void:
 	add_to_group("player")
@@ -139,3 +141,17 @@ func _on_crouch_delay_timeout() -> void:
 
 func _on_shoot_delay_timeout() -> void:
 	canShoot = true
+
+func _on_fall_timer_timeout() -> void:
+	fallCount += 1
+	if fallCount < 29:
+		fallTimer.start()
+	if !animation.is_playing() and fallCount == 25:
+		animation.play("falling")
+		#fallTimer.start()
+	if fallCount == 26:
+		PlayerGlobal.isFalling = true
+		#fallTimer.start()
+	if fallCount == 29:
+		PlayerGlobal.isFalling = false
+		get_tree().change_scene_to_file("res://scenes/bossScenes/craneBossScenes/crane_boss_environment.tscn")

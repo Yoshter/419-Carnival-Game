@@ -1,0 +1,604 @@
+[gd_scene load_steps=48 format=3 uid="uid://calufsomygbn7"]
+
+[ext_resource type="PackedScene" uid="uid://cfrvinb5rmhlm" path="res://scenes/interactables/carnie.tscn" id="1_7ovt0"]
+[ext_resource type="Script" uid="uid://cqoju0ceu0xwv" path="res://scripts/gamestent.gd" id="1_bfm21"]
+[ext_resource type="Material" uid="uid://clqt35auoyxcu" path="res://assets/materials/wood.tres" id="2_ikt7c"]
+[ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="2_vq8fw"]
+[ext_resource type="Material" uid="uid://c4lfocr3brs4w" path="res://assets/materials/woodTest.tres" id="3_fh77p"]
+[ext_resource type="Material" uid="uid://cm8x7kqg25onx" path="res://assets/materials/clearcoatchrome.tres" id="3_u6un1"]
+[ext_resource type="Texture2D" uid="uid://manwlmn7yd5j" path="res://assets/Textures/Tent Wall.png" id="4_5ix5a"]
+[ext_resource type="Material" uid="uid://cxqty2uyqe7sh" path="res://assets/materials/tent.material" id="6_ikt7c"]
+[ext_resource type="PackedScene" uid="uid://lpvmrhxrmmkp" path="res://scenes/hallway.tscn" id="6_m4csp"]
+[ext_resource type="PackedScene" uid="uid://c1ygngepfcasq" path="res://scenes/table.tscn" id="7_7gm3j"]
+[ext_resource type="PackedScene" uid="uid://bspombtyhjd6a" path="res://scenes/minigameScenes/shootingRange/shooting_range.tscn" id="8_21i7n"]
+[ext_resource type="AudioStream" uid="uid://d3x7d7uti1857" path="res://assets/allsound/Music/Carnival main tent theme Take two.wav" id="8_56qu4"]
+[ext_resource type="PackedScene" uid="uid://dcg3ygwtwkmsr" path="res://scenes/world.tscn" id="10_86om8"]
+[ext_resource type="Material" uid="uid://uygwr6xt525w" path="res://assets/Textures/evilWood.tres" id="10_uux8u"]
+[ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="11_j2o88"]
+[ext_resource type="PackedScene" uid="uid://dxi413p71bf7s" path="res://scenes/interactables/fungate.tscn" id="12_8gcbl"]
+[ext_resource type="PackedScene" uid="uid://d36cuq3e6js5d" path="res://scenes/interactables/fun_pass.tscn" id="13_4vgoj"]
+[ext_resource type="Material" uid="uid://c1ai5mvkmpcud" path="res://assets/materials/Black.tres" id="13_ux0jv"]
+[ext_resource type="PackedScene" uid="uid://drmxrykytqx0" path="res://scenes/table_no_light.tscn" id="14_joq6e"]
+[ext_resource type="PackedScene" uid="uid://o2t2c4twpgi8" path="res://scenes/speed_pitch_cabinet.tscn" id="14_vg1bg"]
+[ext_resource type="PackedScene" uid="uid://dpufxile48ao1" path="res://scenes/good_hallway.tscn" id="17_k74dv"]
+[ext_resource type="PackedScene" uid="uid://dx16tjr211b04" path="res://carnival_speaker_2.tscn" id="18_21i7n"]
+[ext_resource type="AudioStream" uid="uid://cbx7qm3qhho1j" path="res://assets/allsound/SFX/Rain + Thunder for power outage Updated.wav" id="18_kwrsc"]
+[ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="19_bfm21"]
+[ext_resource type="PackedScene" uid="uid://cx7yrqk2vpadl" path="res://scenes/interactables/overworld_joystick.tscn" id="20_3oqoc"]
+[ext_resource type="PackedScene" uid="uid://c0heotbu56vd2" path="res://assets/SpeedPitchArt/Speed Pitch Cabinet.tscn" id="22_7ucd1"]
+[ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="23_b42cu"]
+[ext_resource type="Texture2D" uid="uid://hnbffjarvb5w" path="res://assets/SpeedPitchArt/Baseball.png" id="24_dub5i"]
+[ext_resource type="PackedScene" uid="uid://brlc1sovsxia8" path="res://scenes/janitor_door.tscn" id="29_j7vy6"]
+[ext_resource type="PackedScene" uid="uid://b6vy8jlfjmg4k" path="res://scenes/interactables/overworld_token.tscn" id="29_n1i75"]
+[ext_resource type="PackedScene" uid="uid://5ntjc343fmyh" path="res://scenes/interactables/exit_portal.tscn" id="30_886bn"]
+[ext_resource type="PackedScene" uid="uid://hfs1d8gq404l" path="res://scenes/interactables/skeeble_cabinet.tscn" id="30_j7vy6"]
+[ext_resource type="Texture2D" uid="uid://qu8hudgpyhf7" path="res://assets/Textures/CarnivalSign.png" id="32_6j3e0"]
+[ext_resource type="AudioStream" uid="uid://cx8ow2sid860k" path="res://assets/allsound/SFX/PowerDown sfx.wav" id="34_y3mcc"]
+[ext_resource type="Texture2D" uid="uid://ccyw0jhi6wdcg" path="res://assets/art/funpassJr.png" id="35_mvimg"]
+[ext_resource type="Texture2D" uid="uid://badufhhwohm1n" path="res://assets/art/funpassSr.png" id="36_61scv"]
+[ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="38_nlnqw"]
+[ext_resource type="AudioStream" uid="uid://bx2giqq7gi1qn" path="res://assets/allsound/SFX/Thunder Jumpscare.wav" id="39_q2qs1"]
+[ext_resource type="Texture2D" uid="uid://boayby032butd" path="res://assets/art/shootingrangeboard.png" id="41_8wokk"]
+[ext_resource type="Texture2D" uid="uid://3qb8shnl5abi" path="res://assets/skeeble/SkeebleBall.png" id="42_ires6"]
+[ext_resource type="PackedScene" uid="uid://b0p3qvl532at" path="res://assets/3dmodels/skeeble.tscn" id="42_movvg"]
+[ext_resource type="Material" uid="uid://bbwjw5qb5mxox" path="res://assets/materials/janitorwood2.tres" id="43_ires6"]
+[ext_resource type="Material" uid="uid://5okwryy4mwyj" path="res://assets/materials/janitor wood1.tres" id="44_c3fdj"]
+[ext_resource type="Texture2D" uid="uid://b73gpl2dp5t77" path="res://assets/art/Target.png" id="45_wukyr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2oind"]
+albedo_texture = ExtResource("4_5ix5a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lc1h6"]
+albedo_color = Color(0.412144, 0.279128, 0.209772, 1)
+metallic_specular = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3mcc"]
+albedo_color = Color(0.241136, 0.0509818, 0.0388588, 1)
+
+[node name="gamestent" type="Node3D"]
+script = ExtResource("1_bfm21")
+
+[node name="carnie" parent="." instance=ExtResource("1_7ovt0")]
+transform = Transform3D(-0.82085, 0, 0.571143, 0, 1, 0, -0.571143, 0, -0.82085, -0.59408, 2.24726, 4.50156)
+
+[node name="ground" type="Node3D" parent="."]
+
+[node name="mainarea" type="Node3D" parent="ground"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60156, 0, 0)
+visible = false
+use_collision = true
+size = Vector3(12.7969, 1, 8.22095)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60156, 0.705879, 4.74571)
+material_override = ExtResource("3_fh77p")
+use_collision = true
+size = Vector3(12.7969, 0.817871, 1.26282)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 0.999984, 0.00561993, 0, -0.00561993, 0.999984, -10.419, -0.5, 0.679)
+material_override = ExtResource("2_vq8fw")
+use_collision = true
+radius = 27.3136
+sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6154, -1.32325, 23.8143)
+operation = 2
+size = Vector3(44.5161, 7, 56.2458)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.7684, -1.32325, -3.35581)
+operation = 2
+size = Vector3(6.79718, 7, 34.8997)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 6.75209e-08, 0, -6.75209e-08, 1, 1.39437, -1.48601, 27.1809)
+operation = 2
+size = Vector3(44.5161, 7, 7.08855)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 0.347517, 0.678884)
+radius = 6.90238
+sides = 16
+material = ExtResource("2_ikt7c")
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, -0.0861431, 0.678884)
+radius = 9.15069
+sides = 16
+material = ExtResource("2_ikt7c")
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 3.93235, 0.678884)
+material_override = ExtResource("3_u6un1")
+use_collision = true
+radius = 9.15803
+height = 6.84955
+sides = 16
+cone = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.06494, 0)
+material_override = SubResource("StandardMaterial3D_2oind")
+operation = 2
+size = Vector3(17.8389, 8.27246, 17.4238)
+
+[node name="CSGCylinder3D5" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4189, 4.22567, 0.678884)
+visible = false
+material_override = SubResource("StandardMaterial3D_lc1h6")
+use_collision = true
+radius = 7.65629
+height = 6.80287
+sides = 16
+cone = true
+material = ExtResource("3_fh77p")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1816, 0)
+operation = 2
+size = Vector3(17.8389, 8.51656, 17.4238)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2548, 2.11719, -0.716921)
+material_override = ExtResource("3_fh77p")
+use_collision = true
+size = Vector3(1, 5.23438, 34.353)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGBox3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105048, -0.206693, -2.66519)
+material_override = ExtResource("3_fh77p")
+operation = 2
+use_collision = true
+size = Vector3(1.71533, 3.30396, 2.74194)
+
+[node name="mainTentCyl" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.419, 7.02392, 0.679)
+material_override = ExtResource("6_ikt7c")
+use_collision = true
+radius = 27.3136
+height = 14.4892
+sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(0.859031, 0, -0.511923, 0, 1, 0, 0.511923, 0, 0.859031, -20.211, -3.7168, -18.2263)
+operation = 2
+size = Vector3(1.45801, 8.43359, 9.35452)
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.221481, -1.52907, -0.265364)
+operation = 2
+use_collision = true
+radius = 24.7083
+height = 12.8748
+sides = 16
+
+[node name="hallway1Hole" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(0.975852, 0, 0.218433, 0, 1, 0, -0.218433, 0, 0.975852, -4.6542, -3.72398, -25.5845)
+operation = 2
+size = Vector3(5.60522, 5.58181, 4.49072)
+
+[node name="Carnival Speaker2" parent="ground/mainarea/mainTentCyl" instance=ExtResource("18_21i7n")]
+transform = Transform3D(0.207155, 0, 0, 0, 0.207155, 0, 0, 0, 0.207155, -15.1891, -1.68968, -0.240733)
+
+[node name="SpeakerPole" type="CSGCylinder3D" parent="ground/mainarea/mainTentCyl/Carnival Speaker2"]
+transform = Transform3D(3.79468, 0, 0, 0, 15.0264, 0, 0, 0, 3.73234, 0.00868988, -15.0349, 0.0445032)
+use_collision = true
+material = ExtResource("10_uux8u")
+
+[node name="janitorDoorway" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(0.834858, 0, -0.550466, 0, 1, 0, 0.550466, 0, 0.834858, -23.0456, -3.72398, -12.3187)
+visible = false
+operation = 2
+size = Vector3(5.60522, 5.58181, 4.49072)
+
+[node name="shootingRangeHole" type="CSGBox3D" parent="ground/mainarea/mainTentCyl"]
+transform = Transform3D(0.997065, 0, 0.0765629, 0, 1, 0, -0.0765629, 0, 0.997065, -0.167727, -2.52758, 28.0764)
+operation = 2
+size = Vector3(17.4697, 7.92762, 13.6633)
+
+[node name="TableNoLight" parent="ground/mainarea/mainTentCyl" instance=ExtResource("14_joq6e")]
+transform = Transform3D(-1.44429, 2.39938, -1.2801, 2.55717, 1.69149, 0.285346, 0.92554, -0.929226, -2.78597, -13.9835, -6.47191, -16.3396)
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1844, 0, 0.344869)
+material_override = ExtResource("6_ikt7c")
+use_collision = true
+radius = 8.7772
+height = 7.59151
+sides = 16
+
+[node name="CSGCylinder3D7" type="CSGCylinder3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.21039, 0, -0.10696)
+operation = 2
+radius = 7.49456
+height = 7.59151
+sides = 16
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, -0.5)
+operation = 2
+size = Vector3(3, 5, 6)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.53907, 2, -0.5)
+operation = 2
+size = Vector3(3, 5, 6)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.359479, 2, 7.45633)
+operation = 2
+size = Vector3(3.37567, 5, 6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="ground/mainarea/CSGCylinder3D7"]
+transform = Transform3D(0.0162134, 0, -0.999869, 0, 1, 0, 0.999869, 0, 0.0162134, 0.104492, 2, -8.26852)
+operation = 2
+size = Vector3(3, 5, 6)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="ground/mainarea"]
+transform = Transform3D(0.715486, 0, -0.698628, 0, 1, 0, 0.698628, 0, 0.715486, 6.70192, 1.88953, 17.2936)
+material_override = ExtResource("3_fh77p")
+use_collision = true
+size = Vector3(31.0439, 3.18518, 1.26282)
+
+[node name="hallway" parent="ground" instance=ExtResource("6_m4csp")]
+transform = Transform3D(0.354601, 0, 0.935018, 0, 1, 0, -0.935018, 0, 0.354601, -19.2924, 5.61359, -30.3189)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4492, 1.63861, -3.31048)
+material_override = ExtResource("13_ux0jv")
+use_collision = true
+size = Vector3(1, 4.27722, 3.15332)
+
+[node name="shootingRange" parent="." instance=ExtResource("8_21i7n")]
+transform = Transform3D(-0.014189, 0, 0.999899, 0, 1, 0, -0.999899, 0, -0.014189, -11.8779, -0.0716987, 76.9288)
+
+[node name="obstacles" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(0.702662, 0, 0.711523, 0, 1, 0, -0.711523, 0, 0.702662, -22.3184, 1.87776, 12.1811)
+use_collision = true
+size = Vector3(16.8884, 2.42468, 1)
+material = ExtResource("2_ikt7c")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(0.817768, 0, -0.575548, 0, 1, 0, 0.575548, 0, 0.817768, -23.1752, 1.54359, -10.204)
+use_collision = true
+size = Vector3(16.4552, 2.42468, 1)
+material = ExtResource("3_fh77p")
+
+[node name="table" parent="obstacles" instance=ExtResource("7_7gm3j")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -3.2407, 0.276409, -17.5478)
+
+[node name="table2" parent="obstacles" instance=ExtResource("7_7gm3j")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 5.88192, 0.276409, -10.6543)
+
+[node name="table3" parent="obstacles" instance=ExtResource("7_7gm3j")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.629907, 0.127354, -11.7532)
+isFlickering = true
+
+[node name="TableNoLight" parent="obstacles" instance=ExtResource("14_joq6e")]
+transform = Transform3D(1.87627, -2.20074, -1.05737, 2.37274, 1.95793, 0.135208, 0.575696, -0.897152, 2.88884, 2.53154, 0.551051, 8.50081)
+
+[node name="TableNoLight2" parent="obstacles" instance=ExtResource("14_joq6e")]
+transform = Transform3D(-1.65924, 2.58573, 0.206433, 2.59156, 1.66298, -3.42686e-08, -0.111487, 0.173738, -3.07231, 6.08074, 0.551051, 11.4215)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(0.620518, 0, -0.784192, 0, 1, 0, 0.784192, 0, 0.620518, -20.314, 4.41293, -21.5662)
+size = Vector3(1.17395, 0.348633, 1.15625)
+material = SubResource("StandardMaterial3D_y3mcc")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="obstacles"]
+transform = Transform3D(-0.0168591, 0, -0.999858, 0, 1, 0, 0.999858, 0, -0.0168591, -3.45576, 5.72595, 46.7186)
+size = Vector3(1.60846, 0.348633, 1.55676)
+material = SubResource("StandardMaterial3D_y3mcc")
+
+[node name="audioSpeakers" type="Node3D" parent="."]
+
+[node name="Carnival music" type="AudioStreamPlayer3D" parent="audioSpeakers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5533, 10.7838, 0.1558)
+stream = ExtResource("8_56qu4")
+volume_db = 1.0
+autoplay = true
+max_distance = 100.0
+
+[node name="Rain + Thunder" type="AudioStreamPlayer3D" parent="audioSpeakers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4699, 6.0431, 0)
+stream = ExtResource("18_kwrsc")
+volume_db = 15.0
+max_db = 6.0
+
+[node name="world" parent="." instance=ExtResource("10_86om8")]
+transform = Transform3D(-0.211495, 0, 0.977379, 0, 1, 0, -0.977379, 0, -0.211495, -18.409, 1.435, -154.32)
+
+[node name="player2" parent="." instance=ExtResource("11_j2o88")]
+transform = Transform3D(0.00171037, 0, 0.999999, 0, 1, 0, -0.999999, 0, 0.00171037, 6.21241, 1.26577, -2.8202)
+
+[node name="gates" type="Node3D" parent="."]
+
+[node name="fungate" parent="gates" instance=ExtResource("12_8gcbl")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -9.78479, 2.16585, 8.24885)
+itemToCheck = "funPassLevel3"
+
+[node name="fungate2" parent="gates" instance=ExtResource("12_8gcbl")]
+transform = Transform3D(0.0900515, 0, -3.99899, 0, 4, 0, 3.99899, 0, 0.0900515, -17.9615, 2.16585, -0.104642)
+itemToCheck = "funPassLevel2"
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.64639, 14.4358, 0.555725)
+light_color = Color(0.793181, 0.601833, 0, 1)
+light_energy = 6.142
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.368
+light_specular = 0.0
+shadow_enabled = true
+shadow_bias = 0.0
+distance_fade_enabled = true
+distance_fade_shadow = 41.37
+omni_range = 4096.0
+omni_attenuation = 1.202
+omni_shadow_mode = 0
+
+[node name="items" type="Node3D" parent="."]
+
+[node name="funPass" parent="." instance=ExtResource("13_4vgoj")]
+transform = Transform3D(0.98248, -0.18637, 0, 0.18637, 0.98248, 0, 0, 0, 1, 0.0615844, 2.01095, -11.4181)
+funPassLevel = 2
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="speedPitchCabinet" parent="." instance=ExtResource("14_vg1bg")]
+transform = Transform3D(-0.638163, 0, 0.769901, 0, 1, 0, -0.769901, 0, -0.638163, -28.9504, 0.5, 10.6087)
+visible = false
+
+[node name="goodHallway" parent="." instance=ExtResource("17_k74dv")]
+transform = Transform3D(0.978699, 0, 0.205299, 0, 1, 0, -0.205299, 0, 0.978699, -92.0098, -0.673, -26.211)
+
+[node name="arcadecabinet" parent="." instance=ExtResource("19_bfm21")]
+transform = Transform3D(-0.804821, 0, -0.593517, 0, 1, 0, 0.593517, 0, -0.804821, 3.23982, 0.704026, 19.4022)
+hasJoyStick = false
+
+[node name="arcadecabinet2" parent="." instance=ExtResource("19_bfm21")]
+transform = Transform3D(-0.804821, 0, -0.593517, 0, 1, 0, 0.593517, 0, -0.804821, 0.354205, 0.704026, 21.2771)
+
+[node name="overworldJoystick" parent="." instance=ExtResource("20_3oqoc")]
+transform = Transform3D(0.895463, 0, -0.445135, 0, 1, 0, 0.445135, 0, 0.895463, 1.45632, 0.700109, 16.7261)
+
+[node name="SpeedPitchCabinetGood" parent="." instance=ExtResource("22_7ucd1")]
+transform = Transform3D(1.56972, 0, 1.2376, 0, 1.99892, 0, -1.2376, 0, 1.56972, -30.6835, 0.773483, 12.9009)
+
+[node name="Box2" parent="SpeedPitchCabinetGood" instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.170368, -0.0398177, -0.116975, 0.0505404, 0.204262, 0.0040797, 0.112758, -0.0313931, 0.174911, 0.537453, 0.0156864, 1.12528)
+
+[node name="Box" parent="SpeedPitchCabinetGood" instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.210301, -4.61541e-09, 0.00819291, 7.45461e-09, 0.210461, 3.7273e-09, -0.00819292, 5.85399e-09, 0.210301, 1.10779, 0.0861492, 0.401886)
+
+[node name="Box3" parent="SpeedPitchCabinetGood" instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.202643, -0.00855178, -0.0561823, 0.00532964, 0.210007, -0.0127428, 0.0565789, 0.0108467, 0.202423, 1.08301, 0.0182082, 1.77178)
+
+[node name="Balls" type="Sprite3D" parent="SpeedPitchCabinetGood"]
+transform = Transform3D(-0.00183894, -0.108096, -0.0578823, 0.016968, 0.0571075, -0.107188, 0.121438, -0.00961629, 0.0141004, 1.471, 0.180922, -0.590778)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball2" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.504922, 0.863035, 0.0149915, -0.863149, 0.504941, 0.00276913, -0.00518008, -0.0143381, 0.999884, 2.96801, -0.296463, 0.311893)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball3" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.718799, -0.684597, -0.12106, 0.555484, 0.67026, -0.492126, 0.41805, 0.286492, 0.862065, -4.83473, -3.87751, -0.116856)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball4" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.274268, -0.952989, -0.128799, 0.818863, 0.301665, -0.488325, 0.504222, 0.0284634, 0.863105, -6.12525, -0.758446, 1.31465)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball5" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.281523, -0.942477, -0.180228, 0.842323, 0.332694, -0.424036, 0.459605, -0.0324344, 0.887531, 6.4982, -4.3931, 1.31951)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball6" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.283802, -0.939216, -0.193212, 0.847803, 0.339916, -0.407047, 0.44798, -0.0482851, 0.892739, 5.95063, -2.25636, 2.29073)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball7" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(0.281523, -0.942476, -0.180228, 0.842323, 0.332694, -0.424036, 0.459605, -0.0324343, 0.88753, 33.3921, -26.0464, -6.0643)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball8" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(-0.569778, -0.797662, -0.197703, 0.770259, -0.434505, -0.466803, 0.286449, -0.418257, 0.861978, 35.5196, -24.7374, -5.0301)
+texture = ExtResource("24_dub5i")
+
+[node name="Ball9" type="Sprite3D" parent="SpeedPitchCabinetGood/Balls"]
+transform = Transform3D(-0.925676, 0.348373, -0.147509, -0.228117, -0.825041, -0.51698, -0.301804, -0.444908, 0.843189, 37.4887, -27.1631, -6.01073)
+texture = ExtResource("24_dub5i")
+
+[node name="Box" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, 6.98615, 1.12983, 7.36549)
+
+[node name="Box2" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.553267, 0, -0.331543, 0, 0.645, 0, 0.331543, 0, 0.553267, 4.2318, 1.12983, 10.3522)
+
+[node name="TableNoLight" parent="." instance=ExtResource("14_joq6e")]
+transform = Transform3D(2.12978, -1.96805, -1.03563, 2.1481, 2.19169, 0.252573, 0.575696, -0.897152, 2.88884, -15.5359, -0.00258958, -8.00153)
+
+[node name="Box3" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.645, 0, 0, 0, 0.645, 0, 0, 0, 0.645, -18.5184, 1.12983, -11.6402)
+
+[node name="Box4" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -21.2749, 1.12983, -12.9253)
+
+[node name="Box7" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.576724, 0, -0.288815, 0, 0.645, 0, 0.288815, 0, 0.576724, -28.7307, 1.12983, -9.53428)
+
+[node name="skeebleCabinet" parent="." instance=ExtResource("30_j7vy6")]
+transform = Transform3D(0.00230446, 0, 0.999998, 0, 1, 0, -0.999998, 0, 0.00230446, -32.2183, 1.23881, 4.29578)
+visible = false
+
+[node name="tokens" type="Node3D" parent="."]
+
+[node name="overworldToken" parent="tokens" instance=ExtResource("29_n1i75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.7404, 1.74659, -9.41152)
+tokenString = "shootingRange"
+isFallen = true
+
+[node name="overworldToken2" parent="tokens" instance=ExtResource("29_n1i75")]
+transform = Transform3D(0.817879, 0, 0.575391, 0, 1, 0, -0.575391, 0, 0.817879, -20.1993, 5.14577, -21.4857)
+tokenString = "skeeble"
+
+[node name="janitorDoor" parent="." instance=ExtResource("29_j7vy6")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.52007, 0.877352, -3.75)
+doorType = "mainDoor"
+
+[node name="exitPortal" parent="." instance=ExtResource("30_886bn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2676, 1.57094, -2.91931)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-0.732757, 0, 0.680491, 0, 1, 0, -0.680491, 0, -0.732757, -15.4345, 5.95593, 5.47944)
+pixel_size = 0.005
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("32_6j3e0")
+
+[node name="PowerDown" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("34_y3mcc")
+
+[node name="Exitq" type="Label3D" parent="."]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, 9.74953, 4.02893, -3.55429)
+pixel_size = 0.01
+modulate = Color(1, 0, 0, 1)
+text = "EXIT"
+font_size = 150
+
+[node name="FunPassJrNeeded" type="Sprite3D" parent="."]
+transform = Transform3D(-0.00936723, 0, 0.0176707, 0, 0.02, 0, -0.0176707, 0, -0.00936723, -16.619, 3.19201, 3.37186)
+pixel_size = 1.0
+alpha_cut = 3
+texture_filter = 2
+texture = ExtResource("35_mvimg")
+
+[node name="FunPassSrNeeded" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0173899, 0, 0.00987884, 0, 0.02, 0, -0.00987884, 0, -0.0173899, -13.5159, 3.19201, 6.56597)
+pixel_size = 1.0
+alpha_cut = 3
+texture_filter = 2
+texture = ExtResource("36_61scv")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-0.715376, 0, 0.69874, 0, 1, 0, -0.69874, 0, -0.715376, -15.0332, 3.2635, 4.93695)
+pixel_size = 0.0146
+alpha_cut = 3
+alpha_hash_scale = 0.0
+texture_filter = 0
+text = "REQUIRED"
+font_size = 48
+outline_size = 14
+
+[node name="QuietRain" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1423, 6.1947, 0.719514)
+stream = ExtResource("38_nlnqw")
+volume_db = -15.0
+max_db = -15.0
+
+[node name="Thunder Jumpscare" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_q2qs1")
+
+[node name="ShootingRangeSign" type="Sprite3D" parent="."]
+transform = Transform3D(-0.906926, 0, -0.421289, 0, 1, 0, 0.421289, 0, -0.906926, -2.34858, 4.7388, 23.557)
+alpha_cut = 3
+texture_filter = 0
+texture = ExtResource("41_8wokk")
+
+[node name="Skeeble" parent="." instance=ExtResource("42_movvg")]
+transform = Transform3D(-0.000970915, 0, 1.32437, 0, 1.32437, 0, -1.32437, 0, -0.000970915, -31.1558, -0.14004, 5.02411)
+
+[node name="Box5" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.397152, 1.83072e-09, 0.406962, 2.01414e-08, 0.568638, 1.00707e-08, -0.406962, 2.0058e-08, 0.397152, -31.1363, 1.03229, 7.91733)
+
+[node name="Box6" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.540965, -7.71946e-09, 0.175228, 2.01414e-08, 0.568638, 1.00707e-08, -0.175228, 1.86034e-08, 0.540965, -31.1363, 1.03229, 1.40346)
+
+[node name="SkeebleBall1" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -30.0697, 0.560647, 6.89353)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall2" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -29.3828, 0.560647, 6.31544)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall3" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -30.7703, 0.560647, 6.41151)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall4" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -29.6202, 0.560647, 2.61563)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall5" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -29.0616, 0.560647, 3.60057)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall6" type="Sprite3D" parent="."]
+transform = Transform3D(1.16654e-08, -0.266874, 0.0742114, -3.24388e-09, 0.0742114, 0.266874, 0.277, 1.21081e-08, -5.2926e-16, -30.0697, 0.793394, 4.67394)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall7" type="Sprite3D" parent="."]
+transform = Transform3D(1.2004e-08, -0.27462, 0.0362325, -1.58377e-09, 0.0362325, 0.27462, 0.277, 1.21081e-08, -5.2926e-16, -31.1209, 0.964046, 3.55935)
+texture = ExtResource("42_ires6")
+
+[node name="Shooting Range Sign" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5515, 9.32237, 24.1819)
+material_override = ExtResource("43_ires6")
+use_collision = true
+size = Vector3(11.2742, 2.01157, 1.26282)
+
+[node name="Label3D2" type="Label3D" parent="Shooting Range Sign"]
+transform = Transform3D(-5.22548, 0, -0.111466, 0, 5.22667, 0, 0.111466, 0, -5.22548, -0.0266247, -0.0157776, -0.76358)
+modulate = Color(0.56, 0.4732, 0.3864, 1)
+text = "Shooting Range"
+font_size = 56
+
+[node name="TableNoLight2" parent="." instance=ExtResource("14_joq6e")]
+transform = Transform3D(0.165817, -0.411371, 3.04713, 2.50172, 1.79217, 0.10581, -1.78762, 2.46993, 0.430727, -16.6969, 0.551051, 9.18335)
+
+[node name="SkeebleBall8" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -20.2425, 0.59623, 14.79)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall9" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -19.5229, 0.59623, 15.7473)
+texture = ExtResource("42_ires6")
+
+[node name="SkeebleBall10" type="Sprite3D" parent="."]
+transform = Transform3D(1.21081e-08, -0.277, 1.21081e-08, 0, 1.21081e-08, 0.277, 0.277, 1.21081e-08, -5.2926e-16, -20.8231, 0.59623, 15.8247)
+texture = ExtResource("42_ires6")
+
+[node name="Target" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-0.250434, -0.822674, -0.910239, 1.14531, -0.489904, 0.127665, -0.439986, -0.806998, 0.850418, -22.5869, 1.23034, 13.6219)
+use_collision = true
+height = 0.0490723
+material = ExtResource("44_c3fdj")
+
+[node name="Sprite3D" type="Sprite3D" parent="Target"]
+transform = Transform3D(-8.74228e-09, 0.2, -8.74228e-09, 1.05879e-22, -8.74228e-09, -0.2, -0.2, -8.74228e-09, 3.82137e-16, -0.00199974, -0.0306758, -0.00216872)
+texture = ExtResource("45_wukyr")
+
+[node name="Target2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-0.243981, 0.053349, 1.22706, 0.065053, -1.24872, 0.0672256, 1.22649, 0.0768444, 0.240528, -23.9807, 0.655959, 15.9525)
+use_collision = true
+height = 0.0490723
+material = ExtResource("44_c3fdj")
+
+[node name="Sprite3D" type="Sprite3D" parent="Target2"]
+transform = Transform3D(0.00012479, 0.2, -0.000397575, -0.00202411, -0.000396289, -0.199989, -0.19999, 0.000128813, 0.00202386, -0.00200081, -0.0306758, -0.00216866)
+texture = ExtResource("45_wukyr")
+
+[node name="TableNoLight3" parent="." instance=ExtResource("14_joq6e")]
+transform = Transform3D(-1.26935, 1.90669, -2.0579, 2.42235, 1.88428, 0.251695, 1.41515, -1.51513, -2.27671, -22.8379, 0.551051, 19.3345)
+
+[node name="Box8" parent="." instance=ExtResource("23_b42cu")]
+transform = Transform3D(0.61864, -1.35771e-08, 0.024101, 2.19292e-08, 0.619111, 1.09646e-08, -0.024101, 1.72206e-08, 0.61864, -20.1085, 1.0859, 12.1747)

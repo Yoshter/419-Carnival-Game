@@ -14,6 +14,7 @@ var danEnc3 = ["Oh G-Good! You B E A T another G A M E ! ! ! ", "This was comple
 var danEnc4 = ["Have you found all T H R E E of the T O K E N S yet?", false, "null", 0]
 var danEnc5 = ["Ah hello! Y O U have B E A T . . .", "A L L  O F  M Y  G A M E S ! ? !", "A A A A H! O-oh now the POWER is O U T.", "This... is... ", " U N S A T I S F A C T O R Y ", false, "null", 3]
 var danEnc6 = ["Oh, i-it’s Y O U.", "Y O U are still H E R E .", "After I L O S T my T O K E N S .", "After you B E A T all of my G A M E S .", "And N O W . . .", "After the B L A C K O U T  that Y O U-", "N e v e r m i n d", "J u s t  l e a v e", false, "null", 7]
+var danEnc7 = ["P s y c h e", false, "null", 0]
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.beatCARN:
@@ -37,6 +38,8 @@ func returnDialogueText(npc, dialogueCount) -> String:
 					dialogueText = danEnc5[dialogueCount]
 				6:
 					dialogueText = danEnc6[dialogueCount]
+				7:
+					dialogueText = danEnc7[dialogueCount]
 	return dialogueText
 
 func returnMaxDialogueCount(npc) -> int:
@@ -56,6 +59,8 @@ func returnMaxDialogueCount(npc) -> int:
 						maxCount = danEnc5[-1]
 					6:
 						maxCount = danEnc6[-1]
+					7:
+						maxCount = danEnc7[-1]
 	return maxCount
 
 func returnGivingItem(npc) -> bool:
@@ -75,7 +80,10 @@ func returnGivingItem(npc) -> bool:
 					beingGivenItem = danEnc5[-3]
 				6:
 					beingGivenItem = danEnc6[-3]
-				
+				7:
+					beingGivenItem = danEnc7[-3]
+				_:
+					beingGivenItem = false
 	return beingGivenItem
 
 func addToEncCount(npcName) -> void:

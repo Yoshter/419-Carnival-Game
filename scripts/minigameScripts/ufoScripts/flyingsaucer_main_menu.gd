@@ -20,7 +20,7 @@ func _process(delta: float) -> void:
 		score.set_text(str(GamesGlobal.ufoScore))
 		if GamesGlobal.ufoScore >= 10:
 			if GamesGlobal.ufoBeat == false:
-				DialogueGlobal.addToEncCount("dan")
+				DialogueGlobal.addToEncCount("CARN-E")
 				DialogueGlobal.objEncCount += 1
 			GamesGlobal.ufoBeat = true
 			#PlayerGlobal.inUI = true

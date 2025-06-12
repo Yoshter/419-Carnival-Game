@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=75 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
@@ -311,6 +311,43 @@ animations = [{
 "name": &"popUp",
 "speed": 30.0
 }]
+
+[sub_resource type="Animation" id="Animation_dexik"]
+resource_name = "moveOver"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueMenu/castOverText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(249, 21), Vector2(1205, 21)]
+}
+
+[sub_resource type="Animation" id="Animation_0osqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DialogueMenu/castOverText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(249, 21)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fpw4g"]
+_data = {
+&"RESET": SubResource("Animation_0osqc"),
+&"moveOver": SubResource("Animation_dexik")
+}
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
@@ -1162,11 +1199,12 @@ color = Color(0.073069, 0.0232537, 0.0698616, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect2" type="ColorRect" parent="DialogueMenu"]
-layout_mode = 0
-anchor_left = 0.0234783
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0165217
 anchor_top = 0.126667
-anchor_right = 1.02174
-anchor_bottom = 0.873333
+anchor_right = 1.06261
+anchor_bottom = 0.873335
 color = Color(0.137461, 0.0590339, 0.132642, 1)
 metadata/_edit_use_anchors_ = true
 
@@ -1174,14 +1212,23 @@ metadata/_edit_use_anchors_ = true
 texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.170435
+anchor_left = 0.219131
 anchor_top = 0.266667
 anchor_right = 1.00609
 anchor_bottom = 0.746668
 theme_override_font_sizes/font_size = 24
 text = "nothing"
-horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="castOverText" type="ColorRect" parent="DialogueMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.216522
+anchor_top = 0.14
+anchor_right = 1.05217
+anchor_bottom = 0.873335
+color = Color(0.137461, 0.0590339, 0.132642, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="npcNameLabel" type="Label" parent="DialogueMenu"]
@@ -1204,7 +1251,7 @@ sprite_frames = SubResource("SpriteFrames_8dxj0")
 animation = &"carneTalking"
 
 [node name="dialogueTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 5.0
 
 [node name="OpenSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_psxp3")
@@ -1348,6 +1395,17 @@ wait_time = 3.0
 
 [node name="bbgunShootSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_8irf4")
+
+[node name="textAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fpw4g")
+}
+
+[node name="fallingRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1923.0
+offset_bottom = 1082.0
+color = Color(0, 0, 0, 1)
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]

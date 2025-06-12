@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfrvinb5rmhlm"]
+[gd_scene load_steps=6 format=3 uid="uid://cfrvinb5rmhlm"]
 
 [ext_resource type="Script" uid="uid://3gh8gkilwvfi" path="res://scripts/NPCscripts/carnie.gd" id="1_l17di"]
 [ext_resource type="SpriteFrames" uid="uid://b2klb2wvfkst7" path="res://scenes/interactables/carnie.tres" id="2_stmyg"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ckbgb"]
 size = Vector3(2.37671, 2.24438, 2.18848)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_stmyg"]
+size = Vector3(1, 1, 8.3689)
 
 [node name="carnie" type="Node3D"]
 script = ExtResource("1_l17di")
@@ -43,6 +46,18 @@ volume_db = -15.0
 wait_time = 9.0
 one_shot = true
 
+[node name="surpriseBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="surpriseBox"]
+transform = Transform3D(0.65844, 0, 0.752633, 0, 1, 0, -0.752633, 0, 0.65844, -4.10085, 0, 6.05247)
+shape = SubResource("BoxShape3D_stmyg")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="surpriseBox"]
+transform = Transform3D(0.56061, 0, -0.82808, 0, 1, 0, 0.82808, 0, 0.56061, 3.6072, 0, 6.11891)
+shape = SubResource("BoxShape3D_stmyg")
+
 [connection signal="body_entered" from="talkBox" to="." method="_on_talk_box_body_entered"]
 [connection signal="body_exited" from="talkBox" to="." method="_on_talk_box_body_exited"]
 [connection signal="timeout" from="waveDelay" to="." method="_on_wave_delay_timeout"]
+[connection signal="area_entered" from="surpriseBox" to="." method="_on_surprise_box_area_entered"]
+[connection signal="body_entered" from="surpriseBox" to="." method="_on_surprise_box_body_entered"]
