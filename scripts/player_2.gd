@@ -29,6 +29,8 @@ var canShoot : bool = true
 @onready var shootDelay: Timer = $shootDelay
 @onready var bbgunShootSound: AudioStreamPlayer3D = $bbgunShootSound
 
+@onready var weaponDelay: Timer = $weaponDelay
+
 @onready var animation: AnimationPlayer = $animation
 @onready var fallTimer: Timer = $fallTimer
 var fallCount : int = 0
@@ -50,14 +52,28 @@ func _process(delta: float) -> void:
 		PlayerGlobal.needsTeleport = false
 	
 	if !hasBBGun and ItemsGlobal.checkItem("bbgun"):
-		hasBBGun = true
 		bbRay.set_visible(true)
+		hasBBGun = true
 	
-	#if PlayerGlobal.isPaused:
-		#Freeze Camera Movement
-	
-	#if !PlayerGlobal.isPaused:
-		#Unfreeze Camera Movement
+	#fists
+	if Input.is_action_just_pressed("weapon01"):
+		canShoot = false
+		weaponDelay.wait_time = 0.8
+		weaponDelay.start()
+		WeaponsGlobal.currentWeapon = "fists"
+		bbRay.enabled = false
+	#pipe
+	if Input.is_action_just_pressed("weapon02") and ItemsGlobal.checkItem("pipe"):
+		weaponDelay.wait_time = 1.2
+		weaponDelay.start()
+		WeaponsGlobal.currentWeapon = "pipe"
+		bbRay.enabled = false
+	#shotgun
+	if Input.is_action_just_pressed("weapon03") and hasBBGun:
+		weaponDelay.wait_time = 0.8
+		weaponDelay.start()
+		WeaponsGlobal.currentWeapon = "bbgun"
+		bbRay.enabled = true
 	
 	if GamesGlobal.checkBeatGame("ufo") and !GamesGlobal.ufoChecked:
 		ItemsGlobal.itemUpdateSet(true)
@@ -78,7 +94,7 @@ func _process(delta: float) -> void:
 	if canTalk and Input.is_action_just_pressed("ui_accept") and !PlayerGlobal.inUI:
 		PlayerGlobal.setIsTalking(true)
 	
-	if hasBBGun and Input.is_action_pressed("shoot") and canShoot and !PlayerGlobal.inUI:
+	if hasBBGun and Input.is_action_pressed("shoot") and canShoot and !PlayerGlobal.inUI and WeaponsGlobal.getCurrentWeapon() == "bbgun":
 		#bbgunShootSound.play(0.0)
 		canShoot = false
 		shootDelay.start()
@@ -87,6 +103,11 @@ func _process(delta: float) -> void:
 				bbRay.get_collider().score()
 			if bbRay.get_collider().has_method("fall"):
 				bbRay.get_collider().fall()
+	
+	if WeaponsGlobal.getCurrentWeapon() == "pipe" and canShoot and !PlayerGlobal.inUI:
+		canShoot = false
+		weaponDelay.start()
+	
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -155,3 +176,7 @@ func _on_fall_timer_timeout() -> void:
 	if fallCount == 29:
 		PlayerGlobal.isFalling = false
 		get_tree().change_scene_to_file("res://scenes/bossScenes/craneBossScenes/crane_boss_environment.tscn")
+
+
+func _on_weapon_delay_timeout() -> void:
+	canShoot = true

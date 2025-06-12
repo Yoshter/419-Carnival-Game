@@ -28,6 +28,7 @@ var controlsShown : bool = false
 @onready var crosshair: Control = $crosshair
 @onready var gun_ui: Sprite2D = $Gun_UI
 @onready var gunShot: AnimationPlayer = $Gun_UI/gunShot
+@onready var pipeUI: AnimatedSprite2D = $PipeUI
 
 #item icons
 @onready var ufoTokenIcon: Sprite2D = $PersonalMenu/inventoryMenu/itemIcons/tokens/ufoToken
@@ -60,6 +61,9 @@ var pauseIsVisible : bool = false
 var personalIsVisible : bool = false
 var delay : float = 0.0
 var hasGun : bool = false
+var canShoot : bool = true
+
+@onready var weaponDelay: Timer = $weaponDelay
 
 @onready var objectiveText: Label = $PersonalMenu/objectiveMenu/objectiveText
 @onready var timerText: Label = $shootingRangeMenu/timerText
@@ -116,13 +120,27 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and !textAnimation.is_playing():
 		textAnimation.play("moveOver")
 	
+	match WeaponsGlobal.getCurrentWeapon():
+		"fists":
+			#set fists visible
+			gun_ui.set_visible(false)
+			pipeUI.set_visible(false)
+			weaponDelay.wait_time = 0.8
+		"pipe":
+			#set fists invisible
+			gun_ui.set_visible(false)
+			pipeUI.set_visible(true)
+			weaponDelay.wait_time = 1.2
+		"bbgun":
+			#set fists invisible
+			gun_ui.set_visible(true)
+			pipeUI.set_visible(false)
+			weaponDelay.wait_time = 0.8
+	
 	if !hasGun and ItemsGlobal.checkItem("bbgun"):
 		hasGun = true
 		crosshair.set_visible(true)
 		gun_ui.set_visible(true)
-	
-	#if PlayerGlobal.controlsShown:
-		#controls.set_visible(false)
 	
 	if PlayerGlobal.inShootingRange:
 		rangeScoreText.set_text(str(GamesGlobal.shootingRangeScore))
@@ -131,14 +149,29 @@ func _process(delta: float) -> void:
 	else:
 		shootingRangeMenu.set_visible(false)
 	#print(isVisible)
-	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("bbgun") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf:
+	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("bbgun") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf and WeaponsGlobal.getCurrentWeapon() == "bbgun":
 		if !bbgunShootSound.playing and shootSoundDelay > 0.8:
 			bbgunShootSound.play(0.0)
 			shootSoundDelay = 0.0
 			gunShot.play("gunShot")
 			
-		#print("nuts")
-	#print("berries" + str(isVisible))
+	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("pipe") and WeaponsGlobal.getCurrentWeapon() == "pipe":
+		print("shoottoot")
+	
+	#quick swipe
+	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("pipe") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf and WeaponsGlobal.getCurrentWeapon() == "pipe":
+		print(canShoot)
+		if !pipeUI.is_playing() and canShoot:
+			print("shot")
+			pipeUI.play("pipeSwing")
+			canShoot = false
+			weaponDelay.start()
+			#pipeSound
+	#charge
+		#if Input.is_action_just_pressed("shoot")
+	#release
+		#if Input.is_action_just_released("shoot") and ItemsGlobal.checkItem("pipe") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf and WeaponsGlobal.getCurrentWeapon() == "pipe":
+			#pass
 	
 	if Input.is_action_just_pressed("tab") and personalIsVisible and delay > 0.1 and !PlayerGlobal.isDeaf:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -406,3 +439,6 @@ func _on_quit_settings_pressed() -> void:
 
 func _on_check_button_pressed() -> void:
 	PlayerGlobal.performanceModeOn = !PlayerGlobal.performanceModeOn
+
+func _on_weapon_delay_timeout() -> void:
+	canShoot = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=75 format=3 uid="uid://gw27gms06jj0"]
+[gd_scene load_steps=80 format=3 uid="uid://gw27gms06jj0"]
 
 [ext_resource type="Script" uid="uid://dogqsijr8e2bs" path="res://scripts/player_ui.gd" id="1_4pjyk"]
+[ext_resource type="Texture2D" uid="uid://qgdj8vvc2rod" path="res://assets/Sprite Sheets/pipeSpriteSheet.png" id="2_0osqc"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="2_lko7f"]
 [ext_resource type="Texture2D" uid="uid://cfgdp1ytoylg6" path="res://assets/Textures/GunUI.png" id="2_nye1j"]
 [ext_resource type="Script" uid="uid://b2ndqfn7mxhna" path="res://scenes/playerScenes/quitButton.gd" id="2_t4dtg"]
@@ -39,6 +40,59 @@
 [ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="33_0osqc"]
 [ext_resource type="AudioStream" uid="uid://dir7xmlfktyjl" path="res://assets/allsound/Music/CARN Credits early.wav" id="33_g8clv"]
 [ext_resource type="AudioStream" uid="uid://c01dlgfvgond1" path="res://assets/allsound/SFX/bbgun shoot.wav" id="34_8irf4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dxj0"]
+atlas = ExtResource("2_0osqc")
+region = Rect2(0, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17n7g"]
+atlas = ExtResource("2_0osqc")
+region = Rect2(96, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0ub3"]
+atlas = ExtResource("2_0osqc")
+region = Rect2(192, 0, 96, 54)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2sxbx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dxj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dxj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dxj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dxj0")
+}],
+"loop": false,
+"name": &"pipeSwing",
+"speed": 14.0
+}]
 
 [sub_resource type="Animation" id="Animation_j7ol1"]
 length = 0.001
@@ -358,6 +412,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 script = ExtResource("1_4pjyk")
+
+[node name="PipeUI" type="AnimatedSprite2D" parent="."]
+position = Vector2(1065, 714)
+scale = Vector2(13.6296, 13.6296)
+sprite_frames = SubResource("SpriteFrames_2sxbx")
+animation = &"pipeSwing"
+frame = 10
+frame_progress = 1.0
 
 [node name="Gun_UI" type="Sprite2D" parent="."]
 visible = false
@@ -1402,10 +1464,14 @@ libraries = {
 }
 
 [node name="fallingRect" type="ColorRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 1923.0
 offset_bottom = 1082.0
 color = Color(0, 0, 0, 1)
+
+[node name="weaponDelay" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="pressed" from="PauseMenu/quit2" to="." method="_on_quit_2_pressed"]
 [connection signal="pressed" from="PauseMenu/bugReport" to="." method="_on_bug_report_pressed"]
@@ -1424,3 +1490,4 @@ color = Color(0, 0, 0, 1)
 [connection signal="timeout" from="controls/hudTimer" to="." method="_on_hud_timer_timeout"]
 [connection signal="timeout" from="dialogueTimer" to="." method="_on_dialogue_timer_timeout"]
 [connection signal="timeout" from="creditsTimer" to="." method="_on_credits_timer_timeout"]
+[connection signal="timeout" from="weaponDelay" to="." method="_on_weapon_delay_timeout"]

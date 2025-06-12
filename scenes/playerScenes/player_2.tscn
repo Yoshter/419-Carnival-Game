@@ -164,6 +164,10 @@ stream = ExtResource("3_j7i8f")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
 visible = false
 
+[node name="weaponDelay" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="crouchDelay" to="." method="_on_crouch_delay_timeout"]
 [connection signal="timeout" from="shootDelay" to="." method="_on_shoot_delay_timeout"]
 [connection signal="timeout" from="fallTimer" to="." method="_on_fall_timer_timeout"]
+[connection signal="timeout" from="weaponDelay" to="." method="_on_weapon_delay_timeout"]

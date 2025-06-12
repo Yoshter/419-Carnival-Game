@@ -3,7 +3,7 @@ extends Node
 var dialogueText : String
 
 var maxDialogueCount
-var danEncCount = 6
+var danEncCount = 1
 var objEncCount = 0
 
 #Naming conventions for array go "character" + "Enc(ounter)" + "(Encounter) #"
