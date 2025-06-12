@@ -52,11 +52,13 @@ func _input(event: InputEvent) -> void:
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		
 func _process(delta: float) -> void:
-	print("ischarging: " + str(WeaponsGlobal.isCharging))
+	print("chargenum: " + str(WeaponsGlobal.isCharging))
 	if WeaponsGlobal.isCharging:
 		chargeNum += delta * 5
-		WeaponsGlobal.saveChargeNum = chargeNum
 		print("chargeNum: " + str(WeaponsGlobal.saveChargeNum))
+	if !WeaponsGlobal.isCharging and !WeaponsGlobal.isCharged and !WeaponsGlobal.isSwinging:
+		chargeNum = 0.00
+	WeaponsGlobal.saveChargeNum = chargeNum
 	
 	if PlayerGlobal.needsTeleport:
 		position = PlayerGlobal.newPosition

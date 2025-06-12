@@ -156,9 +156,10 @@ func _process(delta: float) -> void:
 			shootSoundDelay = 0.0
 			gunShot.play("gunShot")
 			
-	if WeaponsGlobal.saveChargeNum < 0.6:
+	if WeaponsGlobal.saveChargeNum < 0.9:
 		WeaponsGlobal.isCharged = false
-	if WeaponsGlobal.saveChargeNum >= 0.6 and !pipeUI.is_playing() and !WeaponsGlobal.isCharged:
+	if WeaponsGlobal.saveChargeNum >= 0.9 and !pipeUI.is_playing() and !WeaponsGlobal.isCharged:
+		#chargeNum = 0.00
 		pipeUI.play("charge")
 		WeaponsGlobal.isCharging = false
 		WeaponsGlobal.isCharged = true

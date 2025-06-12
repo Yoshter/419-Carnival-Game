@@ -95,10 +95,25 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2sxbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0ub3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17n7g")
 }],
 "loop": false,
 "name": &"pipeSwing",
-"speed": 14.0
+"speed": 22.0
 }]
 
 [sub_resource type="Animation" id="Animation_j7ol1"]
@@ -421,10 +436,13 @@ size_flags_horizontal = 0
 script = ExtResource("1_4pjyk")
 
 [node name="PipeUI" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(962, 608)
 scale = Vector2(19.2037, 19.2037)
 sprite_frames = SubResource("SpriteFrames_2sxbx")
-animation = &"charge"
+animation = &"pipeSwing"
+frame = 11
+frame_progress = 1.0
 
 [node name="Gun_UI" type="Sprite2D" parent="."]
 visible = false
