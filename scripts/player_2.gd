@@ -29,6 +29,12 @@ var canShoot : bool = true
 @onready var shootDelay: Timer = $shootDelay
 @onready var bbgunShootSound: AudioStreamPlayer3D = $bbgunShootSound
 
+var isCharging = false
+var isCharged = true
+var isSwinging = false
+var chargeNum : float = 0.00
+var saveChargeNum : float = 0.00
+
 @onready var weaponDelay: Timer = $weaponDelay
 
 @onready var animation: AnimationPlayer = $animation
@@ -46,6 +52,12 @@ func _input(event: InputEvent) -> void:
 		body.rotation.x = clamp(body.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 		
 func _process(delta: float) -> void:
+	print("ischarging: " + str(WeaponsGlobal.isCharging))
+	if WeaponsGlobal.isCharging:
+		chargeNum += delta * 5
+		WeaponsGlobal.saveChargeNum = chargeNum
+		print("chargeNum: " + str(WeaponsGlobal.saveChargeNum))
+	
 	if PlayerGlobal.needsTeleport:
 		position = PlayerGlobal.newPosition
 		rotation.y = PlayerGlobal.newRotation
@@ -103,6 +115,14 @@ func _process(delta: float) -> void:
 				bbRay.get_collider().score()
 			if bbRay.get_collider().has_method("fall"):
 				bbRay.get_collider().fall()
+	
+	if !WeaponsGlobal.isCharging and Input.is_action_pressed("shoot") and WeaponsGlobal.currentWeapon == "pipe":
+		WeaponsGlobal.isCharging = true
+		WeaponsGlobal.isSwinging = false
+	if WeaponsGlobal.isCharged and Input.is_action_just_released("shoot") and WeaponsGlobal.currentWeapon == "pipe":
+		WeaponsGlobal.isCharging = false
+		WeaponsGlobal.isSwinging = true
+		chargeNum = 0.00
 	
 	if WeaponsGlobal.getCurrentWeapon() == "pipe" and canShoot and !PlayerGlobal.inUI:
 		canShoot = false
@@ -176,7 +196,6 @@ func _on_fall_timer_timeout() -> void:
 	if fallCount == 29:
 		PlayerGlobal.isFalling = false
 		get_tree().change_scene_to_file("res://scenes/bossScenes/craneBossScenes/crane_boss_environment.tscn")
-
 
 func _on_weapon_delay_timeout() -> void:
 	canShoot = true

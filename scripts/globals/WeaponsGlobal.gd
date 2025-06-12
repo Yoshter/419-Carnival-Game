@@ -3,6 +3,11 @@ extends Node
 var currentWeapon : String = ""
 var hasPipe : bool = false
 var hasBBGun : bool = false
+var isCharging : bool = false
+var isCharged : bool = false
+var isSwinging : bool = false
+var saveChargeNum : float = 0.00
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

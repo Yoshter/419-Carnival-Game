@@ -64,6 +64,7 @@ var hasGun : bool = false
 var canShoot : bool = true
 
 @onready var weaponDelay: Timer = $weaponDelay
+@onready var weaponCharge: Timer = $weaponCharge
 
 @onready var objectiveText: Label = $PersonalMenu/objectiveMenu/objectiveText
 @onready var timerText: Label = $shootingRangeMenu/timerText
@@ -155,17 +156,36 @@ func _process(delta: float) -> void:
 			shootSoundDelay = 0.0
 			gunShot.play("gunShot")
 			
-	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("pipe") and WeaponsGlobal.getCurrentWeapon() == "pipe":
-		print("shoottoot")
+	if WeaponsGlobal.saveChargeNum < 0.6:
+		WeaponsGlobal.isCharged = false
+	if WeaponsGlobal.saveChargeNum >= 0.6 and !pipeUI.is_playing() and !WeaponsGlobal.isCharged:
+		pipeUI.play("charge")
+		WeaponsGlobal.isCharging = false
+		WeaponsGlobal.isCharged = true
+	
+	if WeaponsGlobal.isSwinging and !pipeUI.is_playing():
+		pipeUI.play("pipeSwing")
+		WeaponsGlobal.isCharged = false
+		WeaponsGlobal.isSwinging = false
 	
 	#quick swipe
-	if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("pipe") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf and WeaponsGlobal.getCurrentWeapon() == "pipe":
-		print(canShoot)
-		if !pipeUI.is_playing() and canShoot:
-			print("shot")
-			pipeUI.play("pipeSwing")
-			canShoot = false
-			weaponDelay.start()
+	#if WeaponsGlobal.isCharging and !WeaponsGlobal.isCharged and !pipeUI.is_playing() and weaponCharge.is_stopped():
+		#pipeUI.play("charge")
+		#weaponCharge.start()
+	#else:
+		#pipeUI.stop()
+	#if WeaponsGlobal.isSwinging and WeaponsGlobal.isCharged and !pipeUI.is_playing():
+		#pipeUI.play("pipeSwing")
+	
+	#if Input.is_action_pressed("shoot") and ItemsGlobal.checkItem("pipe") and !pauseIsVisible and !personalIsVisible and !PlayerGlobal.isDeaf and WeaponsGlobal.getCurrentWeapon() == "pipe":
+		#print("zoob" + str(canShoot))
+		#if !pipeUI.is_playing() and WeaponsGlobal.saveChargeNum >= 0.6 and !pipeUI.is_playing():
+			#print("shottot")
+			#pipeUI.play("charge")
+			#canShoot = false
+			#weaponDelay.start()
+			#WeaponsGlobal.isCharged = true
+			#WeaponsGlobal.isCharging = false
 			#pipeSound
 	#charge
 		#if Input.is_action_just_pressed("shoot")
