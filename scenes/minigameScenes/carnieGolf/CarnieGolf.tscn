@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://xqchjn81x6co"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1itgv"]
+size = Vector2(21, 380)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo73n"]
+size = Vector2(455, 22)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = nan
+scale = Vector2(nan, 0)
+skew = nan
+
+[node name="Level 1" type="ColorRect" parent="."]
+offset_right = 21.0
+offset_bottom = 339.0
+scale = Vector2(2.14144, 2.4373)
+
+[node name="Wall1" type="ColorRect" parent="Level 1"]
+offset_left = 435.0
+offset_right = 456.0
+offset_bottom = 339.0
+
+[node name="Wall2" type="ColorRect" parent="Level 1"]
+offset_right = 21.0
+offset_bottom = 456.0
+rotation = -1.5708
+
+[node name="Wall3" type="ColorRect" parent="Level 1"]
+offset_top = 360.0
+offset_right = 21.0
+offset_bottom = 816.0
+rotation = -1.5708
+
+[node name="CollisionSides" type="StaticBody2D" parent="Level 1"]
+
+[node name="CollisionLeft" type="CollisionShape2D" parent="Level 1/CollisionSides"]
+position = Vector2(10.5, 170)
+shape = SubResource("RectangleShape2D_1itgv")
+
+[node name="CollisionRight" type="CollisionShape2D" parent="Level 1/CollisionSides"]
+position = Vector2(445, 170)
+shape = SubResource("RectangleShape2D_1itgv")
+
+[node name="CollisionTopBottom" type="StaticBody2D" parent="Level 1"]
+
+[node name="CollisionTop" type="CollisionShape2D" parent="Level 1/CollisionTopBottom"]
+position = Vector2(228.5, -10)
+shape = SubResource("RectangleShape2D_mo73n")
+
+[node name="CollisionBottom" type="CollisionShape2D" parent="Level 1/CollisionTopBottom"]
+position = Vector2(229, 349)
+shape = SubResource("RectangleShape2D_mo73n")
