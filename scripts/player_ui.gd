@@ -53,7 +53,7 @@ var controlsShown : bool = false
 
 @onready var map: Sprite2D = $PersonalMenu/mapMenu/Map
 
-var dialogueCount : int = 0
+var dialogueCount : int = -1
 var maxDialogueCount : int = 0
 @onready var textAnimation: AnimationPlayer = $textAnimation
 
@@ -91,6 +91,9 @@ var toasterAnimHasPlayed : bool = false
 @onready var bbgunShootSound: AudioStreamPlayer = $bbgunShootSound
 @onready var timerLabel: Label = $PersonalMenu/timer/timerLabel
 var shootSoundDelay : float = 0.0
+@onready var dialogSkipDelay: Timer = $dialogSkipDelay
+var canSkip : bool = true
+var firstTextAnimPlayed : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -100,26 +103,23 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	#print("IN PLAYERUI:" + str(PlayerGlobal.inUI))
 	shootSoundDelay += delta
-	PlayerGlobal.gameTime += delta
-	timerLabel.set_text(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))) + ": " + str("%02d" % int(str(fmod(PlayerGlobal.gameTime, 60)))))
-	print(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))))
-	delay += delta
-	danEncNumLabel.set_text("Dan Enc Num: " + str(DialogueGlobal.danEncCount))
-	objEncNumLabel.set_text("Obj Enc Num: " + str(DialogueGlobal.objEncCount))
-	dialogueCountLabel.set_text("Dialogue Count: " + str(dialogueCount))
+	#PlayerGlobal.gameTime += delta
+	#timerLabel.set_text(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))) + ": " + str("%02d" % int(str(fmod(PlayerGlobal.gameTime, 60)))))
+	#print(str("%02d" % int(fmod(PlayerGlobal.gameTime, 2))))
+	#delay += delta
+	#danEncNumLabel.set_text("Dan Enc Num: " + str(DialogueGlobal.danEncCount))
+	#objEncNumLabel.set_text("Obj Enc Num: " + str(DialogueGlobal.objEncCount))
+	#dialogueCountLabel.set_text("Dialogue Count: " + str(dialogueCount))
 	
-	if PlayerGlobal.getCanInteract():
-		interactMenu.set_visible(true)
-	else:
-		interactMenu.set_visible(false)
+	#if PlayerGlobal.getCanInteract():
+		#interactMenu.set_visible(true)
+	#else:
+		#interactMenu.set_visible(false)
 	
 	if PlayerGlobal.isFalling:
 		fallingRect.set_visible(true)
 	else:
 		fallingRect.set_visible(false)
-	
-	if Input.is_action_just_pressed("ui_accept") and !textAnimation.is_playing():
-		textAnimation.play("moveOver")
 	
 	match WeaponsGlobal.getCurrentWeapon():
 		"fists":
@@ -243,45 +243,102 @@ func _process(delta: float) -> void:
 		$OpenSFX.play()
 		#print("in enable pause" + str(PlayerGlobal.inUI))
 		#print("in disable pause" + str(PlayerGlobal.inUI))
-	
 	#print(ItemsGlobal.showItemUI)
 	#print("after" + str(PlayerGlobal.inUI))
 	
+	if Input.is_action_pressed("ui_accept") and dialogueCount == -1 :
+		#print("dc2" + str(dialogueCount))
+		if PlayerGlobal.isTalking:
+			dialogueCount += 1
+			if dialogueTimer.is_stopped():
+				dialogueTimer.start()
+				dialogSkipDelay.stop()
+		#textAnimation.stop()
+		#textAnimation.play("moveOver")
+		print("ploon start")
+	print("ploon" + str(textAnimation.current_animation))
+	print("ploon" + str(textAnimation.is_playing()))
+		
 	if PlayerGlobal.isTalking:
 		npcNameLabel.set_text(PlayerGlobal.checkIsTalkingTo())
+		#if !canSkip:
+			#textAnimation.play("moveOver")
 		match PlayerGlobal.checkIsTalkingTo():
 			"CARN-E":
 				npcSpriteAnim.play("carneTalking")
 		PlayerGlobal.setCanInteract(false)
+		if dialogueCount == 0 and !firstTextAnimPlayed:
+			if !textAnimation.is_playing():
+				#textAnimation.play("moveOver")
+				firstTextAnimPlayed = true
+				print("clunt " + str(textAnimation.is_playing()))
+			else:
+				print("HELP" + str(textAnimation.current_animation))
+		else:
+			print("kujo")
+		if dialogueTimer.is_stopped():
+			dialogSkipDelay.stop()
+			dialogueTimer.start()
 		if !(dialogueCount > maxDialogueCount):
 			dialogueMenu.set_visible(true)
 			maxDialogueCount = DialogueGlobal.returnMaxDialogueCount(PlayerGlobal.checkIsTalkingTo())
 			label.set_text(str(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), dialogueCount)))
-			if dialogueTimer.is_stopped():
-				dialogueTimer.start()
 		else:
 			#print("dialogue count : " + str(dialogueCount))
 			dialogueMenu.set_visible(false)
 			if DialogueGlobal.returnGivingItem(PlayerGlobal.checkIsTalkingTo()):
 				ItemsGlobal.giveItem(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2))
 				PlayerGlobal.setIsTalking(false)
-				dialogueCount = 0
+				dialogueCount = -1
 				PlayerGlobal.inUI = true
 			else:
 				getItemMenu.set_visible(false)
 				ItemsGlobal.showItemUI = false
 				PlayerGlobal.setIsTalking(false)
 				PlayerGlobal.inUI = false
-				dialogueCount = 0
+				dialogueCount = -1
 			#DialogueGlobal.addToEncCount(PlayerGlobal.checkIsTalkingTo())
 	else:
-		dialogueCount = 0
+		dialogueCount = -1
 	
 	if PlayerGlobal.inUI and Input.is_action_pressed("interact"):
 		PlayerGlobal.inUI = false
 		getItemMenu.set_visible(false)
 		ItemsGlobal.showItemUI = false
-		dialogueCount = 0
+		dialogueCount = -1
+		dialogSkipDelay.start()
+	
+	if PlayerGlobal.isTalking and Input.is_action_just_pressed("ui_accept"): #and canSkip:
+		print("BOOOO")
+		canSkip = false
+		npcNameLabel.set_text(PlayerGlobal.checkIsTalkingTo())
+		PlayerGlobal.setCanInteract(false)
+		textAnimation.stop()
+		textAnimation.play("skipOver")
+		if dialogSkipDelay.is_stopped():
+			dialogSkipDelay.start()
+			dialogueTimer.stop()
+		if dialogueCount < maxDialogueCount:
+			print("GOOBOO")
+			dialogueMenu.set_visible(true)
+			maxDialogueCount = DialogueGlobal.returnMaxDialogueCount(PlayerGlobal.checkIsTalkingTo())
+			label.set_text(str(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), dialogueCount)))
+			#dialogueCount += 1
+		else:
+			print("FOO")
+			dialogueMenu.set_visible(false)
+			if DialogueGlobal.returnGivingItem(PlayerGlobal.checkIsTalkingTo()):
+				ItemsGlobal.giveItem(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2))
+				PlayerGlobal.setIsTalking(false)
+				dialogueCount = -1
+				PlayerGlobal.inUI = true
+			else:
+				getItemMenu.set_visible(false)
+				ItemsGlobal.showItemUI = false
+				PlayerGlobal.setIsTalking(false)
+				PlayerGlobal.inUI = false
+				dialogueCount = -1
+	
 	#print(ItemsGlobal.showItemUI)
 	if ItemsGlobal.showItemUI:
 		getItemMenu.set_visible(true)
@@ -293,6 +350,8 @@ func _process(delta: float) -> void:
 	if PlayerGlobal.isDeaf == true:
 		gun_ui.set_visible(false)
 		crosshair.set_visible(false)
+	
+	#SKIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIP
 	
 	if PlayerGlobal.beatCARN:
 		gun_ui.set_visible(false)
@@ -325,8 +384,10 @@ func _process(delta: float) -> void:
 
 func _on_dialogue_timer_timeout() -> void:
 	dialogueCount += 1
+	canSkip = true
 	textAnimation.stop()
 	textAnimation.play("moveOver")
+	print("regularDialogSkip" + str(dialogueCount))
 	
 func _on_quit_2_pressed() -> void:
 	$OpenSFX.play()
@@ -410,7 +471,6 @@ func _on_resume_pressed() -> void:
 		pass
 	else:
 		pass
-	
 
 func _on_quit_inv_2_pressed() -> void:
 	mapMenu.set_visible(false)
@@ -463,3 +523,8 @@ func _on_check_button_pressed() -> void:
 
 func _on_weapon_delay_timeout() -> void:
 	canShoot = true
+
+func _on_dialog_skip_delay_timeout() -> void:
+	canSkip = true
+	dialogueCount += 1
+	print("dialog count" + str(dialogueCount))

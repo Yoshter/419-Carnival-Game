@@ -1,0 +1,1173 @@
+[gd_scene load_steps=52 format=3 uid="uid://87ceglixextb"]
+
+[ext_resource type="Script" uid="uid://nc4ii5u74ok" path="res://scripts/uiScripts/player_ui_2.gd" id="1_2r0wl"]
+[ext_resource type="Texture2D" uid="uid://cfgdp1ytoylg6" path="res://assets/Textures/GunUI.png" id="1_k226n"]
+[ext_resource type="Texture2D" uid="uid://qgdj8vvc2rod" path="res://assets/Sprite Sheets/pipeSpriteSheet.png" id="2_ajj2s"]
+[ext_resource type="Texture2D" uid="uid://c4ekuf5qlfklx" path="res://assets/UI/SawUI.png" id="3_ajj2s"]
+[ext_resource type="Texture2D" uid="uid://dg4v0qrsmx4i2" path="res://assets/UI/shootingRangeUI.png" id="4_48vw4"]
+[ext_resource type="Texture2D" uid="uid://bf001c3huv23w" path="res://assets/art/CARN-E.png" id="6_f87f8"]
+[ext_resource type="Texture2D" uid="uid://b18idt3d3a4ea" path="res://assets/UI/dialogueUI.png" id="6_wc1hf"]
+[ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="7_wc1hf"]
+[ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="9_2rbmv"]
+[ext_resource type="Texture2D" uid="uid://tc5oaha5wc10" path="res://assets/UI/notebook.png" id="9_er8tm"]
+[ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="9_ubanh"]
+[ext_resource type="AudioStream" uid="uid://w66dwwgi4id0" path="res://assets/allsound/SFX/Inventory Open.wav" id="10_7qoru"]
+[ext_resource type="Texture2D" uid="uid://cm1y3u5fcalkb" path="res://assets/UI/mapButton.png" id="10_er8tm"]
+[ext_resource type="Theme" uid="uid://bpude2oeitoox" path="res://assets/Themes/Main_UI_Theme.tres" id="11_3x7it"]
+[ext_resource type="AudioStream" uid="uid://byxgwwx25f0km" path="res://assets/allsound/SFX/Inventory Tab Switch.wav" id="11_hxwoj"]
+[ext_resource type="Texture2D" uid="uid://blh3tckdgwb0r" path="res://assets/UI/RedX.png" id="12_3me4w"]
+[ext_resource type="Texture2D" uid="uid://c816b4am2lgdg" path="res://assets/UI/Inventory.png" id="13_rfy4y"]
+[ext_resource type="Texture2D" uid="uid://dq3b21cg4fuy8" path="res://assets/UI/FunPassJr.png" id="14_cxkkn"]
+[ext_resource type="Texture2D" uid="uid://urwmpackjmpo" path="res://assets/UI/FunPassSr.png" id="15_5xjha"]
+[ext_resource type="Texture2D" uid="uid://bffoms32sldhx" path="res://assets/UI/Saw.png" id="16_4f1yg"]
+[ext_resource type="Texture2D" uid="uid://byv2hai6f75g2" path="res://assets/art/Gun.png" id="17_rx01l"]
+[ext_resource type="Texture2D" uid="uid://dytjbknalbb36" path="res://assets/Cab Base/Arcade Machine Stick.png" id="18_dm3wh"]
+[ext_resource type="Texture2D" uid="uid://bl0tpvf7ioluq" path="res://assets/UI/JKey.png" id="19_a4l0g"]
+[ext_resource type="Texture2D" uid="uid://npqfokrsikot" path="res://assets/UI/TKey.png" id="20_45aig"]
+[ext_resource type="Texture2D" uid="uid://drbe8d3g5fpi4" path="res://assets/Token/Token Space.png" id="21_lajyp"]
+[ext_resource type="Texture2D" uid="uid://biovfdi5bv5np" path="res://assets/Token/Token Shooting Range.png" id="22_w80yt"]
+[ext_resource type="Texture2D" uid="uid://dyib5hpye3qyo" path="res://assets/Token/Token Skee ball.png" id="23_mf3w5"]
+[ext_resource type="Texture2D" uid="uid://bqhtogt15dg8r" path="res://assets/Token/Token Baseball.png" id="24_iv7ln"]
+[ext_resource type="Texture2D" uid="uid://dom3xjkrrbwbo" path="res://assets/Token/Token Tower.png" id="25_e6xv6"]
+[ext_resource type="Texture2D" uid="uid://nng7l7qflqy8" path="res://assets/Tickets/Ticket Space.png" id="26_qq7nn"]
+[ext_resource type="Texture2D" uid="uid://cp3foypx1j2kg" path="res://assets/Tickets/Ticket Baseball.png" id="27_33lvq"]
+[ext_resource type="Texture2D" uid="uid://bdx3tl8wgqkuq" path="res://assets/Tickets/Ticket Shooting range.png" id="28_eyrjf"]
+[ext_resource type="Texture2D" uid="uid://thv22n5oohsl" path="res://assets/Tickets/Ticket Tower.png" id="29_j01xp"]
+[ext_resource type="Texture2D" uid="uid://decvfdibqy3m6" path="res://assets/Tickets/Ticket SkeeBall.png" id="30_orjx5"]
+[ext_resource type="Texture2D" uid="uid://bu6wx6i0a5f0i" path="res://assets/UI/mapMissing.png" id="31_beq7w"]
+[ext_resource type="Texture2D" uid="uid://do13in58l2eh5" path="res://assets/art/map.png" id="32_n4bta"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48vw4"]
+atlas = ExtResource("1_k226n")
+region = Rect2(0, 0, 715, 438)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r0wl"]
+atlas = ExtResource("2_ajj2s")
+region = Rect2(96, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8bcv"]
+atlas = ExtResource("2_ajj2s")
+region = Rect2(0, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k226n"]
+atlas = ExtResource("2_ajj2s")
+region = Rect2(96, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajj2s"]
+atlas = ExtResource("2_ajj2s")
+region = Rect2(192, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f87f8"]
+atlas = ExtResource("2_ajj2s")
+region = Rect2(288, 0, 96, 54)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc1hf"]
+atlas = ExtResource("3_ajj2s")
+region = Rect2(0, 0, 711, 431)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f87f8"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"fistIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48vw4")
+}],
+"loop": true,
+"name": &"gunIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r0wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r0wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8bcv")
+}],
+"loop": false,
+"name": &"pipeCharge",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k226n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k226n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajj2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajj2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f87f8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f87f8")
+}],
+"loop": false,
+"name": &"pipeSwing",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc1hf")
+}],
+"loop": false,
+"name": &"sawIdle",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fpw4g"]
+atlas = ExtResource("6_f87f8")
+region = Rect2(0, 0, 450, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdq03"]
+atlas = ExtResource("7_wc1hf")
+region = Rect2(0, 0, 450, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kvwy4"]
+atlas = ExtResource("7_wc1hf")
+region = Rect2(450, 0, 450, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mguxk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fpw4g")
+}],
+"loop": false,
+"name": &"carneIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdq03")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kvwy4")
+}],
+"loop": true,
+"name": &"carneTalking",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_wc1hf"]
+resource_name = "moveOver"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("castOverText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.46667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(344, 61), Vector2(1168, 61)]
+}
+
+[sub_resource type="Animation" id="Animation_mguxk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("castOverText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(344, 61)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h0ewa"]
+_data = {
+&"RESET": SubResource("Animation_mguxk"),
+&"moveOver": SubResource("Animation_wc1hf")
+}
+
+[node name="playerUI2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2r0wl")
+
+[node name="inHandHUD" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="inHandSprite" type="AnimatedSprite2D" parent="inHandHUD"]
+position = Vector2(1556, 861)
+sprite_frames = SubResource("SpriteFrames_f87f8")
+animation = &"fistIdle"
+autoplay = "fistIdle"
+
+[node name="inHandAnim" type="AnimationPlayer" parent="inHandHUD"]
+
+[node name="crosshair" type="Control" parent="inHandHUD"]
+visible = false
+layout_mode = 1
+anchor_left = 0.489583
+anchor_top = 0.481481
+anchor_right = 0.510417
+anchor_bottom = 0.518519
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="inHandHUD/crosshair"]
+layout_mode = 0
+anchor_left = 0.425
+anchor_top = -0.45
+anchor_right = 0.575
+anchor_bottom = 1.45
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="inHandHUD/crosshair"]
+layout_mode = 0
+anchor_left = -0.424999
+anchor_top = 0.4
+anchor_right = -0.424999
+anchor_bottom = 0.525012
+offset_left = 74.0
+offset_right = 79.0
+offset_bottom = 68.9995
+rotation = 1.57079
+metadata/_edit_use_anchors_ = true
+
+[node name="shootingRangeMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchor_left = 0.489583
+anchor_top = 0.481481
+anchor_right = 0.510417
+anchor_bottom = 0.518519
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ShootingRangeUi" type="Sprite2D" parent="shootingRangeMenu"]
+position = Vector2(17.0007, 25.0006)
+scale = Vector2(2.00093, 2.00093)
+texture = ExtResource("4_48vw4")
+
+[node name="scoreText" type="Label" parent="shootingRangeMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -21.4743
+anchor_top = -11.6247
+anchor_right = -11.7246
+anchor_bottom = -8.97475
+offset_right = -85.0
+offset_bottom = -9.0
+theme_override_font_sizes/font_size = 96
+text = "SCORE:"
+metadata/_edit_use_anchors_ = true
+
+[node name="timeRemainingText" type="Label" parent="shootingRangeMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 3.6749
+anchor_top = -11.6247
+anchor_right = 24.3743
+anchor_bottom = -8.97475
+offset_right = -85.0
+offset_bottom = -8.99997
+theme_override_font_sizes/font_size = 96
+text = "TIME REMAINING:"
+metadata/_edit_use_anchors_ = true
+
+[node name="timerNumText" type="Label" parent="shootingRangeMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 17.1495
+anchor_top = -8.92476
+anchor_right = 23.4243
+anchor_bottom = -5.27485
+theme_override_font_sizes/font_size = 128
+text = "00"
+metadata/_edit_use_anchors_ = true
+
+[node name="scoreNumText" type="Label" parent="shootingRangeMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -20.2244
+anchor_top = -8.92476
+anchor_right = -13.9496
+anchor_bottom = -5.27485
+theme_override_font_sizes/font_size = 128
+text = "00"
+metadata/_edit_use_anchors_ = true
+
+[node name="pauseMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ColorRect" type="ColorRect" parent="pauseMenu"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0823529, 0.0823529, 0.0823529, 0.34902)
+
+[node name="pauseButtons" type="Control" parent="pauseMenu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="settings" type="Button" parent="pauseMenu/pauseButtons"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 288.0
+offset_right = 1111.0
+offset_bottom = 392.0
+theme_override_font_sizes/font_size = 72
+text = "SETTINGS"
+
+[node name="bugReport" type="Button" parent="pauseMenu/pauseButtons"]
+layout_mode = 0
+offset_left = 742.0
+offset_top = 469.0
+offset_right = 1173.0
+offset_bottom = 567.0
+theme_override_font_sizes/font_size = 72
+text = "BUG REPORT"
+
+[node name="quitGame" type="Button" parent="pauseMenu/pauseButtons"]
+layout_mode = 0
+offset_left = 738.0
+offset_top = 649.0
+offset_right = 1173.0
+offset_bottom = 742.0
+theme_override_font_sizes/font_size = 72
+text = "QUIT GAME"
+
+[node name="controls" type="Control" parent="pauseMenu"]
+layout_mode = 1
+anchor_left = 0.891667
+anchor_top = 0.390741
+anchor_right = 0.993229
+anchor_bottom = 0.619444
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="pauseMenu/controls"]
+layout_mode = 0
+anchor_left = 0.0102564
+anchor_top = 0.0688259
+anchor_right = 1.00513
+anchor_bottom = 0.995951
+offset_right = -1.52588e-05
+color = Color(0.227451, 0.227451, 0.227451, 0.568627)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="pauseMenu/controls"]
+texture_filter = 1
+layout_mode = 0
+anchor_left = 0.025641
+anchor_top = 0.1417
+anchor_right = 0.994872
+anchor_bottom = 0.906883
+theme_override_font_sizes/font_size = 28
+text = "W A S D   Move
+Shift   Sprint
+C   Crouch
+Space   Interact
+Mouse   Camera
+ESC       Menu"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="confirmQuitMenu" type="Control" parent="pauseMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 184.0
+offset_bottom = 165.0
+
+[node name="ColorRect" type="ColorRect" parent="pauseMenu/confirmQuitMenu"]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1086.0
+color = Color(0.442814, 0.0265889, 0.455948, 1)
+
+[node name="Label" type="Label" parent="pauseMenu/confirmQuitMenu"]
+layout_mode = 0
+offset_left = 254.0
+offset_top = 250.0
+offset_right = 1712.0
+offset_bottom = 370.0
+theme_override_font_sizes/font_size = 120
+text = "WOULD YOU LIKE TO QUIT?"
+
+[node name="confirmQuit" type="Button" parent="pauseMenu/confirmQuitMenu"]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 604.0
+offset_right = 799.0
+offset_bottom = 869.0
+theme_override_font_sizes/font_size = 96
+text = "YES"
+
+[node name="leaveQuit" type="Button" parent="pauseMenu/confirmQuitMenu"]
+layout_mode = 0
+offset_left = 1158.0
+offset_top = 608.0
+offset_right = 1417.0
+offset_bottom = 867.0
+theme_override_font_sizes/font_size = 96
+text = "NO"
+
+[node name="fakeDialogueMenu" type="Control" parent="pauseMenu/confirmQuitMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DialogueUi" type="Sprite2D" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+position = Vector2(962.889, 538)
+scale = Vector2(2.0037, 2.0037)
+texture = ExtResource("6_wc1hf")
+
+[node name="ColorRect" type="ColorRect" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+layout_mode = 0
+offset_left = 115.0
+offset_top = 45.0
+offset_right = 303.0
+offset_bottom = 272.0
+color = Color(0.443137, 0, 0, 1)
+
+[node name="npcSprite" type="AnimatedSprite2D" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+position = Vector2(211, 164)
+scale = Vector2(0.779826, 0.779827)
+sprite_frames = SubResource("SpriteFrames_mguxk")
+animation = &"carneTalking"
+
+[node name="leavingText" type="Label" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+layout_mode = 0
+offset_left = 372.0
+offset_top = 112.0
+offset_right = 1220.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 72
+text = "L e a v i n g  s o  s o o n ?"
+
+[node name="leavingText2" type="Label" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+offset_left = 66.0
+offset_top = 279.0
+offset_right = 305.0
+offset_bottom = 364.0
+theme_override_font_sizes/font_size = 64
+text = "CARN-E"
+
+[node name="castOverText" type="ColorRect" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 61.0
+offset_right = 1874.0
+offset_bottom = 205.0
+color = Color(0.67451, 0.196078, 0.196078, 1)
+
+[node name="fakeDialogAnim" type="AnimationPlayer" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_h0ewa")
+}
+
+[node name="fakeDialogDelay" type="Timer" parent="pauseMenu/confirmQuitMenu/fakeDialogueMenu"]
+wait_time = 3.0
+one_shot = true
+
+[node name="settingsMenu" type="Control" parent="pauseMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="pauseMenu/settingsMenu"]
+layout_mode = 0
+offset_right = 432.0
+offset_bottom = 294.0
+theme_override_font_sizes/font_size = 100
+text = "SETTINGS"
+
+[node name="personalMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Notebook" type="Sprite2D" parent="personalMenu"]
+position = Vector2(966, 450)
+scale = Vector2(1.8037, 1.8037)
+texture = ExtResource("9_er8tm")
+
+[node name="personalButtons" type="Control" parent="personalMenu"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="junkButton" type="Button" parent="personalMenu/personalButtons"]
+layout_mode = 0
+offset_left = 941.0
+offset_top = 978.0
+offset_right = 1218.0
+offset_bottom = 1132.0
+
+[node name="mapButton" type="Button" parent="personalMenu/personalButtons"]
+offset_left = 562.0
+offset_top = 963.0
+offset_right = 765.0
+offset_bottom = 1117.0
+
+[node name="inventoryButton" type="Button" parent="personalMenu/personalButtons"]
+offset_left = 302.0
+offset_top = 576.0
+offset_right = 870.0
+offset_bottom = 730.0
+flat = true
+
+[node name="objectiveButton" type="Button" parent="personalMenu/personalButtons"]
+offset_left = 1108.0
+offset_top = 290.0
+offset_right = 1575.0
+offset_bottom = 444.0
+flat = true
+
+[node name="buttonSprites" type="Control" parent="personalMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="invButSprite" type="Sprite2D" parent="personalMenu/buttonSprites"]
+texture_filter = 1
+position = Vector2(587, 638)
+scale = Vector2(1.40667, 1.40667)
+texture = ExtResource("9_ubanh")
+
+[node name="objButLabel" type="Label" parent="personalMenu/buttonSprites"]
+offset_left = 1135.0
+offset_top = 328.0
+offset_right = 1554.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 84
+text = "OBJECTIVE"
+
+[node name="mapButSprite" type="Sprite2D" parent="personalMenu/buttonSprites"]
+texture_filter = 1
+position = Vector2(519, 355)
+scale = Vector2(1.43333, 1.43333)
+texture = ExtResource("10_er8tm")
+
+[node name="junkButLabel" type="Label" parent="personalMenu/buttonSprites"]
+offset_left = 1221.0
+offset_top = 618.0
+offset_right = 1640.0
+offset_bottom = 703.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 84
+text = "JUNK"
+
+[node name="inventoryMenu" type="Control" parent="personalMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="personalMenu/inventoryMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.75
+anchor_top = 6.4
+anchor_right = 22.65
+anchor_bottom = 20.25
+scale = Vector2(0.994755, 0.981129)
+color = Color(0.933333, 0.764706, 0.603922, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="objectiveMenu" type="Control" parent="personalMenu"]
+visible = false
+anchors_preset = 0
+offset_left = 737.0
+offset_right = 777.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="personalMenu/objectiveMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.75
+anchor_top = 6.4
+anchor_right = 22.65
+anchor_bottom = 20.25
+scale = Vector2(0.994755, 0.981129)
+color = Color(0.933333, 0.764706, 0.603922, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="objectiveText" type="Label" parent="personalMenu/objectiveMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.9
+anchor_top = 10.4
+anchor_right = 20.575
+anchor_bottom = 20.225
+scale = Vector2(0.994755, 0.981129)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "OBJECTIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="currObjText" type="Label" parent="personalMenu/objectiveMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.3
+anchor_top = 2.35
+anchor_right = 18.225
+anchor_bottom = 14.0
+scale = Vector2(0.994755, 0.981129)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "Current Objective:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="quitObjMenu" type="Button" parent="personalMenu/objectiveMenu"]
+layout_mode = 0
+offset_left = 761.0
+offset_top = 205.0
+offset_right = 931.0
+offset_bottom = 413.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 140
+text = "X"
+flat = true
+
+[node name="junkMenu" type="Control" parent="personalMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="mapMenu" type="Control" parent="personalMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="personalMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.1
+anchor_top = 6.5
+anchor_right = 22.35
+anchor_bottom = 19.95
+color = Color(0.933333, 0.764706, 0.603922, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="personalMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 10.1
+anchor_top = 9.925
+anchor_right = 18.0834
+anchor_bottom = 16.344
+offset_left = 3.05176e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 192
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mapMissingSprite" type="Sprite2D" parent="personalMenu/mapMenu"]
+visible = false
+position = Vector2(673, 291)
+texture = ExtResource("31_beq7w")
+
+[node name="Map" type="Sprite2D" parent="personalMenu/mapMenu"]
+position = Vector2(588, 506)
+scale = Vector2(2.76008, 2.76008)
+texture = ExtResource("32_n4bta")
+
+[node name="quitMapMenu" type="Button" parent="personalMenu/mapMenu"]
+layout_mode = 0
+offset_left = 846.0
+offset_top = 238.0
+offset_right = 972.0
+offset_bottom = 446.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "X"
+flat = true
+
+[node name="PersonalMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1666.0
+offset_right = -1626.0
+offset_bottom = 40.0
+scale = Vector2(1.8, 1.8)
+
+[node name="colorRects" type="Control" parent="PersonalMenu"]
+layout_mode = 1
+anchor_right = 0.997193
+anchor_bottom = 0.996667
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="PersonalMenu/colorRects"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.10876
+anchor_top = 2.70345
+anchor_right = 5.71326
+anchor_bottom = 3.65663
+scale = Vector2(11.8667, 11.8667)
+color = Color(0.336374, 0.223497, 0.137891, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect3" type="ColorRect" parent="PersonalMenu/colorRects"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.11157
+anchor_top = 3.37235
+anchor_right = 6.54058
+anchor_bottom = 4.22519
+offset_bottom = -3.05176e-05
+scale = Vector2(11.8667, 11.8667)
+metadata/_edit_use_anchors_ = true
+
+[node name="invButSprite" type="Sprite2D" parent="PersonalMenu/colorRects"]
+texture_filter = 1
+position = Vector2(550, 434.444)
+texture = ExtResource("9_ubanh")
+
+[node name="objButLabel" type="Label" parent="PersonalMenu/colorRects"]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 243.333
+offset_right = 440.0
+offset_bottom = 280.333
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "OBJECTIVE"
+
+[node name="mapButSprite" type="Sprite2D" parent="PersonalMenu/colorRects"]
+texture_filter = 1
+position = Vector2(746.111, 242.222)
+texture = ExtResource("10_er8tm")
+
+[node name="map" type="Button" parent="PersonalMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -10.2681
+anchor_top = -1.46944
+anchor_right = -4.70098
+anchor_bottom = 1.5139
+offset_left = 1045.17
+offset_top = 242.666
+offset_right = 1045.48
+offset_bottom = 244.333
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="inventory" type="Button" parent="PersonalMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -12.7192
+anchor_top = -3.03
+anchor_right = -1.8692
+anchor_bottom = -0.171666
+offset_left = 847.768
+offset_top = 499.2
+offset_right = 847.768
+offset_bottom = 500.867
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="objective" type="Button" parent="PersonalMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 5.42239
+anchor_top = 2.05554
+anchor_right = 6.27138
+anchor_bottom = 3.34054
+offset_left = 42.1043
+offset_top = 135.778
+offset_right = 213.145
+offset_bottom = 167.378
+theme = ExtResource("11_3x7it")
+theme_override_font_sizes/font_size = 36
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="inventoryMenu" type="Control" parent="PersonalMenu"]
+visible = false
+layout_mode = 1
+anchor_left = -2.56944
+anchor_top = 0.972222
+anchor_right = -1.68378
+anchor_bottom = 1.80056
+metadata/_edit_use_anchors_ = true
+
+[node name="quitInv" type="Button" parent="PersonalMenu/inventoryMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 25.7027
+anchor_top = 3.08518
+anchor_right = 27.5375
+anchor_bottom = 5.04695
+offset_right = -6.10352e-05
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+icon = ExtResource("12_3me4w")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Inventory" type="Sprite2D" parent="PersonalMenu/inventoryMenu"]
+position = Vector2(642.222, 295.556)
+scale = Vector2(0.448436, 0.448436)
+texture = ExtResource("13_rfy4y")
+
+[node name="itemIcons" type="Control" parent="PersonalMenu/inventoryMenu"]
+texture_filter = 1
+anchors_preset = 0
+anchor_right = 0.944974
+anchor_bottom = 0.987928
+metadata/_edit_use_anchors_ = true
+
+[node name="funPassJr" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+position = Vector2(611.667, 209.444)
+scale = Vector2(0.38342, 0.38342)
+texture = ExtResource("14_cxkkn")
+
+[node name="funPassSr" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(612.778, 278.889)
+scale = Vector2(0.404055, 0.404055)
+texture = ExtResource("15_5xjha")
+
+[node name="saw" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(797.778, 360)
+scale = Vector2(0.49773, 0.49773)
+texture = ExtResource("16_4f1yg")
+
+[node name="bbgun" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+position = Vector2(790, 251.667)
+scale = Vector2(0.507645, 0.507645)
+texture = ExtResource("17_rx01l")
+
+[node name="joystick" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(562.431, 362.347)
+scale = Vector2(0.502777, 0.502777)
+texture = ExtResource("18_dm3wh")
+
+[node name="janitorsKey" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(623.889, 362.778)
+rotation = -1.57079
+scale = Vector2(2.19244, 2.19244)
+texture = ExtResource("19_a4l0g")
+
+[node name="mainDoorKey" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons"]
+visible = false
+texture_filter = 1
+position = Vector2(684.445, 362.778)
+rotation = -1.57079
+scale = Vector2(2.16168, 2.16168)
+texture = ExtResource("20_45aig")
+
+[node name="tokens" type="Control" parent="PersonalMenu/inventoryMenu/itemIcons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ufoToken" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tokens"]
+visible = false
+position = Vector2(566.667, 141.667)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("21_lajyp")
+
+[node name="rangeToken" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tokens"]
+visible = false
+position = Vector2(710, 140)
+scale = Vector2(0.541667, 0.541667)
+texture = ExtResource("22_w80yt")
+
+[node name="skeebleToken" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tokens"]
+visible = false
+position = Vector2(852.778, 143.889)
+scale = Vector2(0.5625, 0.5625)
+texture = ExtResource("23_mf3w5")
+
+[node name="speedPitchToken" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tokens"]
+visible = false
+position = Vector2(638.889, 140)
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("24_iv7ln")
+
+[node name="towerToken" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tokens"]
+visible = false
+position = Vector2(782.222, 145.556)
+scale = Vector2(0.583333, 0.583333)
+texture = ExtResource("25_e6xv6")
+
+[node name="tickets" type="Control" parent="PersonalMenu/inventoryMenu/itemIcons"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ufoTicket" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tickets"]
+visible = false
+position = Vector2(463.778, 143.667)
+scale = Vector2(0.475214, 0.475214)
+texture = ExtResource("26_qq7nn")
+
+[node name="speedPitchTicket" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tickets"]
+visible = false
+position = Vector2(465, 219.444)
+scale = Vector2(0.490171, 0.490171)
+texture = ExtResource("27_33lvq")
+
+[node name="rangeTicket" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tickets"]
+visible = false
+position = Vector2(466.111, 295.556)
+scale = Vector2(0.520994, 0.520994)
+texture = ExtResource("28_eyrjf")
+
+[node name="towerTicket" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tickets"]
+visible = false
+position = Vector2(465, 369.444)
+scale = Vector2(0.508333, 0.508333)
+texture = ExtResource("29_j01xp")
+
+[node name="skeebleTicket" type="Sprite2D" parent="PersonalMenu/inventoryMenu/itemIcons/tickets"]
+visible = false
+position = Vector2(461.667, 446.111)
+scale = Vector2(0.470299, 0.470299)
+texture = ExtResource("30_orjx5")
+
+[node name="objectiveMenu" type="Control" parent="PersonalMenu"]
+visible = false
+layout_mode = 1
+anchor_left = 0.356139
+anchor_top = 0.155
+anchor_right = 0.891284
+anchor_bottom = 0.831667
+offset_left = 669.754
+offset_top = 161.2
+offset_right = 669.754
+offset_bottom = 161.2
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PersonalMenu/objectiveMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -21.3961
+anchor_top = -0.591133
+anchor_right = 8.78269
+anchor_bottom = 13.2635
+scale = Vector2(0.994755, 0.981129)
+color = Color(0.517184, 0.517184, 0.517184, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="objectiveText" type="Label" parent="PersonalMenu/objectiveMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -19.2472
+anchor_top = 2.03202
+anchor_right = 5.88627
+anchor_bottom = 10.197
+scale = Vector2(0.994755, 0.981129)
+theme_override_font_sizes/font_size = 28
+text = "OBJECTIVE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="QuitObj" type="Button" parent="PersonalMenu/objectiveMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 4.40692
+anchor_top = -0.00656788
+anchor_right = 7.68158
+anchor_bottom = 2.50446
+offset_right = -30.0964
+offset_bottom = -27.9652
+scale = Vector2(1.74322, 1.66707)
+icon = ExtResource("12_3me4w")
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="mapMenu" type="Control" parent="PersonalMenu"]
+layout_mode = 1
+anchor_left = -0.00208269
+anchor_top = 0.05
+anchor_right = 0.915443
+anchor_bottom = 0.801667
+offset_left = -3.9167
+offset_top = 52.0
+offset_right = -3.9167
+offset_bottom = 52.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PersonalMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 6.07612
+anchor_top = 3.05987
+anchor_right = 23.7323
+anchor_bottom = 15.4324
+color = Color(1, 1, 0.745098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PersonalMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 11.7042
+anchor_top = 5.50258
+anchor_right = 19.6876
+anchor_bottom = 11.9216
+offset_left = 3.05176e-05
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 192
+text = "???"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="mapMissingSprite" type="Sprite2D" parent="PersonalMenu/mapMenu"]
+visible = false
+position = Vector2(673, 291)
+texture = ExtResource("31_beq7w")
+
+[node name="Map" type="Sprite2D" parent="PersonalMenu/mapMenu"]
+visible = false
+position = Vector2(548.444, 269.333)
+scale = Vector2(2.53045, 2.53045)
+texture = ExtResource("32_n4bta")
+
+[node name="quitInv2" type="Button" parent="PersonalMenu/mapMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 22.1035
+anchor_top = 3.24834
+anchor_right = 23.6294
+anchor_bottom = 5.11086
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+icon = ExtResource("12_3me4w")
+flat = true
+icon_alignment = 1
+expand_icon = true
+metadata/_edit_use_anchors_ = true
+
+[node name="timer" type="Control" parent="PersonalMenu"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="timerLabel" type="Label" parent="PersonalMenu/timer"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 17.7778
+offset_top = 0.555557
+offset_right = 291.778
+offset_bottom = 85.5556
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 54
+text = "00:00.00"
+
+[node name="interactMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="interactMenu"]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 493.0
+offset_right = 1013.0
+offset_bottom = 707.0
+theme_override_font_sizes/font_size = 80
+text = "SPACE TO INTERACT"
+
+[node name="getItemMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="dialogMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="sfx" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="closeSFX" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("9_2rbmv")
+
+[node name="openSFX" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("10_7qoru")
+
+[node name="switchSFX" type="AudioStreamPlayer" parent="sfx"]
+stream = ExtResource("11_hxwoj")
+
+[connection signal="pressed" from="pauseMenu/pauseButtons/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="pauseMenu/pauseButtons/bugReport" to="." method="_on_bug_report_pressed"]
+[connection signal="pressed" from="pauseMenu/pauseButtons/quitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="pauseMenu/confirmQuitMenu/confirmQuit" to="." method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="pauseMenu/confirmQuitMenu/leaveQuit" to="." method="_on_leave_quit_pressed"]
+[connection signal="timeout" from="pauseMenu/confirmQuitMenu/fakeDialogueMenu/fakeDialogDelay" to="." method="_on_fake_dialog_delay_timeout"]
+[connection signal="pressed" from="personalMenu/personalButtons/mapButton" to="." method="_on_map_button_pressed"]
+[connection signal="pressed" from="personalMenu/personalButtons/inventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="personalMenu/personalButtons/objectiveButton" to="." method="_on_objective_button_pressed"]
+[connection signal="pressed" from="personalMenu/objectiveMenu/quitObjMenu" to="." method="_on_quit_obj_menu_pressed"]
+[connection signal="pressed" from="personalMenu/mapMenu/quitMapMenu" to="." method="_on_quit_map_menu_pressed"]

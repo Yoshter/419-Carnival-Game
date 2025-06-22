@@ -81,12 +81,13 @@ func _process(delta: float) -> void:
 
 func _on_talk_box_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player") and !PlayerGlobal.inUI:
+		PlayerGlobal.setCanInteract(true)
 		if !hasTalkedTo:
 			hasTalkedTo = true
 			#DialogueGlobal.objEncCount
 		inArea = true
 		PlayerGlobal.setIsTalkingTo("CARN-E")
-		PlayerGlobal.setCanInteract(true)
+		
 		if !PlayerGlobal.isBlackout:
 			talkLight.set_visible(true)
 		body.canTalk = true
