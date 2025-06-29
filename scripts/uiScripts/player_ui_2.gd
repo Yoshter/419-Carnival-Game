@@ -258,16 +258,19 @@ func _on_quit_item_inspect_pressed() -> void:
 	itemInspectMenu.set_visible(false)
 
 func _on_ufo_token_button_pressed() -> void:
-	inspectItem("UFO Blast! Token", "A coin used to play the UFO Blast! \n game in the Digital Arcade. \n Given to you by your... friend(?) \n the CARN E.")
+	inspectItem("UFO Blast! Token", "A coin used to play the 'UFO Blast!' \n game in the Digital Arcade. \n Given to you by your... friend? \n the CARN-E.")
 
 func _on_ufo_ticket_button_pressed() -> void:
 	inspectItem("UFO Blast! Ticket", "A ticket earned by beating the game \n UFO Blast! \n\n Don't feel THAT proud")
 
 func _on_fun_pass_jr_button_pressed() -> void:
-	inspectItem("Junior Fun Pass", "fun pass info")
+	inspectItem("Junior Fun Pass", "Opens a certain 'fun' gate. \n Great times await! Maybe!")
+
+func _on_fun_pass_sr_butt_pressed():
+	inspectItem("Senior Fun Pass", "Opens an even FUNNER 'fun' gate. \n Even greater times await! Definitely!!")
 
 func _on_bbgun_button_pressed() -> void:
-	inspectItem("BB Gun", "bb gun info")
+	inspectItem("BB Gun", "A reasonably harmless BB gun. \n Could still be useful though...")
 
 #OBJECTIVE MENU FUNCTIONS **************************************************************************
 func _on_objective_button_pressed() -> void:

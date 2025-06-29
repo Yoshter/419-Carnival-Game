@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://87ceglixextb"]
+[gd_scene load_steps=57 format=3 uid="uid://87ceglixextb"]
 
 [ext_resource type="Script" uid="uid://nc4ii5u74ok" path="res://scripts/uiScripts/player_ui_2.gd" id="1_2r0wl"]
 [ext_resource type="Texture2D" uid="uid://cfgdp1ytoylg6" path="res://assets/Textures/GunUI.png" id="1_k226n"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://nryrfqki41wj" path="res://assets/art/Carne-talking-Sheet.png" id="7_wc1hf"]
 [ext_resource type="AudioStream" uid="uid://b7p7j3ki6xoko" path="res://assets/allsound/SFX/Inventory Close.wav" id="9_2rbmv"]
 [ext_resource type="Texture2D" uid="uid://tc5oaha5wc10" path="res://assets/UI/notebook.png" id="9_er8tm"]
+[ext_resource type="Texture2D" uid="uid://dpn3vnjec682r" path="res://assets/UI/Checkmark.png" id="9_rfy4y"]
 [ext_resource type="Texture2D" uid="uid://q6tq3c6c2nbd" path="res://assets/UI/invButton.png" id="9_ubanh"]
 [ext_resource type="AudioStream" uid="uid://w66dwwgi4id0" path="res://assets/allsound/SFX/Inventory Open.wav" id="10_7qoru"]
 [ext_resource type="Texture2D" uid="uid://cm1y3u5fcalkb" path="res://assets/UI/mapButton.png" id="10_er8tm"]
@@ -364,29 +365,34 @@ offset_bottom = 40.0
 
 [node name="settings" type="Button" parent="pauseMenu/pauseButtons"]
 layout_mode = 0
-offset_left = 786.0
+offset_left = 795.0
 offset_top = 288.0
-offset_right = 1111.0
-offset_bottom = 392.0
-theme_override_font_sizes/font_size = 72
+offset_right = 1178.0
+offset_bottom = 420.0
+theme = ExtResource("11_3x7it")
+theme_override_font_sizes/font_size = 62
 text = "SETTINGS"
 
 [node name="bugReport" type="Button" parent="pauseMenu/pauseButtons"]
-layout_mode = 0
-offset_left = 742.0
-offset_top = 469.0
-offset_right = 1173.0
-offset_bottom = 567.0
-theme_override_font_sizes/font_size = 72
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 19.45
+anchor_top = 11.975
+anchor_right = 30.025
+anchor_bottom = 14.725
+theme = ExtResource("11_3x7it")
+theme_override_font_sizes/font_size = 62
 text = "BUG REPORT"
+metadata/_edit_use_anchors_ = true
 
 [node name="quitGame" type="Button" parent="pauseMenu/pauseButtons"]
 layout_mode = 0
-offset_left = 738.0
-offset_top = 649.0
-offset_right = 1173.0
-offset_bottom = 742.0
-theme_override_font_sizes/font_size = 72
+offset_left = 795.0
+offset_top = 651.0
+offset_right = 1182.0
+offset_bottom = 781.0
+theme = ExtResource("11_3x7it")
+theme_override_font_sizes/font_size = 62
 text = "QUIT GAME"
 
 [node name="controls" type="Control" parent="pauseMenu"]
@@ -434,7 +440,7 @@ offset_bottom = 165.0
 layout_mode = 0
 offset_right = 1924.0
 offset_bottom = 1086.0
-color = Color(0.442814, 0.0265889, 0.455948, 1)
+color = Color(0.337255, 0.223529, 0.137255, 1)
 
 [node name="Label" type="Label" parent="pauseMenu/confirmQuitMenu"]
 layout_mode = 0
@@ -447,21 +453,25 @@ text = "WOULD YOU LIKE TO QUIT?"
 
 [node name="confirmQuit" type="Button" parent="pauseMenu/confirmQuitMenu"]
 layout_mode = 0
-offset_left = 335.0
-offset_top = 604.0
-offset_right = 799.0
-offset_bottom = 869.0
+offset_left = 260.0
+offset_top = 417.0
+offset_right = 300.0
+offset_bottom = 465.0
+scale = Vector2(12.256, 12.256)
 theme_override_font_sizes/font_size = 96
-text = "YES"
+icon = ExtResource("9_rfy4y")
+flat = true
 
 [node name="leaveQuit" type="Button" parent="pauseMenu/confirmQuitMenu"]
 layout_mode = 0
-offset_left = 1158.0
-offset_top = 608.0
-offset_right = 1417.0
-offset_bottom = 867.0
+offset_left = 1228.0
+offset_top = 460.0
+offset_right = 1268.0
+offset_bottom = 504.0
+scale = Vector2(12.0133, 12.2565)
 theme_override_font_sizes/font_size = 96
-text = "NO"
+icon = ExtResource("12_3me4w")
+flat = true
 
 [node name="fakeDialogueMenu" type="Control" parent="pauseMenu/confirmQuitMenu"]
 visible = false
@@ -957,6 +967,14 @@ offset_left = 249.0
 offset_top = 568.0
 offset_right = 394.0
 offset_bottom = 637.0
+flat = true
+
+[node name="funPassSrButt" type="Button" parent="personalMenu/inventoryMenu/itemButtons/items"]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 574.0
+offset_right = 538.0
+offset_bottom = 629.0
 flat = true
 
 [node name="weapons" type="Control" parent="personalMenu/inventoryMenu/itemButtons"]
@@ -1675,10 +1693,10 @@ offset_bottom = 89.0
 
 [node name="Label" type="Label" parent="interactMenu"]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 493.0
-offset_right = 1013.0
-offset_bottom = 707.0
+offset_left = 500.0
+offset_top = 825.0
+offset_right = 1234.0
+offset_bottom = 905.0
 theme_override_font_sizes/font_size = 80
 text = "SPACE TO INTERACT"
 
@@ -1721,6 +1739,7 @@ stream = ExtResource("11_hxwoj")
 [connection signal="pressed" from="personalMenu/inventoryMenu/itemButtons/tokens/ufoTokenButton" to="." method="_on_ufo_token_button_pressed"]
 [connection signal="pressed" from="personalMenu/inventoryMenu/itemButtons/tickets/ufoTicketButton" to="." method="_on_ufo_ticket_button_pressed"]
 [connection signal="pressed" from="personalMenu/inventoryMenu/itemButtons/items/funPassJrButton" to="." method="_on_fun_pass_jr_button_pressed"]
+[connection signal="pressed" from="personalMenu/inventoryMenu/itemButtons/items/funPassSrButt" to="." method="_on_fun_pass_sr_butt_pressed"]
 [connection signal="pressed" from="personalMenu/inventoryMenu/itemButtons/weapons/bbgunButton" to="." method="_on_bbgun_button_pressed"]
 [connection signal="pressed" from="personalMenu/inventoryMenu/itemInspectPage/quitItemInspect" to="." method="_on_quit_item_inspect_pressed"]
 [connection signal="pressed" from="personalMenu/mapMenu/quitMapMenu" to="." method="_on_quit_map_menu_pressed"]
