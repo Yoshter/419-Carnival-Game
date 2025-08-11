@@ -95,6 +95,18 @@ var personalIsVisible : bool = false
 @onready var timerNumText: Label = $shootingRangeMenu/timerNumText
 @onready var scoreNumText: Label = $shootingRangeMenu/scoreNumText
 
+#Dialogue Menu Variables
+@onready var dialogMenu: Control = $dialogMenu
+@onready var npcDialogLabel: Label = $dialogMenu/npcTextLabel
+@onready var npcNameLabel: Label = $dialogMenu/npcNameLabel
+@onready var npcSpriteAnim: AnimatedSprite2D = $dialogMenu/npcSprite
+@onready var textAnim: AnimationPlayer = $dialogMenu/textAnim
+var dialogCount : int = 0
+var maxDialogCount : int = 0
+
+#Get Item Menu Variables
+@onready var getItemMenu: Control = $getItemMenu
+
 #Sound Effect Variables **************************************************************************
 @onready var closesfx: AudioStreamPlayer = $sfx/closeSFX
 @onready var opensfx: AudioStreamPlayer = $sfx/openSFX
@@ -106,6 +118,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	print(PlayerGlobal.getCanInteract())
 	#HANDLE INTERACT MENU
 	if PlayerGlobal.getCanInteract():
 		interactMenu.set_visible(true)
@@ -144,6 +157,35 @@ func _process(delta: float) -> void:
 		"bbgun":
 			inHandSprite.play("bbgunIdle")
 			weaponDelay.wait_time = 0.8
+	
+	#HANDLE DIALOGUE MENU
+	if PlayerGlobal.isTalking:
+		dialogMenu.set_visible(true)
+		PlayerGlobal.setCanInteract(false)
+		npcNameLabel.set_text(PlayerGlobal.checkIsTalkingTo())
+		match PlayerGlobal.checkIsTalkingTo():
+			"CARN-E":
+				npcSpriteAnim.play("carneTalking")
+		if !textAnim.is_playing():
+				textAnim.play("moveOver")
+		if !(dialogCount > maxDialogCount):
+			dialogMenu.set_visible(true)
+			maxDialogCount = DialogueGlobal.returnMaxDialogueCount(PlayerGlobal.checkIsTalkingTo())
+			npcDialogLabel.set_text(str(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), dialogCount)))
+		else:
+			#print("dialogue count : " + str(dialogueCount))
+			dialogMenu.set_visible(false)
+			if DialogueGlobal.returnGivingItem(PlayerGlobal.checkIsTalkingTo()):
+				ItemsGlobal.giveItem(DialogueGlobal.returnDialogueText(PlayerGlobal.checkIsTalkingTo(), -2))
+				PlayerGlobal.setIsTalking(false)
+				dialogCount = 0
+				PlayerGlobal.inUI = true
+			else:
+				getItemMenu.set_visible(false)
+				ItemsGlobal.showItemUI = false
+				PlayerGlobal.setIsTalking(false)
+				PlayerGlobal.inUI = false
+				dialogCount = 0
 
 #PERSONAL MENU BUTTON FUNCTIONS **************************************************************************
 
@@ -244,7 +286,6 @@ func uninspectAllItems() -> void:
 	print("uninspecting")
 	ufoTokenInspec.set_visible(false)
 	speedPitchTokenInspec.set_visible(false)
-	
 	
 	ufoTicketInspec.set_visible(false)
 	speedPitchTicketInspec.set_visible(false)

@@ -5,7 +5,7 @@ var performanceModeOn = false
 var isTalking : bool = false
 var isTalkingTo : String
 var isPaused : bool = false
-var inUI : bool = true
+var inUI : bool = false
 var controlsShown = false
 
 var mustFloat = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://87ceglixextb"]
+[gd_scene load_steps=64 format=3 uid="uid://87ceglixextb"]
 
 [ext_resource type="Script" uid="uid://nc4ii5u74ok" path="res://scripts/uiScripts/player_ui_2.gd" id="1_2r0wl"]
 [ext_resource type="Texture2D" uid="uid://cfgdp1ytoylg6" path="res://assets/Textures/GunUI.png" id="1_k226n"]
@@ -217,6 +217,101 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_mguxk"),
 &"moveOver": SubResource("Animation_wc1hf")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rfy4y"]
+atlas = ExtResource("6_f87f8")
+region = Rect2(0, 0, 450, 265)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxkkn"]
+atlas = ExtResource("7_wc1hf")
+region = Rect2(0, 0, 450, 280)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xjha"]
+atlas = ExtResource("7_wc1hf")
+region = Rect2(450, 0, 450, 280)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4f1yg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rfy4y")
+}],
+"loop": false,
+"name": &"carneIdle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxkkn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xjha")
+}],
+"loop": true,
+"name": &"carneTalking",
+"speed": 3.0
+}]
+
+[sub_resource type="Animation" id="Animation_rx01l"]
+resource_name = "moveOver"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("castOverText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(292, 86), Vector2(1861, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("castOverText:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1575, 113), Vector2(6, 113)]
+}
+
+[sub_resource type="Animation" id="Animation_dm3wh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("castOverText:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(292, 86)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("castOverText:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1575, 113)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4l0g"]
+_data = {
+&"RESET": SubResource("Animation_dm3wh"),
+&"moveOver": SubResource("Animation_rx01l")
 }
 
 [node name="playerUI2" type="Control"]
@@ -1286,6 +1381,7 @@ text = "X"
 flat = true
 
 [node name="PersonalMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -1666.0
@@ -1701,14 +1797,93 @@ theme_override_font_sizes/font_size = 80
 text = "SPACE TO INTERACT"
 
 [node name="getItemMenu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ColorRect" type="ColorRect" parent="getItemMenu"]
+layout_mode = 0
+offset_right = 1085.0
+offset_bottom = 435.0
+
 [node name="dialogMenu" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="dialogMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.35
+anchor_top = -0.475
+anchor_right = 50.875
+anchor_bottom = 7.2
+offset_right = -0.00012207
+color = Color(0.073069, 0.0232537, 0.0698616, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect2" type="ColorRect" parent="dialogMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.05
+anchor_top = 0.925
+anchor_right = 47.65
+anchor_bottom = 5.625
+color = Color(0.137461, 0.0590339, 0.132642, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="npcTextLabel" type="Label" parent="dialogMenu"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 7.35
+anchor_top = 1.575
+anchor_right = 47.875
+anchor_bottom = 5.475
+theme_override_font_sizes/font_size = 48
+text = "nothing"
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="castOverText" type="ColorRect" parent="dialogMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 71.0812
+anchor_top = 2.1597
+anchor_right = 71.2312
+anchor_bottom = 4.9847
+offset_left = -2551.25
+offset_top = -0.387863
+offset_right = -982.246
+offset_bottom = -0.387848
+color = Color(0.137461, 0.0590339, 0.132642, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="npcNameLabel" type="Label" parent="dialogMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.825
+anchor_top = 5.575
+anchor_right = 6.85
+anchor_bottom = 7.925
+offset_right = 40.0
+offset_bottom = 17.0
+theme_override_font_sizes/font_size = 46
+text = "nothing"
+metadata/_edit_use_anchors_ = true
+
+[node name="npcSprite" type="AnimatedSprite2D" parent="dialogMenu"]
+position = Vector2(152.323, 90.4452)
+scale = Vector2(0.810323, 0.810323)
+sprite_frames = SubResource("SpriteFrames_4f1yg")
+animation = &"carneTalking"
+
+[node name="textAnim" type="AnimationPlayer" parent="dialogMenu"]
+libraries = {
+&"": SubResource("AnimationLibrary_a4l0g")
+}
 
 [node name="sfx" type="Control" parent="."]
 anchors_preset = 0

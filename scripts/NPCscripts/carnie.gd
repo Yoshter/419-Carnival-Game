@@ -87,10 +87,10 @@ func _on_talk_box_body_entered(body: Node3D) -> void:
 			#DialogueGlobal.objEncCount
 		inArea = true
 		PlayerGlobal.setIsTalkingTo("CARN-E")
-		
 		if !PlayerGlobal.isBlackout:
 			talkLight.set_visible(true)
 		body.canTalk = true
+		print("set true" + str(PlayerGlobal.getCanInteract()))
 
 func _on_talk_box_body_exited(body: Node3D) -> void:
 	if body.is_in_group("player"):
