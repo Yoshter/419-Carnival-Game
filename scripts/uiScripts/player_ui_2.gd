@@ -103,6 +103,7 @@ var personalIsVisible : bool = false
 @onready var textAnim: AnimationPlayer = $dialogMenu/textAnim
 var dialogCount : int = 0
 var maxDialogCount : int = 0
+@onready var nextDialogTimer: Timer = $dialogMenu/nextDialogTimer
 
 #Get Item Menu Variables
 @onready var getItemMenu: Control = $getItemMenu
@@ -166,6 +167,8 @@ func _process(delta: float) -> void:
 		match PlayerGlobal.checkIsTalkingTo():
 			"CARN-E":
 				npcSpriteAnim.play("carneTalking")
+		if nextDialogTimer.is_stopped():
+			nextDialogTimer.start()
 		if !textAnim.is_playing():
 				textAnim.play("moveOver")
 		if !(dialogCount > maxDialogCount):
@@ -186,6 +189,12 @@ func _process(delta: float) -> void:
 				PlayerGlobal.setIsTalking(false)
 				PlayerGlobal.inUI = false
 				dialogCount = 0
+
+#DIALOG MENU FUNCTIONS
+
+func _on_next_dialog_timer_timeout() -> void:
+	dialogCount += 1
+
 
 #PERSONAL MENU BUTTON FUNCTIONS **************************************************************************
 
