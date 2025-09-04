@@ -9,13 +9,14 @@ extends Node3D
 @onready var treeBody: StaticBody3D = $"Ending Adjustments/treeBody"
 var isInEndingSequence : bool = false
 @onready var ambienceMusic: AudioStreamPlayer = $Ambience
-@onready var rainParticles: GPUParticles3D = $Rain/RainParticles
+@onready var rainParticles: GPUParticles3D = $introPlayer/Rain/RainParticles
+
 
 func _process(delta: float) -> void:
 	if PlayerGlobal.performanceModeOn:
-		rainParticles.amount = 20000
+		rainParticles.amount = 500
 	else:
-		rainParticles.amount = 200000
+		rainParticles.amount = 5000
 	
 	if PlayerGlobal.beatCARN:
 		PlayerGlobal.resetPlayerGlobal()

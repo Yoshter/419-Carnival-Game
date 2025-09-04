@@ -22,37 +22,6 @@
 [ext_resource type="AudioStream" uid="uid://by2pbj1tkemhq" path="res://assets/allsound/SFX/Rain.wav" id="19_v8xbn"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="20_33cj7"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0wybg"]
-emission_shape_scale = Vector3(1, 14.685, 1)
-emission_shape = 3
-emission_box_extents = Vector3(10, 0.5, 10)
-direction = Vector3(0, -1, 0)
-spread = 1.0
-initial_velocity_min = 9.8
-initial_velocity_max = 9.8
-color = Color(0.681654, 0.756533, 0.902106, 1)
-collision_mode = 1
-collision_friction = 0.0
-collision_bounce = 0.0
-
-[sub_resource type="Curve" id="Curve_pu366"]
-_limits = [0.0, 0.0876404, 0.0, 1.0]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.115044, 0.0539326), 0.529868, 0.529868, 0, 0, Vector2(0.190265, 0.0876404), 0.207292, 0.207292, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 4
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi7x6"]
-transparency = 1
-cull_mode = 2
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("1_80b51")
-use_particle_trails = true
-
-[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_si0aw"]
-material = SubResource("StandardMaterial3D_xi7x6")
-size = 0.2
-curve = SubResource("Curve_pu366")
-
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_la3ai"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -103,6 +72,37 @@ size = Vector3(4.8092, 1, 1.68469)
 [sub_resource type="BoxShape3D" id="BoxShape3D_0tjpi"]
 size = Vector3(4.22809, 2.27942, 1)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0wybg"]
+emission_shape_scale = Vector3(0.18, 14.685, 0.18)
+emission_shape = 3
+emission_box_extents = Vector3(10, 0.5, 10)
+direction = Vector3(0, -1, 0)
+spread = 1.0
+initial_velocity_min = 9.8
+initial_velocity_max = 9.8
+color = Color(0.681654, 0.756533, 0.902106, 1)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[sub_resource type="Curve" id="Curve_pu366"]
+_limits = [0.0, 0.0876404, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.115044, 0.0539326), 0.529868, 0.529868, 0, 0, Vector2(0.190265, 0.0876404), 0.207292, 0.207292, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi7x6"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_80b51")
+use_particle_trails = true
+
+[sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_si0aw"]
+material = SubResource("StandardMaterial3D_xi7x6")
+size = 0.2
+curve = SubResource("Curve_pu366")
+
 [node name="outside2" type="Node3D"]
 script = ExtResource("1_p1j5u")
 
@@ -110,25 +110,6 @@ script = ExtResource("1_p1j5u")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 visible = false
 shadow_enabled = true
-
-[node name="Rain" type="Node3D" parent="."]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Rain"]
-skeleton = NodePath("../..")
-
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="Rain/MeshInstance3D"]
-
-[node name="RainParticles" type="GPUParticles3D" parent="Rain"]
-transform = Transform3D(10.9503, 0, 0, 0, 2.20247, 0, 0, 0, 8.46832, -1.42154, 11.8631, -26.6846)
-amount = 100000
-lifetime = 2.0
-randomness = 0.5
-fixed_fps = 60
-visibility_aabb = AABB(-10, -4, -10, 20, 8, 20)
-trail_enabled = true
-trail_lifetime = 0.02
-process_material = SubResource("ParticleProcessMaterial_0wybg")
-draw_pass_1 = SubResource("RibbonTrailMesh_si0aw")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_oipaq")
@@ -654,3 +635,23 @@ autoplay = true
 
 [node name="player2" parent="." instance=ExtResource("20_33cj7")]
 transform = Transform3D(0.066779, 0, 0.997768, 0, 1, 0, -0.997768, 0, 0.066779, 88.2261, 2.69779, -68.5715)
+
+[node name="Rain" type="Node3D" parent="player2"]
+transform = Transform3D(0.066779, 0, -0.997768, 0, 1, 0, 0.997768, 0, 0.066779, -74.3101, -2.69779, -83.45)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="player2/Rain"]
+skeleton = NodePath("../../..")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="player2/Rain/MeshInstance3D"]
+
+[node name="RainParticles" type="GPUParticles3D" parent="player2/Rain"]
+transform = Transform3D(10.9503, 0, 0, 0, 2.20247, 0, 0, 0, 8.46832, -1.42154, 11.8631, -26.6846)
+amount = 5000
+lifetime = 2.0
+randomness = 0.5
+fixed_fps = 60
+visibility_aabb = AABB(-10, -4, -10, 20, 8, 20)
+trail_enabled = true
+trail_lifetime = 0.02
+process_material = SubResource("ParticleProcessMaterial_0wybg")
+draw_pass_1 = SubResource("RibbonTrailMesh_si0aw")
