@@ -26,7 +26,7 @@ var saw : bool = false
 var bbgun : bool = false
 var joystick : bool = false
 var janitorsKey : bool = false
-var mainDoorKey : bool = false
+var mainDoorKey : bool = true
 var pipe : bool = true
 
 var map : bool = false

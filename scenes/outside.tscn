@@ -29,12 +29,12 @@
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
 
-[sub_resource type="Sky" id="Sky_s22lx"]
+[sub_resource type="Sky" id="Sky_2xi43"]
 sky_material = SubResource("ProceduralSkyMaterial_o0dts")
 
 [sub_resource type="Environment" id="Environment_1lf6f"]
 background_mode = 2
-sky = SubResource("Sky_s22lx")
+sky = SubResource("Sky_2xi43")
 tonemap_mode = 2
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1045
@@ -88,12 +88,12 @@ collision_mode = 1
 collision_friction = 0.0
 collision_bounce = 0.0
 
-[sub_resource type="Curve" id="Curve_pu366"]
+[sub_resource type="Curve" id="Curve_2xi43"]
 _limits = [0.0, 0.0876404, 0.0, 1.0]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.115044, 0.0539326), 0.529868, 0.529868, 0, 0, Vector2(0.190265, 0.0876404), 0.207292, 0.207292, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xi7x6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxkng"]
 transparency = 1
 cull_mode = 2
 shading_mode = 0
@@ -102,9 +102,9 @@ albedo_texture = ExtResource("2_pu366")
 use_particle_trails = true
 
 [sub_resource type="RibbonTrailMesh" id="RibbonTrailMesh_s22lx"]
-material = SubResource("StandardMaterial3D_xi7x6")
+material = SubResource("StandardMaterial3D_xxkng")
 size = 0.2
-curve = SubResource("Curve_pu366")
+curve = SubResource("Curve_2xi43")
 
 [node name="outside" type="Node3D"]
 script = ExtResource("1_xq4d2")
