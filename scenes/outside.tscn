@@ -172,7 +172,7 @@ use_collision = true
 size = Vector3(38.6479, 1.66162, 54.8079)
 
 [node name="poleCollision" type="StaticBody3D" parent="."]
-transform = Transform3D(0.994403, 0, 0.105657, 0, 1, 0, -0.105657, 0, 0.994403, -12.5373, 6.48188, -73.0799)
+transform = Transform3D(0.994403, 0, 0.105657, 0, 1, 0, -0.105657, 0, 0.994403, -12.5373, 6.28405, -73.0799)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="poleCollision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.57986, 0.891394, 0.61557)
@@ -333,7 +333,7 @@ autoplay = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67717, 4.79474, -55.2784)
 
 [node name="pole" type="Sprite3D" parent="Ending Adjustments"]
-transform = Transform3D(0.553138, -0.00933539, 0.103329, 0.00854456, 0.604337, 0.00159616, -0.0591593, 1.40274e-11, 0.966345, -13.4522, 1.00865, -16.4582)
+transform = Transform3D(0.553138, -0.00933539, 0.103329, 0.00854456, 0.604337, 0.00159616, -0.0591593, 1.40274e-11, 0.966345, -13.4522, 0.88722, -16.4582)
 pixel_size = 0.018
 alpha_cut = 3
 texture_filter = 0

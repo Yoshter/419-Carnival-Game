@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1dmse2sq6oqn"]
+[gd_scene load_steps=25 format=3 uid="uid://b1dmse2sq6oqn"]
 
 [ext_resource type="Material" uid="uid://p8wlxvi3ghqx" path="res://assets/materials/grass.material" id="1_2mcvw"]
 [ext_resource type="PackedScene" uid="uid://ec2iu4a6f3mf" path="res://scenes/playerScenes/player_2.tscn" id="2_utwu8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dagy3w88e5fir" path="res://assets/materials/Box.tscn" id="14_bn2eg"]
 [ext_resource type="PackedScene" uid="uid://drmxrykytqx0" path="res://scenes/table_no_light.tscn" id="15_ct7kn"]
 [ext_resource type="PackedScene" uid="uid://dm64f4kpr4iqe" path="res://scenes/interactables/arcadecabinet.tscn" id="16_160l7"]
+[ext_resource type="AudioStream" uid="uid://gh7gh423do2n" path="res://assets/allsound/Music/CARN - The tents.wav" id="17_ct7kn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_utwu8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -444,3 +445,10 @@ text = "Plenty of random destroyed carnival stuff outside too"
 transform = Transform3D(1.01461, 0, 2.61568, 0, 2.80557, 0, -2.61568, 0, 1.01461, 7.51287, 2.53253, -82.281)
 text = "Just really wanted to concept this area out 
 so everyone can see the vision"
+
+[node name="Music" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.76918, 7.49487, -64.2312)
+stream = ExtResource("17_ct7kn")
+volume_db = 1.0
+autoplay = true
+max_distance = 100.0
